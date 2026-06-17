@@ -24,6 +24,7 @@
 ## Configurações
 
 * [Motores operacionais](configuracoes/motores-operacionais.md)
+* [Domínio personalizado](configuracoes/dominio-personalizado.md)
 
 ## Ajuda
 
