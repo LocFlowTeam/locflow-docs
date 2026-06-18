@@ -77,41 +77,41 @@ Toda organização já vem com canais prontos — por exemplo **"Toda a organiza
 
 ## O que você pode ser avisado (catálogo)
 
-> ✅ = já disponível · 🔜 = em breve
+> A coluna **Status** mostra o que já está disponível e o que está **em breve**.
 
 ### Cobrança
 
-| Notificação | Quando avisa | Canal padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | Status |
 | --- | --- | --- | --- | --- |
-| Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito/vale ou reembolso | Organização | Importante | ✅ |
-| Pagamento confirmado | O cliente pagou (online) | Organização | Importante | 🔜 |
-| Parcela a vencer | Faltam X dias para o vencimento | Cliente (WhatsApp) | Informativo | 🔜 |
-| Parcela vencida / inadimplência | A parcela passou do vencimento | Financeiro | Importante | 🔜 |
+| Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito/vale ou reembolso | Organização | Importante | Disponível |
+| Pagamento confirmado | O cliente pagou (online) | Organização | Importante | Em breve |
+| Parcela a vencer | Faltam X dias para o vencimento | Cliente (WhatsApp) | Informativo | Em breve |
+| Parcela vencida / inadimplência | A parcela passou do vencimento | Financeiro | Importante | Em breve |
 
 ### Logística
 
 Os avisos de execução já permitem mirar **quem está executando a rota** (além da organização ou de competências).
 
-| Notificação | Quando avisa | Canal padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | Status |
 | --- | --- | --- | --- | --- |
-| Saída do galpão | A equipe saiu para iniciar a rota | Organização | Informativo | ✅ |
-| Chegada ao galpão | A equipe retornou ao fim do roteiro | Organização | Informativo | ✅ |
-| Desvio da rota | Uma parada foi pulada durante a execução | Organização | Importante | ✅ |
-| Entrega ou retirada concluída | A equipe concluiu uma parada | Organização | Informativo | ✅ |
-| Roteiro em execução alterado | O orçamento de uma parada mudou com a rota **já em andamento** | Quem está executando a rota | Crítico | ✅ |
-| Entrega/devolução no balcão | O cliente retirou ou devolveu presencialmente | Organização | Informativo | 🔜 |
+| Saída do galpão | A equipe saiu para iniciar a rota | Organização | Informativo | Disponível |
+| Chegada ao galpão | A equipe retornou ao fim do roteiro | Organização | Informativo | Disponível |
+| Desvio da rota | Uma parada foi pulada durante a execução | Organização | Importante | Disponível |
+| Entrega ou retirada concluída | A equipe concluiu uma parada | Organização | Informativo | Disponível |
+| Roteiro em execução alterado | O orçamento de uma parada mudou com a rota **já em andamento** | Quem está executando a rota | Crítico | Disponível |
+| Entrega/devolução no balcão | O cliente retirou ou devolveu presencialmente | Organização | Informativo | Em breve |
 
 ### Orçamento
 
-| Notificação | Quando avisa | Canal padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | Status |
 | --- | --- | --- | --- | --- |
-| Novo orçamento para follow-up | Quando um orçamento é criado | Vendedores (rodízio) | Importante | ✅ |
-| Follow-up de lead | X dias antes de uma data do orçamento (lembrete de retomar o contato) | Cliente + quem vende | Importante | 🔜 |
-| Orçamento prestes a expirar | Faltam X dias para a validade | Quem vende | Importante | 🔜 |
-| Aguardando aprovação | Um orçamento/frete precisa de aprovação manual | Quem aprova | Importante | 🔜 |
+| Novo orçamento para follow-up | Quando um orçamento é criado | Vendedores (rodízio) | Importante | Disponível |
+| Follow-up de lead | X dias antes de uma data do orçamento (lembrete de retomar o contato) | Cliente + quem vende | Importante | Em breve |
+| Orçamento prestes a expirar | Faltam X dias para a validade | Quem vende | Importante | Em breve |
+| Aguardando aprovação | Um orçamento/frete precisa de aprovação manual | Quem aprova | Importante | Em breve |
 
 {% hint style="info" %}
-Esta lista cresce com o tempo. Os itens 🔜 dependem de recursos que estão chegando (lembretes por data, mensagens de WhatsApp). Se há um aviso que faria diferença para a sua operação, fale com o suporte.
+Esta lista cresce com o tempo. Os itens marcados como **Em breve** dependem de recursos que estão chegando (lembretes por data, mensagens de WhatsApp). Se há um aviso que faria diferença para a sua operação, fale com o suporte.
 {% endhint %}
 
 ## Configurando (Central de Notificações)
