@@ -5,27 +5,62 @@
 ## Primeiros passos
 
 * [A filosofia do LocFlow](primeiros-passos/filosofia.md)
+* [Trilhas de leitura: por onde começar](primeiros-passos/trilhas-de-leitura.md)
+* [Onde tirar dúvidas](primeiros-passos/onde-tirar-duvidas.md)
 * [Criando sua conta](primeiros-passos/criando-sua-conta.md)
-* [Configurando sua empresa](primeiros-passos/configurando-sua-empresa.md)
+* [Configuração inicial](primeiros-passos/configurando-sua-empresa.md)
+* [Glossário do LocFlow](primeiros-passos/glossario.md)
+
+## Conceitos essenciais
+
+* [O ciclo de um pedido](conceitos/ciclo-de-um-pedido.md)
+* [Locação e venda](conceitos/locacao-e-venda.md)
+* [Papéis, funções e competências](conceitos/papeis-funcoes-competencias.md)
+
+## Cadastros
+
+* [Contatos](cadastros/contatos.md)
+* [Catálogo: produtos](cadastros/catalogo-produtos.md)
+* [Catálogo: kits](cadastros/catalogo-kits.md)
+* [Frota](cadastros/frota.md)
 
 ## Orçamentos
 
 * [Criando um orçamento](orcamentos/criando-um-orcamento.md)
 * [Acompanhando e fechando](orcamentos/acompanhando-e-fechando.md)
+* [Aprovação de orçamentos](orcamentos/aprovacao.md)
 
 ## Cobrança
 
 * [Faturas e parcelas](cobranca/faturas-e-parcelas.md)
+* [Recebendo pagamentos](cobranca/recebendo-pagamentos.md)
 * [Pagamento online](cobranca/pagamento-online.md)
 
 ## Logística
 
-* [Entregas e retiradas](logistica/entregas-e-retiradas.md)
+* [Visão geral da logística](logistica/visao-geral.md)
+* [Separação no galpão](logistica/separacao.md)
+* [Planejando o roteiro](logistica/planejando-o-roteiro.md)
+* [Execução em campo](logistica/execucao-em-campo.md)
+* [Conferência na devolução](logistica/conferencia.md)
+
+## Estoque
+
+* [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md)
+
+## Documentos e marca
+
+* [Modelos personalizados](documentos/modelos-personalizados.md)
+* [Identidade visual](documentos/identidade-visual.md)
 
 ## Configurações
 
 * [Motores operacionais](configuracoes/motores-operacionais.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
+* [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
+* [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
+* [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
+* [Integrações](configuracoes/integracoes.md)
 * [Domínio personalizado](configuracoes/dominio-personalizado.md)
 
 ## Ajuda

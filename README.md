@@ -1,4 +1,5 @@
 ---
+icon: hand-wave
 description: A central de ajuda do LocFlow — tudo para gerir sua locadora do orçamento à entrega.
 ---
 
@@ -12,12 +13,20 @@ Esta é a central de ajuda para você e sua equipe. Aqui você encontra guias pa
 
 ## Por onde começar
 
-Se você está chegando agora, siga esta ordem:
+A forma mais rápida é escolher a **trilha do seu perfil** — você lê só o que importa para o seu momento:
+
+{% hint style="success" %}
+[**Trilhas de leitura: por onde começar**](primeiros-passos/trilhas-de-leitura.md) — por porte, por papel ou por objetivo.
+{% endhint %}
+
+Prefere a ordem clássica? Siga assim:
 
 1. [**A filosofia do LocFlow**](primeiros-passos/filosofia.md) — a ideia por trás do produto e por que ele cresce com você.
 2. [**Criando sua conta**](primeiros-passos/criando-sua-conta.md) — entre no LocFlow e dê os primeiros passos.
-3. [**Configurando sua empresa**](primeiros-passos/configurando-sua-empresa.md) — deixe o sistema com a cara da sua locadora.
+3. [**Configuração inicial**](primeiros-passos/configurando-sua-empresa.md) — deixe o sistema com a cara da sua locadora.
 4. [**Criando um orçamento**](orcamentos/criando-um-orcamento.md) — o coração da operação.
+
+Novo em algum termo? Consulte o [**Glossário do LocFlow**](primeiros-passos/glossario.md).
 
 ## O que dá para fazer
 
@@ -28,4 +37,4 @@ Se você está chegando agora, siga esta ordem:
 
 ## Precisa de ajuda?
 
-Confira as [**Perguntas frequentes**](ajuda/perguntas-frequentes.md). Se não encontrar o que procura, fale com o suporte da sua locadora ou com o time LocFlow.
+O LocFlow te ajuda dentro da própria tela: veja [**Onde tirar dúvidas**](primeiros-passos/onde-tirar-duvidas.md) (o ícone "?", os avisos "!" e a aba **Ajuda** com chat e WhatsApp). Para dúvidas comuns, confira as [**Perguntas frequentes**](ajuda/perguntas-frequentes.md).

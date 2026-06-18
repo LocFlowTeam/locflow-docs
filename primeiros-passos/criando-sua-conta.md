@@ -1,3 +1,8 @@
+---
+icon: user-plus
+description: Entre no LocFlow em segundos — com Google, e-mail ou um convite da sua equipe — e comece o onboarding.
+---
+
 # Criando sua conta
 
 Para começar a usar o LocFlow você precisa de um acesso. A forma mais rápida de entrar é com a sua **conta Google**.

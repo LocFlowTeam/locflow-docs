@@ -1,3 +1,8 @@
+---
+icon: seedling
+description: Um sistema só, que abstrai para o pequeno, melhora para o médio e flexibiliza para o grande. Você não troca de software quando cresce.
+---
+
 # A filosofia do LocFlow
 
 O LocFlow nasceu de uma ideia simples: **uma locadora não precisa escolher entre um sistema simples demais para crescer e um sistema complexo demais para começar.** O LocFlow se adapta ao seu porte — hoje e amanhã.
