@@ -24,6 +24,7 @@
 ## Configurações
 
 * [Motores operacionais](configuracoes/motores-operacionais.md)
+* [Central de Notificações](configuracoes/central-de-notificacoes.md)
 * [Domínio personalizado](configuracoes/dominio-personalizado.md)
 
 ## Ajuda
