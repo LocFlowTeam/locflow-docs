@@ -32,7 +32,7 @@ Use sempre um **subdomínio** (`pagamento.suaempresa.com.br`), **nunca** o domí
 3. O LocFlow vai mostrar **um ou mais registros de DNS** para você criar — normalmente um **CNAME** (e, às vezes, um **TXT** de verificação). Cada registro tem um **Nome** e um **Valor**; toque para **copiar**.
 4. Abra o **painel de DNS** do seu provedor de domínio e **crie esses registros exatamente como mostrados** (veja abaixo como).
 5. Volte ao app e toque em **Já configurei — verificar**.
-6. Aguarde a confirmação. Quando tudo estiver pronto, o estado muda para **Domínio ativo** ✅ e seus links já passam a usar o seu endereço.
+6. Aguarde a confirmação. Quando tudo estiver pronto, o estado muda para **Domínio ativo** e seus links já passam a usar o seu endereço.
 
 {% hint style="info" %}
 A **propagação do DNS** pode levar de alguns **minutos a algumas horas** — é normal. Você pode fechar o app e voltar depois: o LocFlow verifica sozinho de tempos em tempos e ativa assim que o domínio estiver pronto. Não precisa configurar nada de certificado/HTTPS: o LocFlow cuida disso automaticamente, sem custo extra.

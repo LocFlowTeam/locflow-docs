@@ -19,6 +19,8 @@ Define **como o frete é calculado** e a **política de aprovação**:
 * **Por valor** — acima de um limite que você define, o frete pede aprovação manual.
 * **Sempre manual** — todo frete passa por aprovação antes de seguir.
 
+**Qual usar?** Locador que entrega ele mesmo → **Automática** (zero atrito). Operação em crescimento → **Por valor** (controla só os fretes altos). Equipe com vários vendedores → **Sempre manual** (padroniza margem e evita erro de digitação). É o mesmo cálculo de frete — muda só quanto controle você quer.
+
 ## Operação da cobrança
 
 Define o destino **padrão** de um valor a favor do cliente — quando uma edição reduz o total abaixo do que já foi pago, ou quando entra um pagamento a mais:
@@ -34,6 +36,15 @@ Define quando e como a logística acontece:
 
 * **Exigir fatura antes de iniciar a logística** — com isso ligado, a separação e a entrega só começam depois que a fatura do orçamento é gerada.
 * **Folga de rota** e **janelas padrão** de entrega e retirada.
+
+### Logística interna (galpão) — opcional
+
+Define se existem etapas **dentro do galpão**. Vale para orçamentos futuros; os em andamento não mudam.
+
+* **Separação interna** (*A separar → Separado*) — ligue se o material é separado no galpão antes de sair. Desligado, a logística começa direto na entrega/retirada.
+* **Conferência na devolução** (*A conferir → Conferido*) — só para locação; ligue se, ao voltar, o material passa por conferência antes de finalizar.
+
+**Locadores pequenos**, com pouca variedade de produtos, costumam deixar as duas **desligadas**: separar e conferir é controle que cabe na cabeça, e ligar só criaria cliques. Conforme a operação cresce, ligue a **Separação** primeiro (organiza o que preparar) e depois a **Conferência** (controle da volta, com papéis e evidências). Um pico de demanda não obriga a estruturar o galpão de uma vez — ligue quando justificar.
 
 {% hint style="info" %}
 **Exigir fatura antes de iniciar a logística** usa a fatura apenas como sinal de que a cobrança foi registrada — **não** significa que o cliente já pagou. Pergunte-se: você começa a preparar e entregar os itens sem ter gerado a fatura? Se **não**, mantenha ligado.
