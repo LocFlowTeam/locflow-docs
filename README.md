@@ -14,9 +14,10 @@ Esta é a central de ajuda para você e sua equipe. Aqui você encontra guias pa
 
 Se você está chegando agora, siga esta ordem:
 
-1. [**Criando sua conta**](primeiros-passos/criando-sua-conta.md) — entre no LocFlow e dê os primeiros passos.
-2. [**Configurando sua empresa**](primeiros-passos/configurando-sua-empresa.md) — deixe o sistema com a cara da sua locadora.
-3. [**Criando um orçamento**](orcamentos/criando-um-orcamento.md) — o coração da operação.
+1. [**A filosofia do LocFlow**](primeiros-passos/filosofia.md) — a ideia por trás do produto e por que ele cresce com você.
+2. [**Criando sua conta**](primeiros-passos/criando-sua-conta.md) — entre no LocFlow e dê os primeiros passos.
+3. [**Configurando sua empresa**](primeiros-passos/configurando-sua-empresa.md) — deixe o sistema com a cara da sua locadora.
+4. [**Criando um orçamento**](orcamentos/criando-um-orcamento.md) — o coração da operação.
 
 ## O que dá para fazer
 

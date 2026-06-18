@@ -4,6 +4,7 @@
 
 ## Primeiros passos
 
+* [A filosofia do LocFlow](primeiros-passos/filosofia.md)
 * [Criando sua conta](primeiros-passos/criando-sua-conta.md)
 * [Configurando sua empresa](primeiros-passos/configurando-sua-empresa.md)
 
