@@ -1,3 +1,8 @@
+---
+icon: sliders
+description: Configure uma vez as regras da sua operação — orçamento, frete, cobrança e logística — e o LocFlow segue o padrão sozinho.
+---
+
 # Motores operacionais
 
 Os **motores** são onde você define as regras da sua operação. Em vez de decidir tudo manualmente a cada locação, você configura o padrão uma vez e o LocFlow segue.

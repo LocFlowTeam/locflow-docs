@@ -1,3 +1,8 @@
+---
+icon: globe
+description: Faça o link de pagamento usar o seu próprio endereço (sua marca) em vez do endereço padrão do LocFlow.
+---
+
 # Domínio personalizado
 
 Por padrão, o link de pagamento que você envia ao cliente usa o endereço oficial do LocFlow. Com o **domínio personalizado**, esse link passa a usar **o seu próprio endereço** — por exemplo:
