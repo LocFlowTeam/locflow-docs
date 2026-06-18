@@ -1,9 +1,14 @@
+---
+icon: bell
+description: Avise as pessoas certas, na hora certa — defina o que dispara cada aviso, quem recebe (canais) e com que destaque (nível de atenção).
+---
+
 # Central de Notificações
 
 A **Central de Notificações** avisa as pessoas certas, na hora certa, sobre o que acontece no seu negócio — de um valor a favor do cliente a uma parada pulada na rota. Você define **quais avisos** sua organização recebe, **quem** recebe cada um e **com que destaque**.
 
 {% hint style="info" %}
-As notificações são da **organização** (não de um usuário específico). Quem decide para quem cada aviso vai é o **público-alvo**. Cada pessoa vê, na própria Central, os avisos destinados a ela.
+As notificações são da **organização** (não de um usuário específico). Quem decide para quem cada aviso vai é o **canal** (quem recebe + como — ver "Canais de notificação"). Cada pessoa vê, na própria Central, os avisos destinados a ela.
 {% endhint %}
 
 ## Como cada notificação funciona
@@ -111,7 +116,7 @@ Esta lista cresce com o tempo. Os itens 🔜 dependem de recursos que estão che
 
 ## Configurando (Central de Notificações)
 
-Em **Ajustes → Motores → Central de Notificações**, por tipo de aviso você pode:
+Você chega à configuração por **Ajustes → Central de Notificações** (atalho direto) ou por **Ajustes → Motores → Central de Notificações**. Os avisos ficam **agrupados por módulo** (Cobrança, Logística, Orçamento), com busca; escolha um aviso para configurá-lo. Por tipo de aviso você pode:
 
 1. **Ligar ou desligar** o aviso.
 2. **Escolher o nível de atenção** (Crítico / Importante / Informativo).
