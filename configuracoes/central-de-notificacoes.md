@@ -13,7 +13,7 @@ Toda notificação tem quatro partes:
 | Parte | O que é |
 | --- | --- |
 | **Acionador** | O que dispara o aviso: um **evento** (ex.: a equipe saiu do galpão) ou uma **data** (ex.: "3 dias antes do evento"). |
-| **Público-alvo** | Quem recebe. Você pode **combinar vários**: **toda a organização**, pessoas com certas **competências** (ex.: operação logística), **quem está por trás da operação** (ver abaixo) ou o **cliente** (futuro, via WhatsApp). |
+| **Canal** | Para onde o aviso vai. Cada tipo aponta para um **canal**, que define **quem recebe** e **como** o aviso é distribuído (ver "Canais de notificação"). |
 | **Nível de atenção** | Quanto o aviso deve **interromper** quem recebe (ver abaixo). |
 | **Ação (opcional)** | Um botão de atalho para resolver — ex.: "Abrir a fatura", "Ver no roteiro". |
 
@@ -42,13 +42,41 @@ O sistema sugere um nível padrão para cada tipo, e **sua organização pode mu
 Avisos **críticos** miram um público **estreito** (a pessoa diretamente envolvida — ex.: quem está executando a rota) para não interromper quem não tem a ver com aquilo.
 {% endhint %}
 
+## Canais de notificação
+
+Um **canal** é a camada que decide **quem recebe** e **como**. Em vez de configurar o destinatário em cada aviso, você configura **canais** e os **reaproveita** entre vários tipos de aviso.
+
+Cada canal tem:
+
+| Parte | O que é |
+| --- | --- |
+| **Pool (quem)** | De onde saem os destinatários: **toda a organização**, pessoas com certas **competências** (ex.: Vender orçamentos, Operação logística), o **responsável pela operação** (descoberto na hora — ex.: quem está executando a rota) ou o **cliente** (futuro, via WhatsApp). Dá para combinar. |
+| **Roteamento (como)** | Como a pool vira destinatário(s): ver abaixo. |
+
+### Roteamento: todos ou rodízio
+
+| Roteamento | O que faz |
+| --- | --- |
+| **Todos** (broadcast) | Todo mundo da pool recebe. |
+| **Rodízio** (round-robin) | Distribui **1-a-1**, em revezamento: cada novo aviso vai para a **próxima pessoa** da pool. |
+
+**Exemplo (rodízio):** Pedro e João são vendedores. Chegam 10 orçamentos novos por dia. Com um canal de **rodízio** sobre a competência "Vender orçamentos", os avisos de follow-up são distribuídos igualmente — o 1º vai para o Pedro, o 2º para o João, o 3º para o Pedro… A mesma ideia serve para separadores/conferentes dividindo ordens.
+
+{% hint style="info" %}
+A distribuição do rodízio é **justa mesmo com reprocessamentos**: um mesmo evento nunca "pula" alguém da fila.
+{% endhint %}
+
+### Canais padrão
+
+Toda organização já vem com canais prontos — por exemplo **"Toda a organização"**, **"Responsável pela operação"** (ex.: quem está executando a rota) e **"Vendedores (rodízio)"**. Você pode editar a pool e o roteamento deles, criar canais novos, e escolher qual canal cada aviso usa. Os canais são geridos em **Ajustes → Motores → Central de Notificações → Gerenciar canais**.
+
 ## O que você pode ser avisado (catálogo)
 
 > ✅ = já disponível · 🔜 = em breve
 
 ### Cobrança
 
-| Notificação | Quando avisa | Público padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | |
 | --- | --- | --- | --- | --- |
 | Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito/vale ou reembolso | Organização | Importante | ✅ |
 | Pagamento confirmado | O cliente pagou (online) | Organização | Importante | 🔜 |
@@ -59,7 +87,7 @@ Avisos **críticos** miram um público **estreito** (a pessoa diretamente envolv
 
 Os avisos de execução já permitem mirar **quem está executando a rota** (além da organização ou de competências).
 
-| Notificação | Quando avisa | Público padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | |
 | --- | --- | --- | --- | --- |
 | Saída do galpão | A equipe saiu para iniciar a rota | Organização | Informativo | ✅ |
 | Chegada ao galpão | A equipe retornou ao fim do roteiro | Organização | Informativo | ✅ |
@@ -70,8 +98,9 @@ Os avisos de execução já permitem mirar **quem está executando a rota** (al�
 
 ### Orçamento
 
-| Notificação | Quando avisa | Público padrão | Nível | |
+| Notificação | Quando avisa | Canal padrão | Nível | |
 | --- | --- | --- | --- | --- |
+| Novo orçamento para follow-up | Quando um orçamento é criado | Vendedores (rodízio) | Importante | ✅ |
 | Follow-up de lead | X dias antes de uma data do orçamento (lembrete de retomar o contato) | Cliente + quem vende | Importante | 🔜 |
 | Orçamento prestes a expirar | Faltam X dias para a validade | Quem vende | Importante | 🔜 |
 | Aguardando aprovação | Um orçamento/frete precisa de aprovação manual | Quem aprova | Importante | 🔜 |
@@ -86,10 +115,10 @@ Em **Ajustes → Motores → Central de Notificações**, por tipo de aviso voc�
 
 1. **Ligar ou desligar** o aviso.
 2. **Escolher o nível de atenção** (Crítico / Importante / Informativo).
-3. **Escolher quem recebe** — e você pode **combinar mais de um**: toda a organização, por **competência** (ex.: Operar logística, Conferência, Separação) e/ou **quem está por trás da operação** (ex.: quem está executando a rota), quando o aviso permite.
+3. **Escolher o canal** (quem recebe e como). Use **Gerenciar canais** para editar a pool e o roteamento, ou criar canais novos — e reaproveite o mesmo canal em vários avisos.
 
 {% hint style="info" %}
-Para mirar por competência, atribua a competência aos colaboradores (na **função** de cada um). Aí o aviso vai só para quem a tem.
+Para um canal por **competência**, atribua a competência aos colaboradores (na **função** de cada um). Aí o canal entrega só para quem a tem — e, no modo **rodízio**, reveza entre eles.
 {% endhint %}
 
 ## Vendo e gerenciando os avisos
