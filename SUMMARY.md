@@ -74,6 +74,7 @@
 ## Documentos e marca
 
 * [Modelos personalizados](documentos/modelos-personalizados.md)
+  * [Designer de documentos](documentos/designer-de-documentos.md)
 * [Identidade visual](documentos/identidade-visual.md)
 
 ## Configurações
@@ -84,6 +85,7 @@
   * [Motor de Frete avançado](configuracoes/motor-de-frete-avancado.md)
   * [Motor de Orçamento](configuracoes/motor-de-orcamento.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
+  * [Canais de notificação](configuracoes/canais-de-notificacao.md)
 * [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
 * [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
 * [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
