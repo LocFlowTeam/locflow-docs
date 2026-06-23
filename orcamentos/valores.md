@@ -1,6 +1,6 @@
 ---
 icon: coins
-description: Como o preço do orçamento se forma no LocFlow — itens, mão de obra, frete (por movimento, viagens, automático ou manual) e descontos, incluindo o desconto proporcional aos kits.
+description: Como o preço do orçamento se forma — itens, mão de obra, frete e descontos, incluindo o desconto proporcional aos kits.
 ---
 
 # Valores: mão de obra, frete e descontos

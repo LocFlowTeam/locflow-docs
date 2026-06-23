@@ -1,6 +1,6 @@
 ---
 icon: circle-check
-description: Quando uma regra trava o orçamento aguardando aval — a pré-etapa "Pendente" do funil, a fila de pendentes, aprovar ou rejeitar com motivo, e como escala por porte.
+description: Quando uma regra trava o orçamento aguardando aval — a pré-etapa "Pendente", a fila de pendentes e como aprovar ou rejeitar com motivo.
 ---
 
 # Aprovação de orçamento
@@ -20,17 +20,21 @@ Antes de tudo, vale separar dois nomes que parecem iguais, mas não são:
 **Pendente não é "Em aberto".** Pendente é a fila da porta: o orçamento parou ali porque bateu numa regra. **Ao aprovar, ele entra no funil** e passa a se comportar como qualquer outro (em aberto, em negociação, e por aí vai). Por isso, na visão de lista dos seus orçamentos, "Pendente" aparece **destacado, à parte**, como uma pré-etapa — não misturado com as etapas normais.
 {% endhint %}
 
-## Por que um orçamento fica pendente: a política
+## Por que um orçamento fica pendente: a política do frete
 
-O que decide se um orçamento trava ou não é uma **política configurável**, definida no **Motor de Orçamento** (em Ajustes › Motores). Você liga a política e escolhe o gatilho.
+Hoje, o que decide se um orçamento trava é a **política de aprovação do frete**, configurada no **Motor Operacional de Frete** — em **Ajustes › Motores › Operação do frete** (atenção: é a *operação* do frete, não o motor de *cálculo* do valor do frete). Lá você escolhe entre três modos:
 
-Hoje o gatilho disponível é o **frete acima de um limite**: você define um valor de corte e, sempre que o frete de um orçamento passar dele, o orçamento entra em **Pendente** automaticamente. Outros gatilhos podem entrar no futuro.
+| Modo | O que acontece |
+| --- | --- |
+| **Sempre automático** | O frete **nunca** exige aprovação — todo orçamento entra direto no funil. É o **padrão**. |
+| **Manual acima de um limite** | Você define um **valor de corte** (editável). Frete **até** o limite passa direto; **acima** dele, o orçamento fica **Pendente** até alguém aprovar. |
+| **Sempre manual** | **Todo** orçamento com frete passa pela aprovação, qualquer que seja o valor. |
 
 {% hint style="warning" %}
-**Sem essa política ligada, nada trava.** A aprovação é opt-in: se você não configurar a regra no Motor de Orçamento, nenhum orçamento fica pendente — todos seguem direto para o funil. Ligue a política só quando quiser esse freio.
+**No automático, nada trava.** Como o padrão é "sempre automático", quem não mexe nessa configuração nunca vê um orçamento pendente. A aprovação é um freio **opt-in**: você o liga trocando o modo para *manual acima de um limite* (e definindo o corte) ou *sempre manual*.
 {% endhint %}
 
-Para os detalhes de como configurar o Motor de Orçamento, veja [Motores operacionais](../configuracoes/motores-operacionais.md).
+Para configurar, veja [Motores operacionais](../configuracoes/motores-operacionais.md).
 
 ## O travamento é independente do status comercial
 

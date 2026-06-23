@@ -1,6 +1,6 @@
 ---
 icon: arrows-rotate
-description: O cliente mudou a data da entrega, tirou um item ou pediu para retirar no balcão depois do pedido fechado? Veja como o LocFlow mantém a logística em dia e avisa a pessoa certa, sem ninguém entregar a coisa errada na hora errada.
+description: Mudou a data, um item ou a forma de entrega depois do pedido fechado? Veja como o LocFlow mantém a logística em dia e avisa a pessoa certa.
 ---
 
 # Quando um pedido muda depois de fechado

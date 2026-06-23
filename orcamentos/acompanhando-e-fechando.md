@@ -1,6 +1,6 @@
 ---
 icon: filter
-description: O funil de vendas do LocFlow — os estados do orçamento, a jornada e o próximo passo sugerido, quais documentos cada fase libera e como fechar (ganho, perda ou cancelamento).
+description: O funil do LocFlow — os estados do orçamento, a jornada com o próximo passo sugerido e como fechar (ganho, perda ou cancelamento).
 ---
 
 # Acompanhando e fechando
@@ -28,6 +28,8 @@ flowchart LR
     AB --> PER
     RES --> CAN[Cancelado]
     VEN --> CAN
+    RES --> FIN[Finalizado<br/>fim do ciclo - automatico]
+    VEN --> FIN
     PER --> NEG
     CAN --> NEG
 ```
@@ -41,6 +43,11 @@ flowchart LR
 | **Vendido** | Venda confirmada — o **ganho** da venda. | Venda. |
 | **Perdido** | A proposta não fechou (no funil, antes do ganho). | Aluguel e venda. |
 | **Cancelado** | Cancelado **depois** de ganho — já havia compromissos. | Pós-reserva/venda. |
+| **Finalizado** | A operação terminou e o ciclo se encerrou. | No fim, automaticamente. |
+
+{% hint style="info" %}
+**Finalizado é automático — você não arrasta para cá.** O LocFlow encerra o ciclo sozinho quando a logística termina: na **venda**, quando a entrega se conclui (ou o cliente retira no balcão); na **locação**, quando os itens voltam — e, se a sua operação usa **conferência**, só depois de conferidos. É o fim natural do pedido. Veja [Visão geral da logística](../logistica/visao-geral.md).
+{% endhint %}
 
 {% hint style="info" %}
 **A pré-reserva é opcional.** Ela serve para "segurar" um aluguel enquanto o cliente decide, sem confirmar de vez. Quem prefere pode **pular** essa etapa e ir direto de Em aberto ou Em negociação para **Reservado**. Use se ajudar a sua operação; ignore se não precisar.
