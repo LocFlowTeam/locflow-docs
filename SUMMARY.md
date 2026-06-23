@@ -90,7 +90,10 @@
 * [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
 * [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
 * [Integrações](configuracoes/integracoes.md)
+  * [Sincronização em Nuvem](configuracoes/sincronizacao-em-nuvem.md)
+* [Programa de Parceiros](configuracoes/programa-de-parceiros.md)
 * [Domínio personalizado](configuracoes/dominio-personalizado.md)
+* [Minha conta e preferências](configuracoes/minha-conta.md)
 
 ## Ajuda
 
