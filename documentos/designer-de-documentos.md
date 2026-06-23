@@ -1,6 +1,6 @@
 ---
 icon: pen-ruler
-description: O guia avançado do designer de PDF do LocFlow: variáveis, ocultar-quando-vazio, kit agrupado, compositor logístico, foto do item e total em destaque.
+description: O guia avançado do designer de PDF do LocFlow — variáveis, ocultar-quando-vazio, kit agrupado, compositor logístico, foto do item e total em destaque.
 ---
 
 # Designer de documentos

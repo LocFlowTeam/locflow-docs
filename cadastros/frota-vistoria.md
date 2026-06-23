@@ -1,6 +1,6 @@
 ---
 icon: clipboard-check
-description: A vistoria do veículo na especificação: os gatilhos que dizem quando ela vence e os modelos de checklist que o motorista confere antes de rodar.
+description: A vistoria do veículo na especificação — os gatilhos que dizem quando ela vence e os modelos de checklist que o motorista confere antes de rodar.
 ---
 
 # Especificações: vistoria

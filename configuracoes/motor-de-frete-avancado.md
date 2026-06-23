@@ -1,6 +1,6 @@
 ---
 icon: gears
-description: O nível avançado do Motor de Frete: anatomia de uma regra, a ordem fixa das ações, limites, parâmetros e versionamento do cálculo.
+description: O nível avançado do Motor de Frete — anatomia de uma regra, a ordem fixa das ações, limites, parâmetros e versionamento do cálculo.
 ---
 
 # Motor de Frete avançado
