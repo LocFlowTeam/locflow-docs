@@ -36,9 +36,12 @@
 
 ## Cobrança
 
+* [Cobranças: a lista e o que mostra](cobranca/lista-de-cobrancas.md)
 * [Faturas e parcelas](cobranca/faturas-e-parcelas.md)
+* [Emitindo a cobrança](cobranca/emitindo-a-cobranca.md)
 * [Recebendo pagamentos](cobranca/recebendo-pagamentos.md)
 * [Pagamento online](cobranca/pagamento-online.md)
+* [A página de pagamento do cliente](cobranca/pagina-de-pagamento.md)
 
 ## Logística
 
