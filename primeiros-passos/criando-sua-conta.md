@@ -37,4 +37,4 @@ Não precisa acertar tudo de primeira. O onboarding cobre o mínimo para você o
 
 ## Próximo passo
 
-Com a conta criada, siga para [Configurando sua empresa](configurando-sua-empresa.md).
+Com a conta criada, siga para [Criando sua locadora](criando-sua-locadora.md) — o passo que dá nome e forma à sua empresa no sistema.

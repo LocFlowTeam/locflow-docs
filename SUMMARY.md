@@ -8,7 +8,11 @@
 * [Trilhas de leitura: por onde começar](primeiros-passos/trilhas-de-leitura.md)
 * [Onde tirar dúvidas](primeiros-passos/onde-tirar-duvidas.md)
 * [Criando sua conta](primeiros-passos/criando-sua-conta.md)
+* [Recuperar sua senha](primeiros-passos/recuperar-senha.md)
+* [Criando sua locadora](primeiros-passos/criando-sua-locadora.md)
+* [Aceitando um convite](primeiros-passos/aceitando-um-convite.md)
 * [Configuração inicial](primeiros-passos/configurando-sua-empresa.md)
+  * [O setup passo a passo](primeiros-passos/setup-passo-a-passo.md)
 * [Glossário do LocFlow](primeiros-passos/glossario.md)
 
 ## Conceitos essenciais
