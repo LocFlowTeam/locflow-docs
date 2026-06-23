@@ -42,7 +42,7 @@ Lendo da esquerda para a direita, cada fase é um momento concreto da operação
 **Separação e Conferência ligam quando valem a pena.** Quem separa "de cabeça" não precisa delas — só criariam cliques. Você liga cada uma na hora em que a demanda cresce e não dá mais para guardar tudo na memória. Mesmo sistema, sem migração. Veja [A filosofia do LocFlow](../primeiros-passos/filosofia.md).
 {% endhint %}
 
-### A etapa zero: a logística só começa depois da fatura (opcional)
+### A etapa zero: a logística só começa depois da fatura (opcional) {#exigir-fatura-antes-de-iniciar-a-logistica}
 
 Antes de qualquer fase de material, há uma **etapa zero financeira**. Você pode condicionar o início da logística à **geração da fatura**: enquanto não houver cobrança gerada para o orçamento, o pedido fica **aguardando fatura** — o material não entra na fila de separação nem é despachado.
 
