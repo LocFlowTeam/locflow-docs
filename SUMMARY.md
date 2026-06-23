@@ -29,6 +29,8 @@
 
 * [Contatos](cadastros/contatos.md)
 * [Catálogo: produtos](cadastros/catalogo-produtos.md)
+  * [Estoque por natureza e condição](cadastros/estoque-por-natureza-e-condicao.md)
+  * [Histórico de preços](cadastros/historico-de-precos.md)
 * [Catálogo: kits](cadastros/catalogo-kits.md)
 * [Frota](cadastros/frota.md)
 
