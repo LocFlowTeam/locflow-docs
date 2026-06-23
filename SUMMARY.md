@@ -27,6 +27,10 @@
 ## Orçamentos
 
 * [Criando um orçamento](orcamentos/criando-um-orcamento.md)
+* [Movimentos, janelas e galpão de origem](orcamentos/movimentos-e-janelas.md)
+* [Endereços e endereços salvos](orcamentos/enderecos.md)
+* [Valores: mão de obra, frete e descontos](orcamentos/valores.md)
+* [Duração, cobrança e bloqueio de uso](orcamentos/duracao-e-bloqueio.md)
 * [Acompanhando e fechando](orcamentos/acompanhando-e-fechando.md)
 * [Aprovação de orçamentos](orcamentos/aprovacao.md)
 

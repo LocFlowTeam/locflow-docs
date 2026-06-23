@@ -15,7 +15,7 @@ A execução em tempo real depende do **GPS do celular** e é feita no **aplicat
 
 ```mermaid
 flowchart LR
-    PREP[Preparar saida<br/>condutor + veiculo + vistoria] --> SAI[Registrar saida<br/>do galpao]
+    PREP[Preparar saida<br/>motorista + veiculo ativo<br/>+ vistoria + revisao] --> SAI[Registrar saida<br/>do galpao]
     SAI --> CHEG[Cheguei no local<br/>parada a parada]
     CHEG --> DESF[Entregue / Retirado<br/>com comprovacao]
     DESF --> VOLTA[Voltar ao galpao]
@@ -23,14 +23,20 @@ flowchart LR
 
 ## Preparar a saída
 
-Antes de pôr o pé na rua, o motorista confirma quem vai e em quê. Se o roteiro foi planejado, esses campos já vêm **pré-preenchidos** — o operador só ajusta o que mudou.
+Antes de pôr o pé na rua, o motorista passa por um **preparo guiado, passo a passo** — sem tela amontoada. Se o roteiro foi planejado, os campos já vêm **pré-preenchidos**; o motorista só confirma ou ajusta o que mudou.
 
-* **Condutor** — quem dirige. Vem do planejamento, mas pode ser trocado. O condutor entra sempre entre os presentes.
-* **Acompanhantes / presentes** — a equipe que vai junto. Se alguém não compareceu, é só **desmarcar** quem ficou.
-* **Veículo (opcional)** — você seleciona por nome ou placa. Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo. Se o roteiro definiu uma especificação, carros de outro tipo ficam marcados como "Especificação diferente".
+```mermaid
+flowchart LR
+    M[1. Motorista<br/>+ equipe] --> V[2. Veiculo<br/>ativo] --> VI[3. Vistoria] --> R[4. Revisao]
+```
 
-{% hint style="info" %}
-**Veículo é opcional para iniciar.** Quem ainda não cadastrou a frota, ou está com o único carro em manutenção, consegue rodar mesmo assim — o app avisa que o registro ficará sem veículo, mas não trava a operação.
+* **Passo 1 — Motorista e equipe.** Quem dirige (o condutor) e quem vai junto. O condutor entra sempre entre os presentes; se alguém não compareceu, é só **remover** da equipe. O app **avisa** se o condutor estiver sem CNH ou sem a competência de dirigir.
+* **Passo 2 — Veículo.** Você seleciona **um veículo concreto** (por nome ou placa). Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo; se o roteiro pediu uma especificação, carros de outro tipo ficam marcados como "Especificação diferente".
+* **Passo 3 — Vistoria.** O app confere a vistoria do veículo escolhido (veja a seguir).
+* **Passo 4 — Revisão.** Uma conferência final de tudo (motorista, veículo, vistoria) antes de **concluir o preparo**.
+
+{% hint style="warning" %}
+**O veículo é obrigatório — e precisa estar ativo.** Diferente do roteiro planejado (onde dá para deixar o veículo em aberto ou indicar só a especificação), quem vai para a rua precisa registrar **em qual veículo de verdade** o material saiu. Isso garante a rastreabilidade da carga e da frota.
 {% endhint %}
 
 ### Vistoria do veículo
@@ -40,7 +46,7 @@ Quando um veículo é selecionado, o app verifica a **vistoria**:
 * Se a vistoria estiver **vencida**, aparece um **checklist** — o motorista precisa conferir **todos os itens** antes de poder iniciar a rota.
 * Se não houver checklist obrigatório, há apenas uma marcação simples de **"Vistoria do veículo conferida"**.
 
-Com tudo definido, o motorista toca em **Iniciar execução**: o preparo está concluído.
+Na revisão final, o motorista toca em **Concluir preparo** — e a rota está pronta para sair.
 
 ### Sair do galpão
 

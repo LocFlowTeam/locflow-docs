@@ -20,16 +20,16 @@ Na tela de acesso, toque em **Entrar com Google** e escolha sua conta. Pronto �
 Prefere e-mail e senha? Também funciona:
 
 1. Na tela de acesso, escolha **cadastrar com e-mail**.
-2. Informe seus dados e defina uma senha.
-3. Você entra na hora e segue direto para o **onboarding**.
+2. Informe seus dados e defina uma senha (mínimo de 6 caracteres).
+3. Dependendo da configuração, você **entra na hora** — ou recebe um **link de confirmação** no seu e-mail; confirme por ele e faça login. Em seguida, segue direto para o **onboarding**.
 
 ## Recebi um convite
 
-Se alguém da sua locadora já usa o LocFlow, peça um **convite**. Você recebe um link por e-mail; ao abri-lo, entra com o Google ou define uma senha — e já faz parte da equipe, com as **permissões** que definiram para o seu perfil.
+Se alguém da sua locadora já usa o LocFlow, peça um **convite**. Você recebe um **link** de quem te convidou (por WhatsApp, e-mail ou outro app); ao abri-lo, entra com o Google ou define uma senha — e já faz parte da equipe, com as **permissões** que definiram para o seu perfil.
 
 ## O onboarding
 
-No primeiro acesso, o LocFlow conduz você por algumas etapas rápidas para deixar tudo pronto: dados da empresa, formas de cobrança e as regras básicas da operação (os **motores**). Dá para revisar e ajustar tudo depois em [Configurações](../configuracoes/motores-operacionais.md).
+No primeiro acesso, o LocFlow conduz você por etapas rápidas para deixar tudo pronto: os dados da empresa, o plano e um setup com galpão e catálogo iniciais. As regras mais avançadas (os **motores**) ficam de fora do onboarding — você as ajusta depois, com calma, em [Configurações](../configuracoes/motores-operacionais.md).
 
 {% hint style="info" %}
 Não precisa acertar tudo de primeira. O onboarding cobre o mínimo para você operar; o resto você refina com calma.

@@ -14,7 +14,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Bem móvel / item** | O que você aluga ou vende (equipamento, mobília, estrutura, veículo…). |
 | **Locação** | Aluguel: o item vai e **volta**. |
 | **Venda** | O item sai em **definitivo** (sem retorno). |
-| **Contato** | Cliente ou fornecedor (pessoa física ou jurídica). |
+| **Contato** | Um cliente — ou possível cliente — pessoa física ou jurídica. |
 | **Produto** | Um item do seu catálogo, com preço de aluguel e/ou venda. |
 | **Kit** | Um pacote de produtos vendido/alugado como um conjunto. |
 
@@ -22,6 +22,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 
 | Termo | O que é |
 | --- | --- |
+| **Pendente (aguardando aprovação)** | Pré-etapa do funil: uma **política** do Motor de Orçamento (ex.: frete acima de um limite) deixou o pedido congelado até o aval de um responsável. **Não é o mesmo que "Em aberto"** — só depois de aprovado o orçamento entra no funil. |
 | **Em aberto** | Criado, ainda sem ação. |
 | **Em negociação** | Enviado ao cliente, aguardando resposta. |
 | **Pré-reservado** | "Segurar" o aluguel antes de confirmar (opcional, só locação). |

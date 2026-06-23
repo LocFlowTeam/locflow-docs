@@ -1,11 +1,11 @@
 ---
 icon: address-book
-description: Sua agenda de clientes e fornecedores — cadastre uma vez, reaproveite em todo orçamento e transforme contato em recompra.
+description: Sua agenda de clientes — cadastre uma vez, reaproveite em todo orçamento e transforme contato em recompra.
 ---
 
 # Contatos
 
-O módulo de **Contatos** é a sua agenda dentro do LocFlow: clientes e fornecedores, pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** em qualquer orçamento — você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
+O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e possíveis clientes), pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** em qualquer orçamento — você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
 
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** uma base de clientes organizada é uma base que **recompra**. Quando todo cliente já está cadastrado, com canal de contato e histórico, fazer follow-up vira questão de minutos — e cliente que você consegue chamar de volta é cliente que aluga de novo.
@@ -13,7 +13,7 @@ O módulo de **Contatos** é a sua agenda dentro do LocFlow: clientes e forneced
 
 ## O que é um contato
 
-Um contato representa **uma pessoa ou empresa** com quem você se relaciona — quase sempre um cliente, mas também fornecedores. O cadastro é enxuto de propósito: para começar, basta o nome e **um canal de contato** (celular ou e-mail). O resto é opcional e você completa quando precisar.
+Um contato representa **uma pessoa ou empresa** com quem você se relaciona — o seu cliente, ou um possível cliente. O cadastro é enxuto de propósito: para começar, basta o nome e **um canal de contato** (celular ou e-mail). O resto é opcional e você completa quando precisar.
 
 ```mermaid
 flowchart TD

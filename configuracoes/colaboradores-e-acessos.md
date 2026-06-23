@@ -15,7 +15,7 @@ Antes de continuar, vale entender a ideia por trás disso em [Papéis, funções
 
 ## Convidar é mandar um link
 
-No LocFlow você **não cadastra e-mail nem senha** da pessoa. O convite gera um **link** — e esse link É a credencial. Você manda por WhatsApp, e-mail ou qualquer app, e quem recebe entra direto.
+No LocFlow você **não define a senha** da pessoa, e informar o e-mail é **opcional**. O convite gera um **link** — e esse link É a credencial. Você manda por WhatsApp, e-mail ou qualquer app, e quem recebe entra direto.
 
 ```mermaid
 flowchart LR
@@ -25,7 +25,7 @@ flowchart LR
     D --> E[Aceita e ja entra<br/>com os papeis certos]
 ```
 
-No convite você informa só **o nome** de quem está chamando e **um ou mais papéis**. Quem aceita pode entrar pelo navegador, sem instalar nada, ou pelo app LocFlow se já tiver instalado — e cai direto na tela de aceitar, sem o cadastro de empresa nova.
+No convite você informa **o nome** de quem está chamando, **um ou mais papéis** e — se quiser — o **e-mail** da pessoa (opcional). Informar o e-mail **vincula o convite a ele**: só quem entrar com esse e-mail consegue aceitar, uma camada extra de segurança para o link não cair em mãos erradas. Deixou em branco? Qualquer um com o link aceita. Quem aceita pode entrar pelo navegador, sem instalar nada, ou pelo app LocFlow se já tiver instalado — e cai direto na tela de aceitar, sem o cadastro de empresa nova.
 
 {% hint style="info" %}
 Como o link é a credencial, **trate-o como uma senha**: mande só para a pessoa certa. O convite tem **prazo de validade**; se expirar, é só gerar outro. Convites enviados ficam visíveis em **Convites pendentes**, onde você pode **copiar o link** de novo a qualquer momento.
