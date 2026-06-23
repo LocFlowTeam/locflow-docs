@@ -43,6 +43,7 @@
 * [Planejando o roteiro](logistica/planejando-o-roteiro.md)
 * [Execução em campo](logistica/execucao-em-campo.md)
 * [Conferência na devolução](logistica/conferencia.md)
+* [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
 
 ## Estoque
 

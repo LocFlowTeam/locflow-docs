@@ -90,7 +90,7 @@ Toda organização já vem com canais prontos — por exemplo **"Toda a organiza
 
 ### Logística
 
-Os avisos de execução já permitem mirar **quem está executando a rota** (além da organização ou de competências).
+Os avisos de execução já permitem mirar **quem está executando a rota** ou os **operadores logísticos** (além da organização ou de outras competências).
 
 | Notificação | Quando avisa | Canal padrão | Nível | Status |
 | --- | --- | --- | --- | --- |
@@ -98,8 +98,11 @@ Os avisos de execução já permitem mirar **quem está executando a rota** (al�
 | Chegada ao galpão | A equipe retornou ao fim do roteiro | Organização | Informativo | Disponível |
 | Desvio da rota | Uma parada foi pulada durante a execução | Organização | Importante | Disponível |
 | Entrega ou retirada concluída | A equipe concluiu uma parada | Organização | Informativo | Disponível |
-| Roteiro em execução alterado | O orçamento de uma parada mudou com a rota **já em andamento** | Quem está executando a rota | Crítico | Disponível |
+| Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operadores logísticos | Importante | Disponível |
+| Roteiro ajustado em execução | O operador ajustou um roteiro que já estava em andamento | Quem está executando a rota | Crítico | Disponível |
 | Entrega/devolução no balcão | O cliente retirou ou devolveu presencialmente | Organização | Informativo | Em breve |
+
+Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o motorista não recebe a mudança crua) em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
 
 ### Orçamento
 
