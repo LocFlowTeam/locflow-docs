@@ -33,6 +33,8 @@
   * [Histórico de preços](cadastros/historico-de-precos.md)
 * [Catálogo: kits](cadastros/catalogo-kits.md)
 * [Frota](cadastros/frota.md)
+  * [Especificações: capacidade](cadastros/frota-capacidade.md)
+  * [Especificações: vistoria](cadastros/frota-vistoria.md)
 
 ## Orçamentos
 
