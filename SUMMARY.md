@@ -75,6 +75,10 @@
 ## Configurações
 
 * [Motores operacionais](configuracoes/motores-operacionais.md)
+  * [Motor de Frete: como calcula](configuracoes/motor-de-frete.md)
+  * [Montando as cobranças do frete](configuracoes/motor-de-frete-cobrancas.md)
+  * [Motor de Frete avançado](configuracoes/motor-de-frete-avancado.md)
+  * [Motor de Orçamento](configuracoes/motor-de-orcamento.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
 * [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
 * [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
