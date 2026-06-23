@@ -17,6 +17,14 @@
 * [Locação e venda](conceitos/locacao-e-venda.md)
 * [Papéis, funções e competências](conceitos/papeis-funcoes-competencias.md)
 
+## Painel
+
+* [O Painel (sua tela inicial)](painel/o-painel.md)
+* [Indicadores do painel](painel/indicadores.md)
+* [O funil de vendas no painel](painel/funil-de-vendas.md)
+* [O card de Logística no painel](painel/card-logistica.md)
+* [Calendário logístico](painel/calendario-logistico.md)
+
 ## Cadastros
 
 * [Contatos](cadastros/contatos.md)
