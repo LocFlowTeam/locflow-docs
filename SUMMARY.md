@@ -46,9 +46,12 @@
 ## Logística
 
 * [Visão geral da logística](logistica/visao-geral.md)
+* [A jornada de um pedido (Ver Logística)](logistica/jornada-do-pedido.md)
+* [Acompanhando seus roteiros](logistica/acompanhando-roteiros.md)
 * [Separação no galpão](logistica/separacao.md)
 * [Planejando o roteiro](logistica/planejando-o-roteiro.md)
 * [Execução em campo](logistica/execucao-em-campo.md)
+* [Execução em lote (retroativa)](logistica/execucao-em-lote.md)
 * [Conferência na devolução](logistica/conferencia.md)
 * [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
 
