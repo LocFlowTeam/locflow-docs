@@ -24,7 +24,7 @@ flowchart LR
 | --- | --- | --- |
 | **1. Seu nome** | Cadastra o administrador da conta | Identifica quem comanda a operação (pode ser um apelido; o administrador é definitivo). |
 | **2. Google Meu Negócio** | Conecta (opcional) seu perfil do Google | Aproveita dados que você já tem (horários, endereço). Não achou? É só pular. |
-| **3. Fuso e horário comercial** | Define o fuso horário e o horário de funcionamento | Afeta lembretes, relatórios e cobranças. (Logo e cores você ajusta depois em Identidade visual.) |
+| **3. Fuso e horário comercial** | Define o fuso horário e o horário de funcionamento | Afeta lembretes, relatórios e cobranças. (Logo e cores você ajusta depois no Perfil da empresa.) |
 | **4. Galpão** | Cria seu primeiro local de estoque | É de onde o material sai e para onde volta. |
 | **5. Catálogo inicial** | Adiciona os primeiros produtos/kits | Sem itens não há orçamento — um item com preço de aluguel já destrava o primeiro pedido. Use o **catálogo oficial** para ir rápido. |
 
@@ -34,7 +34,7 @@ Cada passo tem o ícone **"?"** com a explicação ali mesmo. Dá para **pular**
 
 ## Depois do setup: o que vale ajustar
 
-- **Identidade visual** — logo e cores nos PDFs e links. Veja [Identidade visual](../documentos/identidade-visual.md).
+- **Perfil da empresa** — logo, identidade visual e dados cadastrais da locadora, tudo num lugar só. Veja [Identidade visual](../documentos/identidade-visual.md).
 - **Equipe** — convide pessoas com papéis prontos. Veja [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 - **Motores** — calibre frete, cobrança e logística conforme sua operação. Veja [Motores operacionais](../configuracoes/motores-operacionais.md).
 

@@ -87,7 +87,7 @@ São duas coisas neste passo:
 **Você precisa de pelo menos um dia aberto.** Se marcar todos os dias como fechados, o sistema avisa: *"Marque ao menos um dia de funcionamento para continuar."* — afinal, uma locadora sempre abre algum dia.
 {% endhint %}
 
-> **Nota:** apesar do título dentro do app dizer "Identidade & horários", aqui você ajusta só fuso e horário. **Logo e cores** da sua marca ficam para depois, em [Identidade visual](../documentos/identidade-visual.md).
+> **Nota:** apesar do título dentro do app dizer "Identidade & horários", aqui você ajusta só fuso e horário. **Logo e cores** da sua marca ficam para depois, no Perfil da empresa (veja [Identidade visual](../documentos/identidade-visual.md)).
 
 ***
 

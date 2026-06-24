@@ -7,7 +7,7 @@ description: Suba o logo da sua locadora e ele aparece nos documentos, faturas e
 
 A marca da sua locadora não vive só no papel timbrado. No LocFlow, o **logo** que você cadastra aparece nos documentos gerados, nas faturas e até nos links de pagamento que o cliente abre. É a sua cara em cada ponto de contato.
 
-Você configura isso em **Configurações → Identidade visual**.
+Você configura isso em **Configurações → Perfil da empresa**, na seção _Identidade visual_ — no mesmo lugar onde ficam os dados cadastrais da locadora.
 
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** quando o cliente recebe um orçamento, uma fatura e uma página de pagamento com a sua marca, ele sente que está lidando com uma empresa séria. Confiança fecha negócio e faz o cliente pagar sem hesitar.
