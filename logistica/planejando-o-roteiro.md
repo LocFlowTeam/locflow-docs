@@ -15,11 +15,11 @@ O planejamento acontece em **passos**, sempre com o mapa à vista. Você não pr
 
 ## Os três passos
 
-O coração do planejamento são três decisões — **quem vai**, **em que vai** e **quais paradas, em que ordem** —, e por último você confere os **horários**.
+O coração do planejamento são três decisões — **quem vai**, **em que tipo de veículo** (a especificação) e **quais paradas, em que ordem** —, e por último você confere os **horários**.
 
 ```mermaid
 flowchart LR
-    P1[1. Responsavel<br/>quem vai] --> P2[2. Veiculo<br/>ou so a especificacao]
+    P1[1. Responsavel<br/>quem vai] --> P2[2. Especificacao<br/>tipo de veiculo]
     P2 --> P3[3. Movimentos<br/>paradas + ordem]
     P3 --> OT[Otimizar<br/>+ tracar rota real]
     OT --> CRIA[Horarios + Criar roteiro]
@@ -49,20 +49,24 @@ O texto vem pronto, por exemplo: *"Fulano não tem a competência de dirigir e e
 Esse aviso **não impede** nada — você pode planejar o roteiro normalmente. Ele é um lembrete para você **regularizar antes de a equipe pôr o pé na estrada**: ajustar a função do colaborador ou atualizar a CNH dele no cadastro. A competência de dirigir e a validade da CNH vêm de [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 {% endhint %}
 
-### Passo 2 — Veículo
+### Passo 2 — Especificação
 
-Aqui você diz **em que o material vai**. Há três caminhos, do mais específico ao mais flexível:
+No planejamento você diz **o tipo de veículo** — a **especificação** (marca/modelo/ano, com a vistoria e a capacidade dela) —, **não a placa**. Escolher qual carro exatamente vai é uma decisão do **dia da operação** (depende de qual está livre, abastecido, sem manutenção), então ela fica para a **execução**, não para o planejamento.
 
-| Você escolhe | O que acontece | Quando usar |
-| --- | --- | --- |
-| **Um veículo específico** | A rota já nasce com a placa definida. | Você sabe exatamente qual carro vai. |
-| **Só a especificação** | Você indica o tipo de veículo (marca/modelo/ano) sem travar a placa. | Tanto faz qual carro, desde que seja daquele tipo — quem executa escolhe na hora. |
-| **Nenhum** | A rota fica sem veículo definido. | Ainda não decidiu, ou quem vai resolver isso é o motorista no campo. |
+E por que a especificação já basta aqui? Porque é dela que vêm a **capacidade** (se a carga cabe) e a **vistoria** — tudo o que o planejamento precisa avaliar. A placa não muda nada disso.
 
-Por padrão, o app já **sugere o veículo-padrão do condutor**, se ele tiver um. Você troca quando quiser. Se preferir não amarrar a placa, ligue a opção de informar **só a especificação**.
+| No planejamento | Na execução (PrepararSaída) |
+| --- | --- |
+| Você escolhe **a especificação** (ou deixa em branco). | O app resolve **a placa** automaticamente. |
+
+A especificação é **opcional**: sem ela, o app só não consegue avaliar a carga no passo seguinte (segue com um aviso).
 
 {% hint style="info" %}
-Definir o veículo (ou ao menos a especificação) ajuda no passo seguinte: o app consegue avaliar se a carga **cabe** no que você escolheu. Sem nenhum dos dois, essa conferência não aparece. Veja [Frota](../cadastros/frota.md).
+**Como a placa é resolvida na execução.** Ao preparar a saída, o app sugere o veículo nesta ordem: **(1)** o **veículo-padrão do motorista**, se ele tiver um; **(2)** senão, o **último veículo que ele usou**; **(3)** senão, ele **seleciona na hora**. As sugestões respeitam a especificação do planejamento. Veja [Execução em campo](execucao-em-campo.md).
+{% endhint %}
+
+{% hint style="info" %}
+Definir a especificação ajuda no passo seguinte: o app consegue avaliar se a carga **cabe**. Sem ela, essa conferência não aparece. Veja [Especificações: capacidade](../cadastros/frota-capacidade.md).
 {% endhint %}
 
 ### Passo 3 — Movimentos e ordem
@@ -181,7 +185,7 @@ O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vár
 * **Dia cheio com tempo curto:** dez paradas, várias com janela apertada. Usa a **inteligente**: ela ordena pelo trajeto real, mostra que duas paradas não cabem antes do fim do expediente e você as joga para amanhã — em vez de descobrir isso no meio da rua.
 * **Cidade congestionada:** liga o **Trânsito** antes de traçar; vê a rota vermelha numa avenida e o pedágio do trecho, e decide sair mais cedo ou desviar.
 * **Escalou quem não pode dirigir:** ao atribuir um colaborador como condutor, aparece o **aviso de CNH vencida**. Monta o roteiro mesmo assim e, antes da execução, atualiza a habilitação dele no cadastro.
-* **Carro ainda indefinido:** monta a rota escolhendo **só a especificação** (um furgão). Na execução, o motorista pega o furgão que estiver livre.
+* **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
 * **Entrega que apareceu agora:** não dá para esperar o planejamento — despacha **sob demanda** direto do orçamento, e a viagem segue do mesmo jeito no campo.
 
 ## Próximo passo
