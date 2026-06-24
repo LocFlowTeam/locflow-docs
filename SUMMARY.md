@@ -5,6 +5,7 @@
 ## Primeiros passos
 
 * [A filosofia do LocFlow](primeiros-passos/filosofia.md)
+* [O porte da sua operação](primeiros-passos/porte.md)
 * [Trilhas de leitura: por onde começar](primeiros-passos/trilhas-de-leitura.md)
 * [Onde tirar dúvidas](primeiros-passos/onde-tirar-duvidas.md)
 * [Criando sua conta](primeiros-passos/criando-sua-conta.md)

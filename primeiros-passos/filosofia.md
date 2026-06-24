@@ -53,7 +53,7 @@ O **mesmo** recurso abstrai para o pequeno, melhora para o médio e flexibiliza 
 | **Aprovação de orçamento** | Nenhuma — fecha direto | Congela por regra (ex.: frete alto) | Papéis aprovar/rejeitar, com motivo |
 | **Reserva do aluguel** | Vai direto ao *Reservado* | Usa o *Pré‑reservado* para segurar | Pré‑reserva como etapa do funil (validade segura o estoque) |
 | **Bloqueio de estoque** | Só o período do evento | Entrega + retirada, com folga | Cada orçamento define a janela |
-| **Despacho da entrega** | Sob demanda, uma de cada vez | Planeja quando dá | Roteiros planejados (ordem, veículo, responsável) |
+| **Despacho da entrega** | Roteiro planejado, simples — sob demanda só para imprevistos | Planeja o dia; sob demanda quando precisa | Roteiros planejados (ordem, veículo, responsável) |
 | **Ordem da rota** | Arrasta as paradas à mão | Otimização rápida (grátis) | Otimização inteligente Google (trajeto real, ETAs) |
 | **Frota e veículos** | Inicia sem veículo | Veículo com placa e status | Classes + especificações (capacidade, vistoria) |
 | **Logística interna (galpão)** | Desligada — entrega direto | Liga a Separação | Separação + Conferência (papéis, evidências) |
