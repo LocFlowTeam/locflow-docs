@@ -10,7 +10,7 @@ A **capacidade** é o que diz ao LocFlow se a carga de uma viagem **cabe** no ve
 É sempre um **aviso, nunca um bloqueio**. Quando a carga não cabe, o app destaca o problema para você decidir — tirar uma parada, dividir em duas viagens ou trocar o veículo. Você nunca fica travado.
 
 {% hint style="info" %}
-A capacidade é **opcional**. Uma especificação sem capacidade configurada funciona normalmente — o app só não consegue avaliar se a carga cabe (mostra um aviso de "não verificado", e segue). Veja a [escada da frota](frota.md#a-escada-da-frota): você sobe esse degrau quando faz sentido.
+A capacidade é **opcional**. Uma especificação sem capacidade configurada funciona normalmente — o app só não consegue avaliar se a carga cabe (mostra um aviso de "não verificado", e segue). Veja a [escada da frota](frota.md#a-escada-da-frota): você sobe esse degrau quando faz sentido. **A exceção:** se você marcar o veículo como **baú fechado**, aí as dimensões do baú passam a ser **obrigatórias** (veja abaixo).
 {% endhint %}
 
 ## As estratégias de capacidade {#estrategias}
@@ -35,10 +35,10 @@ O cartão a descreve como *"Quantos produtos/kits cabem fisicamente. Avaliada pr
 
 Para configurar, você adiciona **linhas de limite**:
 
-- **Item** — escolhido do seu [catálogo](catalogo-produtos.md): um **produto** avulso ou um **kit**.
-- **Quantidade** — quantas unidades daquele item cabem (um número inteiro, maior que zero).
+- **Item** — escolhido do seu [catálogo](catalogo-produtos.md) numa **busca única**: produtos **e** kits aparecem juntos (como no orçamento), cada um com a **miniatura**, o **nome** e a etiqueta **Produto** ou **Kit**. Você não escolhe a "natureza" antes — busca direto pelo nome e toca no item.
+- **Quantidade** — quantas unidades daquele item cabem (um número inteiro, maior que zero); depois toque em **Adicionar item**.
 
-Você adiciona quantas linhas quiser, uma por item. Não dá para repetir o mesmo item duas vezes — o app avisa *"Este item já foi adicionado."*
+Você adiciona quantas linhas quiser, uma por item. Cada uma entra na lista com a miniatura e o **nome** do item (não o código). Não dá para repetir o mesmo item duas vezes — o app avisa *"Este item já foi adicionado."*
 
 {% hint style="success" %}
 **Por que isso te ajuda:** a contagem é a régua que você já tem na cabeça, agora dentro do sistema. Se "cabem 10 tendas no Toco", o app passa a alertar quando a viagem do dia tenta levar a décima primeira — antes de o motorista descobrir na rampa de carga.
@@ -50,35 +50,31 @@ Você pode deixar a contagem **ativa sem nenhuma linha**. Nesse caso o app mostr
 
 A volumétrica raciocina por **espaço**, não por contagem: ela calcula o **volume útil do baú** e compara com o volume que a carga ocupa.
 
-Você informa as **três medidas do baú em metros** — **comprimento**, **largura** e **altura** — e o LocFlow calcula o **volume (m³)** sozinho (largura × comprimento × altura), mostrando o resultado na hora em "Volume calculado". É **tudo-ou-nada**: ou você preenche as três medidas (todas maiores que zero), ou nenhuma.
+As **medidas do baú** ficam no passo **2 · Carroceria** (não dentro do cartão da estratégia): ao ligar **"Baú fechado"**, aparecem ali os três campos — **comprimento**, **largura** e **altura**, em metros — e o LocFlow calcula o **volume do baú (m³)** sozinho, mostrando o resultado na hora.
 
-O cartão resume: *"Volume do baú (C×L×A) vs. cubagem da carga."* O selo é **CUBAGEM**.
+Por isso o cartão da volumétrica, na seção de estratégias, é **só informativo** (não tem campos): ele mostra o **status** — *"Pronta — volume do baú X m³"* quando as medidas estão cadastradas, ou um lembrete para informá-las na Carroceria. O selo é **CUBAGEM**, e ela é avaliada **automaticamente** quando a carga é mista (não é uma chave que você liga/desliga).
 
 {% hint style="success" %}
 **Por que a volumétrica importa para carga mista:** quando a viagem leva itens variados (mesa, tenda, gerador), contar "quantos de cada" não responde se tudo cabe junto. O volume responde: a soma do que vai ocupando precisa caber no espaço do baú.
 {% endhint %}
 
-## O baú fechado libera a volumétrica {#bau-fechado}
+## O baú fechado e suas dimensões {#bau-fechado}
 
-Aqui está a regra que confunde quem chega na tela: **a estratégia volumétrica só fica disponível se o baú do veículo for fechado.**
+A chave que liga tudo isso é **"Baú fechado"**, no passo **2 · Carroceria** — *"Carroceria fechada e cubável. Exige as dimensões do baú (abaixo) e habilita a estratégia volumétrica."*
 
-Logo acima das estratégias, na seção **Carroceria**, há uma chave **"Baú fechado"** — *"Carroceria fechada e cubável. Habilita a estratégia volumétrica abaixo."* Enquanto ela estiver desligada, o cartão da volumétrica fica **bloqueado**, com o aviso:
+A regra é direta: **um baú fechado é cubável e por isso exige as três medidas cadastradas.** Ao marcar "Baú fechado", os campos de comprimento, largura e altura aparecem logo abaixo e passam a ser **obrigatórios** — sem eles, o app **não deixa salvar** a especificação (*"Baú fechado exige as três medidas…"*). É o que fecha a lacuna do "volume não verificado": se o baú é fechado, o volume tem que estar lá.
 
-> **Disponível apenas para baú fechado.** Esta carroceria não é cubável — ative "Baú fechado" acima para liberar.
-
-O quadro lateral reforça: *"A volumétrica exige **baú fechado** — só carrocerias cubáveis têm volume confiável."*
-
-**Por quê?** Um caminhão de carroceria aberta (uma prancha, um carro-de-boi) não tem um "espaço fechado" com volume confiável: a carga pode passar das laterais, empilhar para cima. Medir C × L × A só faz sentido quando existe uma caixa de verdade — o baú. Por isso o LocFlow só libera o cálculo por volume quando você confirma que o veículo é cubável.
+**E o baú aberto?** Um caminhão de carroceria aberta (uma prancha, um carro-de-boi) não tem um espaço fechado com volume confiável — a carga passa das laterais, empilha para cima. Para esses, você **deixa "Baú fechado" desligado**: não há dimensões a informar e a volumétrica simplesmente **não se aplica** (a contagem continua disponível normalmente).
 
 {% hint style="info" %}
-A **contagem** não depende do baú fechado — você pode usá-la em qualquer veículo. Só a **volumétrica** é que fica gateada pela chave "Baú fechado". E se você desligar a chave depois, a volumétrica é desativada junto.
+A **contagem** não depende do baú — você pode usá-la em qualquer veículo. A diferença entre baú **aberto** e **fechado** é o que decide se a volumétrica entra em cena: aberto → não se aplica; fechado → exige as dimensões e fica pronta.
 {% endhint %}
 
 ```mermaid
 flowchart TD
     A[Carroceria do veiculo] --> B{Bau fechado?}
-    B -- Sim --> C[Volumetrica liberada<br/>informe C x L x A]
-    B -- Nao --> D[Volumetrica bloqueada<br/>so contagem disponivel]
+    B -- Sim --> C[Informe C x L x A<br/>obrigatorio: volumetrica pronta]
+    B -- Nao --> D[Bau aberto<br/>volumetrica nao se aplica; so contagem]
 ```
 
 ## Como o app decide se a carga cabe {#avaliacao}
@@ -89,11 +85,17 @@ Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um v
 2. **Carga de um único item** (só tendas, por exemplo) → entra a **contagem**: ele soma a quantidade total e compara com o limite que você cadastrou para aquele item.
 3. **Carga com itens diferentes** (mistura de produtos/kits) → entra a **volumétrica**: ele soma a cubagem de tudo e compara com o volume do baú.
 
-Em qualquer caso, se a estratégia escolhida **não tem configuração** (item sem limite cadastrado, ou baú sem dimensões), o app **não bloqueia** — só avisa que aquela capacidade "não foi verificada".
+Quando a estratégia escolhida **não tem como verificar**, o app **não bloqueia** — e agora diz o **motivo exato**, em vez de um "não verificado" genérico:
+
+- **Baú aberto** → a volumétrica não se aplica (o veículo não é cubável).
+- **Baú fechado sem dimensões** → falta cadastrar as medidas do baú na especificação (a corrigir).
+- **Sem limite do item** → falta cadastrar a quantidade-limite daquele item para a contagem.
 
 {% hint style="info" %}
 A avaliação olha o **pico** da viagem, não só o fim. Numa rota com várias entregas e retiradas, o ponto mais cheio pode estar no meio do caminho — é esse momento que o app verifica, porque é onde a carga corre risco de não caber.
 {% endhint %}
+
+No planejamento do roteiro, esse raciocínio aparece **didático**: o painel mostra a estratégia escolhida e, ao expandir **"Como chegamos nessa estratégia"**, exibe o passo a passo — *passo 1 contagem (pulada porque a carga é mista), passo 2 volumétrica (o resultado), passo 3 inteligente 3D (ainda não avaliada)*. Assim você entende **por que** aquela estratégia foi usada, não só o resultado.
 
 A mensagem que aparece quando estoura é direta. Pela contagem: *"A carga (12) excede o limite de 10 unidade(s) deste item."* Pela volumétrica: *"O volume da carga excede o volume do baú."*
 

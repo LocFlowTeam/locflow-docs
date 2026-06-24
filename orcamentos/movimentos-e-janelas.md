@@ -131,6 +131,20 @@ Toda saída precisa partir de **algum lugar**: o **galpão de origem**. No bloco
 
 Se você tem **um único galpão** cadastrado, ele já vem escolhido sozinho: não há o que ranquear.
 
+### Cada carga sai de um galpão só
+
+Esta é uma regra importante de entender, porque ela atravessa o orçamento **e** o roteiro: hoje, **a carga de um movimento sai de um único galpão**. O LocFlow ainda **não agrega itens de galpões diferentes** numa mesma saída — cada movimento aponta para um galpão de origem, e é de lá que tudo sai.
+
+Isso se reflete diretamente no [planejamento do roteiro](../logistica/planejando-o-roteiro.md): um roteiro **parte de um único galpão** (o do primeiro movimento que você adiciona). Movimentos que saem de outro galpão não entram no mesmo roteiro — eles formam **outra** rota, com a sua própria saída. É por isso que, ao montar a rota, o app recusa um movimento de outro galpão com *"Sai de outro galpão"*.
+
+{% hint style="info" %}
+**Por que um galpão por vez?** Uma viagem com a equipe carregando, saindo e entregando é, na vida real, **um caminhão partindo de um pátio**. Misturar duas origens na mesma viagem muda a logística (precisaria passar num galpão, carregar mais, e só então rodar). Manter "uma saída, um galpão" deixa o roteiro fiel ao que de fato acontece na rua.
+{% endhint %}
+
+{% hint style="warning" %}
+**Em breve — operação multi-galpão.** Estamos trabalhando para o futuro em que um pedido pode **somar estoque de vários galpões**: o orçamento verifica a disponibilidade somando o que existe em cada galpão e, no roteiro planejado daquele pedido, a rota já nasce sabendo que **sai de um galpão, passa em outro para pegar mais material** e segue para as entregas. Por enquanto, cada carga sai de um galpão só — e roteiros de galpões diferentes são planejados separadamente.
+{% endhint %}
+
 ### Os estados de disponibilidade
 
 Cada galpão aparece com um indicador do que o sistema sabe sobre ele:

@@ -74,10 +74,10 @@ Este é o passo central do planejamento. No mapa, cada pino é um **movimento** 
 * Use o **laço** para cercar uma área no mapa e adicionar de uma vez todos os movimentos ali dentro. Só entram movimentos do mesmo galpão de origem.
 * Pontos no mesmo endereço aparecem agrupados — toque para adicionar ou remover cada um.
 
-À medida que você seleciona, a parte de baixo da tela mostra a **ordem da rota**: a lista numerada das paradas.
+À medida que você seleciona, o painel mostra a rota como uma **linha do tempo**, no jeito de um app de mapas: começa na **Saída do galpão**, desce pelas **paradas numeradas** na ordem definida e fecha no **Retorno ao galpão**. Entre cada ponto aparece a **distância e o tempo** do trecho — inclusive do galpão até a primeira parada e da última de volta ao galpão (depois que você traça a rota real). Cada parada tem uma **alça** para arrastar e reordenar.
 
 {% hint style="info" %}
-O **galpão de saída** é definido pelo primeiro movimento que você adiciona. Movimentos que saem de outro galpão não entram neste roteiro — o app avisa ("Sai de outro galpão"). Roteiros que saem de **múltiplos galpões** chegam em breve.
+**Um roteiro sai de um galpão só.** O **galpão de saída** é definido pelo primeiro movimento que você adiciona; os demais precisam sair do mesmo galpão (o app recusa os de outra origem com *"Sai de outro galpão"*). Movimentos de galpões diferentes viram **roteiros separados**. Entenda o porquê — e a visão futura de operação **multi-galpão** — em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#cada-carga-sai-de-um-galpao-so).
 {% endhint %}
 
 #### Endereços sem localização no mapa
@@ -154,6 +154,8 @@ Em toda ação paga, o app **mostra o quanto pode custar e o seu saldo antes**, 
 ## A carga cabe no veículo?
 
 Se você escolheu um veículo (ou a especificação) no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
+
+O painel aparece **no topo do passo 3** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem pulada porque a carga é mista (3 itens diferentes) → avaliada por volume → cabe"*. Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou item sem limite) e o que fazer. Entenda as estratégias em [Especificações: capacidade](../cadastros/frota-capacidade.md).
 
 {% hint style="success" %}
 Saber antes de sair que a carga não cabe evita a pior cena da operação: o motorista chega no cliente e descobre que faltou item no caminhão. Menos viagem perdida, menos cliente esperando, menos retrabalho.
