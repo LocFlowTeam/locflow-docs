@@ -80,6 +80,8 @@ Este é o passo central do planejamento. No mapa, cada pino é um **movimento** 
 
 À medida que você seleciona, o painel mostra a rota como uma **linha do tempo**, no jeito de um app de mapas: começa na **Saída do galpão**, desce pelas **paradas numeradas** na ordem definida e fecha no **Retorno ao galpão**. Entre cada ponto aparece a **distância e o tempo** do trecho — inclusive do galpão até a primeira parada e da última de volta ao galpão (depois que você traça a rota real). Cada parada tem uma **alça** para arrastar e reordenar.
 
+Cada parada também mostra a sua **carga**: o que a equipe vai **entregar** (descarregar) ou **retirar** (carregar) ali — produto/kit e quantidade —, e dá para ver isso já no **detalhe do movimento** (ao tocar ou passar o mouse no pino), **antes** de incluí-lo na rota. Com base nisso, a linha do tempo projeta a carga **planejada**: a **carga de saída** no galpão (tudo que será entregue), o **saldo a bordo após** cada parada e a **carga de retorno** no fim. Esses números são uma **estimativa do planejamento** (por isso o rótulo *planejado*) — o saldo **real** é o que a execução registra parada a parada.
+
 {% hint style="info" %}
 **Um roteiro sai de um galpão só.** O **galpão de saída** é definido pelo primeiro movimento que você adiciona; os demais precisam sair do mesmo galpão (o app recusa os de outra origem com *"Sai de outro galpão"*). Movimentos de galpões diferentes viram **roteiros separados**. Entenda o porquê — e a visão futura de operação **multi-galpão** — em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#cada-carga-sai-de-um-galpao-so).
 {% endhint %}
