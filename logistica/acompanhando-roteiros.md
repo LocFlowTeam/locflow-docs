@@ -61,10 +61,33 @@ Você também pode usar os **filtros** da lista para recortar por atribuição (
 
 ### Lista ou mapa <a id="lista-ou-mapa"></a>
 
-No alto da lista há um seletor entre **lista** e **mapa**.
+No alto da lista há um seletor entre **lista** e **mapa**. No **mapa**, todos os roteiros que estão na lista aparecem desenhados **ao mesmo tempo**, cada um com o seu **traçado real**, colorido pelo estado:
+
+| Cor do traçado | Estado |
+| --- | --- |
+| **Roxo** | Planejado (ainda vai sair) |
+| **Âmbar** | Em execução (acontecendo agora) |
+| **Verde** | Executado (histórico) |
+
+Cada **galpão** vira um pino de origem. **Tocar num traçado** seleciona o roteiro e abre o **detalhe ao lado** (em telas largas) ou numa **folha que sobe de baixo** (no celular) — a mesma linha do tempo de sempre, com paradas, chegada estimada, custos e pontualidade. Um botão de **tela cheia** amplia o mapa, escondendo o resto para você focar só nele.
+
+{% hint style="success" %}
+**Desenhar os roteiros no mapa não gasta crédito.** O traçado já fica guardado de quando você otimizou/traçou a rota — o mapa só reusa o que está salvo. Roteiros que nunca foram traçados aparecem apenas como o pino do galpão.
+{% endhint %}
+
+#### Acompanhar a execução no mapa <a id="acompanhar-execucao-no-mapa"></a>
+
+Quando você seleciona um roteiro **em execução**, o mapa mostra o andamento na própria linha do trajeto:
+
+* **Linha contínua (verde)** — o trecho que a equipe **já percorreu**.
+* **Linha tracejada** — o que **falta** até o fim.
+* **Ponto roxo** — a **etapa atual** (a próxima parada a cumprir).
+* **Caminhão âmbar** — a **posição do motorista ao vivo**, atualizada enquanto ele dirige (veja abaixo).
+
+Um roteiro **executado** mostra o trajeto completo como histórico.
 
 {% hint style="info" %}
-**Mapa em tempo real (em breve).** A visão de mapa vai mostrar, ao vivo, **onde está quem está executando**, o traçado dos roteiros planejados e o histórico dos executados. Por enquanto, use a visão de **lista** — o acompanhamento ao vivo já funciona dentro de cada roteiro (veja abaixo).
+**De onde vem a posição ao vivo.** Enquanto o motorista executa o roteiro pelo app (na rua), o LocFlow transmite a localização dele — inclusive com o app em segundo plano. Na **primeira vez**, o app pede a permissão de localização com um aviso explicando o uso; o motorista pode recusar. O compartilhamento **para sozinho** quando a execução termina. Sem isso (ou no histórico), o caminhão não aparece — mas a **etapa atual** continua sendo mostrada.
 {% endhint %}
 
 ## A tela do roteiro <a id="a-tela-do-roteiro"></a>
