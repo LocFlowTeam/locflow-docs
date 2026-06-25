@@ -112,9 +112,10 @@ Alguns avisos aparecem numa seção **"Em breve"**, recolhida no fim da lista, c
 | Chegada ao galpão | A equipe retornou ao fim do roteiro | Organização | Informativo | Disponível |
 | Desvio da rota | Uma parada foi pulada durante a execução | Organização | Importante | Disponível |
 | Entrega ou retirada concluída | A equipe concluiu uma parada | Organização | Informativo | Disponível |
-| Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operação logística | Importante | Disponível |
+| Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operadores logísticos | Importante | Disponível |
 | Roteiro ajustado em execução | O operador ajustou um roteiro que já estava em andamento | Responsável pela operação | Crítico | Disponível |
 | Atendimento no balcão (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente no balcão | Organização | Informativo | Disponível |
+| Movimentos do dia sem roteiro | Toda manhã, quando há entregas ou retiradas com data para hoje (ou atrasadas) que ainda não foram incluídas em um roteiro | Operadores logísticos | Importante | Disponível |
 
 Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o condutor não recebe a mudança crua) em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
 
