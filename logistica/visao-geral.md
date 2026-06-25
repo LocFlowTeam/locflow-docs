@@ -77,6 +77,32 @@ Entre as pontas internas acontece a **logística externa** — o que vai à rua:
 
 A execução em campo dessas fases acontece no [roteiro pelo aplicativo](execucao-em-campo.md).
 
+## Os números no menu
+
+No menu, ao lado de cada etapa da logística, aparece um **número pequeno** — é a quantidade de itens **esperando naquela fila**. Ele existe para você enxergar, de relance, a carga do dia sem abrir cada tela, e **atualiza em tempo real** conforme a equipe trabalha.
+
+| No menu | O número conta | Cor |
+| --- | --- | --- |
+| **Balcão** | Atendimentos esperando no balcão — clientes que vão **retirar ou devolver** os itens presencialmente no galpão. | Roxo |
+| **Separação** | Pedidos aguardando **separação** no galpão (*A separar*). | Roxo |
+| **Conferência** | Pedidos aguardando **conferência** na volta (*A conferir*) — só na locação. | Roxo |
+| **Roteirização** | Movimentos (entregas/retiradas da equipe) que ainda **faltam planejar** em um roteiro. | Roxo — ou **âmbar** quando há algo para **hoje** (ou atrasado) |
+
+**O que a cor diz:**
+
+* 🟣 **Roxo** — há fila, mas **nada pressionando pela data**. Cuide quando for melhor para você.
+* 🟠 **Âmbar** — aparece na **Roteirização** quando há ao menos um movimento **a planejar com data para hoje (ou já atrasada)**. É o sinal de "planeje logo" — o mesmo que dispara o aviso [Movimentos do dia sem roteiro](../configuracoes/central-de-notificacoes.md).
+
+{% hint style="info" %}
+**A Roteirização "cai" quando você planeja.** Esse número conta só o que **falta planejar**. Assim que você inclui um movimento em um roteiro, ele **sai dessa contagem** — já tem rota, agora aguarda a **saída** (a execução em campo). Por isso o número diminui à medida que você organiza o dia, em vez de continuar mostrando o que já foi planejado.
+{% endhint %}
+
+**Bom saber:**
+
+* O número **só aparece quando há item esperando** — fila vazia, sem número.
+* Passou de 9, mostra **9+**.
+* Você só vê o número das filas em que **atua**: quem cuida só do balcão não vê a contagem de roteirização, e quem planeja rotas não vê a do balcão. Isso segue as [permissões de cada pessoa](../configuracoes/colaboradores-e-acessos.md).
+
 ## Locação x venda: o que muda nas fases
 
 A grande diferença entre **alugar** e **vender** está em quantas fases o pedido percorre — porque na venda o item **sai em definitivo** e na locação ele **volta**.
