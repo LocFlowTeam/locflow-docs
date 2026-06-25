@@ -161,7 +161,7 @@ Ao reordenar ou mudar as paradas, o traçado desenhado fica **desatualizado** e 
 
 No passo da ordenação há um botão **Trânsito** (com ícone de velocímetro). Ligá-lo pede o **traçado enriquecido**: além do caminho real, o app mostra a rota **colorida por trânsito** — verde onde flui, amarelo e vermelho onde trava — e estima o **pedágio** do percurso. Com o Trânsito ligado, o botão de traçar passa a se chamar **"Traçar com trânsito"** — é por ali que você enriquece a rota otimizada com as cores e o pedágio.
 
-#### O resumo "Ida e volta"
+#### O resumo "Ida e volta" {#o-resumo-ida-e-volta}
 
 Logo acima da sequência fica o card **"Ida e volta"**, que reúne tudo o que a otimização trouxe — e **fica fixo** ali (não some quando você fecha nada):
 

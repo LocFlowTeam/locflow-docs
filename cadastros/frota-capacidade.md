@@ -77,6 +77,28 @@ flowchart TD
     B -- Nao --> D[Bau aberto<br/>volumetrica nao se aplica; so contagem]
 ```
 
+## Custo operacional: peso e combustível {#custo-operacional}
+
+A especificação tem um passo **opcional** chamado **"Custo operacional"** — separado dos demais porque o cadastro já é longo, e **tudo nele é opcional**. Ele alimenta duas coisas no [planejamento do roteiro](../logistica/planejando-o-roteiro.md): a **capacidade por peso** e a **estimativa de combustível**.
+
+| Campo | Para que serve |
+| --- | --- |
+| **Peso máximo de carga (kg)** | Mais uma régua de capacidade: o app avisa quando a carga **ultrapassa o peso** que o veículo aguenta — mesmo que caiba em volume. |
+| **Consumo (km/L)** | Quantos quilômetros o veículo faz por litro. |
+| **Preço do combustível (R$/L)** | Quanto custa o litro abastecido. |
+
+### Capacidade por peso
+
+O **peso máximo** funciona como as outras estratégias, mas pela **balança**: a otimização inteligente **pula** uma parada cuja carga faria o veículo passar do peso (*"acima do peso máximo do veículo"*), e o aviso de capacidade do roteiro também olha o **pico de peso** ao longo da rota. É o caso clássico de carga **pesada e pequena** (sacos de cimento, peças de ferro): cabe no baú de sobra, mas estoura o eixo.
+
+### Estimativa de combustível
+
+**Consumo e preço andam juntos** — informe os dois (sozinhos, um não vira custo). Com eles, o app calcula o **custo de combustível por km** e, no planejamento, mostra o **custo estimado da rota** (no card *"Ida e volta"* e no roteiro salvo). Ao preencher, o próprio cadastro já mostra uma **prévia** do custo por km.
+
+{% hint style="info" %}
+São **estimativas de planejamento**, baseadas no consumo médio que você declarou — servem para comparar rotas e decidir, não são um valor cobrado. Veja onde aparecem em [Planejando o roteiro](../logistica/planejando-o-roteiro.md#o-resumo-ida-e-volta).
+{% endhint %}
+
 ## Como o app decide se a carga cabe {#avaliacao}
 
 Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um veículo (ou só a especificação) escolhido, o LocFlow avalia a capacidade automaticamente. Vale entender o que ele faz por baixo:
