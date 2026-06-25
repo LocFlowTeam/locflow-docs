@@ -1,6 +1,6 @@
 ---
 icon: user-gear
-description: Sua conta de login, as preferências pessoais de notificação (som e pop-up, por aparelho) e como excluir sua conta com segurança.
+description: Sua conta de login, a foto de perfil, as preferências pessoais de notificação (som e pop-up, por aparelho) e como excluir sua conta com segurança.
 ---
 
 # Minha conta e preferências
@@ -42,6 +42,31 @@ Se você entra por **e-mail e senha**, dá para mudar os dois aqui mesmo:
 ### Sair da conta
 
 Em **Sessão**, o botão **Sair** encerra a sessão **neste dispositivo** — útil em um aparelho compartilhado. Você volta a entrar normalmente da próxima vez. Sair **não** apaga nada: é só desconectar.
+
+***
+
+<a id="foto-de-perfil"></a>
+
+## Foto de perfil
+
+No topo de **Minha conta** você pode colocar uma **foto sua**. Ela é **opcional** e **pessoal** — assim como a empresa tem o **logotipo** dela, você tem o **seu rosto** no sistema. Não muda nada da operação; serve para que a equipe te reconheça de relance.
+
+**Onde ela aparece:** como o seu **avatar** nas telas em que o LocFlow mostra pessoas — por exemplo, na **Equipe da operação** ao montar um roteiro (quem conduz e quem acompanha). Em vez de um círculo genérico, aparece a sua cara.
+
+{% hint style="info" %}
+**Sem foto? Sem problema.** Por padrão você entra **sem foto**, e o LocFlow mostra as suas **iniciais** num círculo colorido. A foto é um capricho a mais — coloque quando quiser.
+{% endhint %}
+
+### Como adicionar, trocar ou remover
+
+* **Adicionar / Trocar** — toque em **Adicionar foto** (ou **Trocar foto**), escolha uma imagem da galeria e **ajuste o quadrado** (a foto fica **redonda**, então centralize o rosto). Pronto: ela já vale em todo lugar.
+* **Remover** — toque em **Remover** e confirme. Você volta a aparecer com as **iniciais** até colocar uma nova.
+
+{% hint style="success" %}
+**Dica de imagem:** use uma foto **quadrada** (proporção 1:1), em **PNG** ou **JPG**, de até **2 MB**. Como ela é exibida em círculo, um rosto centralizado fica melhor do que uma imagem de corpo inteiro.
+{% endhint %}
+
+A foto é **sua** e segue **você** (sua conta), não a empresa — cada pessoa da equipe coloca a própria. Quem ainda não colocou continua aparecendo pelas iniciais, sem prejuízo nenhum.
 
 ***
 
@@ -96,6 +121,7 @@ Essa é a confusão mais comum — e a regra é simples: **conta** é você, **o
 | É **seu** (usuário) | É da **empresa** (organização) |
 | --- | --- |
 | Seu login (e-mail/senha ou Google) | Nome, e-mail e documento (CPF/CNPJ) da empresa |
+| Sua **foto de perfil** (avatar) | O **logotipo** da empresa |
 | Suas preferências (som, pop-up) | A equipe e quem acessa o quê |
 | Sair / excluir **sua** conta | Plano, faturas, integrações, modelos |
 
@@ -130,6 +156,7 @@ Para evitar exclusão por engano, é preciso **digitar uma frase de confirmaçã
 
 ## Situações reais
 
+* **Quero que a equipe me reconheça.** Coloque uma **foto de perfil** em Minha conta — ela passa a aparecer como seu avatar na **Equipe da operação** dos roteiros. Sem foto, aparecem suas iniciais.
 * **Troquei de celular.** Suas preferências (som, pop-up) são **por aparelho** — no novo celular, ligue de novo o que quiser. O login continua o mesmo.
 * **Mudei meu e-mail de contato.** Se você entra por e-mail e senha, troque em **Alterar e-mail de login** e **confirme** pelo link que chega na nova caixa. Se entra pelo Google, troque na sua conta Google.
 * **Vou sair da empresa.** Você pode **excluir sua conta** — a empresa e os dados dela permanecem. Se você for o único acesso, **conceda acesso a alguém antes**.
