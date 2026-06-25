@@ -1,6 +1,6 @@
 ---
 icon: sliders
-description: Um canal define quem recebe um aviso (a pool) e como ele chega (todos ou rodízio). Crie, edite e reaproveite canais entre vários avisos.
+description: Um canal define quem recebe um aviso (a pool) e como ele chega (todo o grupo ou rodízio). Crie, edite e reaproveite canais entre vários avisos.
 ---
 
 # Canais de notificação
@@ -8,7 +8,7 @@ description: Um canal define quem recebe um aviso (a pool) e como ele chega (tod
 Em vez de dizer, em cada aviso, "quem recebe isto", você configura **canais** e os **reaproveita**. Um **canal** responde a duas perguntas:
 
 * **Quem recebe?** — a **pool** (de onde saem os destinatários).
-* **Como chega?** — **Todos** (todo mundo da pool) ou **Rodízio** (um por vez, em revezamento).
+* **Como chega?** — **Todo o grupo** (todo mundo da pool) ou **Rodízio** (um por vez, em revezamento).
 
 Aí, em cada aviso da [Central de Notificações](central-de-notificacoes.md), você só **aponta para um canal**. Mudou o canal? Todos os avisos que o usam acompanham — sem reconfigurar um por um.
 
@@ -25,7 +25,7 @@ flowchart LR
     A[Aviso dispara] --> B[Canal do aviso]
     B --> C[Pool: quem se encaixa agora]
     C --> D{Como entrega?}
-    D -->|Todos| E[Todo mundo da pool recebe]
+    D -->|Todo o grupo| E[Todo mundo da pool recebe]
     D -->|Rodízio| F[A próxima pessoa da fila recebe]
 ```
 
@@ -45,6 +45,7 @@ Só quem tem a **competência** marcada entra na pool. As competências disponí
 
 * **Vender orçamentos**
 * **Operar logística**
+* **Atendimento no balcão**
 * **Conferência**
 * **Separação**
 * **Dirigir veículos**
@@ -63,13 +64,13 @@ A pool **Cliente** mira o contato do pedido (por exemplo, lembretes via WhatsApp
 A pool **Cliente** está **em breve**: depende de recursos de mensagem ao cliente que ainda estão chegando. Por ora, monte canais com **organização**, **competência** e **responsável pela operação**.
 {% endhint %}
 
-## Como entrega: Todos ou Rodízio <a href="#como-entrega-todos-ou-rodizio" id="como-entrega-todos-ou-rodizio"></a>
+## Como entrega: Todo o grupo ou Rodízio <a href="#como-entrega-todos-ou-rodizio" id="como-entrega-todos-ou-rodizio"></a>
 
 Definida a pool, escolha **como** ela vira destinatário. É uma escolha **única** por canal.
 
-### Todos <a href="#todos" id="todos"></a>
+### Todo o grupo <a href="#todos" id="todos"></a>
 
-*"Envia para todos."* Todo mundo da pool recebe o mesmo aviso. Use quando o aviso é informação que **todos do grupo** devem ter.
+*"Envia para todo o grupo."* Todo mundo da pool recebe o mesmo aviso. Use quando o aviso é informação que **todos daquele grupo** devem ter. (Repare: é "todo o grupo **deste canal**" — não necessariamente a organização inteira; depende de qual é a pool.)
 
 ### Rodízio <a href="#rodizio" id="rodizio"></a>
 
@@ -87,8 +88,10 @@ Toda organização já vem com canais prontos — você não monta tudo do zero:
 
 | Canal | Quem recebe | Como entrega |
 | --- | --- | --- |
-| **Organização** | Toda a organização | Todos |
+| **Organização** | Toda a organização | Todo o grupo |
 | **Responsável pela operação** | Quem está por trás da operação (ex.: quem executa a rota) | — |
+| **Operadores logísticos** | Competência *Operar logística* | Todo o grupo |
+| **Responsável pelo balcão** | Competência *Atendimento no balcão* | Todo o grupo |
 | **Vendedores (rodízio)** | Competência *Vender orçamentos* | Rodízio |
 
 Na lista, um canal padrão traz o selo **"Recebe por padrão"**. Você pode **editar a pool e o roteamento** dele e reaproveitá-lo nos avisos — mas **não pode removê-lo**, porque ele é a opção que os avisos usam quando você não escolhe outra.
@@ -103,7 +106,7 @@ Na lista de canais, toque no **+** para criar um. Preencha:
 
 1. **Nome** — como você reconhece o canal (ex.: *Vendedores (rodízio)*).
 2. **Descrição** (opcional) — o que este canal faz.
-3. **Como entrega** — **Todos** ou **Rodízio**.
+3. **Como entrega** — **Todo o grupo** ou **Rodízio**.
 4. **Quem recebe** — marque uma ou mais pools (e, em *Por competência*, marque as competências).
 5. **Ativo** — deixe ligado para o canal ficar disponível para uso.
 
