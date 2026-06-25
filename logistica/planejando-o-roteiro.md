@@ -110,6 +110,10 @@ Com base nisso, a linha do tempo projeta a carga **planejada**: a **carga de sa�
 
 Um movimento só aparece como pino se o endereço dele já tiver **coordenadas**. Quando algum não tem, o app avisa no topo (**"X sem localização no mapa"**) e oferece **Resolver** — ele busca as coordenadas pelo endereço. Cada endereço novo resolvido consome **1 crédito** (movimentos no mesmo endereço contam como um só; endereços já resolvidos antes não custam nada).
 
+{% hint style="warning" %}
+**Resolver as localizações vem primeiro.** As ações de mapa — **otimização inteligente**, **traçar rota real** e **trânsito/pedágio** — só funcionam com todas as paradas localizadas. Enquanto houver alguma parada sem localização, o app **não otimiza nem traça** e leva você a **Resolver** antes. Assim o custo do mapa fica transparente: você paga o **geocode** num passo (e vê quantos endereços novos são), e só depois usa as ações pagas sobre dados já resolvidos — em vez de tudo junto numa conta só. (A **otimização rápida**, que ordena pelas janelas sem usar o mapa, funciona mesmo sem localização.)
+{% endhint %}
+
 {% hint style="info" %}
 Resolver localização usa o mapa por trás do app e por isso consome créditos. Endereços que você já resolveu ficam guardados — da próxima vez, saem de graça. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 {% endhint %}
