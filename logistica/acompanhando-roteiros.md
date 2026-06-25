@@ -85,7 +85,9 @@ No topo da tela ficam o **resumo da viagem** e, quando há o que fazer, os botõ
 
 ### Resumo da viagem <a id="resumo-da-viagem"></a>
 
-Um cartão de cabeçalho concentra os dados da viagem: o **galpão-base**, a **previsão de saída**, a **duração máxima** e o número de **movimentos**, e o **veículo** (ou "Veículo não definido", quando ficou em aberto no planejamento). Se a carga prevista **não couber** no veículo escolhido, aparece aqui um **aviso de capacidade**.
+Um cartão de cabeçalho concentra os dados da viagem: o **galpão-base**, a **previsão de saída**, a **duração máxima** e o número de **movimentos**, e o **veículo** (ou "Veículo não definido", quando ficou em aberto no planejamento). Se a carga prevista **não couber** no veículo escolhido — por volume **ou por peso** —, aparece aqui um **aviso de capacidade**.
+
+Quando o roteiro foi traçado/otimizado, o cabeçalho também traz as **métricas da rota** — **distância**, **duração** e **paradas** — e, numa segunda linha, o que a otimização inteligente calculou: **ocupação** do veículo no pico, **retorno previsto** e **custo de combustível** estimado. São os mesmos números que apareceram no planejamento, agora **guardados com o roteiro** (não somem, e não custam crédito de novo).
 
 Quando a viagem já tem execução, o resumo também mostra **quem conduziu**, **a equipe presente**, a **duração total** e o status — *Em andamento* ou *Concluído*.
 
@@ -108,6 +110,7 @@ Para cada parada, a linha do tempo traz:
 
 * O **endereço** (de forma curta).
 * Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada.
+* A **chegada estimada** (*"chega ~HH:MM"*) calculada pela otimização, enquanto a parada ainda **não foi executada** — com a cor de pontualidade (verde no horário, âmbar adiantado, vermelho atrasado). Assim que a equipe registra o desfecho, esse previsto dá lugar à **hora real**.
 * A **carga de entrega** e a **carga de retirada** daquele ponto (abríveis, com foto e quantidade).
 
 {% hint style="info" %}
