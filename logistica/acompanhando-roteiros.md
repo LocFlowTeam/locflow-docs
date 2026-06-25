@@ -87,7 +87,7 @@ No topo da tela ficam o **resumo da viagem** e, quando há o que fazer, os botõ
 
 Um cartão de cabeçalho concentra os dados da viagem: o **galpão-base**, a **previsão de saída**, a **duração máxima** e o número de **movimentos**, e o **veículo** (ou "Veículo não definido", quando ficou em aberto no planejamento). Se a carga prevista **não couber** no veículo escolhido — por volume **ou por peso** —, aparece aqui um **aviso de capacidade**.
 
-Quando o roteiro foi traçado/otimizado, o cabeçalho também traz as **métricas da rota** — **distância**, **duração** e **paradas** — e, numa segunda linha, o que a otimização inteligente calculou: **ocupação** do veículo no pico, **retorno previsto** e **custo de combustível** estimado. São os mesmos números que apareceram no planejamento, agora **guardados com o roteiro** (não somem, e não custam crédito de novo).
+Quando o roteiro foi traçado/otimizado, o cabeçalho também traz as **métricas da rota** — **distância**, **duração** e **paradas** —, depois a **ocupação** do veículo no pico e o **retorno previsto**, e uma linha de **custos previstos**: **combustível**, **pedágio** e o **gasto previsto** (a soma dos dois — quanto a viagem deve custar). São os mesmos números que apareceram no planejamento, agora **guardados com o roteiro**: não somem e **não custam crédito de novo** para você consultar.
 
 Quando a viagem já tem execução, o resumo também mostra **quem conduziu**, **a equipe presente**, a **duração total** e o status — *Em andamento* ou *Concluído*.
 
@@ -110,7 +110,7 @@ Para cada parada, a linha do tempo traz:
 
 * O **endereço** (de forma curta).
 * Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada.
-* A **chegada estimada** (*"chega ~HH:MM"*) calculada pela otimização, enquanto a parada ainda **não foi executada** — com a cor de pontualidade (verde no horário, âmbar adiantado, vermelho atrasado). Assim que a equipe registra o desfecho, esse previsto dá lugar à **hora real**.
+* A **chegada estimada** (*"chega ~HH:MM"*) calculada pela otimização, enquanto a parada ainda **não foi executada**. Quando essa previsão **cai fora da janela** combinada, o app já avisa ali — *"Deve atrasar"* (âmbar) ou *"Deve atrasar muito"* (vermelho) —, para você ver o problema **antes de a equipe sair**. Assim que a equipe registra o desfecho, esse previsto dá lugar à **hora real**, com a [pontualidade](#pontualidade-chegou-no-horario) da chegada.
 * A **carga de entrega** e a **carga de retirada** daquele ponto (abríveis, com foto e quantidade).
 
 {% hint style="info" %}
@@ -129,6 +129,32 @@ Quando a equipe registra uma parada em campo, o **desfecho** aparece aqui, no ac
 
 {% hint style="success" %}
 **A comprovação fica guardada aqui.** Semanas depois, se um cliente disser "não recebi" ou "já chegou quebrado", a foto ou o vídeo do momento — com hora e local — encerra a conversa. Entenda o que dá para exigir em [Execução em campo](execucao-em-campo.md).
+{% endhint %}
+
+### Pontualidade: chegou no horário? <a id="pontualidade-chegou-no-horario"></a>
+
+Quando uma parada é concluída, o LocFlow compara o **horário real** da chegada com o que estava **previsto** e mostra um **selo de pontualidade** no desfecho: **No horário**, **Adiantado**, **Atrasado** ou **Muito atrasado**.
+
+O importante é **com o que** comparamos — a regra foi feita para ser **justa com o motorista**:
+
+* **Quando a rota foi otimizada ou traçada** (existe uma chegada prevista pelo mapa), a pontualidade olha a **diferença entre a chegada real e essa previsão**. Ou seja, mede o que **dependeu da execução** — não a janela combinada com o cliente.
+* **Quando não houve otimização** (você não usou o mapa), não há previsão para comparar: aí o selo usa a **janela de horário** combinada.
+
+{% hint style="success" %}
+**Por que nem sempre comparamos com a janela do cliente?** Porque às vezes o **próprio plano já nascia atrasado**: se as paradas anteriores e as distâncias empurram a chegada para depois da janela, o motorista vai chegar atrasado **mesmo fazendo tudo certo**. Penalizá-lo por isso seria injusto — o atraso foi do **planejamento**, não dele. Nesses casos o desfecho traz a nota *"Atraso já previsto no plano"*: a chegada bateu com o previsto, então conta como **no horário**.
+{% endhint %}
+
+A diferença em relação ao previsto vira o selo assim:
+
+| Diferença para o previsto | Como conta |
+| --- | --- |
+| Até **15 min** | **No horário** |
+| Entre **15 e 45 min** depois | **Atrasado** — um desvio tolerável, não um problema grave |
+| Mais de **45 min** depois | **Muito atrasado** — aí sim houve um desvio relevante na execução |
+| **Bem antes** do previsto | **Adiantado** |
+
+{% hint style="info" %}
+Esses limiares (**15** e **45** minutos) são **fixos** nesta versão — valem igual para toda a operação. No futuro, poderão virar **parâmetros ajustáveis** por empresa nos [motores operacionais](../configuracoes/motores-operacionais.md), para quem precisa de uma régua mais rígida ou mais folgada. Por ora, são os mesmos para todos.
 {% endhint %}
 
 ### Saldo no veículo <a id="saldo-no-veiculo"></a>

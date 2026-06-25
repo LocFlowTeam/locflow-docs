@@ -139,7 +139,7 @@ Toque em **Otimizar** e escolha **Rápida (grátis)**. O app reordena as paradas
 
 A opção **Inteligente** vai além: usa o mapa real para calcular a **melhor sequência pelo trajeto** (não só pelas janelas), **desenha a rota no mapa** e calcula os **ETAs** (a previsão de horário de chegada em cada parada). Ela tenta também **chegar com a maior antecedência possível** dentro de cada janela — para a equipe ter folga, não chegar "em cima da hora".
 
-Quando termina, o resultado **aparece na própria tela dos movimentos**: as paradas se **reorganizam com uma animação** e cada uma passa a mostrar a **chegada estimada** — um selo *"chega ~HH:MM"* que fica **verde** no horário, **âmbar** se adiantado e **vermelho** se atrasado em relação à janela. Não é um quadro que some: a informação **fica nos cards** para você consultar quando quiser.
+Quando termina, o resultado **aparece na própria tela dos movimentos**: as paradas se **reorganizam com uma animação** e cada uma passa a mostrar a **chegada estimada** — um selo *"chega ~HH:MM"*. Quando essa previsão cai **fora da janela** combinada, o app já marca ali *"Deve atrasar"* (âmbar) ou *"Deve atrasar muito"* (vermelho): você vê, **ainda no planejamento**, quais paradas tendem a furar o horário e pode reagir antes de sair. Não é um quadro que some: a informação **fica nos cards** para você consultar quando quiser.
 
 Se alguma parada **não couber** no tempo, nas janelas ou na **capacidade** do veículo, o app avisa ("X parada(s) não couberam") logo na sequência e a deixa ao final da lista, para você decidir o que fazer.
 
@@ -154,7 +154,7 @@ A otimização inteligente **cobra por parada**. Antes de confirmar, o app exibe
 {% endhint %}
 
 {% hint style="warning" %}
-**Um roteiro é uma viagem só — até cerca de 48 horas.** A otimização inteligente cobre uma jornada contínua; ela **não** roteiriza paradas espalhadas por vários dias. Se você selecionar, sem querer, um movimento com janela **muito distante** (uma janela de hoje e outra da semana que vem, por exemplo), o app **não otimiza** e avisa: *"As janelas cobrem ~X dias; um roteiro vai até 48h. Revise as janelas ou separe em roteiros."* É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros**.
+**Um roteiro é uma viagem só — até cerca de 48 horas.** Um roteiro cobre uma jornada contínua; ele **não** abrange paradas espalhadas por vários dias. Por isso o app barra isso **já na seleção**: se você tentar **adicionar** um movimento com janela **muito distante** (uma de hoje e outra da semana que vem, por exemplo), ele **avisa na hora e não inclui a parada** — *"Fora do horizonte do roteiro: com esta parada as janelas cobrem ~X dias; um roteiro vai até 48h."* As ações de mapa (**otimizar** e **traçar**) reforçam o mesmo limite. É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros**.
 {% endhint %}
 
 {% hint style="info" %}
