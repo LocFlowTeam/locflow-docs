@@ -105,6 +105,20 @@ Cada fato traz um **ícone** que diz **quem é responsável** pelo transporte. O
 
 A cronologia de um aluguel é sempre **entrega → evento → retirada**; uma [venda](../conceitos/locacao-e-venda.md) tem **só a entrega** (o item sai em definitivo, sem retirada).
 
+## Adaptado à sua forma de operação <a id="adaptado-a-operacao"></a>
+
+O calendário **fala a língua da sua operação**. Conforme a **Forma de operação** que você definiu no [Motor de Logística](../configuracoes/motores-operacionais.md), ele destaca só o que faz sentido:
+
+* **Só no balcão** (o cliente retira e devolve no galpão): não há rota a planejar, então o calendário deixa de falar em "roteiros" e passa a falar em **atendimentos no balcão** — a estimativa de **retirada** e de **devolução**, em qual galpão e a que horas. A legenda esconde o **caminhão** (não há transporte da equipe) e o **balcão** vira o protagonista.
+* **Só pela equipe** (entrega e retirada na rota): a legenda esconde o **galpão** (o cliente não vem até você); o foco fica nos roteiros.
+* **Mista**: tudo aparece — caminhão e balcão —, porque você usa as duas formas.
+
+{% hint style="success" %}
+**Quer ver tudo mesmo assim?** Na **legenda** do calendário há um **olho** ("Ver toda a operação"). Toque nele para revelar a operação **completa** — caminhão e balcão juntos —, como se naquele momento você fosse uma operação mista. É a [filosofia do LocFlow](../primeiros-passos/filosofia.md) na prática: a tela abstrai o que você não usa, mas a operação inteira fica **a um toque**.
+{% endhint %}
+
+Em todos os casos, os **dados não mudam** — muda só o **destaque** e o **vocabulário**. Um atendimento de balcão sempre traz o galpão e o horário; um movimento de rota sempre traz quem é responsável pelo transporte.
+
 ## A janela: combinada × estimada <a id="janela-combinada-x-estimada"></a>
 
 Além da cor (o nível) e do ícone (o responsável), o **traço** de cada janela de horário diz se aquele intervalo já foi **fechado com o cliente**:

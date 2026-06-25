@@ -32,6 +32,20 @@ Mas quem está começando — ou quem tem uma entrega de última hora — **não
 **Planeje quando der; despache quando precisar.** O sistema incentiva o planejamento porque ele organiza melhor a sua operação — mas a entrega de última hora nunca fica esperando o "jeito certo".
 {% endhint %}
 
+## A interface mostra só o que você usa — e revela o resto a um toque
+
+Quando você diz ao LocFlow **como costuma operar** — no [Motor de Logística](../configuracoes/motores-operacionais.md), em **Forma de operação**: só no balcão, só pela equipe ou as duas —, o sistema **enxuga a interface** para o seu jeito de trabalhar:
+
+* **Só no balcão** (o cliente retira e devolve no galpão): o menu esconde **Frota** e **Roteirização**, e o calendário passa a falar em **retirada e devolução no balcão** — não em roteiros.
+* **Só pela equipe** (entrega e retirada na rota): o **Balcão** sai do menu, e o calendário foca nos roteiros.
+* **Mista**: tudo aparece, porque você usa as duas formas.
+
+O mesmo vale para a **pré-reserva**: se a sua operação não usa o passo de pré-reserva, ele some do funil de vendas — na lista de orçamentos e no painel. E para a **logística interna**: sem separação ou conferência ligadas, esses itens não ocupam o menu.
+
+{% hint style="success" %}
+**Esconder não é remover.** Em cada tela onde algo foi escondido, há um **olho** discreto: toque nele e a operação **inteira** reaparece — como se, só naquele momento, você passasse a operar de forma mista. É a mesma filosofia de novo, agora na própria tela: ela **abstrai** o que você não usa, mas **flexibiliza** na hora em que você precisar do resto. Você configura o fácil; a operação completa fica **a um toque**.
+{% endhint %}
+
 ## Uma operação visível de ponta a ponta
 
 Conforme a locadora cresce, a pergunta deixa de ser "como faço uma entrega?" e passa a ser **"o que está acontecendo com este pedido agora?"**.
