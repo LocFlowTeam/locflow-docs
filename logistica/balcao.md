@@ -37,9 +37,31 @@ Em ambos os casos, o sistema registra **quando o cliente chegou** e o **tempo de
 
 ## Quem opera o balcão
 
-O balcão reaproveita os papéis que já cuidam do galpão — **não há um papel novo a configurar**. Quem confirma a **retirada** pelo cliente é o **Separador**: é ele que controla o que **sai** do galpão, só que agora quem leva é o cliente, não a equipe. Quem confirma a **devolução** pelo cliente é o **Conferente**: é ele que cuida do que **volta**, agora trazido ao balcão em vez de coletado em rota. Quem não tem nenhuma dessas competências — o motorista, por exemplo — **não vê** a fila.
+Há dois jeitos de cobrir o balcão, e você escolhe conforme a sua equipe:
 
-Os papéis já vêm prontos no LocFlow; basta escolhê-los ao convidar a pessoa. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
+* **Pelos papéis do galpão que você já usa.** Quem confirma a **retirada** pelo cliente é o **Separador** — controla o que **sai** do galpão, só que agora quem leva é o cliente. Quem confirma a **devolução** é o **Conferente** — cuida do que **volta**, trazido ao balcão em vez de coletado em rota. É o reaproveitamento natural de quem já trabalha as filas de [separação](separacao.md) e [conferência](conferencia.md).
+* **Por um papel dedicado: o Operador de Balcão.** Para quem cuida do atendimento presencial das **duas pontas** — **entrega e recebe** do cliente na loja física —, há o papel **Operador de Balcão**. Além de confirmar um a um, é ele (junto do **Superadmin**) quem pode **registrar em lote** (veja a seguir).
+
+Quem não tem nenhuma dessas competências — o motorista, por exemplo — **não vê** a fila. Os papéis já vêm prontos no LocFlow; basta escolhê-los ao convidar a pessoa. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
+
+## Registrar tudo em lote
+
+Quando a fila **acumula** — vários clientes passaram pelo balcão e ninguém deu conta de confirmar um a um na hora —, dá para **registrar tudo de uma vez**. No **rodapé da fila**, quem tem permissão encontra o atalho **"Registrar tudo em lote"**.
+
+A tela de lote lista os atendimentos pendentes, **todos já marcados**. Daí você:
+
+1. **Desmarca** o que ainda não foi entregue/devolvido — o que ficar marcado será confirmado.
+2. Anexa **evidência** onde quiser — é **opcional** no lote (toque em *"Anexar evidência"*).
+3. Escreve, se quiser, um **motivo** do registro em massa (fica no histórico).
+4. Toca em **Registrar** — e todos os marcados avançam de uma vez.
+
+{% hint style="info" %}
+**Sucesso parcial: um item problemático não trava os outros.** Se algum atendimento já tinha sido confirmado por outra pessoa enquanto isso (ou deixou de ser um caso de balcão), o LocFlow **pula só aquele** e confirma o resto — avisando quais foram pulados. Você reconcilia depois, sem perder os demais.
+{% endhint %}
+
+{% hint style="warning" %}
+**O lote é "menos rígido" — por isso é restrito.** Como ele confirma vários de uma vez e **dispensa a captura de evidência**, é uma capacidade **sensível**: só o **Operador de Balcão** e o **Superadmin** a têm. Quem confirma um a um (Separador, Conferente) segue com a comprovação que a sua política exigir. Use o lote para pôr a fila **em dia**; para o registro item a item, com prova, atenda pela fila normal.
+{% endhint %}
 
 ## Comprovação no balcão
 
@@ -53,11 +75,13 @@ Se a sua operação tem **mais de um galpão**, cada linha da fila traz a **etiq
 
 Quando você marca no orçamento que o cliente **retira** ou **devolve no galpão** (veja [Movimentos e janelas](../orcamentos/movimentos-e-janelas.md)), o atendimento de balcão aparece sozinho. Não é um liga-desliga — é consequência de como o cliente combina receber. O que muda com o porte é **quanto controle** você põe em volta.
 
+Se a sua operação é **só por rota**, dá para sumir o Balcão do menu na [forma de operação](../configuracoes/motores-operacionais.md#motor-de-logistica) do Motor de Logística — e o contrário, **só balcão**, já deixa todo orçamento no balcão e esconde a roteirização. É só simplificação: nada bloqueia a exceção.
+
 | Porte | Como você usa o balcão |
 | --- | --- |
 | **Começando** | **Direto.** O cliente busca ou devolve, você confirma em um toque. Sem prova, sem burocracia — a retirada acontece em minutos. |
 | **Crescendo** | **Com prova.** Itens mais caros começam a sair pelo balcão; você liga a comprovação (foto/vídeo) para ter o registro de quem levou e de como voltou. |
-| **Estruturado** | **Vários galpões, cada papel na sua vez.** Cada balcão tem sua fila filtrada; o **Separador** confirma as retiradas e o **Conferente** as devoluções — os mesmos papéis da separação e da conferência, sem nada novo a criar. |
+| **Estruturado** | **Vários galpões, cada papel na sua vez.** Cada balcão tem sua fila filtrada; o **Separador** confirma as retiradas e o **Conferente** as devoluções, ou um **Operador de Balcão** cobre as duas pontas. No pico, o **registro em lote** põe a fila em dia de uma vez. |
 
 {% hint style="info" %}
 Antes de o cliente chegar, você pode passar o material pela [separação](separacao.md) — assim a retirada no balcão é só entregar o que já está embalado e conferido. Na locação, o que volta pelo balcão ainda pode seguir para a [conferência](conferencia.md), se você a tiver ligado.
@@ -68,6 +92,7 @@ Antes de o cliente chegar, você pode passar o material pela [separação](separ
 * **Loja de festas com balcão movimentado:** de manhã a fila lista quem vem buscar à tarde. Cada cliente que chega é confirmado na hora, com a foto da retirada quando o item é caro — sem ninguém procurar o pedido na mão.
 * **Aluguel que o cliente busca e devolve:** o palco sai pelo balcão e volta pelo balcão. A fila mostra os dois momentos — **Cliente retira** na ida, **Cliente devolve** na volta — e a devolução ainda pode cair na conferência.
 * **Dois galpões na mesma empresa:** quem está no galpão da zona sul filtra só o seu balcão e atende a fila dele, sem ver os atendimentos do outro endereço.
+* **Fila acumulada num dia de pico:** dez clientes passaram pela manhã e o operador não confirmou na hora. No fim do expediente ele abre **Registrar tudo em lote**, desmarca os dois que ainda não vieram, e confirma os oito de uma vez — com um motivo no histórico e, onde teve, a foto anexada.
 
 ## Próximo passo
 

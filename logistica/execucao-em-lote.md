@@ -10,7 +10,7 @@ A **execução em lote** é o jeito de registrar, **pela web e de uma vez**, um 
 É a alternativa à [execução em campo](execucao-em-campo.md): o motorista nem sempre tem o app na mão no momento da entrega. Quando a viagem foi feita "no papel" ou combinada por fora, alguém do escritório **lança depois** o que aconteceu — sem deixar o pedido travado em aberto.
 
 {% hint style="info" %}
-**Esta é a alternativa pela web.** A execução em tempo real depende do GPS do celular e roda no aplicativo. Se a sua empresa precisa registrar uma rota **depois** que ela já aconteceu, o lote é o caminho — um recurso separado, para quem tem a permissão.
+**Na web e também no app.** A execução em tempo real depende do GPS do celular e roda no aplicativo. O lote é o caminho para registrar uma rota **depois** que ela já aconteceu — um recurso separado, para quem tem a permissão. Ele aparece na **web** e, agora, **no próprio app no celular**: na tela de execução, antes de iniciar, há o atalho *"Sem tempo real agora? Registrar em lote (sem GPS)"* — útil para quem está só com o telefone na mão e não vai acompanhar parada a parada.
 {% endhint %}
 
 ## Quando usar o lote
@@ -61,7 +61,7 @@ flowchart LR
 
 A tela mostra um **aviso** logo no topo, para deixar claro o que você está fazendo:
 
-> *Registro retroativo: você está marcando o que já aconteceu, sem avaliação de localização (GPS). Use o app no celular para a execução em tempo real.*
+> *Registro retroativo: você está marcando o que já aconteceu, de uma vez, sem avaliação de localização (GPS). Para validar em tempo real, use a execução passo a passo.*
 
 Em seguida vêm a justificativa, a lista de paradas e o botão **Registrar execução**.
 
@@ -78,6 +78,12 @@ Essa justificativa fica **gravada no histórico** da operação, junto de **quem
 No campo, a sua empresa pode **exigir** foto ou vídeo para concluir uma entrega (a política de comprovação dos [motores operacionais](../configuracoes/motores-operacionais.md)). No lote, **essa exigência não se aplica**: o comprovante é **opcional**.
 
 Faz sentido — você está lançando algo que já passou, e nem sempre há uma foto daquele momento. A justificativa textual assume o papel de registro do que aconteceu.
+
+Ainda assim, **você pode anexar** foto ou vídeo em cada parada concluída — é só tocar em **"Anexar evidências (opcional)"** no card. Quando a sua política pediria uma evidência ali, o sistema **mostra qual** ("Comprovação sugerida: …") e, se você concluir **sem** ela, exibe um **aviso de que você está assumindo o risco** — sem travar o registro. A intenção é te dar a chance de comprovar e te **conscientizar** do que está abrindo mão, não te bloquear.
+
+{% hint style="warning" %}
+**O aviso de risco é só um lembrete, não uma trava.** Concluir sem a evidência sugerida segue valendo — mas aquele pedido fica sem a prova que a sua política normalmente guardaria. Anexe sempre que tiver o material em mãos.
+{% endhint %}
 
 {% hint style="info" %}
 **Sem GPS, sem geofence, sem prova obrigatória.** O lote não avalia se você estava no endereço certo nem pede foto na hora. Por isso ele é "menos seguro" que o campo — e por isso a justificativa é cobrada. Para a rastreabilidade completa (localização + prova de entrega), use a [execução em campo](execucao-em-campo.md).
@@ -136,7 +142,7 @@ Em outras palavras: **registrar tudo de uma vez finaliza o pedido na mesma opera
 
 | | Execução em campo | Execução em lote |
 | --- | --- | --- |
-| **Onde** | Aplicativo, no celular | Web, no escritório |
+| **Onde** | Aplicativo, no celular | Web — e também no app, no celular |
 | **Quando** | Durante a viagem, ao vivo | Depois que a viagem aconteceu |
 | **Localização (GPS)** | Registra chegada e saída | Não usa |
 | **Comprovação (foto/vídeo)** | Conforme a política da empresa | Opcional |

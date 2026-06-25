@@ -107,6 +107,7 @@ O LocFlow já vem com um papel para cada cargo. No convite, basta marcar. O **pa
 | **Motorista** | Quem roda a rota | Só os roteiros atribuídos a ele |
 | **Separador** | Galpão (ida) | A fila *A separar → Separado* |
 | **Conferente** | Galpão (volta) | A fila *A conferir → Conferido* |
+| **Operador de Balcão** | Loja física (as duas pontas) | O [balcão](../logistica/balcao.md) — entrega **e** recebe do cliente, e pode registrar **em lote** |
 | **Parceiro** | Freteiro / parceiro externo | Roteiros e acordos combinados |
 
 {% hint style="info" %}
