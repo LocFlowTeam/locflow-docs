@@ -149,6 +149,14 @@ A otimização inteligente **cobra por parada**. Antes de confirmar, o app exibe
 **O crédito é gasto uma vez só.** Se você otimizar de novo **sem mudar nada** (mesma ordem, mesma saída, mesmo veículo), o app **reaproveita o resultado sem cobrar**. Só recalcula — e cobra — quando algo que afeta a rota muda (você reordena, troca o veículo ou a hora de saída).
 {% endhint %}
 
+{% hint style="warning" %}
+**Um roteiro é uma viagem só — até cerca de 48 horas.** A otimização inteligente cobre uma jornada contínua; ela **não** roteiriza paradas espalhadas por vários dias. Se você selecionar, sem querer, um movimento com janela **muito distante** (uma janela de hoje e outra da semana que vem, por exemplo), o app **não otimiza** e avisa: *"As janelas cobrem ~X dias; um roteiro vai até 48h. Revise as janelas ou separe em roteiros."* É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros**.
+{% endhint %}
+
+{% hint style="info" %}
+Esse limite de **48 horas** é uma **regra do LocFlow** (alinhada ao horizonte que o mapa do Google aceita), não um detalhe técnico escondido: o planejamento é sempre de **uma viagem**. Para entregas de outro dia, monte **outro roteiro**.
+{% endhint %}
+
 ### Traçar rota real
 
 Quer apenas **ver o trajeto desenhado no mapa** sem reordenar nada (mantendo a sua ordem manual)? Use **Traçar rota real**. Ele calcula o caminho real entre as paradas, na ordem que você definiu. Se você já tiver traçado esse mesmo trajeto antes, o app **reaproveita sem custo**.
