@@ -130,6 +130,8 @@ Quando o cliente **retira ou devolve no galpão** (sem transporte da equipe), a 
 
 Se o seu [motor de logística](../configuracoes/motores-operacionais.md) exigir **comprovação**, a tela abre uma folha para capturar a evidência (por exemplo, uma foto) antes de confirmar. Sem essa exigência, a confirmação é em um toque. O sistema registra **quando o cliente chegou** e o **tempo de atendimento**, que ficam visíveis na etapa depois de concluída.
 
+Para quem fica no galpão, essa mesma confirmação aparece numa **fila com todos os atendimentos pendentes** de uma vez — veja [Balcão: retirada e devolução no galpão](balcao.md).
+
 ## Finanças e conclusão: as pontas da jornada
 
 A linha do tempo é cercada por duas etapas que não são de transporte, mas fazem parte do ciclo:

@@ -70,6 +70,7 @@
 * [Execução em campo](logistica/execucao-em-campo.md)
 * [Execução em lote (retroativa)](logistica/execucao-em-lote.md)
 * [Conferência na devolução](logistica/conferencia.md)
+* [Balcão: retirada e devolução no galpão](logistica/balcao.md)
 * [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
 
 ## Estoque

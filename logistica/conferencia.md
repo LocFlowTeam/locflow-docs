@@ -64,6 +64,10 @@ A conferência é **opcional** e escala com a operação — o gatilho é o risc
 * **Itens caros que giram muito:** sem conferência, a peça danificada voltaria à prateleira e só apareceria quebrada no próximo cliente. Com a fila, o problema é pego **na volta**.
 * **Galpão com equipe dividida:** o Separador prepara as saídas do dia e o Conferente cuida só dos retornos — cada um na sua fila, sem pisar no trabalho do outro.
 
+{% hint style="info" %}
+Quando é o **próprio cliente** que devolve no galpão (em vez de a equipe ir buscar), esse retorno é confirmado no [balcão](balcao.md) — e, se você tiver ligado a conferência, o material segue normalmente para esta fila depois.
+{% endhint %}
+
 ## Próximo passo
 
 Reveja o caminho completo em [Visão geral da logística](visao-geral.md), ou entenda a ponta da ida em [Separação no galpão](separacao.md).

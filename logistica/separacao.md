@@ -40,7 +40,7 @@ O papel já vem pronto no LocFlow — basta escolhê-lo ao convidar a pessoa. Ve
 
 ## Retirada no balcão
 
-Quando o **cliente retira no galpão** (em vez de a equipe entregar), a separação continua valendo — e fica ainda mais útil. O material é separado e conferido **antes** de o cliente chegar, então a retirada no balcão é rápida: é só entregar o que já está pronto e marcar a saída. Sem rota, sem viagem.
+Quando o **cliente retira no galpão** (em vez de a equipe entregar), a separação continua valendo — e fica ainda mais útil. O material é separado e conferido **antes** de o cliente chegar, então a retirada no balcão é rápida: é só entregar o que já está pronto e marcar a saída. Sem rota, sem viagem. A confirmação desse atendimento — e a fila de quem está por vir — fica em [Balcão: retirada e devolução no galpão](balcao.md).
 
 ## Quando ligar a separação
 

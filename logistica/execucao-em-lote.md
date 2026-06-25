@@ -44,6 +44,10 @@ Para registrar um roteiro em lote, ele precisa ter um **condutor definido no pla
 
 Se o roteiro ainda não tem condutor, a tela pede para **abrir o roteiro e atribuir um condutor primeiro**. O veículo, ao contrário do campo, **não é obrigatório** aqui — se o planejamento tinha um, ele entra junto; se não, o registro segue sem veículo.
 
+{% hint style="info" %}
+**Roteiro não pode ser do futuro.** Assim como na [execução em campo](execucao-em-campo.md), você não registra em lote um roteiro planejado para **muito à frente** — a saída prevista tem que estar a, no máximo, **12 horas** no futuro. Faz sentido: o lote é para o que **já aconteceu**, e algo que só sai daqui a dias ainda não aconteceu. Roteiros no horário ou **atrasados** podem ser registrados normalmente.
+{% endhint %}
+
 ## Como funciona, passo a passo
 
 ```mermaid

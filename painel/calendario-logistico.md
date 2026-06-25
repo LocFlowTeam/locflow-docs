@@ -85,6 +85,14 @@ O calendário separa os roteiros em três tipos — você pode mostrar ou oculta
 
 Veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md) para entender como um estimado vira planejado.
 
+{% hint style="success" %}
+**O executado aparece na hora em que de fato aconteceu.** Quando um movimento é concluído — seja na [execução em campo](../logistica/execucao-em-campo.md), na [execução em lote](../logistica/execucao-em-lote.md) (retroativa) ou no balcão (o cliente retira/devolve no galpão) —, o calendário deixa de mostrá-lo no horário *planejado* e passa a mostrá-lo no **momento real** do registro, em cinza. Assim a sua agenda reflete a operação **como ela realmente correu**, não como estava prevista.
+{% endhint %}
+
+{% hint style="info" %}
+**Mesmo sem janela combinada, o concluído aparece.** Um movimento que foi executado mas nunca teve um horário combinado com o cliente ainda assim entra no calendário — ancorado na **data real** em que foi concluído. Antes, um movimento assim podia não aparecer; agora o histórico fica completo.
+{% endhint %}
+
 ## Os ícones: quem é responsável <a id="os-icones-quem-e-responsavel"></a>
 
 Cada fato traz um **ícone** que diz **quem é responsável** pelo transporte. O **sentido** (entrega no começo, retirada no fim) você lê pela ordem na linha do tempo — então o ícone foca em **quem leva o material**. São os **mesmos ícones** do frete e do galpão no resto do sistema:

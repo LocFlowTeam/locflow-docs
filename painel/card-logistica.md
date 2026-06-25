@@ -73,7 +73,7 @@ Cada movimento das pilhas "Precisa sair" e "Precisa voltar" traz um **selo de pa
 A ajuda do card: *"O selo de papel diz quem faz: Rota (sua equipe monta a rota) ou Balcão (cliente vem ao galpão). Isso muda o que planejar, não a pilha."*
 {% endhint %}
 
-O selo **não muda a pilha** — uma entrega continua em "Precisa sair" seja ela Rota ou Balcão. Ele muda **o que você precisa preparar**: um item de **Rota** pede endereço e roteiro; um de **Balcão** dispensa trajeto, basta ter o galpão e a data certos. É o mesmo conceito de "retira/devolve no balcão" que você define no [movimento do orçamento](../orcamentos/movimentos-e-janelas.md) e que aparece com mais detalhe na [jornada do pedido](../logistica/jornada-do-pedido.md).
+O selo **não muda a pilha** — uma entrega continua em "Precisa sair" seja ela Rota ou Balcão. Ele muda **o que você precisa preparar**: um item de **Rota** pede endereço e roteiro; um de **Balcão** dispensa trajeto, basta ter o galpão e a data certos. É o mesmo conceito de "retira/devolve no balcão" que você define no [movimento do orçamento](../orcamentos/movimentos-e-janelas.md), que aparece com mais detalhe na [jornada do pedido](../logistica/jornada-do-pedido.md) e que tem sua própria fila em [Balcão: retirada e devolução no galpão](../logistica/balcao.md).
 
 ## Como ler o card, da esquerda para a direita <a href="#como-ler-o-card" id="como-ler-o-card"></a>
 

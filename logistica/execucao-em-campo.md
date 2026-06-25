@@ -29,10 +29,23 @@ Quando o motorista abre o roteiro para executar, o app faz três verificações 
 | --- | --- | --- |
 | **É no celular** | Ao tentar executar pela web | Baixa o app (a execução ao vivo usa GPS). Quem tem a permissão de lote ainda vê o atalho "Executar em lote" pela web. |
 | **Aguardando logística interna** | A empresa separa o material internamente **e** quem abriu não opera a separação | Espera a equipe do galpão marcar a separação como concluída — só então a execução libera. |
+| **Roteiro muito futuro** | Ao tentar iniciar um roteiro cuja saída está prevista para **muito à frente** | Espera chegar perto da data. A execução libera a partir de **12 horas antes** da saída prevista. |
 | **Acessos do celular** | Sempre, antes de cada rota | Concede **Localização** (sempre) e **Câmera** (quando a empresa exige foto/vídeo de prova). |
 
 {% hint style="info" %}
 **"Aguardando logística interna" — verbatim do app:** *"Os pedidos deste roteiro ainda estão na separação interna. Assim que a equipe marcar a separação como concluída, a execução fica liberada para iniciar."* Esse portão só aparece para quem **não** opera a [separação](separacao.md) — quem separa não fica travado.
+{% endhint %}
+
+### Roteiros muito futuros: a margem de 12 horas <a id="margem-roteiro-futuro"></a>
+
+Você **não consegue iniciar** um roteiro planejado para muito à frente. A execução só libera a partir de **12 horas antes da saída prevista** do roteiro — uma margem fixa, igual para todo mundo, pensada para o caso real: a equipe pode se **adiantar um pouco** (sair mais cedo no mesmo dia), mas não começar um roteiro que é de **outro dia**.
+
+* **Adiantar um pouco, pode.** Saiu uns minutos — ou algumas horas — antes da hora marcada? Tudo certo, está dentro da margem.
+* **Executar com dias de antecedência, não.** Um roteiro do dia 24 não pode ser iniciado no dia 22: ainda não é hora.
+* **Atrasar é sempre permitido.** Se a saída já passou (executou no horário ou depois), não há trava nenhuma — você registra normalmente.
+
+{% hint style="info" %}
+**Por que essa trava existe.** Ela garante que tudo que aparece como *executado* aconteceu de fato perto do planejado — sem roteiros "do futuro" sendo dados como feitos por engano. A margem de **12 horas** é um valor padrão do sistema; você não precisa configurar nada.
 {% endhint %}
 
 ### O portão de acessos do celular
