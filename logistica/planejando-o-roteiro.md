@@ -177,7 +177,11 @@ Logo acima da sequência fica o card **"Ida e volta"**, que reúne tudo o que a 
 A **ocupação** e o **combustível** dependem do **veículo** escolhido — só aparecem quando a especificação tem capacidade e [custo operacional](../cadastros/frota-capacidade.md#custo-operacional) cadastrados. Assim você vê, antes de sair, que o crédito gasto virou informação útil para o dia.
 
 {% hint style="info" %}
-**Ligar o botão "Trânsito" não cobra nada por si só.** A cobrança acontece quando você de fato **traça** a rota com trânsito (ou toca em "Ver trânsito") — e, como nas outras ações pagas, o app mostra "usa até N crédito(s)" e pede confirmação antes.
+**Ligar o botão "Trânsito" não cobra nada por si só.** A cobrança acontece quando você de fato **traça** a rota com trânsito — e, como nas outras ações pagas, o app mostra "usa até N crédito(s)" e pede confirmação antes.
+{% endhint %}
+
+{% hint style="success" %}
+**Você paga uma vez por percurso, não por modo.** Se você já traçou um trajeto **sem trânsito** e depois quer vê-lo **com trânsito**, o app **adiciona o trânsito sem cobrar de novo** — é o mesmo caminho, só com as cores e o pedágio por cima. O segundo crédito só sairia se você **mudasse o percurso** (reordenar paradas, trocar a saída).
 {% endhint %}
 
 ### Quando consome créditos
@@ -191,8 +195,8 @@ Para deixar claro o que é grátis e o que cobra no planejamento:
 | Ligar o botão **Trânsito** | Não (só liga o modo) |
 | **Resolver localização** de um endereço novo | Sim — 1 por endereço novo |
 | **Otimização inteligente** | Sim — por parada (e **grátis** se reaproveitar a mesma otimização) |
-| **Traçar rota real** | Sim — por parada (e **grátis** se reaproveitar um traçado igual) |
-| **Traçar com trânsito** | Sim — por parada |
+| **Traçar rota real** | Sim — uma vez por percurso (e **grátis** se reaproveitar um traçado igual) |
+| **Traçar com trânsito** | **Grátis** se você já traçou esse mesmo percurso (sem trânsito); senão, cobra uma vez |
 
 Em toda ação paga, o app **mostra o quanto pode custar e o seu saldo antes**, e só cobra depois que você confirma. Se o saldo não cobrir, ele avisa em vez de tentar cobrar. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 
