@@ -35,6 +35,28 @@ Em ambos os casos, o sistema registra **quando o cliente chegou** e o **tempo de
 **Dá para confirmar em dois lugares, com o mesmo resultado.** Na fila de Balcão você vê **todos** os atendimentos pendentes de uma vez — ideal para quem fica no galpão. Já dentro de um pedido específico, a [jornada do pedido](jornada-do-pedido.md) também traz o botão **Confirmar no balcão**. É a mesma confirmação; a fila só junta tudo num painel.
 {% endhint %}
 
+## Retirar (ou devolver) só uma parte
+
+Nem sempre o cliente leva tudo de uma vez. Ele pode buscar **parte** dos itens agora e o restante depois — ou levar uma parte e a sua equipe entregar o resto. O balcão lida com isso sem complicar: você registra **quanto de cada item** saiu nesta vez, e o que falta continua como **saldo**.
+
+No atendimento, toque em **"Cliente leva só uma parte? Retirar parte"**. O LocFlow mostra cada item com **quanto ainda falta** — *"faltam X de Y"* — e um seletor de quantidade. Ajuste o que o cliente está levando agora e confirme.
+
+1. Abra o atendimento na fila do balcão.
+2. Toque em **Retirar parte**.
+3. Para cada item, escolha **quanto está saindo agora** — o resto fica de saldo.
+4. Capture a **evidência**, se a sua política exigir (vale **por parcela**).
+5. **Confirme.** O que saiu fica registrado; o que faltou continua aguardando.
+
+{% hint style="info" %}
+**O pedido só "fecha" quando o saldo zera.** Enquanto faltar item, o atendimento **continua na fila**, mostrando o saldo restante — o status do pedido (*retirado* / *devolvido no galpão*) só avança quando a **última parte** sai. Assim o painel nunca dá um pedido como concluído enquanto ainda há item para entregar.
+{% endhint %}
+
+Cada retirada parcial é um registro próprio, com a sua **comprovação** (quando exigida) e o **histórico** de quem levou o quê e quando — você acompanha tudo na [jornada do pedido](jornada-do-pedido.md). Vale igual para a **devolução**: o cliente pode trazer parte dos itens de volta hoje e o restante depois.
+
+{% hint style="success" %}
+**E os kits?** A contagem é feita pelos **produtos** que compõem o kit — os itens físicos que o cliente realmente leva. Assim *"faltam 10 de 20 cadeiras"* fica claro, mesmo que as cadeiras tenham vindo dentro de um kit.
+{% endhint %}
+
 ## Quem opera o balcão
 
 Há dois jeitos de cobrir o balcão, e você escolhe conforme a sua equipe:
@@ -71,6 +93,10 @@ Assim como na rota, você decide **o que exigir no balcão** — e configura iss
 
 Se a sua operação tem **mais de um galpão**, cada linha da fila traz a **etiqueta do galpão** e há um **filtro** para ver só os atendimentos daquele balcão. Com um galpão só, o filtro nem aparece — a fila já é a daquele lugar.
 
+{% hint style="warning" %}
+**Hoje, cada balcão é o próprio galpão.** O balcão é a parte de atendimento do galpão — fica no **mesmo endereço**, não é um ponto separado. Você ainda não consegue ter um balcão (ponto de retirada do cliente) num local diferente do galpão de origem. **Em breve**, locadoras maiores poderão separar os dois — armazéns num endereço, balcões/pontos de retirada em outros. Por enquanto, balcão = endereço do galpão.
+{% endhint %}
+
 ## Quando o balcão aparece
 
 Quando você marca no orçamento que o cliente **retira** ou **devolve no galpão** (veja [Movimentos e janelas](../orcamentos/movimentos-e-janelas.md)), o atendimento de balcão aparece sozinho. Não é um liga-desliga — é consequência de como o cliente combina receber. O que muda com o porte é **quanto controle** você põe em volta.
@@ -91,6 +117,7 @@ Antes de o cliente chegar, você pode passar o material pela [separação](separ
 
 * **Loja de festas com balcão movimentado:** de manhã a fila lista quem vem buscar à tarde. Cada cliente que chega é confirmado na hora, com a foto da retirada quando o item é caro — sem ninguém procurar o pedido na mão.
 * **Aluguel que o cliente busca e devolve:** o palco sai pelo balcão e volta pelo balcão. A fila mostra os dois momentos — **Cliente retira** na ida, **Cliente devolve** na volta — e a devolução ainda pode cair na conferência.
+* **Cliente leva metade agora:** o cliente busca parte das cadeiras hoje e volta pelo resto amanhã. O operador usa **Retirar parte**, registra o que saiu, e o atendimento segue na fila mostrando *"faltam X"* até a última retirada zerar o saldo.
 * **Dois galpões na mesma empresa:** quem está no galpão da zona sul filtra só o seu balcão e atende a fila dele, sem ver os atendimentos do outro endereço.
 * **Fila acumulada num dia de pico:** dez clientes passaram pela manhã e o operador não confirmou na hora. No fim do expediente ele abre **Registrar tudo em lote**, desmarca os dois que ainda não vieram, e confirma os oito de uma vez — com um motivo no histórico e, onde teve, a foto anexada.
 
