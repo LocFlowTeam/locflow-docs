@@ -154,11 +154,11 @@ A otimização inteligente **cobra por parada**. Antes de confirmar, o app exibe
 {% endhint %}
 
 {% hint style="warning" %}
-**Um roteiro é uma viagem só — até cerca de 48 horas.** Um roteiro cobre uma jornada contínua; ele **não** abrange paradas espalhadas por vários dias. Por isso o app barra isso **já na seleção**: se você tentar **adicionar** um movimento com janela **muito distante** (uma de hoje e outra da semana que vem, por exemplo), ele **avisa na hora e não inclui a parada** — *"Fora do horizonte do roteiro: com esta parada as janelas cobrem ~X dias; um roteiro vai até 48h."* As ações de mapa (**otimizar** e **traçar**) reforçam o mesmo limite. É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros**.
+**Um roteiro é uma viagem só — no máximo 24 horas.** Um roteiro cobre **um dia operacional** (um turno, uma jornada contínua); ele **não** abrange paradas espalhadas por vários dias. Por isso o app barra isso **já na seleção**: se você tentar **adicionar** um movimento com janela **muito distante** (uma de hoje e outra de amanhã, por exemplo), ele **avisa na hora e não inclui a parada** — *"Fora do horizonte do roteiro: com esta parada as janelas cobrem ~X; um roteiro vai até 24h."* As ações de mapa (**otimizar** e **traçar**) reforçam o mesmo limite. É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros** (um por dia).
 {% endhint %}
 
 {% hint style="info" %}
-Esse limite de **48 horas** é uma **regra do LocFlow** (alinhada ao horizonte que o mapa do Google aceita), não um detalhe técnico escondido: o planejamento é sempre de **uma viagem**. Para entregas de outro dia, monte **outro roteiro**.
+Esse limite de **24 horas** é uma **regra do LocFlow**, não um detalhe técnico escondido: o planejamento é sempre de **uma viagem de um dia**. Para entregas de outro dia, monte **outro roteiro** — um por dia. Entenda o **porquê** do número (e as referências) em [O limite de 24h do roteiro](limite-de-24h.md).
 {% endhint %}
 
 ### Traçar rota real
@@ -220,7 +220,7 @@ Com a rota pronta, o último passo é enxuto: você confere a **jornada** (a **d
 
 Se você escolheu um veículo (ou a especificação) no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
 
-O painel aparece **no topo do "o que levar"** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem pulada porque a carga é mista (3 itens diferentes) → avaliada por volume → cabe"*. Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou item sem limite) e o que fazer. Entenda as estratégias em [Especificações: capacidade](../cadastros/frota-capacidade.md).
+O painel aparece **no topo do "o que levar"** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem por produto → cabe (a cadeira é o item que mais pesa: 110 de 120)"*. Os **kits são diluídos** nos seus produtos, então a contagem vale mesmo quando a carga é misturada (jogos + cadeiras avulsas, por exemplo). Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou produtos sem limite) e o que fazer. Entenda as estratégias em [Especificações: capacidade](../cadastros/frota-capacidade.md).
 
 Além do volume e da contagem, a otimização inteligente também respeita o **peso máximo** do veículo (quando cadastrado): uma parada cuja carga ultrapassaria o peso é apontada como *"acima do peso máximo do veículo"*. Veja [custo operacional e peso](../cadastros/frota-capacidade.md#custo-operacional).
 

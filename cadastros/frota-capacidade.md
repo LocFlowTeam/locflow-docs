@@ -1,6 +1,6 @@
 ---
 icon: weight-hanging
-description: Como o LocFlow decide se a carga cabe no veículo — contagem e volumétrica, e por que o baú fechado libera o cálculo por volume.
+description: Como o LocFlow decide se a carga cabe no veículo — contagem por produto (com os kits diluídos) e volumétrica, e por que o baú fechado libera o cálculo por volume.
 ---
 
 # Especificações: capacidade
@@ -19,7 +19,7 @@ No LocFlow, "capacidade" não é um número único. São **estratégias** difere
 
 | # | Estratégia | O que mede | Selo |
 | --- | --- | --- | --- |
-| 1 | **Contagem de itens** | Quantos de cada produto ou kit cabem fisicamente | `EMPÍRICA` |
+| 1 | **Contagem de itens** | Quantos de cada **produto** cabem — os kits entram **diluídos** nos seus produtos | `EMPÍRICA` |
 | 2 | **Volumétrica (m³)** | O volume do baú (C × L × A) contra a cubagem da carga | `CUBAGEM` |
 | 3 | **Empacotamento inteligente (3D)** | Simulação do arranjo da carga | `EM BREVE` |
 
@@ -29,11 +29,11 @@ A tela traz um quadro lateral **"Como a capacidade é calculada"** que resume tu
 
 ### 1 · Contagem de itens {#contagem}
 
-A contagem é a forma mais direta — e a mais fácil de configurar. Você responde, na prática: **"quantas unidades de cada item cabem nessa viagem?"**
+A contagem é a forma mais direta — e a mais fácil de configurar. Você responde, na prática: **"quantas unidades cabem nessa viagem?"**
 
-O cartão a descreve como *"Quantos produtos/kits cabem fisicamente. Avaliada primeiro."* — por isso o selo **EMPÍRICA**: é o número que você sabe de cabeça, da experiência ("no Toco cabem 10 tendas").
+O cartão a descreve como *"Quantos produtos/kits cabem fisicamente. Avaliada primeiro."* — por isso o selo **EMPÍRICA**: é o número que você sabe de cabeça, da experiência ("no Toco cabem 30 jogos de mesa").
 
-Para configurar, você adiciona **linhas de limite**:
+Para configurar, você adiciona **linhas de limite** — e pode cadastrar o limite **por produto OU por kit**:
 
 - **Item** — escolhido do seu [catálogo](catalogo-produtos.md) numa **busca única**: produtos **e** kits aparecem juntos (como no orçamento), cada um com a **miniatura**, o **nome** e a etiqueta **Produto** ou **Kit**. Você não escolhe a "natureza" antes — busca direto pelo nome e toca no item.
 - **Quantidade** — quantas unidades daquele item cabem (um número inteiro, maior que zero); depois toque em **Adicionar item**.
@@ -41,7 +41,13 @@ Para configurar, você adiciona **linhas de limite**:
 Você adiciona quantas linhas quiser, uma por item. Cada uma entra na lista com a miniatura e o **nome** do item (não o código). Não dá para repetir o mesmo item duas vezes — o app avisa *"Este item já foi adicionado."*
 
 {% hint style="success" %}
-**Por que isso te ajuda:** a contagem é a régua que você já tem na cabeça, agora dentro do sistema. Se "cabem 10 tendas no Toco", o app passa a alertar quando a viagem do dia tenta levar a décima primeira — antes de o motorista descobrir na rampa de carga.
+**O kit é diluído nos seus produtos.** Quando você cadastra um limite por **kit**, o LocFlow o entende como o limite dos **produtos que compõem o kit**. Exemplo: se *1 jogo = 1 mesa + 4 cadeiras* e você diz que **cabem 30 jogos** no caminhão, isso vira **30 mesas e 120 cadeiras**. A régua passa a ser o produto, não o pacote — e é isso que faz a contagem funcionar com qualquer combinação de carga.
+{% endhint %}
+
+**Por que isso resolve a carga misturada.** Como o limite é por produto, a contagem soma **o que vem do kit com o que vem avulso**, do mesmo produto. Uma viagem com **25 jogos + 10 cadeiras avulsas** é avaliada assim: 25 jogos = 25 mesas e 100 cadeiras; somando as 10 cadeiras avulsas dá **110 cadeiras** (contra o limite de 120) e **25 mesas** (contra 30) → **cabe**. Você não precisa que a viagem seja de um item só.
+
+{% hint style="info" %}
+**Limite por kit OU por produto — não os dois para o mesmo produto.** Se você já tem um limite de um kit que contém "cadeira", o app **não deixa** cadastrar também um limite avulso de "cadeira" (e vice-versa): seria ambíguo qual régua vale para a cadeira. Escolha um caminho — pelo kit (mais prático quando você pensa em "jogos") ou por produto (quando quer controlar cada item).
 {% endhint %}
 
 Você pode deixar a contagem **ativa sem nenhuma linha**. Nesse caso o app mostra *"Nenhum limite adicionado. A capacidade pode ficar sem limites por item."* — ou seja, ela existe mas não restringe nada ainda.
@@ -52,10 +58,10 @@ A volumétrica raciocina por **espaço**, não por contagem: ela calcula o **vol
 
 As **medidas do baú** ficam no passo **2 · Carroceria** (não dentro do cartão da estratégia): ao ligar **"Baú fechado"**, aparecem ali os três campos — **comprimento**, **largura** e **altura**, em metros — e o LocFlow calcula o **volume do baú (m³)** sozinho, mostrando o resultado na hora.
 
-Por isso o cartão da volumétrica, na seção de estratégias, é **só informativo** (não tem campos): ele mostra o **status** — *"Pronta — volume do baú X m³"* quando as medidas estão cadastradas, ou um lembrete para informá-las na Carroceria. O selo é **CUBAGEM**, e ela é avaliada **automaticamente** quando a carga é mista (não é uma chave que você liga/desliga).
+Por isso o cartão da volumétrica, na seção de estratégias, é **só informativo** (não tem campos): ele mostra o **status** — *"Pronta — volume do baú X m³"* quando as medidas estão cadastradas, ou um lembrete para informá-las na Carroceria. O selo é **CUBAGEM**, e ela entra **automaticamente como alternativa** quando **não há limite de contagem** cadastrado para os produtos daquela carga (não é uma chave que você liga/desliga).
 
 {% hint style="success" %}
-**Por que a volumétrica importa para carga mista:** quando a viagem leva itens variados (mesa, tenda, gerador), contar "quantos de cada" não responde se tudo cabe junto. O volume responde: a soma do que vai ocupando precisa caber no espaço do baú.
+**Quando a volumétrica entra:** ela é a **rede de segurança** para quando você ainda não cadastrou limites de contagem. Tendo os limites, a contagem por produto já resolve — inclusive carga misturada. Sem eles, o volume garante que a operação não fique **sem nenhuma verificação**: a soma do que a carga ocupa precisa caber no espaço do baú.
 {% endhint %}
 
 ## O baú fechado e suas dimensões {#bau-fechado}
@@ -104,22 +110,22 @@ São **estimativas de planejamento**, baseadas no consumo médio que você decla
 Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um veículo (ou só a especificação) escolhido, o LocFlow avalia a capacidade automaticamente. Vale entender o que ele faz por baixo:
 
 1. **Carga vazia ou sem alvo concreto** → não há o que avaliar: o app aprova com um aviso (por exemplo, quando você escolheu uma *classe* de veículo em vez de um veículo específico, ou nenhum).
-2. **Carga de um único item** (só tendas, por exemplo) → entra a **contagem**: ele soma a quantidade total e compara com o limite que você cadastrou para aquele item.
-3. **Carga com itens diferentes** (mistura de produtos/kits) → entra a **volumétrica**: ele soma a cubagem de tudo e compara com o volume do baú.
+2. **Há limite de contagem para algum produto da carga** (inclusive vindo de kits diluídos) → entra a **contagem por produto**: o app **dilui os kits** em produtos, soma a quantidade de cada produto — juntando o que vem de kit e o que vem avulso — e compara com o limite cadastrado. Vale tanto para carga de um item só quanto para **carga misturada**.
+3. **Sem nenhum limite de contagem aplicável** → entra a **volumétrica** como alternativa: o app compara o espaço que a carga ocupa com o volume do baú.
 
-Quando a estratégia escolhida **não tem como verificar**, o app **não bloqueia** — e agora diz o **motivo exato**, em vez de um "não verificado" genérico:
+Quando a estratégia escolhida **não tem como verificar**, o app **não bloqueia** — e diz o **motivo exato**, em vez de um "não verificado" genérico:
 
 - **Baú aberto** → a volumétrica não se aplica (o veículo não é cubável).
 - **Baú fechado sem dimensões** → falta cadastrar as medidas do baú na especificação (a corrigir).
-- **Sem limite do item** → falta cadastrar a quantidade-limite daquele item para a contagem.
+- **Sem limite dos produtos da carga** → falta cadastrar a quantidade-limite (por produto ou por kit) para a contagem.
 
 {% hint style="info" %}
 A avaliação olha o **pico** da viagem, não só o fim. Numa rota com várias entregas e retiradas, o ponto mais cheio pode estar no meio do caminho — é esse momento que o app verifica, porque é onde a carga corre risco de não caber.
 {% endhint %}
 
-No planejamento do roteiro, esse raciocínio aparece **didático**: o painel mostra a estratégia escolhida e, ao expandir **"Como chegamos nessa estratégia"**, exibe o passo a passo — *passo 1 contagem (pulada porque a carga é mista), passo 2 volumétrica (o resultado), passo 3 inteligente 3D (ainda não avaliada)*. Assim você entende **por que** aquela estratégia foi usada, não só o resultado.
+No planejamento do roteiro, esse raciocínio aparece **didático**: o painel mostra a estratégia escolhida e, ao expandir **"Como chegamos nessa estratégia"**, exibe o passo a passo — *passo 1 contagem por produto (o resultado, apontando o produto que mais pesa na conta), passo 2 volumétrica (entra só se não houver limite de contagem), passo 3 inteligente 3D (ainda não avaliada)*. Assim você entende **por que** aquela estratégia foi usada, não só o resultado.
 
-A mensagem que aparece quando estoura é direta. Pela contagem: *"A carga (12) excede o limite de 10 unidade(s) deste item."* Pela volumétrica: *"O volume da carga excede o volume do baú."*
+A mensagem que aparece quando estoura é direta e **aponta o produto que estourou**. Pela contagem: *"Cadeira excede a capacidade (130 de 120)."* — assim você sabe exatamente qual item dividir ou deixar para a próxima viagem. Pela volumétrica: *"O volume da carga excede o volume do baú."*
 
 {% hint style="warning" %}
 **É sempre um aviso, não um bloqueio.** Mesmo quando a carga não cabe, você consegue criar o roteiro — o LocFlow destaca a parada crítica e deixa a decisão com você. A filosofia é a mesma da [frota como um todo](frota.md): nunca travar o caminho da operação.
@@ -144,7 +150,8 @@ A mensagem que aparece quando estoura é direta. Pela contagem: *"A carga (12) e
 ## Situações reais {#situacoes}
 
 - **Locadora de tendas, um produto só:** a viagem leva só tendas. Você cadastra na contagem "10 tendas" no caminhão Toco. Quando o roteiro do dia tenta levar 12, o app avisa que a carga excede o limite — você divide em duas viagens antes de sair.
-- **Festa completa, carga mista:** mesas, cadeiras, tendas e som na mesma rota. Aqui a contagem não basta. Você marca o baú como fechado, informa as medidas (4,20 × 2,10 × 2,10 m → o app calcula ~18,5 m³) e o LocFlow passa a somar o volume de tudo e avisar quando não cabe junto.
+- **Jogos de mesa + cadeiras avulsas (carga mista):** você cadastra "30 jogos" (e cada jogo é 1 mesa + 4 cadeiras). A viagem leva **25 jogos e mais 10 cadeiras avulsas**. O LocFlow dilui: 25 jogos viram 25 mesas e 100 cadeiras; com as 10 avulsas dá **110 cadeiras** (limite 120) e **25 mesas** (limite 30) → **cabe**. A contagem resolve mesmo com a carga misturada, sem você precisar mexer em volume.
+- **Sem limites cadastrados ainda, carga variada:** mesas, tendas e som na mesma rota, e você não cadastrou contagem. Aí entra a **volumétrica**: marque o baú como fechado, informe as medidas (4,20 × 2,10 × 2,10 m → o app calcula ~18,5 m³) e o LocFlow passa a somar o espaço de tudo e avisar quando não cabe junto.
 - **Caminhão de carroceria aberta:** uma prancha que leva andaimes. Você tenta ligar a volumétrica e ela aparece bloqueada — "Disponível apenas para baú fechado". Faz sentido: sem caixa fechada, não há volume confiável. Você usa a contagem ("cabem 30 quadros de andaime") e segue.
 
 ## Próximo passo {#proximo-passo}

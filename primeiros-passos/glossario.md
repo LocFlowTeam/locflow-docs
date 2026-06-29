@@ -17,7 +17,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Contato** | Um cliente — ou possível cliente — pessoa física ou jurídica. |
 | **Produto** | Um item do seu catálogo, com preço de aluguel e/ou venda. |
 | **Kit** | Um pacote de produtos vendido/alugado como um conjunto. |
-| **Galpão** | A base de onde seus itens saem e para onde voltam. |
+| **Galpão** | A base de onde seus itens saem e para onde voltam. É também o **balcão** de atendimento — onde o cliente retira/devolve presencialmente (hoje, no mesmo endereço do galpão). |
 
 ## Orçamento (estados) {#orcamento-estados}
 
@@ -26,7 +26,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Pendente (aguardando aprovação)** | Pré-etapa do funil: uma **política** do Motor de Orçamento (ex.: frete acima de um limite) deixou o pedido congelado até o aval de um responsável. **Não é o mesmo que "Em aberto"** — só depois de aprovado o orçamento entra no funil. |
 | **Em aberto** | Criado, ainda sem ação. |
 | **Em negociação** | Enviado ao cliente, aguardando resposta. |
-| **Pré-reservado** | "Segurar" o aluguel antes de confirmar (opcional, só locação). |
+| **Pré-reservado** | "Segurar" o aluguel antes de confirmar (opcional, só locação). Você decide na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento) se essa etapa entra no seu funil — desligada, a negociação vai direto para reservado. |
 | **Reservado** | Aluguel confirmado — o **ganho** da locação; estoque bloqueado. |
 | **Vendido** | Venda confirmada — o **ganho** da venda. |
 | **Perdido** | Não fechou; pode ser reaberto. |
@@ -38,6 +38,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | Termo | O que é |
 | --- | --- |
 | **Movimento logístico** | Cada deslocamento dos seus itens: a **entrega** (saída) e, na locação, a **retirada** (retorno). |
+| **Forma de operação** | Como sua locadora opera: **Só balcão** (cliente retira/devolve no galpão), **Só rota** (equipe entrega/retira) ou **Mista**. Define o padrão dos movimentos no orçamento e oculta do menu o que você não usa — sem bloquear (a exceção abre em "Operação avançada"). Configurada no [Motor de Logística](../configuracoes/motores-operacionais.md#motor-de-logistica). |
 | **Janela** | A data + a faixa de horário em que um movimento deve acontecer. |
 | **Galpão de origem** | De onde a carga **sai** para aquele movimento — o LocFlow ranqueia seus galpões por proximidade do destino. |
 | **Raio (máximo) de atendimento** | A distância máxima, a partir do galpão, que ele cobre; um destino fora do raio fica indisponível para aquele galpão. |
@@ -125,7 +126,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Motor** | Uma regra da sua operação que o sistema segue sozinho (frete, cobrança, logística, estoque, orçamento). |
 | **Crédito (moeda de mapa)** | A "moeda" que cobre o custo dos recursos de **mapa do Google** (geocodificar, traçar e otimizar rota); pino e onboarding são grátis. |
 | **Classe / Especificação / Veículo** | Como a frota é organizada: tipo → ficha técnica → o veículo com placa. |
-| **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos itens) ou **volumétrica** (volume do baú × cubagem da carga). |
+| **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos de cada produto cabem — os kits entram diluídos nos seus produtos) ou **volumétrica** (volume do baú × cubagem da carga), usada quando não há limite de contagem. |
 | **Baú fechado** | A chave que confirma uma carroceria cubável e **libera** a estratégia volumétrica. |
 | **Vistoria** | Checklist do veículo antes de rodar. |
 
