@@ -126,7 +126,8 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Motor** | Uma regra da sua operação que o sistema segue sozinho (frete, cobrança, logística, estoque, orçamento). |
 | **Crédito (moeda de mapa)** | A "moeda" que cobre o custo dos recursos de **mapa do Google** (geocodificar, traçar e otimizar rota); pino e onboarding são grátis. |
 | **Classe / Especificação / Veículo** | Como a frota é organizada: tipo → ficha técnica → o veículo com placa. |
-| **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos de cada produto cabem — os kits entram diluídos nos seus produtos) ou **volumétrica** (volume do baú × cubagem da carga), usada quando não há limite de contagem. |
+| **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos de cada produto cabem — os kits entram diluídos nos seus produtos) ou **volumétrica** (volume do baú × cubagem da carga, pelo fator de cubagem de cada item), usada quando não há limite de contagem. |
+| **Fator de cubagem** | O **volume efetivo (m³)** que um item (produto ou kit) ocupa numa carga, **considerando o empilhamento** — empírico, aferido na prática. Base da estratégia volumétrica. Não pode passar do volume das dimensões da peça; o kit tem fator próprio (não é a soma das peças). |
 | **Baú fechado** | A chave que confirma uma carroceria cubável e **libera** a estratégia volumétrica. |
 | **Vistoria** | Checklist do veículo antes de rodar. |
 

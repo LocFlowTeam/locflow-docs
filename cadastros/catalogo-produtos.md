@@ -124,9 +124,24 @@ No cadastro **por conta própria**, você informa a ficha fiscal e física do it
 - **CEST** — quando se aplica ao item; pode ficar em branco.
 - **Origem da mercadoria** — nacional ou importada.
 - **Peso bruto** e **peso líquido** (kg), **unidade de medida** e **dimensões** (altura/largura/profundidade, ou altura/diâmetro para itens cilíndricos).
+- **Fator de cubagem** (m³) — o espaço que o item ocupa numa carga, **considerando empilhamento** (veja abaixo).
 
 {% hint style="info" %}
 Adotou um item do **catálogo oficial**? A parte fiscal vem em um bloco **"Dados fiscais do catálogo" (só leitura)** — você não digita NCM/CEST. O bloco editável "Fiscal e medidas" só aparece no cadastro por conta própria.
+{% endhint %}
+
+#### Fator de cubagem {#fator-de-cubagem}
+
+O **fator de cubagem** é o **volume efetivo (m³)** que uma unidade do produto ocupa **quando carregada no veículo** — já contando o **empilhamento**. É o que a [estratégia volumétrica de capacidade](frota-capacidade.md#volumetrica) usa para saber se a carga cabe no baú.
+
+Ele é **empírico**: você afere na prática, não é a multiplicação das medidas. Uma cadeira empilhável pode ter caixa de 0,18 m³, mas, empilhada, ocupar na média **0,06 m³** por unidade — esse 0,06 é o fator de cubagem. Quem carrega o veículo sabe esse número melhor que qualquer conta.
+
+{% hint style="info" %}
+**Regra de segurança:** o fator de cubagem **não pode passar do volume das dimensões** do item (a caixa dele). Empilhar só reduz ou mantém o espaço ocupado — nunca aumenta. Quando você informa as dimensões, o app usa esse volume como **teto** do fator.
+{% endhint %}
+
+{% hint style="success" %}
+Cadastrar o fator é o que **liga a verificação por volume** para esse item. Sem ele, quando a carga cair na volumétrica (sem limite de contagem), o app avisa que falta o fator daquele item — então vale preencher nos produtos que você costuma transportar.
 {% endhint %}
 
 ### SKU: o código interno {#sku}

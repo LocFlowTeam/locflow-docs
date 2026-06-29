@@ -74,6 +74,14 @@ Como qualquer item, o kit precisa de uma **categoria** para aparecer organizado 
 
 Aqui você escolhe **quais produtos** entram e **em que quantidade**. Lembre: precisa somar **no mínimo 2 unidades**.
 
+### Fator de cubagem do kit {#fator-de-cubagem}
+
+Como o produto, o kit pode ter um **fator de cubagem** — o **volume efetivo (m³)** que o kit ocupa numa carga, considerando o **empilhamento do conjunto**. É o que a [estratégia volumétrica de capacidade](frota-capacidade.md#volumetrica) usa para medir o kit ao avaliar se a carga cabe no veículo.
+
+{% hint style="info" %}
+**O fator do kit é próprio — não é a soma das peças.** Um "jogo de mesa" montado ou empilhado ocupa um espaço característico, que raramente é a soma do espaço de cada cadeira e mesa solta. Por isso você informa um fator **para o kit inteiro**. (A contagem, ao contrário, **dilui** o kit nos produtos — são olhares diferentes para a mesma carga; entenda em [Especificações: capacidade](frota-capacidade.md#volumetrica).)
+{% endhint %}
+
 ### Preços e negócio
 
 O kit tem seus próprios toggles **"você vai alugar?"** e **"você vai vender?"**, com as mesmas **condições de venda** (Novo, Seminovo, Usado) dos produtos.
