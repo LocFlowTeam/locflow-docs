@@ -228,6 +228,18 @@ Além do volume e da contagem, a otimização inteligente também respeita o **p
 Saber antes de sair que a carga não cabe evita a pior cena da operação: o motorista chega no cliente e descobre que faltou item no caminhão. Menos viagem perdida, menos cliente esperando, menos retrabalho.
 {% endhint %}
 
+## Dividir um movimento em viagens
+
+Quando a carga de **uma** entrega (ou retirada) **não cabe num veículo só**, você não precisa criar a rota na mão tentativa e erro: o LocFlow **divide o movimento em partes** — cada parte é uma **viagem** que cabe no veículo. Cada parte vira um item que você coloca num roteiro; assim a mesma entrega pode sair em **duas viagens** (no mesmo veículo em dias/turnos diferentes, ou em **veículos diferentes**).
+
+No detalhe de um movimento, toque em **Dividir por veículo** e escolha a especificação. O app **propõe as viagens** na hora — sem gastar créditos — mostrando **quantas viagens** dá e **quanto sobra** em cada uma. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar. Confirmou? As partes aparecem no movimento, e você as adiciona aos roteiros como qualquer outro item.
+
+Os **bens móveis** de cada parte somam **exatamente** o total do movimento — nada se perde nem se duplica na divisão. Ao selecionar um movimento já dividido, o roteiro leva a **primeira parte ainda livre**; selecione-o de novo (em outro roteiro) para levar a próxima.
+
+{% hint style="info" %}
+A divisão é **opcional**. O caso comum — a carga cabe num veículo — não muda em nada: você seleciona o movimento inteiro e segue. Divida só quando precisar repartir a carga entre viagens.
+{% endhint %}
+
 ## A ordem da rota por porte
 
 A mesma tela atende quem está começando e quem já roda dezenas de entregas por dia. Você usa só o que precisa:
@@ -250,6 +262,7 @@ O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vár
 * **Escalou quem não pode dirigir:** ao atribuir um colaborador como condutor, aparece o **aviso de CNH vencida**. Monta o roteiro mesmo assim e, antes da execução, atualiza a habilitação dele no cadastro.
 * **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
 * **Entrega que apareceu agora:** não dá para esperar o planejamento — despacha **sob demanda** direto do orçamento, e a viagem segue do mesmo jeito no campo.
+* **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Dividir por veículo** o app propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
 
 ## Próximo passo
 
