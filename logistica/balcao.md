@@ -10,7 +10,7 @@ O **balcão** é o atendimento **presencial** da logística: quando o próprio c
 É o irmão das filas de [separação](separacao.md) e [conferência](conferencia.md): uma fila do galpão, só que para a vez do **cliente**, não da equipe. No fluxo, ela ocupa a posição **externa sem transporte** — *cliente retira no galpão* (na ida) ou *cliente devolve no galpão* (na volta, só em locação).
 
 {% hint style="success" %}
-**Por que isso vale a pena:** o balcão dá à pessoa que está no galpão uma **fila clara de quem vai chegar**, em vez de caçar pedido por pedido. Quando o cliente aparece, é um toque para confirmar a retirada ou a devolução — e, se você exigir, uma foto fica registrada como prova. Atendimento rápido, sem rota, com o mesmo cuidado de uma entrega.
+**Por que isso vale a pena:** o balcão dá à pessoa que está no galpão uma **fila clara de quem vai chegar**, em vez de caçar pedido por pedido. Quando o cliente aparece, a confirmação já vem pronta — é conferir e concluir — e, se você exigir, uma foto fica registrada como prova. Atendimento rápido, sem rota, com o mesmo cuidado de uma entrega.
 {% endhint %}
 
 ## A fila do balcão
@@ -24,34 +24,34 @@ flowchart LR
     CONF --> FIM[Retirado / Devolvido<br/>no galpão]
 ```
 
-Ao tocar num atendimento, o LocFlow resolve o que aquele caso precisa e abre a confirmação:
+Ao tocar em **Confirmar**, o LocFlow abre uma **folha única de confirmação**, já preenchida com **tudo o que falta sair (ou voltar)**:
 
-* **Sem comprovação exigida** — confirma em **um toque**: o cliente concluiu a retirada ou a devolução, e pronto.
-* **Com comprovação exigida** — abre a folha de captura para registrar a evidência (**foto ou vídeo**) antes de confirmar. Sem a prova, o app não deixa concluir.
+* **O cliente leva tudo?** É só conferir a lista e **concluir** — as quantidades já vêm no total.
+* **Leva só uma parte?** Ajuste a **quantidade de cada item** na própria folha; o que faltar continua como **saldo** (veja a seção a seguir).
+* **Comprovação exigida?** A captura da evidência (**foto ou vídeo**) acontece na mesma folha, antes de concluir. Sem a prova, o app não deixa confirmar.
 
-Em ambos os casos, o sistema registra **quando o cliente chegou** e o **tempo de atendimento** — informações que ficam visíveis na etapa depois de concluída, na [jornada do pedido](jornada-do-pedido.md).
+Em todos os casos, o sistema registra **quando o cliente chegou** e o **tempo de atendimento** — informações que ficam visíveis na etapa depois de concluída, na [jornada do pedido](jornada-do-pedido.md).
 
 {% hint style="info" %}
-**Dá para confirmar em dois lugares, com o mesmo resultado.** Na fila de Balcão você vê **todos** os atendimentos pendentes de uma vez — ideal para quem fica no galpão. Já dentro de um pedido específico, a [jornada do pedido](jornada-do-pedido.md) também traz o botão **Confirmar no balcão**. É a mesma confirmação; a fila só junta tudo num painel.
+**Dá para chegar aqui por dois caminhos, com o mesmo resultado.** Na fila de Balcão você vê **todos** os atendimentos pendentes de uma vez — ideal para quem fica no galpão. Já dentro de um pedido específico, a [jornada do pedido](jornada-do-pedido.md) traz o botão **Confirmar no balcão** — ele **leva você à fila do Balcão** com aquele atendimento já aberto; a confirmação e a evidência acontecem sempre aqui.
 {% endhint %}
 
 ## Retirar (ou devolver) só uma parte
 
-Nem sempre o cliente leva tudo de uma vez. Ele pode buscar **parte** dos itens agora e o restante depois — ou levar uma parte e a sua equipe entregar o resto. O balcão lida com isso sem complicar: você registra **quanto de cada item** saiu nesta vez, e o que falta continua como **saldo**.
+Nem sempre o cliente leva tudo de uma vez. Ele pode buscar **parte** dos itens agora e o restante depois. O balcão lida com isso sem complicar: você registra **quanto de cada item** saiu nesta vez, e o que falta continua como **saldo**.
 
-No atendimento, toque em **"Cliente leva só uma parte? Retirar parte"**. O LocFlow mostra cada item com **quanto ainda falta** — *"faltam X de Y"* — e um seletor de quantidade. Ajuste o que o cliente está levando agora e confirme.
+É a **mesma folha de confirmação** — ela mostra cada item com **quanto ainda falta** (*"faltam X de Y"*) e um seletor de quantidade. O atalho **"Cliente leva só uma parte? Retirar parte"** abre essa mesma folha.
 
-1. Abra o atendimento na fila do balcão.
-2. Toque em **Retirar parte**.
-3. Para cada item, escolha **quanto está saindo agora** — o resto fica de saldo.
-4. Capture a **evidência**, se a sua política exigir (vale **por parcela**).
-5. **Confirme.** O que saiu fica registrado; o que faltou continua aguardando.
+1. Abra o atendimento na fila do balcão e toque em **Confirmar** (ou no atalho **Retirar parte**).
+2. Para cada item, ajuste **quanto está saindo agora** — o resto fica de saldo.
+3. Capture a **evidência**, se a sua política exigir (vale **por parcela**).
+4. **Confirme.** O que saiu fica registrado; o que faltou continua aguardando.
 
 {% hint style="info" %}
 **O pedido só "fecha" quando o saldo zera.** Enquanto faltar item, o atendimento **continua na fila**, mostrando o saldo restante — o status do pedido (*retirado* / *devolvido no galpão*) só avança quando a **última parte** sai. Assim o painel nunca dá um pedido como concluído enquanto ainda há item para entregar.
 {% endhint %}
 
-Cada retirada parcial é um registro próprio, com a sua **comprovação** (quando exigida) e o **histórico** de quem levou o quê e quando — você acompanha tudo na [jornada do pedido](jornada-do-pedido.md). Vale igual para a **devolução**: o cliente pode trazer parte dos itens de volta hoje e o restante depois.
+Cada retirada parcial é um **registro próprio**, com a sua **comprovação** (quando exigida) e o **horário**. As provas de cada parcela aparecem na etapa correspondente da [jornada do pedido](jornada-do-pedido.md); já o detalhe **do que já saiu × o que ainda falta**, item a item, você vê na própria fila do Balcão, ao abrir o atendimento (seção *"Já retirado/devolvido pelo cliente"*). Vale igual para a **devolução**: o cliente pode trazer parte dos itens de volta hoje e o restante depois.
 
 {% hint style="success" %}
 **E os kits?** A contagem é feita pelos **produtos** que compõem o kit — os itens físicos que o cliente realmente leva. Assim *"faltam 10 de 20 cadeiras"* fica claro, mesmo que as cadeiras tenham vindo dentro de um kit.
@@ -105,7 +105,7 @@ Se a sua operação é **só por rota**, dá para sumir o Balcão do menu na [fo
 
 | Porte | Como você usa o balcão |
 | --- | --- |
-| **Começando** | **Direto.** O cliente busca ou devolve, você confirma em um toque. Sem prova, sem burocracia — a retirada acontece em minutos. |
+| **Começando** | **Direto.** O cliente busca ou devolve, você confere a lista já preenchida e confirma. Sem prova, sem burocracia — a retirada acontece em minutos. |
 | **Crescendo** | **Com prova.** Itens mais caros começam a sair pelo balcão; você liga a comprovação (foto/vídeo) para ter o registro de quem levou e de como voltou. |
 | **Estruturado** | **Vários galpões, cada papel na sua vez.** Cada balcão tem sua fila filtrada; o **Separador** confirma as retiradas e o **Conferente** as devoluções, ou um **Operador de Balcão** cobre as duas pontas. No pico, o **registro em lote** põe a fila em dia de uma vez. |
 

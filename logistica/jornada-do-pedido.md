@@ -116,9 +116,9 @@ Na etapa **acontecendo agora**, quando há um próximo passo acionável, a tela 
 * **Separar no galpão** — leva à [fila de separação](separacao.md).
 * **Planejar entrega** / **Planejar retirada** — abre o [roteiro](planejando-o-roteiro.md) daquele despacho.
 * **Conferir retorno** — leva à [fila de conferência](conferencia.md).
-* **Confirmar no balcão** — registra ali mesmo a retirada ou devolução pelo cliente (quando não há viagem).
+* **Confirmar no balcão** — leva à [fila do Balcão](balcao.md), já com aquele atendimento aberto (quando não há viagem).
 
-A maioria desses botões **leva você até a tela certa** para agir; só a confirmação no balcão acontece direto aqui na tela.
+Todos esses botões **levam você até a tela certa** para agir — a jornada é uma **visão de acompanhamento**; cada ação acontece na tela onde ela mora, e o botão só encurta o caminho.
 
 {% hint style="warning" %}
 **Quem não tem permissão para aquela etapa vê "Somente leitura nesta etapa"** no lugar do botão — a jornada continua visível para todos, mas só avança quem tem a competência. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
@@ -126,11 +126,9 @@ A maioria desses botões **leva você até a tela certa** para agir; só a confi
 
 ### A confirmação no balcão
 
-Quando o cliente **retira ou devolve no galpão** (sem transporte da equipe), a etapa externa vira um **balcão**: a tela mostra "Sem transporte · cliente retira (ou devolve) no balcão". O operador toca em **Confirmar no balcão** para registrar o atendimento.
+Quando o cliente **retira ou devolve no galpão** (sem transporte da equipe), a etapa externa vira um **balcão**: a tela mostra "Sem transporte · cliente retira (ou devolve) no balcão". O botão **Confirmar no balcão** leva o operador à **fila do Balcão**, já com aquele atendimento aberto — é lá que a confirmação acontece.
 
-Se o seu [motor de logística](../configuracoes/motores-operacionais.md) exigir **comprovação**, a tela abre uma folha para capturar a evidência (por exemplo, uma foto) antes de confirmar. Sem essa exigência, a confirmação é em um toque. O sistema registra **quando o cliente chegou** e o **tempo de atendimento**, que ficam visíveis na etapa depois de concluída.
-
-Para quem fica no galpão, essa mesma confirmação aparece numa **fila com todos os atendimentos pendentes** de uma vez — veja [Balcão: retirada e devolução no galpão](balcao.md).
+Na fila, a folha de confirmação já vem preenchida com o que falta sair (ou voltar): dá para confirmar **tudo** ou ajustar as quantidades para uma **retirada parcial**, e a **comprovação** (por exemplo, uma foto) é capturada na mesma folha quando o seu [motor de logística](../configuracoes/motores-operacionais.md) exigir. O sistema registra **quando o cliente chegou** e o **tempo de atendimento**, que ficam visíveis na etapa depois de concluída — junto com as provas de cada parcela. Veja [Balcão: retirada e devolução no galpão](balcao.md).
 
 ## Finanças e conclusão: as pontas da jornada
 
@@ -141,7 +139,7 @@ A linha do tempo é cercada por duas etapas que não são de transporte, mas faz
 
 {% hint style="warning" %}
 A fatura apenas **registra uma cobrança em aberto** — não significa que o cliente já pagou. A etapa de Finanças marca que a cobrança existe, liberando a logística; o pagamento corre em paralelo, em [Cobranças](../cobranca/lista-de-cobrancas.md).
-{% endhill %}
+{% endhint %}
 
 ## Por porte
 

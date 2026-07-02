@@ -132,7 +132,7 @@ O primeiro ponto é a **saída**. Ele mostra se a viagem **saiu com carga** ou *
 Para cada parada, a linha do tempo traz:
 
 * O **endereço** (de forma curta).
-* Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada.
+* Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada. Se o movimento foi [dividido em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens), aparece também o selo **"Viagem N de M"** — esta rota leva **uma parte** da carga, e o pedido só conta como entregue/retirado quando a **última viagem** terminar.
 * A **chegada estimada** (*"chega ~HH:MM"*) calculada pela otimização, enquanto a parada ainda **não foi executada**. Quando essa previsão **cai fora da janela** combinada, o app já avisa ali — *"Deve atrasar"* (âmbar) ou *"Deve atrasar muito"* (vermelho) —, para você ver o problema **antes de a equipe sair**. Assim que a equipe registra o desfecho, esse previsto dá lugar à **hora real**, com a [pontualidade](#pontualidade-chegou-no-horario) da chegada.
 * A **carga de entrega** e a **carga de retirada** daquele ponto (abríveis, com foto e quantidade).
 
@@ -238,7 +238,7 @@ Esses números deixam claro **o que aconteceu de fato**, não só o que estava p
 * **"Já entregou no cliente X?"** — você abre o roteiro em andamento, vê o selo **Ao vivo**, e a parada do cliente X já está **verde** com a hora e a foto da entrega. Responde sem ligar para ninguém.
 * **Viagem atrasada:** na aba *Em execução e planejados*, um cartão está em vermelho com "atrasada". Você abre, vê os orçamentos envolvidos e cobra a saída.
 * **Cliente reclama dias depois:** vai em **Executados**, abre o roteiro, encontra o movimento **Entregue** e toca na **foto** — fim da discussão.
-* **Retirada que não rolou:** o roteiro voltou com um aviso de **retirada pulada**. Você vê o motivo ("Cliente ausente") e reagenda o recolhimento daquele material.
+* **Retirada que não rolou:** o roteiro voltou com um aviso de **retirada pulada** e o chip **"Replanejar · nova tentativa pendente"**. Você vê o motivo ("Cliente ausente") e o movimento **já está de volta na fila de roteirização** como nova tentativa, priorizado — é só encaixá-lo no próximo roteiro (veja [Execução em campo](execucao-em-campo.md#quando-a-parada-nao-da-certo)).
 * **Pedido mudou no meio do caminho:** a tela mostra **"Roteiro desatualizado"**; você ajusta o roteiro para a versão nova e a equipe volta a poder concluir os movimentos afetados.
 
 ## Próximo passo <a id="proximo-passo"></a>

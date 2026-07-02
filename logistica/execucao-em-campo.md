@@ -109,6 +109,10 @@ Com a rota iniciada, o app mostra **uma parada de cada vez** — a atual, em des
 * **Contato** — fala direto com o cliente: abre o **WhatsApp** quando disponível, senão a ligação.
 * **Cobrança** e **Anotações** — a situação financeira do pedido e as observações internas relevantes para aquela parada.
 
+{% hint style="info" %}
+**"Viagem N de M": quando a entrega foi dividida.** Se o movimento foi [dividido em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens), a parada exibe o selo **"Viagem 1 de 2"** (por exemplo) e os itens listados são **só os daquela viagem**. O motorista sabe — e pode avisar o cliente — que **ainda faltam viagens**. O pedido só passa a *Entregue* / *Retirado* quando a **última viagem** termina; concluir a viagem 1 não fecha o pedido, e isso é o esperado.
+{% endhint %}
+
 ### A bolha de retorno do mapa (Android)
 
 Quando o motorista toca em **traçar a rota**, o app de mapas abre por cima do LocFlow — e é fácil "perder" a tela da execução. Para resolver isso, no **Android** o LocFlow mostra uma **bolha flutuante** com o logo por cima do mapa: tocar nela traz o app de volta à rota num instante (no mesmo espírito de apps de entrega).
@@ -193,6 +197,15 @@ Sem nenhuma das duas, o motorista vê a cobrança mas **não cobra** — útil q
 
 Nem toda parada se conclui. Se o cliente não atende, está ausente, recusa, o endereço não foi encontrado ou outro motivo, o motorista pode **pular** o movimento registrando o porquê. Assim a viagem segue para a próxima parada e o motivo fica no histórico — a equipe sabe exatamente o que houve.
 
+E o melhor: **ninguém precisa criar nada na mão depois**. Ao pular, o LocFlow abre sozinho uma **nova tentativa**:
+
+* O movimento **volta à fila de roteirização** com um selo âmbar de prioridade — *"Tentativa 2 · falhou 1× — priorize"* — junto com o **motivo** do pulo. É só colocá-lo no próximo roteiro.
+* No roteiro em que foi pulada, a parada fica registrada com o aviso **"Replanejar · nova tentativa pendente"** — o histórico da falha não se perde.
+
+{% hint style="info" %}
+**"Replanejar" não é "Desatualizado".** A nova tentativa nasce porque a parada **falhou** — o pedido em si não mudou. Quando o **pedido** muda depois de planejado (data, itens, endereço), aí sim o movimento aparece como *Desatualizado* — veja [Quando um pedido muda](quando-um-pedido-muda.md).
+{% endhint %}
+
 ### Voltar ao galpão
 
 Cumpridas as paradas, o app conduz o **retorno ao galpão**, mostrando a **carga de retorno** (o que volta — itens não entregues ou retirados de locação). Registrada a volta, a execução está **concluída**.
@@ -211,7 +224,7 @@ A mesma execução serve a quem está começando e a quem opera frota — porque
 
 * **Entrega com foto obrigatória:** a empresa exige foto na entrega. Ao chegar e confirmar, o app abre a câmera, o motorista fotografa o material no local do cliente e a entrega é concluída com a prova anexada. Semanas depois, o cliente reclama — a foto encerra a conversa.
 * **Cliente paga na hora:** o cliente diz que prefere pagar agora. O motorista toca em **Cobrar**, gera o Pix, mostra o QR — e quando o pagamento cai, a tela confirma sozinha. Se o cliente paga em dinheiro, ele registra o **recebimento presencial** e segue viagem.
-* **Cliente ausente:** o motorista chega, ninguém atende. Em vez de ficar parado, ele **pula** a parada com o motivo "Cliente ausente" e segue. A equipe reagenda sabendo o que aconteceu.
+* **Cliente ausente:** o motorista chega, ninguém atende. Em vez de ficar parado, ele **pula** a parada com o motivo "Cliente ausente" e segue. No escritório, o movimento já reaparece na fila de roteirização como **"Tentativa 2 — priorize"**, com o motivo — é só encaixar no próximo roteiro.
 * **Endereço difícil:** o GPS marca a chegada a 200 m do ponto. O app pede justificativa; o motorista informa "Acesso pela rua de trás" e registra a chegada mesmo assim, com o motivo guardado.
 * **Negou a localização por engano:** o motorista tocou em "negar" sem querer. Na próxima vez que abre a rota, o portão de acessos reaparece e o leva direto às Configurações — sem ficar travado para sempre.
 * **Equipe reduzida:** o ajudante faltou. No preparo, o motorista **desmarca** o presente que não veio — o registro reflete quem realmente saiu na viagem.

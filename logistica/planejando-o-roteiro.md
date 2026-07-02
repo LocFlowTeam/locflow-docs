@@ -232,12 +232,23 @@ Saber antes de sair que a carga não cabe evita a pior cena da operação: o mot
 
 Quando a carga de **uma** entrega (ou retirada) **não cabe num veículo só**, você não precisa criar a rota na mão tentativa e erro: o LocFlow **divide o movimento em partes** — cada parte é uma **viagem** que cabe no veículo. Cada parte vira um item que você coloca num roteiro; assim a mesma entrega pode sair em **duas viagens** (no mesmo veículo em dias/turnos diferentes, ou em **veículos diferentes**).
 
-No detalhe de um movimento, toque em **Dividir por veículo** e escolha a especificação. O app **propõe as viagens** na hora — sem gastar créditos — mostrando **quantas viagens** dá e **quanto sobra** em cada uma. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar. Confirmou? As partes aparecem no movimento, e você as adiciona aos roteiros como qualquer outro item.
+No detalhe de um movimento, toque em **Dividir movimento**. A folha de divisão tem **dois modos**:
 
-Os **bens móveis** de cada parte somam **exatamente** o total do movimento — nada se perde nem se duplica na divisão. Ao selecionar um movimento já dividido, o roteiro leva a **primeira parte ainda livre**; selecione-o de novo (em outro roteiro) para levar a próxima.
+* **Por veículo** — escolha a especificação e o app **propõe as viagens** na hora, sem gastar créditos, mostrando **quantas viagens** dá e **quantos itens** vão em cada uma. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar.
+* **Manual** — você monta cada viagem **item a item**, escolhendo as quantidades; a última viagem fica com **o resto**, automaticamente. É o caminho indicado quando os itens **não têm volume cadastrado** (a divisão automática avisa que não consegue calcular e sugere a manual) — ou quando você simplesmente prefere decidir a repartição.
+
+Os **bens móveis** de cada parte somam **exatamente** o total do movimento — nada se perde nem se duplica na divisão.
+
+Depois de dividir, as viagens ficam **aninhadas no próprio movimento** — na lista e no mapa continua **um pino só** por destino. Ao selecionar o movimento para uma rota, o app leva a **primeira viagem ainda livre**, mas você pode **tocar e escolher qual viagem entra nesta rota**: cada viagem mostra o seu status (**livre** ou já **em um roteiro**, com o código RT-XXXX).
 
 {% hint style="info" %}
 A divisão é **opcional**. O caso comum — a carga cabe num veículo — não muda em nada: você seleciona o movimento inteiro e segue. Divida só quando precisar repartir a carga entre viagens.
+{% endhint %}
+
+Mudou de ideia? Enquanto as viagens ainda estiverem **livres** (fora de roteiro), o botão **Reagrupar viagens** desfaz a divisão e o movimento volta a ser um só.
+
+{% hint style="warning" %}
+**Um pedido dividido só conta como entregue no fim.** Cada viagem é concluída na sua rota, mas o **status do pedido** (*Entregue* / *Retirado*) só avança quando a **última viagem** termina — até lá, o pedido segue em aberto, com as viagens já cumpridas registradas. Na execução, o motorista vê o selo **"Viagem N de M"** em cada parada dividida (veja [Execução em campo](execucao-em-campo.md)).
 {% endhint %}
 
 ## A ordem da rota por porte

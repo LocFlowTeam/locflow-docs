@@ -19,6 +19,10 @@ Cada entrega e cada retirada é um **movimento**. Quando você muda algo que afe
 
 Se esse movimento **já estava dentro de um roteiro planejado**, o roteiro passa a apontar para uma versão **antiga** — ou seja, ficou **desatualizado**. É exatamente esse "ficar desatualizado" que dispara o aviso para o operador.
 
+{% hint style="info" %}
+**"Desatualizado" ≠ "Replanejar · nova tentativa".** *Desatualizado* aparece quando **o pedido mudou** depois de planejado (data, itens, endereço, quem leva). Já o chip *"Replanejar · nova tentativa pendente"* aparece quando uma parada foi **pulada** na rua (cliente ausente, recusa...) — o pedido não mudou; o movimento só voltou à fila para uma **nova tentativa**. Veja [quando a parada não dá certo](execucao-em-campo.md#quando-a-parada-nao-da-certo).
+{% endhint %}
+
 ## As duas vias do aviso
 
 O segredo para não virar bagunça é separar **duas conversas diferentes**:
