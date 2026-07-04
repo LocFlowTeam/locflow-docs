@@ -1,6 +1,6 @@
 ---
 icon: handshake
-description: O que é uma parceria no LocFlow — trabalhar com gente de fora da sua organização — e as duas formas que existem hoje: fornecedores de frete e acordos de parceria.
+description: "O que é uma parceria no LocFlow — trabalhar com gente de fora da sua organização — e as duas formas que existem hoje: fornecedores de frete e acordos de parceria."
 ---
 
 # Parcerias: a visão
