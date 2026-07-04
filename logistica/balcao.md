@@ -87,7 +87,26 @@ A tela de lote lista os atendimentos pendentes, **todos já marcados**. Daí voc
 
 ## Comprovação no balcão
 
-Assim como na rota, você decide **o que exigir no balcão** — e configura isso **separadamente** para a **retirada pelo cliente** e a **devolução pelo cliente**. A política vive no [motor de logística](../configuracoes/motores-operacionais.md#motor-de-logistica): marque foto ou vídeo para torná-los obrigatórios antes de concluir, ou deixe em branco para manter a confirmação em um toque.
+Assim como na rota, você decide **o que exigir no balcão** — e configura isso **separadamente** para a **retirada pelo cliente** e a **devolução pelo cliente**. A política vive no [motor de logística](../configuracoes/motores-operacionais.md#motor-de-logistica): sem nada marcado, a confirmação é em **um toque**; com uma exigência, o app só deixa concluir depois de capturar a prova.
+
+### Os meios de prova
+
+No balcão, além de **foto** e **vídeo**, a política aceita **assinatura** — o cliente assina que retirou (ou que devolveu). E faz sentido justamente aqui: no balcão o cliente está **na sua frente**, então a assinatura é o comprovante natural da **retirada presencial** e do **recibo de devolução** — diferente da entrega em rota, onde a assinatura costuma "ficar para depois".
+
+{% hint style="info" %}
+**A assinatura é uma opção da política — e pode ainda não estar no app.** Você já pode montar a regra contando com ela; a **captura da assinatura na tela** do balcão chega numa próxima versão. Enquanto isso, **foto e vídeo** são os meios capturados hoje.
+{% endhint %}
+
+### Regras que combinam meios
+
+A exigência **não** é só uma lista de "tudo obrigatório". Você monta a regra do jeito que a sua operação pede, combinando os meios:
+
+* **Exigir dois juntos (E):** *"foto **e** assinatura"* — as duas coisas para concluir.
+* **Dar alternativas (OU):** *"vídeo **ou** assinatura"* — qualquer uma serve.
+* **Misturar os dois:** *"foto **e** (vídeo **ou** assinatura)"* — sempre a foto, mais uma das outras duas.
+* **Pedir uma quantidade mínima:** *"2 fotos"*, por exemplo, quando uma só não conta a história.
+
+Enquanto a prova exigida não estiver completa, o app **não deixa concluir** — e mostra, em texto claro, o que ainda falta (*"Foto e (vídeo ou assinatura)"*). Assim a regra acompanha o valor do que sai pelo balcão: leve para o corriqueiro, reforçada para o item caro.
 
 ## Vários galpões
 

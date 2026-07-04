@@ -57,6 +57,10 @@ Antes de toda rota, o app mostra uma tela enxuta — **"Antes de começar a rota
 
 Se o motorista já concedeu tudo, esse portão **passa direto** — ele nem chega a vê-lo. Se faltar algo, o botão **Começar execução** só libera depois de conceder os obrigatórios.
 
+{% hint style="info" %}
+**Confirmar chegada ≠ aparecer no mapa ao vivo.** A localização deste portão é a que confirma a **chegada em cada parada** (o "Cheguei" no local certo) — obrigatória para executar. Já **mostrar o caminhão se movendo no mapa** para quem acompanha é outra coisa: uma **preferência opt-in, desligada por padrão**, que o condutor ativa em **Configurações → Preferências**. Sem ela, a execução funciona normal — só o ponto ao vivo no mapa não aparece. Entenda em [Acompanhando seus roteiros](acompanhando-roteiros.md#acompanhar-execucao-no-mapa).
+{% endhint %}
+
 {% hint style="success" %}
 **Negar uma vez não trava para sempre.** O app verifica os acessos **de verdade, no sistema do celular**, toda vez que a tela abre (e quando você volta das Configurações). Se você negou antes, o passo reaparece; e quando o próprio celular bloqueia o pedido, o botão vira **"Abrir configurações"** e te leva direto ao lugar certo.
 {% endhint %}
@@ -137,7 +141,11 @@ Não dá para marcar "Entregue" sem antes ter registrado a chegada. Essa ordem g
 
 Depois de chegar, o motorista conclui: **Entregue** (numa entrega) ou **Retirado** (numa retirada). É aqui que entra a **comprovação** — a prova que você guarda de cada movimento.
 
-O que precisa ser registrado **depende da política da sua empresa**, definida nos [motores operacionais](../configuracoes/motores-operacionais.md). Você escolhe os requisitos **separadamente para entrega e para retirada**. Cada item marcado vira **obrigatório**: o app não deixa concluir sem registrar. **Nada marcado = conclui com um toque**, sem prova.
+O que precisa ser registrado **depende da política da sua empresa**, definida nos [motores operacionais](../configuracoes/motores-operacionais.md). Você escolhe os requisitos **separadamente para entrega e para retirada**. **Nada marcado = conclui com um toque**, sem prova.
+
+{% hint style="info" %}
+**A regra pode combinar meios — não é só uma lista de "tudo obrigatório".** Você pode exigir dois juntos (*"foto **e** vídeo"*), dar alternativas (*"vídeo **ou** assinatura"*), misturar (*"foto **e** (vídeo **ou** assinatura)"*) ou pedir uma **quantidade mínima** (*"2 fotos"*). Enquanto a prova não estiver completa, o app não deixa concluir e mostra em texto claro o que ainda falta. O mesmo modelo vale no [balcão](balcao.md#comprovacao-no-balcao).
+{% endhint %}
 
 #### O que dá para registrar hoje
 

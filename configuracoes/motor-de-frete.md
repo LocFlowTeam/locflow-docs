@@ -1,6 +1,6 @@
 ---
 icon: truck-fast
-description: Como o LocFlow calcula o frete — a Rota Estimada (pior cenário), o princípio "por rota, não por viagem", os perfis e o simulador.
+description: Como o LocFlow calcula o frete — a Rota Estimada (pior cenário), o princípio "por viagem" (ida e volta como uma coisa só), os perfis e o simulador.
 ---
 
 # Motor de Frete: como calcula
@@ -27,58 +27,58 @@ Texto de ajuda do próprio app (tela do motor):
 
 Por que "pior cenário"? Porque, na hora do orçamento, você ainda não sabe se aquele veículo vai sair só para esse cliente ou cheio de outras entregas. O motor assume o caso mais caro — ida e volta dedicadas — para **nunca subfaturar o transporte**. Quando o roteiro for de fato planejado, depois do pedido ganho, o LocFlow otimiza a logística de verdade; mas o **preço** que o cliente vê nasce dessa estimativa conservadora.
 
-### Por que "4 rotas" num aluguel {#a-base-de-tudo-a-rota-estimada}
+### Por que "2 viagens" num aluguel {#a-base-de-tudo-a-rota-estimada}
 
-Cada Rota Estimada é **um trecho fechado** — uma ida tem sempre a sua volta. E um aluguel típico tem **dois movimentos** (a entrega e a retirada), cada um com ida e volta:
+Cada **viagem** é **ida e volta como uma coisa só** — a Rota Estimada de um movimento já inclui o caminho de ida e o de volta. E um aluguel típico tem **dois movimentos** (a entrega e a retirada), ou seja, **duas viagens**:
 
 {% hint style="info" %}
 Texto de ajuda do app:
 
-> Um aluguel típico envolve **4 rotas estimadas**:
-> 1. Ida da entrega (galpão → cliente)
-> 2. Volta da entrega (cliente → galpão)
-> 3. Ida da retirada (galpão → cliente)
-> 4. Volta da retirada (cliente → galpão)
+> Um aluguel típico envolve **duas viagens**:
+> 1. Viagem de entrega (galpão → cliente → galpão)
+> 2. Viagem de retirada (galpão → cliente → galpão)
 >
-> Por isso, valores e limites configurados aqui valem **por rota**, não por orçamento.
+> Cada viagem é a **ida e a volta** de um movimento, contadas como uma só. Por isso, valores e limites configurados aqui valem **por viagem**, não por orçamento.
 {% endhint %}
 
 ```mermaid
 flowchart LR
-    G1[Galpao] -->|1. ida entrega| C1[Cliente]
-    C1 -->|2. volta entrega| G2[Galpao]
-    G2 -->|3. ida retirada| C2[Cliente]
-    C2 -->|4. volta retirada| G3[Galpao]
+    G1[Galpao] -->|Viagem de entrega: ida| C1[Cliente]
+    C1 -->|volta| G2[Galpao]
+    G2 -->|Viagem de retirada: ida| C2[Cliente]
+    C2 -->|volta| G3[Galpao]
 ```
 
-Numa **venda** não há devolução: o item sai em definitivo, então sobram **2 rotas** (a ida e a volta da entrega). E se o cliente **retira no galpão**, ou **devolve no galpão**, aquele movimento some — e com ele somem as suas rotas. O motor só conta o que tem deslocamento real.
+Numa **venda** não há devolução: o item sai em definitivo, então sobra **1 viagem** (a entrega, ida e volta). E se o cliente **retira no galpão**, ou **devolve no galpão**, aquele movimento some — e com ele some a sua viagem. O motor só conta o que tem deslocamento real.
 
-## Por rota, não por viagem {#por-rota-nao-por-viagem}
+## Por viagem, não por orçamento {#por-rota-nao-por-viagem}
 
-Este é o ponto que mais gera confusão — e o que o app mais reforça. **Cada valor que você define é aplicado a cada Rota Estimada**, não ao orçamento inteiro.
+Este é o ponto que mais gera confusão — e o que o app mais reforça. **Cada valor que você define é aplicado a cada viagem**, não ao orçamento inteiro.
 
 {% hint style="warning" %}
 Texto de ajuda do app — leia com atenção, porque ele evita a sobrecobrança mais comum:
 
-> Cada cobrança que você cria é aplicada **a cada rota estimada** — não ao orçamento inteiro.
+> Cada cobrança que você cria é aplicada **a cada viagem** — não ao orçamento inteiro.
 >
-> Em um aluguel típico (4 rotas), uma cobrança de **R$ 500 fixo** somaria **R$ 2.000** ao frete final (4 × R$ 500). Por isso é importante pensar **por rota** ao definir valores.
+> Em um aluguel típico (2 viagens), uma cobrança de **R$ 500 fixo** somaria **R$ 1.000** ao frete final (2 × R$ 500). Por isso é importante pensar **por viagem** ao definir valores.
 {% endhint %}
 
 A regra de bolso vem do próprio app:
 
-> Quer cobrar R$ 500 totais no aluguel? Configure **R$ 125 por rota** — o motor aplica nas 4 rotas e o frete final fecha em R$ 500.
+> Quer cobrar R$ 500 totais no aluguel? Configure **R$ 250 por viagem** — o motor aplica nas 2 viagens (entrega e retirada) e o frete final fecha em R$ 500.
 
 ```mermaid
 flowchart TB
-    V["R$ 125 por rota"] --> R1["Ida entrega: R$ 125"]
-    V --> R2["Volta entrega: R$ 125"]
-    V --> R3["Ida retirada: R$ 125"]
-    V --> R4["Volta retirada: R$ 125"]
-    R1 & R2 & R3 & R4 --> T["Frete final: R$ 500"]
+    V["R$ 250 por viagem"] --> R1["Viagem de entrega: R$ 250"]
+    V --> R2["Viagem de retirada: R$ 250"]
+    R1 & R2 --> T["Frete final: R$ 500"]
 ```
 
-Pense sempre em **uma perna do trajeto** ao definir um valor. O motor multiplica pelo número de rotas do cenário — e o [simulador](#o-simulador) mostra a soma final antes de você publicar, justamente para não escorregar nisso.
+Pense sempre em **uma viagem** (um movimento, ida e volta) ao definir um valor. O motor multiplica pelo número de viagens do cenário — e o [simulador](#o-simulador) mostra a soma final antes de você publicar, justamente para não escorregar nisso.
+
+{% hint style="info" %}
+**O que dobra e o que não dobra.** O **valor fixo** e a **carga** (peso e volume) contam **uma vez por viagem** — não dobram porque o veículo vai e volta. Já as regras por **km** ou por **tempo** consideram o trajeto **inteiro da viagem** (ida e volta somadas): é a única grandeza que junta os dois trechos.
+{% endhint %}
 
 ## Os três perfis {#os-tres-perfis}
 
@@ -110,7 +110,7 @@ E o app já aponta o próximo degrau, para você não se sentir preso:
 
 ### Perfil Intermediário {#perfil-intermediario}
 
-Aqui você monta uma **lista** de cobranças, e o motor combina todas que se encaixam em cada rota.
+Aqui você monta uma **lista** de cobranças, e o motor combina todas que se encaixam em cada viagem.
 
 {% hint style="info" %}
 Texto de ajuda do app:
@@ -147,7 +147,7 @@ Texto de ajuda do app:
 
 > Uma **cobrança** é uma situação que você sabe descrever ("para Sorocaba", "no fim de semana", "para entregas longas") com um valor associado ("R$ 500 fixo", "R$ 3/km", "20% a mais").
 >
-> Você só pensa em **situações e valores**. O motor analisa cada rota estimada e aplica todas as cobranças que se encaixam, somando tudo no final.
+> Você só pensa em **situações e valores**. O motor analisa cada viagem e aplica todas as cobranças que se encaixam, somando tudo no final.
 {% endhint %}
 
 Cada cobrança se monta em poucos passos: **quando ela vale** (o gatilho), **quanto cobra** (valor fixo, por km, por minuto) e, se quiser, **limites** (piso, teto, distância mínima).
@@ -156,7 +156,7 @@ Cada cobrança se monta em poucos passos: **quando ela vale** (o gatilho), **qua
 
 O **gatilho** é a situação que liga a cobrança.
 
-> O **gatilho** define quando a cobrança se aplica: município, distância, tempo de transporte, raio, peso, volume, tipo de rota (ida/volta), épocas do ano ou período do dia.
+> O **gatilho** define quando a cobrança se aplica: município, distância, tempo de transporte, raio, peso, volume, épocas do ano ou período do dia.
 
 Para os gatilhos numéricos (km, minutos, kg, m³…), o app faz uma pergunta esperta — **cobrar pela variável** ou **usá-la como filtro**:
 
@@ -169,7 +169,7 @@ Para os gatilhos numéricos (km, minutos, kg, m³…), o app faz uma pergunta es
 
 Exemplo combinando os dois, direto do app:
 
-> Gatilho "distância" + critério "entre 0 e 50 km" + valor "R$ 100 fixo + R$ 3/km" = cobrança específica para rotas curtas.
+> Gatilho "distância" + critério "entre 0 e 50 km" + valor "R$ 100 fixo + R$ 3/km" = cobrança específica para viagens curtas.
 
 {% hint style="info" %}
 Os gatilhos de **sazonalidade** (épocas do ano) e **período do dia** usam as listas que você cadastra em [Horários e sazonalidades](horarios-e-sazonalidades.md). Sem nada cadastrado lá, o app avisa que não há épocas/períodos para escolher.
@@ -186,7 +186,7 @@ Opcionais, para travar valores extremos. Os textos de ajuda do app explicam cada
 | **Distância mínima cobrada** | *"Para cobranças por km: distâncias menores que esse valor são tratadas como esse valor."* |
 
 {% hint style="warning" %}
-**Os limites também valem por rota, não por viagem.** Um piso de R$ 80 garante R$ 80 em *cada* rota — num aluguel de 4 rotas, isso é R$ 320 de mínimo no frete. A mesma lógica de [por rota, não por viagem](#por-rota-nao-por-viagem) vale aqui.
+**Os limites também valem por viagem.** Um piso de R$ 80 garante R$ 80 em *cada* viagem — num aluguel de 2 viagens, isso é R$ 160 de mínimo no frete. A mesma lógica de [por viagem, não por orçamento](#por-rota-nao-por-viagem) vale aqui.
 {% endhint %}
 
 ## O simulador {#o-simulador}
@@ -197,15 +197,21 @@ Antes de publicar — e a qualquer momento depois — você pode **testar o moto
 **O simulador é local.** Ele não consulta o mapa nem cria rota real — só roda o seu cálculo de regras com valores que você inventa. Como o próprio app diz: *"Os cálculos são locais — nenhuma rota real é criada."* O cálculo de frete que **consome créditos** é só o do orçamento real, quando mede a rota de verdade.
 {% endhint %}
 
-Como funciona: você escolhe o **cenário logístico** (Aluguel ou Venda; cliente retira/devolve no galpão ou não) e o simulador mostra **quantas rotas** aquele cenário gera. Depois você preenche valores hipotéticos (distância, peso, município…) e vê o **frete final**, com o detalhamento de quais regras foram aplicadas e quantas vezes cada uma.
+Como funciona: você escolhe o **cenário logístico** (Aluguel ou Venda; cliente retira/devolve no galpão ou não) e o simulador mostra **quantas viagens** aquele cenário gera. Depois você preenche valores hipotéticos (distância, peso, município…) e vê o **frete final**, com o detalhamento de quais regras foram aplicadas e quantas vezes cada uma.
 
-> Espelha os mesmos controles do orçamento: ajuste para ver como o cenário muda a quantidade de rotas calculadas.
+> Espelha os mesmos controles do orçamento: ajuste para ver como o cenário muda a quantidade de viagens calculadas.
 
-É a melhor forma de pegar o erro de "por rota, não por viagem" antes que ele chegue num cliente: monte um aluguel, veja o frete fechar em 4× o valor por rota, e ajuste se não for o que você esperava.
+É a melhor forma de pegar o erro de sobrecobrança antes que ele chegue num cliente: monte um aluguel, veja o frete fechar em 2× o valor por viagem, e ajuste se não for o que você esperava.
 
 {% hint style="info" %}
-Se as suas regras dependem de **veículo ou classe veicular**, o simulador avisa que essa seleção ainda não está disponível nele — o cálculo real no orçamento continua funcionando normalmente.
+Se as suas regras dependem de **especificação veicular**, o simulador avisa que a **distribuição da carga em viagens** ainda não está disponível ali — o cálculo real no orçamento continua funcionando normalmente.
 {% endhint %}
+
+## Quando o frete é seu e quando é terceirizado {#composicao-do-frete}
+
+O que você configura aqui é o **custo** de transportar a carga. No orçamento, esse custo vira a **composição do frete**: cada transportadora disponível — a **sua própria organização** e cada **fornecedor de frete** cadastrado — é cotada pelo **seu próprio motor**, e você escolhe quem leva. Se marcar mais de uma, a carga divide as viagens entre elas e o frete final é a **soma das porções**. Sobre um fornecedor, o custo dele é só o começo: você define **quanto repassa ao cliente** — igual ao custo, mais (para ter margem) ou menos (para absorver). O detalhe de como isso aparece está em [A composição do frete](../orcamentos/valores.md#composicao-do-frete).
+
+Quando há fornecedores, o LocFlow também usa uma **estratégia de alocação** para recomendar quem transporta: **menor preço**, **aproveitamento** (prioriza a sua própria frota) ou **manual**. Você define a regra padrão da organização e pode trocá-la só para um orçamento. Como cada transportadora tem o seu motor, versões e histórico próprios, o assunto ganha página inteira em [Motor de Frete por detentor](motor-de-frete-detentor.md).
 
 ## Por porte {#por-porte}
 
@@ -227,16 +233,16 @@ Daqui para baixo é detalhe de quem gosta de saber a conta por trás. Você **n�
 
 ### A Rota Estimada em números {#a-rota-estimada-em-numeros}
 
-Cada Rota Estimada é sempre um **par fechado** (uma ida tem a sua volta). A quantidade de rotas de um orçamento é a soma dos movimentos com deslocamento, vezes dois:
+Cada **viagem** é sempre um **par fechado** (a ida tem a sua volta) — a Rota Estimada de um movimento. A quantidade de viagens de um orçamento é o número de **movimentos com deslocamento**:
 
-| Cenário | Movimentos com deslocamento | Rotas |
+| Cenário | Movimentos com deslocamento | Viagens |
 | --- | --- | --- |
-| **Venda** com entrega | Entrega (ida + volta) | **2** |
-| **Aluguel** com entrega e retirada | Entrega + Retirada | **4** |
-| **Aluguel**, cliente retira no galpão | Só retirada | **2** |
+| **Venda** com entrega | Entrega (ida e volta) | **1** |
+| **Aluguel** com entrega e retirada | Entrega + Retirada | **2** |
+| **Aluguel**, cliente retira no galpão | Só retirada | **1** |
 | Cliente retira **e** devolve no galpão | Nenhum | **0** (sem frete a calcular) |
 
-O motor avalia **cada regra contra cada rota** e **soma** os resultados. Por isso o valor por rota é a unidade de raciocínio certa.
+O motor avalia **cada regra contra cada viagem** e **soma** os resultados. Por isso o valor por viagem é a unidade de raciocínio certa.
 
 ### Ordem das ações {#ordem-das-acoes}
 
@@ -258,13 +264,13 @@ E como as regras se combinam entre si:
 
 ### Parâmetros disponíveis {#parametros-disponiveis}
 
-O que o motor consegue olhar em cada rota (texto do app, perfil Avançado):
+O que o motor consegue olhar em cada viagem (texto do app, perfil Avançado):
 
-> **Geotemporais** (condição e ação) — distância percorrida, distância radial, tempo de transporte com trânsito e sem trânsito.
+> **Geotemporais** (condição e ação) — distância percorrida (ida e volta da viagem), distância radial, tempo de transporte com trânsito e sem trânsito.
 >
-> **Carga** (condição e ação) — peso bruto e volume. Hoje tratados como constantes por rota: a disposição dos materiais por veículo ainda não é considerada.
+> **Carga** (condição e ação) — peso bruto e volume. Contam **uma vez por viagem** (não dobram na ida e volta); a disposição dos materiais por veículo ainda não é considerada.
 >
-> **Categóricos** (só condição) — município de origem/destino, classe veicular, veículo e tipo de rota (ida ou volta).
+> **Categóricos** (só condição) — município de origem/destino e **especificação veicular** (o tipo de veículo que leva a carga).
 >
 > **Temporais** (só condição) — intervalos de tempo do dia e intervalos sazonais anuais. Exigem horários estimados de saída e chegada da Rota.
 
@@ -282,17 +288,18 @@ Na prática: você edita à vontade em **rascunho**, simula, e só quando **publ
 
 ## Situações reais {#situacoes-reais}
 
-- **"Coloquei R$ 500 e o frete saiu R$ 2.000."** É o motor aplicando os R$ 500 nas 4 rotas do aluguel. Você queria R$ 500 totais? Configure **R$ 125 por rota**. Confira no simulador antes de publicar.
-- **Taxa de combustível em cima de tudo.** No perfil Intermediário, crie uma cobrança com gatilho "qualquer rota" e um valor (fixo ou %). Por ser **ampla**, ela sempre soma ao que as outras cobranças já calcularam.
+- **"Coloquei R$ 500 e o frete saiu R$ 1.000."** É o motor aplicando os R$ 500 nas 2 viagens do aluguel. Você queria R$ 500 totais? Configure **R$ 250 por viagem**. Confira no simulador antes de publicar.
+- **Taxa de combustível em cima de tudo.** No perfil Intermediário, crie uma cobrança com gatilho "qualquer viagem" e um valor (fixo ou %). Por ser **ampla**, ela sempre soma ao que as outras cobranças já calcularam.
 - **Preço diferente por cidade.** Duas cobranças "para Sorocaba" e "para Campinas", cada uma com seu valor. Como são **específicas**, o motor usa a que casar com o destino — e a ordem na lista resolve empates.
-- **Frete mínimo para entregas curtas.** Cobrança por km com **piso** de R$ 80: rotas curtas nunca saem abaixo do mínimo operacional. Lembre que o piso vale por rota.
+- **Frete mínimo para entregas curtas.** Cobrança por km com **piso** de R$ 80: viagens curtas nunca saem abaixo do mínimo operacional. Lembre que o piso vale por viagem.
 - **Testar sem gastar crédito.** Antes de mexer no motor de verdade, abra o simulador, monte um aluguel típico e veja o frete final — tudo local, zero consumo.
 
 ## Próximo passo {#proximo-passo}
 
 - Veja onde o resultado aparece no orçamento em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md).
-- Entenda os movimentos que geram as rotas em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md).
+- Entenda os movimentos que geram as viagens em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md).
 - Ligue o motor junto dos outros em [Motores operacionais](motores-operacionais.md).
+- Dê um motor a cada fornecedor de frete em [Motor de Frete por detentor](motor-de-frete-detentor.md).
 - Cadastre épocas e períodos do dia para os gatilhos temporais em [Horários e sazonalidades](horarios-e-sazonalidades.md).
 - Configure **quando** um frete alto trava o orçamento em [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Dúvida em algum termo? Consulte o [glossário](../primeiros-passos/glossario.md).

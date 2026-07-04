@@ -82,12 +82,16 @@ Quando você seleciona um roteiro **em execução**, o mapa mostra o andamento n
 * **Linha contínua (verde)** — o trecho que a equipe **já percorreu**.
 * **Linha tracejada** — o que **falta** até o fim.
 * **Ponto roxo** — a **etapa atual** (a próxima parada a cumprir).
-* **Caminhão âmbar** — a **posição do motorista ao vivo**, atualizada enquanto ele dirige (veja abaixo).
+* **Caminhão âmbar** — a **posição do motorista ao vivo**, atualizada enquanto ele dirige, **quando ele escolhe compartilhar** (veja abaixo).
 
 Um roteiro **executado** mostra o trajeto completo como histórico.
 
 {% hint style="info" %}
-**De onde vem a posição ao vivo.** Enquanto o motorista executa o roteiro pelo app (na rua), o LocFlow transmite a localização dele — inclusive com o app em segundo plano. Na **primeira vez**, o app pede a permissão de localização com um aviso explicando o uso; o motorista pode recusar. O compartilhamento **para sozinho** quando a execução termina. Sem isso (ou no histórico), o caminhão não aparece — mas a **etapa atual** continua sendo mostrada.
+**De onde vem a posição ao vivo — e por que às vezes o caminhão não aparece.** Ver o motorista se mover no mapa **não é automático**. É uma **escolha do condutor**: por padrão o compartilhamento vem **desligado**, e ele precisa **ativá-lo** em **Configurações → Preferências → Localização em tempo real**. Só depois de ligar é que o app pede a permissão de localização do aparelho (inclusive com o app em segundo plano). Enquanto ele não ativa, o caminhão **não aparece** e o roteiro fica marcado como **em rota sem compartilhar** — isso é **normal**, não é sinal de que algo quebrou. A **etapa atual** continua sendo mostrada mesmo assim. Quando o compartilhamento está ligado, a posição se atualiza enquanto ele dirige e **para sozinha** ao fim da execução.
+{% endhint %}
+
+{% hint style="success" %}
+**Precisa ver onde o caminhão está?** Se um condutor está em rota mas ainda não compartilha, quem coordena a operação (com acesso a **ver todos os roteiros**) enxerga um painel **"Sem localização ao vivo"** no canto do mapa e pode tocar em **Solicitar**. O condutor recebe a notificação **"Localização ao vivo solicitada"**, que o leva direto às preferências para ativar com um toque — ele pode aceitar (e desligar de novo quando quiser). O pedido **não liga nada sozinho**: a decisão continua sendo dele.
 {% endhint %}
 
 ## A tela do roteiro <a id="a-tela-do-roteiro"></a>

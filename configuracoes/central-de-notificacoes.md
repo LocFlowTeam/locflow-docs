@@ -95,7 +95,7 @@ Alguns avisos aparecem numa seção **"Em breve"**, recolhida no fim da lista, c
 
 ## O que você pode ser avisado (catálogo) {#catalogo}
 
-> A coluna **Status** mostra o que já está disponível e o que está **Em breve** (só visualização).
+> A coluna **Status** mostra o que já está disponível e o que está **Em breve** (só visualização). Um caso à parte: o aviso *Aguardando aprovação* **já dispara** hoje, mas a **tela para configurá-lo** ainda não chegou — por isso o rótulo *"Já avisa · ajuste em breve"*.
 
 ### Cobrança
 
@@ -126,7 +126,11 @@ Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o condutor n�
 | Notificação | Quando avisa | Canal padrão | Nível padrão | Status |
 | --- | --- | --- | --- | --- |
 | Acompanhamento de orçamento em aberto | Faltam X dias para a data do evento (aluguel) ou para o vencimento do orçamento — e o orçamento ainda está em aberto, em negociação ou pré-reservado | Responsável pela operação (o vendedor do orçamento) | Importante | Disponível |
-| Aguardando aprovação | Um orçamento ou frete precisa de aprovação manual | — | Importante | Em breve |
+| Aguardando aprovação | Um orçamento fica congelado esperando um aval — por exemplo, quando o frete passa de um limite e pede aprovação manual | Aprovadores de orçamento | Importante | Já avisa · ajuste em breve |
+
+{% hint style="info" %}
+**Sobre o "Aguardando aprovação": o aviso já dispara.** Quando um orçamento congela esperando aprovação (um frete acima do limite, por exemplo), quem pode **vender orçamentos** já é avisado na hora — pelo canal **Aprovadores de orçamento** — para decidir. O que ainda está chegando é só a **tela de configuração** deste aviso: por ora você **não consegue ligá-lo/desligá-lo nem trocar o canal ou o nível** por aqui (ele aparece esmaecido, em "Em breve", na lista de configuração). Ou seja: **já avisa hoje**, só ainda **não é ajustável**. Assim que a configuração ficar pronta, ele sai do "Em breve".
+{% endhint %}
 
 #### Como funciona o "Acompanhamento de orçamento em aberto"
 

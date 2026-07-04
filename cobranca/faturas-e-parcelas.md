@@ -5,10 +5,14 @@ description: A fatura nasce sozinha quando o orçamento é ganho — parcelas at
 
 # Faturas e parcelas
 
-Quando um orçamento é ganho — **Reservado** na locação ou **Vendido** na venda — o LocFlow gera a **fatura** automaticamente. É o documento que organiza tudo o que o cliente tem a pagar daquele pedido. Você não precisa "montar" nada na mão: a fatura nasce junto com o ganho e fica grudada no orçamento.
+Quando um orçamento é ganho — **Reservado** na locação ou **Vendido** na venda — o LocFlow gera a **fatura** automaticamente. É a **conta** que organiza tudo o que o cliente tem a pagar daquele pedido. Você não precisa "montar" nada na mão: a fatura nasce junto com o ganho e fica grudada no orçamento.
 
 {% hint style="success" %}
 **Por que isso te faz receber melhor:** a cobrança começa no mesmo instante em que o negócio fecha. Sem fatura esquecida, sem "depois eu lanço", sem pedido entregue e nunca cobrado. Tudo o que foi alugado ou vendido vira algo a receber — na hora.
+{% endhint %}
+
+{% hint style="info" %}
+**Duas coisas se chamam "fatura" — não confunda.** Nesta página, **fatura** é a **conta** do pedido: a estrutura viva que soma o que o cliente deve, guarda as parcelas e calcula o que já entrou. É diferente da **"Fatura de locação em PDF"**, que é um **documento** que você gera nas Ações Rápidas do orçamento (só para **locação**) para enviar ao cliente com valores, parcelas e vencimentos. O PDF é uma foto para imprimir ou mandar; a conta é o controle que se atualiza sozinho a cada recebimento.
 {% endhint %}
 
 ## A fatura nasce do orçamento
@@ -129,14 +133,24 @@ Duas situações deixam algo **somente leitura** — e cada uma por um motivo di
 
 Às vezes sobra um valor **a favor do cliente**. O caso mais comum: uma edição **reduz** o total do pedido **depois** de o cliente já ter pago algo — aí o que ele pagou a mais vira um **saldo a favor** dele. (Também pode acontecer de um pagamento entrar acima do saldo: o excedente vira **crédito** automaticamente.)
 
-Esse saldo a favor você resolve de dois jeitos, conforme a **política da sua locadora**:
+Assim que esse saldo aparece, o LocFlow **já resolve sozinho** — na hora, aplicando a **política padrão da sua locadora** (definida no Motor de Cobrança). Você não precisa abrir a fatura nem clicar em nada: o saldo não fica "pendurado" esperando alguém decidir.
+
+São dois destinos possíveis:
 
 | Forma | O que acontece | Quando faz sentido |
 | --- | --- | --- |
-| **Crédito / vale-locação** | O valor vira crédito reaproveitável na próxima locação, sem operação bancária. | Cliente recorrente, que vai voltar a alugar. |
-| **Reembolso em dinheiro** | O valor é devolvido ao cliente. | Cliente eventual, ou quando ele pede de volta. |
+| **Crédito / vale-locação** | O valor vira crédito reaproveitável na próxima locação, sem nenhuma operação bancária. É o **padrão**. | Cliente recorrente, que vai voltar a alugar. |
+| **Reembolso em dinheiro** | O LocFlow **registra a decisão** de devolver e avisa o time. A devolução em si (PIX, transferência, estorno no cartão) é feita **por fora** do LocFlow. | Cliente eventual, ou quando ele pede o dinheiro de volta. |
 
-Você define o **padrão** em [Motores operacionais](../configuracoes/motores-operacionais.md) (o Motor de Cobrança) e pode **ajustar caso a caso** na hora de resolver.
+Você define esse **padrão** em [Motores operacionais](../configuracoes/motores-operacionais.md) (o Motor de Cobrança). O padrão de fábrica é **crédito / vale-locação**, porque não mexe em dinheiro e o cliente reaproveita na próxima locação. Se um caso pedir tratamento diferente, você pode **sobrepor a política naquela operação** — mas isso é opcional; o normal é o LocFlow resolver pela política e seguir.
+
+{% hint style="warning" %}
+**Reembolso em dinheiro não devolve sozinho.** O LocFlow **não** faz o estorno bancário automático. Quando a política é reembolso, ele **anota a decisão, deixa o rastro no histórico e notifica o time** — a devolução (PIX, transferência ou estorno na maquininha) é você quem faz, por fora. Pense no reembolso como uma **ordem de "devolver este valor"**, não como o dinheiro já saindo da conta.
+{% endhint %}
+
+{% hint style="info" %}
+**Você fica sabendo na hora.** Toda vez que um saldo a favor é resolvido — virou crédito ou virou ordem de reembolso — o LocFlow dispara uma **notificação** para o time, com um atalho para **abrir a fatura** direto. Ninguém precisa ficar vigiando a fatura para descobrir que sobrou valor para o cliente.
+{% endhint %}
 
 {% hint style="info" %}
 **O total nunca muda por baixo dos panos.** Mesmo quando há saldo a favor, o valor total da fatura continua sendo o do orçamento — o saldo a favor é tratado à parte (vira vale ou reembolso), com rastro no histórico. Você sempre sabe de onde veio.
@@ -154,7 +168,7 @@ Você define o **padrão** em [Motores operacionais](../configuracoes/motores-op
 
 * **Locação de evento com sinal:** o orçamento é ganho com uma parcela de **sinal** e uma de **restante**. O cliente paga o sinal por PIX (a parcela "Sinal" fica **Paga**); o restante segue **pendente** até o vencimento. A fatura mostra **Parcialmente paga**.
 * **Cliente paga "o que dá" no balcão:** a parcela de R$ 1.000 recebe R$ 600. Ela se desdobra: R$ 600 vira uma parcela **Paga** e R$ 400 vira uma **nova parcela pendente**, com vencimento para a semana que vem.
-* **Edição depois do ganho:** você tira um item do pedido e o total cai R$ 300, mas o cliente já tinha pago tudo. Sobra R$ 300 a favor dele — o LocFlow aplica a sua política (vira **vale** para a próxima ou volta como **reembolso**).
+* **Edição depois do ganho:** você tira um item do pedido e o total cai R$ 300, mas o cliente já tinha pago tudo. Sobra R$ 300 a favor dele — o LocFlow **resolve na hora** pela sua política: vira **vale** para a próxima locação (padrão) ou registra uma **ordem de reembolso** para você devolver por fora. Nos dois casos o time recebe a notificação com atalho para a fatura.
 * **Dinheiro da rua que não bateu:** o motorista trouxe um valor diferente do registrado. A parcela fica **congelada** até a tesouraria acertar — ninguém recebe nem reagenda nela enquanto isso.
 
 {% hint style="success" %}
@@ -177,7 +191,7 @@ E a fatura inteira:
 * **alguma** parcela com recebimento → **Parcialmente paga**;
 * nenhum recebimento → **Pendente**.
 
-A regra de ouro é que **a soma das parcelas é sempre igual ao total da fatura**. Por isso todo ajuste se "fecha": desdobrar um pagamento parcial tira de uma parcela exatamente o que põe na outra; reduzir o pedido consome das parcelas pendentes; e quando a redução invade o que **já foi pago**, o excedente (**pago − novo total**) não some — ele sai dessa conta e vira o **saldo a favor do cliente**, que você resolve depois como vale ou reembolso.
+A regra de ouro é que **a soma das parcelas é sempre igual ao total da fatura**. Por isso todo ajuste se "fecha": desdobrar um pagamento parcial tira de uma parcela exatamente o que põe na outra; reduzir o pedido consome das parcelas pendentes; e quando a redução invade o que **já foi pago**, o excedente (**pago − novo total**) não some — ele sai dessa conta e vira o **saldo a favor do cliente**, que o LocFlow resolve na hora pela política da org (vale ou ordem de reembolso).
 
 Uma parcela também pode estar **vencida**: é qualquer parcela **não paga** cujo vencimento já passou. "Vencida" é um aviso para você cobrar — não muda o valor nem o status de pagamento dela.
 

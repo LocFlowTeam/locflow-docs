@@ -119,7 +119,7 @@ flowchart TB
 | **Trava o orçamento?** | Sim — abaixo do corte, não cria | Só a taxa/validade; o intervalo **alerta** mas deixa seguir |
 
 {% hint style="warning" %}
-**Isto aqui não é a aprovação por frete.** Travar um orçamento à espera do aval de alguém (por exemplo, quando o frete passa de um limite) é outra configuração — vive no **Motor de Frete**, não aqui. Veja [Aprovação de orçamento](../orcamentos/aprovacao.md).
+**Isto aqui não é a aprovação por frete.** Travar um orçamento à espera do aval de alguém (por exemplo, quando o frete passa de um limite) é outra configuração — ela vive na **Operação do Frete** (uma regra de operação), não aqui. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor do frete; quem decide se aquele frete precisa de aprovação antes do pedido seguir é a **Operação do Frete**. Veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 {% endhint %}
 
 ## Por porte {#por-porte}
@@ -165,6 +165,6 @@ Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso 
 
 - Veja todos os motores e como se encaixam em [Motores operacionais](motores-operacionais.md).
 - Entenda como a taxa de serviço entra no preço em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md).
-- Para o **travamento por frete** (que é outro motor), veja [Aprovação de orçamento](../orcamentos/aprovacao.md).
+- Para o **travamento por frete** (que fica na **Operação do Frete**, não aqui), veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Para como a validade se relaciona com a reserva de itens, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 - Para definir quem pode editar este motor, veja [Colaboradores e acessos](colaboradores-e-acessos.md).

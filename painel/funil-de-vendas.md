@@ -42,7 +42,7 @@ A diferença mais importante está no **fechamento**:
 | **Venda** | Fecha direto em **vendido** — um único degrau de fechamento. |
 | **Aluguel** | Fecha por **dois caminhos**: **pré-reserva** (com sinal, estoque pré-travado) **ou** **reserva direta**. |
 
-No aluguel, a **pré-reserva** é opcional — um jeito de "segurar" o aluguel antes de confirmar de vez (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)). Como o cliente pode fechar por qualquer um dos dois, o funil **soma os dois caminhos** ao medir quem saiu da negociação. Isso evita subestimar o avanço (e o gargalo) só porque parte das reservas passou pela pré-reserva.
+No aluguel, a **pré-reserva** é opcional — um jeito de "segurar" o aluguel antes de confirmar de vez (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)). Como o cliente pode fechar por qualquer um dos dois, o funil **soma os dois caminhos** ao medir quem saiu da negociação. Isso evita subestimar o avanço (e o gargalo) só porque parte das reservas passou pela pré-reserva. Se a sua operação não usa esse passo, dá para **desligar a pré-reserva** na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento): a etapa some do funil e a negociação vai direto para reservado (o LocFlow já sugere desligada para quem está começando).
 
 {% hint style="info" %}
 **Estados terminais ficam de fora.** **Perdido**, **Cancelado** e **Finalizado** não entram no funil de conversão — ele é só o caminho de quem ainda pode (ou já conseguiu) fechar. Para olhar perdas e cancelamentos, use os **Indicadores** do painel e os motivos registrados em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).

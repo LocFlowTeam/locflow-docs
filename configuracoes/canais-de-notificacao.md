@@ -93,6 +93,9 @@ Toda organização já vem com canais prontos — você não monta tudo do zero:
 | **Operadores logísticos** | Competência *Operar logística* | Todo o grupo |
 | **Responsável pelo balcão** | Competência *Atendimento no balcão* | Todo o grupo |
 | **Vendedores (rodízio)** | Competência *Vender orçamentos* | Rodízio |
+| **Aprovadores de orçamento** | Competência *Vender orçamentos* | Todo o grupo |
+
+O **Aprovadores de orçamento** é o canal do aviso de **orçamento congelado aguardando aprovação** — por exemplo, quando o frete passa de um limite e o pedido trava esperando um aval. Ele fala com todo o grupo que pode **vender orçamentos**, porque é quem decide aprovar ou rejeitar. Repare que ele usa a **mesma competência** do *Vendedores (rodízio)*, mas entrega de forma diferente: aqui **todo o grupo** recebe (uma aprovação parada não pode depender de uma só pessoa da fila).
 
 Na lista, um canal padrão traz o selo **"Recebe por padrão"**. Você pode **editar a pool e o roteamento** dele e reaproveitá-lo nos avisos — mas **não pode removê-lo**, porque ele é a opção que os avisos usam quando você não escolhe outra.
 

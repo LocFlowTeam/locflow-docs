@@ -58,10 +58,10 @@ Ao abrir, você escolhe como prefere montar as regras, pelo perfil da sua opera�
 > Você pode trocar de perfil depois. O app ainda oferece um **Simulador de frete** para testar cenários hipotéticos com as suas regras — cálculo local, **sem criar orçamentos**.
 
 {% hint style="warning" %}
-**O motor cobra por rota, não por viagem.** O LocFlow calcula o frete sobre uma **rota estimada**, como se o veículo saísse do galpão só para aquele orçamento. Um aluguel típico envolve **4 rotas estimadas** (ida e volta da entrega, ida e volta da retirada). Por isso, valores e limites configurados aqui valem **por rota**: uma cobrança de **R$ 500 fixo** somaria **R$ 2.000** ao frete final (4 × R$ 500). Quer cobrar R$ 500 no total? Configure **R$ 125 por rota**.
+**O motor cobra por viagem.** O LocFlow calcula o frete sobre uma **Rota Estimada**, como se o veículo saísse do galpão só para aquele orçamento. Uma **viagem** é um movimento (a entrega ou a retirada), com a **ida e a volta contando como uma coisa só**. Um aluguel típico tem **2 viagens** (a entrega e a retirada). Por isso, valores e limites configurados aqui valem **por viagem**: uma cobrança de **R$ 500 fixo** somaria **R$ 1.000** ao frete final (2 × R$ 500). Quer cobrar R$ 500 no total? Configure **R$ 250 por viagem**.
 {% endhint %}
 
-Para cada variável numérica (km, kg, minutos…), você decide entre **cobrar por ela** (preço por unidade) ou **usá-la como critério** — cobrar só quando o valor estiver dentro de um mínimo, máximo ou faixa. Exemplo: gatilho "distância" + critério "entre 0 e 50 km" + valor "R$ 100 fixo + R$ 3 por km" = uma cobrança específica para rotas curtas.
+Para cada variável numérica (km, kg, minutos…), você decide entre **cobrar por ela** (preço por unidade) ou **usá-la como critério** — cobrar só quando o valor estiver dentro de um mínimo, máximo ou faixa. Exemplo: gatilho "distância" + critério "entre 0 e 50 km" + valor "R$ 100 fixo + R$ 3 por km" = uma cobrança específica para viagens curtas.
 
 > Onde isso aparece no dia a dia: no bloco **Valores** do orçamento, na aba **Frete automático**. Veja [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#frete).
 
@@ -120,17 +120,38 @@ Define as **regras de entrega, retirada e provas**. Tem quatro blocos:
 
 **Agendamento padrão.** Uma sugestão de datas ao criar um orçamento: ao informar a data do evento, a entrega e a retirada são preenchidas automaticamente (e podem ser ajustadas). Você diz quantos dias **antes** do evento é a entrega e quantos dias **depois** é a retirada. Deixe em branco para não sugerir.
 
+**Forma de operação.** Diz como a sua locadora costuma operar — e deixa o app já no formato dela:
+
+* **Mista** *(padrão)* — você decide pedido a pedido. O menu mostra Roteirização e [Balcão](../logistica/balcao.md); ao criar um orçamento, os botões "Cliente retira / devolve no galpão" ficam livres. É o comportamento de sempre.
+* **Só balcão** — o cliente sempre retira e devolve no galpão. O orçamento já nasce assim e a **Roteirização** some do menu. Comum em quem trabalha de portas abertas.
+* **Só rota** — a equipe sempre entrega e retira. O **Balcão** some do menu.
+
+> A ocultação é só para simplificar: a permissão continua a mesma, e o que sumiu volta na hora em que você troca a forma. E nada bloqueia a exceção — quando um pedido fugir do padrão, abra **"Operação avançada"** na seção de movimentos do orçamento e ajuste à mão.
+
 ### Operação do Orçamento {#operacao-do-orcamento}
 
 Parâmetros padrão usados ao montar orçamentos — políticas internas, sem histórico:
 
 * **Taxa de serviço** — um valor de referência que agiliza a criação. "Orçamentos com taxa diferente da configurada aqui ainda podem ser criados normalmente."
 * **Validade do orçamento** — por quantos dias, a partir da criação, o orçamento permanece reservado. "Preços e políticas mudam com frequência; a validade evita orçamentos com regras antigas." É um padrão — o operador pode mudar em cada orçamento.
+* **Pré-reserva** — no aluguel, a [pré-reserva](../painel/funil-de-vendas.md) é uma etapa **opcional** entre "Em negociação" e "Reservado" (segurar antes de confirmar). Aqui você decide se ela entra no seu funil: **Conforme o porte** (segue a sugestão — locador pequeno costuma não usar, médio/grande usa), **Ligada** ou **Desligada** (fixo, independente do porte). Desligada, o funil vai direto de negociação para reservado e a etapa some das telas; orçamentos que já estão pré-reservados continuam valendo.
 * **Intervalo mínimo logístico** — toda entrega e retirada ocorre dentro de um intervalo de horários (não dá para garantir chegada no minuto exato). Este campo define a folga mínima entre o início e o fim de cada movimento. Se algum movimento ficar abaixo dela, o sistema alerta o operador, que precisa consentir com o risco para prosseguir.
 
 ### Operação do Frete {#operacao-do-frete}
 
-Define **como o frete é aprovado** — quando um frete calculado precisa da aprovação de um responsável antes de seguir. É política interna; o **cálculo** do frete fica no Motor de Frete.
+Define **como o frete é aprovado e distribuído** — políticas internas que valem sobre o **valor final** do frete, independentemente de como ele foi calculado (o **cálculo** fica no Motor de Frete). A tela tem **três blocos**:
+
+#### 1. Detentor da política {#operacao-frete-detentor}
+
+Antes de tudo, você escolhe **de quem** é a política que está editando. No LocFlow, o frete pode ser da **própria organização** (você mesmo entrega) ou de um **fornecedor de frete** — uma transportadora parceira cadastrada, com a sua própria frota e o seu próprio cálculo. Cada um desses **detentores** tem a sua política de aprovação, e você as edita uma de cada vez, trocando o detentor aqui no topo.
+
+{% hint style="info" %}
+O seletor de detentor só aparece quando você tem **fornecedores de frete cadastrados** (e permissão + plano para isso). Sem fornecedores, a tela edita direto a política da **sua organização** — que é o caso mais comum. Para entender o frete por fornecedor, veja [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md).
+{% endhint %}
+
+#### 2. Aprovação do frete {#operacao-frete-aprovacao}
+
+Diz **quando um frete precisa do aval de um responsável** antes do orçamento seguir. A tabela abaixo cobre a política da **própria organização** — os três modos disponíveis quando o detentor é você:
 
 | Modo | O que faz |
 | --- | --- |
@@ -140,7 +161,27 @@ Define **como o frete é aprovado** — quando um frete calculado precisa da apr
 
 **Qual usar?** Locador que entrega ele mesmo → **Automática** (zero atrito). Operação em crescimento → **Por valor** (controla só os fretes altos). Equipe com vários vendedores → **Sempre manual** (padroniza margem e evita erro de digitação).
 
+Quando o detentor é um **fornecedor de frete**, aparece um **quarto modo**, exclusivo dele:
+
+| Modo | O que faz |
+| --- | --- |
+| **Aguardar resposta do fornecedor** *(padrão de fornecedor)* | Todo frete deste fornecedor nasce **pendente**, aguardando a confirmação dele antes de seguir. É o padrão seguro — evita fechar um frete terceirizado que ninguém confirmou. |
+
 > Quando um orçamento trava aguardando aprovação, ele vira **Pendente** — uma pré-etapa do funil. Veja [Aprovação de orçamentos](../orcamentos/aprovacao.md).
+
+#### 3. Estratégia de alocação {#operacao-frete-estrategia}
+
+Quando você tem **mais de um detentor de frete** (a sua organização e um ou mais fornecedores), o LocFlow precisa decidir **como distribuir a carga e qual transportadora recomendar**. Este bloco define o padrão — e, por ser uma decisão da organização inteira, ele só aparece na política da **sua organização** (fornecedores não têm estratégia própria).
+
+| Estratégia | O que faz |
+| --- | --- |
+| **Menor valor ao cliente** *(padrão)* | Recomenda a opção mais barata — a que sai com o menor frete para o cliente. |
+| **Melhor aproveitamento** | Recomenda o melhor encaixe da carga no veículo: menos folga e menos viagens. |
+| **Montar manualmente** | Sem recomendação automática — você distribui a carga à mão em cada orçamento. |
+
+{% hint style="info" %}
+A estratégia é só um **padrão de partida**: em cada orçamento você pode trocar a distribuição na mão, na seção de movimentos.
+{% endhint %}
 
 ### Operação da Cobrança {#operacao-da-cobranca}
 
@@ -178,7 +219,7 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 
 ## Situações reais {#situacoes-reais}
 
-* **"Meus orçamentos saem com frete errado."** Confira o **Motor de Frete**: lembre que os valores valem **por rota**, não pela viagem inteira. Use o **Simulador** para testar antes de publicar.
+* **"Meus orçamentos saem com frete errado."** Confira o **Motor de Frete**: lembre que os valores valem **por viagem** (cada movimento, ida e volta), não pelo orçamento inteiro. Use o **Simulador** para testar antes de publicar.
 * **"A equipe começou a preparar um pedido que ainda não foi cobrado."** Em **Motor de Logística**, ligue **"Exigir fatura emitida para iniciar a logística"**.
 * **"O mesmo item foi reservado para dois clientes."** Revise a política do **Motor de Estoque** — provavelmente está "apenas o período do evento" quando deveria ser "pela entrega e retirada" (ou com folga).
 * **"Quero que fretes altos passem por mim antes de fechar."** Em **Operação do Frete**, escolha **Aprovar acima de um valor** e defina o limite.
@@ -189,5 +230,6 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 * [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md) — o Motor de Estoque em detalhe.
 * [Valores: mão de obra, frete e descontos](../orcamentos/valores.md) — onde o Motor de Frete aparece no orçamento.
 * [Aprovação de orçamentos](../orcamentos/aprovacao.md) — o que acontece quando a Operação do Frete trava um pedido.
+* [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md) — como cada fornecedor de frete tem a sua própria política de aprovação.
 * [Separação no galpão](../logistica/separacao.md) e [Conferência na devolução](../logistica/conferencia.md) — as etapas internas que o Motor de Logística liga.
 * [Horários e sazonalidades](horarios-e-sazonalidades.md) — os horários comerciais que o cálculo de frete e o agendamento respeitam.

@@ -22,7 +22,7 @@ Uma regra tem estas partes:
 | **Nome e descrição** | Identificam a regra para você (ex.: *"Frete base por km"*). A descrição é opcional. |
 | **Prioridade** | Um número. **Menor número = mais prioritária.** Define a ordem em que as regras são avaliadas. |
 | **Conflito com outras regras** | Se a regra **vence sozinha** ou **acumula** com as demais (veja [abaixo](#conflito)). |
-| **Condições** | **Quando** a regra se aplica. Sem nenhuma condição, ela vale para qualquer rota. |
+| **Condições** | **Quando** a regra se aplica. Sem nenhuma condição, ela vale para qualquer viagem. |
 | **Ações** | **O que** a regra faz com o valor — acréscimos, multiplicadores, valor fixo. Toda regra precisa de ao menos uma ação. |
 | **Limites** | Piso, teto e distância mínima cobrada (opcionais). |
 
@@ -30,18 +30,18 @@ Uma regra tem estas partes:
 Texto de ajuda do app, sobre as **condições**: *"Definem quando a regra é aplicada. Sem condições, a regra vale para qualquer Rota Estimada."* E: *"Podem ser combinadas com E / OU e agrupadas de forma aninhada para lógicas mais complexas."*
 {% endhint %}
 
-A **Rota Estimada** é o caminho que o motor calcula entre o galpão de origem e o destino. O frete **não** é cobrado por viagem, e sim **por rota** — é o ponto que mais confunde, então vale fixar antes de avançar.
+A **Rota Estimada** é o caminho de **ida e volta** que o motor calcula entre o galpão de origem e o destino de um movimento. O frete é cobrado **por viagem** — cada movimento (a entrega ou a retirada), com a ida e a volta contando como uma coisa só. É o ponto que mais confunde, então vale fixar antes de avançar.
 
-### A cobrança é por rota, não por viagem {#por-rota-nao-por-viagem}
+### A cobrança é por viagem {#por-rota-nao-por-viagem}
 
 {% hint style="warning" %}
-Aviso fiel ao que o app mostra: **A cobrança é por rota, não por viagem.**
+Aviso fiel ao que o app mostra: **A cobrança é por viagem.**
 
-* **Venda (2 cobranças):** 2 rotas — se houver entrega: ida + volta.
-* **Aluguel (4 cobranças):** 4 rotas — se houver entrega: ida + volta; se houver retirada: ida + volta.
+* **Venda:** 1 viagem — a entrega (ida e volta).
+* **Aluguel:** 2 viagens — a entrega (ida e volta) e a retirada (ida e volta).
 {% endhint %}
 
-O motor **analisa cada rota estimada** e aplica nela todas as regras que se encaixam, somando tudo no final. Numa locação com entrega e retirada, são quatro rotas — então uma regra de *"R$ 125 por rota"* fecha o frete em **R$ 500**. Pensar "por rota" é o que faz os números baterem.
+O motor **analisa cada viagem** e aplica nela todas as regras que se encaixam, somando tudo no final. Numa locação com entrega e retirada, são **duas viagens** — então uma regra de *"R$ 250 por viagem"* fecha o frete em **R$ 500**. Pensar "por viagem" é o que faz os números baterem.
 
 ## Condições: o "quando" {#condicoes}
 
@@ -106,7 +106,13 @@ Ajuda do app, **verbatim**:
 *"R$ 1,00/km com piso de R$ 80 e distância mínima de 30km garante que fretes curtos nunca saiam abaixo do mínimo operacional."*
 {% endhint %}
 
-Note a diferença: o **piso/teto** age sobre o **resultado** da regra; a **distância mínima cobrada** age antes, sobre o **parâmetro** de distância usado no cálculo "por unidade" — fretes mais curtos que o mínimo são cobrados como se tivessem a distância mínima. Como tudo é por rota, o piso e o teto também valem **por rota**, não pela viagem inteira.
+Note a diferença: o **piso/teto** age sobre o **resultado** da regra; a **distância mínima cobrada** age antes, sobre o **parâmetro** de distância usado no cálculo "por unidade" — fretes mais curtos que o mínimo são cobrados como se tivessem a distância mínima. Como tudo é por viagem, o piso e o teto também valem **por viagem**, não pela operação inteira.
+
+{% hint style="warning" %}
+**Piso e teto limitam a contribuição daquela regra — não o acumulado.** Num empilhamento de regras acumuladoras (várias somando ao mesmo frete), o teto de uma regra limita **só o que aquela regra soma**, não o total que as regras anteriores já haviam somado. Ou seja: o teto **não engole** o que já estava no valor; ele apenas corta o excesso da própria contribuição. Do mesmo jeito, o piso garante o **mínimo daquela contribuição**, não o mínimo do frete inteiro.
+
+Exemplo: uma regra base já somou **R$ 200** na viagem. Uma segunda regra acumuladora tentaria somar **R$ 86**, mas tem **teto de R$ 50**. O resultado é **R$ 250** — os R$ 200 ficam intactos e a segunda regra entra com R$ 50 (o teto da sua contribuição). O teto **não** derruba o frete para R$ 50. Você vê esse número por completo no [Situações reais](#situacoes-reais) abaixo.
+{% endhint %}
 
 ## Como as regras se combinam: o conflito {#conflito}
 
@@ -125,10 +131,10 @@ Na tela, esses comportamentos aparecem como **"Só esta regra vence"** (primeira
 
 ```mermaid
 flowchart TD
-  R["Regras ativas que batem<br/>nas condições da rota"] --> P{Comportamento}
+  R["Regras ativas que batem<br/>nas condições da viagem"] --> P{Comportamento}
   P -->|Primeira compatível| U["Vence só a de menor número<br/>(maior prioridade); as outras<br/>'primeira compatível' são ignoradas"]
   P -->|Acumuladora| S["Todas somam ao valor corrente"]
-  U --> T["Valor final da rota"]
+  U --> T["Valor final da viagem"]
   S --> T
 ```
 
@@ -142,19 +148,30 @@ São as variáveis que você compara nas condições e usa nas ações "por unid
 Ajuda do app, **verbatim**:
 
 * **Geotemporais** (condição e ação) — distância percorrida, distância radial, tempo de transporte com trânsito e sem trânsito.
-* **Carga** (condição e ação) — peso bruto e volume. Hoje tratados como constantes por rota: a disposição dos materiais por veículo ainda não é considerada.
-* **Categóricos** (só condição) — município de origem/destino, classe veicular, veículo e tipo de rota (ida ou volta).
+* **Carga** (condição e ação) — peso bruto e volume. Contam uma vez por viagem; a disposição dos materiais por veículo ainda não é considerada.
+* **Categóricos** (só condição) — município de origem/destino e **especificação veicular**.
 * **Temporais** (só condição) — intervalos de tempo do dia e intervalos sazonais anuais. Exigem horários estimados de saída e chegada da Rota.
 {% endhint %}
 
-Dois pontos práticos que decorrem disso:
+Sobre a **especificação veicular**: ela é a **ficha técnica do veículo** (o modelo, com marca, ano e combustível) que você cadastra na Frota — não um rótulo genérico. A condição aceita três formas de comparação: a especificação da viagem **é** uma que você aponta, **não é** ela, ou **está na lista** (ou fora da lista) de várias especificações que você seleciona. Os valores vêm direto do seu [cadastro de frota](../cadastros/frota.md#classes-e-especificacoes) — você escolhe entre as fichas reais que já existem. É o parâmetro que permite cobrar diferente conforme o porte do veículo que faz a viagem.
 
-* Os parâmetros que você usa **determinam o que o orçamento vai pedir** antes de calcular o frete. Use distância e o motor exige o destino e o galpão; use peso ou volume e ele exige os itens; use intervalo sazonal e ele exige as datas; use intervalo horário e ele exige os horários. É o mesmo "o LocFlow só pede o que a regra precisa" descrito em [Valores: frete](../orcamentos/valores.md#frete).
-* **Classe veicular** e **veículo específico** estão previstos como parâmetros, mas o cadastro que os alimenta ainda está em construção — o editor avisa quando você seleciona um deles.
+{% hint style="info" %}
+Para uma regra de especificação veicular disparar, a viagem precisa **saber qual veículo a transporta** — o que só acontece quando você **distribui a carga em viagens** no orçamento. Sem essa distribuição, o frete calcula normalmente pelo padrão (uma viagem por movimento) e as regras que dependem da especificação simplesmente não entram. Por isso, ao usar esse parâmetro, o orçamento **oferece** a distribuição da carga; ele não a torna obrigatória.
+{% endhint %}
+
+Um ponto prático que decorre disso: os parâmetros que você usa **determinam o que o orçamento vai pedir** antes de calcular o frete. Use distância e o motor exige o destino e o galpão; use peso ou volume e ele exige os itens; use intervalo sazonal e ele exige as datas; use intervalo horário e ele exige os horários. É o mesmo "o LocFlow só pede o que a regra precisa" descrito em [Valores: frete](../orcamentos/valores.md#frete).
 
 ## A política de aprovação é à parte {#aprovacao}
 
-Cuidado para não confundir: **as regras decidem o valor; elas não decidem se o frete precisa de aprovação.** A aprovação é uma **política global** do motor, única para a organização, que age sobre o **valor final** depois de calculado — Automática, Por valor (acima de um limite) ou Sempre manual. Ela está documentada em [Motores operacionais](motores-operacionais.md#motor-de-frete) e em [Aprovação de orçamentos](../orcamentos/aprovacao.md). Mudar uma regra não muda a política, e vice-versa.
+Cuidado para não confundir: **as regras decidem o valor; elas não decidem se o frete precisa de aprovação.** A aprovação é uma **política** que age sobre o **valor final** depois de calculado — nada tem a ver com quais regras montaram esse valor. Mudar uma regra não muda a política, e vice-versa.
+
+Essa política **não é mais única da organização**: ela é **por detentor**. No LocFlow, o frete pode ser da **sua própria organização** (você mesmo entrega) ou de um **fornecedor de frete** — uma transportadora parceira cadastrada. Cada detentor tem a sua política de aprovação, editada uma de cada vez. Para o frete próprio, há três modos — **Automática**, **Aprovar acima de um valor** e **Sempre exigir aprovação**. Para um fornecedor, aparece um **quarto modo**:
+
+| Modo | O que faz |
+| --- | --- |
+| **Aguardar resposta do fornecedor** | Todo frete daquele fornecedor nasce **pendente**, aguardando a confirmação dele antes do orçamento seguir. É o padrão seguro para frete terceirizado — evita fechar um frete que ninguém confirmou. |
+
+Onde configurar e todos os detalhes: [Motores operacionais → Operação do Frete](motores-operacionais.md#operacao-do-frete), [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md) e, para o efeito no funil, [Aprovação de orçamentos](../orcamentos/aprovacao.md).
 
 ## Versionamento: rascunho, publicar e histórico {#versionamento}
 
@@ -195,14 +212,98 @@ Esse histórico é o que dá **auditoria**: para qualquer frete já calculado, v
 
 ## Situações reais {#situacoes-reais}
 
-* **Base por km com mínimo operacional.** Uma regra *"Frete base por km"*, sem condições (vale para qualquer rota), com a ação **Por unidade** de R$ 1,00/km, **distância mínima cobrada** de 30 km e **piso** de R$ 80. Fretes curtos nunca saem abaixo do mínimo; longos crescem com a distância.
-* **Destino específico que vence sozinho.** Uma regra *"Para Sorocaba"* com condição "município de destino é Sorocaba", ação Valor fixo + por km, marcada como **"Só esta regra vence"**. Junto, uma *"Taxa de combustível"* de +10% marcada como **"Acumula com outras"** — que soma em cima do destino, qualquer que seja.
+Comece pelos casos rápidos e depois acompanhe os **três exemplos passo a passo** — cada um com o número final da conta. Todos os cálculos são **por viagem**: num aluguel com entrega e retirada, o mesmo cálculo roda duas vezes (uma por viagem) e os resultados se somam.
+
+**Casos rápidos:**
+
+* **Base por km com mínimo operacional.** Uma regra *"Frete base por km"*, sem condições (vale para qualquer viagem), com a ação **Por unidade** de R$ 1,00/km, **distância mínima cobrada** de 30 km e **piso** de R$ 80. Fretes curtos nunca saem abaixo do mínimo; longos crescem com a distância.
 * **Sazonalidade e horário.** Uma regra com condição de **período sazonal** (alta temporada) e um **multiplicador ×1,3**; outra com **intervalo horário** noturno e um **acréscimo fixo**. Como usam parâmetros temporais, o orçamento vai pedir as datas e os horários antes de liberar o cálculo.
 * **Troca de tabela.** Você monta a nova tabela no **rascunho**, publica num dia combinado e, se algo der errado, abre o histórico e usa **Voltar a usar esta publicação** na versão anterior.
 
+### Exemplo 1 — Condições aninhadas E/OU, com adicional por distância {#exemplo-condicoes-aninhadas}
+
+Você quer cobrar um adicional quando a viagem é **longa** e vai **para o interior** — ou quando ela exige um **caminhão**, independentemente do destino.
+
+Monte **uma regra** *"Adicional interior/carga pesada"*, marcada como **Acumula com outras**:
+
+* **Condições** (um grupo **E** com um subgrupo **OU** dentro):
+  * Distância percorrida **maior que** 50 km
+  * **E** — subgrupo **OU**:
+    * Município de destino **está na lista** [Sorocaba, Votorantim]
+    * **OU** Especificação veicular **é** *"Caminhão 3/4"*
+* **Ações:** acréscimo fixo **R$ 120** + **R$ 2,50/km**  + acréscimo percentual **+10%**
+
+Agora uma viagem para **Sorocaba** cuja Rota Estimada (ida e volta) soma **80 km**. A condição é verdadeira: `80 > 50` **E** (Sorocaba está na lista). A regra dispara e, como é a única a se aplicar, o valor corrente começa em zero. As ações rodam na **ordem canônica**:
+
+| Passo | Ação | Conta | Valor corrente |
+| --- | --- | --- | --- |
+| 1 | Acréscimo fixo | 0 + 120 | R$ 120,00 |
+| 2 | Por unidade | 120 + (80 × 2,50) | R$ 320,00 |
+| 3 | Acréscimo percentual | 320 + 10% | **R$ 352,00** |
+
+**Resultado: R$ 352,00 na viagem.** Se, em vez de Sorocaba, o destino fosse uma cidade fora da lista mas a viagem exigisse o *"Caminhão 3/4"*, o subgrupo **OU** ainda daria verdadeiro pela especificação — e a conta seria a mesma. Basta um dos dois lados do OU bater.
+
+### Exemplo 2 — Ordem canônica das ações + "Só esta regra vence" × "Acumula" {#exemplo-ordem-e-conflito}
+
+Aqui você combina **quatro ações numa mesma regra** e vê como o conflito entre regras decide quem soma. Três regras:
+
+| Regra | Condição | Ações | Conflito | Prioridade |
+| --- | --- | --- | --- | --- |
+| *"Base capital"* | destino **é** São Paulo | fixo R$ 50 + R$ 3,00/km + **+20%** + **×1,5** | Só esta regra vence | 10 |
+| *"Base litoral"* | destino **é** Santos | fixo R$ 90 + R$ 4,00/km | Só esta regra vence | 20 |
+| *"Taxa de combustível"* | (sem condição) | **+10%** | Acumula com outras | 30 |
+
+Uma viagem para **São Paulo** com **60 km** de Rota Estimada. Entre as regras **"Só esta regra vence"**, só *"Base capital"* bate (o destino não é Santos), então **ela vence** e roda a partir de zero, na ordem canônica:
+
+| Passo | Ação | Conta | Valor corrente |
+| --- | --- | --- | --- |
+| 1 | Acréscimo fixo | 0 + 50 | R$ 50,00 |
+| 2 | Por unidade | 50 + (60 × 3,00) | R$ 230,00 |
+| 3 | Acréscimo percentual | 230 + 20% | R$ 276,00 |
+| 4 | Multiplicador | 276 × 1,5 | R$ 414,00 |
+
+Fechada a regra vencedora, entra a **acumuladora** *"Taxa de combustível"*, que soma **sobre** os R$ 414,00:
+
+| Passo | Ação | Conta | Valor corrente |
+| --- | --- | --- | --- |
+| 5 | Acréscimo percentual (+10%) | 414 + 10% | **R$ 455,40** |
+
+**Resultado: R$ 455,40 na viagem.** Repare em dois pontos: a ordem das ações dentro de *"Base capital"* é sempre a canônica (o multiplicador ×1,5 vem **por último**, depois do +20%), não a ordem em que você as cadastrou; e a *"Taxa de combustível"* **acumula** por cima de qualquer regra de destino que tenha vencido. Se a viagem fosse para Santos, *"Base litoral"* venceria no lugar — e a taxa somaria igual.
+
+{% hint style="warning" %}
+Se você acrescentasse uma ação **Valor fixo** dentro de *"Base capital"*, ela **substituiria** todo o resultado dos passos 1 a 4 (o Valor fixo é o último da ordem e zera o que veio antes). Use Valor fixo apenas quando a intenção é *"este preço e ponto final"*.
+{% endhint %}
+
+### Exemplo 3 — Limites por contribuição num empilhamento {#exemplo-limites-contribuicao}
+
+Este exemplo mostra o ponto que mais confunde: **o teto de uma regra limita só o que ela soma, não o total já acumulado.** Duas regras acumuladoras:
+
+| Regra | Ação | Limite | Conflito | Prioridade |
+| --- | --- | --- | --- | --- |
+| *"Base por km"* | R$ 2,00/km | — | Acumula | 10 |
+| *"Pedágios e taxas"* | fixo R$ 20 + **+30%** | **teto R$ 50** | Acumula | 20 |
+
+Uma viagem de **100 km**. A primeira regra roda a partir de zero:
+
+* *"Base por km"*: 0 + (100 × 2,00) = **R$ 200,00**. Sem limites, contribui os R$ 200 inteiros. Valor corrente = R$ 200,00.
+
+Agora a segunda regra soma **sobre** os R$ 200,00 — mas seu **teto de R$ 50 vale para a própria contribuição**, não para o acumulado:
+
+| Etapa | Conta | Valor |
+| --- | --- | --- |
+| Ações de *"Pedágios e taxas"* sobre R$ 200 | 200 + 20 = 220 → 220 + 30% = 286 | R$ 286,00 (bruto) |
+| Contribuição bruta desta regra | 286 − 200 | R$ 86,00 |
+| Teto corta a **contribuição** para R$ 50 | — | R$ 50,00 |
+| Valor final | 200 + 50 | **R$ 250,00** |
+
+**Resultado: R$ 250,00 na viagem.** Os R$ 200 da *"Base por km"* ficam **intactos** — o teto não "engole" o acumulado, só apara o excesso dos R$ 86 que a segunda regra tentou somar, deixando R$ 50. (Se o teto agisse sobre o acumulado, o frete despencaria para R$ 50 e a base sumiria — não é o que acontece.)
+
+O **piso** funciona pelo mesmo princípio, ao contrário: garante o **mínimo daquela contribuição**. Imagine uma terceira regra *"Mínimo de deslocamento"* de **R$ 1,00/km com piso de R$ 80**, acumulando numa viagem curta de 30 km. Sua contribuição seria 30 × 1,00 = R$ 30, mas o piso a **eleva para R$ 80** — o mínimo daquela regra, somado por cima do que já havia. O piso não é o mínimo do frete inteiro; é o mínimo do que **aquela regra** entrega.
+
 ## Próximo passo {#proximo-passo}
 
-* [Motores operacionais](motores-operacionais.md) — a visão geral dos motores e a **política de aprovação** do frete.
+* [Motores operacionais](motores-operacionais.md) — a visão geral dos motores e a **política de aprovação** do frete, por detentor.
+* [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md) — como cada fornecedor de frete tem a sua própria aprovação.
 * [Valores: mão de obra, frete e descontos](../orcamentos/valores.md) — como o frete entra no orçamento e o **frete automático x manual**.
 * [Aprovação de orçamentos](../orcamentos/aprovacao.md) — o que acontece quando um frete pede aval.
 * [Horários e sazonalidades](horarios-e-sazonalidades.md) — onde você cadastra os períodos sazonais que as condições usam.

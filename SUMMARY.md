@@ -41,6 +41,12 @@
   * [Especificações: capacidade](cadastros/frota-capacidade.md)
   * [Especificações: vistoria](cadastros/frota-vistoria.md)
 
+## Parcerias
+
+* [Parcerias: a visão](parcerias/visao-geral.md)
+* [Fornecedores de frete](parcerias/fornecedores-de-frete.md)
+* [Acordos de parceria](parcerias/acordos-de-parceria.md)
+
 ## Orçamentos
 
 * [Criando um orçamento](orcamentos/criando-um-orcamento.md)
@@ -67,6 +73,7 @@
 * [Acompanhando seus roteiros](logistica/acompanhando-roteiros.md)
 * [Separação no galpão](logistica/separacao.md)
 * [Planejando o roteiro](logistica/planejando-o-roteiro.md)
+  * [O limite de 24h do roteiro](logistica/limite-de-24h.md)
 * [Execução em campo](logistica/execucao-em-campo.md)
 * [Execução em lote (retroativa)](logistica/execucao-em-lote.md)
 * [Conferência na devolução](logistica/conferencia.md)
@@ -89,6 +96,7 @@
   * [Motor de Frete: como calcula](configuracoes/motor-de-frete.md)
   * [Montando as cobranças do frete](configuracoes/motor-de-frete-cobrancas.md)
   * [Motor de Frete avançado](configuracoes/motor-de-frete-avancado.md)
+  * [Motor de Frete por detentor](configuracoes/motor-de-frete-detentor.md)
   * [Motor de Orçamento](configuracoes/motor-de-orcamento.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
   * [Canais de notificação](configuracoes/canais-de-notificacao.md)
@@ -97,7 +105,6 @@
 * [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
 * [Integrações](configuracoes/integracoes.md)
   * [Sincronização em Nuvem](configuracoes/sincronizacao-em-nuvem.md)
-* [Programa de Parceiros](configuracoes/programa-de-parceiros.md)
 * [Domínio personalizado](configuracoes/dominio-personalizado.md)
 * [Minha conta e preferências](configuracoes/minha-conta.md)
 

@@ -1,6 +1,6 @@
 ---
 icon: book
-description: Os termos do LocFlow em uma linha — orçamento, movimento, frete por rota, fatura, canal, crédito e mais. Consulte sempre que bater dúvida.
+description: Os termos do LocFlow em uma linha — orçamento, movimento, frete por viagem, fatura, canal, crédito e mais. Consulte sempre que bater dúvida.
 ---
 
 # Glossário do LocFlow
@@ -78,10 +78,18 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 
 | Termo | O que é |
 | --- | --- |
-| **Rota Estimada** | O trecho que o motor mede para cobrar o frete, no **pior cenário** (veículo dedicado só àquele pedido). |
-| **Frete por rota (não por viagem)** | Cada valor do motor é aplicado a **cada** Rota Estimada — um aluguel típico tem 4 rotas (ida e volta de entrega e de retirada). |
+| **Rota Estimada** | O trajeto de **ida e volta** de um movimento que o motor mede para cobrar o frete, no **pior cenário** (veículo dedicado só àquele pedido). |
+| **Viagem** | A unidade de cálculo do frete: um movimento (a **entrega** ou a **retirada**), com a **ida e a volta contando como uma coisa só**. |
+| **Frete por viagem** | Cada valor do motor é aplicado a **cada viagem** — o valor fixo e a carga contam 1× por viagem; km e tempo já somam a ida e a volta. Um aluguel típico tem **2 viagens** (a entrega e a retirada). |
+| **Detentor** | O titular de uma ficha de frota, de um motor de frete e de uma porção do frete: a sua **organização** ou um **fornecedor de frete**. Cada detentor cobra pela **tabela dele**. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#detentor). |
+| **Transportadora** | Quem leva uma porção da carga — a sua organização ou um fornecedor. No cálculo do frete, é o mesmo que **detentor**. |
+| **Composição do frete** | Como o valor final é montado: o **custo** de cada porção (cotado pelo motor de quem transporta) somado, mais o **repasse** ao cliente. Veja [Valores](../orcamentos/valores.md#composicao-do-frete). |
+| **Repasse** | Quanto do frete você **cobra do cliente** — pode ser igual, menor ou maior que o custo. |
+| **Margem (no frete)** | A diferença entre o que você cobra do cliente (o repasse) e o **custo** do transporte. |
+| **Estratégia de alocação** | Como o LocFlow **recomenda** repartir a carga entre as transportadoras: **Menor valor ao cliente**, **Melhor aproveitamento** ou **Montar manualmente**. Veja [Motor de Frete por detentor](../configuracoes/motor-de-frete-detentor.md#estrategia-de-alocacao). |
+| **Divisão de movimento** | Repartir a carga de um mesmo movimento entre veículos (e transportadoras) diferentes — cada **porção** com o seu preço. |
 
-→ Detalhes em [Motor de Frete: como calcula](../configuracoes/motor-de-frete.md).
+→ Detalhes em [Motor de Frete: como calcula](../configuracoes/motor-de-frete.md) e [Motor de Frete por detentor](../configuracoes/motor-de-frete-detentor.md).
 
 ## Cobrança {#cobranca}
 
@@ -105,7 +113,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | --- | --- |
 | **Papel** | O que a pessoa **vê e faz** (permissões). Ex.: Motorista, Separador. |
 | **Função** | O **cargo** na operação (Vendedor, Motorista…). |
-| **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística). |
+| **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística, Atendimento no balcão). |
 | **Responsável pela operação** | Quem está **por trás** daquela operação (ex.: quem executa a rota) — descoberto pelo sistema, sem você nomear. |
 
 ## Notificações {#notificacoes}
@@ -126,6 +134,8 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Motor** | Uma regra da sua operação que o sistema segue sozinho (frete, cobrança, logística, estoque, orçamento). |
 | **Crédito (moeda de mapa)** | A "moeda" que cobre o custo dos recursos de **mapa do Google** (geocodificar, traçar e otimizar rota); pino e onboarding são grátis. |
 | **Classe / Especificação / Veículo** | Como a frota é organizada: tipo → ficha técnica → o veículo com placa. |
+| **Fornecedor de frete** | Uma **transportadora terceira** que você cadastra e gerencia por inteiro (ela **não tem login**) para terceirizar o transporte de um pedido. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md). |
+| **Frota-espelho** | As **fichas de veículo** que você cria no seu sistema atribuídas a um fornecedor — é o que permite a ele cotar frete sem ter acesso ao app. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#frota-espelho). |
 | **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos de cada produto cabem — os kits entram diluídos nos seus produtos) ou **volumétrica** (volume do baú × cubagem da carga, pelo fator de cubagem de cada item), usada quando não há limite de contagem. |
 | **Fator de cubagem** | O **volume efetivo (m³)** que um item (produto ou kit) ocupa numa carga, **considerando o empilhamento** — empírico, aferido na prática. Base da estratégia volumétrica. Não pode passar do volume das dimensões da peça; o kit tem fator próprio (não é a soma das peças). |
 | **Baú fechado** | A chave que confirma uma carroceria cubável e **libera** a estratégia volumétrica. |

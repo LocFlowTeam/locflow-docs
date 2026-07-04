@@ -21,6 +21,10 @@ O cadastro é guiado e simples:
 O endereço vira a **origem das rotas** e o raio define até onde você atende. Por isso vale posicionar o pino com capricho — é dele que sai o cálculo de frete e o traçado das entregas.
 {% endhint %}
 
+{% hint style="warning" %}
+**Hoje, o galpão é também o balcão de atendimento.** Quando um cliente **retira ou devolve no galpão**, ele vem a este **mesmo endereço** — o [balcão](../logistica/balcao.md) é a parte de atendimento do galpão, não um ponto à parte. Você ainda não consegue ter um balcão (ponto de retirada do cliente) num endereço diferente do galpão. **Em breve**, locadoras maiores poderão separar os dois: armazéns em certos endereços e balcões/pontos de retirada em outros. Por enquanto, os dois andam sempre juntos.
+{% endhint %}
+
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** com galpão e raio definidos, o LocFlow já sabe de onde sai a entrega e até onde compensa atender. Você cota frete na hora, não promete entrega fora do alcance e organiza as rotas a partir do ponto certo — menos viagem perdida, mais pedido fechado.
 {% endhint %}

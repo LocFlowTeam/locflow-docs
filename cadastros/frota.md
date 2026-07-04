@@ -5,7 +5,7 @@ description: Cadastre sua frota no LocFlow — do "iniciar sem veículo" ao veí
 
 # Frota
 
-A frota é o conjunto de veículos que leva seus [bens móveis](../primeiros-passos/glossario.md) até o cliente e os traz de volta. No LocFlow, você cadastra a frota para **planejar roteiros com veículo e capacidade** — saber o que cabe em cada carro, quem está disponível e quanto a entrega vai render.
+A frota é o conjunto de veículos que leva seus [bens móveis](../primeiros-passos/glossario.md) até o cliente e os traz de volta — sejam eles da sua organização ou de um **fornecedor de frete** que você opera. No LocFlow, você cadastra a frota para **planejar roteiros com veículo e capacidade** — saber o que cabe em cada carro, quem está disponível e quanto a entrega vai render.
 
 Mas calma: cadastrar a frota **não é obrigatório para começar**. O LocFlow abstrai para quem está começando e revela detalhe para quem cresceu. Você sobe a escada no seu ritmo.
 
@@ -77,7 +77,7 @@ flowchart TD
 ```
 
 - **Classe** é só o **nome** que você dá a um tipo de veículo (ex.: "Caminhão Toco", "Van Furgão"). Você informa o nome e escolhe o **tipo de veículo** entre **Carros**, **Caminhões** ou **Motos** (base do catálogo FIPE). O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele.
-- **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe e, em seguida, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico).
+- **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe e, em seguida, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico). Além disso, cada ficha tem uma **[identificação interna](#identificacao-interna)** (o apelido que aparece nas listas) e um **[detentor](#detentor)** (de quem ela é — sua organização ou um fornecedor de frete).
 - **Veículo** é a unidade real, com **placa**, ligada a uma especificação.
 
 Pense assim: a **Classe** diz *que tipo* de veículo é, a **Especificação** diz *qual modelo*, e o **Veículo** diz *qual carro* (a placa). No app, a tela inicial da Frota (o **hub**) resume isso: _"Classe define o porte → Especificação descreve um modelo e sua capacidade → Veículo é a unidade física com placa."_
@@ -85,6 +85,40 @@ Pense assim: a **Classe** diz *que tipo* de veículo é, a **Especificação** d
 {% hint style="info" %}
 **Por que essa hierarquia?** Você descreve o **modelo uma vez** (na especificação) e cadastra **vários veículos** com a mesma ficha — só mudando a placa. Capacidade e vistoria ficam na especificação e valem para todos os carros daquele modelo.
 {% endhint %}
+
+### Identificação interna (o apelido da ficha) <a href="#identificacao-interna" id="identificacao-interna"></a>
+
+Cada especificação tem uma **identificação interna** — um apelido curto que é o **rótulo principal** exibido nas listas, nos cartões da frota e na hora de montar o roteiro. É ele que você vê primeiro, não o nome técnico. O nome técnico completo (marca, modelo e ano) continua ali, mas como **informação secundária**, embaixo.
+
+Para você não perder tempo, o LocFlow **sugere um apelido** assim que você escolhe o veículo — e cuida para que ele seja **único**, desambiguando contra as fichas irmãs (mesma marca e modelo) para você nunca confundir dois carros parecidos. Você decide:
+
+- Tocar em **"Usar sugestão"** e aceitar o nome pronto, ou
+- **Digitar o seu** (ex.: "Strada da equipe A", "Baú grande").
+
+{% hint style="info" %}
+**Por que um apelido?** "VW Delivery 2022" não diz nada para quem está no pátio. "Baú grande" ou "Caminhão do Zé" diz. O apelido é a linguagem da sua equipe — e é por ele que a frota fica fácil de reconhecer numa lista cheia.
+{% endhint %}
+
+### De quem é a ficha (Detentor) <a href="#detentor" id="detentor"></a>
+
+Toda especificação tem um **detentor** — o dono da ficha. Ele pode ser:
+
+- **Própria organização** (padrão) — a frota que é sua.
+- **Um fornecedor de frete** — quando a ficha descreve um veículo de um terceiro que roda para você.
+
+As fichas de um fornecedor formam a **frota-espelho** dele: você espelha, dentro do LocFlow, os veículos que aquele parceiro usa para te atender. Assim, na hora de planejar um roteiro com frete terceirizado, o sistema sabe qual carro do fornecedor está em jogo, com que capacidade. Quando a ficha é de um fornecedor, o cartão dela exibe um **selo com o nome do fornecedor**, para você distinguir num relance o que é seu do que é terceirizado.
+
+Você escolhe o detentor **ao criar** a especificação. E, na **edição**, pode **trocá-lo**:
+
+{% hint style="warning" %}
+**Trocar o detentor move a ficha inteira.** Ao mudar o detentor de uma especificação, ela **e todos os veículos ligados a ela** passam a pertencer ao novo titular. O app avisa quantos veículos serão movidos antes de confirmar. A troca fica **bloqueada** enquanto um motor de frete ativo estiver usando aquela especificação.
+{% endhint %}
+
+{% hint style="info" %}
+**Onde o campo aparece.** O **Detentor** só aparece se o seu plano e as suas permissões liberam frete por fornecedor — em planos como o Starter ele fica oculto e a ficha é sempre da sua organização. E o seletor lista **apenas fornecedores que prestam frete** (os que você marcou como transportadores).
+{% endhint %}
+
+Os **fornecedores de frete** são a **primeira forma de parceria** do LocFlow — mas uma forma particular: hoje o fornecedor é um terceiro que **você gerencia por completo** (você o cadastra, monta a frota-espelho dele e configura o motor de frete que ele cobra), **sem login próprio**. É o primeiro passo de uma visão maior — a de **parceiros como usuários externos, com estrutura e acesso próprios**, que virá a seguir. Para cadastrar um fornecedor e montar a frota-espelho, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
 
 ### A especificação guarda capacidade e vistoria <a href="#capacidade-e-vistoria" id="capacidade-e-vistoria"></a>
 

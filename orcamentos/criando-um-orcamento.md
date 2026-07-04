@@ -1,6 +1,6 @@
 ---
 icon: file-invoice-dollar
-description: A visão geral de montar uma proposta no LocFlow — escolher a natureza, o cliente e percorrer as seções até salvar e enviar.
+description: A visão geral de montar uma proposta no LocFlow — um assistente de 6 etapas, da natureza e do cliente até a revisão dos totais e o envio.
 ---
 
 # Criando um orçamento
@@ -35,28 +35,36 @@ Quando o cliente é uma **empresa (PJ)**, o orçamento pede também o **respons�
 
 É esse contato que a **logística** usa para combinar a entrega e a retirada no dia. Preencher na proposta poupa um vai e volta depois, quando o material já está na rua. Para cliente **pessoa física (PF)**, não há campo de responsável — o próprio contato responde.
 
-## O orçamento é dividido em seções {#secoes}
+## Um assistente de 6 etapas {#etapas}
 
-A tela é organizada em seções, e você preenche **na ordem que quiser**. No alto fica um indicador de seções — no celular como abas, em telas grandes como um trilho lateral — que mostra onde você está e **quanto ainda falta** em cada uma:
-
-* uma **bolinha vermelha** marca um erro que impede salvar (algo obrigatório em falta);
-* uma **bolinha âmbar** marca um aviso — algo que não trava o salvamento, mas precisa ser resolvido antes de avançar o pedido (por exemplo, para reservar).
+Montar a proposta é um **assistente** (passo a passo) de **6 etapas**, na ordem em que você preenche a informação:
 
 ```mermaid
 flowchart LR
-    A[Cliente] --> B[Evento<br/>movimentos e endereços]
+    A[Geral] --> B[Evento]
     B --> C[Frete]
     C --> D[Itens]
     D --> E[Valores]
+    E --> F[Revisão]
 ```
 
-| Seção | O que você resolve aqui | Detalhe em |
+| Etapa | O que você resolve aqui | Detalhe em |
 | --- | --- | --- |
-| **Cliente** | Contato, responsável e o vendedor do pedido | esta página |
-| **Evento** | Os **movimentos** (entrega/retirada), seus **endereços** e as **datas** | [Movimentos e janelas](movimentos-e-janelas.md) · [Endereços](enderecos.md) |
+| **Geral** | A **natureza** (locação/venda), o **cliente** (e o responsável, se for empresa) e o **vendedor** do pedido | esta página |
+| **Evento** | As **datas**, os **movimentos** (entrega/retirada) e seus **endereços** | [Movimentos e janelas](movimentos-e-janelas.md) · [Endereços](enderecos.md) |
 | **Frete** | Cobrança do deslocamento — automática ou manual | [Valores](valores.md) |
 | **Itens** | Os bens móveis (produtos e kits), quantidades e preços | [Catálogo](../cadastros/catalogo-produtos.md) |
-| **Valores** | Total, taxa de serviço, descontos e a **duração** da locação | [Valores](valores.md) · [Duração e bloqueio](duracao-e-bloqueio.md) |
+| **Valores** | Taxa de serviço, descontos, a **duração** da locação e as **observações** | [Valores](valores.md) · [Duração e bloqueio](duracao-e-bloqueio.md) |
+| **Revisão** | Confere o **resumo dos totais** e **salva** | esta página |
+
+A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
+
+* uma marca **vermelha** aponta um erro que impede salvar (algo obrigatório em falta);
+* uma marca **âmbar** aponta um aviso — não trava o salvamento, mas precisa ser resolvido antes de avançar o pedido (por exemplo, para reservar).
+
+{% hint style="info" %}
+**No celular, o assistente é um passo a passo:** uma barra **"Etapa X de N"** no topo mostra o progresso e, no rodapé, os botões **Voltar** e **Avançar** levam você de uma etapa à outra (você também pode deslizar para os lados). **Em telas grandes** (tablet e web), as etapas viram uma **barra de abas no alto** — você toca direto na que quiser — e cada uma se organiza em **duas colunas** para aproveitar o espaço.
+{% endhint %}
 
 {% hint style="info" %}
 **O vendedor já vem preenchido.** Ao criar uma proposta, o LocFlow assume **você** como vendedor. Se outra pessoa fez a venda, basta trocar — útil para acompanhar o desempenho de cada um depois.
@@ -64,15 +72,18 @@ flowchart LR
 
 ## O caminho feliz {#caminho-feliz}
 
-Para a maioria das propostas, o caminho é direto:
+Para a maioria das propostas, o caminho segue as etapas na ordem:
 
-1. **Escolha a natureza** — locação ou venda.
-2. **Selecione o cliente** (e o responsável, se for empresa).
-3. **Defina os movimentos e endereços** — na locação há **entrega** e **retirada**; na venda, só a entrega. Cada movimento pode usar o endereço do cliente, um endereço salvo, um endereço digitado na hora, ou ser feito **no galpão** (o cliente busca e devolve no balcão).
-4. **Ajuste as datas e o período** — o LocFlow já sugere datas com base na sua configuração; você ajusta se precisar.
-5. **Adicione os itens** — produtos e kits, com quantidades e valores.
-6. **Confira o frete e os valores** — o LocFlow soma itens, frete, taxa de serviço e descontos, e mostra o total que o cliente vai ver.
-7. **Salve.**
+1. **Geral** — escolha a **natureza** (locação ou venda), **selecione o cliente** (e o responsável, se for empresa) e confirme o **vendedor**.
+2. **Evento** — ajuste as **datas** (o LocFlow já sugere com base na sua configuração; você muda se precisar) e defina os **movimentos e endereços**. Na locação há **entrega** e **retirada**; na venda, só a entrega. Cada movimento pode usar o endereço do cliente, um endereço salvo, um endereço digitado na hora, ou ser feito **no galpão** (o cliente busca e devolve no balcão).
+3. **Frete** — confira a cobrança do deslocamento, calculada automaticamente ou informada à mão.
+4. **Itens** — adicione produtos e kits, com quantidades e valores.
+5. **Valores** — revise taxa de serviço, descontos, a **duração** da locação e as **observações**.
+6. **Revisão** — confira o **resumo dos totais** (itens, frete, taxa de serviço e descontos somados no total que o cliente vai ver) e toque em **Salvar**.
+
+{% hint style="info" %}
+**O orçamento só é salvo na última etapa.** Percorrer as etapas anteriores não grava nada no servidor — é só na **Revisão**, depois de conferir os números, que você toca em **Salvar** e a proposta nasce. Até lá, seu progresso fica guardado no rascunho local (abaixo).
+{% endhint %}
 
 {% hint style="success" %}
 **Por que isso te faz fechar mais:** com cliente, itens e valores num só lugar, você responde o pedido **na hora** — manda o PDF ou o texto de WhatsApp enquanto o cliente ainda está conversando. Proposta rápida é proposta que fecha; orçamento que demora um dia é venda que esfria.
@@ -99,7 +110,7 @@ A mesma tela atende quem quer rapidez e quem quer controle:
 | --- | --- |
 | **Autônomo / pequeno** | Use o caminho feliz e confie nas sugestões (datas, taxa de serviço, frete). Em poucos toques a proposta está pronta para enviar. |
 | **Operação média** | Ajuste o vendedor, refine as datas de entrega/retirada e use endereços salvos para clientes recorrentes. |
-| **Locadora grande** | Controle cada movimento separadamente, número de viagens, política de duração e descontos — cada seção abre o nível de detalhe que você precisar. |
+| **Locadora grande** | Controle cada movimento separadamente, número de viagens, política de duração e descontos — cada etapa abre o nível de detalhe que você precisar. |
 
 ## Salvando e enviando {#salvar-e-enviar}
 

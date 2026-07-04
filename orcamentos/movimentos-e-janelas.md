@@ -48,6 +48,10 @@ Cada ponta do movimento tem uma decisão simples, controlada por um botão:
 Quando o cliente retira no galpão, a entrega "pela equipe" some — não há trajeto para montar. O mesmo vale para a devolução no galpão no retorno. Você só escolhe o galpão e a data.
 {% endhint %}
 
+{% hint style="info" %}
+Se você definiu uma **[forma de operação](../configuracoes/motores-operacionais.md#motor-de-logistica)** no Motor de Logística (só balcão ou só rota), esses botões já vêm no formato certo e ficam recolhidos em **"Operação avançada"** — abra só quando um pedido fugir do padrão. Na forma **mista** (padrão), eles ficam sempre à mão.
+{% endhint %}
+
 ## As janelas de horário
 
 Aqui está o coração da seção: a **janela** de cada movimento — a data mais a faixa de horário em que ele deve acontecer. Ao tocar no "?" ao lado de **Janela de Entrega** (ou de Retirada), o LocFlow explica os três conceitos abaixo. Os textos a seguir são exatamente os da ajuda do app.
