@@ -101,6 +101,7 @@
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
   * [Canais de notificação](configuracoes/canais-de-notificacao.md)
 * [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
+* [Histórico de auditoria](configuracoes/historico-de-auditoria.md)
 * [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
 * [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
 * [Integrações](configuracoes/integracoes.md)
