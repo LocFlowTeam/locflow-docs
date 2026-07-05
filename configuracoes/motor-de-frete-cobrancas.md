@@ -59,19 +59,23 @@ A **especificação veicular** liga a cobrança ao **tipo de veículo** da viage
 
 Esse é o aviso operacional mais importante do motor, e ele aparece destacado na tela. **Verbatim:**
 
-> **A cobrança é por viagem.**
+> **A cobrança é por viagem, não por rota.**
 >
-> **Venda:** 1 viagem
-> &nbsp;&nbsp;&nbsp;↳ a entrega (ida e volta)
+> Cada viagem é ida e volta. Um valor fixo de R$ 250, por exemplo, vira:
 >
-> **Aluguel:** 2 viagens
-> &nbsp;&nbsp;&nbsp;↳ a entrega (ida e volta)
-> &nbsp;&nbsp;&nbsp;↳ a retirada (ida e volta)
+> **Venda:** R$ 250 — 1 viagem (a entrega)
+> **Aluguel:** R$ 500 — 2 viagens (entrega + retirada)
+>
+> Km e minutos já somam a ida e a volta de cada viagem.
 
 Em palavras: o LocFlow calcula cada **viagem** — cada movimento (a entrega ou a retirada) — separadamente, tratando a **ida e a volta como uma coisa só**. Uma entrega é **uma** viagem; na locação, a **retirada** é outra. Por isso uma cobrança de **R$ 100 fixo** num aluguel não vira R$ 100 no frete: ela incide em **cada viagem** aplicável (nas duas), fechando **R$ 200**.
 
 {% hint style="warning" %}
 Pense no valor da cobrança como o custo de **uma viagem** (um movimento, ida e volta), não da operação inteira. É o que evita sobrecobrar sem perceber.
+{% endhint %}
+
+{% hint style="info" %}
+**Entrega e retirada custam o mesmo por viagem.** Numa locação, as duas viagens vão para o **mesmo destino** — a cidade do cliente —, então toda cobrança (por município, distância, tempo, peso…) incide **igual** na entrega e na retirada. **Não dá para definir um preço só para a entrega e outro só para a retirada:** o motor calcula por viagem (ida e volta) e não separa os dois movimentos. É por isso que um aluguel típico fecha em **2× o valor da viagem**.
 {% endhint %}
 
 ## Passo 2 — Cobrar por essa medida, ou usá-la como critério? {#cobrar-x-criterio}
@@ -97,7 +101,7 @@ Quando você escolhe **usar como critério**, define o recorte:
 | **Entre dois valores** | A medida tem que cair numa **faixa** (ex.: entre 50 e 100 km). |
 
 {% hint style="info" %}
-A mesma medida pode aparecer em **duas** cobranças com papéis diferentes: uma usa a distância **como critério** ("acima de 50 km, +R$ 80 fixo") e outra cobra **por ela** ("R$ 4/km em toda rota"). Não há contradição — são cobranças distintas que somam.
+A mesma medida pode aparecer em **duas** cobranças com papéis diferentes: uma usa a distância **como critério** ("acima de 50 km, +R$ 80 fixo") e outra cobra **por ela** ("R$ 4/km em toda viagem"). Não há contradição — são cobranças distintas que somam.
 {% endhint %}
 
 ## Passo 3 — Quanto você cobra por viagem? {#quanto-cobrar}
@@ -107,8 +111,8 @@ Aqui você define o valor. São **três formatos combináveis** — pode ligar q
 | Formato | O que faz | Verbatim |
 | --- | --- | --- |
 | **Valor fixo** | Um valor em reais sempre que a cobrança se aplica. | *"Cobro esse valor sempre que a cobrança se aplica."* |
-| **Por km rodado** | Multiplica o valor pela distância da rota. | *"Multiplico esse valor pela distância da rota."* |
-| **Por minuto de transporte** | Multiplica o valor pela duração da rota em minutos. | *"Multiplico esse valor pela duração da rota em minutos."* |
+| **Por km rodado** | Multiplica o valor pela distância da viagem (ida e volta). | *"Multiplico esse valor pela distância da viagem (ida e volta)."* |
+| **Por minuto de transporte** | Multiplica o valor pela duração da viagem (ida e volta) em minutos. | *"Multiplico esse valor pela duração da viagem (ida e volta) em minutos."* |
 
 No formato **por minuto** você ainda escolhe **considerar trânsito** (estimativa do mapa, mais realista) ou não (tempo de rota ideal).
 
