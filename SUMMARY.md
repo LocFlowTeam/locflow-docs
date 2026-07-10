@@ -83,6 +83,7 @@
 ## Estoque
 
 * [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md)
+* [Posição e previsão de estoque](estoque/posicao-e-previsao.md)
 
 ## Documentos e marca
 
