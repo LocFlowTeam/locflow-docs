@@ -44,6 +44,7 @@
 ## Parcerias
 
 * [Parcerias: a visão](parcerias/visao-geral.md)
+* [Parceiro Logístico Externo](parcerias/parceiro-logistico-externo.md)
 * [Fornecedores de frete](parcerias/fornecedores-de-frete.md)
 * [Acordos de parceria](parcerias/acordos-de-parceria.md)
 
