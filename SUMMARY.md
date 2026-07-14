@@ -21,6 +21,7 @@
 * [O ciclo de um pedido](conceitos/ciclo-de-um-pedido.md)
 * [Locação e venda](conceitos/locacao-e-venda.md)
 * [Nota fiscal na locação](conceitos/nota-fiscal-na-locacao.md)
+* [Nota fiscal na venda](conceitos/nota-fiscal-na-venda.md)
 * [Papéis, funções e competências](conceitos/papeis-funcoes-competencias.md)
 
 ## Painel
