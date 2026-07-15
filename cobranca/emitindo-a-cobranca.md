@@ -32,6 +32,10 @@ flowchart LR
     GC --> P[Parcelas com<br/>valores e datas]
 ```
 
+{% hint style="info" %}
+**Não tem prazo para cobrar.** A cobrança é independente da logística: você pode gerá-la logo após o ganho, no meio da operação **ou depois de finalizar** — se entregou sem faturar antes, o botão **Gerar cobrança** continua disponível no pedido finalizado. Você nunca fica sem como cobrar o que já saiu.
+{% endhint %}
+
 ## Escolha como o cliente vai pagar
 
 São três formatos. Você toca em um cartão no topo da folha e o restante da tela se ajusta ao que aquele formato precisa.

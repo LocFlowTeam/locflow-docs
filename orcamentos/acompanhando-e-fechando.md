@@ -43,10 +43,14 @@ flowchart LR
 | **Vendido** | Venda confirmada — o **ganho** da venda. | Venda. |
 | **Perdido** | A proposta não fechou (no funil, antes do ganho). | Aluguel e venda. |
 | **Cancelado** | Cancelado **depois** de ganho — já havia compromissos. | Pós-reserva/venda. |
-| **Finalizado** | A operação terminou e o ciclo se encerrou. | No fim, automaticamente. |
+| **Finalizado** | A **logística** terminou (o material cumpriu o ciclo). A cobrança segue independente. | No fim da logística, automaticamente. |
 
 {% hint style="info" %}
-**Finalizado é automático — você não arrasta para cá.** O LocFlow encerra o ciclo sozinho quando a logística termina: na **venda**, quando a entrega se conclui (ou o cliente retira no balcão); na **locação**, quando os itens voltam — e, se a sua operação usa **conferência**, só depois de conferidos. É o fim natural do pedido. Veja [Visão geral da logística](../logistica/visao-geral.md).
+**Finalizado é automático — você não arrasta para cá.** O LocFlow encerra o ciclo **da logística** sozinho quando ela termina: na **venda**, quando a entrega se conclui (ou o cliente retira no balcão); na **locação**, quando os itens voltam — e, se a sua operação usa **conferência**, só depois de conferidos. Veja [Visão geral da logística](../logistica/visao-geral.md).
+{% endhint %}
+
+{% hint style="success" %}
+**Finalizado não fecha a cobrança.** O "Finalizado" é sobre a **logística**, não sobre o financeiro. Se você entregou sem ter faturado antes, **ainda pode gerar a cobrança** de um pedido já finalizado — os dois eixos são independentes, para você nunca ficar sem como cobrar o que já saiu.
 {% endhint %}
 
 {% hint style="info" %}

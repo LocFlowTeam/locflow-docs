@@ -19,16 +19,19 @@ flowchart LR
     B --> C{Cliente aceitou?}
     C -->|Não| P[Perdido<br/>pode reabrir]
     C -->|Sim| G[Ganho]
-    G --> F[Fatura gerada]
     G --> L[Logística liberada]
-    F --> PG[Cobrança / pagamento]
     L --> S[Separação] --> E[Entrega]
     E --> R[Retirada<br/>só locação] --> CF[Conferência<br/>só locação]
-    CF --> FIM[Finalizado]
-    PG --> FIM
+    CF --> FIM[Finalizado<br/>logística concluída]
+    G -.->|eixo independente| F[Fatura / cobrança]
+    F -.-> PG[Pagamento]
 ```
 
-Leitura rápida: você **monta** o orçamento, **envia**, o cliente **aceita** (vira *Ganho*), o sistema **gera a fatura** e **libera a logística**; a equipe **separa**, **entrega** e — na locação — **retira** e **confere** na volta. Quando tudo se resolve, o pedido é **Finalizado**.
+Leitura rápida: você **monta** o orçamento, **envia**, o cliente **aceita** (vira *Ganho*), e a partir daí correm **duas trilhas independentes** — a **logística** (separar → entregar → retirar → conferir) e a **cobrança** (fatura → pagamento). Quando a **logística** termina, o pedido é **Finalizado**. A cobrança **não** faz parte desse gatilho: ela segue seu próprio ritmo e você pode gerá-la e recebê-la **antes, durante ou depois** de finalizar.
+
+{% hint style="info" %}
+**Finalizado é sobre a LOGÍSTICA, não sobre a cobrança.** O pedido é finalizado quando o material cumpre o ciclo (entregue na venda; devolvido/conferido na locação). Isso **não fecha** o financeiro: mesmo depois de finalizado você ainda pode **gerar a cobrança** e registrar o pagamento — os dois eixos são independentes de propósito, para você nunca ficar "sem como faturar" um pedido que já foi entregue.
+{% endhint %}
 
 ## As três trilhas dentro do ciclo
 
