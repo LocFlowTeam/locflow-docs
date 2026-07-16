@@ -21,14 +21,32 @@ Pense nela como um **backup que se cuida sozinho**:
 * **Acesso fora do app.** Os arquivos ficam num lugar que você já conhece e acessa de qualquer computador ou celular, com ou sem o LocFlow aberto.
 * **Tranquilidade.** Provas de entrega (fotos e vídeos) e documentos importantes ficam guardados em **dois lugares**.
 
-## O que é espelhado <a id="o-que-e-espelhado"></a>
+## Como as pastas ficam organizadas <a id="o-que-e-espelhado"></a>
 
-Tudo é organizado dentro de uma pasta chamada **`LocFlow`** no seu Drive, separada em subpastas:
+Tudo fica dentro de uma pasta chamada **`LocFlow`** no seu Drive, **organizada por módulo** — do mesmo jeito que o LocFlow organiza o seu trabalho. Assim você acha cada documento pelo caminho que já faz sentido para você:
 
-| Subpasta no seu Drive | O que vai para lá |
-| --- | --- |
-| **Documentos** | Os PDFs que você gera no LocFlow (contratos, recibos, orçamentos e demais documentos). |
-| **Provas logísticas** | As fotos e vídeos registrados nas entregas e devoluções (os **comprovantes de entrega**). |
+* **Orçamentos**
+  * **Orçamentos** — os orçamentos em PDF que você envia ao cliente
+  * **Contratos** — contratos de locação e de venda
+* **Cobranças**
+  * **Faturas** — as faturas de locação
+  * **Boletos** — os boletos bancários emitidos
+  * **Recibos de pagamento** — os comprovantes de quitação
+* **Logística**
+  * **Provas** — as fotos e vídeos das entregas e devoluções
+  * **Roteiros** — os PDFs de roteiro da rota (um roteiro pode reunir vários pedidos)
+  * **Ordens de carga** — as ordens logísticas de separação
+* **Contábil**
+  * **NFS-e** — notas de serviço autorizadas (PDF **e** XML, para o contador)
+  * **NF-e** — notas fiscais autorizadas (PDF **e** XML)
+
+{% hint style="success" %}
+**Ache tudo de um pedido pelo código.** Todo arquivo leva o código do orçamento no nome (por exemplo `ORC-482 | Contrato de locação`). Pesquise por **ORC-482** na busca do Google Drive e ele reúne, de todas as pastas, cada documento daquele pedido — pronto para baixar de uma vez.
+{% endhint %}
+
+{% hint style="info" %}
+**Só entra o que existe de verdade.** Um arquivo aparece quando o evento realmente acontece: uma nota fiscal **emitida**, um boleto gerado, uma entrega comprovada, uma fatura quitada. Nada é criado no vazio — as pastas de cada módulo se preenchem sozinhas conforme você usa o sistema.
+{% endhint %}
 
 {% hint style="warning" %}
 O LocFlow só enxerga e mexe nos arquivos que **ele mesmo** cria no seu Drive. O resto da sua nuvem — suas outras pastas e arquivos pessoais — **não é acessado**.
@@ -62,7 +80,7 @@ flowchart LR
 3. **Voltar.** Conclua no navegador e volte ao app. Se o status ainda não atualizou, **puxe a tela para baixo** para atualizar.
 4. **Pronto.** A partir daí, novos documentos e comprovantes são **espelhados sozinhos**.
 
-Quando conectado, a tela mostra a **conta** usada (o e-mail do Google) e a pasta de destino (**LocFlow · Documentos · Provas logísticas**).
+Quando conectado, a tela mostra a **conta** usada (o e-mail do Google), a pasta de destino (**LocFlow**) e a **estrutura de pastas por módulo** que será criada no seu Drive.
 
 {% hint style="info" %}
 Esse passo pelo navegador é normal — é o Google quem pede a sua autorização, e é assim que ele garante que **só você** liberou o acesso. O LocFlow nunca vê a sua senha do Google.
@@ -110,8 +128,10 @@ Desconectar **não apaga** nada do seu Drive. Apenas interrompe o envio das pró
 
 ## Situações reais <a id="situacoes-reais"></a>
 
-* **"Quero um backup dos meus contratos e recibos."** Conecte o Google Drive uma vez. Daí em diante, todo PDF que você gerar ganha uma cópia na subpasta **Documentos** da sua nuvem.
-* **"Preciso das fotos da entrega num computador."** As provas de entrega vão para a subpasta **Provas logísticas** do seu Drive — abra direto no Google Drive, sem precisar do app.
+* **"Quero um backup dos meus contratos e recibos."** Conecte o Google Drive uma vez. Daí em diante, cada contrato ganha uma cópia em **Orçamentos → Contratos** e cada recibo de pagamento em **Cobranças → Recibos de pagamento**.
+* **"Preciso das fotos da entrega num computador."** As provas de entrega vão para **Logística → Provas** — abra direto no Google Drive, sem precisar do app.
+* **"O contador pediu as notas fiscais do mês."** Elas ficam em **Contábil**, com o **PDF e o XML** lado a lado (NFS-e e NF-e) — é só baixar a pasta.
+* **"Quero tudo de um pedido específico de uma vez."** Pesquise o código do orçamento (por exemplo **ORC-482**) na busca do Google Drive: ele traz contrato, fatura, boleto, recibo, comprovantes e notas daquele pedido, de todas as pastas.
 * **"Acabei de gerar vários documentos e quero garantir que foram para a nuvem."** Toque em **Sincronizar agora** e confira o indicador **Em dia**.
 * **"Vou trocar de conta Google."** Desconecte a atual (os arquivos já copiados ficam) e conecte a nova conta.
 

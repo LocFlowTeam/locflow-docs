@@ -38,7 +38,7 @@ Veja o passo a passo completo — recebedor, validação, métodos e recebíveis
 
 ## Sincronização em Nuvem <a id="sincronizacao-em-nuvem"></a>
 
-Espelha os seus **documentos** (PDFs gerados) e **comprovantes** — incluindo as **provas de entrega** da logística — para o **seu próprio Google Drive**. É uma **cópia de segurança** na sua conta: você é o dono dos arquivos, e eles ficam organizados numa pasta **LocFlow** (com subpastas para Documentos e Provas logísticas).
+Espelha os seus **documentos** (PDFs gerados), **comprovantes** — incluindo as **provas de entrega** da logística — e as **notas fiscais** (com o XML) para o **seu próprio Google Drive**. É uma **cópia de segurança** na sua conta: você é o dono dos arquivos, e eles ficam organizados numa pasta **LocFlow** **dividida por módulo** (Orçamentos, Cobranças, Logística e Contábil), com o código do orçamento no nome de cada arquivo — pesquise por ele no Drive e ache tudo de um pedido de uma vez.
 
 Você conecta a sua conta Google uma vez; depois disso, **novos arquivos são enviados sozinhos**, de tempos em tempos. A qualquer momento você pode acompanhar quantos estão **pendentes** e **sincronizados**, ver a última sincronização e **forçar uma agora**.
 
