@@ -39,6 +39,10 @@ Não. **Separação** (na ida) e **conferência** (na volta) são **opcionais**:
 
 É **segurar** um aluguel antes de confirmar de vez — útil quando o cliente está quase fechando e você não quer que o item seja prometido a outra pessoa. Vale **só para locação** e é opcional. Veja os estados no [Glossário](../primeiros-passos/glossario.md) e o caminho completo no [Ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).
 
+## O que acontece quando um orçamento vence?
+
+Todo orçamento tem uma **validade** (padrão 7 dias, ajustável no Motor de Orçamento e em cada orçamento). Passado o prazo, ele fica **vencido**: continua no funil onde estava, mas **não avança** — ao tentar reservar, vender ou reabrir, o LocFlow pede para você **renovar a validade** ou **criar um orçamento novo**, porque preços e regras podem ter mudado. Se o cliente não vai voltar, marque como **Perdido**. "Vencido" **não é um novo estado** do catálogo, é uma condição sobre o orçamento. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
+
 ## Como o cliente paga pelo link? Preciso configurar algo antes?
 
 Para gerar PIX e boleto e receber na sua conta, é preciso ativar a **integração de pagamento** (via Pagar.me) — um cadastro guiado. Depois disso, todo link de fatura já oferece o pagamento online. Veja [Integrações](../configuracoes/integracoes.md) e [Pagamento online](../cobranca/pagamento-online.md).

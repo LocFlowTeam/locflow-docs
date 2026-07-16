@@ -65,6 +65,40 @@ Você pode ver um orçamento marcado como **Pendente** numa faixa tracejada **ac
 Não trate Pendente como "em aberto". Um orçamento Pendente **não está parado por falta de ação sua** — está esperando um **aval**. Aprovado, ele entra (volta) no funil e segue normalmente; rejeitado com motivo, volta para edição. O detalhe de quem aprova e como está em [Aprovação de orçamentos](aprovacao.md).
 {% endhint %}
 
+## Quando o orçamento vence (a validade) {#quando-o-orcamento-vence}
+
+Todo orçamento tem uma **data de validade** — por quantos dias a proposta fica "de pé" a partir da criação (padrão **7 dias**, ajustável no [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#validade-do-orcamento) e alterável em cada orçamento). É o prazo que você combina com o cliente: *"esse valor vale até tal dia."*
+
+Passou dessa data, o orçamento está **vencido** — e vencido tem uma consequência concreta: **ele não avança mais**. Preços, disponibilidade e regras podem ter mudado desde que você montou a proposta, então o LocFlow **não deixa** você marcar como em negociação, pré-reservar, reservar, vender ou reabrir um orçamento fora da validade sem antes resolver isso.
+
+Você reconhece um vencido **de imediato**, sem precisar tentar movê-lo:
+
+* no **funil**, ele sai das colunas normais e se agrupa em **Expirados** (uma faixa âmbar, logo acima de "Fora do funil");
+* na **lista**, o card ganha um **selo âmbar "Expirado"** no lugar da chance de fechar;
+* ao **abrir** o orçamento, um **aviso no topo** avisa que ele está expirado (com a data em que venceu) e oferece dois botões: **Renovar validade** e **Criar novo**.
+
+{% hint style="warning" %}
+**Vencido não é um novo estado do funil** — é a validade que passou. Por baixo, o orçamento continua no estado em que estava (Em aberto, Em negociação…); ele só fica **impedido de seguir** até você agir. Pense nele como um orçamento "dormindo": ainda está ali, mas a proposta daquele jeito não vale mais. (É parecido com o **Pendente** logo acima: uma condição sobre o orçamento, não uma coluna do funil.)
+{% endhint %}
+
+### O que fazer com um orçamento vencido
+
+Você tem três caminhos, conforme a conversa com o cliente:
+
+| Caminho | Quando usar | Como |
+| --- | --- | --- |
+| **Renovar** | O combinado ainda vale — só passou do prazo. | Edite o orçamento e **estenda a data de validade**. Ele volta a andar, do mesmo ponto. |
+| **Criar um novo** | Preços ou proposta mudaram — virou outra conversa. | Faça um **orçamento novo** com os valores atuais e mande ao cliente. O antigo fica de histórico. |
+| **Encerrar** | O cliente não voltou e não vai fechar. | Marque como **Perdido** com o motivo *"Cliente não respondeu"* — vira aprendizado no seu funil. |
+
+{% hint style="info" %}
+**Por que a validade te protege:** ela evita que um preço de dois meses atrás feche hoje, no automático. Quando o cliente reaparece com um orçamento vencido na mão, você não fica preso ao número antigo — **atualiza a validade** (se ainda faz sentido) ou **refaz a proposta** com os valores de agora, sem constrangimento: *"esse orçamento já venceu; faço um novo rapidinho e te mando."*
+{% endhint %}
+
+{% hint style="warning" %}
+**Vencer também solta a pré-reserva.** Enquanto o orçamento está dentro da validade, os itens ficam **pré-reservados**; depois de vencer, deixam de ficar segurados e voltam a ficar livres para outro cliente. Veja [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md) e o [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#validade-do-orcamento).
+{% endhint %}
+
 ## A jornada e o próximo passo sugerido
 
 Ao abrir as **Ações rápidas** de um orçamento, a tela é organizada em torno da **jornada** — onde o pedido está e para onde vai naturalmente.
@@ -169,7 +203,7 @@ Nem todo orçamento fecha — e tudo bem. O LocFlow separa duas situações, e e
 **Por que registrar o motivo vale a pena:** com o tempo, o motivo das perdas vira um mapa do seu negócio — se "Preço" aparece sempre, talvez sua tabela esteja fora do mercado; se é "Não respondeu", o problema é o follow-up. Saber **por que** você perde é o primeiro passo para perder menos.
 {% endhint %}
 
-Um orçamento **Perdido** ou **Cancelado** pode ser **reaberto** para uma nova tentativa — ele volta para a negociação. Nas Ações rápidas, esses estados aparecem como um aviso convidando a reabrir; nos documentos, nada é oferecido (a única ação é reabrir).
+Um orçamento **Perdido** ou **Cancelado** pode ser **reaberto** para uma nova tentativa — ele volta para a negociação. Nas Ações rápidas, esses estados aparecem como um aviso convidando a reabrir; nos documentos, nada é oferecido (a única ação é reabrir). A exceção é a **validade**: se o orçamento já **venceu**, não dá para reabrir por cima do prazo — antes você **renova a validade** ou parte para um **orçamento novo** (veja [Quando o orçamento vence](#quando-o-orcamento-vence)).
 
 ## Por porte: você acompanha do seu jeito
 
@@ -181,7 +215,8 @@ Um orçamento **Perdido** ou **Cancelado** pode ser **reaberto** para uma nova t
 
 ## Situações reais
 
-- **Cliente sumiu:** mandou o orçamento, cobrou duas vezes, sem resposta. Marca como **Perdido** com o motivo "Cliente não respondeu" — e, se ele voltar mês que vem, é só **reabrir**.
+- **Cliente sumiu:** mandou o orçamento, cobrou duas vezes, sem resposta. Marca como **Perdido** com o motivo "Cliente não respondeu" — e, se ele voltar mês que vem, é só **reabrir** (desde que ainda esteja dentro da validade).
+- **Voltou tarde, orçamento vencido:** o cliente reaparece três semanas depois querendo fechar, mas a validade já passou. Você abre o orçamento, vê que está **vencido** e decide: **estende a validade** (se o preço ainda vale) ou **cria um novo** com os valores de agora. O sistema não deixa reservar por cima do prazo vencido — de propósito.
 - **Fechou na hora:** cliente confirmou o aluguel pelo WhatsApp. Você arrasta o card para **Reservado** no funil — a fatura nasce e a entrega já entra na fila.
 - **Esperando o aval do gestor:** o orçamento aparece como **Pendente** na faixa de cima porque o frete passou do limite. Não é "em aberto" — está congelado até alguém aprovar. Veja [Aprovação de orçamentos](aprovacao.md).
 - **Evento cancelou:** o cliente desmarcou a festa depois de reservar. Você marca **Cancelado** com o motivo "Desistência do evento"; o LocFlow já sabe que há fatura e logística a tratar.

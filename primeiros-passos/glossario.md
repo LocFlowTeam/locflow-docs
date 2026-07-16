@@ -32,6 +32,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Perdido** | Não fechou; pode ser reaberto. |
 | **Cancelado** | Cancelado **depois** de ganho (já havia compromissos). |
 | **Finalizado** | Operação concluída de ponta a ponta — entregue (e, na locação, retirada e conferida de volta). |
+| **Vencido (fora da validade)** | Passou a **data de validade** da proposta. **Não é um estado do funil** — o orçamento continua no estado em que estava, mas fica **impedido de avançar** até você renovar a validade ou criar um novo. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence). |
 
 ## Movimentos e janelas {#movimentos-janelas}
 

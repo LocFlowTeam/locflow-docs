@@ -64,6 +64,10 @@ flowchart LR
 - **Perdido** — não fechou; pode ser **reaberto** para uma nova tentativa.
 
 {% hint style="info" %}
+**Todo orçamento tem validade.** A proposta vale por um prazo (padrão **7 dias**, ajustável). Passou o prazo, ela fica **vencida**: continua no funil onde estava, mas **não avança** até você **renovar a validade** ou **criar um novo** — porque preços e regras podem ter mudado. Detalhes em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
+{% endhint %}
+
+{% hint style="info" %}
 **Locação x venda:** na **locação** o item volta (tem retirada e conferência); na **venda** ele sai em definitivo (o ciclo termina na entrega). Veja [Locação e venda](locacao-e-venda.md).
 {% endhint %}
 

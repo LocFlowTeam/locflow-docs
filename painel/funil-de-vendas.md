@@ -46,6 +46,10 @@ No aluguel, a **pré-reserva** é opcional — um jeito de "segurar" o aluguel a
 
 {% hint style="info" %}
 **Estados terminais ficam de fora.** **Perdido**, **Cancelado** e **Finalizado** não entram no funil de conversão — ele é só o caminho de quem ainda pode (ou já conseguiu) fechar. Para olhar perdas e cancelamentos, use os **Indicadores** do painel e os motivos registrados em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
+
+{% hint style="info" %}
+**E os orçamentos vencidos?** Um orçamento que passou da **validade** não é um estado terminal — ele continua contando como "em aberto" no funil, mas **não avança** até você renovar a validade ou refazer a proposta. Se um deles não vai mais fechar, vale **encerrá-lo** (marcar como Perdido) para o funil refletir só o que realmente está de pé. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
+{% endhint %}
 {% endhint %}
 
 ## A taxa de passagem: quanto avança <a id="taxa-de-passagem"></a>
