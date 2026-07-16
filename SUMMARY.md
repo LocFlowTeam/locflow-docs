@@ -43,12 +43,17 @@
   * [Especificações: capacidade](cadastros/frota-capacidade.md)
   * [Especificações: vistoria](cadastros/frota-vistoria.md)
 
-## Parcerias
+## Rede de Parceiros
 
-* [Parcerias: a visão](parcerias/visao-geral.md)
+* [Rede de Parceiros: a visão](parcerias/visao-geral.md)
+* [Entrando na rede](parcerias/entrando-na-rede.md)
+* [Acordos de parceria](parcerias/acordos-de-parceria.md)
+* [Repassando um pedido](parcerias/repassando-um-pedido.md)
+* [O dinheiro da parceria](parcerias/dinheiro-da-parceria.md)
+* [Estoque na parceria](parcerias/estoque-na-parceria.md)
+* [Reputação e boas práticas](parcerias/reputacao-e-boas-praticas.md)
 * [Parceiro Logístico Externo](parcerias/parceiro-logistico-externo.md)
 * [Fornecedores de frete](parcerias/fornecedores-de-frete.md)
-* [Acordos de parceria](parcerias/acordos-de-parceria.md)
 
 ## Orçamentos
 
