@@ -100,12 +100,38 @@ E se o cliente **quitou tudo** antes mesmo de o parceiro aceitar a solicitação
 
 O cuidado aqui é a **contagem única**: o sistema sabe o que já foi pago e o que já foi repassado — pagamentos anteriores ao aceite não geram repasse duplicado, e nenhuma parcela fica de fora.
 
+## O parceiro recebeu do cliente? {#parceiro-recebeu-na-entrega}
+
+Um caso que aparece na entrega: o **parceiro logístico** chega com o material e o **cliente quer pagar ali, na hora**. Como acertar isso sem ninguém sair perdendo?
+
+### A regra de ouro: mostre o PIX do vendedor {#regra-de-ouro-pix}
+
+Mesmo na entrega, o melhor caminho é o **PIX do vendedor** — o mesmo do link de pagamento. O parceiro mostra o código ao cliente, o cliente paga, e o **split imediato** faz o resto sozinho: o vendedor recebe a parte dele, o parceiro recebe o repasse, a plataforma retém a taxa — **tudo na fonte, sem acerto nenhum depois**.
+
+{% hint style="success" %}
+**É sempre essa a recomendação.** O dinheiro cai já repartido, o parceiro já sai quitado e não sobra saldo para ninguém administrar. Um código de pagamento resolve o que, no dinheiro, viraria conta a acertar.
+{% endhint %}
+
+### A exceção: o cliente pagou em dinheiro, ao parceiro {#excecao-dinheiro-na-mao}
+
+Às vezes o cliente crava o dinheiro na mão do parceiro. Aí o parceiro **é quem está com o valor** — e o LocFlow inverte a conta para acertar:
+
+1. O parceiro **declara que recebeu**, na tela da entrega. Como o caixa é dele, essa palavra **dá baixa direta** no pedido — não passa pela conferência do vendedor, porque não há dinheiro do vendedor para conferir.
+2. Nasce um **saldo ao contrário**: agora é **o parceiro que deve ao vendedor** — a margem do vendedor mais a taxa de plataforma. O parceiro fica só com o repasse que era dele.
+3. O parceiro **quita esse saldo por PIX**, e a plataforma retém a taxa no mesmo ato. Zerou, acabou.
+
+Para o parceiro isso aparece em **Meus Ganhos** como um valor **a repassar**; para o vendedor, em **Financeiro › Repasses**, como um valor **a receber** daquele parceiro.
+
+{% hint style="warning" %}
+**Marcou errado? Dá para desfazer.** Enquanto o parceiro ainda não repassou, tanto **ele** (corrigindo um engano) quanto **o vendedor** (se o cliente disser que não pagou) podem **desfazer a baixa** — o pedido volta a aberto e o saldo some, sem dinheiro nenhum ter se movido. Se o repasse já tiver sido pago, o acerto vira um **estorno**, com devolução e registro em trilha.
+{% endhint %}
+
 ## Onde ver {#onde-ver}
 
 | Você é… | A sua tela | O que mostra |
 | --- | --- | --- |
-| **Vendedor** | **Financeiro › Repasses** | Tudo o que você deve e já pagou a parceiros: saldos por parceiro, cobranças de repasse geradas, histórico liquidado. |
-| **Parceiro** | **Meus Ganhos** | Tudo o que você tem a receber e já recebeu: ganhos por pedido, o que está pendente e o que foi liquidado. |
+| **Vendedor** | **Financeiro › Repasses** | Tudo o que você deve e já pagou a parceiros — e, quando um parceiro recebeu do cliente por você, também **o que ele tem a te repassar**. |
+| **Parceiro** | **Meus Ganhos** | Tudo o que você tem a receber e já recebeu — e, se você recebeu do cliente na entrega, também **o que tem a repassar** ao vendedor. |
 
 As duas vivem no **Financeiro da Operação** com um selo **"Rede"** — porque são dinheiro de verdade, junto do resto do seu financeiro — e têm **atalhos fixos** no espaço **Rede de Parceiros**, para você chegar nelas de dentro do contexto da parceria.
 
@@ -151,7 +177,8 @@ Isso não é um erro — é o comparativo fazendo o trabalho dele. Vale conferir
 ## Situações reais {#situacoes-reais}
 
 - **Cliente paga o PIX do link, acordo "No pagamento", parceiro com recebedor.** O pagamento se reparte na hora: a parte do parceiro cai direto para ele, a sua fica com você. Ninguém gera nada.
-- **Cliente paga na entrega, em dinheiro.** A baixa manual dispara o gatilho, o valor do parceiro vira saldo. No fim da semana, você abre **Financeiro › Repasses** e gera **uma** cobrança de repasse quitando os três pedidos daquele parceiro de uma vez.
+- **Cliente paga na entrega, em dinheiro, a você (vendedor).** A baixa manual dispara o gatilho, o valor do parceiro vira saldo. No fim da semana, você abre **Financeiro › Repasses** e gera **uma** cobrança de repasse quitando os três pedidos daquele parceiro de uma vez.
+- **Cliente paga na entrega, em dinheiro, ao parceiro.** Antes disso, o ideal era o parceiro ter mostrado o **seu PIX** — cairia repartido na hora. Mas se pegou o dinheiro, ele declara na entrega, a baixa é direta e nasce um **saldo ao contrário**: ele te repassa a sua margem + a taxa por PIX. Marcou por engano? Um dos dois desfaz enquanto ninguém pagou.
 - **Acordo "Na Entrega", cliente ainda não pagou.** A entrega concluiu, o parceiro fez a parte dele — o repasse vira devido mesmo sem o pagamento do cliente. O risco de cobrança do cliente é seu, como combinado no gatilho.
 - **Cliente quitou tudo, e só depois você repassou o pedido.** No aceite do parceiro, o saldo nasce retroativo — exatamente o valor dele, sem repasse dobrado.
 - **Candidato ótimo, mas "margem insuficiente".** Para aquele pedido pequeno e distante, o frete do parceiro come a margem. Você escolhe outro candidato — ou renegocia os preços do acordo.
