@@ -135,6 +135,24 @@ Para o parceiro isso aparece em **Meus Ganhos** como um valor **a repassar**; pa
 
 As duas vivem no **Financeiro da Operação** com um selo **"Rede"** — porque são dinheiro de verdade, junto do resto do seu financeiro — e têm **atalhos fixos** no espaço **Rede de Parceiros**, para você chegar nelas de dentro do contexto da parceria.
 
+## Como ler seus ganhos {#status-dos-ganhos}
+
+Em **Meus Ganhos**, todo valor está num de três **estágios de liquidação** — os mesmos três que aparecem coloridos logo abaixo do total, e que voltam agrupando as operações no detalhe de cada acordo:
+
+| Estágio | Cor | O que significa |
+| --- | --- | --- |
+| **Realizado** | verde | Já liquidado — o dinheiro é seu neste período. |
+| **A receber** | azul | Combinado e confirmado, aguardando a liquidação (a quitação do saldo pelo vendedor, ou o disparo do gatilho do acordo). |
+| **Em processamento** | âmbar | O pagamento online do cliente ainda está sendo compensado pelo gateway; assim que cai, vira **realizado**. |
+
+O número em destaque no topo **soma os três**: é tudo o que você tem para o período escolhido, tratando o que está a caminho como já sendo seu. É a mesma leitura no detalhe de um acordo, onde as operações aparecem **agrupadas por estágio**, com as mesmas cores.
+
+{% hint style="info" %}
+Se você **recebeu do cliente na entrega** e ficou devendo ao vendedor, aparece também um valor **a pagar** (âmbar), com o botão de **quitar via PIX** ali mesmo — na visão geral e no próprio acordo. Veja [O parceiro recebeu do cliente?](#parceiro-recebeu-na-entrega).
+{% endhint %}
+
+O período (mês, semana, intervalo…) vale para as duas telas e pode ser ajustado **dentro** do detalhe do acordo — útil para filtrar as operações sem voltar. Use o **"?"** no topo de Meus Ganhos para rever esses estágios a qualquer momento.
+
 ## O recebedor do parceiro {#recebedor-do-parceiro}
 
 Para o **split imediato** funcionar, o parceiro precisa de um **recebedor** — o cadastro de recebimento que diz para onde vai a parte dele no pagamento online. É o mesmo conceito do recebedor da sua organização na [cobrança online](../cobranca/pagamento-online.md): um cadastro guiado com os dados de recebimento, feito uma vez.
@@ -145,6 +163,8 @@ Para o **split imediato** funcionar, o parceiro precisa de um **recebedor** — 
 {% hint style="success" %}
 **Vale a pena configurar.** Para o parceiro, o recebedor significa receber **junto com o cliente**, sem esperar quitação manual. Para o vendedor, significa **zero saldo acumulando** nos pedidos pagos online — menos uma coisa para administrar.
 {% endhint %}
+
+Na tela **Meu recebimento** (para o parceiro), o cadastro mostra um **passo a passo** — cadastrar, validar, aprovar, recebendo — para você saber exatamente em que ponto está. Quando o gateway pede a validação de identidade (KYC), o botão **"Gerar link de verificação"** abre o processo direto ali; assim que aprova, a conta fica **ativa** e os repasses passam a cair sozinhos.
 
 ## Para quem quer os números {#para-quem-quer-os-numeros}
 
