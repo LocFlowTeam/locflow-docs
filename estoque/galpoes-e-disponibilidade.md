@@ -65,6 +65,35 @@ A política vale para toda a operação. Escolha pensando em como você realment
 **Por que isso protege seu faturamento:** o bloqueio certo evita o pior pesadelo da locação — prometer o que você não tem. Sem reserva dupla, sem cliente na mão na hora do evento, sem prejuízo de remarcar às pressas. A folga ainda te dá fôlego para conferir e preparar o material entre uma locação e outra.
 {% endhint %}
 
+## Bloquear (ou permitir) orçamento sem estoque
+
+No mesmo Motor de Estoque existe uma chave que decide **o que acontece quando falta item para fechar um pedido**: **"Bloquear orçamento sem estoque"**.
+
+- **Ligada (padrão):** o LocFlow **não deixa fechar** um orçamento se algum item não tem estoque disponível na janela de uso. É a regra da casa "não aluga o que não tem" — segura, recomendada para a maioria.
+- **Desligada:** você **permite** fechar mesmo sem estoque cheio — mas de forma **controlada**, não ilimitada.
+
+### Teto de overbooking: sobre-reservar com limite
+
+Ao **desligar** o bloqueio, aparece o campo **"Teto de overbooking"** — quanto você aceita reservar **acima** do estoque físico, em porcentagem. É o mesmo modelo de companhias aéreas e hotéis: aceitar um pouco além do que se tem, sabendo que dá para suprir a diferença (comprando, sublocando ou remanejando).
+
+- O padrão é **10%** — um valor conservador e bastante usado no mercado.
+- Exemplo: com **10 cadeiras** e teto de **10%**, você pode reservar até **11**. A 12ª já é barrada.
+- Use **0%** para permitir **sem limite** (o LocFlow nunca barra por falta de estoque).
+
+| Chave "Bloquear sem estoque" | Comportamento ao fechar |
+| --- | --- |
+| **Ligada** | Barra qualquer pedido acima do estoque disponível |
+| **Desligada, teto 10%** | Permite reservar até 10% acima do físico; barra além disso |
+| **Desligada, teto 0%** | Permite qualquer quantidade (sem limite) |
+
+### Quando o negócio já foi fechado e o estoque não cobre
+
+Um pedido pode ser **ganho** e, só depois, o estoque deixar de cobrir — por exemplo, dois orçamentos diferentes reservam o mesmo item, ou você deu baixa/avaria entre a proposta e o fechamento. Nesse caso o LocFlow **nunca cancela a venda** (negócio fechado é compromisso): a reserva é aplicada mesmo assim e você recebe um aviso **"Estoque descoberto"** na Central de Notificações, com o pedido e a quantidade que faltou — para providenciar o suprimento a tempo.
+
+{% hint style="warning" %}
+Mantenha o bloqueio **ligado** se você não quer correr o risco de sobrevender. Só desligue (com um teto) se a sua operação realmente consegue suprir a diferença na hora — a responsabilidade de honrar o pedido passa a ser sua.
+{% endhint %}
+
 ## Situação real: o mesmo item, dois clientes, datas que encostam
 
 A Maria aluga **30 cadeiras**. O Cliente A faz uma festa no **sábado**; o Cliente B, um almoço no **domingo**.

@@ -112,14 +112,18 @@ Estourou o prazo? **O sistema expira a solicitação sozinho** — uma varredura
 
 ## Desistência depois do aceite {#desistencia}
 
-Aceitou e a realidade mudou? O parceiro pode **desistir**, sempre com motivo. O acordo define uma **janela de desistência** (padrão de 24 horas antes da operação):
+Aceitou e a realidade mudou? Enquanto a operação **ainda não começou**, o parceiro pode **desistir**, sempre com motivo. O acordo define uma **janela de desistência** (padrão de 24 horas antes da operação):
 
 | Quando desiste | O que acontece |
 | --- | --- |
 | **Dentro da janela** | É um direito — sem registro contra ele. A posse volta para você re-repassar. |
-| **Fora da janela (tardia)** | A desistência fica no **histórico** e gera **penalidade média** no índice de confiabilidade — quanto mais perto da operação, mais te deixa na mão. |
+| **Fora da janela (tardia)** | A desistência fica no **histórico** e gera **penalidade** no índice de confiabilidade, **maior quanto mais perto da operação** — quem desiste em cima da hora te deixa mais na mão, e pesa mais. |
 
-Na parceria entre organizações, a desistência também **libera** o estoque que estava reservado no galpão do parceiro.
+{% hint style="warning" %}
+**Depois que a execução começa, não dá mais para desistir.** Se o parceiro **já saiu para a entrega** (ou já cumpriu um lado da operação), o botão de desistir some — você e o cliente estão contando com aquela entrega a caminho. Um imprevisto real (o caminhão quebrou) se resolve **falando com você**, não com um cancelamento pelo app.
+{% endhint %}
+
+Na parceria entre organizações, a desistência (antes da execução) também **libera** o estoque que estava reservado no galpão do parceiro.
 
 ## Reverter o ganho desfaz o repasse {#reverter-ganho}
 

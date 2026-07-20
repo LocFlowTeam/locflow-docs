@@ -85,8 +85,10 @@ O índice de confiabilidade é o sinal **objetivo** da reputação — separado 
 | O que aconteceu | Pontos |
 | --- | --- |
 | **Prazo de aceite estourado** — a solicitação expirou sem resposta e o vendedor teve de retomar | **−8** |
-| **Desistência tardia** — desistiu de uma reserva aceita **fora** da janela de desistência | **−15** |
+| **Desistência tardia** — desistiu de uma reserva aceita **fora** da janela de desistência | **−15 a −25** |
 | **Falha de entrega** — aceitou, mas a operação falhou (movimento pulado / não compareceu) | **−25** |
+
+A penalidade da **desistência tardia é graduada pela antecedência**: quanto mais perto da operação você desiste, mais pesado — começa em **−15** logo depois de a janela fechar e chega a **−25** (o mesmo peso de uma falha de entrega) quando é praticamente em cima da hora. Desistir com um dia de antecedência machuca menos do que desistir com o cliente já esperando.
 
 As penalidades são registradas **automaticamente** pelo sistema quando o fato ocorre — ninguém "dá" uma penalidade na mão. E cada operação só pode gerar uma penalidade de cada tipo para o mesmo parceiro: não existe punição em dobro.
 

@@ -90,8 +90,14 @@ Nem todo pagamento dá para repartir na fonte: o cliente pagou em dinheiro no ba
 
 Para quitar, o vendedor gera uma **cobrança de repasse**: um **PIX** no valor do saldo. Pagou, o saldo zera e o parceiro vê o ganho como **liquidado**. A própria cobrança já reparte na fonte — o parceiro recebe o dele e a taxa de plataforma sai no mesmo ato, sem acerto por fora.
 
+O valor a pagar aparece **detalhado**: quanto vai **ao parceiro** e quanto é **taxa de plataforma** — para você saber exatamente o que está pagando, sem caixa-preta. O telefone do pagador vem do seu cadastro de recebimento, então você **não redigita** o número a cada quitação.
+
 {% hint style="info" %}
 O saldo **acumula por parceiro**, não por pedido: vários repasses pequenos podem ser quitados numa cobrança só. Menos PIX, menos conferência.
+{% endhint %}
+
+{% hint style="success" %}
+**Se você já gerou o PIX e voltou depois, verá o mesmo código** — não gera outro nem dá erro de "já existe cobrança aberta". É como a cobrança do cliente final: pediu de novo, o LocFlow reabre o PIX que já está valendo. Se aquele PIX expirou, aí sim ele gera um novo.
 {% endhint %}
 
 ### Retroativo: o cliente pagou antes do aceite {#retroativo}
@@ -187,6 +193,10 @@ sua margem         = total do cliente − total do repasse − taxa de plataform
 Sobre o valor repassado incide uma **taxa de plataforma** — é ela que mantém a Rede funcionando (descoberta, reputação, liquidação automática). O percentual vigente aparece sempre **discriminado antes de você decidir**: no comparativo de parceiros, a linha **"Sua taxa de plataforma"** mostra o valor em reais já dentro da conta do "VOCÊ LUCRA".
 
 Por padrão, a taxa fica do lado do **vendedor** — mas o acordo pode combinar outra **divisão** entre as partes, registrada nos termos junto com o responsável pela tarifa do meio de pagamento online. Como tudo no acordo, vale depois do aceite bilateral.
+
+{% hint style="info" %}
+**Cada lado vê a taxa que ELE paga.** No detalhe de um acordo, o vendedor lê a fatia dele; o parceiro lê a dele (já descontada do que recebe). Num acordo em que a taxa é dividida — digamos 6% para o vendedor e 2% para o parceiro —, o vendedor paga ao parceiro o repasse **mais** a fatia dele da taxa, e o parceiro recebe o valor do acordo **menos** a fatia que cabe a ele. A conta é a mesma nos dois sentidos (inclusive quando o parceiro cobra o cliente na rua): o número que cada um vê é o que sai (ou entra) no bolso dele.
+{% endhint %}
 
 ### Teto de margem: "margem insuficiente" {#margem-insuficiente}
 
