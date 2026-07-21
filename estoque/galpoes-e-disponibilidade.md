@@ -33,44 +33,70 @@ O endereço vira a **origem das rotas** e o raio define até onde você atende. 
 
 O **bloqueio de estoque** é a **janela de tempo em que um item fica reservado** para um cliente e, portanto, **indisponível para outro**. É o que impede o erro mais clássico de uma locadora: alugar a mesma tenda para duas festas no mesmo fim de semana.
 
-Você define **uma política** que vale para a operação inteira, no Motor de Estoque (em Ajustes > Motores). São quatro opções:
+### O bloqueio acompanha a saída e a volta do material
+
+A base do cálculo **não se configura**, porque ela é ditada pela realidade: o item fica bloqueado **do momento em que sai do galpão até o momento em que volta**. É a saída que tira o item de circulação — não o evento. O material sai **antes** de o evento começar (para dar tempo de montar) e volta **depois** de ele acabar (porque alguém precisa ir buscar).
 
 ```mermaid
-flowchart TD
-    P{Como reservar o item} --> A[Pela entrega e retirada]
-    P --> B[Apenas o periodo do evento]
-    P --> C[Cada orcamento define]
-    P --> D[Com folga antes e depois]
+flowchart LR
+    A["Item disponível"] --> B["Sai do galpão<br/>a entrega ou a retirada pelo cliente"]
+    B --> C["Fora — o evento acontece aqui dentro"]
+    C --> D["Volta ao galpão<br/>o recolhimento ou a devolução"]
+    D --> E["Preparo"] --> F["Item disponível de novo"]
 ```
+
+{% hint style="info" %}
+**Quando a ponta é do cliente, vale o dia todo.** Se ele retira ou devolve no galpão, existe uma data contratada mas não existe hora garantida — então o LocFlow reserva o dia inteiro. Combine um horário com o cliente e a janela aperta sozinha.
+{% endhint %}
+
+### A política: quanta folga somar
+
+No Motor de Estoque (em Ajustes > Motores) você escolhe **uma política**, que vale para a operação inteira. São **duas** opções, e a única diferença entre elas é a folga:
 
 | Política | Quando o item fica reservado | Indicada para |
 | --- | --- | --- |
-| **Pela entrega e retirada** *(recomendada)* | Do momento em que o item sai para a entrega até voltar na retirada | Quem agenda entrega e coleta |
-| **Apenas o período do evento** | Só as datas do evento informadas no orçamento, sem contar deslocamento | Quem entrega e devolve no balcão |
-| **Cada orçamento define** | Sem regra fixa — você informa a janela em cada orçamento | Quando cada locação é muito diferente |
-| **Com folga antes e depois** | O período do evento mais um tempo extra antes e depois | Quem precisa de margem entre uma locação e a próxima |
-
-### Folgas: a margem de segurança
-
-Duas políticas trabalham com **folga** — um tempo extra em que o item continua bloqueado, para você não emendar uma locação na outra sem respiro:
-
-- **Folga de estoque** (na política *Com folga antes e depois*) — definida em **dias**. Exemplo: com 1 dia de folga antes e depois, um item usado num evento de sábado fica indisponível de sexta a domingo.
-- **Folga de rota** (na política *Pela entrega e retirada*) — definida em **minutos**, mais fina. Antecipa um pouco a reserva antes da entrega e a estende um pouco depois da retirada, para cobrir o deslocamento e imprevistos sem o item ser reservado para outro cliente nesse intervalo. Deixe 0 para não usar.
+| **Mínimo justo** | Exatamente da saída até a volta, sem nenhuma folga | Operação bem previsível, com horário confirmado nas duas pontas |
+| **Com folga** *(recomendada)* | O mesmo período, esticado por um tempo extra antes e depois | Praticamente todo mundo — é o padrão de uma locadora nova |
 
 {% hint style="warning" %}
-A política vale para toda a operação. Escolha pensando em como você realmente opera: quem entrega **no local** ganha com "Pela entrega e retirada"; quem trabalha **no balcão** se encaixa em "Apenas o período do evento". Errar aqui faz o item parecer livre quando não está — ou ocupado quando já voltou.
+**Use folga.** O "Mínimo justo" é apertado demais para a maioria: ele assume que tudo acontece no horário previsto, e o LocFlow libera o item para o próximo cliente no minuto seguinte ao retorno esperado. Um atraso de trânsito vira problema de dois pedidos em vez de um.
 {% endhint %}
+
+### As duas folgas: equipe e cliente
+
+A folga não é um número só, porque o atraso tem **naturezas diferentes**. São quatro campos, todos **em minutos**:
+
+| A folga de… | Cobre o quê | Padrão |
+| --- | --- | --- |
+| **Equipe** (antes / depois) | Você entrega e recolhe: trânsito, rota mais lenta que o previsto, uma parada que demorou. | **60 min** de cada lado |
+| **Cliente** (antes / depois) | Ele retira e devolve no galpão: aparece mais tarde, remarca, devolve só no dia seguinte. | **0** — a ponta dele já vale o dia todo |
+
+Numa operação **mista**, cada ponta usa a folga do seu grupo: se a sua equipe entrega e o cliente devolve, a abertura do bloqueio usa a folga de **equipe** e o fechamento usa a de **cliente**.
+
+**Como estimar sem ter os dados?** Pense no **pior atraso comum do último mês** (não o desastre isolado — o que se repete toda semana), ou no tempo de **uma volta extra até o galpão**. Se o retorno de rota leva 45 minutos, é isso que vai na folga de equipe *depois*. E se o cliente às vezes devolve no dia seguinte, uma folga de cliente de **1440 minutos** (um dia) te protege disso.
 
 {% hint style="success" %}
 **Por que isso protege seu faturamento:** o bloqueio certo evita o pior pesadelo da locação — prometer o que você não tem. Sem reserva dupla, sem cliente na mão na hora do evento, sem prejuízo de remarcar às pressas. A folga ainda te dá fôlego para conferir e preparar o material entre uma locação e outra.
 {% endhint %}
 
-## Bloquear (ou permitir) orçamento sem estoque
+### O sistema avisa quando as datas não fecham
+
+Existe uma regra que o LocFlow passou a cobrar: **o bloqueio precisa cobrir toda a operação, e a operação precisa cobrir o evento**. Se um orçamento sair disso — a janela ajustada à mão para menos do que o vai e volta real, ou um recolhimento agendado antes de o evento terminar —, o app **avisa e pede correção antes de você seguir**, em vez de deixar passar calado.
+
+{% hint style="success" %}
+Isso é proteção, não burocracia: cada aviso desses representa um pedido que você teria fechado prometendo um item que ainda estaria na rua. Entenda a regra inteira em [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md#a-regra-que-o-locflow-cobra-de-voce).
+{% endhint %}
+
+## Bloquear (ou permitir) orçamento sem estoque {#bloquear-ou-permitir-orcamento-sem-estoque}
 
 No mesmo Motor de Estoque existe uma chave que decide **o que acontece quando falta item para fechar um pedido**: **"Bloquear orçamento sem estoque"**.
 
-- **Ligada (padrão):** o LocFlow **não deixa fechar** um orçamento se algum item não tem estoque disponível na janela de uso. É a regra da casa "não aluga o que não tem" — segura, recomendada para a maioria.
+- **Ligada (padrão):** o LocFlow **não deixa fechar** um orçamento se algum item não tem estoque disponível na janela de bloqueio. É a regra da casa "não aluga o que não tem" — segura, recomendada para a maioria.
 - **Desligada:** você **permite** fechar mesmo sem estoque cheio — mas de forma **controlada**, não ilimitada.
+
+{% hint style="warning" %}
+**Desligar cobra um termo de responsabilidade.** Com a chave desligada, o app passa a pedir, no fechamento do pedido, que você **assuma explicitamente** o compromisso de suprir o que falta. Não é uma formalidade: é o momento em que você declara que consegue comprar, sublocar ou remanejar o material a tempo. Se não consegue, o lugar de resolver isso é antes — mantendo a chave ligada.
+{% endhint %}
 
 ### Teto de overbooking: sobre-reservar com limite
 
@@ -98,24 +124,20 @@ Mantenha o bloqueio **ligado** se você não quer correr o risco de sobrevender.
 
 A Maria aluga **30 cadeiras**. O Cliente A faz uma festa no **sábado**; o Cliente B, um almoço no **domingo**.
 
-- **Sem folga:** as cadeiras voltam sábado à noite e já estariam "livres" para sair domingo cedo — mas a equipe ainda nem conferiu nem limpou. Risco de sair material sujo ou faltando.
-- **Com 1 dia de folga (estoque):** sábado e domingo ficam bloqueados juntos. O LocFlow não deixa reservar as mesmas cadeiras para o Cliente B — e avisa antes de fechar o orçamento.
-- **Com folga de rota (minutos):** ideal quando há entrega e coleta no mesmo dia. A reserva se estende o suficiente para cobrir o trajeto de volta, sem travar um dia inteiro à toa.
+A equipe da Maria entrega sexta de manhã e recolhe **domingo às 18h**. Repare que o evento do Cliente A é só no sábado, mas as cadeiras ficam fora de sexta a domingo — é a **operação**, não o evento, que define o bloqueio.
+
+- **Mínimo justo:** as cadeiras contam como livres às 18h de domingo, cravado. Se a rota atrasar uma hora, o LocFlow já terá oferecido as mesmas cadeiras para o almoço do Cliente B.
+- **Com folga de equipe (60 min depois):** o bloqueio só fecha às 19h. A hora de trânsito está coberta e ninguém promete cadeira que está na estrada.
+- **Se o Cliente B devolvesse no balcão:** a ponta seria dele, e valeria o dia inteiro — porque não há hora garantida de devolução.
 
 O resultado: a Maria fecha os dois pedidos **com tranquilidade** ou sabe, na hora, que precisa de mais cadeiras — em vez de descobrir o problema no domingo de manhã.
 
-## Em breve
+## Acompanhando o estoque no dia a dia
 
-O módulo de estoque está crescendo. Nas próximas versões chegam recursos para acompanhar o material em detalhe:
+O bloqueio protege você **na hora de fechar** o pedido. Para ver o que existe no galpão agora e o que estará livre numa data futura, o LocFlow tem uma tela dedicada — com a **Posição** (o físico de agora), a **previsão por data** e a **Data de Liberação** de cada item, que já considera o retorno mais o tempo de preparo.
 
-- **Movimentações** — entradas, saídas, transferências entre galpões, ajustes, baixas e manutenção.
-- **Giro do estoque por produto** — quanto cada item roda e rende ao longo do tempo.
-- **Disponibilidade** — uma visão consolidada do que está livre, reservado ou em manutenção, por período.
-
-{% hint style="info" %}
-Esses recursos ainda não estão no app. Por enquanto, a disponibilidade é garantida pelo **bloqueio de estoque** descrito acima, que já protege você contra reserva dupla.
-{% endhint %}
+Veja [Posição e previsão de estoque](posicao-e-previsao.md).
 
 ## Próximo passo
 
-Veja como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md) e ajuste suas regras em [Motores operacionais](../configuracoes/motores-operacionais.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
+Veja como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md) e ajuste suas regras em [Motores operacionais](../configuracoes/motores-operacionais.md#motor-de-estoque). Para entender a janela de bloqueio por dentro, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).

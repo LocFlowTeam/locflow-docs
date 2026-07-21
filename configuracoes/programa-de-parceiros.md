@@ -1,18 +1,18 @@
 ---
-icon: handshake
-description: Feche acordos com uma empresa parceira e divida os ganhos de um pedido de forma automática. Hoje você libera o acesso; a divisão chega em breve.
+icon: unlock-keyhole
+description: O que destrava a Rede de Parceiros na sua organização — o cadastro do recebedor, a validação de identidade e a aprovação que habilitam a divisão de valores.
 ---
 
-# Programa de Parceiros
+# Liberando o Programa de Parceiros
 
-O **Programa de Parceiros** é o caminho do LocFlow para você trabalhar junto com outra empresa em um mesmo pedido e **dividir os ganhos de forma automática**, com acordo claro e menos conferência manual. Vale para **locação** e para **venda** de bens móveis.
+Para trabalhar em parceria com outra empresa e **dividir os ganhos de um pedido automaticamente**, o dinheiro precisa entrar pelo **pagamento online** e ser repartido na origem. Esta página é sobre esse pré-requisito: **o que você precisa concluir para a Rede de Parceiros ficar disponível** na sua organização.
+
+{% hint style="info" %}
+**Esta página é só a liberação.** Como a parceria funciona no dia a dia — acordos, repasse de pedidos, ganhos e reputação — está na seção [Rede de Parceiros](../parcerias/visao-geral.md), que já descreve tudo o que está no ar.
+{% endhint %}
 
 {% hint style="info" %}
 **Onde fica:** no menu da sua organização, em **Parceiros**. A tela mostra um botão **"Entenda como funciona"** com o resumo do programa.
-{% endhint %}
-
-{% hint style="warning" %}
-**O que já dá para fazer hoje:** preparar o acesso. A tela **libera o Programa de Parceiros assim que a sua integração de pagamento estiver aprovada** — é esse o passo de hoje. A criação dos acordos e a divisão automática de valores estão **em construção** (veja [Em breve](#em-breve)). Esta página explica o que existe agora e o que vem a seguir, sem prometer o que ainda não está no ar.
 {% endhint %}
 
 ## O que é <a id="o-que-e"></a>
@@ -54,7 +54,9 @@ flowchart LR
 Esse vai e volta evita mal-entendido: nada começa a valer sem o "ok" das duas empresas. Enquanto não há acordo, cada pedido segue normal, só seu.
 {% endhint %}
 
-A primeira versão atende a **parceria externa** — quando a empresa parceira trabalha **dentro da sua organização**, usando o **mesmo catálogo** de itens. Assim os itens já são os mesmos para as duas partes, sem precisar "casar" produto por produto. A parceria entre **duas contas LocFlow diferentes** virá depois.
+{% hint style="info" %}
+O vai e volta do aceite, os itens que entram, o gatilho do repasse e a vigência estão detalhados em [Acordos de parceria](../parcerias/acordos-de-parceria.md).
+{% endhint %}
 
 ## O funil de liberação <a id="o-funil-de-liberacao"></a>
 
@@ -89,7 +91,7 @@ flowchart LR
 **A aprovação é automática e pode levar algumas horas.** Ela acontece em segundo plano — você não precisa ficar olhando. Quando quiser conferir, **puxe a tela para baixo para atualizar**. Estar "em validação" **não** é o mesmo que aprovado: é preciso gerar o link e o responsável concluir a confirmação de identidade.
 {% endhint %}
 
-Quando tudo fica verde, a tela mostra: **"Tudo pronto! O split de pagamento está habilitado para esta organização."** A partir daí, o programa fica disponível para receber os próximos passos (criar parceiros e acordos) à medida que forem entrando no ar.
+Quando tudo fica verde, a tela mostra: **"Tudo pronto! O split de pagamento está habilitado para esta organização."** A partir daí você já pode [entrar na rede](../parcerias/entrando-na-rede.md), fechar [acordos](../parcerias/acordos-de-parceria.md) e [repassar pedidos](../parcerias/repassando-um-pedido.md).
 
 {% hint style="info" %}
 **Quem ativa:** o cadastro do recebedor é feito por quem administra a conta. Se você não tem esse acesso, peça ao responsável — o sistema mostra o motivo, ninguém fica travado sem entender o porquê.
@@ -116,23 +118,16 @@ A soma sempre fecha: **a sua parte + a parte do parceiro + a taxa de plataforma 
 Os percentuais, valores e limites exatos do programa fazem parte das **condições comerciais** e podem variar por plano. Confira sempre os números que aparecem **no próprio acordo**, na hora de fechá-lo — é o acordo que vale.
 {% endhint %}
 
-## Em breve <a id="em-breve"></a>
+## Depois de liberar <a id="depois-de-liberar"></a>
 
-Hoje a tela de Parceiros tem **um único trabalho**: liberar o acesso quando a sua integração de pagamento é aprovada. As etapas abaixo estão **modeladas e a caminho**, mas ainda não estão disponíveis para uso:
+Com a integração aprovada, a Rede de Parceiros fica disponível no **alternador de espaço de trabalho** (o seletor *Operação ↔ Rede de Parceiros*). O caminho a partir daí:
 
-* **Cadastrar parceiros** — adicionar a empresa com quem você vai trabalhar (o botão **"Adicionar parceiro"** já aparece na tela, ainda desativado).
-* **Criar e negociar acordos** — propor, ajustar e aceitar os termos (o vai e volta descrito em [Como funciona](#como-funciona)).
-* **Divisão automática no pagamento** — repartir cada parcela recebida conforme o acordo, sem lançamento manual.
-* **Parceria entre duas contas LocFlow** — a versão em que cada empresa tem a sua própria conta (a primeira versão atende a **parceria externa**, dentro da sua organização).
-
-{% hint style="info" %}
-Você **não precisa esperar** para se preparar: deixe a sua integração de pagamento **aprovada** desde já. Assim, quando os acordos entrarem no ar, é só começar.
-{% endhint %}
+1. [Entrando na rede](../parcerias/entrando-na-rede.md) — o perfil público e a descoberta de outras operações.
+2. [Acordos de parceria](../parcerias/acordos-de-parceria.md) — os termos, o aceite das duas partes e a vigência.
+3. [Repassando um pedido](../parcerias/repassando-um-pedido.md) — como um pedido seu vai para o parceiro.
+4. [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md) — repasses, ganhos e a divisão no pagamento.
 
 ## Situações reais <a id="situacoes-reais"></a>
-
-**"Abri a tela de Parceiros e o botão de adicionar parceiro está apagado."**
-É o esperado por enquanto. A criação de parceiros e acordos está [em breve](#em-breve). Hoje a tela serve para **liberar o acesso** pela integração de pagamento — garanta que ela esteja aprovada.
 
 **"Concluí a validação, mas o programa não liberou."**
 Estar "em validação" não é o mesmo que aprovado. A aprovação é automática e **pode levar algumas horas**. Puxe a tela para baixo para atualizar. Se não tiver gerado o **link de validação** e o responsável não tiver concluído, esse é o passo que falta — veja [Pagamento online](../cobranca/pagamento-online.md).
@@ -142,6 +137,7 @@ O cadastro é feito por quem **administra a conta**. Se você não tem esse aces
 
 ## Próximo passo <a id="proximo-passo"></a>
 
+* [Rede de Parceiros: a visão](../parcerias/visao-geral.md) — como a parceria funciona depois de liberada.
 * [Pagamento online](../cobranca/pagamento-online.md) — o recebedor, a validação (KYC) e a aprovação que liberam o programa.
 * [A página de pagamento do cliente](../cobranca/pagina-de-pagamento.md) — por onde o dinheiro entra e é repartido.
 * [Integrações](integracoes.md) — onde você acompanha tudo que conecta o LocFlow ao mundo de fora.

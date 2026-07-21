@@ -103,6 +103,23 @@ Janela apertada é uma decisão sua, não um erro. Mas é por isso que existe o 
 
 Logo abaixo da janela há um detalhe pequeno que rende muito: o botão **"Já combinei esta janela com o cliente"**. Marcar isso diz ao LocFlow que aquele horário é um **combinado**, não só uma estimativa sua — informação que o planejamento de roteiro usa depois para tratar a parada com mais firmeza. Deixe desmarcado enquanto for só um palpite seu.
 
+### O que essas janelas fazem com o seu estoque
+
+Vale saber: **é daqui que sai o bloqueio de estoque**. O LocFlow não olha as datas do evento para decidir por quanto tempo um item fica indisponível — ele olha estes movimentos, porque é a **saída** que tira o item do galpão e o **retorno** que o traz de volta.
+
+| O que você preenche aqui | O que vira lá no bloqueio |
+| --- | --- |
+| Janela da **entrega** pela equipe | O **início** da janela abre o bloqueio |
+| Janela do **recolhimento** pela equipe | O **fim** da janela fecha o bloqueio |
+| **Retirada ou devolução no galpão** pelo cliente | Vale o **dia inteiro** — não há hora garantida |
+| Movimento sem horário definido | Vale o **dia inteiro** daquela data |
+
+Sobre esse período o Motor de Estoque ainda soma a **folga** configurada. Por isso, definir o horário de um movimento não é burocracia: **quanto mais preciso o horário, mais apertado (e mais rentável) o bloqueio**. Uma retirada marcada para "terça, das 14h às 18h" libera o item na terça à noite; a mesma retirada sem horário trava a terça inteira.
+
+{% hint style="warning" %}
+**As datas precisam fazer sentido entre si.** O material tem de sair **antes** de o evento começar e voltar **depois** de ele terminar. Se você agendar um recolhimento antes do fim do evento, o LocFlow avisa e pede correção — não deixa passar. Entenda a regra em [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md#a-regra-que-o-locflow-cobra-de-voce).
+{% endhint %}
+
 ## "Ainda não sei quando" (o a definir)
 
 Nem todo orçamento já nasce com data fechada. Por isso, cada movimento tem o botão **"Você sabe quando?"**. Desligue-o e a data/janela some, dando lugar a um lembrete discreto do prazo:

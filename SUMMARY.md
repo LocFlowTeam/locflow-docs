@@ -46,6 +46,7 @@
 ## Rede de Parceiros
 
 * [Rede de Parceiros: a visão](parcerias/visao-geral.md)
+* [Liberando o Programa de Parceiros](configuracoes/programa-de-parceiros.md)
 * [Entrando na rede](parcerias/entrando-na-rede.md)
 * [Acordos de parceria](parcerias/acordos-de-parceria.md)
 * [Repassando um pedido](parcerias/repassando-um-pedido.md)

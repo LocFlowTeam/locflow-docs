@@ -87,16 +87,33 @@ São os motores **operacionais**: configuração única, editada direto na tela.
 
 Define **quando os itens ficam reservados** ao cliente — ou seja, por quanto tempo um item fica indisponível quando entra num orçamento. É o que impede alugar o mesmo item para dois clientes no mesmo período.
 
-São políticas de bloqueio à sua escolha — da mais fiel à mais flexível:
+**O bloqueio sempre acompanha a operação:** do momento em que o material sai do galpão até o momento em que volta. Isso não se configura, porque é o que de fato acontece — o material sai antes de o evento começar e volta depois de ele acabar. O que você escolhe aqui é **quanta folga** somar em volta disso.
+
+**Política de bloqueio** — duas opções:
 
 | Política | O que faz |
 | --- | --- |
-| **Pela entrega e retirada** | O item fica reservado do momento em que sai para a entrega até voltar na retirada. O cálculo mais fiel quando você agenda entrega e coleta. |
-| **Apenas o período do evento** | Bloqueia só as datas do evento informadas no orçamento, sem considerar deslocamento. Bom quando o cliente retira e devolve no balcão. |
-| **Cada orçamento define** | Não há regra fixa — em cada orçamento você informa o período de bloqueio manualmente. Útil quando cada locação é muito diferente da outra. |
-| **Com folga antes e depois** | Bloqueia o período do evento e ainda reserva um tempo extra antes e depois. Use quando precisa de uma margem entre uma locação e a próxima. |
+| **Mínimo justo** | O item fica reservado exatamente da saída até a volta. Sem folga nenhuma. Só para operação bem previsível, com horário confirmado nas duas pontas. |
+| **Com folga** *(recomendada)* | O mesmo período, mais um tempo extra antes e depois, para absorver atraso. É o que uma locadora nova já traz configurado. |
+
+**As folgas** — quatro campos, todos **em minutos**, porque o atraso não tem a mesma natureza nas duas formas de operar:
+
+| Folga | Cobre |
+| --- | --- |
+| **Equipe, antes / depois** | Quando **você** entrega e recolhe: trânsito, rota lenta, imprevisto no caminho. Padrão: **60 minutos** de cada lado. |
+| **Cliente, antes / depois** | Quando **ele** retira e devolve no galpão: o cliente que aparece mais tarde, remarca, ou devolve no dia seguinte. Padrão: **0** — a ponta do cliente já vale o dia todo. |
+
+Numa operação **mista**, cada ponta usa a folga do seu grupo: se a sua equipe entrega e o cliente devolve, a abertura do bloqueio usa a folga de equipe e o fechamento usa a de cliente.
+
+**Tempo de preparo** — o mínimo (em minutos) que um item fica em preparo depois de voltar, antes de contar como disponível de novo. Vale como piso: se o produto tiver um tempo de manutenção próprio cadastrado, o dele vence.
+
+{% hint style="info" %}
+O ajuste manual por orçamento continua existindo — dá para **esticar** a janela para um cliente específico. O que o sistema não aceita é **encolher** abaixo da operação real, porque isso faria um item que está na rua constar livre no galpão.
+{% endhint %}
 
 Esse motor tem uma página dedicada, porque ele se cruza com a forma como você **cobra** e **usa** o item. Veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
+
+Aqui também ficam as **regras de disponibilidade da casa** — a chave "Bloquear orçamento sem estoque", o teto de overbooking e o termo de responsabilidade. Veja [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md#bloquear-ou-permitir-orcamento-sem-estoque).
 
 ### Motor de Logística {#motor-de-logistica}
 

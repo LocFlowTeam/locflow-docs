@@ -53,9 +53,17 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | --- | --- |
 | **Período de cobrança** | Por **quantas locações** o cliente paga (×1 por padrão; pode ser por diária). |
 | **Multiplicador de cobrança** | O número que multiplica o valor dos itens conforme o período de cobrança (ex.: ×3). |
-| **Janela de bloqueio de uso** | O período de **uso exclusivo** do cliente — quando o uso começa e termina. |
-| **Turnaround** | O preparo (limpeza, conferência, retorno) **depois** que o item volta, antes de ficar disponível de novo. |
-| **Bloqueio de estoque** | A janela total em que o item fica indisponível para outro cliente: **uso + turnaround**. |
+| **Operação** | O vai e volta real do material: da hora em que ele **sai** do galpão até a hora em que **volta**. É a base do bloqueio. |
+| **Janela de bloqueio de uso** | O período em que o item fica reservado a um cliente e indisponível para os outros: a **operação mais a folga**. |
+| **Política de bloqueio** | A escolha, no Motor de Estoque, entre **Mínimo justo** (sem folga) e **Com folga** (recomendada). Só decide a folga — a base é sempre a operação. |
+| **Folga de equipe** | Minutos extras de bloqueio quando **você** entrega e recolhe; cobre trânsito e imprevisto de rota. Padrão: 60 min de cada lado. |
+| **Folga de cliente** | Minutos extras de bloqueio quando **o cliente** retira e devolve no galpão; cobre o cliente que atrasa ou remarca. |
+| **Preparo** | O tempo de conferência, limpeza e manutenção **depois** que o item volta, antes de contar como disponível de novo. |
+| **Data de Liberação** | A data em que o item volta a contar como disponível: o retorno **mais** o preparo. |
+
+{% hint style="info" %}
+Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre o evento**. Se um orçamento sair disso, o LocFlow avisa e pede correção antes de seguir.
+{% endhint %}
 
 → Detalhes em [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 
