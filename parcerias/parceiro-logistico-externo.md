@@ -39,7 +39,7 @@ A diferença está no destino. Ao aceitar, você **não** cai no painel da locad
 | **Ajustes** | As suas preferências de conta. |
 
 {% hint style="info" %}
-**Duas coisas para deixar prontas cedo:** o **recebedor** (sem ele, o repasse com divisão automática não tem para onde ir — veja [abaixo](#recebedor)) e o seu **ponto de saída** (o galpão registrado na parceria, de onde o frete por motor é calculado — um pino fora do lugar no mapa deixa o frete impreciso).
+**Duas coisas para deixar prontas cedo:** o **recebedor** (sem ele, o repasse com divisão automática não tem para onde ir — veja [abaixo](#recebedor)) e o seu **ponto de saída** (o **galpão** de onde o frete por motor é calculado — você mesmo o vê e ajusta em **Meu galpão**, dentro de **Minha frota**; um pino fora do lugar no mapa deixa o frete impreciso).
 {% endhint %}
 
 ## O acordo: o seu combinado {#o-acordo}
@@ -106,6 +106,12 @@ Do aceite em diante, quem manda na execução é você. Em **Minha logística** 
 - **Revê o que já rodou**, com as provas de execução de cada entrega.
 
 Em **Minha frota** ficam as fichas dos seus veículos. Elas importam por dois motivos: quando o **frete do acordo é por motor**, o cálculo cita especificações de veículo que precisam ser da **sua** frota; e, se um dia você [promover a parceria para org↔org](#crescendo-na-rede), fichas equivalentes na sua nova organização fazem parte do caminho.
+
+No topo de **Minha frota** fica também o atalho **Meu galpão** — o **seu ponto de saída**, a **origem do frete** que você cobra. Ali você confere e ajusta o endereço e o pino no mapa quando mudar de base. Trocar o local muda **só o valor do frete** das próximas propostas; quem decide aceitar continua sendo o vendedor.
+
+{% hint style="info" %}
+**Um parceiro externo tem um único galpão.** É a caixa isolada da parceria — um ponto de saída, uma origem de frete. Se você precisa operar de **vários galpões ou locais**, isso é sinal de que a sua operação cresceu: [crie a sua própria organização na LocFlow](#crescendo-na-rede) e passe a ser um **parceiro com conta própria** — aí você gere quantos galpões e locais quiser, com estoque, equipe e frota só seus. A sua reputação de parceiro externo vai junto.
+{% endhint %}
 
 {% hint style="warning" %}
 **Falha de entrega pesa.** Um movimento pulado ou uma entrega que não aconteceu é a penalidade mais dura do índice de confiabilidade. Se algo sair do controle, comunique e reorganize o roteiro — não deixe o movimento morrer em silêncio.

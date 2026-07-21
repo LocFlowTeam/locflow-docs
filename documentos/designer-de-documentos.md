@@ -28,7 +28,21 @@ O PDF é montado **empilhando blocos**. No topo do editor há uma régua de chip
 **Cabeçalho e rodapé são únicos e fixos.** O sistema mantém o cabeçalho no topo e o rodapé no fim em todas as páginas. Por isso eles não duplicam nem trocam de lugar.
 {% endhint %}
 
-A pré-visualização atualiza na hora. Dá para testar com um **orçamento real**: escolha um no seletor e veja o documento preenchido com os dados verdadeiros daquele pedido.
+## A pré-visualização ao vivo <a id="pre-visualizacao"></a>
+
+Ao lado (ou na aba **Visualizar**, no celular) fica a **pré-visualização** do documento — o PDF montado na própria tela, do jeitinho que o cliente vai receber. Ela **se atualiza sozinha** conforme você edita: mexeu num bloco, poucos instantes depois o preview reflete a mudança. **Toque na folha** para abri-la em **tela cheia** e conferir os detalhes.
+
+Um pequeno **indicador de estado** acima do preview conta o que está acontecendo, para você nunca ficar na dúvida se está vendo a versão mais recente:
+
+| Indicador | Significa |
+| --- | --- |
+| **Pré-visualização atualizada** | O que você vê é a sua última edição |
+| **Atualizando…** | O preview está sendo remontado com a mudança que você acabou de fazer |
+| **Alterações não aplicadas** | Você editou algo que o preview ainda não refletiu — some sozinho em seguida, ou toque em **Atualizar** para forçar na hora |
+
+{% hint style="info" %}
+**Exemplo × dados reais.** Sem escolher um pedido, o preview usa **dados de exemplo** — inclusive nos modelos padrão do sistema, que aparecem exatamente como são de verdade. Para ver com o conteúdo do seu negócio, escolha um **orçamento real** no seletor: o documento se preenche com os dados verdadeiros daquele pedido. O botão **Gerar PDF** (para baixar/compartilhar o arquivo final) fica disponível quando há um orçamento selecionado.
+{% endhint %}
 
 ## Variáveis: chips que viram dados reais <a id="variaveis"></a>
 
