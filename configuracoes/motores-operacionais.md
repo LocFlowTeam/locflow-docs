@@ -238,7 +238,7 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 
 * **"Meus orçamentos saem com frete errado."** Confira o **Motor de Frete**: lembre que os valores valem **por viagem** (cada movimento, ida e volta), não pelo orçamento inteiro. Use o **Simulador** para testar antes de publicar.
 * **"A equipe começou a preparar um pedido que ainda não foi cobrado."** Em **Motor de Logística**, ligue **"Exigir fatura emitida para iniciar a logística"**.
-* **"O mesmo item foi reservado para dois clientes."** Revise a política do **Motor de Estoque** — provavelmente está "apenas o período do evento" quando deveria ser "pela entrega e retirada" (ou com folga).
+* **"O mesmo item foi reservado para dois clientes."** Revise o **Motor de Estoque**: provavelmente está no **mínimo justo**, sem folga nenhuma entre uma locação e a próxima. Passe para **Com folga** e informe quanto tempo a sua operação costuma precisar depois que o material volta.
 * **"Quero que fretes altos passem por mim antes de fechar."** Em **Operação do Frete**, escolha **Aprovar acima de um valor** e defina o limite.
 * **"Um cliente pagou a mais e não sei o que fazer com o troco."** O **Operação da Cobrança** já decide o padrão (crédito ou dinheiro) e avisa a equipe.
 
