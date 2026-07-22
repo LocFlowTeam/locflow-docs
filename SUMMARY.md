@@ -74,6 +74,7 @@
 * [Recebendo pagamentos](cobranca/recebendo-pagamentos.md)
 * [Pagamento online](cobranca/pagamento-online.md)
 * [A página de pagamento do cliente](cobranca/pagina-de-pagamento.md)
+* [Saldo e antecipação](cobranca/saldo-e-antecipacao.md)
 
 ## Logística
 
