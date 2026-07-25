@@ -49,13 +49,77 @@ A regra de ouro de qualquer virada: **cada pedido vive em um sistema só**. O qu
 
 ## O passo a passo da importação
 
-1. Abra **Ajustes › Importação de Dados**;
-2. Escolha **o quê** importar (Contatos ou Histórico de orçamentos);
-3. **Envie a planilha** (CSV ou Excel) e **mapeie as colunas**: para cada campo, diga qual coluna do seu arquivo o preenche. O LocFlow sugere o mapeamento sozinho e mostra um **dado de exemplo real** ao lado de cada coluna — você confere vendo o dado, sem adivinhar. Colunas com dados que ficarem sem mapeamento são avisadas antes de avançar;
-4. **Valide**: nada é gravado ainda. Cada linha é classificada em **OK** (entra limpa), **pendente** (entra com uma ressalva — ex.: contato sem CPF) ou **bloqueada** (não entra — ex.: cliente do pedido não encontrado). **Toque em qualquer linha** para ver os dados dela e o motivo exato da classificação;
-5. Se houver bloqueadas, **baixe a devolutiva** — um arquivo com essas linhas e o **motivo** de cada uma. Corrija na sua planilha e importe de novo: o LocFlow **não duplica** o que já entrou;
-6. **Aplique**. Uma **barra de progresso** mostra o avanço em tempo real ("1.500 de 5.000 importados") — em planilhas grandes, a importação acontece em etapas e pode levar alguns minutos. Mantenha a tela aberta;
-7. **Confira por amostragem**: abra 5 ou 10 clientes e compare com o sistema antigo (nome, telefone, quantidade de pedidos). Batendo a amostra, a migração está saudável.
+Abra **Ajustes › Importação de Dados**, escolha **o quê** importar (Contatos ou Histórico de
+orçamentos) e siga os **cinco passos**:
+
+### 1. Arquivo
+
+Escolha a planilha (CSV ou Excel). O LocFlow mostra na hora as **três primeiras linhas, exatamente
+como estão no seu arquivo**, com as letras das colunas (A, B, C…) igual ao Excel.
+
+{% hint style="info" %}
+Confira aqui se a **primeira linha é o cabeçalho** e não um cliente. Se for um cliente, troque o
+arquivo colocando a linha de títulos no topo — assim nenhum cadastro se perde.
+{% endhint %}
+
+A leitura acontece **no seu aparelho**. Nada é enviado neste passo.
+
+### 2. Ligações
+
+Aqui você diz **o que cada coluna significa**. Toda linha tem dois lados: à esquerda, uma coluna da
+**sua planilha** (em fonte de máquina, com a letra da coluna); à direita, o **campo do LocFlow** que
+vai receber esse dado. Essa ordem nunca muda.
+
+Os campos aparecem em quatro blocos, do mais importante ao menos:
+
+| Bloco | O que é |
+| --- | --- |
+| **1 · Obrigatório** | Só o Nome. É o único campo sem o qual o cadastro não existe |
+| **2 · Reconhecemos sozinhos** | O que adivinhamos pelo nome do cabeçalho. Confira as amostras e toque em **Confirmar as N ligações** para aprovar todas de uma vez |
+| **3 · Quer trazer mais?** | Campos ainda livres, se você quiser aproveitar mais colunas |
+| **4 · Não vou importar** | As colunas que ficam de fora — **nomeadas**, com o dado real de cada uma e um botão **Usar** se alguma delas deveria virar um campo |
+
+Cada coluna mostra um **dado de verdade** da sua planilha, e sempre **do mesmo cliente** — assim dá
+para comparar colunas parecidas sem adivinhar pelo nome do cabeçalho.
+
+{% hint style="success" %}
+Toque em **Ver como vai ficar**: o LocFlow monta a **ficha do cliente pronta**, com um registro real
+da sua planilha, e mostra debaixo de cada valor de qual coluna ele veio. É a forma mais rápida de
+perceber que o telefone caiu no lugar do CNPJ. No computador, essa prévia fica sempre visível ao lado.
+{% endhint %}
+
+### 3. Conferir
+
+O ensaio da importação: **nada é gravado**. O resultado vem em três números:
+
+| Resultado | O que significa |
+| --- | --- |
+| **Entram** | O cadastro entra completo |
+| **Com ressalva** | O cadastro **entra**, mas falta um pedaço (ex.: contato sem CPF/CNPJ) |
+| **Ficam de fora** | Falta algo sem o que o cadastro não existe |
+
+O que fica de fora vem **agrupado por motivo** ("Sem nome no arquivo · 18", "CPF/CNPJ inválido · 19"),
+não linha a linha — cada motivo é **um conserto só** na sua planilha. Toque em **Ver linhas** para
+percorrer as linhas daquele motivo, uma a uma, com o problema destacado e o conserto explicado.
+
+Se preferir corrigir no Excel, **baixe o arquivo** com as linhas de fora e o motivo de cada uma.
+
+### 4. Importar
+
+Aqui, sim, os dados entram. A tela mostra **quantos vão entrar**, o que acontece com quem já existe
+e um **anel de progresso** com o avanço real. Pode levar alguns minutos em planilhas grandes —
+deixe a tela aberta.
+
+### 5. Pronto
+
+O total que entrou e, se houver, quantas linhas ficaram de fora e por quê. Daqui você vai direto ver
+o que importou — ou emenda a próxima planilha.
+
+{% hint style="success" %}
+**Depois de importar, confira por amostragem**: abra 5 ou 10 clientes e compare com o sistema antigo
+(nome, telefone, quantidade de pedidos). Batendo a amostra, a migração está saudável. As três
+conferências completas estão em [Migrar com segurança](migrar-com-seguranca.md).
+{% endhint %}
 
 ## Limites e desempenho
 
@@ -67,10 +131,10 @@ A regra de ouro de qualquer virada: **cada pedido vive em um sistema só**. O qu
 
 Pode ficar tranquilo — a importação foi desenhada para **nunca perder nem duplicar** dados:
 
-* **Caiu a conexão / fechou a tela durante a importação?** O que já entrou está salvo. Volte à tela e toque em **"Continuar importação"**: ela retoma exatamente de onde parou;
+* **Caiu a conexão / fechou a tela durante a importação?** O que já entrou está salvo. Volte à tela e toque em **"Continuar de onde parou"**: ela retoma exatamente de onde parou, sem duplicar nada;
 * **Reimportar o mesmo arquivo é seguro**: contatos com o mesmo CPF/CNPJ e pedidos com o mesmo número de origem são reaproveitados, nunca duplicados;
 * **Linhas bloqueadas** têm sempre um motivo claro — toque na linha para ver, ou baixe a devolutiva, corrija só o que falhou e reimporte;
-* **Errou o mapeamento?** Se percebeu na validação, volte um passo e ajuste — nada foi gravado ainda. Se percebeu depois de aplicar, fale com o suporte que ajudamos a corrigir.
+* **Errou uma ligação?** Se percebeu na conferência, volte um passo e ajuste — nada foi gravado ainda. Se percebeu depois de importar, fale com o suporte que ajudamos a corrigir.
 
 ## Dicas para a planilha
 
