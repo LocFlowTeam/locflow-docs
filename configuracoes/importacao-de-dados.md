@@ -142,7 +142,8 @@ Pode ficar tranquilo — a importação foi desenhada para **nunca perder nem du
 * **Número do pedido evita duplicar — e continua pesquisável.** Se a planilha de pedidos tiver o número original de cada um, reimportar o mesmo arquivo nunca cria cópia; e depois de importar, sua equipe encontra qualquer pedido **buscando pelo número antigo** na lista de orçamentos (ele aparece como "nº 1042" ao lado do código novo). O código do LocFlow é a referência oficial daqui para frente — o número antigo fica como ponte durante a transição;
 * **Endereço completo entra junto** (CEP, rua, número, bairro, cidade e UF). Se vier pela metade, o cliente entra mesmo assim — só o endereço fica para completar depois;
 * **Itens do pedido são opcionais.** No modo **Rápido**, cada pedido entra só com o valor total; no modo **Integridade**, cada item é ligado a um produto do seu catálogo (pelo nome ou código) — se a planilha tiver uma linha por item, linhas com o mesmo número de pedido viram um pedido só. Comece pelo Rápido se quiser velocidade;
-* **Colunas que você não mapear não se perdem**: elas ficam guardadas no histórico da importação.
+* **Colunas que ficam de fora não se perdem**: elas continuam guardadas no histórico da importação;
+* **Não tem sistema de onde exportar?** Baixe o **modelo de planilha** (no hub da importação ou no passo do arquivo): ele vem com os títulos certos e uma linha de exemplo preenchida, mostrando em que formato escrever data, CPF/CNPJ e valores.
 
 {% hint style="info" %}
 Qualquer dúvida durante a migração, [fale com o suporte](../primeiros-passos/onde-tirar-duvidas.md) — estamos à disposição para acompanhar a sua virada.
