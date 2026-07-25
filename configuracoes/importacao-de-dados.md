@@ -28,35 +28,23 @@ Ao importar o histórico, o LocFlow reconhece automaticamente o estágio de cada
 
 ## Antes de começar: planeje a virada
 
-Migrar de sistema é uma mudança de rotina — meia hora de planejamento evita dor de cabeça:
+Migrar de sistema é uma mudança de rotina — meia hora de planejamento evita dor de cabeça. O
+essencial:
 
-1. **Escolha um momento calmo.** Faça a importação fora do pico da sua operação — para a maioria das locadoras, isso significa evitar os dias de montagem e retirada de eventos (em geral, quintas, sextas e segundas). Um começo de semana tranquilo ou um horário de baixa funciona bem.
+1. **Escolha um momento calmo.** Faça a importação fora do pico da sua operação — para a maioria das locadoras, isso significa evitar os dias de montagem e retirada de eventos (em geral, quintas, sextas e segundas). Um começo de semana tranquilo funciona bem.
 2. **Exporte os dados do sistema atual.** Todo sistema tem um "exportar para Excel/CSV". Gere um arquivo de **clientes** e outro de **pedidos** — não precisa arrumar as colunas: o LocFlow pergunta o que cada coluna significa na hora de importar.
 3. **Defina um responsável.** Uma pessoa faz a importação do começo ao fim (e vira a referência interna sobre "de onde veio cada dado").
-4. **Cadastre o catálogo antes** (produtos e preços). Ele não é importado por planilha — e, com o catálogo pronto, o histórico de orçamentos consegue ligar cada item ao produto certo.
+4. **Cadastre o catálogo antes** (produtos e preços). Com o catálogo pronto, o histórico de orçamentos consegue ligar cada item ao produto certo.
 
-## Operação pequena ou grande? Duas formas de virar a chave
-
-### Operação pequena: virada direta
-
-Importe tudo de uma vez e comece a usar o LocFlow no dia seguinte:
-
-1. Importe os **contatos**;
-2. Importe o **histórico de orçamentos**;
-3. A partir daí, crie os novos orçamentos **só no LocFlow**.
-
-Mantenha o sistema antigo aberto **apenas para consulta** por 30 dias — se sentir falta de alguma informação, ela ainda está lá.
-
-### Operação média ou grande: virada gradual
-
-Se você tem muitos pedidos acontecendo ao mesmo tempo, não precisa (nem deve) virar tudo num dia:
-
-1. **Semana 1** — importe contatos e histórico; a equipe conhece o sistema com os dados reais de vocês, sem pressão;
-2. **Semanas 2 e 3** — comece a criar **os novos orçamentos** no LocFlow (por exemplo, metade dos pedidos novos, depois todos), enquanto os pedidos já em andamento terminam o ciclo no sistema antigo;
-3. **Semana 4 em diante** — todo pedido novo nasce no LocFlow; o sistema antigo fica só para consultar o passado.
+{% hint style="success" %}
+**Vai trocar de sistema de verdade?** Então leia [Migrar com segurança](migrar-com-seguranca.md):
+qual estratégia de virada escolher (direta, gradual ou duplo lançamento), que dia virar, o que
+trazer e o que deixar para trás, como conferir se deu certo e o que fazer se algo falhar — com
+checklist para imprimir.
+{% endhint %}
 
 {% hint style="warning" %}
-A regra de ouro da virada gradual: **cada pedido vive em um sistema só**. O que começou no sistema antigo, termina lá; o que nasceu no LocFlow, vive aqui. Assim ninguém dá baixa duas vezes — nem esquece de dar.
+A regra de ouro de qualquer virada: **cada pedido vive em um sistema só**. O que começou no sistema antigo, termina lá; o que nasceu no LocFlow, vive aqui. Assim ninguém dá baixa duas vezes — nem esquece de dar.
 {% endhint %}
 
 ## O passo a passo da importação
