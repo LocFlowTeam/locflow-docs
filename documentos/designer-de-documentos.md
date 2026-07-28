@@ -163,6 +163,10 @@ O bloco **Totais** é uma lista de linhas (Subtotal, Desconto, Frete, Total…),
 
 Em cada linha há a opção **"Destacar esta linha (total final)"**. A linha em destaque sai **realçada** no PDF — é como o cliente bate o olho e encontra o valor que importa. Você ainda escolhe se o bloco de totais fica alinhado à **esquerda** ou à **direita**.
 
+{% hint style="info" %}
+**Acréscimos e descontos podem sair discriminados, não só somados.** Além das variáveis de total (*Total de acréscimos*, *Desconto*), existem as **listas** de **acréscimos aplicados** e de **descontos aplicados** — cada uma imprime uma linha por lançamento, com o texto que o vendedor escreveu e quanto aquela linha somou ou abateu em reais. A lista de acréscimos traz o **frete** junto, no mesmo bloco. Quando o orçamento não tem nenhum lançamento, a lista **some sozinha** e o documento cai no total simples. Veja o que cada um significa em [Valores](../orcamentos/valores.md).
+{% endhint %}
+
 ### "Deixe em branco para a logo da organização" <a id="logo-da-organizacao"></a>
 
 No **Cabeçalho**, cada coluna tem um tipo de conteúdo: **Logo**, **Título**, **Info da empresa** ou **Texto livre**. Na coluna de **Logo**, o campo é a URL da imagem, e a ajuda é direta:

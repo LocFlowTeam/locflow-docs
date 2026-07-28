@@ -107,6 +107,6 @@ A filosofia é a de sempre: **abstrair para quem quer simplicidade, revelar núm
 - Entenda como o motor calcula (Rota Estimada, "por viagem", perfis) em [Motor de Frete: como calcula](motor-de-frete.md).
 - Veja o quadro completo dos motores e da política de aprovação em [Motores operacionais](motores-operacionais.md).
 - Cadastre e gerencie quem leva o seu frete em [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
-- Monte a divisão e veja a composição no orçamento em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
+- Monte a divisão e veja a composição no orçamento em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
 - Entenda a pré-etapa Pendente e como aprovar em [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Dúvida em algum termo? Consulte o [glossário](../primeiros-passos/glossario.md).

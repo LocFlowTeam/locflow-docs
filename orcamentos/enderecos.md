@@ -60,18 +60,21 @@ Em vez de redigitar o CEP e o complexo "bloco B, portaria 2" de novo, você busc
 
 Às vezes o destino é único — uma entrega avulsa que não vai se repetir. Para isso existe o tipo **Exclusivo**: você digita o endereço direto no orçamento e ele **não polui** suas listas. Sem cadastro, sem apelido, sem guardar nada.
 
-## O CEP preenche quase tudo {#o-cep-preenche-quase-tudo}
+## Dois caminhos: pelo CEP ou pelo mapa {#o-cep-preenche-quase-tudo}
 
-Em qualquer um dos casos em que você **digita** um endereço, comece pelo **CEP**. Ao completar os 8 dígitos, o LocFlow busca e preenche sozinho o logradouro, o bairro e a cidade. Você só completa o **número** (e o complemento, se houver).
+Em qualquer um dos casos em que você **digita** um endereço, o LocFlow abre **dois caminhos**, um acima do outro — você toca no que quiser e ele se abre ali mesmo:
 
-{% hint style="info" %}
-**E se eu não souber o CEP?** Há um interruptor **"Você sabe o CEP?"**. Hoje, o CEP é necessário para associar o endereço à cidade correta — como diz o próprio app:
+| Caminho | Como funciona | Custo |
+| --- | --- | --- |
+| **Pelo CEP** *(aberto por padrão)* | Digite os 8 dígitos: logradouro, bairro e cidade se preenchem sozinhos. Você completa o **número** (e o complemento, se houver). | **Grátis** |
+| **Buscar no mapa** | Digite o **nome da rua** e escolha uma sugestão: CEP, logradouro, bairro, município **e a localização exata** vêm juntos. | **Consome créditos** |
 
-> *"O CEP é obrigatório para associar o endereço ao município correto (IBGE)."*
-
-{% hint style="info" %}
-**Em breve:** descobrir o CEP pelo **nome da rua** (integração com mapas). Por enquanto, tenha o CEP em mãos.
+{% hint style="warning" %}
+**A busca no mapa cobra créditos — e avisa antes.** O cabeçalho traz o selo com quantos créditos custa, e ao escolher uma sugestão o app pede confirmação (*"Confirmar endereço do mapa — endereço completo com localização exata, via Google Maps"*). O caminho **pelo CEP** resolve a maioria dos casos sem gastar nada, e por isso vem aberto primeiro.
 {% endhint %}
+
+{% hint style="info" %}
+**Não sabe o CEP?** É exatamente para isso que serve o **Buscar no mapa**: você acha o endereço pelo nome da rua. E se, no meio da busca, o LocFlow perceber que você digitou um **CEP** no campo do mapa, ele devolve você para o caminho gratuito com o CEP já preenchido — sem gastar crédito por algo que a consulta de CEP resolve de graça.
 {% endhint %}
 
 Não tem número? Marque a opção **S/N** (sem número) e siga em frente.

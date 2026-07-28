@@ -109,7 +109,7 @@ Um fornecedor só é **elegível** para transportar de fato quando tem **motor d
 O LocFlow protege você disso **na hora de dividir a carga**. Quando você monta a composição do frete e vai escolher a ficha de cada viagem, um fornecedor **sem motor de frete ativo** aparece com um **cadeado** e a marca **"sem motor de frete"** — e **não pode ser selecionado**. O app explica o motivo ali mesmo, para você não escolher uma opção que sairia sem valor.
 
 {% hint style="warning" %}
-**Como destravar.** Se um fornecedor aparece bloqueado, é porque falta configurar o **motor de frete dele**. Configure o motor (com pelo menos uma cobrança válida) e ele passa a ser selecionável na divisão. Onde tudo isso aparece no orçamento — a composição do frete, a divisão entre transportadoras e o repasse ao cliente — está em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
+**Como destravar.** Se um fornecedor aparece bloqueado, é porque falta configurar o **motor de frete dele**. Configure o motor (com pelo menos uma cobrança válida) e ele passa a ser selecionável na divisão. Onde tudo isso aparece no orçamento — a composição do frete, a divisão entre transportadoras e o repasse ao cliente — está em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
 {% endhint %}
 
 ## Como tudo se conecta {#como-se-conecta}
@@ -144,6 +144,6 @@ Pule a etapa 3 e o fornecedor fica **bloqueado** na divisão. As três primeiras
 - Entenda o quadro maior das parcerias em [Parcerias: a visão](visao-geral.md).
 - Monte a **frota-espelho** de um fornecedor em [Frota](../cadastros/frota.md#detentor).
 - Configure o **preço** dele em [Motor de frete por detentor](../configuracoes/motor-de-frete-detentor.md).
-- Veja o fornecedor entrar no orçamento em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
+- Veja o fornecedor entrar no orçamento em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#composicao-do-frete).
 - Precisa liberar o recurso? Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 - Dúvida em algum termo? Consulte o [glossário](../primeiros-passos/glossario.md).

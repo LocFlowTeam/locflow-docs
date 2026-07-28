@@ -63,7 +63,7 @@ Ao abrir, você escolhe como prefere montar as regras, pelo perfil da sua opera�
 
 Para cada variável numérica (km, kg, minutos…), você decide entre **cobrar por ela** (preço por unidade) ou **usá-la como critério** — cobrar só quando o valor estiver dentro de um mínimo, máximo ou faixa. Exemplo: gatilho "distância" + critério "entre 0 e 50 km" + valor "R$ 100 fixo + R$ 3 por km" = uma cobrança específica para viagens curtas.
 
-> Onde isso aparece no dia a dia: no bloco **Valores** do orçamento, na aba **Frete automático**. Veja [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#frete).
+> Onde isso aparece no dia a dia: no bloco **Valores** do orçamento, na aba **Frete automático**. Veja [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#frete).
 
 ### Motor de Orçamento {#motor-de-orcamento}
 
@@ -249,7 +249,7 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 ## Próximo passo {#proximo-passo}
 
 * [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md) — o Motor de Estoque em detalhe.
-* [Valores: mão de obra, frete e descontos](../orcamentos/valores.md) — onde o Motor de Frete aparece no orçamento.
+* [Valores: acréscimos, frete e descontos](../orcamentos/valores.md) — onde o Motor de Frete aparece no orçamento.
 * [Aprovação de orçamentos](../orcamentos/aprovacao.md) — o que acontece quando a Operação do Frete trava um pedido.
 * [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md) — como cada fornecedor de frete tem a sua própria política de aprovação.
 * [Separação no galpão](../logistica/separacao.md) e [Conferência na devolução](../logistica/conferencia.md) — as etapas internas que o Motor de Logística liga.

@@ -192,7 +192,7 @@ O LocFlow **abstrai para o pequeno e revela para o grande**: você começa com u
 
 ## Próximo passo {#proximo-passo}
 
-* Onde o resultado aparece no orçamento: [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#frete)
+* Onde o resultado aparece no orçamento: [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#frete)
 * Quem autoriza fretes altos: [Aprovação de orçamentos](../orcamentos/aprovacao.md)
 * Cadastrar épocas e horários para os gatilhos: [Horários e sazonalidades](horarios-e-sazonalidades.md)
 * Visão geral dos motores: [Motores operacionais](motores-operacionais.md)

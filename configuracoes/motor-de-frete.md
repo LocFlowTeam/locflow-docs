@@ -7,7 +7,7 @@ description: Como o LocFlow calcula o frete — a Rota Estimada (pior cenário),
 
 O **Motor de Frete** é onde você ensina o LocFlow a calcular o transporte sozinho. Você descreve uma vez **como cobra pelo seu frete** — e, a cada orçamento com endereços preenchidos, o sistema mede a rota e aplica as suas regras, sem você fazer conta.
 
-Esta página é sobre **como o cálculo funciona por dentro**. Onde você **usa** o resultado (a chave "Cobrar frete", as abas automático/manual, o botão "Calcular frete") é assunto de [Valores: mão de obra, frete e descontos](../orcamentos/valores.md). Onde você **liga** o motor, junto dos outros, é [Motores operacionais](motores-operacionais.md).
+Esta página é sobre **como o cálculo funciona por dentro**. Onde você **usa** o resultado (a chave "Cobrar frete", as abas automático/manual, o botão "Calcular frete") é assunto de [Valores: acréscimos, frete e descontos](../orcamentos/valores.md). Onde você **liga** o motor, junto dos outros, é [Motores operacionais](motores-operacionais.md).
 
 {% hint style="info" %}
 **Frete automático precisa do Motor de Frete configurado.** Sem ele, o orçamento abre direto no campo de **frete manual** — você digita um valor fechado e segue. O motor é o que troca "digitar à mão" por "calcular sozinho".
@@ -296,7 +296,7 @@ Na prática: você edita à vontade em **rascunho**, simula, e só quando **publ
 
 ## Próximo passo {#proximo-passo}
 
-- Veja onde o resultado aparece no orçamento em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md).
+- Veja onde o resultado aparece no orçamento em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
 - Entenda os movimentos que geram as viagens em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md).
 - Ligue o motor junto dos outros em [Motores operacionais](motores-operacionais.md).
 - Dê um motor a cada fornecedor de frete em [Motor de Frete por detentor](motor-de-frete-detentor.md).

@@ -118,7 +118,7 @@ Por isso uma unidade comprometida para venda **não** entra na conta do aluguel,
 ## Para quem quer os detalhes {#avancado}
 
 {% hint style="info" %}
-**Histórico de preço por estoque.** Cada estoque guarda o **seu** preço com histórico (a "máquina do tempo" de preços). Mudar o preço de venda do **Usado** cria um novo registro e **não** mexe no preço do **Novo** nem no de aluguel — e orçamentos antigos continuam com o preço que tinham quando foram feitos. Veja como o preço entra na conta em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md).
+**Histórico de preço por estoque.** Cada estoque guarda o **seu** preço com histórico (a "máquina do tempo" de preços). Mudar o preço de venda do **Usado** cria um novo registro e **não** mexe no preço do **Novo** nem no de aluguel — e orçamentos antigos continuam com o preço que tinham quando foram feitos. Veja como o preço entra na conta em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
 {% endhint %}
 
 {% hint style="info" %}

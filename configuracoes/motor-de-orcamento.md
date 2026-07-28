@@ -1,6 +1,6 @@
 ---
 icon: file-invoice
-description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade e intervalo mínimo da logística.
+description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade, intervalo mínimo da logística e o teto de desconto.
 ---
 
 # Motor de Orçamento
@@ -12,7 +12,7 @@ Por dentro, ele tem **dois lados** que funcionam de maneira diferente — e vale
 | Lado | O que guarda | Como salva |
 | --- | --- | --- |
 | **Valor mínimo de orçamento** | O **corte** mínimo do orçamento | Tem **histórico de versões** |
-| **Operação do orçamento** | Taxa de serviço, validade e intervalo logístico | **Configuração única**, sem histórico |
+| **Operação do orçamento** | Taxa de serviço, validade, intervalo logístico e **teto de desconto** | **Configuração única**, sem histórico |
 
 {% hint style="info" %}
 **Por que dois lados?** O **valor mínimo** é uma regra comercial — vale guardar o registro de quando você mudou esse limite, para relatórios de venda. Os demais são **padrões operacionais**: ajustes do dia a dia que só precisam refletir o estado atual. Por isso um é versionado e o outro é editado direto.
@@ -38,7 +38,7 @@ Na tela, você digita um valor em reais e salva. Como esse é o lado **versionad
 
 ## Operação do orçamento {#operacao-do-orcamento}
 
-Da tela do valor mínimo, o atalho **"Operação do orçamento"** leva aos **padrões operacionais** da proposta. São três parâmetros — e, ao contrário do corte, eles **não guardam histórico**: você edita direto e vale a versão atual.
+Da tela do valor mínimo, o atalho **"Operação do orçamento"** leva aos **padrões operacionais** da proposta — e, ao contrário do corte, eles **não guardam histórico**: você edita direto e vale a versão atual.
 
 {% hint style="info" %}
 O próprio LocFlow resume na tela:
@@ -48,7 +48,7 @@ O próprio LocFlow resume na tela:
 
 ### Taxa de serviço {#taxa-de-servico}
 
-Uma **porcentagem padrão** que já vem sugerida ao montar um orçamento, para agilizar. Em alguns negócios ela aparece como **mão de obra** — é a mesma ideia: o acréscimo que cobre o trabalho além dos itens (montagem, instalação, operação). Veja como ela entra no preço em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#mao-de-obra).
+Uma **porcentagem padrão** que já vem sugerida ao montar um orçamento, para agilizar. Em alguns negócios ela aparece como **mão de obra** — é a mesma ideia: o acréscimo que cobre o trabalho além dos itens (montagem, instalação, operação). Veja como ela entra no preço em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#acrescimos).
 
 A taxa de serviço é **opcional** — você pode deixar em branco e definir caso a caso.
 
@@ -98,6 +98,28 @@ O texto de ajuda da tela:
 
 Você informa em **minutos** (número inteiro maior que zero), e a tela mostra o equivalente em horas logo abaixo — por exemplo, **90 min** vira *"Equivalente a 1h30"*. Diferente do corte, aqui o aviso **não trava**: se uma janela for mais apertada que o mínimo, o sistema alerta, mas você pode **consentir com o risco** e seguir.
 
+### Teto de desconto {#teto-de-desconto}
+
+O **teto de desconto** é o quanto o vendedor pode abater **sozinho**, sem pedir nada a ninguém. Passou do teto, o orçamento **não é recusado**: ele nasce **congelado, aguardando aprovação** de quem tem permissão para aprovar — exatamente o mesmo mecanismo do frete acima do limite. Enquanto está parado, nenhum passo seguinte acontece: nem reservar, nem faturar, nem liberar a logística.
+
+A escolha é explícita, entre **dois estados que significam o oposto um do outro**:
+
+| Estado | O que acontece |
+| --- | --- |
+| **Sem teto** | Nenhum desconto exige aprovação. É o **padrão** de quem nunca configurou nada — e a escolha de quem confia no time comercial. |
+| **Com teto** | Você informa a porcentagem. Acima dela, o orçamento vai para aprovação. |
+
+{% hint style="warning" %}
+**Teto de 0% não é "sem teto" — é o contrário.** Com 0%, **qualquer** desconto exige aprovação: o vendedor não tira um centavo sem alguém aprovar. Por isso a tela pede a escolha entre *sem teto* e *com teto* antes do número, e cobra o valor se você marcar "com teto" e não informar nada.
+{% endhint %}
+
+Dois detalhes que evitam surpresa:
+
+* **Conceder exatamente o teto não exige aprovação.** A régua é "acima de", não "a partir de".
+* O teto vale para o desconto do orçamento **como um todo** — inclusive o que vier das [Regras de desconto](regras-de-desconto.md) do catálogo.
+
+O vendedor não descobre isso ao salvar: enquanto monta a proposta, o cartão de descontos mostra o placar (*"8% concedidos — o teto sem aprovação é 15%"*) e, ao passar, o aviso âmbar de que o orçamento vai para aprovação. Veja [Valores](../orcamentos/valores.md#teto-de-desconto).
+
 ## Versionado × operacional {#versionado-x-operacional}
 
 Para fixar a diferença entre os dois lados do motor:
@@ -110,16 +132,17 @@ flowchart TB
     O --> T[Taxa de servico]
     O --> VA[Validade]
     O --> I[Intervalo logistico]
+    O --> D[Teto de desconto]
 ```
 
 | | Valor mínimo | Operação do orçamento |
 | --- | --- | --- |
 | **Guarda histórico?** | Sim — versões com data | Não — vale a versão atual |
 | **Ao salvar** | Publica uma nova versão | Edita direto |
-| **Trava o orçamento?** | Sim — abaixo do corte, não cria | Só a taxa/validade; o intervalo **alerta** mas deixa seguir |
+| **Trava o orçamento?** | Sim — abaixo do corte, não cria | O intervalo **alerta** mas deixa seguir; o **teto de desconto** congela para aprovação |
 
 {% hint style="warning" %}
-**Isto aqui não é a aprovação por frete.** Travar um orçamento à espera do aval de alguém (por exemplo, quando o frete passa de um limite) é outra configuração — ela vive na **Operação do Frete** (uma regra de operação), não aqui. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor do frete; quem decide se aquele frete precisa de aprovação antes do pedido seguir é a **Operação do Frete**. Veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
+**Duas travas de aprovação, em telas diferentes.** Aqui mora o **teto de desconto** — orçamento com abatimento acima do teto vai para aprovação. Já o travamento **por frete** (frete acima de um limite) é outra configuração, que vive na **Operação do Frete**. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor; quem decide se aquele frete precisa de aval é a **Operação do Frete**. As duas desembocam na mesma fila — veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 {% endhint %}
 
 ## Por porte {#por-porte}
@@ -128,9 +151,9 @@ A mesma tela serve do autônomo ao operador grande — muda o quanto você mexe.
 
 | Seu porte | Como usar o Motor de Orçamento |
 | --- | --- |
-| **Autônomo / micro** | Deixe no padrão. Sem valor mínimo, taxa de serviço em branco, validade de 7 dias. Você precifica caso a caso e nada trava. |
+| **Autônomo / micro** | Deixe no padrão. Sem valor mínimo, taxa de serviço em branco, validade de 7 dias, **sem teto de desconto**. Você precifica caso a caso e nada trava. |
 | **Médio** | Defina um **valor mínimo** que faça o pedido pequeno valer a pena, e uma **taxa de serviço** padrão para não esquecer de cobrar a mão de obra. Ajuste a **validade** ao seu ciclo de fechamento. |
-| **Grande** | Use o **histórico do valor mínimo** para acompanhar como o seu piso evoluiu, e aperte o **intervalo logístico** para casar a margem das janelas com a realidade da sua frota. |
+| **Grande** | Use o **histórico do valor mínimo** para acompanhar como o seu piso evoluiu, aperte o **intervalo logístico** para casar a margem das janelas com a realidade da sua frota, e ligue o **teto de desconto** para que a equipe negocie dentro de um limite conhecido. |
 
 ---
 
@@ -141,9 +164,10 @@ A partir daqui é detalhe de quem gosta de saber a conta por trás. Você **não
 ### Como cada padrão age no orçamento {#como-aplica-numeros}
 
 - **Valor mínimo (corte):** ao tentar criar/fechar, o sistema compara o **total** do orçamento com o corte em vigor. Se o total for **menor** que o corte, **bloqueia** com uma mensagem como *"Valor total do orçamento (R$ …) abaixo do corte mínimo de R$ …"*. Igual ou acima, segue.
-- **Taxa de serviço:** quando definida, ela incide **sobre o total dos itens** (não sobre o frete) — `total dos itens × (taxa ÷ 100)` é somado como acréscimo. Sem taxa configurada, não muda nada. É a mesma lógica da mão de obra em porcentagem descrita em [Valores](../orcamentos/valores.md#mao-de-obra).
+- **Taxa de serviço:** quando definida, ela incide **sobre o total dos itens** (não sobre o frete) — `total dos itens × (taxa ÷ 100)` é somado como acréscimo. Sem taxa configurada, não muda nada. É a mesma lógica da mão de obra em porcentagem descrita em [Valores](../orcamentos/valores.md#acrescimos).
 - **Validade:** conta os dias **a partir da data de criação**. Dentro do prazo, a pré-reserva dos itens vale; vencida, os itens deixam de ficar segurados.
 - **Intervalo mínimo logístico:** para cada movimento **agendado** com janela de horário, o sistema compara a **duração da janela** com o mínimo. Se for **menor ou igual**, alerta — mas, com o seu consentimento, deixa prosseguir.
+- **Teto de desconto:** ao salvar o orçamento, o sistema soma **tudo** o que foi abatido e compara com o teto **em reais** (não em porcentagem arredondada, para meio centavo não mandar à aprovação um desconto que estava no limite). Passou, o orçamento nasce congelado e entra na fila de **Pendentes de aprovação**.
 
 ### Sobre o versionamento do valor mínimo {#versionamento}
 
@@ -159,12 +183,13 @@ Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso 
 - **Esquecer de cobrar a montagem.** Configure a **taxa de serviço** padrão em %. Todo orçamento novo já vem com ela sugerida sobre os itens — e você ainda pode mudar caso a caso.
 - **Proposta antiga sendo aceita semanas depois.** Com a **validade** ajustada, a proposta vence no prazo certo e você não fica preso a um preço velho. O cliente que demorou recebe um orçamento novo, com preços atuais.
 - **Janela de entrega apertada demais.** O operador agenda uma entrega com janela de 30 minutos e o mínimo é 60. O sistema alerta sobre o risco de atraso; o operador confirma que entende e segue.
+- **Desconto além do combinado.** Você define o **teto em 15%**. Um vendedor fecha com 20% para segurar o cliente: o orçamento nasce congelado e o gestor decide — aprova ou rejeita com o motivo. Nada de descobrir o abatimento só no fechamento do mês.
 - **Acompanhar a evolução do seu piso.** Você subiu o valor mínimo no início do ano. Meses depois, o **histórico de versões** mostra desde quando cada piso valeu — útil para entender relatórios de venda.
 
 ## Próximo passo
 
 - Veja todos os motores e como se encaixam em [Motores operacionais](motores-operacionais.md).
-- Entenda como a taxa de serviço entra no preço em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md).
+- Entenda como a taxa de serviço entra no preço em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
 - Para o **travamento por frete** (que fica na **Operação do Frete**, não aqui), veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Para como a validade se relaciona com a reserva de itens, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 - Para definir quem pode editar este motor, veja [Colaboradores e acessos](colaboradores-e-acessos.md).

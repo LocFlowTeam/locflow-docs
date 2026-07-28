@@ -1,6 +1,6 @@
 ---
 icon: file-invoice-dollar
-description: A visão geral de montar uma proposta no LocFlow — um assistente de 6 etapas, da natureza e do cliente até a revisão dos totais e o envio.
+description: A visão geral de montar uma proposta no LocFlow — um assistente de 6 etapas, da natureza e do cliente até a revisão dos totais e o envio, na ordem Geral, Itens, Evento, Movimentos, Valores e Revisão.
 ---
 
 # Criando um orçamento
@@ -37,13 +37,13 @@ Quando o cliente é uma **empresa (PJ)**, o orçamento pede também o **respons�
 
 ## Um assistente de 6 etapas {#etapas}
 
-Montar a proposta é um **assistente** (passo a passo) de **6 etapas**, na ordem em que você preenche a informação:
+Montar a proposta é um **assistente** (passo a passo) de **6 etapas**, na ordem em que uma decisão depende da anterior:
 
 ```mermaid
 flowchart LR
-    A[Geral] --> B[Evento]
-    B --> C[Frete]
-    C --> D[Itens]
+    A[Geral] --> B[Itens]
+    B --> C[Evento]
+    C --> D[Movimentos]
     D --> E[Valores]
     E --> F[Revisão]
 ```
@@ -51,11 +51,15 @@ flowchart LR
 | Etapa | O que você resolve aqui | Detalhe em |
 | --- | --- | --- |
 | **Geral** | A **natureza** (locação/venda), o **cliente** (e o responsável, se for empresa) e o **vendedor** do pedido | esta página |
-| **Evento** | As **datas**, os **movimentos** (entrega/retirada) e seus **endereços** | [Movimentos e janelas](movimentos-e-janelas.md) · [Endereços](enderecos.md) |
-| **Frete** | Cobrança do deslocamento — automática ou manual | [Valores](valores.md) |
 | **Itens** | Os bens móveis (produtos e kits), quantidades e preços | [Catálogo](../cadastros/catalogo-produtos.md) |
-| **Valores** | Taxa de serviço, descontos, a **duração** da locação e as **observações** | [Valores](valores.md) · [Duração e bloqueio](duracao-e-bloqueio.md) |
+| **Evento** | As **datas** do evento — a âncora de tudo que vem depois | [Movimentos e janelas](movimentos-e-janelas.md) |
+| **Movimentos** | O **trajeto** e os horários, as **cargas e viagens** e o **frete**, numa etapa só | [Movimentos e janelas](movimentos-e-janelas.md) · [Endereços](enderecos.md) · [Valores](valores.md#frete) |
+| **Valores** | A **duração** da locação, os **acréscimos**, os **descontos** e as **observações** | [Valores](valores.md) · [Duração e bloqueio](duracao-e-bloqueio.md) |
 | **Revisão** | Confere o **resumo dos totais** e **salva** | esta página |
+
+{% hint style="info" %}
+**Por que os itens vêm antes do evento e do frete.** A logística divide os **materiais** em viagens, e o frete depende do peso e do volume que vão no veículo. Sem itens, as duas etapas ficariam sem base. E juntar trajeto, viagens e frete numa etapa só resolve o incômodo antigo: quem mexia nas viagens só via o efeito no preço uma tela adiante.
+{% endhint %}
 
 A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
 
@@ -75,11 +79,11 @@ A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
 Para a maioria das propostas, o caminho segue as etapas na ordem:
 
 1. **Geral** — escolha a **natureza** (locação ou venda), **selecione o cliente** (e o responsável, se for empresa) e confirme o **vendedor**.
-2. **Evento** — ajuste as **datas** (o LocFlow já sugere com base na sua configuração; você muda se precisar) e defina os **movimentos e endereços**. Na locação há **entrega** e **retirada**; na venda, só a entrega. Cada movimento pode usar o endereço do cliente, um endereço salvo, um endereço digitado na hora, ou ser feito **no galpão** (o cliente busca e devolve no balcão).
-3. **Frete** — confira a cobrança do deslocamento, calculada automaticamente ou informada à mão.
-4. **Itens** — adicione produtos e kits, com quantidades e valores.
-5. **Valores** — revise taxa de serviço, descontos, a **duração** da locação e as **observações**.
-6. **Revisão** — confira o **resumo dos totais** (itens, frete, taxa de serviço e descontos somados no total que o cliente vai ver) e toque em **Salvar**.
+2. **Itens** — adicione produtos e kits, com quantidades e valores.
+3. **Evento** — ajuste as **datas** (o LocFlow já sugere com base na sua configuração; você muda se precisar).
+4. **Movimentos** — defina o **trajeto** de cada movimento e os horários, distribua a **carga em viagens** se precisar, e confira o **frete**. Na locação há **entrega** e **retirada**; na venda, só a entrega. Cada movimento pode usar o endereço do cliente, um endereço salvo, um endereço digitado na hora, ou ser feito **no galpão** (o cliente busca e devolve no balcão).
+5. **Valores** — revise a **duração** da locação, os **acréscimos** (mão de obra, montagem…), os **descontos** e as **observações**.
+6. **Revisão** — confira o **resumo dos totais** (itens, acréscimos, frete e descontos somados no total que o cliente vai ver) e toque em **Salvar**.
 
 {% hint style="info" %}
 **O orçamento só é salvo na última etapa.** Percorrer as etapas anteriores não grava nada no servidor — é só na **Revisão**, depois de conferir os números, que você toca em **Salvar** e a proposta nasce. Até lá, seu progresso fica guardado no rascunho local (abaixo).

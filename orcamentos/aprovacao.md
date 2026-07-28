@@ -5,7 +5,7 @@ description: Quando uma regra trava o orçamento aguardando aval — a pré-etap
 
 # Aprovação de orçamento
 
-Em algumas operações, certos orçamentos não devem seguir adiante sem o aval de alguém. A aprovação do LocFlow cobre exatamente isso: quando uma **regra é acionada** — seja uma **regra que você definiu** (por exemplo, um **frete acima do limite**), seja um **frete de fornecedor**, que trava por natureza — o orçamento fica **travado, aguardando a decisão de um responsável** antes de andar.
+Em algumas operações, certos orçamentos não devem seguir adiante sem o aval de alguém. A aprovação do LocFlow cobre exatamente isso: quando uma **regra é acionada** — um **frete acima do limite**, um **desconto acima do teto**, ou um **frete de fornecedor**, que trava por natureza — o orçamento fica **travado, aguardando a decisão de um responsável** antes de andar.
 
 Isso vale tanto para **locação** quanto para **venda** — a regra olha o orçamento, não o que acontece com o item no fim.
 
@@ -22,10 +22,15 @@ Antes de tudo, vale separar dois nomes que parecem iguais, mas não são:
 
 ## Por que um orçamento fica pendente
 
-Há **duas origens** para um orçamento nascer pendente, e as duas passam pelo frete:
+Há **três origens** para um orçamento nascer pendente:
 
-1. Uma **regra por valor** que **você** ligou na sua organização (esta seção).
+1. Uma **regra por valor de frete** que **você** ligou na sua organização (esta seção).
 2. Um **frete de fornecedor**, que trava **por natureza** — mesmo sem você ligar regra nenhuma (veja [Quando o frete é de um fornecedor](#frete-de-fornecedor)).
+3. Um **desconto acima do teto** da organização (veja [logo abaixo](#desconto-acima-do-teto)).
+
+{% hint style="info" %}
+**Uma trava por vez.** Se o mesmo orçamento estourar o limite do frete **e** o teto de desconto, ele congela **uma vez** só, pelo primeiro motivo — e uma única aprovação libera as duas causas. Congelado é congelado.
+{% endhint %}
 
 ### A política por valor da organização {#politica-por-valor}
 
@@ -42,6 +47,24 @@ O que decide se o **seu** frete trava é a **política de aprovação do frete**
 {% endhint %}
 
 Para configurar, veja [Motores operacionais](../configuracoes/motores-operacionais.md).
+
+## Quando o desconto passa do teto {#desconto-acima-do-teto}
+
+A segunda regra que **você** liga não olha para o frete, e sim para o **desconto**. Em **Ajustes › Motores › Operação do orçamento** existe o **teto de desconto**: o quanto o vendedor abate **sozinho**, sem pedir nada a ninguém.
+
+| Configuração | O que acontece |
+| --- | --- |
+| **Sem teto** (padrão) | Nenhum desconto trava. |
+| **Com teto de X%** | Desconto **acima** de X% congela o orçamento. Exatamente X% passa direto — a régua é "acima de". |
+| **Com teto de 0%** | **Qualquer** desconto exige aprovação. |
+
+O teto olha o **desconto do orçamento inteiro** — a soma de tudo que foi abatido, inclusive o que veio das [Regras de desconto](../configuracoes/regras-de-desconto.md) do catálogo.
+
+O vendedor **não é pego de surpresa**: enquanto monta a proposta, o cartão de descontos já avisa em âmbar — *"20% de desconto passa do teto de 15% — ao salvar, o orçamento vai para aprovação."* Ele decide se segue assim mesmo (e o pedido nasce congelado) ou se ajusta o valor antes de salvar.
+
+{% hint style="info" %}
+**Passar do teto não é erro.** Conceder acima do limite é uma decisão comercial legítima — só não é autônoma. O orçamento não é recusado: ele **para e espera** a decisão de quem pode aprovar. Veja como configurar em [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#teto-de-desconto).
+{% endhint %}
 
 ## Quando o frete é de um fornecedor {#frete-de-fornecedor}
 
@@ -84,7 +107,7 @@ Tudo isso só volta a funcionar depois que alguém **aprovar**.
 
 ```mermaid
 flowchart LR
-    A[Orcamento] --> B{Politica acionada?<br/>frete acima do limite<br/>ou frete de fornecedor}
+    A[Orcamento] --> B{Politica acionada?<br/>frete acima do limite,<br/>desconto acima do teto<br/>ou frete de fornecedor}
     B -->|Nao| N[Entra no funil<br/>Em aberto]
     B -->|Sim| P[Travado<br/>Pendente / pre-etapa]
     P --> F[Fila: Pendentes<br/>de aprovacao]
@@ -151,6 +174,7 @@ O LocFlow **abstrai para o pequeno e revela para o grande**. A aprovação é um
 
 - **Frete que come a margem:** um pedido distante puxa um frete altíssimo, acima do limite que você configurou. O orçamento fica **Pendente**; o gestor olha, confirma que o valor faz sentido e **aprova** — ou pede ajuste e **rejeita** com o motivo.
 - **Equipe nova montando orçamentos:** você contratou vendedores recém-chegados. Liga a política por frete para garantir que nenhum pedido saia com cálculo errado nas primeiras semanas.
+- **Desconto para fechar na hora:** o cliente pede 20% e o teto da casa é 15%. O vendedor concede — o app avisa antes de salvar — e o orçamento nasce **Pendente**. O gestor confere a margem e aprova; o pedido segue no mesmo dia.
 - **Venda de mostruário com frete pesado:** não é só locação. Uma venda de itens grandes, com entrega cara, também bate na regra e passa pela aprovação antes de virar fatura.
 - **Frete terceirizado aguardando o parceiro:** o pedido é longe e você aciona um **fornecedor de frete** para levá-lo. Mesmo com a sua organização em "sempre automático", o orçamento **nasce pendente** — o selo âmbar "Requer aprovação" aparece na porção do fornecedor e o banner avisa. Você envia o orçamento assim mesmo; ele fica aguardando o fornecedor confirmar o transporte antes de você reservar.
 - **Decisão à distância:** o orçamento ficou pendente no fim do dia. O gestor abre a fila **Pendentes de aprovação** do celular, confere e aprova — o pedido segue sem esperar ele chegar ao escritório.

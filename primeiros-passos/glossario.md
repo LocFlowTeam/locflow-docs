@@ -23,7 +23,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 
 | Termo | O que é |
 | --- | --- |
-| **Pendente (aguardando aprovação)** | Pré-etapa do funil: uma **política** do Motor de Orçamento (ex.: frete acima de um limite) deixou o pedido congelado até o aval de um responsável. **Não é o mesmo que "Em aberto"** — só depois de aprovado o orçamento entra no funil. |
+| **Pendente (aguardando aprovação)** | Pré-etapa do funil: uma **política** deixou o pedido congelado até o aval de um responsável — frete acima do limite, **desconto acima do teto** ou frete de fornecedor. **Não é o mesmo que "Em aberto"** — só depois de aprovado o orçamento entra no funil. |
 | **Em aberto** | Criado, ainda sem ação. |
 | **Em negociação** | Enviado ao cliente, aguardando resposta. |
 | **Pré-reservado** | "Segurar" o aluguel antes de confirmar (opcional, só locação). Você decide na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento) se essa etapa entra no seu funil — desligada, a negociação vai direto para reservado. |
@@ -66,6 +66,26 @@ Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre
 {% endhint %}
 
 → Detalhes em [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
+
+## Valores: acréscimos e descontos {#valores}
+
+| Termo | O que é |
+| --- | --- |
+| **Acréscimo** | Tudo que **soma** ao orçamento e não é item: mão de obra, montagem, desmontagem, layout, outros. É uma **lista** — você lança quantos precisar, cada um com o seu texto e valor (R$ ou % **sobre o total dos itens**). |
+| **Taxa de serviço** | A porcentagem padrão do [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#taxa-de-servico) que já nasce lançada como **um acréscimo de mão de obra** em todo orçamento novo. |
+| **Desconto avulso** | O desconto digitado **só naquele orçamento**, na hora da negociação. Não vira regra e pode repetir. |
+| **Desconto tabelado** | O desconto que veio de uma **regra do catálogo**. Leva o selo *Tabelado* e a mesma regra não entra duas vezes no mesmo pedido. |
+| **Regra de desconto** | O desconto cadastrado uma vez em **Ajustes › Regras de Desconto**, com condição e base — o sistema o **sugere** sozinho quando cabe. Veja [Regras de desconto](../configuracoes/regras-de-desconto.md). |
+| **Condição** | *Quando* o desconto vale: **sem condição** (quem decide é o vendedor), **por valor do orçamento** ou **por quantidade** de um item. |
+| **Base de incidência** | *Sobre qual valor* o desconto morde: **o total** (itens + acréscimos + frete), **os itens** ou **o item** que ativou a condição. A mesma porcentagem vale valores bem diferentes em cada base. |
+| **Desconto proporcional aos kits** | A sugestão **automática**: quando os produtos avulsos do carrinho formam kits do seu catálogo, o LocFlow oferece a economia do combo como desconto, e o valor se recalcula sozinho quando o carrinho muda. |
+| **Teto de desconto** | O quanto o vendedor abate **sozinho**. Acima dele o orçamento nasce **congelado aguardando aprovação**. *Sem teto* = nada trava; *teto 0%* = tudo trava. |
+
+{% hint style="info" %}
+Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% + 10% abatem 20%, não 19% — e a ordem em que você lança não muda o total.
+{% endhint %}
+
+→ Detalhes em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
 
 ## Logística (estados do material) {#logistica-estados}
 

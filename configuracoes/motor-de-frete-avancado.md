@@ -304,6 +304,6 @@ O **piso** funciona pelo mesmo princípio, ao contrário: garante o **mínimo da
 
 * [Motores operacionais](motores-operacionais.md) — a visão geral dos motores e a **política de aprovação** do frete, por detentor.
 * [Frete por fornecedor: o detentor da política](motor-de-frete-detentor.md) — como cada fornecedor de frete tem a sua própria aprovação.
-* [Valores: mão de obra, frete e descontos](../orcamentos/valores.md) — como o frete entra no orçamento e o **frete automático x manual**.
+* [Valores: acréscimos, frete e descontos](../orcamentos/valores.md) — como o frete entra no orçamento e o **frete automático x manual**.
 * [Aprovação de orçamentos](../orcamentos/aprovacao.md) — o que acontece quando um frete pede aval.
 * [Horários e sazonalidades](horarios-e-sazonalidades.md) — onde você cadastra os períodos sazonais que as condições usam.

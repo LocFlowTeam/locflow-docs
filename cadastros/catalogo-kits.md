@@ -134,7 +134,7 @@ A sugestão é só um ponto de partida. Você pode **aceitar** ou **digitar outr
 
 ### O desconto de combo no orçamento {#desconto-de-combo}
 
-O "desconto" do kit não vive só dentro do cadastro. No orçamento, quando os **produtos avulsos** que o atendente colocou formam, juntos, um kit do seu catálogo, o LocFlow percebe e oferece aplicar a **economia do kit** como desconto automático. Esse comportamento é detalhado em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md#desconto-proporcional-aos-kits).
+O "desconto" do kit não vive só dentro do cadastro. No orçamento, quando os **produtos avulsos** que o atendente colocou formam, juntos, um kit do seu catálogo, o LocFlow percebe e **sugere** aplicar a **economia do kit** como desconto — a sugestão aparece na lista de descontos, com o selo **Automático** e o valor já calculado, e entra com um toque em **Usar**. Esse comportamento é detalhado em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md#desconto-proporcional-aos-kits).
 
 ### Valor de reposição total {#valor-de-reposicao-total}
 
@@ -189,4 +189,4 @@ No fluxo guiado, o **valor de reposição total** pode aparecer editável caso a
 
 ## Próximo passo {#proximo-passo}
 
-Antes de montar kits, garanta que os produtos existem em [Catálogo: produtos](catalogo-produtos.md). Entenda como aluguel e venda convivem em [Locação e venda](../conceitos/locacao-e-venda.md), e veja o preço do kit no pedido em [Valores: mão de obra, frete e descontos](../orcamentos/valores.md). Depois, use seus kits em [Criando um orçamento](../orcamentos/criando-um-orcamento.md). Em dúvida sobre um termo? Veja o [Glossário](../primeiros-passos/glossario.md) ou [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
+Antes de montar kits, garanta que os produtos existem em [Catálogo: produtos](catalogo-produtos.md). Entenda como aluguel e venda convivem em [Locação e venda](../conceitos/locacao-e-venda.md), e veja o preço do kit no pedido em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md). Depois, use seus kits em [Criando um orçamento](../orcamentos/criando-um-orcamento.md). Em dúvida sobre um termo? Veja o [Glossário](../primeiros-passos/glossario.md) ou [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
