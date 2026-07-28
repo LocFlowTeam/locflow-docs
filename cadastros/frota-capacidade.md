@@ -121,11 +121,15 @@ São **estimativas de planejamento**, baseadas no consumo médio que você decla
 
 ## Como o app decide se a carga cabe {#avaliacao}
 
-Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um veículo (ou só a especificação) escolhido, o LocFlow avalia a capacidade automaticamente. Vale entender o que ele faz por baixo:
+Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um veículo, uma especificação **ou uma classe** escolhida, o LocFlow avalia a capacidade automaticamente. Vale entender o que ele faz por baixo:
 
-1. **Carga vazia ou sem alvo concreto** → não há o que avaliar: o app aprova com um aviso (por exemplo, quando você escolheu uma *classe* de veículo em vez de um veículo específico, ou nenhum).
+1. **Carga vazia ou nenhum alvo escolhido** → não há o que avaliar: o app aprova com um aviso.
 2. **Há limite de contagem para algum produto da carga** (inclusive vindo de kits diluídos) → entra a **contagem por produto**: o app **dilui os kits** em produtos, soma a quantidade de cada produto — juntando o que vem de kit e o que vem avulso — e compara com o limite cadastrado. Vale tanto para carga de um item só quanto para **carga misturada**.
 3. **Sem nenhum limite de contagem aplicável** → entra a **volumétrica** como alternativa: o app soma o **fator de cubagem** de cada item da carga (quantidade × fator) e compara com o volume do baú.
+
+{% hint style="info" %}
+**Quando o alvo é uma classe**, não é a ficha de uma especificação que entra nessa conta — é a **capacidade agregada** dela: se todas as especificações da classe carregam o mesmo tanto, o app confere cheio; se divergem, confere pela menor em comum, com aviso. Veja como em [Classes veiculares](frota-classes.md#alvo-do-roteiro).
+{% endhint %}
 
 Quando a estratégia escolhida **não tem como verificar**, o app **não bloqueia** — e diz o **motivo exato**, em vez de um "não verificado" genérico:
 

@@ -21,8 +21,10 @@ Na Posição você vê, por galpão, um **card de cada produto** com a **foto** 
 - **Locação** — quanto de cada item você tem para alugar.
 - **Venda** — o saldo destinado à venda, separado por condição (novo, seminovo, usado).
 
+### Produto "sem estoque cadastrado" {#sem-cadastro}
+
 {% hint style="warning" %}
-**Produto "sem estoque cadastrado".** Se um item nunca teve uma entrada registrada, o número que aparece não é confiável — o sistema não sabe quantos você realmente tem. O card fica em âmbar e leva você direto a **cadastrar a entrada** daquele produto. Enquanto não cadastrar, trate o valor como indefinido.
+Se um item nunca teve uma entrada registrada, o número que aparece não é confiável — o sistema não sabe quantos você realmente tem. O card fica em âmbar e leva você direto a **cadastrar a entrada** daquele produto. Enquanto não cadastrar, trate o valor como indefinido.
 {% endhint %}
 
 A Posição **não** é o mesmo que a disponibilidade avaliada na criação do orçamento. Lá, o LocFlow olha a **janela de bloqueio** do evento e desconta o que outros pedidos já reservaram — veja [Galpões e disponibilidade](galpoes-e-disponibilidade.md).
@@ -46,6 +48,29 @@ A previsão considera a **Data de Liberação** de cada pedido: um item volta a 
 **Por que isso te faz faturar mais:** com a previsão, você responde "consigo atender o dia 20?" em segundos, olhando exatamente **quais pedidos** disputam o item — sem planilha, sem achismo e sem prometer o que não tem.
 {% endhint %}
 
+## Cada movimentação, em detalhe {#movimentacoes}
+
+A Posição responde **"quanto"**. Para responder **"o que aconteceu e por quê"**, o LocFlow guarda toda entrada e toda saída num histórico de movimentações — na aba Movimentações do painel, ou no histórico dentro da ficha de cada item. Toque em qualquer linha para abrir o registro completo:
+
+- **o que mudou** — quanto entrou ou saiu, e em qual estoque (aluguel, ou venda numa condição);
+- **em qual galpão** aconteceu;
+- **quando aconteceu** de fato e, se o lançamento foi feito depois (um registro retroativo), **quando foi registrado**;
+- **o motivo**;
+- **quem registrou**;
+- o **custo de aquisição** do lote (nas entradas) ou a **receita da venda** (nas vendas), quando existem;
+- **de onde ela veio** — avaria, conferência de retorno, descarte na manutenção, logística, ajuste de contagem, entre outras origens;
+- um atalho para abrir o **orçamento envolvido**, quando a movimentação pertence a um.
+
+{% hint style="info" %}
+**Movimentações antigas mostram "—".** Motivo e responsável só existem a partir do momento em que o LocFlow passou a registrá-los. Uma movimentação anterior a isso mostra um travessão nesses dois campos — o sistema prefere admitir que não sabe a inventar um nome.
+{% endhint %}
+
+Direto no **item selecionado**, o menu "Operar este item" já oferece **dar baixa**, **reclassificar** e **registrar saída** — cada ação abre com o galpão e o tipo de estoque daquele item já preenchidos, prontos para confirmar.
+
+{% hint style="info" %}
+Uma movimentação de descarte ou reclassificação vinda do reparo de um item aparece aqui do mesmo jeito que qualquer outra. Veja o ciclo completo em [Manutenção: o desfecho do reparo](manutencao.md).
+{% endhint %}
+
 ## Próximo passo
 
-Entenda a regra que protege contra reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md) e como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).
+Entenda a regra que protege contra reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md), o que acontece quando um item volta do conserto em [Manutenção: o desfecho do reparo](manutencao.md) e como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).

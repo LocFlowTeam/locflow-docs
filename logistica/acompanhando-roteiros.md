@@ -57,7 +57,15 @@ Na aba **Em execução e planejados**, os roteiros vêm separados por responsabi
 * **Atribuídos a você** — as viagens das quais você é o responsável (condutor ou equipe).
 * **Disponíveis** — roteiros ainda **sem responsável**. Esta seção só aparece para quem tem acesso a **ver todos os roteiros** da empresa (normalmente quem coordena a operação). Quem não tem esse acesso enxerga apenas os roteiros ligados a si.
 
-Você também pode usar os **filtros** da lista para recortar por atribuição (todos, só atribuídos, só sem responsável) ou por **colaborador responsável**.
+Você também pode usar os **filtros** da lista para recortar por **situação** (status), **data**, **atribuição** (todos, só atribuídos, só sem responsável) ou **colaborador responsável**. O botão **Filtros** mostra um contador quando algum recorte está ativo.
+
+### Quando o filtro não encontra nada <a id="quando-o-filtro-nao-encontra-nada"></a>
+
+Se o recorte que você escolheu não bate com **nenhum** roteiro — por exemplo, filtrou por um status que ninguém está usando agora —, a tela mostra **"Nenhum roteiro neste filtro"**, com **Limpar filtros** e **Ajustar filtros** à mão. Os filtros continuam **visíveis e acessíveis**: você não precisa procurar onde eles foram parar para tentar de novo.
+
+{% hint style="info" %}
+Isso é diferente de **não ter roteiro nenhum** de verdade: sem nenhum filtro ativo, a tela mostra o convite **"Crie seu primeiro roteiro aqui"**. O LocFlow só troca para essa mensagem quando **não há filtro nenhum** aplicado — assim ela nunca esconde um filtro que você esqueceu ligado.
+{% endhint %}
 
 ### Lista ou mapa <a id="lista-ou-mapa"></a>
 
@@ -286,6 +294,7 @@ Esses números deixam claro **o que aconteceu de fato**, não só o que estava p
 * **Cliente reclama dias depois:** vai em **Executados**, abre o roteiro, encontra o movimento **Entregue** e toca na **foto** — fim da discussão.
 * **Retirada que não rolou:** o roteiro voltou com um aviso de **retirada pulada** e o chip **"Replanejar · nova tentativa pendente"**. Você vê o motivo ("Cliente ausente") e o movimento **já está de volta na fila de roteirização** como nova tentativa, priorizado — é só encaixá-lo no próximo roteiro (veja [Execução em campo](execucao-em-campo.md#quando-a-parada-nao-da-certo)).
 * **Pedido mudou no meio do caminho:** a tela mostra **"Roteiro desatualizado"**; você ajusta o roteiro para a versão nova e a equipe volta a poder concluir os movimentos afetados.
+* **Filtrou um status vazio:** você filtra por "Em execução" e nenhuma viagem está saindo agora. A tela avisa **"Nenhum roteiro neste filtro"** em vez de sugerir criar um roteiro do zero — você toca em **Ajustar filtros** e troca o recorte, sem perder o que já tinha escolhido nos outros filtros.
 
 ## Próximo passo <a id="proximo-passo"></a>
 

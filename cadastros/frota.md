@@ -29,7 +29,7 @@ flowchart LR
 | --- | --- | --- |
 | **Iniciar sem veículo** | Entrega sai mesmo sem frota cadastrada | Quem está começando ou faz entrega avulsa |
 | **Veículo com placa** | Saber qual carro saiu e seu status | Quem tem 1 ou 2 carros próprios |
-| **Classes** | Agrupar a frota por porte (carro, caminhão, moto) | Quem tem veículos variados |
+| **Classes** | Agrupar a frota — por porte ou por qualquer critério seu | Quem tem veículos variados |
 | **Especificações** | Ficha técnica por modelo (marca, ano, combustível) | Quem quer organizar por modelo |
 | **Capacidade e vistoria** | Saber o que cabe e checar o carro antes de rodar | Quem otimiza carga e cuida da manutenção |
 
@@ -76,7 +76,7 @@ flowchart TD
     E2 --> V3["Veiculo<br/>placa GHI7J89"]
 ```
 
-- **Classe** é só o **nome** que você dá a um tipo de veículo (ex.: "Caminhão Toco", "Van Furgão"). Você informa o nome e escolhe o **tipo de veículo** entre **Carros**, **Caminhões** ou **Motos** (base do catálogo FIPE). O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele.
+- **Classe** é o nome que agrupa um tipo de veículo. Duas já vêm prontas em toda organização — **Carro Utilitário** e **Caminhão** —, ligadas ao catálogo FIPE. As que você cria são um **agrupamento livre** das suas especificações: só o nome é obrigatório (ex.: "Van Furgão", "Minhas picapes"); o tipo de veículo (Carros, Caminhões ou Motos) é **opcional** e serve só para filtrar o catálogo FIPE ao cadastrar uma especificação ali dentro. O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele. O LocFlow ainda **sugere agrupamentos sozinho**, quando encontra especificações com a mesma capacidade de carga espalhadas em classes diferentes. Veja tudo isso, e como a classe entra no planejamento do roteiro, em [Classes veiculares](frota-classes.md).
 - **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe e, em seguida, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico). Além disso, cada ficha tem uma **[identificação interna](#identificacao-interna)** (o apelido que aparece nas listas) e um **[detentor](#detentor)** (de quem ela é — sua organização ou um fornecedor de frete).
 - **Veículo** é a unidade real, com **placa**, ligada a uma especificação.
 

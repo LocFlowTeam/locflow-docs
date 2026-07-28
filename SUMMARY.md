@@ -40,6 +40,7 @@
   * [Histórico de preços](cadastros/historico-de-precos.md)
 * [Catálogo: kits](cadastros/catalogo-kits.md)
 * [Frota](cadastros/frota.md)
+  * [Classes veiculares](cadastros/frota-classes.md)
   * [Especificações: capacidade](cadastros/frota-capacidade.md)
   * [Especificações: vistoria](cadastros/frota-vistoria.md)
 
@@ -98,6 +99,7 @@
 * [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md)
 * [Posição e previsão de estoque](estoque/posicao-e-previsao.md)
 * [Operar vários itens de uma vez](estoque/operar-varios-itens.md)
+* [Manutenção: o desfecho do reparo](estoque/manutencao.md)
 
 ## Documentos e marca
 

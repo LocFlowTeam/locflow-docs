@@ -79,7 +79,7 @@ flowchart LR
 ```
 
 * **Passo 1 — Motorista e equipe.** Quem dirige (o condutor) e quem vai junto. O condutor entra sempre entre os presentes; se alguém não compareceu, é só **remover** da equipe. O app **avisa** se o condutor estiver sem CNH ou sem a competência de dirigir.
-* **Passo 2 — Veículo.** Você seleciona **um veículo concreto** (por nome ou placa). Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo; se o roteiro pediu uma especificação, carros de outro tipo ficam marcados como "Especificação diferente".
+* **Passo 2 — Veículo.** Você seleciona **um veículo concreto** (por nome ou placa). Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo. Se o [planejamento](planejando-o-roteiro.md) definiu uma **classe**, só os veículos que pertencem a **alguma especificação daquela classe** ficam selecionáveis — os de fora aparecem esmaecidos com o selo **"Classe diferente"**; se definiu uma **especificação exata**, os demais ficam esmaecidos com **"Especificação diferente"**.
 * **Passo 3 — Vistoria.** O app confere a vistoria do veículo escolhido (veja a seguir).
 * **Passo 4 — Revisão.** Uma conferência final de tudo (motorista, veículo, vistoria) antes de **concluir o preparo**.
 
@@ -145,6 +145,19 @@ O que precisa ser registrado **depende da política da sua empresa**, definida n
 
 {% hint style="info" %}
 **A regra pode combinar meios — não é só uma lista de "tudo obrigatório".** Você pode exigir dois juntos (*"foto **e** vídeo"*), dar alternativas (*"vídeo **ou** assinatura"*), misturar (*"foto **e** (vídeo **ou** assinatura)"*) ou pedir uma **quantidade mínima** (*"2 fotos"*). Enquanto a prova não estiver completa, o app não deixa concluir e mostra em texto claro o que ainda falta. O mesmo modelo vale no [balcão](balcao.md#comprovacao-no-balcao).
+{% endhint %}
+
+#### Obrigatório x opcional
+
+Cada grupo de prova que a sua empresa configura vem marcado como **Obrigatório** ou **Opcional**:
+
+* **Obrigatório** trava o desfecho até a prova ser registrada — igual sempre foi: sem ela, o motorista não conclui.
+* **Opcional** vira um **passo que dá para pular sem justificar**. O motorista ainda vê o pedido de anexo na tela — se quiser fotografar ou filmar mesmo assim, é só tocar — mas nada trava a conclusão por causa dele.
+
+Se a sua política tiver **só itens opcionais** para aquele movimento, o motorista conclui **sem nenhuma trava**, do mesmo jeito que se nada estivesse marcado.
+
+{% hint style="info" %}
+**Isso não é a mesma coisa que "dispensar" uma prova obrigatória.** Pular um item **opcional** é livre para qualquer motorista, sem escrever nada. Já **dispensar** uma prova **obrigatória** exige uma justificativa e uma permissão à parte, que o motorista comum **não tem** (veja [Quem pode mexer](../configuracoes/motores-operacionais.md#permissoes) e [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md#dispensar-evidencia)).
 {% endhint %}
 
 #### O que dá para registrar hoje
@@ -231,6 +244,8 @@ A mesma execução serve a quem está começando e a quem opera frota — porque
 ## Situações reais
 
 * **Entrega com foto obrigatória:** a empresa exige foto na entrega. Ao chegar e confirmar, o app abre a câmera, o motorista fotografa o material no local do cliente e a entrega é concluída com a prova anexada. Semanas depois, o cliente reclama — a foto encerra a conversa.
+* **Foto opcional que o motorista tira mesmo assim:** a política marca a foto de retirada como opcional. Ao concluir, o motorista vê o convite para anexar, mas não é obrigado — como o material é caro, ele tira a foto por conta própria e ela fica guardada com o movimento.
+* **Só itens opcionais na política:** a empresa marcou apenas provas opcionais para a entrega. O motorista toca em "Entregue", vê o convite para anexar (opcional) e toca em **Confirmar** sem tirar nada — nenhuma trava o segura, porque não há nenhum requisito obrigatório na regra.
 * **Cliente paga na hora:** o cliente diz que prefere pagar agora. O motorista toca em **Cobrar**, gera o Pix, mostra o QR — e quando o pagamento cai, a tela confirma sozinha. Se o cliente paga em dinheiro, ele registra o **recebimento presencial** e segue viagem.
 * **Cliente ausente:** o motorista chega, ninguém atende. Em vez de ficar parado, ele **pula** a parada com o motivo "Cliente ausente" e segue. No escritório, o movimento já reaparece na fila de roteirização como **"Tentativa 2 — priorize"**, com o motivo — é só encaixar no próximo roteiro.
 * **Endereço difícil:** o GPS marca a chegada a 200 m do ponto. O app pede justificativa; o motorista informa "Acesso pela rua de trás" e registra a chegada mesmo assim, com o motivo guardado.

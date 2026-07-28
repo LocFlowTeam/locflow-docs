@@ -15,7 +15,7 @@ O planejamento acontece em **passos**, sempre com o mapa à vista. Você não pr
 
 ## Os passos
 
-O coração do planejamento são as decisões — **quem vai**, **em que tipo de veículo** (a especificação) e **o que levar e em qual ordem** —, e por último a **jornada e a revisão**.
+O coração do planejamento são as decisões — **quem vai**, **em que tipo de veículo** (a classe ou a especificação) e **o que levar e em qual ordem** —, e por último a **jornada e a revisão**.
 
 O passo dos **Movimentos** acontece em **dois momentos**, e o app te leva de um para o outro:
 
@@ -26,7 +26,7 @@ Sempre que você **adiciona um movimento**, o app volta para o **"o que levar"**
 
 ```mermaid
 flowchart LR
-    P1[1. Responsavel<br/>quem vai] --> P2[2. Especificacao<br/>tipo de veiculo]
+    P1[1. Responsavel<br/>quem vai] --> P2[2. Veiculo<br/>classe ou especificacao]
     P2 --> P3a[3a. O que levar<br/>paradas + a carga cabe?]
     P3a --> P3b[3b. Ordenar a rota<br/>saida + ordem + trajeto]
     P3b --> P4[4. Jornada e revisao<br/>+ Criar roteiro]
@@ -56,24 +56,51 @@ O texto vem pronto, por exemplo: *"Fulano não tem a competência de dirigir e e
 Esse aviso **não impede** nada — você pode planejar o roteiro normalmente. Ele é um lembrete para você **regularizar antes de a equipe pôr o pé na estrada**: ajustar a função do colaborador ou atualizar a CNH dele no cadastro. A competência de dirigir e a validade da CNH vêm de [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 {% endhint %}
 
-### Passo 2 — Especificação
+### Passo 2 — Veículo
 
-No planejamento você diz **o tipo de veículo** — a **especificação** (marca/modelo/ano, com a vistoria e a capacidade dela) —, **não a placa**. Escolher qual carro exatamente vai é uma decisão do **dia da operação** (depende de qual está livre, abastecido, sem manutenção), então ela fica para a **execução**, não para o planejamento.
+No planejamento você diz **o tipo de veículo** — **não a placa**. Qual carro exatamente vai é uma decisão do **dia da operação** (depende do que está livre, abastecido, sem manutenção), então ela fica para a **execução**, não para o planejamento. Você define esse tipo de **duas formas**, e escolhe uma delas a cada roteiro:
 
-E por que a especificação já basta aqui? Porque é dela que vêm a **capacidade** (se a carga cabe) e a **vistoria** — tudo o que o planejamento precisa avaliar. A placa não muda nada disso.
+| Forma | O que é | Quando escolher |
+| --- | --- | --- |
+| **Especificação exata** | Uma ficha específica (marca/modelo/ano, com a vistoria e a capacidade dela). | Quando importa qual modelo exatamente sai — por exemplo, só um veículo tem o baú do tamanho certo. |
+| **Classe veicular** | Um **grupo** de especificações equivalentes — "qualquer veículo do grupo serve". | Quando vários modelos resolvem igualmente e você não quer prender o roteiro a uma ficha só. |
+
+Nos dois casos a **placa não muda nada** do planejamento — ela só é resolvida na execução (veja abaixo). Sem escolher nenhuma das duas, o app só não consegue avaliar a carga no passo seguinte (segue com um aviso).
+
+#### O que é uma classe veicular
+
+Uma **classe** é uma **agregação de especificações** que você mesmo monta em [Frota](../cadastros/frota.md) — um jeito de dizer "estas fichas, para efeito de roteiro, são intercambiáveis". O critério do agrupamento é **seu**: você pode reunir especificações com a **mesma capacidade** (o caminho mais seguro, e o LocFlow chega a sugerir esse agrupamento sozinho) ou por **qualquer outro critério** que fizer sentido no seu negócio — nesse caso, assumindo o risco da escolha.
+
+*Exemplo:* você tem três picapes — uma 2019, uma 2021 e uma 2023 — que carregam exatamente o mesmo tanto de material. Em vez de escolher uma ficha específica a cada roteiro, você agrupa as três numa classe chamada "Picape" e passa a planejar só com "Picape": qualquer uma das três serve, e o app confere a carga pela capacidade que elas garantem em comum.
+
+{% hint style="info" %}
+Como criar suas classes, o agrupamento livre e a sugestão automática do LocFlow (quando duas especificações têm a mesma capacidade) ficam em [Classes veiculares](../cadastros/frota-classes.md). Aqui o foco é como a classe entra na **montagem do roteiro**.
+{% endhint %}
+
+#### Como a classe confere a carga
+
+Como uma classe pode reunir fichas com capacidades diferentes, o painel **"a carga cabe?"** (veja [mais abaixo](#a-carga-cabe-no-veiculo)) se ajusta ao que o grupo de fato garante:
+
+| Situação da classe | Como a carga é conferida |
+| --- | --- |
+| **Todas as especificações têm a mesma capacidade** | A carga é conferida **por inteiro**, como se fosse uma especificação só. |
+| **As especificações têm capacidades diferentes entre si** | A carga é conferida pela **menor capacidade** do grupo — a única garantia que vale para **qualquer** veículo dele. O app avisa quando é esse o caso. |
+| **Nenhuma especificação da classe tem capacidade cadastrada** | O app avisa que **não dá para conferir a carga** — a responsabilidade de saber se cabe passa a ser de quem está planejando. |
+
+{% hint style="warning" %}
+A classe **nunca bloqueia** o planejamento — nem mesmo sem nenhuma capacidade cadastrada no grupo. Você continua podendo montar o roteiro normalmente; só fica sem a checagem automática de "a carga cabe?" para se apoiar, e a conta passa a ser sua.
+{% endhint %}
 
 | No planejamento | Na execução (PrepararSaída) |
 | --- | --- |
-| Você escolhe **a especificação** (ou deixa em branco). | O app resolve **a placa** automaticamente. |
-
-A especificação é **opcional**: sem ela, o app só não consegue avaliar a carga no passo seguinte (segue com um aviso).
+| Você escolhe **a classe** ou **a especificação** (ou deixa em branco). | O app resolve **a placa** automaticamente, dentro do que a classe/especificação permite. |
 
 {% hint style="info" %}
-**Como a placa é resolvida na execução.** Ao preparar a saída, o app sugere o veículo nesta ordem: **(1)** o **veículo-padrão do motorista**, se ele tiver um; **(2)** senão, o **último veículo que ele usou**; **(3)** senão, ele **seleciona na hora**. As sugestões respeitam a especificação do planejamento. Veja [Execução em campo](execucao-em-campo.md).
+**Quem aparece para escolher, na execução.** Planejou uma **classe**? Todo veículo que pertence a **alguma especificação daquela classe** fica selecionável; os de fora aparecem **esmaecidos**, com o selo **"Classe diferente"**. Planejou uma **especificação exata**? Só os veículos daquela ficha ficam selecionáveis; os demais aparecem esmaecidos com **"Especificação diferente"**. Além disso, o app sugere a placa nesta ordem: **(1)** o **veículo-padrão do motorista**, se ele tiver um; **(2)** senão, o **último veículo que ele usou**; **(3)** senão, ele **seleciona na hora** — sempre dentro do que a classe/especificação permite. Veja [Execução em campo](execucao-em-campo.md).
 {% endhint %}
 
 {% hint style="info" %}
-Definir a especificação ajuda no passo seguinte: o app consegue avaliar se a carga **cabe**. Sem ela, essa conferência não aparece. Veja [Especificações: capacidade](../cadastros/frota-capacidade.md).
+Definir a classe ou a especificação ajuda no passo seguinte: o app consegue avaliar se a carga **cabe**. Sem nenhuma das duas, essa conferência não aparece. Veja [Especificações: capacidade](../cadastros/frota-capacidade.md).
 {% endhint %}
 
 ### Passo 3a — O que levar
@@ -218,7 +245,11 @@ Com a rota pronta, o último passo é enxuto: você confere a **jornada** (a **d
 
 ## A carga cabe no veículo?
 
-Se você escolheu um veículo (ou a especificação) no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
+Se você escolheu uma classe, uma especificação (ou um veículo concreto) no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
+
+{% hint style="info" %}
+**Quando o passo 2 escolheu uma classe**, essa conferência usa a capacidade **agregada** do grupo: por inteiro, se todas as especificações da classe forem iguais; pela **menor** delas, se forem diferentes; ou nem isso, se nenhuma tiver capacidade cadastrada — veja [Como a classe confere a carga](#como-a-classe-confere-a-carga).
+{% endhint %}
 
 O painel aparece **no topo do "o que levar"** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem por produto → cabe (a cadeira é o item que mais pesa: 110 de 120)"*. Os **kits são diluídos** nos seus produtos, então a contagem vale mesmo quando a carga é misturada (jogos + cadeiras avulsas, por exemplo). Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou produtos sem limite) e o que fazer. Entenda as estratégias em [Especificações: capacidade](../cadastros/frota-capacidade.md).
 
@@ -272,9 +303,10 @@ O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vár
 * **Cidade congestionada:** liga o **Trânsito** antes de traçar; vê a rota vermelha numa avenida e o pedágio do trecho, e decide sair mais cedo ou desviar.
 * **Escalou quem não pode dirigir:** ao atribuir um colaborador como condutor, aparece o **aviso de CNH vencida**. Monta o roteiro mesmo assim e, antes da execução, atualiza a habilitação dele no cadastro.
 * **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
+* **Três picapes que carregam a mesma coisa:** você tem uma picape 2019, uma 2021 e uma 2023, todas com a mesma capacidade. Em vez de escolher uma ficha específica em cada roteiro, você as agrupa numa classe "Picape" e passa a planejar só pela classe; na execução, as três aparecem selecionáveis, e a carga é conferida por inteiro porque as três garantem a mesma capacidade.
 * **Entrega que apareceu agora:** não dá para esperar o planejamento — despacha **sob demanda** direto do orçamento, e a viagem segue do mesmo jeito no campo.
 * **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Dividir por veículo** o app propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
 
 ## Próximo passo
 
-Com a rota montada, é hora de colocar na rua: veja [Execução em campo](execucao-em-campo.md). Antes de despachar, a equipe pode [separar o material no galpão](separacao.md). Para entender onde o roteiro se encaixa no todo, veja a [Visão geral da logística](visao-geral.md) e o [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).
+Com a rota montada, é hora de colocar na rua: veja [Execução em campo](execucao-em-campo.md). Antes de despachar, a equipe pode [separar o material no galpão](separacao.md). Para criar e agrupar suas classes veiculares, veja [Classes veiculares](../cadastros/frota-classes.md). Para entender onde o roteiro se encaixa no todo, veja a [Visão geral da logística](visao-geral.md) e o [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).

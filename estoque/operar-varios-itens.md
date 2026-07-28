@@ -11,7 +11,7 @@ No **Estoque → Itens**, cada linha tem uma **caixinha de seleção**. Marque o
 
 ## O que dá para fazer em lote
 
-<table><thead><tr><th width="220">Operação</th><th>O que ela faz</th></tr></thead><tbody><tr><td><strong>Conferir contagem</strong></td><td>Você digita quanto contou de cada item; o sistema corrige o saldo pela diferença.</td></tr><tr><td><strong>Enviar para reparo</strong></td><td>Manda a remessa para a oficina. Os itens saem do disponível até você concluir o reparo.</td></tr><tr><td><strong>Transferir entre galpões</strong></td><td>Despacha tudo para o mesmo destino. O material sai daqui na hora e entra lá quando alguém confirmar a chegada.</td></tr></tbody></table>
+<table><thead><tr><th width="220">Operação</th><th>O que ela faz</th></tr></thead><tbody><tr><td><strong>Conferir contagem</strong></td><td>Você digita quanto contou de cada item; o sistema corrige o saldo pela diferença.</td></tr><tr><td><strong>Enviar para reparo</strong></td><td>Manda a remessa para a oficina. Os itens saem do disponível até alguém <a href="manutencao.md">concluir o reparo</a> — voltando ao estoque, sendo descartados ou reclassificados.</td></tr><tr><td><strong>Transferir entre galpões</strong></td><td>Despacha tudo para o mesmo destino. O material sai daqui na hora e entra lá quando alguém confirmar a chegada.</td></tr></tbody></table>
 
 {% hint style="info" %}
 **A avaria continua item a item.** Ela é a exceção, quase sempre de uma peça só, e cada uma tem seu motivo e pode virar cobrança do cliente — decisões que pedem atenção individual. Registrar avarias em série convidaria ao erro caro.
@@ -60,4 +60,4 @@ Em todas, tocar no número ao lado do campo preenche o lote inteiro — o caso c
 
 ## Próximo passo
 
-Entenda o que cada número da tela significa em [Posição e previsão de estoque](posicao-e-previsao.md), e a regra que impede reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md).
+Entenda o que cada número da tela significa em [Posição e previsão de estoque](posicao-e-previsao.md), o que acontece quando o item volta do reparo em [Manutenção: o desfecho do reparo](manutencao.md), e a regra que impede reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md).

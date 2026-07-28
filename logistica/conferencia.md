@@ -35,7 +35,7 @@ Ao abrir um orçamento da fila, o conferente vê a mesma **lista consolidada de 
 O botão **Concluir conferência** só libera quando **todos os itens** estão marcados. Ao concluir, o pedido passa para *Conferido* e a volta está encerrada.
 
 {% hint style="info" %}
-**Registrar avarias e baixas na conferência** — anotar o item que voltou danificado e dar baixa direto na fila — é um reforço que **está chegando**. Hoje a conferência confirma o retorno item a item; o registro estruturado da avaria virá nas próximas versões, sempre com a mesma lógica: você liga quando a operação pedir.
+**O item voltou danificado?** Na própria conferência você separa, do que voltou, quanto entra de volta bom, quanto vai para o **reparo** e quanto é **avaria** (perda). Ao registrar avaria, quem tem permissão de emitir cobrança pode, no mesmo passo, **cobrar o cliente** pelo prejuízo — é opcional, e o motivo fica registrado no [extrato do estoque](../estoque/posicao-e-previsao.md#movimentacoes). O que foi para o reparo segue para a bancada, onde depois recebe o seu [desfecho](../estoque/manutencao.md).
 {% endhint %}
 
 ## O papel Conferente
