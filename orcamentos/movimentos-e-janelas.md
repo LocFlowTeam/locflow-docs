@@ -133,7 +133,7 @@ Os efeitos completos de mexer num pedido fechado — no roteiro, no estoque e no
 
 ## "Ainda não sei quando" (o a definir)
 
-Nem todo orçamento já nasce com data fechada. Por isso, cada movimento tem o botão **"Você sabe quando?"**. Desligue-o e a data/janela some, dando lugar a um lembrete discreto do prazo:
+Nem todo orçamento já nasce com data fechada. Por isso, ao definir a data de um movimento, existe a saída **"Ainda não sei"** — o movimento passa a ser lido como *"Entrega a definir"* (ou *"Recolha a definir"*), com um lembrete discreto do prazo e um **Editar** para fechar a data quando o cliente confirmar:
 
 | Situação | O que o LocFlow lembra |
 | --- | --- |
