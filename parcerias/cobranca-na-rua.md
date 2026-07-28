@@ -139,11 +139,17 @@ Mas há dois momentos em que o app **barra** a reversão, e por bons motivos:
 | Você prefere que o cliente nunca ouça "não posso receber" | Você prefere que todo o caixa passe pela sua conta primeiro |
 | As operações costumam ser **de parcela única** | Você parcela quase tudo (a coleta na rua não fecha fatura parcelada) |
 
-{% hint style="warning" %}
-**Duas limitações honestas desta versão, para você não descobrir depois:**
+### Onde se liga {#onde-se-liga}
 
-1. **A chave ainda não está na tela do acordo.** A prerrogativa é um termo do acordo e o sistema a respeita em todos os caminhos — mas hoje ela não aparece como um botão que você liga sozinho na tela de criar/editar o acordo. Se você precisa dela, fale com o suporte do LocFlow **antes** de fechar o acordo.
-2. **Hoje ela funciona com o parceiro externo.** Na parceria **interna** (org↔org), quem executa não tem usuário dentro da sua conta — e é por esse usuário que o sistema reconhece a coleta na porta. Numa parceria interna, o caminho para o cliente pagar na entrega continua sendo o PIX da sua organização.
+A autorização é um **termo do acordo**, e mora junto dos outros (quem paga a taxa, quem devolve dinheiro ao cliente, os prazos). Na tela do acordo, sob o rótulo **"Se o cliente quiser pagar na entrega"**, há a chave:
+
+* do seu lado: **"O parceiro pode receber o cliente na porta"**;
+* do lado dele: **"Você pode receber o cliente na porta"** — a mesma chave, para o parceiro **pedir** a prerrogativa numa contraproposta.
+
+O texto abaixo da chave já diz o que você está concedendo: o parceiro passa a **ver quanto o cliente deve**, o dinheiro pode passar pela mão dele **sem mudar de dono**, e vale a regra do **tudo ou nada**.
+
+{% hint style="warning" %}
+**Uma limitação honesta desta versão:** hoje a cobrança na rua funciona com o **parceiro externo**. Na parceria **interna** (org↔org), quem executa não tem usuário dentro da sua conta — e é por esse usuário que o sistema reconhece a coleta na porta. Numa parceria interna, o caminho para o cliente pagar na entrega continua sendo o PIX da sua organização.
 {% endhint %}
 
 ## Situações reais {#situacoes-reais}
