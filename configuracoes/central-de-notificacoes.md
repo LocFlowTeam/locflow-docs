@@ -68,7 +68,7 @@ Nos avisos com **lembretes por data** (como o *Acompanhamento de orçamento em a
 
 ## Ligar, desligar e ajustar um aviso {#configurando}
 
-Você chega à configuração por **Ajustes → Central de Notificações** (atalho direto) ou por **Ajustes → Motores → Central de Notificações**. Os avisos ficam **agrupados por módulo** (Cobrança, Logística, Orçamento), com **busca** e um contador de quantos estão ligados em cada grupo. Escolha um aviso para configurá-lo:
+Você chega à configuração por **Ajustes → Central de Notificações** (atalho direto) ou por **Ajustes → Motores → Central de Notificações**. Os avisos ficam **agrupados por módulo** (Cobrança, Logística, Orçamento e **Parceria**), com **busca** e um contador de quantos estão ligados em cada grupo. Escolha um aviso para configurá-lo:
 
 1. **Ligar ou desligar** o aviso (o interruptor no topo do detalhe).
 2. **Escolher o nível de atenção** (Crítico / Importante / Informativo) — com a prévia atualizando ao vivo.
@@ -140,6 +140,34 @@ Em vez de avisar quando o orçamento é **criado**, este aviso lembra o **vended
 - **Venda** — conte a partir do **vencimento do orçamento**.
 
 Pode ter **vários** lembretes (ex.: *1 dia antes do evento* **e** *5 dias antes do vencimento*). O padrão, se você não mexer, é **1 dia antes do evento** (aluguel) e **7 dias antes do vencimento** (venda). Cada lembrete chega ao **vendedor responsável** daquele orçamento, com um atalho para **abrir o orçamento**. O LocFlow confere os lembretes **todos os dias** automaticamente — você não precisa fazer nada além de configurá-los. Deixar a lista **vazia** desliga o aviso por data.
+
+### Parceria {#avisos-de-parceria}
+
+Este é, de longe, o maior grupo — e faz sentido: quando outra empresa entra na operação, **você deixa de ver com os próprios olhos** o que está acontecendo, e o aviso vira o seu par de olhos. Ele existe tanto para quem **repassa** quanto para quem **executa**; o mesmo aviso muda de destinatário conforme o seu lado da parceria.
+
+Os que mais mudam o seu dia:
+
+| Notificação | Quando avisa | Canal padrão | Nível padrão |
+| --- | --- | --- | --- |
+| Repasse recebido (reserva) | Você recebeu um pedido para executar | Responsável pela operação | Importante |
+| Repasse aceito pelo parceiro | O parceiro topou executar o pedido que você repassou | Responsável pela operação | Importante |
+| Repasse recusado pelo parceiro | O parceiro recusou, com o motivo — a operação volta para você | Responsável pela operação | Importante |
+| Prazo de aceite do repasse estourou | O parceiro não respondeu a tempo e a operação voltou para você | Responsável pela operação | Importante |
+| Parceiro desistiu da reserva | Ele já tinha aceitado e desistiu, com o motivo | Responsável pela operação | Importante |
+| **Parceiro concluiu a entrega ou retirada** | O parceiro **cumpriu** uma parada da operação que você repassou | Responsável pela operação | Informativo |
+| **Parceiro não cumpriu a entrega ou retirada** | O parceiro **pulou** uma parada, com o motivo informado por ele | Responsável pela operação | **Importante** |
+| A operação repassada mudou | O orçamento de um pedido já repassado foi editado | Responsável pela operação | Importante |
+| Reserva no galpão do parceiro não confirmada | O material não conseguiu ser reservado no estoque da parceira | Responsável pela operação | Importante |
+| Acordo aguardando aprovação / Acordo ativado | Um acordo espera a outra parte, ou passou a valer | Responsável pela operação · Organização | Importante |
+| Parceiro revogou o acordo | Ele saiu de um acordo já ativo | Organização | Importante |
+| Proposta de parceria recebida · Parceria encerrada | Alguém propôs (ou rompeu) o vínculo entre as duas organizações | Organização | Importante |
+| Repasse pago | Um repasse foi pago ao parceiro | Responsável pela operação | Informativo |
+
+{% hint style="success" %}
+**Os dois que valem ligar primeiro** são o *Parceiro concluiu* e o *Parceiro não cumpriu*. Quem responde ao cliente é **você**, não o parceiro — e antes eles a única forma de descobrir uma entrega frustrada era o telefone do cliente tocando. O "não cumpriu" chega como **Importante** e traz o **motivo** que o parceiro informou em campo.
+{% endhint %}
+
+A lista completa do módulo é maior que esta tabela (acordos, prazos, penalidades de reputação, cancelamentos, frete alterado, e as versões "parceria interna" de cada um) — abra o grupo **Parceria** na tela para vê-la inteira. Para entender o que cada aviso representa no negócio, comece por [Rede de Parceiros: a visão](../parcerias/visao-geral.md).
 
 {% hint style="info" %}
 Esta lista cresce com o tempo. Se há um aviso que faria diferença para a sua operação, fale com o suporte.

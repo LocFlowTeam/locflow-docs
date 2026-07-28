@@ -13,10 +13,14 @@ São **três sinais diferentes**, e cada um responde a uma pergunta:
 | --- | --- | --- |
 | **Estrelas (1–5)** | O trabalho foi bom? | Avaliações após cada operação |
 | **Selo** (Novo → Diamante) | Há histórico suficiente para confiar? | Volume + qualidade das avaliações |
-| **Índice de confiabilidade (0–100)** | Ele cumpre o que combina? | Fatos objetivos: prazos, desistências, entregas |
+| **Índice de confiabilidade (0–100)** | Ele cumpre o que combina? | Fatos objetivos: prazos, desistências, entregas — **dos dois lados** |
 
 {% hint style="info" %}
 **Estrelas medem opinião; o índice mede fatos.** Um parceiro pode ter 5 estrelas de qualidade e ainda assim perder pontos no índice por deixar prazos estourarem. Os dois sinais andam separados de propósito — juntos, contam a história completa.
+{% endhint %}
+
+{% hint style="warning" %}
+**A régua também aponta para você.** Reputação na rede não é só sobre o parceiro: quem **repassa** também é medido — e um cancelamento tardio custa pontos na reputação da **sua organização**. Veja [Índice de confiabilidade](#indice-de-confiabilidade).
 {% endhint %}
 
 ## Avaliação privada: a sua opinião, para os seus repasses {#avaliacao-privada}
@@ -80,17 +84,26 @@ E quando um [parceiro externo cresce e vira organização](parceiro-logistico-ex
 
 ## Índice de confiabilidade: 0 a 100, baseado em fatos {#indice-de-confiabilidade}
 
-O índice de confiabilidade é o sinal **objetivo** da reputação — separado das estrelas. Ele não mede opinião: mede **compromissos cumpridos**. Todo parceiro **começa com 100** e só perde pontos quando um fato concreto acontece:
+O índice de confiabilidade é o sinal **objetivo** da reputação — separado das estrelas. Ele não mede opinião: mede **compromissos cumpridos**. Todo mundo **começa com 100** e só perde pontos quando um fato concreto acontece.
 
-| O que aconteceu | Pontos |
-| --- | --- |
-| **Prazo de aceite estourado** — a solicitação expirou sem resposta e o vendedor teve de retomar | **−8** |
-| **Desistência tardia** — desistiu de uma reserva aceita **fora** da janela de desistência | **−15 a −25** |
-| **Falha de entrega** — aceitou, mas a operação falhou (movimento pulado / não compareceu) | **−25** |
+{% hint style="warning" %}
+**O índice mede os dois lados.** É fácil ler esta seção como "a régua do parceiro", e ela não é: **quem repassa também responde pela própria conduta**. Um vendedor que desfaz repasses em cima da hora é tão ruim para a rede quanto um parceiro que desiste na véspera — e o índice registra os dois, com o mesmo peso.
+{% endhint %}
 
-A penalidade da **desistência tardia é graduada pela antecedência**: quanto mais perto da operação você desiste, mais pesado — começa em **−15** logo depois de a janela fechar e chega a **−25** (o mesmo peso de uma falha de entrega) quando é praticamente em cima da hora. Desistir com um dia de antecedência machuca menos do que desistir com o cliente já esperando.
+| O que aconteceu | Quem é penalizado | Pontos |
+| --- | --- | --- |
+| **Prazo de aceite estourado** — a solicitação expirou sem resposta e o vendedor teve de retomar | Parceiro | **−8** |
+| **Desistência tardia** — desistiu de uma reserva aceita **fora** da janela de desistência | Parceiro | **−15 a −25** |
+| **Falha de entrega** — aceitou, mas a operação falhou (movimento pulado / não compareceu) | Parceiro | **−25** |
+| **Cancelamento tardio pelo vendedor** — desfez o repasse (revertendo o ganho, por exemplo) **depois** do aceite e **fora** da janela de desistência | **Organização vendedora** | **−15 a −25** |
 
-As penalidades são registradas **automaticamente** pelo sistema quando o fato ocorre — ninguém "dá" uma penalidade na mão. E cada operação só pode gerar uma penalidade de cada tipo para o mesmo parceiro: não existe punição em dobro.
+As duas penalidades **tardias** são **graduadas pela antecedência**: quanto mais perto da operação, mais pesado — começa em **−15** logo depois de a janela fechar e chega a **−25** (o mesmo peso de uma falha de entrega) quando é praticamente em cima da hora. Desistir (ou cancelar) com um dia de antecedência machuca menos do que fazê-lo com o cliente já esperando.
+
+{% hint style="info" %}
+**Por que o cancelamento tardio pesa igual à desistência tardia?** Porque o dano é o mesmo, com os papéis trocados. Quem aceitou um repasse já se organizou: reservou material, alocou motorista, montou rota. Perder isso na véspera custa o mesmo, venha de que lado vier — e sem essa simetria o parceiro não teria como julgar quem repassa.
+{% endhint %}
+
+As penalidades são registradas **automaticamente** pelo sistema quando o fato ocorre — ninguém "dá" uma penalidade na mão. E cada operação só pode gerar uma penalidade de cada tipo para o mesmo penalizado: não existe punição em dobro.
 
 {% hint style="warning" %}
 **Desistir dentro da janela combinada não penaliza.** A [janela de desistência do acordo](acordos-de-parceria.md) existe justamente para isso: dentro dela, desistir é um direito. O que marca o índice é a desistência **tardia** — aquela que deixa o vendedor sem tempo de reagir.
@@ -154,8 +167,9 @@ A reputação não é um jogo a vencer — é o retrato de como você trabalha. 
 
 ### Para quem vende (repassa pedidos) {#boas-praticas-vendedor}
 
-* **Acordos claros desde o início.** Itens, preços, gatilho de repasse e janelas bem definidos no [acordo](acordos-de-parceria.md) evitam a discussão que vira nota baixa.
+* **Acordos claros desde o início.** Itens, preços, modelo de pagamento e janelas bem definidos no [acordo](acordos-de-parceria.md) evitam a discussão que vira nota baixa.
 * **Repasse com antecedência.** Quanto mais perto da operação, mais apertado o prazo de aceite do parceiro — e maior a chance de expirar ou de uma recusa por agenda.
+* **Não desfaça um repasse em cima da hora.** Depois do aceite, o parceiro já reservou material e montou rota. Cancelar fora da janela de desistência custa **−15 a −25** na reputação da **sua** organização — e, o que é pior, custa a confiança de quem você vai querer chamar no próximo pico.
 * **Avalie sempre.** Cada avaliação melhora o ranking dos seus próprios repasses. É você ajudando o seu "eu" do mês que vem a escolher melhor.
 * **Prefira parceiro com estoque cadastrado.** Na parceria entre organizações, o comparativo mostra a [disponibilidade de estoque](estoque-na-parceria.md) da parceira para a data — "Disponível" é uma promessa que o sistema consegue verificar; "Estoque não cadastrado" é um risco que só a conversa cobre.
 
@@ -164,6 +178,7 @@ A reputação não é um jogo a vencer — é o retrato de como você trabalha. 
 * **Aceite ou recuse rápido — com motivo honesto.** Solicitação parada é a pior resposta: se o prazo estourar, o sistema expira sozinho e o índice cai (−8). Uma recusa rápida e sincera não penaliza nada e mantém o relacionamento.
 * **Mantenha estoque e frota cadastrados.** Estoque em dia faz você aparecer como "Disponível" no comparativo do vendedor; fichas de veículo em dia destravam o frete por motor nos acordos.
 * **Se precisar desistir, desista o quanto antes.** Dentro da janela de desistência é um direito, sem marca nenhuma. Tardia, marca o histórico (−15) — e falhar a operação sem avisar marca muito mais (−25).
+* **Nunca resolva um problema de campo marcando o movimento como pulado.** É a saída que parece mais rápida e é a mais cara: pular reverte o status, dispara o aviso **"Parceiro não cumpriu a entrega ou retirada"** para quem repassou, pesa **−25** no seu índice — e **não paga**. Se o problema foi só não conseguir capturar a prova (assinatura, foto), o caminho certo é a **dispensa justificada** de evidência, que registra o motivo e mantém a operação cumprida. Veja [A logística é sua](parceiro-logistico-externo.md#minha-logistica).
 * **Capriche no perfil público.** Bio, cidade, galpões e catálogo público bem preenchidos são a sua vitrine no **Descobrir parceiros** — a reputação atrai, o perfil converte.
 
 ## Próximo passo {#proximo-passo}

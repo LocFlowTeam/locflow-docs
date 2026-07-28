@@ -7,7 +7,7 @@ description: Transportadoras terceiras sem login — o conceito de detentor, a f
 
 Um dia a entrega é longe demais, ou chega mais carga do que a sua frota dá conta. Em vez de recusar o pedido, você aciona uma **transportadora parceira** para fazer o transporte. No LocFlow, essas transportadoras são os seus **fornecedores de frete**: terceiros que você cadastra, precifica e usa dentro dos orçamentos — como se fossem uma extensão da sua operação.
 
-**Onde fica:** menu da organização → **Logística** → **Fornecedores**. O fornecedor é uma extensão da **sua** operação — por isso vive na Logística, e não no espaço da [Rede de Parceiros](visao-geral.md), que é para parcerias entre operações independentes.
+**Onde fica:** menu da organização → **Cadastros Base** → **Fornecedores**, junto de Contatos, Catálogo e Orçamentos. Ele mora ali por um motivo simples: o fornecedor é um **cadastro** de terceiro que a sua operação usa — como um contato ou um produto —, e não uma operação independente. Por isso não fica no espaço da [Rede de Parceiros](visao-geral.md), que é para parcerias entre empresas que se conectam de verdade.
 
 {% hint style="info" %}
 **Recurso de plano superior (Pro).** Fornecedores de frete faz parte de um plano avançado. Se você não vê o item **Fornecedores** no menu — nem o campo **Detentor** na sua [frota](../cadastros/frota.md) — é porque o seu plano ainda não o inclui, não é um erro. Para liberar, veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
@@ -17,7 +17,7 @@ Um dia a entrega é longe demais, ou chega mais carga do que a sua frota dá con
 
 O fornecedor de frete é o jeito **mais simples** de trabalhar com um transporte de fora — e é bem diferente de uma parceria de verdade. Vale entender o quadro antes de mergulhar nos detalhes.
 
-Aqui, o fornecedor é um terceiro que **você gerencia por inteiro**. Você cadastra a empresa dele, monta a **frota** dele dentro do sistema, configura o **motor de frete** dele — e ele **não tem login**. Quem opera tudo é você. Por isso ele vive na **Logística**: é uma extensão da sua operação, não uma operação independente.
+Aqui, o fornecedor é um terceiro que **você gerencia por inteiro**. Você cadastra a empresa dele, monta a **frota** dele dentro do sistema, configura o **motor de frete** dele — e ele **não tem login**. Quem opera tudo é você. Por isso ele vive nos **Cadastros Base**: é uma ficha que a sua operação consulta, não uma operação independente que decide alguma coisa.
 
 {% hint style="info" %}
 **Quer um parceiro de verdade, com conta própria?** Isso existe — e é outra coisa. Na [Rede de Parceiros](visao-geral.md) você convida um **parceiro logístico externo** (com acesso próprio, que aceita e executa os pedidos que você repassa) ou conecta a sua organização a **outra organização LocFlow** (parceria org ↔ org, com acordos, divisão automática de ganhos e reputação). O fornecedor de frete continua sendo a escolha certa quando você só quer **cotar e pagar um transporte**, sem envolver a outra parte no sistema.

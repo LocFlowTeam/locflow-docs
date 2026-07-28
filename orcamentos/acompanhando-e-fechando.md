@@ -176,18 +176,41 @@ Depois do ganho, as Ações rápidas trocam o "próximo passo" por uma seção *
 **Por que isso te faz faturar mais:** no instante em que você ganha o pedido, a cobrança já existe e a equipe já sabe que tem entrega para preparar. Você para de "esquecer de faturar" e de descobrir tarde demais que o material não foi separado. Pedido ganho vira dinheiro entrando e operação rodando — sem retrabalho.
 {% endhint %}
 
-## Editando depois de ganho
+## Editando depois de ganho {#editando-depois-de-ganho}
 
-Precisou ajustar um orçamento já ganho? Pode editar — o LocFlow reflete a mudança na **fatura** e na **logística** automaticamente, desde que a operação ainda não tenha avançado demais.
+Precisou ajustar um orçamento já ganho? Pode editar — o LocFlow reflete a mudança na **fatura**, na **logística** e no **estoque** automaticamente. Mas há limites, e vale conhecê-los antes de prometer a mudança ao cliente.
 
-O limite é o material já ter saído para entrega:
+### O limite dos itens é a entrega, não o despacho {#limite-dos-itens}
 
-* **Antes da entrega** — você ainda altera itens, valores, datas e frete; a fatura se ajusta pela diferença.
-* **Depois de entregue** — os **itens não podem mais mudar** (já estão com o cliente). Você ainda edita **valores**. Para trocar materiais, o caminho é **criar um novo orçamento**.
+| Momento | Dá para mexer nos itens? |
+| --- | --- |
+| Antes de despachar (a separar, separado) | **Sim.** |
+| **Com o caminhão já na rua** (saiu para entrega) | **Sim** — a diferença vira um movimento novo a encaixar num roteiro. |
+| **Material com o cliente** (entregue, retirado no balcão) ou já em reversa/conferência | **Não.** *"Os itens não podem ser alterados após o despacho."* Só valores mudam. Para trocar materiais, **crie um novo orçamento**. |
 
-> Quando a mudança for grande e os itens já tiverem saído, a recomendação costuma ser **abrir um novo orçamento** em vez de remendar o atual — fica mais limpo para você e para o cliente. O que muda depois de fechado tem uma página própria: [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
+### A edição pode ser recusada por estoque {#recusada-por-estoque}
 
-## Perda e cancelamento (com motivo)
+{% hint style="warning" %}
+**Contraintuitivo, mas proposital: só adiar a entrega em dois dias já pode travar o salvamento.** Quando você mexe em **itens** ou em **datas**, o LocFlow refaz a checagem de disponibilidade sobre a **janela nova** (descontando a reserva deste mesmo pedido). Se o material não couber, a edição é recusada:
+
+> *"Não há estoque disponível para todos os itens na janela de uso."*
+
+ou, se a sua regra permite furar com limite, a mensagem do **teto de overbooking**. Ajuste as quantidades, escolha outra data ou reveja as regras em [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md).
+{% endhint %}
+
+Há ainda um terceiro motivo de recusa, mais raro: quando as datas novas **não permitem calcular a janela de bloqueio de uso**, ou quando o **bloqueio manual** que você definiu não cobre a logística nova. Veja [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md#politica-de-bloqueio).
+
+### O efeito na operação (e no parceiro) {#efeito-na-operacao}
+
+Toda edição pós-ganho tem efeito colateral do outro lado: o roteiro pode ficar **desatualizado**, a reserva de estoque é reconciliada, e a mudança pode até **quebrar a promessa de outro pedido**. Isso tem uma página própria — leia [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
+
+{% hint style="danger" %}
+**Se o pedido já foi repassado a um parceiro, mexer nos itens devolve a decisão a ele.** O aceite dele era sobre o pedido antigo: mudar os itens faz a operação voltar a "aguardando a decisão do parceiro", e ele pode recusar. Fale com ele antes — veja [O pedido já estava com um parceiro](../logistica/efeitos-na-parceria.md#itens-revogam-o-aval).
+{% endhint %}
+
+> Quando a mudança for grande e os itens já tiverem chegado ao cliente, a recomendação costuma ser **abrir um novo orçamento** em vez de remendar o atual — fica mais limpo para você e para o cliente.
+
+## Perda e cancelamento (com motivo) {#perda-e-cancelamento-com-motivo}
 
 Nem todo orçamento fecha — e tudo bem. O LocFlow separa duas situações, e em ambas pede um **motivo** (da lista) ou uma **observação** escrita:
 
@@ -202,6 +225,23 @@ Nem todo orçamento fecha — e tudo bem. O LocFlow separa duas situações, e e
 {% hint style="success" %}
 **Por que registrar o motivo vale a pena:** com o tempo, o motivo das perdas vira um mapa do seu negócio — se "Preço" aparece sempre, talvez sua tabela esteja fora do mercado; se é "Não respondeu", o problema é o follow-up. Saber **por que** você perde é o primeiro passo para perder menos.
 {% endhint %}
+
+### Nem sempre dá para cancelar (nem para voltar atrás) {#travas-do-encerramento}
+
+Depois do ganho já existem compromissos — então o LocFlow confere antes de deixar você encerrar. As travas são **diferentes** nos dois caminhos, e de propósito: cancelar é um **desfecho legítimo** do negócio (pode acontecer até depois da entrega); "voltar para negociação" **apaga a história**, e por isso é mais restrito.
+
+| Situação | **Cancelar** | **Voltar para negociação** |
+| --- | --- | --- |
+| A fatura tem **algum pagamento** (total ou parcial) | **Barra.** *"Estorne ou cancele a cobrança antes."* | **Barra.** Vira reembolso, que é outro fluxo. |
+| A **rota já saiu** (execução iniciada) | Passa — fica registrada a pendência a conciliar. | **Barra.** |
+| Material **já entregue ou retirado** | Passa — é justamente o caso do evento que acabou. | **Barra.** Registre a devolução antes. |
+| A **fatura em aberto** | Fica como está — você decide o que fazer com a cobrança. | É **cancelada automaticamente**, junto com as cobranças online pendentes. |
+
+{% hint style="warning" %}
+**Se o pedido foi repassado a um parceiro, encerrar tem mais um custo.** O repasse é desfeito, o parceiro é avisado com o valor que saiu dos ganhos dele, e um cancelamento **em cima da hora depois do aceite** pesa na sua reputação na rede — a menos que você escolha, na lista, um motivo que descreve um ato do cliente (desistência do evento, mudança de data, preço, achou outro fornecedor ou inadimplência) — motivo escrito à mão não isenta. Leia [Cancelar ou reverter um pedido repassado](../logistica/efeitos-na-parceria.md#cancelar-repassado).
+{% endhint %}
+
+O que o encerramento desfaz na operação (roteiros, projeções, estoque) está detalhado em [Reverter o ganho e cancelar](../logistica/quando-um-pedido-muda.md#reverter-e-cancelar).
 
 Um orçamento **Perdido** ou **Cancelado** pode ser **reaberto** para uma nova tentativa — ele volta para a negociação. Nas Ações rápidas, esses estados aparecem como um aviso convidando a reabrir; nos documentos, nada é oferecido (a única ação é reabrir). A exceção é a **validade**: se o orçamento já **venceu**, não dá para reabrir por cima do prazo — antes você **renova a validade** ou parte para um **orçamento novo** (veja [Quando o orçamento vence](#quando-o-orcamento-vence)).
 
@@ -219,8 +259,9 @@ Um orçamento **Perdido** ou **Cancelado** pode ser **reaberto** para uma nova t
 - **Voltou tarde, orçamento vencido:** o cliente reaparece três semanas depois querendo fechar, mas a validade já passou. Você abre o orçamento, vê que está **vencido** e decide: **estende a validade** (se o preço ainda vale) ou **cria um novo** com os valores de agora. O sistema não deixa reservar por cima do prazo vencido — de propósito.
 - **Fechou na hora:** cliente confirmou o aluguel pelo WhatsApp. Você arrasta o card para **Reservado** no funil — a fatura nasce e a entrega já entra na fila.
 - **Esperando o aval do gestor:** o orçamento aparece como **Pendente** na faixa de cima porque o frete passou do limite. Não é "em aberto" — está congelado até alguém aprovar. Veja [Aprovação de orçamentos](aprovacao.md).
-- **Evento cancelou:** o cliente desmarcou a festa depois de reservar. Você marca **Cancelado** com o motivo "Desistência do evento"; o LocFlow já sabe que há fatura e logística a tratar.
+- **Evento cancelou:** o cliente desmarcou a festa depois de reservar. Você marca **Cancelado** com o motivo "Desistência do evento" — e o LocFlow desfaz a logística sozinho. Se o cliente **já tinha pago** (mesmo só o sinal), o cancelamento é **barrado** até você estornar ou cancelar a cobrança: dinheiro do cliente dentro de casa não se apaga por mudança de status.
+- **Adiei a entrega e o sistema não deixou salvar:** a data nova caiu numa semana em que o material já está comprometido. Não é bug — é o LocFlow evitando que você prometa o que não tem. Veja [A edição pode ser recusada por estoque](#recusada-por-estoque).
 
 ## Próximo passo
 
-Orçamento ganho? Siga para a [cobrança](../cobranca/faturas-e-parcelas.md) ou para a [logística](../logistica/visao-geral.md). Quando um orçamento aparece como **Pendente**, veja [Aprovação de orçamentos](aprovacao.md). Para o quadro geral, volte ao [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).
+Orçamento ganho? Siga para a [cobrança](../cobranca/faturas-e-parcelas.md) ou para a [logística](../logistica/visao-geral.md). Precisou mexer no pedido depois de fechado? [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md) responde o que acontece com a rota, o estoque e o parceiro. Quando um orçamento aparece como **Pendente**, veja [Aprovação de orçamentos](aprovacao.md). Para o quadro geral, volte ao [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).

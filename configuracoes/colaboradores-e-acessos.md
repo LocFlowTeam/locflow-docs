@@ -89,7 +89,9 @@ Não é uma trava — é só por onde o link abre primeiro. A pessoa continua po
 
 ### O e-mail vinculado (camada extra)
 
-Informar o **e-mail** no convite **o vincula àquela pessoa**: só quem entrar autenticado com esse e-mail consegue aceitar. É uma camada extra de segurança para o link não cair em mãos erradas. Deixou em branco? Qualquer um com o link aceita.
+Informar o **e-mail** no convite **o vincula àquela pessoa**: só quem entrar autenticado com esse e-mail consegue aceitar — se outra pessoa abrir o link, o LocFlow avisa *"Este convite é para fulano@… Entre com essa conta para aceitar."* É uma camada extra de segurança para o link não cair em mãos erradas. Deixou em branco? Qualquer um com o link aceita.
+
+**E tem um efeito prático:** com o e-mail preenchido, **o LocFlow envia o convite por e-mail sozinho** — você não precisa copiar e mandar. O link continua disponível na tela para você reenviar por WhatsApp se quiser.
 
 {% hint style="info" %}
 Como o link é a credencial, **trate-o como uma senha**: mande só para a pessoa certa. O convite tem **prazo de validade**; se expirar, é só gerar outro. Convites enviados ficam visíveis em **Convites pendentes**, com o link para **copiar de novo** a qualquer momento.
@@ -103,15 +105,38 @@ O LocFlow já vem com um papel para cada cargo. No convite, basta marcar. O **pa
 
 | Papel | Para quem | O que enxerga |
 | --- | --- | --- |
+| **Administrador** | Sócio ou braço direito | Praticamente tudo. Só fica de fora o que **encerra a conta**: apagar a organização e mexer no contrato de assinatura (cancelar, trocar de plano, pedir reembolso) — isso continua exclusivo do dono. Ele **vê** plano, consumo e faturas normalmente |
 | **Operador / Atendente** | Gestão e dia a dia | Orçamentos, frota, roteiros, equipe |
 | **Motorista** | Quem roda a rota | Só os roteiros atribuídos a ele |
 | **Separador** | Galpão (ida) | A fila *A separar → Separado* |
 | **Conferente** | Galpão (volta) | A fila *A conferir → Conferido* |
 | **Operador de Balcão** | Loja física (as duas pontas) | O [balcão](../logistica/balcao.md) — entrega **e** recebe do cliente, e pode registrar **em lote** |
-| **Parceiro** | Freteiro / parceiro externo | Roteiros e acordos combinados |
 
 {% hint style="info" %}
 O **dono** entra como acesso total — por isso, quem está sozinho nem percebe que papéis existem. Eles só aparecem quando você convida a primeira pessoa.
+{% endhint %}
+
+{% hint style="warning" %}
+**Procurando o papel de "Parceiro"? Ele não está aqui — e não deveria estar.** Parceiro é gente **de fora**, não da sua equipe, e por isso entra por outro caminho: **Rede de Parceiros → convidar parceiro**. O papel dele é fixo (você não escolhe nem edita) e dá acesso **só aos pedidos que você repassar a ele**. Veja [Entrando na rede](../parcerias/entrando-na-rede.md) e [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md).
+{% endhint %}
+
+<a id="dispensar-evidencia"></a>
+
+### Uma permissão que vale conhecer: dispensar a evidência
+
+Se a sua empresa exige **comprovação** (foto, vídeo, assinatura) para fechar uma entrega, retirada ou atendimento de balcão, o LocFlow **não fecha o registro sem ela**. Só que nem sempre a prova é possível: quem lança no escritório o que aconteceu ontem não tem como fotografar o passado.
+
+Para esses casos existe a **dispensa de evidência** — fechar o registro escrevendo um **motivo obrigatório**, que fica gravado junto e aparece na [auditoria](historico-de-auditoria.md). É uma permissão **separada**, e a distribuição dela tem uma lógica:
+
+| Quem tem | Por quê |
+| --- | --- |
+| **O dono** e o **Administrador** | Têm, junto com todo o resto da gestão — o Administrador recebe tudo, menos o que encerra ou cobra a conta |
+| **Operador / Atendente** | É a retaguarda: lança o que já aconteceu, sem ter como voltar no tempo e fotografar |
+| **Operador de Balcão** | Já registrava vários atendimentos de uma vez; a permissão só dá nome ao que ele fazia |
+| **Motorista** e **Parceiro Externo** | **Não têm** — e não é esquecimento. Eles estão no ponto da entrega justamente para **produzir** a prova; dar a eles a chave de pular a prova esvaziaria a política. No caso do parceiro externo isso nem é configurável: o papel dele é fixo |
+
+{% hint style="info" %}
+Se você personalizar um papel, pense duas vezes antes de incluir essa permissão em quem trabalha em campo. Ela não é um atalho de conveniência — é uma exceção que fica registrada com nome, hora e motivo.
 {% endhint %}
 
 ### Vários papéis na mesma pessoa

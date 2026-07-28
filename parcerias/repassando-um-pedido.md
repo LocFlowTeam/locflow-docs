@@ -63,15 +63,29 @@ Autorizado o cálculo, cada candidato ganha um **card completo**, e o ranking pa
 
 Escolheu o card, tocou em repassar — a solicitação parte para o parceiro.
 
-### Disponibilidade de estoque {#disponibilidade}
+### Cobertura e disponibilidade {#disponibilidade}
 
-Na parceria **entre organizações**, os itens vão sair do estoque **da parceira**. Por isso o comparativo já consulta a disponibilidade dela para a janela da operação:
+Na parceria **entre organizações**, os itens vão sair do estoque **da parceira**. Por isso o comparativo responde, no próprio card, duas perguntas diferentes — e é importante não confundi-las:
+
+* **Cobertura:** *o acordo traduz esta carga para o catálogo dela?* Item sem par no acordo é item que **ela não vai fornecer**, tenha ela estoque ou não.
+* **Disponibilidade:** *ela tem o material livre na data?*
 
 | O que o card mostra | O que significa | O que acontece |
 | --- | --- | --- |
-| **Disponível** | A parceira tem os itens na data. | Card normal, pronto para repassar. |
+| **Disponível** | O acordo traduz a carga inteira e ela tem o material na data. | Card normal, pronto para repassar. |
+| **Cobertura parcial** — *"3 itens desta operação não estão mapeados no acordo com este parceiro — ele não vai fornecê-los"* | Parte da carga não tem par no acordo. | **Avisa, não bloqueia.** O card leva direto ao acordo, onde o mapeamento se corrige. |
+| **Nenhum item mapeado** — *"ele não vai fornecer o material"* | O acordo não traduz **nada** desta carga. | Aviso, com atalho para o acordo. Quem corrige é **você**. |
+| **Parceiro sem galpão** — *"ainda não tem galpão de estoque cadastrado"* | Ela não tem onde reservar. | Aviso **sem** atalho para o acordo: não há nada errado lá. Quem corrige é **ela**. |
 | **Sem estoque para a data** | Os itens estão comprometidos com outras operações na janela. | O card fica **desabilitado** — repassar seria prometer o que ela não tem. |
 | **Estoque não cadastrado — confirme com o parceiro** | A parceira nunca cadastrou aqueles itens no estoque dela. | Só um **aviso** — o repasse segue, mas confirme por fora. |
+
+{% hint style="success" %}
+**A cobertura parcial aparece já na fase grátis.** Você descobre no esboço, antes de gastar um crédito de rota, que aquela parceira não fornece 3 dos 12 itens — e decide ali: mapeia no acordo (é barato agora) ou escolhe outro candidato. Depois do aceite, essa lacuna só reaparece no galpão dela, no dia da separação.
+{% endhint %}
+
+{% hint style="info" %}
+**Por que avisa em vez de bloquear?** Porque a lacuna quase sempre é de **mapeamento** — um item novo do seu catálogo que ninguém casou ainda —, e barrar esconderia o problema real atrás de um "candidato indisponível". Você segue podendo repassar sabendo o que ele não leva; e o parceiro **também é avisado** disso antes de aceitar.
+{% endhint %}
 
 ### Frete a combinar {#frete-a-combinar}
 
@@ -91,9 +105,10 @@ O caminho é reabrir o [frete do orçamento](../orcamentos/valores.md#composicao
 
 Todo repasse é uma **solicitação** — o parceiro nunca é atropelado. Ele recebe uma notificação e abre o detalhe da reserva, onde vê:
 
-* **A operação:** o que entregar, onde, quando — tudo o que precisa para decidir se dá conta.
+* **A operação:** o que entregar, onde, quando, para qual contato — tudo o que precisa para decidir se dá conta.
 * **Os itens e quantidades**, já nos termos do acordo.
-* **Quanto ele ganha** — os preços do acordo, nunca o preço que o **seu** cliente pagou. O seu comercial é seu.
+* **Quanto ele ganha** nesta operação: o repasse, a taxa que couber a ele e o líquido. **Nesta tela ele não vê o total que o seu cliente pagou** — o que ele conhece são os preços que vocês combinaram item a item, lá no [acordo](acordos-de-parceria.md#itens-acordados).
+* **Quantos itens ele não fornece**, quando o acordo não traduz a carga inteira para o catálogo dele — antes de aceitar, não depois.
 
 E decide:
 
@@ -131,9 +146,55 @@ Se você **reverte o ganho** do orçamento — o cliente desistiu, o negócio vo
 
 ## Depois do aceite: a execução é do parceiro {#execucao}
 
-Com o aceite, a **posse logística** da operação é do parceiro: a entrega e a retirada entram nos **roteiros dele**, e é a equipe dele que executa em campo — do jeito que a [Logística](../logistica/visao-geral.md) do LocFlow sempre funciona, só que do lado de lá. Você acompanha pelo detalhe da reserva.
+Com o aceite, a **linha logística** da operação passa a ser do parceiro: a entrega e a retirada entram nos **roteiros dele**, e é a equipe dele que executa em campo — do jeito que a [Logística](../logistica/visao-geral.md) do LocFlow sempre funciona, só que do lado de lá. Isso vale igual para o parceiro **externo** e para a organização **parceira interna**: os dois roteirizam (veja [as linhas de responsabilidade](visao-geral.md#linhas-de-responsabilidade)).
 
 E a responsabilidade é real: um **movimento pulado** (falha de entrega) gera a penalidade **mais pesada** do índice de confiabilidade. O parceiro que aceita, entrega.
+
+### O que você deixa de poder fazer {#o-que-voce-deixa-de-poder}
+
+Esta é a mudança que mais gera a pergunta *"cadê o meu botão?"*. Num pedido **repassado e aceito**, você perde cinco comandos:
+
+| O que sumiu | Onde estava |
+| --- | --- |
+| **Dividir** um movimento em viagens | Plano de movimentos do pedido |
+| **Consolidar** movimentos numa viagem | Plano de movimentos do pedido |
+| **Reatribuir** uma folha do plano | Plano de movimentos do pedido |
+| **Ressincronizar** a folha com o pedido | Plano de movimentos do pedido |
+| **Marcar manualmente** como **entregue** ou **retirado** | Status logístico do orçamento |
+
+A mensagem que aparece é direta: *"Este movimento pertence a um orçamento repassado a \[parceiro] — o parceiro cuida da logística dele, inclusive do plano de movimentos."*
+
+{% hint style="info" %}
+**Por que isso é bom para você.** O plano de movimentos é o que o roteiro **dele** executa. Enquanto você podia mexer, dois problemas reais aconteciam: você redividia a carga e a rota do parceiro ficava desatualizada sem ninguém perceber; ou você marcava "entregue" pela sua tela e a folha do motorista dele era **fechada de forma irreversível** — ele chegava ao cliente com a entrega já dada como feita. Perder o botão é perder essa classe de acidente.
+
+Precisa mesmo que a operação seja dividida de outro jeito? **Fale com o parceiro** — ele tem o comando. Ou desfaça o repasse, se ainda estiver a tempo.
+{% endhint %}
+
+### O que você passa a ver {#acompanhamento}
+
+Você não fica no escuro. No detalhe da reserva, o LocFlow mostra o **fato operacional** da rota do parceiro:
+
+* **Existe rota** montada para este pedido;
+* **para quando** ele planejou a saída (no fuso de quem executa);
+* **em que estado** ela está — planejada, em preparo, em rota, concluída;
+* **o desfecho de cada perna** já carimbada em campo: entregue, retirado ou **pulado** — e, no caso do pulo, **o motivo** informado pelo motorista.
+
+E o que você **não** vê, de propósito: o número do roteiro, o motorista, o veículo e **as outras paradas** daquela rota — que são de outros clientes, e possivelmente de outros vendedores. Nem existe caminho de edição: é leitura.
+
+{% hint style="info" %}
+**Revogado o acordo, esse acompanhamento acaba.** A leitura da rota da ex-parceira vale enquanto o aval daquela operação estiver vigente — não é uma janela permanente para dentro da operação dela.
+{% endhint %}
+
+### Você é avisado do desfecho {#avisos-do-desfecho}
+
+Quem responde ao cliente é você — então você não pode descobrir a falha da entrega pelo telefone do cliente. Dois avisos nascem no desfecho do parceiro e chegam a quem repassou:
+
+| Aviso | Nível | Quando chega |
+| --- | --- | --- |
+| **Parceiro concluiu a entrega ou retirada** | Informativo | Ele cumpriu a perna. É o seu "pode avisar o cliente". |
+| **Parceiro não cumpriu a entrega ou retirada** | Importante | Ele **pulou** o movimento — com o motivo em campo. É o seu "ligue agora". |
+
+Os dois abrem direto a reserva, onde o acompanhamento da rota já está. Quem recebe é o **responsável pela operação** — dá para ajustar os canais na [Central de notificações](../configuracoes/central-de-notificacoes.md).
 
 {% hint style="info" %}
 **E o dinheiro?** O quanto o parceiro ganha vem dos **preços do acordo × quantidades × fator de locação** (as mesmas diárias/locações do preço ao cliente), mais o frete dele — e a liquidação acontece pelo gatilho do acordo (no pagamento, na entrega ou na retirada). O acompanhamento vive no Financeiro: **Repasses** (para você) e **Meus Ganhos** (para o parceiro), com o selo "Rede". Os detalhes dessa divisão estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
@@ -181,11 +242,15 @@ Todos aparecem na lista e no detalhe de **Rede › Reservas em parceria** — e 
 - **Evento no fim de semana, sua agenda cheia.** Pedido ganho, dois parceiros com acordo. O esboço mostra os dois, você calcula as rotas (2 créditos), o comparativo diz que o parceiro A te dá R$ 180 a mais de margem. Repassa, ele aceita em uma hora, a operação some da sua agenda.
 - **O parceiro não respondeu.** A solicitação mostrava "Aceite até sábado, 10h". Domingo o sistema expirou sozinho: você viu **"Prazo expirou — retomado"**, re-repassou ao segundo colocado e o índice do primeiro sentiu a penalidade leve.
 - **Card apagado no comparativo.** A parceira aparece com **"Sem estoque para a data"** — as mesas dela estão em outro evento na mesma janela. O card desabilita e te poupa de um aceite que seria barrado de qualquer jeito.
-- **Cliente cancelou tudo.** Você reverteu o ganho do orçamento; o repasse se desfez sozinho, o parceiro foi avisado e o estoque dele voltou a ficar livre. Zero telefonema.
+- **"Ele não vai fornecer 3 itens."** O card avisa no esboço: três itens do pedido não estão mapeados no acordo com aquela parceira. Você toca no aviso, cai no acordo, mapeia os três em dois minutos e volta — agora a cobertura é total. Corrigir ali custa muito menos do que descobrir no galpão dela.
+- **Cliente cancelou tudo.** Você reverteu o ganho do orçamento; o repasse se desfez sozinho, o parceiro foi avisado e o estoque dele voltou a ficar livre. Zero telefonema. (Se ele já tinha aceitado e você reverteu em cima da hora, isso conta na **sua** reputação — veja [o índice](reputacao-e-boas-praticas.md#indice-de-confiabilidade).)
+- **"Preciso dividir a entrega em duas viagens, mas já repassei."** O comando é do parceiro agora. Fale com ele — ou desfaça o repasse, se ainda houver tempo.
+- **"O parceiro não entregou e eu só soube pelo cliente."** Não deve mais acontecer: o aviso **"Parceiro não cumpriu a entrega ou retirada"** chega com o motivo do pulo. Se você não o recebeu, confira os canais na [Central de notificações](../configuracoes/central-de-notificacoes.md).
 
 ## Próximo passo {#proximo-passo}
 
 - Ainda não tem acordo? Monte um em [Acordos de parceria](acordos-de-parceria.md).
-- Entenda os dois modelos de parceria em [Parcerias: a visão](visao-geral.md).
+- Entenda os dois modelos de parceria e as **linhas de responsabilidade** em [Parcerias: a visão](visao-geral.md).
+- O acordo permite ao parceiro receber o cliente na porta? Veja [Cobrança na rua](cobranca-na-rua.md).
 - Trabalha com um parceiro convidado, sem organização própria? Veja [Parceiro logístico externo](parceiro-logistico-externo.md).
 - Como o pedido vira operação em campo: [Logística: visão geral](../logistica/visao-geral.md).

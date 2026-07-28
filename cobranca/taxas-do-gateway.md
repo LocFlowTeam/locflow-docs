@@ -25,6 +25,23 @@ São três tipos de taxa, todas registradas para você:
 **O saque automático também tem taxa.** Se você deixou a transferência automática ligada, cada envio para o seu banco também paga a taxa de saque — e o LocFlow registra essa taxa do mesmo jeito, mesmo você não tendo clicado em nada. Nada de custo escondido.
 {% endhint %}
 
+### Não confunda com a taxa da Rede de Parceiros {#taxa-de-plataforma}
+
+Se você usa a [Rede de Parceiros](../parcerias/visao-geral.md), existe uma **quarta** taxa — e ela **não** é do processador:
+
+| | **Taxa de gateway** | **Taxa de plataforma** |
+| --- | --- | --- |
+| Quem cobra | O processador de pagamentos | O LocFlow, pela Rede de Parceiros |
+| Quando incide | Em todo pagamento online, com ou sem parceria | Só em operação **repassada a um parceiro** |
+| Sobre o quê | Cada operação processada | **8% do total da operação**, uma vez por orçamento |
+| No seu financeiro | Categoria **Taxa de Gateway** | Categoria **Taxa de Plataforma** — linha própria |
+
+{% hint style="warning" %}
+**Elas podem aparecer juntas no mesmo pagamento.** Quando o cliente paga online um pedido repassado, os 8% da Rede saem **retidos naquele pagamento** — então o valor que entra para você já vem menor que o total da fatura, além do desconto da tarifa do processador. Isso não é cobrança em dobro: quando você for quitar o repasse ao parceiro, o LocFlow desconta o que já foi retido e cobra só a diferença. A conta inteira está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#taxa-de-plataforma).
+{% endhint %}
+
+Quem arca com a **taxa de gateway** numa operação repassada é um termo do próprio acordo de parceria (o padrão é o vendedor) — veja [Quem paga a maquininha](../parcerias/dinheiro-da-parceria.md#encargos).
+
 ## Como aparecem no seu financeiro
 
 A forma de mostrar depende do tipo de taxa:

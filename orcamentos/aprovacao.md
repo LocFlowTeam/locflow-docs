@@ -68,7 +68,7 @@ Uma vez pendente por esse motivo, o orçamento entra na **mesma fila** de Penden
 **Uma política por detentor.** Cada frete tem um **detentor** — a sua organização ou um fornecedor. A regra por valor das três configurações de cima é a política da **sua organização**; o "aguarda resposta do fornecedor" é a política de **cada fornecedor**. Num mesmo orçamento com frete dividido entre você e um terceiro, cada parte segue a sua — e basta uma parte de fornecedor para o orçamento nascer pendente.
 {% endhint %}
 
-Os **fornecedores de frete** são o **primeiro passo** da visão de [Parcerias](../parcerias/visao-geral.md): trabalhar com gente **de fora da sua organização**. Por enquanto, o fornecedor é um terceiro **sem login próprio**, que **você** cadastra e administra por inteiro — você monta a frota-espelho dele e o motor de frete dele. O sistema de **parceiros de verdade** — usuários externos, com estrutura e conta próprias — vem a seguir. Para entender o cadastro e a operação, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
+Os **fornecedores de frete** são a porta mais simples da [Rede de Parceiros](../parcerias/visao-geral.md): trabalhar com gente **de fora da sua organização**. O fornecedor é um terceiro **sem login próprio**, que **você** cadastra e administra por inteiro — você monta a frota-espelho dele e o motor de frete dele. Quando o que você precisa é um parceiro com **conta e estrutura próprias**, que monta o roteiro dele e executa o pedido inteiro, isso já existe e é assunto da [Rede de Parceiros](../parcerias/visao-geral.md). Para entender o cadastro e a operação do fornecedor, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
 
 ## O travamento é independente do status comercial
 

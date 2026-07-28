@@ -46,11 +46,12 @@
 ## Rede de Parceiros
 
 * [Rede de Parceiros: a visão](parcerias/visao-geral.md)
-* [Liberando o Programa de Parceiros](configuracoes/programa-de-parceiros.md)
+* [Preparando o dinheiro da parceria](configuracoes/programa-de-parceiros.md)
 * [Entrando na rede](parcerias/entrando-na-rede.md)
 * [Acordos de parceria](parcerias/acordos-de-parceria.md)
 * [Repassando um pedido](parcerias/repassando-um-pedido.md)
 * [O dinheiro da parceria](parcerias/dinheiro-da-parceria.md)
+  * [Cobrança na rua](parcerias/cobranca-na-rua.md)
 * [Estoque na parceria](parcerias/estoque-na-parceria.md)
 * [Reputação e boas práticas](parcerias/reputacao-e-boas-praticas.md)
 * [Parceiro Logístico Externo](parcerias/parceiro-logistico-externo.md)
@@ -90,6 +91,7 @@
 * [Conferência na devolução](logistica/conferencia.md)
 * [Balcão: retirada e devolução no galpão](logistica/balcao.md)
 * [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
+  * [O pedido já estava com um parceiro](logistica/efeitos-na-parceria.md)
 
 ## Estoque
 

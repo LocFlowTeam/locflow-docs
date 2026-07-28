@@ -78,8 +78,9 @@ Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre
 | **Roteiro** | Conjunto de paradas (entregas/retiradas) organizado para o dia. |
 | **Parada** | Um ponto de entrega ou retirada dentro do roteiro. |
 | **Sob demanda** | Despachar **uma** entrega na hora, sem planejar antes. |
-| **Comprovação (POD)** | Prova de entrega/retirada: foto, vídeo, assinatura. |
-| **Desatualizado (defasado)** | Um movimento ficou **velho** no roteiro porque o pedido mudou depois; vira pendência para o operador e trava o motorista até o ajuste. |
+| **Comprovação (POD)** | Prova de entrega/retirada: foto, vídeo, assinatura. Quando a sua empresa exige, **sem ela o registro não fecha**. |
+| **Dispensa de evidência** | Fechar um registro **sem a prova** que a política exigia, escrevendo um **motivo obrigatório** que fica carimbado no registro. É uma válvula para quem lança o que já aconteceu (retaguarda, balcão) e depende de uma **permissão dedicada** — motorista e parceiro externo **não a têm**, justamente porque existem para produzir a prova. |
+| **Desatualizado (defasado)** | Um movimento ficou **velho** no roteiro porque o pedido mudou depois. Ele fica **só de leitura** e trava quem está na rua até alguém **ressincronizar** a parada com o pedido atual. Num pedido **repassado a um parceiro**, quem ressincroniza é **o parceiro**, não você — veja [O pedido já estava com um parceiro](../logistica/efeitos-na-parceria.md). |
 
 → Comece por [Visão geral da logística](../logistica/visao-geral.md).
 
@@ -93,7 +94,7 @@ Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre
 | **Detentor** | O titular de uma ficha de frota, de um motor de frete e de uma porção do frete: a sua **organização** ou um **fornecedor de frete**. Cada detentor cobra pela **tabela dele**. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#detentor). |
 | **Transportadora** | Quem leva uma porção da carga — a sua organização ou um fornecedor. No cálculo do frete, é o mesmo que **detentor**. |
 | **Composição do frete** | Como o valor final é montado: o **custo** de cada porção (cotado pelo motor de quem transporta) somado, mais o **repasse** ao cliente. Veja [Valores](../orcamentos/valores.md#composicao-do-frete). |
-| **Repasse** | Quanto do frete você **cobra do cliente** — pode ser igual, menor ou maior que o custo. |
+| **Repasse (frete)** | Quanto do frete você **cobra do cliente** — pode ser igual, menor ou maior que o custo. Nada a ver com o **repasse da parceria** (o pedido e o dinheiro que vão para um parceiro): veja [Rede de Parceiros](#rede-de-parceiros). |
 | **Margem (no frete)** | A diferença entre o que você cobra do cliente (o repasse) e o **custo** do transporte. |
 | **Estratégia de alocação** | Como o LocFlow **recomenda** repartir a carga entre as transportadoras: **Menor valor ao cliente**, **Melhor aproveitamento** ou **Montar manualmente**. Veja [Motor de Frete por detentor](../configuracoes/motor-de-frete-detentor.md#estrategia-de-alocacao). |
 | **Divisão de movimento** | Repartir a carga de um mesmo movimento entre veículos (e transportadoras) diferentes — cada **porção** com o seu preço. |
@@ -116,6 +117,38 @@ Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre
 
 → Comece por [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 
+## Rede de Parceiros {#rede-de-parceiros}
+
+Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido em **linhas de responsabilidade**: um lado cuida do cliente e do dinheiro, o outro cuida do material na rua. Quase todo termo desta seção sai daí.
+
+| Termo | O que é |
+| --- | --- |
+| **Vendedor** | O lado **dono do cliente**: fez o orçamento, emite a fatura e responde pela relação comercial. |
+| **Parceiro logístico** | O lado que **executa**: entrega, retira e cuida do material — e, quando o acordo permite, recebe do cliente na porta. |
+| **Linha logística** | O pedaço da operação que passa a ser do parceiro quando você repassa: o roteiro, o plano de movimentos (dividir, juntar, remarcar), a entrega, a retirada e o balcão daquele pedido. |
+| **Linha comercial e de cobrança** | O pedaço que continua **seu**, sempre: o cliente, o orçamento, o preço final, a fatura e a relação de crédito. Não muda de dono — nem quando o parceiro recebe o dinheiro na porta. |
+| **Parceiro externo** | Uma pessoa ou empresa **convidada por link**, que trabalha **dentro da sua conta** com um papel fixo de parceiro. Veja [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md). |
+| **Parceria interna (org↔org)** | Duas organizações LocFlow de verdade, cada uma na sua conta, ligadas por um **vínculo**. |
+| **Vínculo** | O "sim" entre duas organizações, que abre a porta para vocês montarem acordos. **Aceitar um vínculo concede algo:** a outra parte passa a poder usar o seu **motor de frete publicado**, os seus **galpões** e o seu **preço de tabela** como sugestão ao montar um acordo — e o que ela derivar fica guardado lá, mesmo que o acordo não feche. Dá para desligar essa sugestão no **Perfil de parceria** sem romper o vínculo. |
+| **Acordo de parceria** | Os termos do trabalho conjunto: quais itens, por qual preço, quando o parceiro recebe, quem paga o quê. Só vale depois do aceite dos **dois** lados. |
+| **Repasse (parceria)** | Duas coisas com o mesmo nome: o **ato** de entregar um pedido já ganho a um parceiro, e o **valor** que você deve a ele por ter executado. |
+| **Saldo devedor do repasse** | O repasse **ao contrário**. Se quem ficou com o dinheiro do cliente foi o parceiro, não é você que deve a ele — **é ele que deve a você** (a sua margem mais a taxa da plataforma). Ele vê *"A pagar à organização"*; você vê *"A receber de parceiros"*. |
+| **Taxa da plataforma** | **8% fixos** (iguais em qualquer plano) sobre o **total da operação** — itens + mão de obra + frete − descontos — e só sobre o que o cliente **efetivamente pagou**. O acordo decide como esses 8% se dividem entre as partes; o padrão é 8% no vendedor e 0% no parceiro. **O teto é por orçamento**: a mesma venda nunca é taxada duas vezes, mesmo que passe por dois parceiros. |
+| **Modelo de pagamento (gatilho)** | *Quando* o parceiro recebe e *quanto*. Ao **montar** o acordo ele aparece como **"Como você paga o parceiro"**; ao **revê-lo depois**, o mesmo bloco se chama **"Quando você paga"**. Do lado de quem executa, os dois momentos dizem **"Quando você recebe"**. Há três atalhos prontos — *Pago pelo que ele fez*, *Só quando o cliente pagar*, *Confio, pago adiantado* — e um caminho **Do meu jeito** para o ajuste fino. Veja [Acordos de parceria](../parcerias/acordos-de-parceria.md#gatilho-de-pagamento). |
+| **Cobrança na rua** | A permissão, combinada no acordo, de o **parceiro receber do cliente no ponto de entrega**. A fatura, a razão e a relação com o cliente continuam suas — ele age como **coletor**, não como dono do crédito. Vale hoje só com o **parceiro externo**; entre duas organizações, quem recebe do cliente continua sendo você. E a coleta é **tudo ou nada**: ou ele fecha a cobrança inteira, ou o caminho é o seu PIX. Veja [Cobrança na rua](../parcerias/cobranca-na-rua.md). |
+| **Coletor** | Quem de fato **ficou com o dinheiro** do cliente naquela operação: você ou o parceiro. É esse fato — e não o que está escrito no acordo — que decide para que lado o repasse corre. |
+| **Cobertura parcial** | Itens daquela operação que o acordo **não traduz** para o catálogo da parceira: ela não vai fornecê-los. Aparece como faixa âmbar no comparativo e no aceite, **antes** do repasse. **Avisa, não bloqueia.** |
+
+{% hint style="warning" %}
+**"Repasse" quer dizer duas coisas no LocFlow.** No **frete**, é quanto do transporte você cobra do cliente. Na **parceria**, é o pedido (e o dinheiro) que vai para o parceiro. Se você chegou aqui de uma tela de frete, o termo é o [outro](#frete).
+{% endhint %}
+
+{% hint style="info" %}
+**O que o parceiro vê do seu negócio.** Ele vê o **preço ao cliente dos itens que estão no acordo** — sem esse número, "você recebe 70% do valor" não significa nada — e a **divisão da taxa da plataforma** combinada ali (a fatia dele e a sua). Quando o acordo permite cobrança na rua, vê também **quanto o cliente deve** daquele pedido e pode gerar o **seu** PIX para mostrar na porta. Ele **não** vê o resto da sua carteira de cobranças, os seus outros clientes e orçamentos, nem como o preço final foi montado (descontos, histórico). Detalhes em [Rede de Parceiros: a visão](../parcerias/visao-geral.md).
+{% endhint %}
+
+→ Comece por [Rede de Parceiros: a visão](../parcerias/visao-geral.md); a conta do dinheiro está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md).
+
 ## Pessoas e acesso {#pessoas-acesso}
 
 | Termo | O que é |
@@ -124,6 +157,7 @@ Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre
 | **Função** | O **cargo** na operação (Vendedor, Motorista…). |
 | **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística, Atendimento no balcão). |
 | **Responsável pela operação** | Quem está **por trás** daquela operação (ex.: quem executa a rota) — descoberto pelo sistema, sem você nomear. |
+| **Colaborador × parceiro** | O **colaborador** é da sua equipe e você o convida em **Colaboradores**. O **parceiro externo** é gente de fora e entra por outro caminho — o convite da **Rede de Parceiros**. O papel de parceiro **não aparece** na lista de papéis do convite de colaborador. Veja [Entrando na rede](../parcerias/entrando-na-rede.md). |
 
 ## Notificações {#notificacoes}
 

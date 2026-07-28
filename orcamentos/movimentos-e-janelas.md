@@ -120,6 +120,17 @@ Sobre esse período o Motor de Estoque ainda soma a **folga** configurada. Por i
 **As datas precisam fazer sentido entre si.** O material tem de sair **antes** de o evento começar e voltar **depois** de ele terminar. Se você agendar um recolhimento antes do fim do evento, o LocFlow avisa e pede correção — não deixa passar. Entenda a regra em [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md#a-regra-que-o-locflow-cobra-de-voce).
 {% endhint %}
 
+#### E se eu mudar a janela depois de fechar o pedido? {#mudar-a-janela-depois}
+
+O bloqueio **não fica congelado** no que valia no dia do fechamento: ao editar um pedido **já ganho**, ele é **recalculado sobre as datas novas**. Adiou a entrega em uma semana? O item deixa de ficar preso na semana antiga e passa a ficar preso na nova, liberando aquela agenda para outro cliente.
+
+Duas consequências que vale conhecer **antes** de remarcar:
+
+* **Se você definiu um bloqueio manual** para aquele pedido, é ele que prevalece — e ele precisa **cobrir a logística nova**. Se não cobrir, a edição é recusada até você ajustá-lo.
+* **A remarcação passa por uma nova checagem de disponibilidade.** Se a data nova cair numa janela em que o material já está comprometido, o LocFlow **não deixa salvar** (*"Não há estoque disponível para todos os itens na janela de uso"*).
+
+Os efeitos completos de mexer num pedido fechado — no roteiro, no estoque e no parceiro — estão em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md#mudar-a-data).
+
 ## "Ainda não sei quando" (o a definir)
 
 Nem todo orçamento já nasce com data fechada. Por isso, cada movimento tem o botão **"Você sabe quando?"**. Desligue-o e a data/janela some, dando lugar a um lembrete discreto do prazo:

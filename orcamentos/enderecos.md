@@ -52,6 +52,10 @@ Pense nos lugares que se repetem no seu dia a dia:
 
 Em vez de redigitar o CEP e o complexo "bloco B, portaria 2" de novo, você busca pelo apelido e seleciona. Pronto.
 
+{% hint style="warning" %}
+**Uma diferença que importa mais tarde: o endereço salvo é um atalho, não uma cópia.** Ao escolher **Contato** ou **Exclusivo**, o pedido guarda uma **cópia** do endereço — mudar o cadastro do cliente depois não mexe naquele pedido. Ao escolher **Salvo**, o pedido guarda o **atalho** para o endereço: se alguém editar aquele endereço salvo, **o destino do pedido muda junto** — inclusive de pedidos já fechados e já roteirizados. Entenda em [Editar um endereço salvo depois](#editar-endereco-salvo).
+{% endhint %}
+
 ### Endereço só deste pedido {#endereco-so-deste-pedido}
 
 Às vezes o destino é único — uma entrega avulsa que não vai se repetir. Para isso existe o tipo **Exclusivo**: você digita o endereço direto no orçamento e ele **não polui** suas listas. Sem cadastro, sem apelido, sem guardar nada.
@@ -111,11 +115,56 @@ Ao informar o destino, você pode marcar **"Este é o local do evento"**. Use qu
 
 ## O pino de localização {#o-pino-de-localizacao}
 
-Depois que o endereço está completo, pode aparecer um **pino de localização** num mapinha. Ele é **opcional** e serve só para **refinar** a posição exata — útil quando a entrega é numa entrada específica, num portão de fundos ou num ponto que o CEP não acerta com precisão. Como diz o app:
+Depois que o endereço está completo, pode aparecer um **pino de localização** num mapinha. Ele serve para **refinar** a posição exata — útil quando a entrega é numa entrada específica, num portão de fundos ou num ponto que o CEP não acerta com precisão. Como diz o app:
 
 > *"Use o pino apenas se precisar refinar a localização."*
 
-Para o dia a dia, o endereço digitado já basta. O pino é um capricho a mais para quem quer precisão.
+Para o dia a dia, o endereço digitado já basta.
+
+{% hint style="danger" %}
+**O pino não é um detalhe local do pedido — ele grava no cadastro.** Arrastar o pino de um endereço **Salvo** **regrava aquele endereço salvo** para a empresa inteira; e, quando o mapa consegue reconhecer o novo ponto, ele regrava também **CEP, logradouro, número, bairro e município**. O mesmo vale para o pino de um endereço do tipo **Contato**: ele atualiza a ficha do cliente.
+
+Isso significa que um arrasto de pino pode **mudar o destino de outros pedidos** — inclusive pedidos já fechados. Leia a seção a seguir antes de mexer.
+{% endhint %}
+
+## Editar um endereço salvo depois {#editar-endereco-salvo}
+
+**Onde fica:** hoje a alteração de um endereço já salvo acontece **dentro do orçamento**, no próprio seletor de endereço: você escolhe o tipo **Salvo**, seleciona o endereço e **arrasta o pino** no mapa. É esse gesto que regrava o cadastro.
+
+Parece inofensivo. Não é — e o motivo é aquele atalho: **o pedido não guarda o endereço salvo, guarda a referência a ele**. A rota lê o endereço **na hora**. Então, quando o endereço muda, **a parada muda de lugar sozinha** em todo pedido que aponta para ali.
+
+### O alcance {#alcance-da-edicao}
+
+São duas perguntas diferentes, e confundi-las é o que gera susto:
+
+| A pergunta | A resposta |
+| --- | --- |
+| **Quais pedidos passam a apontar para o lugar novo?** | **Todos** os que usam aquele endereço salvo, em qualquer estado — em negociação, ganhos, com roteiro montado, repassados a um parceiro. É o atalho funcionando: ninguém guardou uma cópia do endereço, todos leem o cadastro na hora. |
+| **Quais geram pendência de roteiro e aviso?** | Só os **ganhos e ainda não finalizados**. Um pedido em negociação não tem operação a desatualizar — quando for ganho, já sai com o endereço novo. Um pedido finalizado não é tocado: a operação acabou, não há mais o que ajustar. |
+
+Em cada pedido **ganho e não finalizado**, na hora:
+
+* o movimento afetado ganha uma **versão nova** (a antiga vira histórico);
+* o roteiro que continha aquela parada fica **desatualizado**;
+* aquela parada fica **bloqueada para a equipe em campo** até o roteiro ser ajustado;
+* o operador logístico é avisado — ou o **parceiro**, se o pedido tiver sido repassado.
+
+{% hint style="warning" %}
+**Só o apelido não muda nada.** Renomear o **identificador** (*"Chácara do Lago"* → *"Chácara do Lago — portaria 2"*) é rótulo, não lugar: nenhum roteiro é afetado. O que conta como "mudou de lugar" é CEP, logradouro, número, complemento, bairro, município, UF, tipo do local ou a posição no mapa.
+{% endhint %}
+
+{% hint style="danger" %}
+**Corrigir um endereço salvo é uma alteração da empresa inteira, não deste pedido.** Se o que você quer é só ajustar **este** pedido (o cliente mudou o salão, a entrega é noutra portaria), **não** edite o endereço salvo: escolha o tipo **Exclusivo** e digite o endereço ali, ou selecione outro endereço salvo. Assim você não desatualiza os roteiros de mais ninguém.
+{% endhint %}
+
+### Quando editar é a coisa certa {#quando-editar-e-certo}
+
+Quando o **lugar** está de fato errado no cadastro — o número da chácara é 340, não 34; o pino ficou no meio da rodovia. Aí você **quer** que todos os pedidos vivos apontem para o lugar certo. Só lembre de, depois:
+
+1. Abrir cada **roteiro desatualizado** e salvar a edição (é o que destrava a execução).
+2. Conferir o **galpão de origem** dos pedidos afetados, se a distância mudou bastante — veja [Movimentos, janelas e galpão de origem](movimentos-e-janelas.md).
+
+Entenda a cadeia completa em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md#mudar-o-endereco).
 
 ## Por porte {#por-porte}
 
@@ -136,6 +185,9 @@ Se o endereço dele já está no cadastro, escolha **Contato** e está feito. Se
 **"É uma entrega única, num endereço que não vou usar de novo."**
 Use **Exclusivo**: digite ali mesmo e siga. Nada fica guardado.
 
+**"O número do condomínio estava errado no cadastro; corrigi e três roteiros ficaram desatualizados."**
+Era esperado: o endereço salvo é usado por vários pedidos, e todos os que ainda vão acontecer passaram a apontar para o lugar certo. Abra cada roteiro e salve a edição para destravar a execução. Se o que você queria era ajustar **só um** pedido, use um endereço **Exclusivo** naquele pedido.
+
 **"É locação: o que devolvo depois?"**
 Na locação, o item **vai e volta**. Você define o destino da **entrega** e, depois, **de onde retirar** — muitas vezes o mesmo lugar. O seletor de endereço funciona igual nos dois momentos (entrega e retirada). Entenda a diferença em [Locação e venda](../conceitos/locacao-e-venda.md).
 
@@ -144,3 +196,4 @@ Na locação, o item **vai e volta**. Você define o destino da **entrega** e, d
 - [Criando um orçamento](criando-um-orcamento.md) — onde o endereço entra no fluxo completo do pedido.
 - [Contatos](../cadastros/contatos.md) — para que o endereço do cliente já venha pronto.
 - [Locação e venda](../conceitos/locacao-e-venda.md) — por que a retirada existe só na locação.
+- [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md#mudar-o-endereco) — o que acontece com a rota quando o destino muda.

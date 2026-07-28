@@ -153,6 +153,10 @@ Ao lado, o app mostra a **margem viva**: **+R$** em verde quando você lucra, **
 O campo de repasse aparece em **cada fornecedor** da composição — tanto quando você marca **um** fornecedor sozinho quanto em **cada** fornecedor de uma divisão entre várias transportadoras.
 {% endhint %}
 
+{% hint style="warning" %}
+**Dois "repasses" diferentes, cuidado para não confundir.** O repasse **desta seção** é quanto você cobra do cliente pelo transporte de um **fornecedor de frete** — ele só cota a viagem. Já o **repasse ao parceiro logístico** da [Rede de Parceiros](../parcerias/visao-geral.md) é outra coisa: lá o parceiro **executa a operação inteira** (entrega, cuida do material, retira) e recebe pelos preços combinados num acordo. Veja [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#a-conta).
+{% endhint %}
+
 ### A decisão fica salva {#frete-salvo}
 
 Tudo o que você definiu — **quais transportadoras**, quantas viagens, os veículos, o que cada fornecedor cobra e o que você repassa — é **guardado no orçamento**. Ao **reabrir para editar**, o painel reconstrói essa **"Frete definido"** exatamente como você deixou, sem precisar recalcular (o que gastaria crédito). Para atualizar os valores ou trocar a transportadora, é só **Recalcular**.
@@ -209,6 +213,7 @@ Se você gosta de saber exatamente como o total é montado, é assim (o LocFlow 
 Pontos finos que valem lembrar:
 
 - A **mão de obra em %** olha só para os itens; o **desconto em %** olha para tudo (itens + frete + mão de obra).
+- **Se você repassar este pedido a um parceiro**, é este **total do cliente** — o número que sai da conta acima, já com desconto — que vira a base dos 8% da taxa de plataforma e da conta da sua margem. Um desconto grande no fim reduz a sua margem, não o repasse combinado com o parceiro. Veja [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#taxa-de-plataforma).
 - O **frete automático** é medido pela rota **real** entre o galpão e o destino (não pela linha reta nem por faixa de CEP), e segue as regras do seu Motor de Frete. Cada movimento entra com a sua quantidade de viagens.
 - O desconto **proporcional aos kits** calcula a diferença entre comprar/alugar as peças soltas e o kit equivalente, e usa essa diferença como o valor do desconto.
 

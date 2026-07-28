@@ -213,7 +213,49 @@ O acompanhamento ao vivo depende de a equipe estar registrando pelo aplicativo. 
 
 ## Roteiro desatualizado <a id="roteiro-desatualizado"></a>
 
-Se um pedido **mudou depois** de o roteiro ter sido planejado (datas, itens ou responsabilidade), a tela mostra um aviso **"Roteiro desatualizado"**. Os movimentos afetados ficam **bloqueados na execução** até você **ajustar o roteiro** para a versão atual — tocar no aviso leva direto à edição. Entenda o porquê em [Quando um pedido muda depois de fechado](quando-um-pedido-muda.md).
+Se um pedido **mudou depois** de o roteiro ter sido planejado, a tela mostra uma faixa de atenção **"Roteiro desatualizado"**:
+
+> Um movimento mudou depois de planejado. Ajuste o roteiro para a versão atual — os movimentos afetados ficam bloqueados na execução até lá.
+
+Os movimentos afetados ficam mesmo **bloqueados na execução** até alguém **ajustar o roteiro** para a versão atual — tocar no aviso leva direto à edição (se você tem permissão para editar e o roteiro ainda não foi concluído).
+
+### O que exatamente ficou velho <a id="motivos-da-defasagem"></a>
+
+Na parada, um chip **"Desatualizado · «motivo»"** diz o que mudou. São **seis causas com nome** — mais uma sétima linha, *detalhes*, para quando o sistema sabe que algo mudou mas não consegue nomear o quê. Vale conhecê-las porque duas costumam surpreender:
+
+| Motivo | O que mudou no pedido |
+| --- | --- |
+| **data** | O dia da entrega ou da retirada. |
+| **horário** | O mesmo dia, **outra janela de horário**. |
+| **localidade** | O **endereço** de destino. |
+| **itens** | A carga (item incluído, removido ou com outra quantidade). |
+| **responsabilidade** | **De qual galpão a carga sai.** É a única leitura deste chip — veja o aviso abaixo. |
+| **alinhamento** | A marcação *"já combinei esta janela com o cliente"* mudou. |
+| **detalhes** | O sistema sabe que mudou, mas não consegue nomear (veja abaixo). |
+
+{% hint style="warning" %}
+**"Responsabilidade" aqui quer dizer galpão de origem — só isso.** O nome sugere "quem faz o movimento", e a família de mudanças é essa mesma; mas quando o pedido troca de *quem se desloca* (a sua equipe leva × o cliente vem buscar), o movimento da equipe deixa de existir ou nasce outro no lugar — não sobra parada para exibir chip nenhum. Então, na prática: viu *responsabilidade*, **confira de qual galpão aquela carga deve sair**.
+{% endhint %}
+
+{% hint style="info" %}
+**"Desatualizado · detalhes" quase sempre é endereço salvo.** Quando o destino da parada é um **endereço salvo** e alguém edita esse endereço no cadastro (ou arrasta o pino dele), a parada muda de lugar de verdade — o bloqueio e o aviso funcionam —, mas o chip não consegue detalhar, porque os dois lados continuam apontando para o mesmo endereço salvo. Se aparecer "detalhes", **confira o endereço da parada primeiro**. Veja [Editar um endereço salvo depois](../orcamentos/enderecos.md#editar-endereco-salvo).
+{% endhint %}
+
+### Como sair do desatualizado <a id="sair-do-desatualizado"></a>
+
+Não há botão de "aceitar a nova versão": **abra o roteiro, confira o que mudou e salve a edição**. Salvar já sincroniza os movimentos para a versão atual — a marca some e a execução destrava.
+
+{% hint style="warning" %}
+**Roteiro concluído não se edita**, e **depois que a execução começa** veículo, condutor e equipe ficam travados. O que ainda muda com a rota na rua é a **composição** (quais movimentos ela leva) e a **ordem** das paradas — e aí o motorista recebe *"Roteiro ajustado em execução"*.
+{% endhint %}
+
+{% hint style="info" %}
+**Movimento já cumprido (ou pulado) não fica desatualizado.** O que já foi desfechado é histórico: não trava e não pede ajuste. É por isso que uma parada pulada mostra *"Replanejar · nova tentativa pendente"* e não *"Desatualizado"*.
+
+**Se o pedido foi repassado a um parceiro, o roteiro a ajustar é o dele** — e o aviso vai para ele, não para a sua central. Veja [O pedido já estava com um parceiro](efeitos-na-parceria.md).
+{% endhint %}
+
+Entenda o porquê de tudo isso em [Quando um pedido muda depois de fechado](quando-um-pedido-muda.md).
 
 ## Acompanhar por porte <a id="acompanhar-por-porte"></a>
 

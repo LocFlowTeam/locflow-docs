@@ -80,10 +80,29 @@ flowchart LR
     P --> OK[Baixa automatica]
 ```
 
-O recebimento que o motorista registra na rua entra como **Aguardando conferência**: o dinheiro foi recebido em campo e a tesouraria confere depois, quando o caixa fecha. É um cuidado para o dinheiro de rua bater certinho no fim do dia.
+O recebimento que **o seu motorista** registra na rua entra como **Aguardando conferência**: o dinheiro foi recebido em campo e a tesouraria confere depois, quando o caixa fecha. É um cuidado para o dinheiro de rua bater certinho no fim do dia.
 
 {% hint style="warning" %}
 **Quem faz o quê:** o operador financeiro dá a **baixa manual** no escritório; o motorista registra o **recebimento presencial** na rua. Cada ação aparece para quem tem a permissão correspondente. Se um botão não aparecer, é questão de permissão — fale com quem administra os acessos.
+{% endhint %}
+
+### Quando quem entrega é um parceiro logístico {#recebimento-do-parceiro}
+
+Se a operação foi **repassada a um parceiro** da [Rede de Parceiros](../parcerias/visao-geral.md), o caminho é outro — e a contabilidade também.
+
+Por padrão, **o parceiro não cobra o seu cliente**: a cobrança é sua, e a tela dele diz isso com todas as letras (*"a cobrança deste cliente é do vendedor"*). Ele não vê valores, parcelas nem link de pagamento — só se a fatura já está paga ou não, que é o que muda a conduta dele na porta.
+
+O acordo pode dar a ele a prerrogativa de **receber do cliente na porta**. Aí valem três diferenças importantes:
+
+| | Motorista **da sua equipe** | **Parceiro logístico** com cobrança na rua |
+| --- | --- | --- |
+| Onde o dinheiro fica | Com a sua organização | Com o parceiro |
+| O que acontece com a parcela | Vai para **Aguardando conferência** | É **quitada na hora** — a palavra dele fecha o caixa |
+| O que entra no seu financeiro | Uma entrada de caixa, depois de conferida | **Nada ainda** — a entrada acontece quando ele te repassa |
+| Quanto ele pode receber | Qualquer valor, inclusive parcial | **Tudo ou nada**: só a cobrança inteira daquela operação |
+
+{% hint style="info" %}
+**Por que a parcela não espera conferência nesse caso:** não há dinheiro seu para conferir. O caixa é dele, e o acerto passa a ser entre vocês dois — vira um saldo que ele te paga por PIX. A conta completa está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#parceiro-recebeu-na-entrega).
 {% endhint %}
 
 ## Reagendar o vencimento de uma parcela

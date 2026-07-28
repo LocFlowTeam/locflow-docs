@@ -37,6 +37,7 @@ Aceitar um pedido sem ter o material seria assinar um problema. Por isso o aceit
 | **Disponível** na janela | Aceite segue normalmente. |
 | **Sem estoque** para a data | O aceite é **barrado**, com a lista exata do que falta. |
 | **Nunca cadastrado** no estoque dela | **Não barra** — o aceite passa, com um **aviso**. |
+| **Sem par no acordo** (cobertura parcial ou zero) | **Não barra** — mas ela é avisada, antes de aceitar, de **quantos itens da operação ela não fornece**. |
 
 {% hint style="warning" %}
 **Kit só passa inteiro.** Se o pedido tem um kit, a trava exige disponibilidade de **todos os componentes**. Faltou um componente na janela, o kit conta como indisponível — e o aceite é barrado do mesmo jeito.
@@ -44,15 +45,58 @@ Aceitar um pedido sem ter o material seria assinar um problema. Por isso o aceit
 
 A distinção do "nunca cadastrado" é proposital: uma parceira que ainda não usa o controle de estoque do LocFlow não fica impedida de trabalhar — ela só perde a proteção da trava para aqueles itens. O aviso existe justamente para lembrar que, ali, a conferência voltou a ser manual.
 
-## Você vê a disponibilidade antes de repassar {#disponibilidade-antes-de-repassar}
+## Ter estoque e ter o item no acordo são coisas diferentes {#cobertura}
 
-Não é preciso esperar o aceite para descobrir que faltava material. No **comparativo de repasse** — a tela em que você escolhe para qual parceira mandar o pedido — cada candidata interna já aparece com a situação de estoque para a data da operação:
+Este é o ponto que mais confunde, e vale separar bem:
 
-* **Disponível** — ela tem o material na janela; caminho livre.
+| Pergunta | Nome | Quem resolve |
+| --- | --- | --- |
+| *O acordo traduz este item para o catálogo dela?* | **Cobertura** | O **vendedor**, mapeando o item no acordo |
+| *Ela tem esse item livre na data?* | **Disponibilidade** | A **parceira**, no estoque dela |
+
+Um item **sem par no acordo** simplesmente **não existe** para o razão dela: ele não é traduzido, não é reservado e **não vai ser fornecido por ela** — mesmo que ela tenha dez unidades na prateleira. A responsabilidade por aquele pedaço da carga continua sendo sua.
+
+Por isso a cobertura tem os seus próprios avisos, com **causas que pedem ações opostas**:
+
+| Aviso | O que significa | Quem corrige |
+| --- | --- | --- |
+| **Cobertura parcial** — *"3 itens desta operação não estão mapeados no acordo com este parceiro"* | Parte da carga não tem par. | **Você**, no acordo. O aviso leva direto lá. |
+| **Nenhum item mapeado** | O acordo não traduz nada desta carga. | **Você**, no acordo. |
+| **Parceira sem galpão de estoque** | Ela não tem onde reservar nada. | **Ela**. O aviso **não** oferece atalho para o acordo — não há nada errado lá. |
+
+{% hint style="info" %}
+**A cobertura avisa, não bloqueia** — a mesma doutrina do "estoque não cadastrado". A lacuna quase sempre é um item novo que ninguém casou ainda, e barrar esconderia isso atrás de um "candidato indisponível". O aviso aparece **nas duas pontas**: no seu comparativo, antes de repassar, e no detalhe da reserva dela, antes de aceitar.
+{% endhint %}
+
+## Você vê tudo isso antes de repassar {#disponibilidade-antes-de-repassar}
+
+Não é preciso esperar o aceite para descobrir que faltava material. No **comparativo de repasse** — a tela em que você escolhe para qual parceira mandar o pedido — cada candidata interna já aparece com a situação para a data da operação:
+
+* **Disponível** — o acordo traduz a carga inteira e ela tem o material na janela; caminho livre.
+* **Cobertura parcial / nenhum item mapeado / sem galpão** — ela pode aceitar, mas você já sabe **o que ela não leva**, e com um toque vai ao acordo consertar.
 * **Sem estoque para a data** — a candidata aparece **desabilitada**: repassar seria convidá-la a um aceite que a trava vai barrar.
 * **Estoque não cadastrado** — ela pode aceitar, mas você vê o **aviso** de que a disponibilidade não foi conferida pelo sistema.
 
-Assim a decisão de quem executa já nasce informada — a mesma trava que protege o aceite dela orienta a sua escolha, só que antes.
+Assim a decisão de quem executa já nasce informada — e corrigir no comparativo custa infinitamente menos do que corrigir no galpão, na véspera.
+
+## Quando a reserva no galpão dela não se confirma {#espelho-nao-confirmado}
+
+Quase sempre o espelho funciona. Mas existe um caso em que ele **não** acontece — e ele é perigoso justamente porque, sem aviso, os dois lados achariam que está tudo coberto: a reserva já foi aceita, o **seu** estoque já foi liberado, e **o razão dela não segurou nada**.
+
+Isso acontece quando há um impedimento permanente do lado de lá:
+
+* a parceira **não tem galpão** de estoque cadastrado;
+* o produto traduzido **não existe** no estoque dela;
+* o item **não tem par** no acordo.
+
+{% hint style="warning" %}
+**Os dois lados são avisados, com destaque de importante:**
+
+* para quem repassou: **"Reserva no galpão do parceiro não confirmada"** — a operação parece coberta, mas o estoque dele não segurou nada;
+* para a parceira: **"Operação aceita que seu estoque não cobre"**.
+
+Recebeu um desses? Não deixe para o dia da entrega. Ou o material é conferido à mão entre vocês, ou a lacuna é fechada no acordo (mapeamento) ou no estoque dela (galpão e produto cadastrados).
+{% endhint %}
 
 ## Devolução, desistência e cancelamento {#devolucao-e-liberacoes}
 
@@ -73,7 +117,7 @@ A reserva no estoque da parceira acompanha o ciclo do pedido do começo ao fim:
 | Se você é… | O que muda para você |
 | --- | --- |
 | **Autônomo / micro** | Nada a configurar: repassou, a parceira aceitou, o material é problema dela — e o sistema confirma que ela tem. |
-| **Médio** | Use a disponibilidade no comparativo para escolher a parceira certa por data, não só por preço. |
+| **Médio** | Use a **cobertura e a disponibilidade** no comparativo para escolher a parceira certa por data, não só por preço — e mantenha o mapeamento do acordo em dia conforme o seu catálogo cresce. |
 | **Grande / rede** | O espelho por galpão mais próximo da entrega vira logística de verdade: cada pedido repassado reserva onde faz sentido operar, sem ninguém abrir planilha. |
 
 ## Próximo passo {#proximo-passo}

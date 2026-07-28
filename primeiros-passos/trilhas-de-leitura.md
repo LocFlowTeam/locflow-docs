@@ -38,6 +38,7 @@ Já tem ajudante, motorista, mais pedidos por dia.
 4. [Planejando o roteiro](../logistica/planejando-o-roteiro.md)
 5. [Central de Notificações](../configuracoes/central-de-notificacoes.md)
 6. [Motores operacionais](../configuracoes/motores-operacionais.md)
+7. [Rede de Parceiros: a visão](../parcerias/visao-geral.md) — quando o pedido é longe demais ou o caminhão não dá conta, alguém entrega por você (e vice-versa)
 {% endtab %}
 
 {% tab title="Estruturada (galpão + frota)" %}
@@ -53,7 +54,7 @@ Operação madura: galpão, frota, separação e conferência.
 
 ## Por papel na equipe {#por-papel}
 
-Você convida sua equipe por um **link** — não há e-mail automático, então é você quem envia o convite. Depois, cada pessoa lê só a trilha do seu papel.
+Você convida sua equipe por um **link**. Se preencher o e-mail da pessoa no convite, o LocFlow **envia sozinho** — e só aquela conta consegue aceitar; sem e-mail, o envio é com você e vale para quem tiver o link. Depois, cada pessoa lê só a trilha do seu papel.
 
 | Se você é… | Leia só isto |
 | --- | --- |
@@ -62,6 +63,7 @@ Você convida sua equipe por um **link** — não há e-mail automático, então
 | **Motorista** | [Execução em campo](../logistica/execucao-em-campo.md) · [Execução em lote (retroativa)](../logistica/execucao-em-lote.md) · [Recebendo pagamentos](../cobranca/recebendo-pagamentos.md) (cobrar na rua) |
 | **Separador / Conferente** | [Separação](../logistica/separacao.md) · [Conferência](../logistica/conferencia.md) |
 | **Financeiro** | [Faturas e parcelas](../cobranca/faturas-e-parcelas.md) · [Emitindo a cobrança](../cobranca/emitindo-a-cobranca.md) · [Recebendo pagamentos](../cobranca/recebendo-pagamentos.md) · [Pagamento online](../cobranca/pagamento-online.md) · [A página de pagamento do cliente](../cobranca/pagina-de-pagamento.md) |
+| **Parceiro logístico** (executa pedidos de outra locadora) | [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md) · [Acordos de parceria](../parcerias/acordos-de-parceria.md) · [Execução em campo](../logistica/execucao-em-campo.md) · [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md) |
 
 ## Por objetivo (quero…) {#por-objetivo}
 
@@ -73,6 +75,9 @@ Você convida sua equipe por um **link** — não há e-mail automático, então
 - **…montar meu catálogo** → [Produtos](../cadastros/catalogo-produtos.md) → [Kits](../cadastros/catalogo-kits.md)
 - **…deixar os documentos com a minha cara** → [Modelos personalizados](../documentos/modelos-personalizados.md) → [Designer de documentos](../documentos/designer-de-documentos.md) → [Identidade visual](../documentos/identidade-visual.md)
 - **…dar acesso à equipe** → [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md)
+- **…vender sem ter frota e galpão** → [Rede de Parceiros: a visão](../parcerias/visao-geral.md) → [Entrando na rede](../parcerias/entrando-na-rede.md) → [Acordos de parceria](../parcerias/acordos-de-parceria.md) → [Repassando um pedido](../parcerias/repassando-um-pedido.md)
+- **…executar para quem vende (e faturar com a frota parada)** → [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md) → [Acordos de parceria](../parcerias/acordos-de-parceria.md) → [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md) → [Reputação e boas práticas](../parcerias/reputacao-e-boas-praticas.md)
+- **…só um caminhão para uma entrega, sem parceria formal** → [Fornecedores de frete](../parcerias/fornecedores-de-frete.md) → [Motor de Frete por detentor](../configuracoes/motor-de-frete-detentor.md)
 
 ## Próximo passo {#proximo-passo}
 

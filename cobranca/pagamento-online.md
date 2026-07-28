@@ -85,11 +85,23 @@ flowchart LR
 **Cartão é diferente:** cada tentativa de cartão é uma transação própria, então o cartão nunca "reaproveita" — e a resposta é na hora (aprovado ou recusado, com o motivo em português).
 {% endhint %}
 
-## Pagamento confirmado é definitivo
+## Pagamento confirmado não se desfaz na mão
 
-Pagamento online **confirmado é definitivo**. Diferente da baixa manual (que você lança e pode corrigir), o pagamento online é uma transação real, processada pelo recebedor — não dá para "desfazer" um pagamento confirmado.
+Diferente da baixa manual (que você lança e pode corrigir), o pagamento online é uma **transação real**, processada pelo recebedor. Não existe botão de "desfazer": o dinheiro saiu da conta do cliente e entrou na sua, e isso não se apaga por decisão de operador.
 
 Se sobrar valor a favor do cliente (por exemplo, uma edição que reduz o total depois de já ter sido pago), o LocFlow resolve pela **política de cobrança** da sua locadora — **crédito/vale** ou **reembolso**. Veja [Faturas e parcelas](faturas-e-parcelas.md).
+
+### E se o dinheiro voltar mesmo assim? {#estorno}
+
+Um pagamento pode voltar por fora do LocFlow: você pede o reembolso ao processador, ou o cliente **contesta a compra no cartão** (chargeback). Quando isso acontece, o LocFlow é avisado pelo processador e **reage sozinho**:
+
+- a **parcela reabre** na fatura — o cliente volta a dever;
+- a **entrada sai do seu financeiro**, para o seu saldo não mostrar um dinheiro que não está mais lá;
+- se aquele pagamento carregava um **repasse de parceria** repartido na fonte, o repasse é revertido junto.
+
+{% hint style="warning" %}
+**O que o sistema não desfaz é o dinheiro que já se moveu.** Se o repasse ao parceiro já tinha sido **quitado** por você antes do estorno, o valor **não** volta automaticamente da conta dele — recuperar isso é uma conversa comercial entre vocês. Os detalhes de como o estorno afeta repasse e taxa estão em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#estorno).
+{% endhint %}
 
 ---
 

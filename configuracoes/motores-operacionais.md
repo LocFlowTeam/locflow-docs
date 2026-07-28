@@ -135,6 +135,10 @@ Define as **regras de entrega, retirada e provas**. Tem quatro blocos:
 
 **Requisitos de evidência.** O que a equipe precisa registrar **antes de concluir** cada entrega e retirada — separadamente. Cada item marcado vira **obrigatório**: o app não deixa concluir sem registrar. **Nada marcado = conclui com 1 toque**, sem prova. As provas vão da mais simples (foto e vídeo) à mais forte (código confirmado no WhatsApp do cliente, identificação de quem recebeu, localização confirmada). Comece com foto e vídeo; conforme os itens ficam mais caros, some provas mais fortes. Aqui você também define, em conjunto, a **prova exigida no balcão** — separadamente para a **retirada pelo cliente** e a **devolução pelo cliente** no galpão; é a mesma lógica, aplicada ao atendimento presencial em vez da rota. Veja [Balcão: retirada e devolução no galpão](../logistica/balcao.md).
 
+{% hint style="warning" %}
+**O que você marca aqui vale em todos os caminhos** — na rota, no balcão e no lançamento retroativo em lote. Não existe atalho que ignore a política. A única saída é a **dispensa de evidência**: fechar o registro escrevendo um **motivo obrigatório**, que fica carimbado junto. Ela depende de uma permissão à parte, que a retaguarda e o balcão têm e **o motorista e o parceiro externo não** — veja [Colaboradores e acessos](colaboradores-e-acessos.md#dispensar-evidencia).
+{% endhint %}
+
 **Agendamento padrão.** Uma sugestão de datas ao criar um orçamento: ao informar a data do evento, a entrega e a retirada são preenchidas automaticamente (e podem ser ajustadas). Você diz quantos dias **antes** do evento é a entrega e quantos dias **depois** é a retirada. Deixe em branco para não sugerir.
 
 **Forma de operação.** Diz como a sua locadora costuma operar — e deixa o app já no formato dela:

@@ -193,7 +193,7 @@ A mesma tela serve do MEI ao operador grande — o que muda é o quanto você me
 
 A partir daqui é detalhe para quem gosta de saber a conta por trás. Você **não** precisa disso para usar o LocFlow.
 
-### O multiplicador de cobrança
+### O multiplicador de cobrança {#o-multiplicador-de-cobranca}
 
 O período de cobrança vira valor através de um **multiplicador** que incide sobre o **subtotal dos itens** (não sobre o frete nem sobre a taxa de serviço):
 
@@ -210,6 +210,10 @@ E o multiplicador é decidido assim:
 | Cálculo por diária | o **número de diárias** do evento (mínimo 1) |
 
 A diária conta **as duas pontas do evento**: um evento de segunda a quarta = **3 diárias** (segunda, terça e quarta). Não é "diferença de dias" (que daria 2) — é "dias usados", incluindo o primeiro e o último.
+
+{% hint style="info" %}
+**O mesmo multiplicador vale para o parceiro.** Se você repassar o pedido a um parceiro da [Rede de Parceiros](../parcerias/visao-geral.md), as **mesmas** diárias multiplicam o que ele recebe pelos itens. É justo dos dois lados: ele roda a operação pelos mesmos dias que o cliente usa. E, também dos dois lados, o **frete fica de fora** — transporte se paga por viagem, não por dia de uso. Veja [O fator de locação](../parcerias/dinheiro-da-parceria.md#fator-de-locacao).
+{% endhint %}
 
 ### Como a janela de bloqueio é calculada {#como-a-janela-de-bloqueio-e-calculada}
 

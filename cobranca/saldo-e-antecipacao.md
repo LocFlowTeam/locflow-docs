@@ -16,6 +16,10 @@ Quando um cliente paga **pelo cartão** (pelo [Pagamento online](pagamento-onlin
 - **Sua organização:** em **Configurações → Integração de Pagamento**, no card **Recebíveis**.
 - **Parceiro externo:** em **Parcerias → Meu recebimento** (você vê o **seu próprio** saldo, separado do da organização).
 
+{% hint style="warning" %}
+**Para o parceiro, "Meu recebimento" não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo em Meus Ganhos, mas não há como pagá-lo pelo app. O mesmo vale no sentido inverso: se você recebeu do cliente na rua e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
+{% endhint %}
+
 ## Os três números do seu saldo
 
 O saldo vem direto do gateway e se divide em três partes. Todos os valores são o **líquido** que é seu.
@@ -89,4 +93,4 @@ O valor antecipado cai no **Disponível** — de lá você transfere para o banc
 
 - Para o cliente pagar no cartão e gerar esse saldo, configure o [Pagamento online](pagamento-online.md).
 - Para registrar dinheiro que entrou por fora (Pix, maquininha, dinheiro), veja [Recebendo pagamentos](recebendo-pagamentos.md).
-- Para parcerias e repasses, veja [Programa de Parceiros](../configuracoes/programa-de-parceiros.md).
+- Para parcerias e repasses, veja [Preparando o dinheiro da parceria](../configuracoes/programa-de-parceiros.md) e [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md).

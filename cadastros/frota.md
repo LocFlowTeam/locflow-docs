@@ -118,7 +118,9 @@ Você escolhe o detentor **ao criar** a especificação. E, na **edição**, pod
 **Onde o campo aparece.** O **Detentor** só aparece se o seu plano e as suas permissões liberam frete por fornecedor — em planos como o Starter ele fica oculto e a ficha é sempre da sua organização. E o seletor lista **apenas fornecedores que prestam frete** (os que você marcou como transportadores).
 {% endhint %}
 
-Os **fornecedores de frete** são a **primeira forma de parceria** do LocFlow — mas uma forma particular: hoje o fornecedor é um terceiro que **você gerencia por completo** (você o cadastra, monta a frota-espelho dele e configura o motor de frete que ele cobra), **sem login próprio**. É o primeiro passo de uma visão maior — a de **parceiros como usuários externos, com estrutura e acesso próprios**, que virá a seguir. Para cadastrar um fornecedor e montar a frota-espelho, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
+Os **fornecedores de frete** são a forma **mais simples** de usar estrutura de fora: o fornecedor é um terceiro que **você gerencia por completo** (você o cadastra, monta a frota-espelho dele e configura o motor de frete que ele cobra) e que **não tem login** no LocFlow — quem opera tudo é você.
+
+Quando você precisa de mais do que isso — um parceiro com **conta e estrutura próprias**, que monta o roteiro dele, executa e recebe por isso —, o caminho é a [Rede de Parceiros](../parcerias/visao-geral.md), que é uma seção inteira à parte. Para cadastrar um fornecedor e montar a frota-espelho, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
 
 ### A especificação guarda capacidade e vistoria <a href="#capacidade-e-vistoria" id="capacidade-e-vistoria"></a>
 
