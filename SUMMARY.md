@@ -94,6 +94,10 @@
 * [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
   * [O pedido já estava com um parceiro](logistica/efeitos-na-parceria.md)
 
+## Gestão Financeira
+
+* [Categorias e plano de contas](financeiro/categorias-e-plano-de-contas.md)
+
 ## Estoque
 
 * [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md)
