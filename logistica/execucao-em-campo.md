@@ -220,8 +220,12 @@ Nem toda parada se conclui. Se o cliente não atende, está ausente, recusa, o e
 
 E o melhor: **ninguém precisa criar nada na mão depois**. Ao pular, o LocFlow abre sozinho uma **nova tentativa**:
 
-* O movimento **volta à fila de roteirização** com um selo âmbar de prioridade — *"Tentativa 2 · falhou 1× — priorize"* — junto com o **motivo** do pulo. É só colocá-lo no próximo roteiro.
+* O movimento **volta à fila de roteirização na hora** — não é preciso esperar o motorista terminar a rota. Ele reaparece com um selo âmbar de prioridade — *"Tentativa 2 · falhou 1× — priorize"* — junto com o **motivo** do pulo, pronto para entrar no próximo roteiro.
 * No roteiro em que foi pulada, a parada fica registrada com o aviso **"Replanejar · nova tentativa pendente"** — o histórico da falha não se perde.
+
+{% hint style="success" %}
+**Pulou, já pode replanejar.** Um roteiro em andamento é parte já executada e parte ainda por fazer. O que foi pulado virou história daquela viagem, então não fica preso a ela: enquanto o motorista segue para as próximas paradas, o escritório já pode encaixar a nova tentativa em outro roteiro — inclusive para sair no mesmo dia.
+{% endhint %}
 
 {% hint style="info" %}
 **"Replanejar" não é "Desatualizado".** A nova tentativa nasce porque a parada **falhou** — o pedido em si não mudou. Quando o **pedido** muda depois de planejado (data, itens, endereço), aí sim o movimento aparece como *Desatualizado* — veja [Quando um pedido muda](quando-um-pedido-muda.md).
