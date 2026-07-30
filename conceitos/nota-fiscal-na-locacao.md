@@ -34,7 +34,7 @@ Com a Reforma Tributária, a locação passou a ser fato gerador de **IBS** e **
 
 ## E quando tem mão de obra junto?
 
-Se o mesmo pedido tem **locação + mão de obra** (operação do equipamento, montagem, serviço técnico), aí sim a **parte do serviço tem ISS** — e ela precisa do código municipal correto.
+Se o mesmo pedido tem **locação + mão de obra** (operação do item, montagem, serviço técnico), aí sim a **parte do serviço tem ISS** — e ela precisa do código municipal correto.
 
 O caminho certo é **separar as duas coisas**, com valores individualizados:
 
