@@ -293,9 +293,25 @@ O que já aconteceu é **história** — aparece em cima, com o desfecho de cada
 
 Só duas coisas mudam.
 
-**A rota parte de onde o motorista está**, não do galpão. A origem passa a ser a última parada cumprida, e é isso que faz a estimativa valer alguma coisa: a chegada na próxima parada é medida de um ponto a poucos quarteirões, não de um galpão do outro lado da cidade. O cabeçalho do bloco diz de onde ele está saindo (*"A planejar · saindo de ORC-1042"*), e o veículo continua voltando ao galpão no fim.
+**A rota parte de onde a operação está**, não do galpão. É isso que faz a estimativa valer alguma coisa: a chegada na próxima parada é medida de um ponto a poucos quarteirões, não de um galpão do outro lado da cidade. O veículo continua voltando ao galpão no fim — só a primeira ponta muda.
+
+De onde exatamente, o LocFlow escolhe pela informação mais forte que tiver, nesta ordem:
+
+1. **a posição ao vivo do responsável**, quando ele está compartilhando — o ponto mais preciso, e o mesmo que você já vê no mapa da listagem;
+2. **a última parada cumprida**, quando não há posição ao vivo;
+3. **o galpão**, quando o roteiro ainda não saiu.
+
+Você nunca fica sem rota por causa disso: sem permissão para ver a localização, com o responsável offline ou com o sinal perdido, ele simplesmente cai para o degrau seguinte. O cabeçalho do bloco diz de onde está saindo (*"A planejar · saindo de Marcos"* ou *"saindo de ORC-1042"*).
+
+{% hint style="info" %}
+**O responsável pode ser você.** Se quem está editando o roteiro é a mesma pessoa que está na rua, a posição ao vivo é a dela — sem nenhum passo a mais.
+{% endhint %}
 
 **A hora de saída vira registro.** Ela já aconteceu, então o campo dá lugar a um carimbo: *"O motorista saiu às 08:12"*. Não é uma trava por precaução — é que aquele instante é a base de todo cálculo de tempo do roteiro, e reescrevê-lo não moveria a saída, só estragaria a conta.
+
+Isso muda o que os cálculos usam como partida. Um horário no passado faria o Google devolver a rota **sem trânsito**, calada — você pagaria a otimização justamente para fugir de um congestionamento e receberia a rota livre. Então o que falta é calculado para **daqui a pouco**, e a tela diz para que horário: *"Calculado para sair às 14:35"*. O card de números também muda de nome — passa a ser **"Falta percorrer"**, porque a quilometragem e o tempo ali são só do trecho restante.
+
+E como equipe, veículo e saída viraram fato, a tela de revisão deixa de ser um formulário: ela vira a **ficha da operação**. Os cartões de responsável e veículo aparecem com o selo *"Definido na saída"*, sem botão de editar — antes havia um, e ele levava a um passo bloqueado. O que continua editável continua com botão: os movimentos a planejar e a duração da jornada.
 
 ### O mapa conta a mesma história
 
@@ -303,13 +319,17 @@ O trecho **já percorrido** aparece em cinza pontilhado, parado. O trecho **a pe
 
 Cada parada cumprida troca o número pelo desfecho: **verde com ✓** quando deu certo, **vermelho com ✕** quando foi pulada. Passar o mouse por ela (ou tocar, no celular) mostra o que aconteceu e quando.
 
+Quando o responsável está compartilhando a localização, ele aparece no mapa com o **mesmo marcador da listagem** — avatar com anel pulsando e o selo de quão fresca está a posição (*"ao vivo"*, *"há 2 min"*, *"sinal perdido"*). Nesse caso o marcador de origem sai de cena: dois pontos dizendo "a rota começa aqui" só fariam você escolher em qual acreditar.
+
 Um roteiro de três paradas com a primeira cumprida fica assim: galpão → 1 em cinza pontilhado, 1 → 2 com a rota ativa, e de 2 em diante o que você ainda pode planejar.
 
 ### Quando uma parada é pulada
 
 Pular **não encerra a obrigação** — ela volta a ficar disponível, e para **qualquer** roteiro, não só para aquele. Por isso ela **não** é trazida de volta automaticamente para a parte a planejar: ela reaparece na lista de movimentos disponíveis, com o histórico da tentativa à vista, e você decide se a nova tentativa acontece hoje neste roteiro, amanhã em outro, ou em nenhum.
 
-Já uma parada **concluída com sucesso** está encerrada: não se replaneja em lugar nenhum.
+Se você quiser tentar de novo hoje, é só selecioná-la de volta: ela entra na parte a planejar como qualquer outra parada, arrastável e com a numeração nova da rota — e o histórico da tentativa fica à vista no card.
+
+Já uma parada **concluída com sucesso** está encerrada: não se replaneja em lugar nenhum, e não sai do roteiro.
 
 {% hint style="info" %}
 **Sem coordenada no mapa, sem alarme.** Parada já cumprida cujo endereço nunca foi localizado simplesmente não vira pino, e a linha do percorrido pula aquele pedaço em vez de inventar um caminho. Se quiser, você ainda pode resolver o ponto dela — é útil para o mapa ficar completo e para o mesmo endereço já nascer localizado nos próximos roteiros.

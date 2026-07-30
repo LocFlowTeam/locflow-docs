@@ -128,7 +128,7 @@ Quando você [planeja um roteiro](../logistica/planejando-o-roteiro.md) com um v
 3. **Sem nenhum limite de contagem aplicável** → entra a **volumétrica** como alternativa: o app soma o **fator de cubagem** de cada item da carga (quantidade × fator) e compara com o volume do baú.
 
 {% hint style="info" %}
-**Quando o alvo é uma classe**, não é a ficha de uma especificação que entra nessa conta — é a **capacidade agregada** dela: se todas as especificações da classe carregam o mesmo tanto, o app confere cheio; se divergem, confere pela menor em comum, com aviso. Veja como em [Classes veiculares](frota-classes.md#alvo-do-roteiro).
+**Quando o alvo é uma classe**, não é a ficha de uma especificação que entra nessa conta — é a **capacidade agregada** dela: se duas ou mais especificações da classe carregam o mesmo tanto, o app confere cheio (capacidade **verificada**); se divergem, confere pela menor em comum, com aviso; e se a classe tem uma **única** ficha, ele usa a capacidade dela, mas não chama de verificada — falta uma segunda ficha para comparar. Veja como em [Classes veiculares](frota-classes.md#alvo-do-roteiro).
 {% endhint %}
 
 Quando a estratégia escolhida **não tem como verificar**, o app **não bloqueia** — e diz o **motivo exato**, em vez de um "não verificado" genérico:

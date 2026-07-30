@@ -29,8 +29,8 @@ flowchart LR
 | --- | --- | --- |
 | **Iniciar sem veículo** | Entrega sai mesmo sem frota cadastrada | Quem está começando ou faz entrega avulsa |
 | **Veículo com placa** | Saber qual carro saiu e seu status | Quem tem 1 ou 2 carros próprios |
-| **Classes** | Agrupar a frota — por porte ou por qualquer critério seu | Quem tem veículos variados |
-| **Especificações** | Ficha técnica por modelo (marca, ano, combustível) | Quem quer organizar por modelo |
+| **Classes** | Agrupar a frota — por capacidade ou por qualquer critério seu | Quem tem veículos variados |
+| **Especificações** | Ficha técnica por modelo (tipo de veículo, marca, ano, combustível) | Quem quer organizar por modelo |
 | **Capacidade e vistoria** | Saber o que cabe e checar o carro antes de rodar | Quem otimiza carga e cuida da manutenção |
 
 ### Degrau 1 — Iniciar sem veículo (opcional) <a href="#iniciar-sem-veiculo" id="iniciar-sem-veiculo"></a>
@@ -76,11 +76,11 @@ flowchart TD
     E2 --> V3["Veiculo<br/>placa GHI7J89"]
 ```
 
-- **Classe** é o nome que agrupa um tipo de veículo. Duas já vêm prontas em toda organização — **Carro Utilitário** e **Caminhão** —, ligadas ao catálogo FIPE. As que você cria são um **agrupamento livre** das suas especificações: só o nome é obrigatório (ex.: "Van Furgão", "Minhas picapes"); o tipo de veículo (Carros, Caminhões ou Motos) é **opcional** e serve só para filtrar o catálogo FIPE ao cadastrar uma especificação ali dentro. O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele. O LocFlow ainda **sugere agrupamentos sozinho**, quando encontra especificações com a mesma capacidade de carga espalhadas em classes diferentes. Veja tudo isso, e como a classe entra no planejamento do roteiro, em [Classes veiculares](frota-classes.md).
-- **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe e, em seguida, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico). Além disso, cada ficha tem uma **[identificação interna](#identificacao-interna)** (o apelido que aparece nas listas) e um **[detentor](#detentor)** (de quem ela é — sua organização ou um fornecedor de frete).
+- **Classe** é o nome que agrupa fichas com a mesma capacidade de carga — o que interessa não é mais "que tipo de veículo é" (isso agora mora na ficha, veja abaixo), e sim **quanto cabe** e **quem executa**. Duas classes já vêm prontas em toda organização — **Carro Utilitário** e **Caminhão**. As que você cria são um **agrupamento livre** das suas especificações: só o nome é obrigatório (ex.: "Van Furgão", "Minhas picapes"). O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele. Toda classe também tem um **titular** — sua organização, um fornecedor ou um parceiro externo — e todas as fichas dentro dela são desse mesmo titular. O LocFlow ainda **sugere agrupamentos sozinho**, quando encontra especificações com a mesma capacidade de carga espalhadas em classes diferentes. Veja tudo isso, e como a classe entra no planejamento do roteiro, em [Classes veiculares](frota-classes.md).
+- **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe, diz se o veículo é **carro, caminhão ou moto** e, a partir disso, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico). Além disso, cada ficha tem uma **[identificação interna](#identificacao-interna)** (o apelido que aparece nas listas) e um **[detentor](#detentor)** (de quem ela é).
 - **Veículo** é a unidade real, com **placa**, ligada a uma especificação.
 
-Pense assim: a **Classe** diz *que tipo* de veículo é, a **Especificação** diz *qual modelo*, e o **Veículo** diz *qual carro* (a placa). No app, a tela inicial da Frota (o **hub**) resume isso: _"Classe define o porte → Especificação descreve um modelo e sua capacidade → Veículo é a unidade física com placa."_
+Pense assim: a **Classe** diz *quanto cabe* (e *quem executa*), a **Especificação** diz *que tipo de veículo é* e *qual modelo*, e o **Veículo** diz *qual carro* (a placa).
 
 {% hint style="info" %}
 **Por que essa hierarquia?** Você descreve o **modelo uma vez** (na especificação) e cadastra **vários veículos** com a mesma ficha — só mudando a placa. Capacidade e vistoria ficam na especificação e valem para todos os carros daquele modelo.
@@ -116,6 +116,10 @@ Você escolhe o detentor **ao criar** a especificação. E, na **edição**, pod
 
 {% hint style="info" %}
 **Onde o campo aparece.** O **Detentor** só aparece se o seu plano e as suas permissões liberam frete por fornecedor — em planos como o Starter ele fica oculto e a ficha é sempre da sua organização. E o seletor lista **apenas fornecedores que prestam frete** (os que você marcou como transportadores).
+{% endhint %}
+
+{% hint style="info" %}
+**A classe da ficha tem o mesmo titular.** Quando você agrupa fichas numa classe (ou aceita uma sugestão de agrupamento do LocFlow), todas precisam ser do mesmo detentor — você não mistura frota própria com frota de um fornecedor ou de um parceiro no mesmo grupo. Veja como isso conta na hora de montar o roteiro em [Classes veiculares](frota-classes.md#o-titular-da-classe).
 {% endhint %}
 
 Os **fornecedores de frete** são a forma **mais simples** de usar estrutura de fora: o fornecedor é um terceiro que **você gerencia por completo** (você o cadastra, monta a frota-espelho dele e configura o motor de frete que ele cobra) e que **não tem login** no LocFlow — quem opera tudo é você.

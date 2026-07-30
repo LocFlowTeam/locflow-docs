@@ -83,6 +83,16 @@ Cada **galpão** vira um pino de origem. **Tocar num traçado** seleciona o rote
 **Desenhar os roteiros no mapa não gasta crédito.** O traçado já fica guardado de quando você otimizou/traçou a rota — o mapa só reusa o que está salvo. Roteiros que nunca foram traçados aparecem apenas como o pino do galpão.
 {% endhint %}
 
+Em telas largas, a lista mostra isso numa coluna própria — **No mapa** —, para você saber o que esperar **antes** de trocar de visão:
+
+| No mapa | O que aparece |
+| --- | --- |
+| **Rota no mapa** | O traçado completo do roteiro. |
+| **Só o galpão** | Apenas o pino de origem: ou falta o ponto de alguma parada, ou a rota nunca foi traçada. |
+| **Fora do mapa** | O roteiro **não** aparece: o galpão dele não tem coordenada. |
+
+Isso não está na coluna **Situação** de propósito: ela mostra primeiro se o roteiro está em execução ou executado, e nesses casos o aviso de "sem rota" ficaria escondido justamente quando você mais quer olhar o mapa.
+
 #### Acompanhar a execução no mapa <a id="acompanhar-execucao-no-mapa"></a>
 
 Quando você seleciona um roteiro **em execução**, o mapa mostra o andamento na própria linha do trajeto:
