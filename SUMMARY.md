@@ -20,6 +20,7 @@
 
 * [O ciclo de um pedido](conceitos/ciclo-de-um-pedido.md)
 * [Locação e venda](conceitos/locacao-e-venda.md)
+* [Entender seus números](conceitos/entender-seus-numeros.md)
 * [Nota fiscal na locação](conceitos/nota-fiscal-na-locacao.md)
 * [Nota fiscal na venda](conceitos/nota-fiscal-na-venda.md)
 * [Papéis, funções e competências](conceitos/papeis-funcoes-competencias.md)
@@ -96,7 +97,14 @@
 
 ## Gestão Financeira
 
+* [Visão geral do financeiro](financeiro/visao-geral.md)
+* [Lançamentos](financeiro/lancamentos.md)
+* [Contas a pagar e a receber](financeiro/contas-a-pagar-e-a-receber.md)
+* [Contas: caixa, banco e gateway](financeiro/contas.md)
 * [Categorias e plano de contas](financeiro/categorias-e-plano-de-contas.md)
+* [Fornecedores](financeiro/fornecedores.md)
+* [Conciliação e fechamento](financeiro/conciliacao-e-fechamento.md)
+* [Relatórios: como ler](financeiro/relatorios.md)
 
 ## Estoque
 
