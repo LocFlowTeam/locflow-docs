@@ -71,6 +71,8 @@ Nos dois casos a **placa não muda nada** do planejamento — ela só é resolvi
 
 Uma **classe** é uma **agregação de especificações** que você mesmo monta em [Frota](../cadastros/frota.md) — um jeito de dizer "estas fichas, para efeito de roteiro, são intercambiáveis". O critério do agrupamento é **seu**: você pode reunir especificações com a **mesma capacidade** (o caminho mais seguro, e o LocFlow chega a sugerir esse agrupamento sozinho) ou por **qualquer outro critério** que fizer sentido no seu negócio — nesse caso, assumindo o risco da escolha.
 
+Além da capacidade, toda classe tem um **titular** — a sua organização, um fornecedor de frete ou um parceiro externo — e todas as fichas do grupo são desse mesmo titular. É por isso que escolher a classe no planejamento responde **duas** perguntas de uma vez: quanto cabe (a capacidade do grupo) e quem vai executar a viagem e por quanto (o titular).
+
 *Exemplo:* você tem três picapes — uma 2019, uma 2021 e uma 2023 — que carregam exatamente o mesmo tanto de material. Em vez de escolher uma ficha específica a cada roteiro, você agrupa as três numa classe chamada "Picape" e passa a planejar só com "Picape": qualquer uma das três serve, e o app confere a carga pela capacidade que elas garantem em comum.
 
 {% hint style="info" %}
@@ -83,9 +85,10 @@ Como uma classe pode reunir fichas com capacidades diferentes, o painel **"a car
 
 | Situação da classe | Como a carga é conferida |
 | --- | --- |
-| **Todas as especificações têm a mesma capacidade** | A carga é conferida **por inteiro**, como se fosse uma especificação só. |
-| **As especificações têm capacidades diferentes entre si** | A carga é conferida pela **menor capacidade** do grupo — a única garantia que vale para **qualquer** veículo dele. O app avisa quando é esse o caso. |
-| **Nenhuma especificação da classe tem capacidade cadastrada** | O app avisa que **não dá para conferir a carga** — a responsabilidade de saber se cabe passa a ser de quem está planejando. |
+| **Capacidade verificada** — duas ou mais especificações com a mesma capacidade | A carga é conferida **por inteiro**, como se fosse uma especificação só. |
+| **Capacidade mista — vale a menor** — as especificações têm capacidades diferentes entre si | A carga é conferida pela **menor capacidade** do grupo (o piso) — a única garantia que vale para **qualquer** veículo dele. O app avisa quando é esse o caso. |
+| **Uma ficha só** — a classe tem uma única especificação | O app usa a capacidade dessa ficha, mas não chama de "verificada": ainda não há uma segunda ficha equivalente para comparar. |
+| **Sem capacidade cadastrada** — nenhuma especificação da classe tem capacidade cadastrada (ou a classe está vazia) | O app avisa que **não dá para conferir a carga** — a responsabilidade de saber se cabe passa a ser de quem está planejando. |
 
 {% hint style="warning" %}
 A classe **nunca bloqueia** o planejamento — nem mesmo sem nenhuma capacidade cadastrada no grupo. Você continua podendo montar o roteiro normalmente; só fica sem a checagem automática de "a carga cabe?" para se apoiar, e a conta passa a ser sua.
@@ -265,7 +268,7 @@ Quando a carga de **uma** entrega (ou retirada) **não cabe num veículo só**, 
 
 No detalhe de um movimento, toque em **Dividir movimento**. A folha de divisão tem **dois modos**:
 
-* **Por veículo** — escolha a especificação e o app **propõe as viagens** na hora, sem gastar créditos, mostrando **quantas viagens** dá e **quantos itens** vão em cada uma. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar.
+* **Por veículo** — escolha a **especificação** ou a **classe**, e o app **propõe as viagens** na hora, sem gastar créditos, mostrando **quantas viagens** dá e **quantos itens** vão em cada uma. Escolhendo a classe, ele usa a capacidade que o grupo garante (por inteiro quando é verificada, pela menor quando é mista) — e, se nenhuma ficha da classe tiver capacidade cadastrada, ele **recusa a proposta automática e diz o motivo**, sugerindo cadastrar a capacidade em ao menos uma ficha ou passar para o modo manual. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar.
 * **Manual** — você monta cada viagem **item a item**, escolhendo as quantidades; a última viagem fica com **o resto**, automaticamente. É o caminho indicado quando os itens **não têm volume cadastrado** (a divisão automática avisa que não consegue calcular e sugere a manual) — ou quando você simplesmente prefere decidir a repartição.
 
 Os **bens móveis** de cada parte somam **exatamente** o total do movimento — nada se perde nem se duplica na divisão.
@@ -280,6 +283,36 @@ Mudou de ideia? Enquanto as viagens ainda estiverem **livres** (fora de roteiro)
 
 {% hint style="warning" %}
 **Um pedido dividido só conta como entregue no fim.** Cada viagem é concluída na sua rota, mas o **status do pedido** (*Entregue* / *Retirado*) só avança quando a **última viagem** termina — até lá, o pedido segue em aberto, com as viagens já cumpridas registradas. Na execução, o motorista vê o selo **"Viagem N de M"** em cada parada dividida (veja [Execução em campo](execucao-em-campo.md)).
+{% endhint %}
+
+## Editar um roteiro que já saiu
+
+Um roteiro planejado não vira pedra quando o motorista sai. À medida que ele cumpre as paradas, o roteiro se **parte em dois**: o que já aconteceu e o que ainda falta.
+
+O que já aconteceu é **história** — aparece em cima, com o desfecho de cada parada, e não se reordena nem se remove. O que falta é um **roteiro planejado menor**, e aceita tudo o que um roteiro novo aceita: você reordena arrastando, usa a otimização rápida, a inteligente, traça a rota real e liga o trânsito.
+
+Só duas coisas mudam.
+
+**A rota parte de onde o motorista está**, não do galpão. A origem passa a ser a última parada cumprida, e é isso que faz a estimativa valer alguma coisa: a chegada na próxima parada é medida de um ponto a poucos quarteirões, não de um galpão do outro lado da cidade. O cabeçalho do bloco diz de onde ele está saindo (*"A planejar · saindo de ORC-1042"*), e o veículo continua voltando ao galpão no fim.
+
+**A hora de saída vira registro.** Ela já aconteceu, então o campo dá lugar a um carimbo: *"O motorista saiu às 08:12"*. Não é uma trava por precaução — é que aquele instante é a base de todo cálculo de tempo do roteiro, e reescrevê-lo não moveria a saída, só estragaria a conta.
+
+### O mapa conta a mesma história
+
+O trecho **já percorrido** aparece em cinza pontilhado, parado. O trecho **a percorrer** é o que ganha cor e a animação do sentido — a regra é simples: **o que se move é futuro, o que está parado é passado**.
+
+Cada parada cumprida troca o número pelo desfecho: **verde com ✓** quando deu certo, **vermelho com ✕** quando foi pulada. Passar o mouse por ela (ou tocar, no celular) mostra o que aconteceu e quando.
+
+Um roteiro de três paradas com a primeira cumprida fica assim: galpão → 1 em cinza pontilhado, 1 → 2 com a rota ativa, e de 2 em diante o que você ainda pode planejar.
+
+### Quando uma parada é pulada
+
+Pular **não encerra a obrigação** — ela volta a ficar disponível, e para **qualquer** roteiro, não só para aquele. Por isso ela **não** é trazida de volta automaticamente para a parte a planejar: ela reaparece na lista de movimentos disponíveis, com o histórico da tentativa à vista, e você decide se a nova tentativa acontece hoje neste roteiro, amanhã em outro, ou em nenhum.
+
+Já uma parada **concluída com sucesso** está encerrada: não se replaneja em lugar nenhum.
+
+{% hint style="info" %}
+**Sem coordenada no mapa, sem alarme.** Parada já cumprida cujo endereço nunca foi localizado simplesmente não vira pino, e a linha do percorrido pula aquele pedaço em vez de inventar um caminho. Se quiser, você ainda pode resolver o ponto dela — é útil para o mapa ficar completo e para o mesmo endereço já nascer localizado nos próximos roteiros.
 {% endhint %}
 
 ## A ordem da rota por porte
@@ -304,8 +337,11 @@ O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vár
 * **Escalou quem não pode dirigir:** ao atribuir um colaborador como condutor, aparece o **aviso de CNH vencida**. Monta o roteiro mesmo assim e, antes da execução, atualiza a habilitação dele no cadastro.
 * **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
 * **Três picapes que carregam a mesma coisa:** você tem uma picape 2019, uma 2021 e uma 2023, todas com a mesma capacidade. Em vez de escolher uma ficha específica em cada roteiro, você as agrupa numa classe "Picape" e passa a planejar só pela classe; na execução, as três aparecem selecionáveis, e a carga é conferida por inteiro porque as três garantem a mesma capacidade.
+* **Frota própria e fornecedor não se misturam:** você tem uma classe "Caminhão" da sua frota e, separadamente, uma frota-espelho de um fornecedor de frete. São classes diferentes, cada uma com seu titular — ao planejar, escolher uma ou outra já diz quem vai executar a viagem.
 * **Entrega que apareceu agora:** não dá para esperar o planejamento — despacha **sob demanda** direto do orçamento, e a viagem segue do mesmo jeito no campo.
 * **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Dividir por veículo** o app propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
+* **Apareceu uma entrega urgente com o motorista já na rua:** ele cumpriu duas das cinco paradas. Você abre o roteiro, adiciona a nova entrega, e manda **otimizar** — a ordem das três que faltam é recalculada a partir de onde ele está agora, não do galpão. As duas já feitas ficam intactas, em cinza no mapa.
+* **A rua estava interditada:** o motorista pulou a parada 3. Ela não fica presa neste roteiro: volta para a lista de movimentos disponíveis com o motivo registrado, e você decide se tenta de novo hoje — colocando-a de volta — ou se ela entra no roteiro de amanhã.
 
 ## Próximo passo
 
