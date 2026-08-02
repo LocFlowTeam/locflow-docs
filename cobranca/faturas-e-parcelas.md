@@ -1,27 +1,29 @@
 ---
 icon: file-invoice-dollar
-description: A fatura nasce sozinha quando o orçamento é ganho — parcelas atômicas, status que se calcula do que entrou e valor a favor do cliente.
+description: A fatura nasce quando a cobrança é gerada — parcelas atômicas, status calculado e cancelamento seguro com vale ou estorno.
 ---
 
 # Faturas e parcelas
 
-Quando um orçamento é ganho — **Reservado** na locação ou **Vendido** na venda — o LocFlow gera a **fatura** automaticamente. É a **conta** que organiza tudo o que o cliente tem a pagar daquele pedido. Você não precisa "montar" nada na mão: a fatura nasce junto com o ganho e fica grudada no orçamento.
+Quando você toca em **Gerar cobrança**, o LocFlow cria a **fatura** do orçamento. É a **conta** que organiza tudo o que o cliente tem a pagar daquele pedido e continua ligada a ele durante todo o fluxo.
+
+Você pode gerar a cobrança antes da reserva. O LocFlow apenas recomenda **Pré-reserva** ou **Reservado**, quando há mais certeza de faturamento. Se o Motor Operacional exigir cobrança para reservar, as duas ações são feitas juntas; caso contrário, cobrar continua opcional.
 
 {% hint style="success" %}
-**Por que isso te faz receber melhor:** a cobrança começa no mesmo instante em que o negócio fecha. Sem fatura esquecida, sem "depois eu lanço", sem pedido entregue e nunca cobrado. Tudo o que foi alugado ou vendido vira algo a receber — na hora.
+**Por que isso te faz receber melhor:** você escolhe o momento comercial da cobrança sem perder o vínculo com o pedido. Quando a sua regra exigir pagamento para reservar, o LocFlow garante que a cobrança seja criada junto.
 {% endhint %}
 
 {% hint style="info" %}
 **Duas coisas se chamam "fatura" — não confunda.** Nesta página, **fatura** é a **conta** do pedido: a estrutura viva que soma o que o cliente deve, guarda as parcelas e calcula o que já entrou. É diferente da **"Fatura de locação em PDF"**, que é um **documento** que você gera nas Ações Rápidas do orçamento (só para **locação**) para enviar ao cliente com valores, parcelas e vencimentos. O PDF é uma foto para imprimir ou mandar; a conta é o controle que se atualiza sozinho a cada recebimento.
 {% endhint %}
 
-## A fatura nasce do orçamento
+## A fatura parte do orçamento
 
-A fatura **espelha** o orçamento: mostra o **total da cobrança**, o que já entrou e o que ainda falta. Como ela nasce do orçamento ganho, **o orçamento é sempre a fonte da verdade**. Você nunca edita a fatura "por dentro" — se precisar mudar valor, itens ou frete, você edita o **orçamento**, e a fatura se ajusta sozinha para acompanhar (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)).
+A fatura **espelha** o orçamento: mostra o **total da cobrança**, o que já entrou e o que ainda falta. Como ela é criada a partir dele, **o orçamento é sempre a fonte da verdade**. Você nunca edita a fatura "por dentro" — se precisar mudar valor, itens ou frete, você edita o **orçamento**, e a fatura se ajusta sozinha para acompanhar (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)).
 
 ```mermaid
 flowchart LR
-    O[Orcamento ganho] --> F[Fatura gerada]
+    O[Orcamento] -->|Gerar cobranca| F[Fatura gerada]
     F --> P1[Parcela 1]
     F --> P2[Parcela 2]
     F --> P3[Parcela 3]
@@ -127,7 +129,35 @@ flowchart LR
 Duas situações deixam algo **somente leitura** — e cada uma por um motivo diferente:
 
 * **Parcela congelada** — uma **divergência de caixa** (o valor que o motorista trouxe da rua não bate com o registrado) congela aquela parcela. Ela fica travada: não recebe pagamento nem reagendamento até alguém **destravar**. É uma trava de segurança para o dinheiro não "sumir" no acerto.
-* **Fatura cancelada** — uma fatura cancelada vira **read-only por inteiro**: não aceita mais nenhum recebimento. (E o contrário também vale: uma fatura que já tem um pagamento **online confirmado** não pode ser cancelada — dinheiro online já movimentado não se desfaz por aqui.)
+* **Fatura com cancelamento em andamento** — se já houve recebimento, ela fica protegida contra novas alterações enquanto o vale ou o estorno é resolvido. Só vira **Cancelada** depois que a devolução necessária estiver comprovada.
+* **Fatura cancelada** — vira **somente leitura** por inteiro e não aceita novos recebimentos.
+
+## Cancelar uma cobrança com segurança {#cancelar-uma-cobranca-com-seguranca}
+
+Ao cancelar uma parcela ou a fatura inteira, o LocFlow mostra um resumo curto do que acontecerá:
+
+* pagamentos online ainda abertos serão encerrados junto;
+* vale já aplicado volta para a carteira do cliente;
+* dinheiro já recebido precisa virar **vale-locação** ou ser **devolvido ao cliente**;
+* para cobrar novamente depois, será necessário gerar uma nova cobrança.
+
+Se houver dinheiro recebido, escolha um destino:
+
+| Destino | O que acontece |
+| --- | --- |
+| **Vale-locação** | O valor fica na carteira do cliente e pode abater uma próxima cobrança. Vale funciona como dinheiro e permanece no histórico. |
+| **Solicitar ao provedor** | O LocFlow pede o estorno e acompanha a cobrança. O cancelamento só termina quando o provedor comprovar a devolução. |
+| **Registrar devolução externa** | Use somente depois de devolver por Pix, transferência, dinheiro, maquininha ou outro canal. Informe a conta e guarde o comprovante. |
+
+{% hint style="warning" %}
+**Boleto pode não baixar na hora.** O LocFlow solicita o cancelamento ao provedor, mas alguns boletos continuam aparecendo — e podem continuar pagáveis — até o banco confirmar a baixa ou o título vencer. A tela mostra **Aguardando baixa** e continua verificando. Se o cliente pagar nesse intervalo, o recebimento entra no fluxo financeiro em vez de desaparecer.
+{% endhint %}
+
+{% hint style="info" %}
+**Aceite não é prova de devolução.** Uma resposta positiva ao pedido de estorno não basta. Enquanto o provedor não confirmar o valor devolvido, a cobrança mostra **Estorno solicitado** e novas alterações financeiras ficam bloqueadas. No histórico da parcela, você acompanha quanto já foi comprovado e se a operação exige atenção.
+{% endhint %}
+
+Cancelar um pedido — por exemplo, movê-lo para **Cancelado** ou **Perdido** — segue a mesma regra. Se houver cobrança, o LocFlow pede sua confirmação e inicia o encerramento financeiro antes de considerar o ciclo concluído.
 
 ## Valor a favor do cliente (saldo a favor)
 
@@ -140,12 +170,12 @@ São dois destinos possíveis:
 | Forma | O que acontece | Quando faz sentido |
 | --- | --- | --- |
 | **Crédito / vale-locação** | O valor vira crédito reaproveitável na próxima locação, sem nenhuma operação bancária. É o **padrão**. | Cliente recorrente, que vai voltar a alugar. |
-| **Reembolso em dinheiro** | O LocFlow **registra a decisão** de devolver e avisa o time. A devolução em si (PIX, transferência, estorno no cartão) é feita **por fora** do LocFlow. | Cliente eventual, ou quando ele pede o dinheiro de volta. |
+| **Reembolso em dinheiro** | Pode ser solicitado ao provedor e acompanhado pelo LocFlow, ou registrado depois de uma devolução externa comprovada. | Cliente eventual, ou quando ele pede o dinheiro de volta. |
 
 Você define esse **padrão** em [Motores operacionais](../configuracoes/motores-operacionais.md) (o Motor de Cobrança). O padrão de fábrica é **crédito / vale-locação**, porque não mexe em dinheiro e o cliente reaproveita na próxima locação. Se um caso pedir tratamento diferente, você pode **sobrepor a política naquela operação** — mas isso é opcional; o normal é o LocFlow resolver pela política e seguir.
 
 {% hint style="warning" %}
-**Reembolso em dinheiro não devolve sozinho.** O LocFlow **não** faz o estorno bancário automático. Quando a política é reembolso, ele **anota a decisão, deixa o rastro no histórico e notifica o time** — a devolução (PIX, transferência ou estorno na maquininha) é você quem faz, por fora. Pense no reembolso como uma **ordem de "devolver este valor"**, não como o dinheiro já saindo da conta.
+**Nunca confunda solicitação com devolução concluída.** No provedor, o LocFlow acompanha até receber a confirmação do valor estornado. Por fora, você só registra depois que o dinheiro realmente saiu e anexa a prova.
 {% endhint %}
 
 {% hint style="info" %}
@@ -160,13 +190,13 @@ Você define esse **padrão** em [Motores operacionais](../configuracoes/motores
 
 | Porte | Como costuma usar |
 | --- | --- |
-| **Pequeno** | "À vista, uma parcela." A fatura nasce pronta, você recebe e marca; status se cuida sozinho. Não precisa pensar em sinal nem em conferência. |
+| **Pequeno** | "À vista, uma parcela." Ao gerar a cobrança, a fatura fica pronta; você registra o recebimento e o status se cuida sozinho. |
 | **Médio** | Usa **sinal + restante** para garantir o cliente, reagenda vencimento quando o cliente pede mais prazo e começa a usar o **vale-locação** com quem volta sempre. |
 | **Grande** | **Faturado a prazo** para PJ, **conferência de caixa** do dinheiro da rua (parcela congelada quando não bate) e política de reembolso definida no Motor de Cobrança, igual para o time inteiro. |
 
 ## Situações reais
 
-* **Locação de evento com sinal:** o orçamento é ganho com uma parcela de **sinal** e uma de **restante**. O cliente paga o sinal por PIX (a parcela "Sinal" fica **Paga**); o restante segue **pendente** até o vencimento. A fatura mostra **Parcialmente paga**.
+* **Locação de evento com sinal:** você gera uma cobrança com uma parcela de **sinal** e uma de **restante**. O cliente paga o sinal por PIX (a parcela "Sinal" fica **Paga**); o restante segue **pendente** até o vencimento. A fatura mostra **Parcialmente paga**.
 * **Cliente paga "o que dá" no balcão:** a parcela de R$ 1.000 recebe R$ 600. Ela se desdobra: R$ 600 vira uma parcela **Paga** e R$ 400 vira uma **nova parcela pendente**, com vencimento para a semana que vem.
 * **Edição depois do ganho:** você tira um item do pedido e o total cai R$ 300, mas o cliente já tinha pago tudo. Sobra R$ 300 a favor dele — o LocFlow **resolve na hora** pela sua política: vira **vale** para a próxima locação (padrão) ou registra uma **ordem de reembolso** para você devolver por fora. Nos dois casos o time recebe a notificação com atalho para a fatura.
 * **Dinheiro da rua que não bateu:** o motorista trouxe um valor diferente do registrado. A parcela fica **congelada** até a tesouraria acertar — ninguém recebe nem reagenda nela enquanto isso.

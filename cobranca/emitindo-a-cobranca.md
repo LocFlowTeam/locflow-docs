@@ -1,11 +1,11 @@
 ---
 icon: file-invoice-dollar
-description: Como transformar o valor de um orçamento ganho em parcelas reais — à vista, sinal + restante ou parcelado, com vencimentos.
+description: Como transformar o valor de um orçamento em parcelas reais — à vista, sinal + restante ou parcelado, com vencimentos.
 ---
 
 # Emitindo a cobrança
 
-A [fatura](faturas-e-parcelas.md) nasce sozinha quando você ganha o orçamento. Mas é na hora de **emitir a cobrança** que você diz **como o cliente vai pagar**: tudo de uma vez, com uma entrada, ou parcelado — e em **quais datas**. É o passo que tira o valor do papel e o transforma em parcelas reais, com vencimentos que a sua operação vai acompanhar.
+A [fatura](faturas-e-parcelas.md) nasce quando você **gera a cobrança** do orçamento. Nessa hora, você diz **como o cliente vai pagar**: tudo de uma vez, com uma entrada, ou parcelado — e em **quais datas**. É o passo que tira o valor do papel e o transforma em parcelas reais, com vencimentos que a sua operação vai acompanhar.
 
 {% hint style="success" %}
 **Por que isso importa:** o jeito de cobrar é uma decisão de negócio, não um detalhe técnico. Pedir um sinal segura o compromisso; parcelar ajuda o cliente a fechar; o pagamento a prazo é o que o cliente PJ espera. Emitir a cobrança certa é o que faz o dinheiro entrar do jeito que combina com você.
@@ -23,17 +23,23 @@ Vale tanto para **locação** quanto para **venda** — o que muda é a sua esco
 
 ## Onde emitir
 
-Abra as **Ações rápidas** do orçamento. Depois do ganho (reservado, na locação; vendido, na venda), elas mostram a seção **Acompanhar operação**, com o estado da cobrança e da logística lado a lado. Ali há o botão **Gerar cobrança** — ele abre a folha onde você monta a cobrança.
+Abra as **Ações rápidas** do orçamento e toque em **Gerar cobrança**. A ação fica disponível enquanto o pedido ainda pode avançar no funil — inclusive **Em aberto** e **Em negociação**.
+
+O LocFlow recomenda gerar a cobrança em **Pré-reserva** ou **Reservado**, quando há mais certeza de faturamento. Essa é uma recomendação, não uma obrigação: se você gerar antes, a tela avisa e pede sua confirmação.
 
 ```mermaid
 flowchart LR
-    G[Orcamento ganho] --> AC[Acoes rapidas:<br/>Acompanhar operacao]
+    G[Orcamento no funil] --> AC[Acoes rapidas]
     AC --> GC[Gerar cobranca]
     GC --> P[Parcelas com<br/>valores e datas]
 ```
 
 {% hint style="info" %}
-**Não tem prazo para cobrar.** A cobrança é independente da logística: você pode gerá-la logo após o ganho, no meio da operação **ou depois de finalizar** — se entregou sem faturar antes, o botão **Gerar cobrança** continua disponível no pedido finalizado. Você nunca fica sem como cobrar o que já saiu.
+**A sua operação define a trava da reserva.** Se o Motor Operacional exigir cobrança para reservar, ao tocar em **Reservar** o LocFlow abre a geração automaticamente e conclui as duas ações juntas. Se o Motor não exigir, a tela não força essa etapa: você pode reservar sem cobrança e gerar depois.
+{% endhint %}
+
+{% hint style="info" %}
+**Pré-reserva é opcional.** Algumas organizações não usam essa etapa. Isso não impede reservar nem cobrar: a recomendação também vale diretamente para **Reservado**.
 {% endhint %}
 
 ## Escolha como o cliente vai pagar
@@ -100,7 +106,7 @@ O que o prazo desloca depende do formato:
 
 Enquanto você mexe nas opções, a folha mostra um **Resumo das parcelas** ao vivo: cada linha com o rótulo (Sinal, Restante, Parcela 1, 2…), a **data em que vence** e o **valor**, mais o **total** no rodapé. É a sua conferência antes de confirmar — o que você vê ali é exatamente o que será gerado.
 
-Quando o resumo estiver do seu jeito, toque em **Gerar cobrança**. Pronto: o orçamento ganho vira parcelas reais, com datas, prontas para receber.
+Quando o resumo estiver do seu jeito, toque em **Gerar cobrança**. Pronto: o orçamento vira parcelas reais, com datas, prontas para receber.
 
 ## Definir o valor exato de cada parcela
 
@@ -120,14 +126,14 @@ Combinou uma data e depois precisou empurrar? Você pode **reagendar o venciment
 **Se a parcela já tem um boleto em aberto**, mudar a data atualiza o próprio boleto — e o LocFlow avisa: *"O boleto em aberto terá o vencimento atualizado — a linha digitável continua a mesma."* Ou seja: o cliente continua usando o mesmo boleto, só com o novo vencimento. Não é preciso gerar outro.
 {% endhint %}
 
-Reagendar muda **a data**. Para mudar **valores** depois de emitida, o caminho é o orçamento: como a fatura deriva do orçamento ganho, editar o orçamento (valor, itens, frete) reflete na cobrança. Veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
+Reagendar muda **a data**. Para mudar **valores** depois de emitida, o caminho é o orçamento: como a fatura deriva dele, editar o orçamento (valor, itens, frete) reflete na cobrança. Veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
 
 ## Casos em que a cobrança não é gerada
 
 Dois pontos para não tropeçar:
 
 * **Orçamento de valor zero** (por exemplo, um desconto que zera o total): nenhuma cobrança é gerada — não há o que receber.
-* **Já existe cobrança para este orçamento:** o LocFlow não emite uma segunda. Cada orçamento ganho tem **uma** fatura. Para ajustar o que já foi emitido, você reagenda parcelas ou edita o orçamento — não emite de novo.
+* **Já existe cobrança para este orçamento:** o LocFlow não emite uma segunda. Cada orçamento tem **uma** fatura quando a cobrança é gerada. Para ajustar o que já foi emitido, você reagenda parcelas ou edita o orçamento — não emite de novo.
 
 ## Por porte
 
@@ -141,7 +147,7 @@ A ideia é a mesma de todo o LocFlow: **simples para quem quer simples, flexíve
 
 ## Situações reais
 
-* **Festa do fim de semana, venda à vista:** orçamento ganho, você abre Gerar cobrança, deixa em **À vista** com vencimento na entrega e confirma. Uma parcela, pronto.
+* **Festa do fim de semana, venda à vista:** orçamento em negociação, você abre Gerar cobrança, confirma o aviso, deixa em **À vista** com vencimento na entrega e confirma. Uma parcela, pronto.
 * **Reserva de um mês com entrada:** você escolhe **Sinal + restante**, define 30% de sinal — vence hoje — e o restante para a data da entrega. O cliente confirma pagando a entrada.
 * **Cliente PJ que paga faturado:** **À vista**, mas com **a prazo D+30**: você entrega agora e a cobrança vence daqui a 30 dias.
 * **Locação grande dividida:** **Parcelado** em 3x mensais. Você ativa o valor por parcela, deixa a primeira maior (a "entrada") e ajusta as outras até a soma fechar o total.
@@ -166,4 +172,4 @@ Só para os curiosos — o LocFlow faz isso por você.
 * Para entender a fatura, as parcelas e o que cada status significa: [Faturas e parcelas](faturas-e-parcelas.md).
 * Para registrar o dinheiro que entrou (na mão ou pelo motorista): [Recebendo pagamentos](recebendo-pagamentos.md).
 * Para cobrar com link de PIX, cartão ou boleto: [Pagamento online](pagamento-online.md).
-* Para o panorama do funil e o ganho que dá origem à cobrança: [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
+* Para entender como o orçamento avança no funil: [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).

@@ -13,9 +13,9 @@ A tela de **Cobranças** é a porta do módulo financeiro. Ela reúne todas as *
 
 ## De onde vêm as cobranças
 
-Você não cria uma cobrança nesta tela. A **fatura nasce sozinha quando o orçamento é ganho** — ao reservar uma locação ou confirmar uma venda. Por isso, se você ainda não ganhou nenhum orçamento, a lista mostra um aviso convidando você a ir para Orçamentos:
+Você não cria uma cobrança nesta tela. A **fatura nasce quando você gera a cobrança** pelo orçamento. Se o Motor Operacional exigir cobrança para reservar, a geração abre junto com a reserva; nos demais casos, você escolhe quando gerar. Se ainda não houver nenhuma cobrança, a lista mostra um aviso convidando você a ir para Orçamentos:
 
-> **Nenhuma cobrança ainda.** As cobranças nascem de orçamentos ganhos. Ganhe um orçamento para gerar a primeira cobrança aqui.
+> **Nenhuma cobrança ainda.** Abra um orçamento e toque em **Gerar cobrança** para criar a primeira.
 
 Para entender como a fatura é montada (parcelas, vencimentos, sinal), veja [Faturas e parcelas](faturas-e-parcelas.md).
 

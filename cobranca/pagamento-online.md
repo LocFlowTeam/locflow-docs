@@ -64,22 +64,25 @@ Quando você liga **boleto** e falta o endereço, o LocFlow abre uma folha para 
 
 O checklist do link mostra cada dado com um ✓ (já tem) ou um ponto âmbar (falta), e ao lado os ícones dos métodos que o exigem. **CPF/CNPJ e e-mail faltando** desligam o botão de gerar o link inteiro — porque nenhum método cobra sem eles.
 
-## Cancelar e recriar: por que o código antigo deixa de valer
+## Cancelar e recriar: o que acontece com a cobrança anterior
 
-Há **no máximo uma cobrança aberta por parcela**. Por isso, quando uma nova cobrança precisa ser criada para a mesma parcela, a anterior é **cancelada** — o código de PIX ou o boleto antigo deixa de valer.
+Há **no máximo uma cobrança aberta por parcela**. Por isso, antes de criar uma nova cobrança para a mesma parcela, o LocFlow pede o cancelamento da anterior e acompanha a resposta do provedor.
+
+* **PIX:** depois que o cancelamento é confirmado, o QR Code e o copia-e-cola param de funcionar.
+* **Boleto:** a baixa é solicitada ao provedor. O título pode continuar aparecendo — e até continuar pagável — enquanto o banco não confirma a baixa ou até ele vencer.
 
 ```mermaid
 flowchart LR
     P[Parcela em aberto] -->|gera PIX| C1[Cobranca PIX aberta]
-    C1 -->|troca para Boleto| X[PIX cancelado]
-    X --> C2[Cobranca Boleto aberta]
+    C1 -->|troca de metodo| X[Cancelamento solicitado]
+    X -->|provedor confirma| C2[Nova cobranca]
 ```
 
 {% hint style="warning" %}
-**Antes de gerar de novo, atenção:** trocar o método cria uma cobrança nova e **cancela a anterior**. O código de PIX ou o boleto antigo deixa de valer para o cliente. Gere de novo só quando realmente precisar; senão, o cliente pode pagar um código que já não vale. O sistema confirma antes de trocar.
+**Antes de gerar de novo, atenção:** troque o método somente quando for necessário. No boleto, não trate o pedido aceito como prova de baixa: enquanto o LocFlow mostrar **Aguardando baixa**, o título antigo ainda pode constar como dívida e receber pagamento. Se isso acontecer, o recebimento entra normalmente no histórico financeiro.
 {% endhint %}
 
-**Importante — abrir a página de novo NÃO invalida o código.** Se o cliente já está vendo um PIX ou boleto e atualiza a página (ou volta nela), o LocFlow **reaproveita a mesma cobrança aberta** daquele método em vez de criar outra. O QR Code e o boleto que ele tem na mão continuam valendo. Só uma **troca de método** (ou um cartão, que é sempre uma nova tentativa) gera um instrumento novo e cancela o anterior.
+**Importante — abrir a página de novo NÃO invalida o código.** Se o cliente já está vendo um PIX ou boleto e atualiza a página (ou volta nela), o LocFlow **reaproveita a mesma cobrança aberta** daquele método em vez de criar outra. O QR Code e o boleto que ele tem na mão continuam valendo. Só uma **troca de método** (ou um cartão, que é sempre uma nova tentativa) inicia a substituição do instrumento anterior.
 
 {% hint style="info" %}
 **Cartão é diferente:** cada tentativa de cartão é uma transação própria, então o cartão nunca "reaproveita" — e a resposta é na hora (aprovado ou recusado, com o motivo em português).
@@ -213,6 +216,6 @@ Quando um cliente paga, o dinheiro **não cai direto** na sua conta bancária: e
 
 ## Próximo passo
 
-- A fatura nasce ao **ganhar o orçamento** — veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
+- A fatura nasce quando você **gera a cobrança** — veja [Emitindo a cobrança](emitindo-a-cobranca.md).
 - Para entender parcelas, status e valores a favor do cliente, volte a [Faturas e parcelas](faturas-e-parcelas.md).
 - Para registrar o que entra **por fora** do sistema, veja [Recebendo pagamentos](recebendo-pagamentos.md).
