@@ -84,6 +84,8 @@ flowchart LR
 
 **Importante — abrir a página de novo NÃO invalida o código.** Se o cliente já está vendo um PIX ou boleto e atualiza a página (ou volta nela), o LocFlow **reaproveita a mesma cobrança aberta** daquele método em vez de criar outra. O QR Code e o boleto que ele tem na mão continuam valendo. Só uma **troca de método** (ou um cartão, que é sempre uma nova tentativa) inicia a substituição do instrumento anterior.
 
+**Recebeu parte por fora (dinheiro, maquininha)?** Registrar uma baixa manual — ou um recebimento na rua — muda o valor que resta a receber, então o PIX/boleto em aberto daquela parcela **é cancelado junto**: ele cobrava o valor antigo. O LocFlow avisa antes de você confirmar e, se ainda restar saldo, já oferece **gerar o novo PIX ou boleto pelo valor certo** na mesma tela.
+
 {% hint style="info" %}
 **Cartão é diferente:** cada tentativa de cartão é uma transação própria, então o cartão nunca "reaproveita" — e a resposta é na hora (aprovado ou recusado, com o motivo em português).
 {% endhint %}
@@ -101,6 +103,11 @@ Um pagamento pode voltar por fora do LocFlow: você pede o reembolso ao processa
 - a **parcela reabre** na fatura — o cliente volta a dever;
 - a **entrada sai do seu financeiro**, para o seu saldo não mostrar um dinheiro que não está mais lá;
 - se aquele pagamento carregava um **repasse de parceria** repartido na fonte, o repasse é revertido junto.
+
+Se esse dinheiro já tinha virado **vale-locação**, o LocFlow primeiro desconta o saldo de vale que
+ainda estiver disponível. Quando o cliente já usou uma parte ou todo o vale, somente a diferença
+sem lastro vira uma **nova cobrança avulsa** no nome dele. O vale nunca fica negativo, e o histórico
+mantém ligados o crédito original, o estorno e a cobrança de recuperação.
 
 {% hint style="warning" %}
 **O que o sistema não desfaz é o dinheiro que já se moveu.** Se o repasse ao parceiro já tinha sido **quitado** por você antes do estorno, o valor **não** volta automaticamente da conta dele — recuperar isso é uma conversa comercial entre vocês. Os detalhes de como o estorno afeta repasse e taxa estão em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#estorno).
