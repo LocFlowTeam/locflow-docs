@@ -69,7 +69,7 @@ O checklist do link mostra cada dado com um ✓ (já tem) ou um ponto âmbar (fa
 Há **no máximo uma cobrança aberta por parcela**. Por isso, antes de criar uma nova cobrança para a mesma parcela, o LocFlow pede o cancelamento da anterior e acompanha a resposta do provedor.
 
 * **PIX:** depois que o cancelamento é confirmado, o QR Code e o copia-e-cola param de funcionar.
-* **Boleto:** a baixa é solicitada ao provedor. O título pode continuar aparecendo — e até continuar pagável — enquanto o banco não confirma a baixa ou até ele vencer.
+* **Boleto:** o registro da cobrança é cancelado no LocFlow e no provedor — mas **o título não sai do DDA do cliente**. Entenda o porquê logo abaixo.
 
 ```mermaid
 flowchart LR
@@ -78,8 +78,35 @@ flowchart LR
     X -->|provedor confirma| C2[Nova cobranca]
 ```
 
+## Boleto cancelado continua no DDA — e isso não é um defeito do LocFlow
+
+Todo boleto registrado entra numa base centralizada do sistema bancário (a CIP), que é o que o
+DDA do seu cliente lê. Tirar um título dessa base antes da hora exige que o **emissor** comande a
+baixa do registro — e o provedor de pagamentos usado pelo LocFlow (Stone/Pagar.me) **não executa
+esse comando**. É uma limitação do emissor, confirmada por escrito pelo suporte do provedor: nem
+ele consegue retirar o título.
+
+Na prática, para um boleto cancelado:
+
+* O título **continua aparecendo no DDA** do seu cliente até cerca de **60 dias após o
+  vencimento** — depois disso expira sozinho e some.
+* Durante esse período, o boleto **continua tecnicamente pagável** no banco. Se o cliente pagar
+  mesmo assim, o LocFlow captura o pagamento e o trata como **recebimento tardio** — o dinheiro
+  entra no histórico financeiro e você decide o destino (vale-locação ou devolução).
+* O seu cliente **não tem nenhuma obrigação de pagar** um título de cobrança cancelada. O DDA é
+  uma vitrine dos boletos emitidos no nome dele, não uma lista de dívidas exigíveis.
+
 {% hint style="warning" %}
-**Antes de gerar de novo, atenção:** troque o método somente quando for necessário. No boleto, não trate o pedido aceito como prova de baixa: enquanto o LocFlow mostrar **Aguardando baixa**, o título antigo ainda pode constar como dívida e receber pagamento. Se isso acontecer, o recebimento entra normalmente no histórico financeiro.
+**O que dizer ao seu cliente (B2B):** "o boleto foi cancelado e não deve ser pago; ele continuará
+visível no seu DDA por até 60 dias após o vencimento porque o registro bancário expira sozinho —
+isso é do sistema bancário, não uma cobrança em aberto." Empresas com fluxo de contas a pagar
+automatizado devem **remover o título da esteira de pagamento** para evitar pagamento indevido.
+{% endhint %}
+
+{% hint style="info" %}
+Por isso, prefira **PIX** quando houver chance de o valor ou o método mudarem: o QR cancelado
+para de funcionar na hora. Use boleto quando a cobrança for firme — cancelamentos de boleto
+deixam esse rastro no DDA que gera dúvida para o pagador.
 {% endhint %}
 
 **Importante — abrir a página de novo NÃO invalida o código.** Se o cliente já está vendo um PIX ou boleto e atualiza a página (ou volta nela), o LocFlow **reaproveita a mesma cobrança aberta** daquele método em vez de criar outra. O QR Code e o boleto que ele tem na mão continuam valendo. Só uma **troca de método** (ou um cartão, que é sempre uma nova tentativa) inicia a substituição do instrumento anterior.
