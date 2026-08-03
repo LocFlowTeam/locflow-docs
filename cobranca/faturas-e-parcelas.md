@@ -150,7 +150,13 @@ Se houver dinheiro recebido, escolha um destino:
 | **Registrar devolução externa** | Use somente depois de devolver por Pix, transferência, dinheiro, maquininha ou outro canal. Informe a conta e guarde o comprovante. |
 
 {% hint style="warning" %}
-**Boleto pode não baixar na hora.** O LocFlow solicita o cancelamento ao provedor, mas alguns boletos continuam aparecendo — e podem continuar pagáveis — até o banco confirmar a baixa ou o título vencer. A tela mostra **Aguardando baixa** e continua verificando. Se o cliente pagar nesse intervalo, o recebimento entra no fluxo financeiro em vez de desaparecer.
+**Boleto cancelado não sai do DDA.** O provedor de pagamentos não comanda a baixa do registro
+bancário: o título continua visível no DDA do cliente — e tecnicamente pagável — até cerca de
+**60 dias após o vencimento**, quando expira sozinho. O cliente **não tem obrigação de pagar**;
+avise-o para ignorar (ou remover da esteira de contas a pagar). A tela mostra
+**Encerrada · boleto ainda pode ser pago** e segue acompanhando: se o cliente pagar mesmo assim,
+o recebimento entra no fluxo financeiro em vez de desaparecer. Detalhes em
+[Pagamento online](pagamento-online.md#boleto-cancelado-continua-no-dda-e-isso-nao-e-um-defeito-do-locflow).
 {% endhint %}
 
 {% hint style="info" %}
