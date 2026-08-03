@@ -1,11 +1,11 @@
 ---
 icon: calendar-days
-description: O calendário logístico organiza seus roteiros por dia. A cor mostra o quanto cada movimento já está definido, do "sem data" ao "no roteiro".
+description: O calendário logístico mostra cada movimento real da sua operação — entrega e retirada, viagem por viagem — e a cor diz em que pé cada um está no ciclo, do livre ao concluído.
 ---
 
 # Calendário logístico
 
-O **calendário logístico** é a sua agenda da operação. Ele reúne, num só lugar, **quando** cada entrega e cada retirada acontece — e, pela **cor**, mostra **o quanto aquele movimento já está definido**: ainda é um chute de data, já tem horário, já foi combinado com o cliente ou já está no roteiro.
+O **calendário logístico** é a sua agenda da operação — o lugar em que se entra **todo dia**. Ele mostra, dia a dia, **cada movimento real**: uma entrega ou uma retirada de um pedido ganho. A **cor** diz em que pé aquele movimento está no ciclo operacional; o **âmbar com ⚠** diz exatamente onde agir primeiro.
 
 É a leitura que responde "**o que eu preciso organizar para os próximos dias?**" — sem abrir pedido por pedido.
 
@@ -14,207 +14,146 @@ Este calendário é **só de logística** — entrega e retirada de [itens](../p
 {% endhint %}
 
 {% hint style="success" %}
-**Por que isso te faz faturar mais:** quando você enxerga, num piscar de olhos, o que ainda está "no chute" e o que já está fechado, você ataca primeiro o que trava o dia — combina a janela que falta, encaixa no roteiro a entrega que está em âmbar. Menos surpresa de véspera, menos viagem remarcada.
+**Quando há movimento urgente, o próprio menu avisa:** o item **Calendário** acende um **sinal vermelho de atenção**. Sem número, de propósito — quem diz *quais* e *quantos* é a própria grade, pelos ⚠. Sinal apagado = nada vencendo; pode seguir o dia.
 {% endhint %}
 
 ## O que o calendário mostra <a id="o-que-e-o-calendario"></a>
 
-O calendário é sobre **roteiros**, não sobre reservas. Como diz a ajuda dentro do app:
+A unidade do calendário é o **movimento real** — não o orçamento, não o roteiro. Cada entrega e cada retirada de um pedido ganho vira **uma barra própria** na grade.
 
-> Aqui você organiza a **logística** — não vendas. Cada **roteiro** é um conjunto de **rotas** (os trechos: entrega ou retirada).
+E quando a carga foi **dividida em viagens** (não coube num veículo só), **cada viagem é um movimento**: você vê "V1/2", "V2/2" — porque a viagem 1 pode já estar num roteiro enquanto a viagem 2 segue livre. O rótulo aparece na grade, na visão dia e no detalhe, para você nunca confundir o que está resolvido com o que ainda falta.
 
-Cada dia traz os **fatos** logísticos daquele dia: uma entrega, uma retirada, ou o **evento** do cliente (a data que o aluguel atende). Tocar num fato abre os **detalhes** — e de lá você abre o **orçamento**, o **roteiro planejado** ou o **histórico de execução** no módulo de logística.
+Tocar num movimento abre os **detalhes do orçamento**: de onde ele veio, o que foi combinado, em que pé está **aquela viagem** e qual roteiro a carrega — e de lá você abre o orçamento, a logística ou o roteiro.
 
 {% hint style="info" %}
-Os dados deste calendário são **reais**: vêm direto dos seus orçamentos ganhos e roteiros. Não há números de exemplo aqui — o que você vê é a sua operação.
+Os dados são **reais**: vêm direto dos seus orçamentos ganhos e roteiros. O que você vê é a sua operação.
 {% endhint %}
 
-## Como ler a cor: o nível de precisão (1 a 5) <a id="como-ler-cores-niveis"></a>
+## Como ler a cor: o ciclo do movimento <a id="como-ler-cores-niveis"></a>
 
-A **cor** é a leitura principal. Ela resume **o quanto o movimento já está definido**, numa escala de **5 níveis**. Quanto mais avançado o nível, mais "fechado" está aquele movimento.
+A cor resume **em que etapa do ciclo operacional** o movimento está:
 
-A ajuda do app explica a cor por **três perguntas**, nesta ordem:
-
-> A **cor** resume **o quanto o movimento já está definido**, por **três perguntas** que acontecem NESTA ordem:
->
-> 1. **Âncora — o "quando":** quão preciso é o horário — só a **data do evento**? Já tem o **dia**? Já tem a **janela de horário**?
-> 2. **Combinado — o cliente:** você já **combinou a janela com o cliente** e ele confirmou? Isso vem **antes** de planejar a rota.
-> 3. **Roteiro — a operação:** a operação já entrou num **roteiro planejado** (dia, veículo, equipe)? Só dá para planejar o que **já foi combinado**.
-
-A partir dessas três perguntas, cada movimento recebe um nível:
-
-| Nível | Cor | O que significa | Sua ação |
-| :---: | --- | --- | --- |
-| **1** | Cinza tracejado | Sem data marcada | Ainda nada a fazer aqui |
-| **2** | Azul | Data prevista, sem combinar | Definir o horário |
-| **3** | Cinza-azulado | Horário previsto, sem combinar | **Combinar a janela com o cliente** |
-| **4** | **Âmbar** | Combinado com o cliente, mas ainda fora do roteiro | **Encaixar no roteiro (roteirizar)** |
-| **5** | **Verde** | No roteiro planejado | Pronto — é só executar |
-| — | Cinza | Concluído (já aconteceu) | Histórico |
+| Cor | Estado | O que significa | Sua ação |
+| --- | --- | --- | --- |
+| **Âmbar** | **Livre (sem roteiro)** | O movimento existe e ainda **não entrou** num roteiro | **Planejar** |
+| **Âmbar + ⚠** | **Urgente** | Livre com a janela começando em **menos de 48h** | **Planejar JÁ** |
+| **Verde** | **Em roteiro** | Já está num roteiro planejado (dia, veículo, equipe) | Aguardar a saída |
+| **Teal** | **Em execução** | O roteiro dele está **na rua agora** | Acompanhar |
+| **Cinza** | **Concluído** | **Já aconteceu** — ancorado na hora real do registro | Histórico |
+| **Azul** | **Cliente no galpão** | O cliente vem **retirar ou devolver** no seu galpão | Só receber |
 
 {% hint style="warning" %}
-O **âmbar (nível 4)** é o seu sinal de **ação operacional**. Como diz o app: *o cliente já confirmou a janela, falta encaixar no roteiro planejado (roteirizar). Roteirizado, vira verde (5).* Se você abrir o calendário e ver âmbar nos próximos dias, é ali que vale mexer.
-{% endhint %}
-
-### A ordem é fixa (não dá para pular etapa)
-
-Os três passos **dependem um do outro**, sempre nesta direção:
-
-```mermaid
-flowchart LR
-    A[Tem janela<br/>de horário] --> B[Combinado<br/>com o cliente] --> C[No roteiro<br/>planejado]
-```
-
-> Planejar exige ter **combinado**, que exige ter uma **janela**.
-
-Por isso **"no roteiro sem combinar" não existe**: se um movimento está no roteiro planejado (verde), o cliente necessariamente já confirmou a janela. O nível só sobe — nunca pula um degrau.
-
-{% hint style="info" %}
-**O nível é por movimento.** Uma entrega pode estar combinada (âmbar) enquanto a retirada do mesmo pedido ainda é só uma data prevista (azul). Como cada roteiro tem suas pontas, a cor da **linha do roteiro** acompanha a ponta **menos definida** — assim você nunca acha que está tudo pronto quando ainda falta algo.
-{% endhint %}
-
-## Os três tipos de roteiro <a id="os-tres-tipos-de-roteiro"></a>
-
-O calendário separa os roteiros em três tipos — você pode mostrar ou ocultar cada um pelos [filtros](#filtros):
-
-| Tipo | O que é |
-| --- | --- |
-| **Estimado** | Um orçamento ganho que **ainda não entrou** num roteiro planejado — os horários são uma **estimativa** (níveis 1 a 4). |
-| **Planejado** | Junta **vários orçamentos** numa mesma saída e define **quando** cada entrega e retirada acontece (nível 5). |
-| **Executado** | O que **já aconteceu** — em cinza, o histórico. |
-
-Veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md) para entender como um estimado vira planejado.
-
-{% hint style="success" %}
-**O executado aparece na hora em que de fato aconteceu.** Quando um movimento é concluído — seja na [execução em campo](../logistica/execucao-em-campo.md), na [execução em lote](../logistica/execucao-em-lote.md) (retroativa) ou no balcão (o cliente retira/devolve no galpão) —, o calendário deixa de mostrá-lo no horário *planejado* e passa a mostrá-lo no **momento real** do registro, em cinza. Assim a sua agenda reflete a operação **como ela realmente correu**, não como estava prevista.
+O **âmbar** é o seu sinal de ação — e o **⚠** é a fila de prioridade dela. Abra o calendário, ataque os ⚠ primeiro, depois os âmbares dos próximos dias.
 {% endhint %}
 
 {% hint style="info" %}
-**Mesmo sem janela combinada, o concluído aparece.** Um movimento que foi executado mas nunca teve um horário combinado com o cliente ainda assim entra no calendário — ancorado na **data real** em que foi concluído. Antes, um movimento assim podia não aparecer; agora o histórico fica completo.
+**Azul é outra conversa.** Cliente no galpão **nunca entra em roteiro** e **nunca vira urgência de planejamento** — não há rota a montar; o compromisso é estar pronto para receber. Por isso ele tem cor própria, fora da escala do ciclo.
 {% endhint %}
 
-## Os ícones: quem é responsável <a id="os-icones-quem-e-responsavel"></a>
+## As setas: o que acontece <a id="os-icones-quem-e-responsavel"></a>
 
-Cada fato traz um **ícone** que diz **quem é responsável** pelo transporte. O **sentido** (entrega no começo, retirada no fim) você lê pela ordem na linha do tempo — então o ícone foca em **quem leva o material**. São os **mesmos ícones** do frete e do galpão no resto do sistema:
+Cada movimento traz uma **seta** — as mesmas do mapa do roteiro:
 
-| Ícone | Significa |
+| Seta | Significa |
 | --- | --- |
-| **Caminhão** | **Nossa equipe transporta** — você entrega ou retira (o mesmo caminhão do frete). |
-| **Galpão** | **Cliente no galpão** — o cliente vem retirar ou devolver no seu [galpão](../primeiros-passos/glossario.md). |
-| **Calendário** | **Evento** — a data do cliente, que o aluguel atende. |
+| **↗ (sai)** | O material **sai** — nossa equipe entrega, ou o cliente retira no galpão. |
+| **↙ (volta)** | O material **volta** — nossa equipe recolhe, ou o cliente devolve no galpão. |
 
-A cronologia de um aluguel é sempre **entrega → evento → retirada**; uma [venda](../conceitos/locacao-e-venda.md) tem **só a entrega** (o item sai em definitivo, sem retirada).
+**O que acontece** você lê pela seta; **quem opera** você lê pela **cor** (azul = cliente no galpão; as demais = o ciclo da equipe).
+
+A cronologia de um aluguel é sempre **entrega(s) → evento → retirada**; uma [venda](../conceitos/locacao-e-venda.md) tem **só a entrega** (o item sai em definitivo, sem retirada).
+
+## O evento do cliente vive no detalhe <a id="evento-no-detalhe"></a>
+
+O calendário é de **movimentos** — o **evento** (a data do cliente que o aluguel atende) não ocupa a grade. Ele aparece ao abrir os **detalhes do orçamento**, na linha do tempo, sempre **entre a entrega e a retirada**.
+
+{% hint style="info" %}
+**Evento sem horário informado aparece como "sem horário informado"** — nunca como meia-noite ou outro horário inventado. Com início e fim informados, você vê o intervalo; com só uma ponta, "a partir de HH:mm" ou "até HH:mm".
+{% endhint %}
+
+## Selecionar direto do calendário <a id="selecionar-para-planejar"></a>
+
+Movimento **livre** (âmbar) pode ser **selecionado para o planejamento** direto do calendário ou da lista de movimentos — a seleção é a **mesma** nas duas telas, e o movimento selecionado ganha um **selo de check** na banda.
+
+A unidade da seleção é a **viagem**: selecionar a viagem 2 **não arrasta** a viagem 1 (cada roteiro é a rota de **um** veículo — viagens irmãs normalmente saem em roteiros distintos, ao mesmo tempo). Ao montar um roteiro, a viagem usada sai da seleção; as irmãs **ficam**, prontas para o próximo.
+
+{% hint style="info" %}
+Só entra na seleção o que **pode ser roteirizado agora**. Uma retirada cuja entrega ainda nem saiu aparece no calendário (você enxerga o futuro), mas a seleção fica indisponível com o motivo: *aguarda a etapa anterior*.
+{% endhint %}
 
 ## Adaptado à sua forma de operação <a id="adaptado-a-operacao"></a>
 
-O calendário **fala a língua da sua operação**. Conforme a **Forma de operação** que você definiu no [Motor de Logística](../configuracoes/motores-operacionais.md), ele destaca só o que faz sentido:
+O calendário **fala a língua da sua operação**, conforme a **Forma de operação** do [Motor de Logística](../configuracoes/motores-operacionais.md):
 
-* **Só no balcão** (o cliente retira e devolve no galpão): não há rota a planejar, então o calendário deixa de falar em "roteiros" e passa a falar em **atendimentos no balcão** — a estimativa de **retirada** e de **devolução**, em qual galpão e a que horas. A legenda esconde o **caminhão** (não há transporte da equipe) e o **balcão** vira o protagonista.
-* **Só pela equipe** (entrega e retirada na rota): a legenda esconde o **galpão** (o cliente não vem até você); o foco fica nos roteiros.
-* **Mista**: tudo aparece — caminhão e balcão —, porque você usa as duas formas.
+* **Só no balcão**: não há rota a planejar — o calendário fala em **atendimentos** (retirada e devolução no galpão), e a escala do ciclo nem aparece na legenda.
+* **Só pela equipe**: o foco é o ciclo Livre → Em roteiro → Em execução → Concluído.
+* **Mista**: os dois convivem.
 
-{% hint style="success" %}
-**Quer ver tudo mesmo assim?** Na **legenda** do calendário há um **olho** ("Ver toda a operação"). Toque nele para revelar a operação **completa** — caminhão e balcão juntos —, como se naquele momento você fosse uma operação mista. É a [filosofia do LocFlow](../primeiros-passos/filosofia.md) na prática: a tela abstrai o que você não usa, mas a operação inteira fica **a um toque**.
-{% endhint %}
-
-Em todos os casos, os **dados não mudam** — muda só o **destaque** e o **vocabulário**. Um atendimento de balcão sempre traz o galpão e o horário; um movimento de rota sempre traz quem é responsável pelo transporte.
+Em todos os casos a **legenda é dinâmica**: mostra só o que **existe** no conjunto que você está vendo — sem ensinar símbolo que não está na tela.
 
 ## A janela: combinada × estimada <a id="janela-combinada-x-estimada"></a>
 
-Além da cor (o nível) e do ícone (o responsável), o **traço** de cada janela de horário diz se aquele intervalo já foi **fechado com o cliente**:
+O **traço** de cada janela de horário diz se aquele intervalo já foi **fechado com o cliente**:
 
 * **Linha cheia = combinada com o cliente.** Ex.: o cliente confirmou a entrega entre 9h e 11h — a janela está fechada.
-* **Linha pontilhada = estimada.** A janela ainda **não foi alinhada com o cliente** — é a sua previsão e **pode mudar**.
-
-{% hint style="info" %}
-Combinar a janela é o passo que **leva o movimento ao nível 4 (âmbar)**. Por isso, no calendário, *pontilhado* costuma andar junto de *azul/cinza-azulado*, e *cheio* junto de *âmbar/verde*.
-{% endhint %}
+* **Linha pontilhada = estimada.** Ainda **não foi alinhada com o cliente** — é a sua previsão e **pode mudar**.
 
 ## O fuso horário <a id="fuso-horario"></a>
 
-Os horários aparecem no **fuso da operação** (indicado no topo). Quando um roteiro foi **combinado em outro fuso** — por exemplo, um cliente em outra região do país —, um **selo** indica o fuso original, para você não se confundir na hora de ligar para confirmar.
+Os horários aparecem no **fuso da operação** (indicado no topo). Quando um movimento foi **combinado em outro fuso** — por exemplo, um cliente em outra região do país —, um **selo** indica o fuso original, para você não se confundir na hora de ligar para confirmar.
 
 ## Mês, dia e tela cheia <a id="mes-dia-e-tela-cheia"></a>
 
 O calendário tem duas visões, alternadas no topo:
 
-* **Mês** — a visão geral: cada roteiro é uma **linha** dentro do mês, do começo ao fim da alocação. Quando duas linhas se sobrepõem no tempo, aparecem **uma abaixo da outra**.
-* **Dia** — o detalhe de um dia: os fatos em **ordem cronológica**, com a janela de horário de cada um e o traço (combinado × estimado). É daqui que você abre o roteiro ou o orçamento.
+* **Mês** — a visão geral: cada **movimento** é uma barra no seu intervalo; quando barras se sobrepõem no tempo, aparecem **uma abaixo da outra**. Tocar numa barra abre o detalhe daquela viagem.
+* **Dia** — a agenda daquele dia, hora a hora, com **uma raia por roteiro**: é onde você confere a sequência real de uma saída (e os rótulos **V1/2** dizem qual viagem é qual).
 
 Há ainda o botão de **tela cheia**, que abre o calendário numa tela dedicada (estilo agenda) — útil em telas grandes para enxergar a semana inteira de uma vez.
 
 {% hint style="info" %}
-**Em telas estreitas (celular), cada dia vira um resumo.** Em vez das linhas com horário, cada dia mostra só os **ícones dos fatos** ("Ícone › Ícone › Ícone") — uma visão geral de *o que acontece e quem é responsável*. Para os horários e a janela exata, **toque o dia** e veja a visão detalhada.
+**Em telas estreitas (celular), cada dia vira um resumo.** Em vez das barras com horário, cada dia mostra só os **ícones dos fatos** ("↗ › ↙") — o que acontece em cada dia; quem opera você lê pela cor. Para horários e janelas, **toque o dia**.
 {% endhint %}
 
 ## Filtros <a id="filtros"></a>
 
-O botão de **filtros** abre dois recortes — e mostra ao lado só o que está aplicado:
+O botão de **filtros** recorta o que está na tela — e mostra ao lado só o que está aplicado:
 
-* **Tipos de roteiro** — mostrar ou ocultar estimado, planejado e executado.
+* **Tipos** — livre (sem roteiro), em roteiro, concluído.
 * **Galpões** — quando você tem mais de um, filtrar por galpão de origem.
+* **Quem opera** — só a equipe, ou só cliente no galpão.
+* **Natureza** — aluguel ou venda.
 
-Há também o botão de **legenda** (mostrar/ocultar), que exibe a escala de cores, os ícones e os traços diretamente sobre o calendário.
+Há também o botão de **legenda** (mostrar/ocultar), que exibe a escala de cores, as setas e os traços diretamente sobre o calendário.
 
 ## Como planejar o dia e a semana <a id="planejar-o-dia-e-a-semana"></a>
 
 Uma rotina simples para usar o calendário todo dia:
 
-1. **Abra na visão Mês** e olhe os próximos 7 dias.
-2. **Procure o âmbar (nível 4):** são os movimentos já combinados que ainda **não estão no roteiro**. Encaixe-os num [roteiro planejado](../logistica/planejando-o-roteiro.md) — eles viram verde.
-3. **Olhe os pontilhados (estimados):** janelas que você ainda não confirmou com o cliente. Confirme as dos próximos dias.
-4. **Confie no verde:** está no roteiro, é só executar em campo.
+1. **Olhe o menu:** se o Calendário está com o **sinal vermelho**, há urgência esperando.
+2. **Abra na visão Mês** e ataque os **⚠** primeiro: são movimentos livres com a janela em menos de 48h. Selecione-os e monte um [roteiro planejado](../logistica/planejando-o-roteiro.md).
+3. **Depois, os âmbares** dos próximos dias — planeje antes que virem ⚠.
+4. **Olhe os pontilhados:** janelas ainda não confirmadas com o cliente. Confirme as dos próximos dias.
+5. **Confie no verde e no teal:** em roteiro e na rua — é acompanhar, não mexer.
 
 ## Por porte
 
 | Porte | Como o calendário te serve |
 | --- | --- |
-| **Começando** | Poucos roteiros, quase tudo estimado. O calendário já te avisa o que falta combinar antes de cada entrega. |
-| **Crescendo** | Vários roteiros por semana se sobrepondo. As linhas empilhadas e o filtro por galpão evitam que algo passe batido. |
+| **Começando** | Poucos movimentos, quase tudo âmbar. O calendário já te diz o que planejar antes de cada entrega. |
+| **Crescendo** | Vários roteiros por semana se sobrepondo. As barras por viagem e o filtro por galpão evitam que algo passe batido. |
 | **Estruturado** | Operação cheia, vários galpões e fusos. A tela cheia e os filtros viram a sua mesa de controle do dia. |
-
-## Para quem quer os números <a id="para-quem-quer-os-numeros"></a>
-
-{% hint style="info" %}
-Bloco opcional. Você não precisa dele para usar o calendário — ele explica **como o nível (1 a 5) é calculado**.
-{% endhint %}
-
-O nível de cada movimento vem do seu **estado**, a partir de **três dimensões**:
-
-* **Âncora** — quão preciso é o "quando": sem data → só o **dia** → a **janela de horário**.
-* **Combinado** — a janela já foi **alinhada e confirmada** com o cliente.
-* **Roteiro** — a operação já entrou num **roteiro planejado**.
-
-A regra exata, espelhando o que o sistema faz, é:
-
-| Nível | Condição |
-| :---: | --- |
-| **5** | Está **no roteiro planejado** (ou já executado). |
-| **4** | **Combinado** com o cliente, mas ainda **não roteirizado**. |
-| **3** | Tem **janela de horário**, mas **não combinada**. |
-| **2** | Tem **só o dia** previsto, sem horário e sem combinar. |
-| **1** | **Sem data marcada.** |
-| Cinza | **Concluído** (já aconteceu) — sobrepõe qualquer nível. |
-
-A leitura formal é uma **dependência fixa**:
-
-$$\text{planejado} \rightarrow \text{combinado} \rightarrow \text{tem janela}$$
-
-Ou seja: para estar no roteiro (nível 5) é preciso estar combinado; para estar combinado (nível 4) é preciso ter uma janela. Por isso **"no roteiro sem combinar" não existe** e o nível sobe um degrau de cada vez.
-
-{% hint style="info" %}
-**Detalhe técnico:** internamente o sistema também guarda um "peso" estrutural contínuo (de 0 a 1) que mede o quão definido está o movimento, combinando as três dimensões. Mas a **cor que você vê** usa os **5 níveis discretos** acima — justamente para você distinguir cada estado de relance, sem comparar tons parecidos.
-{% endhint %}
 
 ## Situações reais <a id="situacoes-reais"></a>
 
-* **Entrega da semana ainda no chute:** você ganhou o pedido, mas só anotou o dia. A entrega aparece **azul (2)**. Liga para o cliente, fecha o horário das 9h às 11h → vira **âmbar (4)**.
-* **Tudo combinado, faltou roteirizar:** vários âmbares nos próximos dias. É o sinal para montar o **roteiro planejado** e agrupar as entregas — todos viram **verde (5)**.
-* **Cliente retira no galpão:** sem rota. O fato aparece com o **ícone de galpão**; você só confirma a janela em que ele vem buscar.
+* **Entrega da semana sem roteiro:** o pedido foi ganho e a entrega aparece **âmbar**. Selecione-a e monte o roteiro → vira **verde**.
+* **Janela em menos de 48h:** o âmbar ganha o **⚠** (e o menu acende o sinal). É o primeiro item do seu dia.
+* **Carga dividida:** a viagem 1 saiu no ROT-7 (**verde/teal**) e a viagem 2 segue **âmbar** — o calendário mostra as duas separadas ("V1/2" e "V2/2"), e você seleciona só a que falta.
+* **Cliente retira no galpão:** sem rota — o movimento aparece **azul**; você só confirma a janela em que ele vem buscar.
 * **Locação de evento em outra cidade:** o horário foi combinado no fuso do cliente. O calendário mostra no **fuso da sua operação** e exibe o **selo** do fuso original.
 
 ## Próximo passo <a id="proximo-passo"></a>
 
 * Para transformar os **âmbares** em verde: [Planejando o roteiro](../logistica/planejando-o-roteiro.md).
-* Para entender as fases por trás de cada fato: [Visão geral da logística](../logistica/visao-geral.md).
+* Para entender as fases por trás de cada movimento: [Visão geral da logística](../logistica/visao-geral.md).
 * Para a chance de **fechar** um orçamento (que **não** está aqui): [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
