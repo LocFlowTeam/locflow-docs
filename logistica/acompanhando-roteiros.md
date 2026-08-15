@@ -37,7 +37,7 @@ O histórico das viagens concluídas, em lista simples (sem seções), dos **mai
 
 Cada roteiro na lista vem num cartão enxuto, com o essencial para você decidir num relance:
 
-* **Código** do roteiro e um **selo de estado** — *Em execução*, *Executado*, *Sob demanda*, ou se ele está atribuído a alguém.
+* **Código** do roteiro e um **selo de estado** — *Em execução*, *Executado*, ou se ele está atribuído a alguém.
 * **Galpão-base** de onde a viagem sai.
 * **Previsão de saída** (ou, se já passou da hora, o **atraso**).
 * Quantos **movimentos** a viagem tem e sua **duração máxima** prevista.

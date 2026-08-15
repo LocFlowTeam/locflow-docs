@@ -244,7 +244,7 @@ O LocFlow recusa a reversão em **três** situações:
 Passando pelas travas, o LocFlow desfaz a operação sozinho:
 
 * o movimento **sai de todos os roteiros planejados** que ainda não foram concluídos;
-* um roteiro **sob demanda que existia só por causa daquele pedido** é **excluído** (não fica rota vazia na sua lista);
+* um roteiro que **existia só por causa daquele pedido** — aquele com uma parada só — é **excluído** (não fica rota vazia na sua lista);
 * as **projeções** do pedido são apagadas — se você ganhar de novo, tudo é recriado do zero, fresco;
 * a **fatura ainda em aberto é cancelada**, junto com as cobranças online pendentes;
 * o **estoque é liberado**.

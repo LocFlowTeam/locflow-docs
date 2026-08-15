@@ -345,9 +345,11 @@ A mesma tela atende quem está começando e quem já roda dezenas de entregas po
 | **Médio** | Várias paradas com horários a respeitar: usa a **otimização rápida (grátis)** para ordenar pelas janelas. |
 | **Grande** | Muitas paradas, tempo apertado e combustível pesando: usa a **inteligente** para o melhor trajeto, ETAs e ver o que não cabe — e liga o **Trânsito** para fugir dos pontos travados e prever pedágio. |
 
-## Roteiro planejado x sob demanda
+## Despachar uma entrega na hora
 
-O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vários movimentos com antecedência. Quando precisar despachar **uma** entrega ou retirada na hora, a partir das ações rápidas do orçamento, o LocFlow cria um roteiro **sob demanda** reusando este mesmo fluxo, já com o movimento-alvo selecionado. A **execução em campo é idêntica** nos dois casos.
+Não existe um "tipo especial" de roteiro para a pressa. Quando você toca em **Planejar entrega** (ou **Planejar retirada**) nas ações rápidas de um pedido, o LocFlow abre **este mesmo planejamento**, já com aquele movimento selecionado — e você salva ali mesmo, sem mais nada.
+
+A diferença é que agora, se der, você **aproveita a viagem**: dá para acrescentar outras paradas antes de salvar, ou voltar depois e adicionar mais uma ao mesmo roteiro. Antes esse roteiro nascia trancado em um movimento só.
 
 ## Situações reais
 
@@ -358,7 +360,7 @@ O planejamento descrito aqui gera um **roteiro planejado** — você agrupa vár
 * **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
 * **Três picapes que carregam a mesma coisa:** você tem uma picape 2019, uma 2021 e uma 2023, todas com a mesma capacidade. Em vez de escolher uma ficha específica em cada roteiro, você as agrupa numa classe "Picape" e passa a planejar só pela classe; na execução, as três aparecem selecionáveis, e a carga é conferida por inteiro porque as três garantem a mesma capacidade.
 * **Frota própria e fornecedor não se misturam:** você tem uma classe "Caminhão" da sua frota e, separadamente, uma frota-espelho de um fornecedor de frete. São classes diferentes, cada uma com seu titular — ao planejar, escolher uma ou outra já diz quem vai executar a viagem.
-* **Entrega que apareceu agora:** não dá para esperar o planejamento — despacha **sob demanda** direto do orçamento, e a viagem segue do mesmo jeito no campo.
+* **Entrega que apareceu agora:** não dá para esperar o planejamento — toca em **Planejar entrega** direto no pedido, o movimento já vem selecionado e você salva. Se, ao abrir, notar outra parada no mesmo bairro, leva as duas na mesma viagem.
 * **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Dividir por veículo** o app propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
 * **Apareceu uma entrega urgente com o motorista já na rua:** ele cumpriu duas das cinco paradas. Você abre o roteiro, adiciona a nova entrega, e manda **otimizar** — a ordem das três que faltam é recalculada a partir de onde ele está agora, não do galpão. As duas já feitas ficam intactas, em cinza no mapa.
 * **A rua estava interditada:** o motorista pulou a parada 3. Ela não fica presa neste roteiro: volta para a lista de movimentos disponíveis com o motivo registrado, e você decide se tenta de novo hoje — colocando-a de volta — ou se ela entra no roteiro de amanhã.

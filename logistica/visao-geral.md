@@ -129,16 +129,16 @@ flowchart LR
 **Locação x venda:** na **venda** há apenas entrega — o item sai em definitivo, sem retirada nem conferência. Na **locação** há entrega e depois retirada (o item retorna), com conferência opcional na volta. Veja [Locação e venda](../conceitos/locacao-e-venda.md).
 {% endhint %}
 
-## Duas formas de despachar
+## Dois jeitos de chegar ao mesmo roteiro
 
-O LocFlow sempre **sugere o melhor caminho, mas nunca impede o mais simples**. Por isso há dois jeitos de colocar o material na rua:
+O LocFlow sempre **sugere o melhor caminho, mas nunca impede o mais simples**. Existe **um** tipo de [roteiro](planejando-o-roteiro.md) — o que muda é por onde você entra nele:
 
-| Forma | O que é | Quando usar |
+| Por onde você entra | O que acontece | Quando usar |
 | --- | --- | --- |
-| **Planejado (com antecedência)** | Você monta a sequência de paradas de vários orçamentos em um [roteiro](planejando-o-roteiro.md), escolhe a melhor ordem, o veículo e quem vai. | A operação do dia: agrupa entregas e retiradas, economiza tempo e combustível. |
-| **Sob demanda** | Uma entrega (ou retirada) de **um** orçamento, criada na hora a partir das ações rápidas do pedido. | Entrega de última hora, ou quem ainda não planeja a rota. |
+| **Pela logística** | Você escolhe os movimentos do dia no mapa ou na lista e monta a sequência de paradas. | A operação do dia: agrupa entregas e retiradas, economiza tempo e combustível. |
+| **Pelo pedido** | Toca em **Planejar entrega/retirada** nas ações rápidas: o planejamento abre com aquele movimento já selecionado. | Entrega de última hora, ou quem ainda não planeja a rota. |
 
-A **execução em campo é idêntica** para os dois — a distinção existe só para você saber, depois, qual roteiro nasceu de um planejamento e qual foi criado na hora.
+Nos dois casos o roteiro é o mesmo, e o que ele leva é decisão sua até salvar: entrando pelo pedido, você pode acrescentar outras paradas antes de fechar — ou voltar depois e adicionar mais uma.
 
 ## Ida e volta, entrega e retirada
 
@@ -159,7 +159,7 @@ A logística **abstrai para o pequeno e revela para o grande** — você liga fa
 
 | Porte | Como a logística aparece para você |
 | --- | --- |
-| **Começando** | Separação e conferência **desligadas**; fatura **não exigida**. Ganhou o pedido, despacha **sob demanda** e entrega direto. Caminho mais curto possível. |
+| **Começando** | Separação e conferência **desligadas**; fatura **não exigida**. Ganhou o pedido, toca em **Planejar entrega** e sai. Caminho mais curto possível. |
 | **Crescendo** | **Separação ligada** para nada sair incompleto; talvez a **conferência** na locação para pegar avaria; roteiros **planejados** para agrupar o dia. |
 | **Estruturado** | Tudo ligado, com papéis dedicados (Separador, Conferente, motoristas), fatura exigida antes de despachar e rotas planejadas com veículo e ordem otimizada. |
 
@@ -167,7 +167,7 @@ A logística **abstrai para o pequeno e revela para o grande** — você liga fa
 
 * **Venda no balcão:** orçamento vendido, entrega na hora. Sem retirada, sem conferência — o ciclo termina na entrega.
 * **Locação de evento:** reservado, separa na véspera, entrega no local, retira no dia seguinte e confere na volta para checar avarias antes de o item liberar o estoque.
-* **Entrega de última hora:** pulou o planejamento? Despacha **sob demanda**, uma entrega de cada vez — o sistema não trava o caminho mais simples.
+* **Entrega de última hora:** pulou o planejamento? Toca em **Planejar entrega** no próprio pedido — o movimento já vem selecionado e você salva em seguida. O sistema não trava o caminho mais simples.
 * **Cliente que retira no balcão:** sem rota nenhuma. O material é separado (se você ligou a separação) e o cliente busca no galpão; na locação, devolve no balcão e segue para a conferência. A fila desses atendimentos fica em [Balcão: retirada e devolução no galpão](balcao.md).
 
 ## Próximo passo

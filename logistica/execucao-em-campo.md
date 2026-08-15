@@ -5,7 +5,7 @@ description: O app do motorista — preparar a saída, registrar chegada em cada
 
 # Execução em campo
 
-Depois de [planejado](planejando-o-roteiro.md) (ou criado sob demanda), o roteiro vai para a rua. Quem executa acompanha tudo **pelo aplicativo, no celular**: prepara a saída, segue parada a parada e registra cada entrega e retirada na hora. O status volta para a equipe **em tempo real** — quem está no escritório vê o pedido avançar sem precisar ligar para o motorista.
+Depois de [planejado](planejando-o-roteiro.md), o roteiro vai para a rua. Quem executa acompanha tudo **pelo aplicativo, no celular**: prepara a saída, segue parada a parada e registra cada entrega e retirada na hora. O status volta para a equipe **em tempo real** — quem está no escritório vê o pedido avançar sem precisar ligar para o motorista.
 
 {% hint style="info" %}
 A execução em tempo real depende do **GPS do celular** e é feita no **aplicativo**. Pela web não dá para executar passo a passo; se a sua empresa precisar registrar uma rota **depois** que ela já aconteceu, existe a execução em lote (retroativa) — um recurso separado, para quem tem essa permissão.

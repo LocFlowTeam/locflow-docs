@@ -29,7 +29,7 @@ Ao abrir um orçamento da fila, o separador vê a **lista consolidada de produto
 O botão **Concluir separação** só libera quando **todos os itens** estão marcados. Ao concluir, o pedido passa para *Separado* e está pronto para entrar em um roteiro ou ser carregado.
 
 {% hint style="info" %}
-A separação **não exige escolher um veículo nem um motorista** — ela é só o preparo do material. O despacho (rota, ordem, quem vai) acontece depois, no [planejamento do roteiro](planejando-o-roteiro.md) ou sob demanda.
+A separação **não exige escolher um veículo nem um motorista** — ela é só o preparo do material. O despacho (rota, ordem, quem vai) acontece depois, no [planejamento do roteiro](planejando-o-roteiro.md), seja montando a rota do dia, seja pelas ações rápidas do próprio pedido.
 {% endhint %}
 
 ## O papel Separador

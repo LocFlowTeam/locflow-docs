@@ -97,7 +97,7 @@ Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% +
 | **A conferir → Conferido** | Fila de **conferência** na devolução (checar estado/avarias). |
 | **Roteiro** | Conjunto de paradas (entregas/retiradas) organizado para o dia. |
 | **Parada** | Um ponto de entrega ou retirada dentro do roteiro. |
-| **Sob demanda** | Despachar **uma** entrega na hora, sem planejar antes. |
+| **Planejar entrega/retirada** | Ação rápida do pedido que abre o planejamento do roteiro com aquele movimento já selecionado — o jeito de despachar na hora, sem montar a rota do dia antes. |
 | **Comprovação (POD)** | Prova de entrega/retirada: foto, vídeo, assinatura. Quando a sua empresa exige, **sem ela o registro não fecha**. |
 | **Dispensa de evidência** | Fechar um registro **sem a prova** que a política exigia, escrevendo um **motivo obrigatório** que fica carimbado no registro. É uma válvula para quem lança o que já aconteceu (retaguarda, balcão) e depende de uma **permissão dedicada** — motorista e parceiro externo **não a têm**, justamente porque existem para produzir a prova. |
 | **Desatualizado (defasado)** | Um movimento ficou **velho** no roteiro porque o pedido mudou depois. Ele fica **só de leitura** e trava quem está na rua até alguém **ressincronizar** a parada com o pedido atual. Num pedido **repassado a um parceiro**, quem ressincroniza é **o parceiro**, não você — veja [O pedido já estava com um parceiro](../logistica/efeitos-na-parceria.md). |

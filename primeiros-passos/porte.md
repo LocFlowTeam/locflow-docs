@@ -48,15 +48,15 @@ aí vai), aparecem etiquetas discretas que apenas orientam:
   pequena, a aprovação de frete automática; numa grande, a revisão manual.
 * **Mais simples** — a opção de menor esforço, um bom ponto de partida para quem está começando.
 * **Para imprevistos** — o atalho que está sempre à mão para quando você não deu conta de planejar
-  antes (como despachar uma entrega sob demanda). Não é o caminho recomendado, é a saída de
+  antes (como despachar a entrega direto do pedido). Não é o caminho recomendado, é a saída de
   emergência.
 * **Recomendado para todos** — vale para qualquer porte. É o caso do **catálogo oficial**: começar
   por ele economiza cadastro, do menor ao maior.
 
 {% hint style="info" %}
 **Planeje quando der; faça simples quando precisar.** Mesmo a locadora pequena ganha ao planejar o
-roteiro de entrega — por isso o roteiro planejado é recomendado para todos os portes. O despacho
-sob demanda continua ali, sempre, para o dia em que não deu para planejar.
+roteiro de entrega — por isso planejar é recomendado para todos os portes. O atalho de despachar
+direto do pedido continua ali, sempre, para o dia em que não deu para planejar.
 {% endhint %}
 
 ## Onde você vê o seu porte

@@ -93,7 +93,7 @@ flowchart LR
 
 - **Venda no balcão:** orçamento → Vendido → entrega na hora. Sem retirada, sem conferência.
 - **Locação de evento:** orçamento → Reservado → separação → entrega na véspera → retirada no dia seguinte → conferência (checar avarias).
-- **Entrega de última hora:** pulou o planejamento? Despacha **sob demanda**, uma entrega de cada vez — o sistema nunca trava o caminho mais simples.
+- **Entrega de última hora:** pulou o planejamento? Toca em **Planejar entrega** no próprio pedido — o movimento já vem selecionado e você salva em seguida. O sistema nunca trava o caminho mais simples.
 
 ## Próximo passo
 

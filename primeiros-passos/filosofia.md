@@ -26,7 +26,7 @@ A operação ideal nem sempre é a operação possível — e tudo bem. O LocFlo
 
 O melhor exemplo é a logística. Organizar a entrega e a retirada **com antecedência**, em um **roteiro planejado**, é o jeito mais eficiente de operar: você agrupa as paradas do dia, escolhe a melhor ordem, define quem vai e em qual veículo. É assim que uma operação madura economiza tempo e combustível.
 
-Mas quem está começando — ou quem tem uma entrega de última hora — **não pode ser bloqueado por isso**. Por isso o LocFlow também deixa você despachar **sob demanda**, uma entrega de cada vez, sem planejar nada antes.
+Mas quem está começando — ou quem tem uma entrega de última hora — **não pode ser bloqueado por isso**. Por isso dá para despachar **direto do pedido**: um toque em **Planejar entrega** abre o mesmo planejamento com aquele movimento já selecionado, e você salva em seguida — sem montar a rota do dia antes.
 
 {% hint style="info" %}
 **Planeje quando der; despache quando precisar.** O sistema incentiva o planejamento porque ele organiza melhor a sua operação — mas a entrega de última hora nunca fica esperando o "jeito certo".
@@ -67,7 +67,7 @@ O **mesmo** recurso abstrai para o pequeno, melhora para o médio e flexibiliza 
 | **Aprovação de orçamento** | Nenhuma — fecha direto | Congela por regra (ex.: frete alto) | Papéis aprovar/rejeitar, com motivo |
 | **Reserva do aluguel** | Vai direto ao *Reservado* | Usa o *Pré‑reservado* para segurar | Pré‑reserva como etapa do funil (validade segura o estoque) |
 | **Bloqueio de estoque** | Segue a entrega e a volta, com a folga padrão de 1h | Folgas ajustadas ao atraso real da sua operação | Folga fina por ponta (equipe × cliente) + ajuste manual por orçamento |
-| **Despacho da entrega** | Roteiro planejado, simples — sob demanda só para imprevistos | Planeja o dia; sob demanda quando precisa | Roteiros planejados (ordem, veículo, responsável) |
+| **Despacho da entrega** | Roteiro simples, despachado direto do pedido | Planeja o dia; despacha do pedido quando precisa | Roteiros planejados (ordem, veículo, responsável) |
 | **Ordem da rota** | Arrasta as paradas à mão | Otimização rápida (grátis) | Otimização inteligente Google (trajeto real, ETAs) |
 | **Frota e veículos** | Inicia sem veículo | Veículo com placa e status | Classes + especificações (capacidade, vistoria) |
 | **Logística interna (galpão)** | Desligada — entrega direto | Liga a Separação | Separação + Conferência (papéis, evidências) |
