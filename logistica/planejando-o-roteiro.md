@@ -133,7 +133,7 @@ A rota aparece como uma **linha do tempo**, no jeito de um app de mapas: começa
 Com base nisso, a linha do tempo projeta a carga **planejada**: a **carga de saída** no galpão (tudo que será entregue), o **saldo a bordo após** cada parada e a **carga de retorno** no fim. Esses números são uma **estimativa do planejamento** (por isso o rótulo *planejado*) — o saldo **real** é o que a execução registra parada a parada.
 
 {% hint style="info" %}
-**Um roteiro sai de um galpão só.** O **galpão de saída** é definido pelo primeiro movimento que você adiciona; os demais precisam sair do mesmo galpão (o app recusa os de outra origem com *"Sai de outro galpão"*). Movimentos de galpões diferentes viram **roteiros separados**. Entenda o porquê — e a visão futura de operação **multi-galpão** — em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#cada-carga-sai-de-um-galpao-so).
+**Um roteiro pode passar em mais de um galpão.** Ele tem um **galpão-base** (de onde a equipe sai e para onde volta) e pode ter **galpões de apoio** no caminho, para completar a carga. A regra é: **todo galpão de que um movimento precisa tem de estar na rota** (base + apoios). Se faltar, o app diz qual — *"O movimento precisa do galpão X, que não está na rota do roteiro"* — e basta **acrescentar o galpão à rota**, sem quebrar o roteiro em dois. Entenda como o sistema escolhe as origens em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
 {% endhint %}
 
 #### Endereços sem localização no mapa

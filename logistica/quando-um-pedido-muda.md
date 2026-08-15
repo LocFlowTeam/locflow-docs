@@ -149,7 +149,7 @@ Passou a **retirar no balcão**? Trocou o **galpão de origem**? Uma venda virou
 * **Trocar o galpão de origem mexe no estoque nos dois lados:** o material é **liberado no galpão antigo** e **reservado no novo**. Sem isso, faltaria material no lugar errado e sobraria no certo.
 * No chip do roteiro, a troca de galpão aparece como motivo **responsabilidade** — é a mesma família ("quem faz e de onde sai"), e é o único caso dessa família que chega a virar chip. Quando muda *quem se desloca* (a sua equipe leva × o cliente vem buscar), o movimento da equipe deixa de existir ou nasce outro no lugar: não sobra parada para exibir o chip.
 
-**O que você precisa fazer:** lembrar que **cada roteiro parte de um único galpão**. Se o movimento mudou de galpão, ele **não pertence mais** ao roteiro em que estava — vai precisar entrar em outra rota. Veja [Cada carga sai de um galpão só](../orcamentos/movimentos-e-janelas.md).
+**O que você precisa fazer:** conferir se o roteiro ainda passa no galpão novo. Todo galpão de que um movimento precisa tem de estar na **rota do roteiro** (galpão-base + apoios) — se o galpão novo não estiver lá, **acrescente-o à rota**; só se isso não fizer sentido para a viagem é que o movimento sai para outro roteiro. Veja [Um pedido pode somar o estoque de vários galpões](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
 
 ### Mudar o valor, o desconto ou o frete {#mudar-o-frete}
 

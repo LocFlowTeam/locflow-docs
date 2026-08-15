@@ -38,7 +38,7 @@ flowchart LR
 | --- | --- | --- |
 | **Em aberto** | Criado, ainda sem ação. | Sempre — é onde o orçamento nasce. |
 | **Em negociação** | Enviado ao cliente, aguardando a resposta. | Aluguel e venda. |
-| **Pré-reservado** | Um "segurar" o aluguel antes de confirmar de vez. | **Opcional**, só locação. |
+| **Pré-reservado** | Um acerto comercial antes de confirmar de vez — **não bloqueia estoque**. | **Opcional**, só locação. |
 | **Reservado** | Aluguel confirmado — o **ganho** da locação; o estoque é bloqueado. | Locação. |
 | **Vendido** | Venda confirmada — o **ganho** da venda. | Venda. |
 | **Perdido** | A proposta não fechou (no funil, antes do ganho). | Aluguel e venda. |
@@ -54,7 +54,7 @@ flowchart LR
 {% endhint %}
 
 {% hint style="info" %}
-**A pré-reserva é opcional.** Ela serve para "segurar" um aluguel enquanto o cliente decide, sem confirmar de vez. Quem prefere pode **pular** essa etapa e ir direto de Em aberto ou Em negociação para **Reservado**. Use se ajudar a sua operação; ignore se não precisar.
+**A pré-reserva é opcional.** Ela registra um aluguel praticamente acertado enquanto o cliente decide, sem confirmar de vez — é uma etapa do funil, não um bloqueio de estoque. Quem prefere pode **pular** essa etapa e ir direto de Em aberto ou Em negociação para **Reservado**, que é onde o estoque de fato fica bloqueado. Use se ajudar a sua operação; ignore se não precisar.
 {% endhint %}
 
 ### "Pendente" não é um estado do funil
@@ -96,7 +96,7 @@ Você tem três caminhos, conforme a conversa com o cliente:
 {% endhint %}
 
 {% hint style="warning" %}
-**Vencer também solta a pré-reserva.** Enquanto o orçamento está dentro da validade, os itens ficam **pré-reservados**; depois de vencer, deixam de ficar segurados e voltam a ficar livres para outro cliente. Veja [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md) e o [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#validade-do-orcamento).
+**A pré-reserva não bloqueia estoque.** Ela é um combinado comercial: enquanto o pedido está **Pré-reservado**, os itens continuam disponíveis para outro cliente. O bloqueio começa quando o pedido vira **Reservado** — o que acontece sozinho na quitação do sinal, se a sua operação usa esse gatilho. Se o cliente demorar a pagar, confirme a disponibilidade antes de prometer a data. Veja [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md) e o [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#validade-do-orcamento).
 {% endhint %}
 
 ## A jornada e o próximo passo sugerido
