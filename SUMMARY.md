@@ -14,6 +14,7 @@
 * [Aceitando um convite](primeiros-passos/aceitando-um-convite.md)
 * [Configuração inicial](primeiros-passos/configurando-sua-empresa.md)
   * [O setup passo a passo](primeiros-passos/setup-passo-a-passo.md)
+* [Conheça a Flo](flo/conheca-a-flo.md)
 * [Glossário do LocFlow](primeiros-passos/glossario.md)
 
 ## Conceitos essenciais

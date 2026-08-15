@@ -73,6 +73,14 @@ Na lista de contatos, toque no botão **+** para abrir o cadastro. Preencha o **
 Começou a digitar e precisou sair? O LocFlow guarda um **rascunho** do cadastro e oferece retomar depois — você não perde o que já tinha preenchido.
 {% endhint %}
 
+{% hint style="success" %}
+**Quer ganhar tempo?** Toque no botão **+** para abrir **Novo contato** e, nessa tela, abra **Peça à
+Flo**. Descreva o contato com suas palavras: a Flo organiza os dados principais e pergunta o que
+faltar. Você ainda confere tudo, completa o endereço se precisar e toca em **Salvar** — nada é
+criado automaticamente.
+Veja [Conheça a Flo](../flo/conheca-a-flo.md#criar-contato).
+{% endhint %}
+
 ### Buscar e filtrar na lista {#buscar-e-filtrar}
 
 A lista tem uma **busca inteligente** no topo: digite nome, documento, parte do telefone ou e-mail e os resultados se ajustam. Quando a base cresce, a lista é **paginada** (você escolhe quantos por página e navega entre as páginas). Tocar em um contato abre a **ficha** com Perfil, Contato e Endereço; o lápis leva direto para a edição. Em telas largas (no computador), a lista vira uma **tabela** ao lado da ficha — você seleciona um contato à esquerda e lê os detalhes à direita.

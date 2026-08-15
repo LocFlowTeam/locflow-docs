@@ -8,7 +8,7 @@ description: Seu plano, o ciclo de cobrança e o status; o direito de arrependim
 Em **Minha assinatura** você acompanha duas coisas separadas, em abas diferentes da mesma tela:
 
 * **Plano & faturas** — o seu **contrato com o LocFlow**: em que plano você está, o ciclo de cobrança e o status.
-* **Créditos** — a sua **carteira**, usada por alguns recursos de mapa.
+* **Créditos** — a sua **carteira**, usada por serviços externos do app, como mapas e a Flo.
 
 São coisas distintas. Mexer numa não mexe na outra.
 
@@ -86,18 +86,20 @@ A entrada é discreta e só consulta o prazo quando você toca nela. Se o prazo 
 
 ## Créditos {#creditos}
 
-Alguns recursos que usam **mapas do Google** consomem **créditos** — eles cobrem o custo desses serviços. Pense neles como uma "moeda" só para o mapa. Seu plano já vem com uma **franquia mensal** de créditos; se precisar de mais, você compra (na web).
+Alguns recursos que usam **serviços externos** consomem **créditos** — por exemplo, mapas e a assistente Flo. Os créditos cobrem o custo desses serviços. Seu plano já vem com uma **franquia mensal**; se precisar de mais, você compra (na web).
 
 ```mermaid
 flowchart LR
     F[Franquia do mes<br/>inclusa no plano] --> S[Saldo da carteira]
     C[Creditos comprados] --> S
-    S --> U[Recursos de mapa<br/>consomem]
+    S --> M[Recursos de mapa]
+    S --> I[Assistente Flo]
 ```
 
 ### O que consome crédito {#o-que-consome}
 
-Só os recursos que de fato **chamam o mapa do Google**. O que não usa mapa **não consome nada**.
+O consumo acontece quando o LocFlow precisa chamar um serviço externo. O app sinaliza essas ações
+antes ou mostra o custo logo depois.
 
 | Ação | Consome? |
 | --- | --- |
@@ -105,9 +107,12 @@ Só os recursos que de fato **chamam o mapa do Google**. O que não usa mapa **n
 | **Traçar a rota** real do roteiro | Sim |
 | **Otimizar a rota** (melhor ordem das paradas) — cobra **por parada** | Sim |
 | Mostrar o pino no cadastro / no onboarding | **Não** (é gratuito) |
+| Enviar uma mensagem ou responder às perguntas da **Flo** | Sim — o custo varia e aparece na conversa |
+| Gerar a resposta falada da Flo em **Ouvir** | Pode consumir — o app avisa antes |
+| Abrir a tela sugerida, revisar ou salvar sem enviar nova mensagem à Flo | **Não gera um novo turno da Flo** |
 
 {% hint style="info" %}
-Recursos que consomem crédito ficam **sinalizados na própria tela**, para você não ser pego de surpresa. E o cálculo é **reaproveitado** quando possível (fica em cache), evitando cobrar de novo pela mesma coisa.
+Recursos que consomem crédito ficam **sinalizados na própria tela**, para você não ser pego de surpresa. Na Flo, cada resposta mostra o custo abaixo da mensagem, e **Ouvir** avisa quando precisa gerar um áudio. Cálculos e resultados são **reaproveitados** quando possível, evitando cobrar de novo pela mesma coisa.
 {% endhint %}
 
 ### Sua carteira e o saldo {#carteira-e-saldo}
@@ -137,7 +142,7 @@ A compra depende de **permissão** (gerenciar o contrato). No app, em vez dos bo
 No **Extrato** você confere cada movimentação, com data e descrição:
 
 * **Entradas** (verde, com `+`) — compras e a renovação da franquia do mês.
-* **Saídas** (com `−`) — cada consumo de mapa (geocodificar, traçar ou otimizar rota).
+* **Saídas** (com `−`) — cada consumo de mapa ou da Flo. As conversas e respostas faladas aparecem como **Assistente Flo**.
 
 Achou um gasto estranho? O Extrato mostra exatamente **o que consumiu, quando e quanto**.
 
@@ -149,13 +154,14 @@ Achou um gasto estranho? O Extrato mostra exatamente **o que consumiu, quando e 
 
 * **Vou testar antes de pagar.** Durante o teste, use à vontade — sem cobrança. Ao final, escolha o plano (no navegador, pela página **Plano & faturas**).
 * **Me arrependi logo depois de assinar.** Dentro de 7 dias, abra *"Reembolso por arrependimento"* em **Meu contrato**: a tela mostra o prazo e o valor do estorno integral.
-* **Acabou a franquia no fim do mês.** Fez muitas otimizações de rota e a franquia acabou? Compre créditos (na web) e siga operando; a franquia renova no próximo ciclo.
+* **Acabou a franquia no fim do mês.** Fez muitas otimizações de rota ou usou bastante a Flo e a franquia acabou? Compre créditos (na web) e siga operando; a franquia renova no próximo ciclo.
 * **Estou no celular e quero trocar de plano.** No app é só acompanhar. Abra o **painel web** no navegador para trocar de plano ou comprar créditos.
 * **Conferir um consumo.** Abra o **Extrato** — cada linha mostra o que consumiu, quando e quanto.
 
 ## Próximo passo {#proximo-passo}
 
 * Use bem os créditos de rota em [Planejando o roteiro](../logistica/planejando-o-roteiro.md).
+* Veja como conversar, revisar sugestões e controlar custos em [Conheça a Flo](../flo/conheca-a-flo.md).
 * Veja os recursos premium ligados ao plano em [Domínio personalizado](dominio-personalizado.md).
 * Para receber dos seus clientes (que é outra coisa), veja [Pagamento online](../cobranca/pagamento-online.md).
 * Em dúvida? Veja [onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
