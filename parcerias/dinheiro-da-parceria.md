@@ -209,6 +209,31 @@ Três coisas que valem saber:
 O saldo **acumula por parceiro**, não por pedido: vários repasses pequenos de um mesmo parceiro são quitados numa cobrança só. Menos PIX, menos conferência.
 {% endhint %}
 
+### Paguei o parceiro por fora (repasse manual) {#repasse-manual}
+
+Às vezes o dinheiro corre **fora do LocFlow**: você fez um Pix direto para o parceiro, pagou em dinheiro na entrega — ou o parceiro **ainda não tem recebimento apto** e o PIX de quitação nem sai. Para esses casos existe o **repasse manual**, na tela de **Repasses**, no card do parceiro: **"Paguei por fora (Pix direto/dinheiro)"**.
+
+O fluxo é uma **via de mão dupla** — um lado sozinho nunca dá o repasse por pago:
+
+1. **Você declara** ter pago o valor do parceiro (o líquido dele — a taxa da plataforma **não** entra nesse valor, porque ela não é dele).
+2. **O parceiro confirma** ("recebi") ou **contesta** ("não recebi", com o motivo) — nos **Meus ganhos** dele.
+3. Confirmado, os repasses são dados como **pagos**: entram nos ganhos do parceiro, saem do seu saldo devedor e viram **saída** no seu financeiro.
+
+Enquanto a declaração aguarda a resposta, a **quitação via PIX daquele parceiro fica travada** (o mesmo saldo não pode ser pago por dois caminhos) — e você pode **cancelar a declaração** a qualquer momento para voltar ao fluxo normal.
+
+{% hint style="warning" %}
+**A taxa da plataforma continua devida.** O pagamento por fora não passa pelo split — então os 8% daquela operação **não chegam à LocFlow** junto com o repasse. Depois da confirmação do parceiro, eles viram uma **dívida da sua organização com a LocFlow** (veja abaixo).
+{% endhint %}
+
+### A taxa quando você paga por fora {#divida-de-taxa}
+
+Confirmado um repasse manual, a taxa daquela operação aparece na tela de **Repasses** como **"Taxa da plataforma a pagar"** — com o botão **"Pagar taxa via PIX"**. Vale saber:
+
+* **O valor do PIX é exatamente a dívida.** A tarifa da transação é da LocFlow — você não paga um centavo além dos 8% combinados.
+* **Um PIX recolhe tudo.** A dívida de vários repasses manuais (de vários parceiros) sai num PIX só — a mesma lógica do "quitar todos".
+* **Se parte da taxa já tinha sido retida na fonte** (o cliente pagou online), a dívida é só a **diferença** — nunca 8% duas vezes.
+* **A taxa independe de como o cliente pagou.** Ela nasce da operação intermediada pela Rede — pagamento online, baixa manual ou dinheiro na porta, a taxa é a mesma; o que muda é apenas **por onde** ela é recolhida.
+
 ### Retroativo: o cliente pagou antes do aceite {#retroativo}
 
 E se o cliente **quitou tudo** antes mesmo de o parceiro aceitar a solicitação? O dinheiro já entrou inteiro para você — não há mais pagamento futuro para repartir. Nesse caso o LocFlow cria o saldo **no momento do aceite**: o parceiro aceitou, o valor dele nasce devido, e segue o caminho do saldo acumulado.
@@ -324,7 +349,7 @@ Na parceria ele **não é um opcional que "só deixa mais lento"** — é pré-r
 
 | Quem precisa | Para quê | Sem ele |
 | --- | --- | --- |
-| **O parceiro logístico** | Receber o repasse | Você **não consegue gerar** o PIX de quitação daquele parceiro. O saldo nasce e fica registrado, mas não há como pagá-lo pelo app. |
+| **O parceiro logístico** | Receber o repasse | Você **não consegue gerar** o PIX de quitação daquele parceiro. O saldo nasce e fica registrado; a saída é o [repasse manual](#repasse-manual) — você paga por fora e ele confirma. |
 | **A sua organização** | Ser a pagadora do PIX de quitação | Nenhuma quitação de repasse sai — nem individual, nem em lote. |
 | **O parceiro** (de novo) | Quitar a dívida dele, quando ele cobrou o cliente na rua | Ele não consegue gerar o PIX do acerto: *"complete seu cadastro de recebimento para quitar via PIX"*. |
 
@@ -359,7 +384,7 @@ E a soma sempre fecha: **sua margem + líquido do parceiro + taxa da plataforma 
 
 A **taxa de plataforma** é o que mantém a Rede funcionando — descoberta, reputação, cálculo e liquidação automáticos. Três fatos que quase todo mundo entende errado:
 
-**1. São 8%, fixos.** Não variam por plano de assinatura, não sobem com o volume, não têm letra miúda. O que o acordo escolhe é só **quem paga**.
+**1. São 8%, fixos.** Não variam por plano de assinatura, não sobem com o volume, não têm letra miúda. O que o acordo escolhe é só **quem paga**. E eles **independem de o cliente pagar pelo LocFlow**: a taxa nasce da operação intermediada pela Rede — venda paga online, por baixa manual ou na porta, a conta é a mesma. O que muda é só **por onde** ela é recolhida (na fonte, na quitação do repasse, ou no [PIX da taxa](#divida-de-taxa) quando você pagou o parceiro por fora).
 
 **2. Incidem sobre o total da operação — o que o cliente paga —, não sobre o repasse.** Este é o ponto que mais confunde. Numa venda de **R$ 1.000,00** com repasse de **R$ 300,00**, a taxa é **R$ 80,00** (8% de R$ 1.000,00), e não R$ 24,00.
 

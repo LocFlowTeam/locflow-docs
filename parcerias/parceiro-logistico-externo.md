@@ -167,6 +167,7 @@ O valor de cada operação nasce do **acordo** (os seus preços × quantidades �
 
 - **Divisão na fonte (split)** — quando o cliente paga online e o gatilho do acordo é "no pagamento", o seu pedaço **se separa automaticamente** na hora do pagamento e cai direto para você. Para isso funcionar, o seu [recebedor](#recebedor) precisa estar pronto.
 - **Saldo a receber** — quando o gatilho dispara sem um pagamento online repartível (o cliente pagou em dinheiro, ou o gatilho é "na entrega"/"na retirada"), o valor vira **saldo** que a locadora te deve. Ela quita gerando uma **cobrança de repasse** (PIX) — e o valor migra de "A receber" para "Você já recebeu".
+- **Pagamento por fora, com a sua confirmação** — a locadora pode ter te pago **fora do app** (um Pix direto, dinheiro na mão). Nesse caso ela **declara** o pagamento e **você confirma**: aparece um cartão em **Meus ganhos** — *"a locadora declarou ter pago R$ X a você por fora. Você recebeu?"* — com **"Recebi, confirmar"** e **"Não recebi"** (aí o app pede o motivo, que volta para ela). Só a **sua confirmação** dá o repasse por pago; enquanto você não responde, nada muda no seu saldo.
 
 Se o cliente pagou tudo **antes** de você aceitar a operação, nada se perde: o seu saldo nasce no aceite, calculado sobre o que já foi quitado — sem dupla contagem e sem depender de novo pagamento.
 
