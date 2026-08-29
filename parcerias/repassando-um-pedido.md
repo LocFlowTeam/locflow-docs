@@ -237,6 +237,12 @@ A mesma reserva aparece com rótulos diferentes conforme **quem olha** — a tel
 
 Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, o que fica é a **[central de avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)**: avaliar o parceiro e acompanhar a revelação das notas.
 
+## De qual galpão a operação sai {#galpao-de-origem}
+
+Na **parceria entre organizações**, quem executa pode ter mais de um galpão. Por isso, **no aceite** a parceira escolhe **de qual galpão dela** a operação sai — com o sistema sugerindo o mais indicado. Essa escolha vira a referência única de tudo o que vem depois: o **frete** calcula a partir dele, o **estoque** movimenta nele e o **roteiro** nasce saindo dele.
+
+Errou a escolha? No **roteiro**, a base ainda pode ser trocada **até a saída ser registrada** — depois disso a rota partiu de lá, e a base vira fato.
+
 ## Acompanhando a operação do parceiro {#acompanhando-a-operacao}
 
 Depois do aceite, a logística é do parceiro — e a **linha do tempo logística do pedido** passa a dizer isso com todas as letras: em vez de "Com a equipe", você vê **"Com {nome do parceiro}"**, e cada etapa narra quem executa de verdade ("Transportes Silva está a caminho do cliente").

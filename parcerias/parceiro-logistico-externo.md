@@ -85,7 +85,7 @@ O detalhe do repasse mostra tudo o que você precisa para decidir — e nada do 
 
 A decisão é sua, e as duas saídas são legítimas:
 
-- **Aceitar repasse** — a operação vira sua: os roteiros dela passam a viver em **Minha logística** e o seu ganho entra na fila de [Meus ganhos](#meus-ganhos).
+- **Aceitar repasse** — a operação vira sua: os roteiros dela passam a viver em **Minha logística** e o seu ganho entra na fila de [Meus ganhos](#meus-ganhos). **A rota sai do SEU galpão**: o nome, o ponto no mapa e a conferência de saída/retorno usam o endereço cadastrado em **Meu galpão** — mantenha o pino no lugar certo antes de criar o roteiro.
 - **Recusar** — o app pede o **motivo**, obrigatório: *"Diga ao vendedor por que você não vai fazer este trabalho"*. O motivo volta para a locadora, que pode repassar a outro parceiro. Recusar **não** gera penalidade — dizer "não" a tempo é melhor do que aceitar e falhar.
 
 ### O prazo de aceite {#prazo-de-aceite}
