@@ -237,6 +237,21 @@ A mesma reserva aparece com rótulos diferentes conforme **quem olha** — a tel
 
 Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, o que fica é a **[central de avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)**: avaliar o parceiro e acompanhar a revelação das notas.
 
+## Acompanhando a operação do parceiro {#acompanhando-a-operacao}
+
+Depois do aceite, a logística é do parceiro — e a **linha do tempo logística do pedido** passa a dizer isso com todas as letras: em vez de "Com a equipe", você vê **"Com {nome do parceiro}"**, e cada etapa narra quem executa de verdade ("Transportes Silva está a caminho do cliente").
+
+O bloco **"A rota do parceiro"** responde o que o seu cliente pergunta, sem abrir nada do parceiro:
+
+* **Em que pé está**: preparando a saída · na rua · rota encerrada, com a **saída prevista** no fuso de quem executa;
+* **O progresso**: "3 de 7 paradas da rota cumpridas · seu pedido é o 5º" — só contagens, nunca os clientes do parceiro;
+* **O desfecho**: entrega/retirada concluída, ou **não cumprida com o motivo** — a informação com que você liga para o cliente;
+* **O pino ao vivo**: quando a rota está na rua, a posição do veículo do parceiro aparece num mini-mapa, atualizada a cada instante.
+
+{% hint style="info" %}
+**Consultar, não operar.** Você acompanha; quem monta, edita e executa a rota é o parceiro. Por isso os roteiros do parceiro **não aparecem** na sua lista de roteiros — o que é dele fica com ele, e o que é do seu pedido chega até você pelo acompanhamento.
+{% endhint %}
+
 ## Situações reais {#situacoes-reais}
 
 - **Evento no fim de semana, sua agenda cheia.** Pedido ganho, dois parceiros com acordo. O esboço mostra os dois, você calcula as rotas (2 créditos), o comparativo diz que o parceiro A te dá R$ 180 a mais de margem. Repassa, ele aceita em uma hora, a operação some da sua agenda.
