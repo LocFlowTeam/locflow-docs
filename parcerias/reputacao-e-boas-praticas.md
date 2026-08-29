@@ -23,6 +23,20 @@ São **três sinais diferentes**, e cada um responde a uma pergunta:
 **A régua também aponta para você.** Reputação na rede não é só sobre o parceiro: quem **repassa** também é medido — e um cancelamento tardio custa pontos na reputação da **sua organização**. Veja [Índice de confiabilidade](#indice-de-confiabilidade).
 {% endhint %}
 
+## A central de avaliações: tudo num lugar só {#central-de-avaliacoes}
+
+**Onde fica:** **Rede de Parceiros › Avaliações de parceria.** É a central que responde, linha a linha, três perguntas sem abrir nada:
+
+1. **Já avaliei esta operação?** Quem está pendente aparece com o botão **Avaliar**; quem já foi avaliada mostra a sua nota (★).
+2. **O outro lado já avaliou?** Na parceria entre organizações, a linha diz **o fato** — nunca a nota, enquanto o [duplo-cego](#duplo-cego) estiver valendo.
+3. **Em que pé está a revelação?** Cada linha carrega o estado: **"Oculta até o outro lado avaliar"** (com a data em que se revela sozinha), **"O parceiro já avaliou — falta a sua"** ou **"Notas reveladas"**.
+
+Dá para buscar por pedido, cliente ou parceiro, e filtrar por **Pendentes de avaliar** × **Avaliadas**. Tocar numa linha abre o detalhe do repasse — é lá que a avaliação acontece (estrelas + comentário).
+
+{% hint style="info" %}
+**E os pedidos repassados em si?** A gestão da operação mora na **sua esteira de orçamentos**, com o selo **"da rede"** e o filtro de procedência — veja [Repassando um pedido](repassando-um-pedido.md). A central cuida do que vem depois da operação: a confiança.
+{% endhint %}
+
 ## Avaliação privada: a sua opinião, para os seus repasses {#avaliacao-privada}
 
 Depois que uma operação repassada é concluída, **você avalia o parceiro**: 1 a 5 estrelas e um comentário, direto no detalhe da solicitação. É rápido — e vale ouro para você mesmo.

@@ -64,7 +64,7 @@ No celular, a barra de baixo mostra quatro atalhos: **Início** (o hub da Rede) 
 | Grupo | O que tem dentro |
 | --- | --- |
 | **Descobrir & Conectar** | Descobrir parceiros · Vínculos · Meu perfil público · Minha reputação |
-| **Operar** | Reservas em parceria · Acordos · Parceiros externos |
+| **Operar** | Avaliações de parceria · Acordos · Parceiros externos |
 | **Financeiro da rede** | Meus Ganhos · Repasses · Conta de recebimento |
 
 {% hint style="info" %}

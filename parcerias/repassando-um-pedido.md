@@ -5,7 +5,7 @@ description: O passo a passo de repassar um pedido ganho a um parceiro — esbo�
 
 # Repassando um pedido
 
-**Onde fica:** a ação **"Repassar a parceiro"** aparece nas **ações do orçamento** quando ele foi **ganho** e existe acordo que cobre os itens. O acompanhamento vive na **Rede de Parceiros › Reservas em parceria** (lista + detalhe de cada repasse).
+**Onde fica:** a ação **"Repassar a parceiro"** aparece nas **ações do orçamento** quando ele foi **ganho** e existe acordo que cobre os itens. O acompanhamento vive **na sua própria esteira de orçamentos**: todo pedido repassado ganha o selo **"da rede"** (com o nome do parceiro e o estado do aceite) no funil, na tabela e na ficha — e o filtro **Procedência › Da rede de parcerias** lista só eles. Do detalhe do repasse dá para voltar ao orçamento em um toque, e vice-versa.
 
 Repassar é isto: você fechou um pedido com o **seu** cliente, mas quem vai executar a operação — separar o material, entregar, retirar — é um **parceiro**. O LocFlow cuida do meio do caminho inteiro: mostra **qual parceiro rende mais** para você, envia a **solicitação**, controla o **prazo de aceite**, e deixa o dinheiro combinado no [acordo](acordos-de-parceria.md) pronto para a divisão. O cliente continua sendo seu; a logística passa a ser do parceiro.
 
@@ -235,7 +235,7 @@ A mesma reserva aparece com rótulos diferentes conforme **quem olha** — a tel
 | Ganho revertido | **Orçamento revertido — repasse desfeito** | **Orçamento revertido — repasse desfeito** |
 | Com desvio dos termos | **Fora do acordo — aguardando parceiro** | **Fora do acordo — revise** |
 
-Todos aparecem na lista e no detalhe de **Rede › Reservas em parceria** — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe.
+Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, o que fica é a **[central de avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)**: avaliar o parceiro e acompanhar a revelação das notas.
 
 ## Situações reais {#situacoes-reais}
 
