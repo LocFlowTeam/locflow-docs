@@ -359,6 +359,21 @@ Na parceria ele **não é um opcional que "só deixa mais lento"** — é pré-r
 
 Na tela **Meu recebimento** (para o parceiro externo), o cadastro mostra um **passo a passo** — cadastrar, validar, aprovar, recebendo — para você saber exatamente em que ponto está. Quando o meio de pagamento exige a confirmação de identidade, aparece o cartão **"Falta a prova de vida para liberar seu saldo"**, com o botão **"Fazer prova de vida agora"**. Ele gera um endereço (e um QR Code) que dá para **abrir aqui** mesmo, **enviar** ao responsável ou **copiar** — o link **vale 20 minutos**, então é sempre gerado na hora; se expirar, gere outro ali mesmo. Assim que a identidade é aprovada, a conta fica **ativa** e os repasses passam a poder ser liquidados. Veja também [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
 
+{% hint style="info" %}
+**"Em validação" não é sempre "só esperar".** Enquanto o gateway analisa, a tela mostra o estado calmo — mas se o painel do meio de pagamento pediu a **liberação do saldo** (a prova de vida), use o botão **"Pediram a prova de vida? Gerar link"** que fica no mesmo cartão. Quem responde é o próprio gateway: se a verificação já estiver disponível, o link sai na hora; se ainda não for o momento, ele avisa e nada muda.
+{% endhint %}
+
+### Ele recebe comissão? A lista responde {#recebe-comissao}
+
+Na lista de **Parceiros externos**, cada parceiro ativo mostra a situação REAL do recebimento — a resposta vem do gateway, não do simples "cadastrou a conta":
+
+* **Recebe comissão** (selo verde): cadastro aprovado — a parte dele cai direto no split.
+* **Não recebe comissão — aguardando a aprovação do gateway**: os dados foram enviados e a análise corre. O split ainda não reparte para ele.
+* **Não recebe comissão** (selo vermelho) **— cadastro recusado**: o gateway reprovou (em geral, divergência entre o documento e o titular da conta bancária). Peça a ele para **corrigir e reenviar os dados** na tela Meu recebimento.
+* **Não recebe comissão — recebimento bloqueado**: a conta foi suspensa pelo gateway; ele regulariza com o suporte.
+
+Enquanto o parceiro **não recebe**, a parte dele nas operações não se perde: vira **saldo devido** ([saldo acumulado](#saldo-acumulado)), pago pela quitação ou pelo [repasse manual](#repasse-manual) quando o cadastro destravar.
+
 ## Para quem quer os números {#para-quem-quer-os-numeros}
 
 A partir daqui é detalhe. Você **não** precisa disso para usar a Rede de Parceiros.
