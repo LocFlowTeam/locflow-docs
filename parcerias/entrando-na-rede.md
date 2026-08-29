@@ -53,6 +53,18 @@ Envie o link por onde quiser (o app tem o botão **Compartilhar link** — Whats
 
 Depois do convite aceito, falta **um** cadastro para o parceiro ficar operacional: o **recebedor** de pagamento — que só ele mesmo pode preencher, porque são os dados bancários dele. O **galpão** já ficou pronto no convite (e ele pode ajustar o pino depois, em **Meu galpão**). O passo a passo completo, incluindo o que ele enxerga por dentro, está em [Parceiro Logístico Externo](parceiro-logistico-externo.md).
 
+### O link tem prazo — e expirar não é o fim {#renovar-convite}
+
+O link de convite **vale por 7 dias**. O prazo aparece na própria listagem de parceiros, no selo do convite: *"Convite expira em 5 dias"*, *"expira hoje"* — e, passado o prazo, **"Convite expirado"**.
+
+Convite expirado não abre mais — se o parceiro disser que "o link não funciona", é provavelmente isso. **Não precisa remover o parceiro nem convidar de novo**: na linha dele, o botão de copiar dá lugar ao botão de **gerar um novo link** (↻). Um toque e:
+
+* O link antigo é **invalidado de vez** (mesmo que alguém o tenha guardado);
+* Um link **novo, com prazo novo de 7 dias**, é gerado, copiado e — se o convite tinha e-mail — **reenviado por e-mail**;
+* O parceiro continua **o mesmo** na sua lista: nada é duplicado, nenhum histórico se perde.
+
+O novo link mantém o direcionamento do original (app ou navegador) e a mesma tranca de e-mail. E se o link só se **perdeu** (a mensagem sumiu, mas o prazo ainda corre), não precisa esperar nada: o botão de **copiar** continua na linha do parceiro enquanto o convite vale.
+
 ## Parceria interna: de organização para organização {#parceria-interna}
 
 Quando **as duas partes são organizações LocFlow**, a conexão é um **vínculo de parceria** — proposto por uma, aceito pela outra. O vínculo ativo é o que habilita os acordos internos, com mapeamento de catálogo e estoque espelhado. A jornada tem três telas, todas na Rede.

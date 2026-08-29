@@ -31,6 +31,10 @@ Ser parceiro externo é diferente de ser um colaborador e diferente de ter uma e
 
 Tudo começa com um **link de convite** que a locadora te manda — por WhatsApp, e-mail, onde for. A mecânica de abrir o link e entrar (com o Google ou com e-mail e senha) é a mesma de qualquer convite do LocFlow: [Aceitando um convite](../primeiros-passos/aceitando-um-convite.md).
 
+{% hint style="info" %}
+**O link não abre?** O convite vale por **7 dias** — provavelmente expirou. Peça outro à locadora: ela [gera um novo link na hora](entrando-na-rede.md#renovar-convite), sem refazer nada do seu cadastro.
+{% endhint %}
+
 A diferença está no destino. Ao aceitar, você **não** cai no painel da locadora — cai direto no **seu espaço**, com uma navegação enxuta feita para o seu trabalho. Ela é dividida em **dois espaços**, e você alterna entre eles pelo seletor no topo do menu — do mesmo jeito que uma locadora alterna entre Operação e Rede:
 
 **Operação** (acento roxo) — o que você faz em campo:
