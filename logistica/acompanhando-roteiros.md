@@ -154,7 +154,7 @@ O primeiro ponto é a **saída**. Ele mostra se a viagem **saiu com carga** ou *
 Para cada parada, a linha do tempo traz:
 
 * O **endereço** (de forma curta).
-* Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada. Se o movimento foi [dividido em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens), aparece também o selo **"Viagem N de M"** — esta rota leva **uma parte** da carga, e o pedido só conta como entregue/retirado quando a **última viagem** terminar.
+* Os **movimentos** daquele ponto — cada um com o **código do orçamento**, se é **entrega** ou **retirada**, e a **janela de horário** combinada. Se o movimento foi [repartido em viagens](planejando-o-roteiro.md#cargas-e-viagens), aparece também o selo **"Viagem N de M"** — esta rota leva **uma parte** da carga, e o pedido só conta como entregue/retirado quando a **última viagem** terminar.
 * A **chegada estimada** (*"chega ~HH:MM"*) calculada pela otimização, enquanto a parada ainda **não foi executada**. Quando essa previsão **cai fora da janela** combinada, o app já avisa ali — *"Deve atrasar"* (âmbar) ou *"Deve atrasar muito"* (vermelho) —, para você ver o problema **antes de a equipe sair**. Assim que a equipe registra o desfecho, esse previsto dá lugar à **hora real**, com a [pontualidade](#pontualidade-chegou-no-horario) da chegada.
 * A **carga de entrega** e a **carga de retirada** daquele ponto (abríveis, com foto e quantidade).
 

@@ -79,12 +79,12 @@ flowchart LR
 ```
 
 * **Passo 1 — Motorista e equipe.** Quem dirige (o condutor) e quem vai junto. O condutor entra sempre entre os presentes; se alguém não compareceu, é só **remover** da equipe. O app **avisa** se o condutor estiver sem CNH ou sem a competência de dirigir.
-* **Passo 2 — Veículo.** Você seleciona **um veículo concreto** (por nome ou placa). Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo. Se o [planejamento](planejando-o-roteiro.md) definiu uma **classe**, só os veículos que pertencem a **alguma especificação daquela classe** ficam selecionáveis — os de fora aparecem esmaecidos com o selo **"Classe diferente"**; se definiu uma **especificação exata**, os demais ficam esmaecidos com **"Especificação diferente"**.
+* **Passo 2 — Veículo.** Você seleciona **um veículo concreto** (por nome ou placa) e, quando o planejamento previu uma **carreta**, acopla a carreta planejada. Veículos **inativos, em manutenção ou já em trânsito** em outra rota aparecem esmaecidos, com o motivo. Se o [planejamento](planejando-o-roteiro.md) definiu uma **classe**, só os veículos que pertencem a **algum tipo daquela classe** ficam selecionáveis — os de fora aparecem esmaecidos com o selo **"Classe diferente"**.
 * **Passo 3 — Vistoria.** O app confere a vistoria do veículo escolhido (veja a seguir).
 * **Passo 4 — Revisão.** Uma conferência final de tudo (motorista, veículo, vistoria) antes de **concluir o preparo**.
 
 {% hint style="warning" %}
-**O veículo é obrigatório — e precisa estar ativo.** Diferente do roteiro planejado (onde dá para deixar o veículo em aberto ou indicar só a especificação), quem vai para a rua precisa registrar **em qual veículo de verdade** o material saiu. Isso garante a rastreabilidade da carga e da frota.
+**O veículo é obrigatório — e precisa estar ativo.** Diferente do roteiro planejado (onde dá para deixar o tipo de veículo em aberto), quem vai para a rua precisa registrar **em qual veículo de verdade** o material saiu. Isso garante a rastreabilidade da carga e da frota.
 {% endhint %}
 
 ### Vistoria do veículo
@@ -114,7 +114,7 @@ Com a rota iniciada, o app mostra **uma parada de cada vez** — a atual, em des
 * **Cobrança** e **Anotações** — a situação financeira do pedido e as observações internas relevantes para aquela parada.
 
 {% hint style="info" %}
-**"Viagem N de M": quando a entrega foi dividida.** Se o movimento foi [dividido em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens), a parada exibe o selo **"Viagem 1 de 2"** (por exemplo) e os itens listados são **só os daquela viagem**. O motorista sabe — e pode avisar o cliente — que **ainda faltam viagens**. O pedido só passa a *Entregue* / *Retirado* quando a **última viagem** termina; concluir a viagem 1 não fecha o pedido, e isso é o esperado.
+**"Viagem N de M": quando a entrega foi dividida.** Se o movimento foi [repartido em viagens](planejando-o-roteiro.md#cargas-e-viagens), a parada exibe o selo **"Viagem 1 de 2"** (por exemplo) e os itens listados são **só os daquela viagem**. O motorista sabe — e pode avisar o cliente — que **ainda faltam viagens**. O pedido só passa a *Entregue* / *Retirado* quando a **última viagem** termina; concluir a viagem 1 não fecha o pedido, e isso é o esperado.
 {% endhint %}
 
 ### A bolha de retorno do mapa (Android)

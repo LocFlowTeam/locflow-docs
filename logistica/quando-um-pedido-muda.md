@@ -156,7 +156,7 @@ Passou a **retirar no balcão**? Trocou o **galpão de origem**? Uma venda virou
 Esta é a única linha que **não** mexe no roteiro. Ela ajusta a **fatura** (gerando crédito ou reembolso se você reduzir além do que já foi pago) — veja [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 
 {% hint style="warning" %}
-**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **dividir ou consolidar o movimento** no planejamento do roteiro — veja [Dividir um movimento em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
+**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **dividir ou consolidar o movimento** no planejamento do roteiro — veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
 {% endhint %}
 
 {% hint style="warning" %}

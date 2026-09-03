@@ -94,7 +94,7 @@ Como em toda a frota, a classe **nunca bloqueia** o roteiro. Veja como as estrat
 
 Além de ser o alvo do roteiro, a classe é reconhecida em mais dois lugares do LocFlow:
 
-- **Dividir a carga em viagens.** Quando uma entrega não cabe num veículo só, o LocFlow propõe as viagens automaticamente também para a classe (não só para a ficha exata), usando a mesma capacidade do grupo — pela capacidade cheia quando é verificada, pela menor quando é mista. Veja [Dividir um movimento em viagens](../logistica/planejando-o-roteiro.md#dividir-um-movimento-em-viagens).
+- **Repartir a carga em viagens.** Quando uma entrega não cabe numa viagem só, o LocFlow propõe as viagens pela classe, usando a capacidade do grupo — pela capacidade cheia quando é verificada, pela menor quando é mista. Veja [Cargas e viagens](../logistica/planejando-o-roteiro.md#cargas-e-viagens).
 - **A regra de frete.** Se você cobra frete por tipo de veículo, dá para configurar o preço por classe — cobrindo todo o grupo de uma vez, em vez de repetir a mesma regra ficha por ficha. Veja [Motor de frete](../configuracoes/motor-de-frete.md).
 
 ## Próximo passo <a href="#proximo-passo" id="proximo-passo"></a>
