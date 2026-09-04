@@ -13,6 +13,10 @@ Você chega nela pelo menu **Financeiro → Gestão Financeira**.
 **Por que começar por aqui:** o saldo do LocFlow não é digitado por ninguém — ele é a **soma dos lançamentos**. Se o número desta tela te surpreende, a causa está sempre em uma linha do razão, e daqui você chega nela em dois toques.
 {% endhint %}
 
+{% hint style="info" %}
+**E o razão é completo de propósito.** Tudo que o LocFlow sabe sobre dinheiro vira lançamento aqui, sozinho: o que o cliente pagou, a tarifa do processador, o frete de terceiro, o repasse que você pagou a um parceiro — e também **o que você recebeu da rede** por ter executado a operação de outra locadora. Dos dois lados, quando os dois lados são do LocFlow. Veja [O que o LocFlow lança sozinho](lancamentos.md#o-que-o-locflow-lanca-sozinho).
+{% endhint %}
+
 ## Como o módulo se organiza
 
 O menu do financeiro tem **cinco destinos**, divididos em dois grupos:

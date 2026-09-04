@@ -327,6 +327,24 @@ Um detalhe que joga a favor: uma linha de repasse **estornada ou cancelada deixa
 
 Se você opera uma organização, as duas telas vivem no menu **Financeiro** com um selo **"Rede"** — porque são dinheiro de verdade, junto do resto do seu financeiro — e têm **atalhos fixos** no espaço **Rede de Parceiros**, no grupo **Financeiro da rede**. Se você é um **parceiro externo**, elas ficam direto no seu menu da Rede, junto de *Repasses recebidos* e *Minha reputação*.
 
+## O que você recebe da rede entra na sua Gestão Financeira {#recebimento-na-gestao-financeira}
+
+**Meus Ganhos responde "quanto a rede me deve e me pagou". A Gestão Financeira responde "e daí?".**
+
+Quando um repasse seu é **pago** — pelo split na fonte, pela quitação do saldo acumulado ou por fora —, o LocFlow lança uma **entrada** no seu razão, sozinho, na categoria **Rede de Parcerias**. Com a **organização que repassou** como contraparte, e o código do pedido na descrição.
+
+A partir daí aquele dinheiro é dinheiro como qualquer outro: entra no **saldo**, no **fluxo de caixa** do período, no **DRE** e no **relatório por categoria**. É o que permite perguntas que a tela de ganhos não responde:
+
+* *Quanto a rede me trouxe neste mês?* — filtre a categoria **Rede de Parcerias** nos lançamentos.
+* *De qual parceiro veio?* — a contraparte de cada linha é a organização vendedora.
+* *Isso cobrou o combustível e o motorista dessas entregas?* — o custo está no mesmo razão, no mesmo período.
+
+{% hint style="info" %}
+**Vale para a parceria entre organizações.** Se você é um **parceiro externo** (opera dentro da conta de outra locadora, sem plano próprio), você não tem uma Gestão Financeira sua — seus valores vivem em **Meus Ganhos**. Converter a parceria em uma parceria entre organizações é o que abre o financeiro completo no seu nome.
+{% endhint %}
+
+Do outro lado, nada muda: quem **repassou** continua vendo a **saída** no razão dele, na categoria **Repasse de parceria**. O mesmo dinheiro, os dois lados.
+
 ## Como ler seus ganhos {#status-dos-ganhos}
 
 Em **Meus Ganhos**, todo valor está num de três **estágios de liquidação** — os mesmos três que aparecem coloridos logo abaixo do total, e que voltam agrupando as operações no detalhe de cada acordo:

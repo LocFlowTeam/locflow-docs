@@ -151,11 +151,16 @@ A **categoria sugere**, o **lançamento decide**: se a categoria escolhida costu
 
 Boa parte do seu razão você **não digita**. Estas linhas nascem de fatos que já aconteceram em outro módulo:
 
+{% hint style="success" %}
+**A regra da casa:** todo dinheiro que passa pelo LocFlow entra na sua Gestão Financeira — dos dois lados, quando os dois lados são do LocFlow. Se você pagou, tem a saída; se você recebeu, tem a entrada. Nenhum valor fica só numa tela de outro módulo, porque número fora do razão não entra no saldo, no fluxo de caixa nem no DRE — e o que não entra no DRE não sustenta decisão.
+{% endhint %}
+
 | Lançamento automático | Nasce quando | Categoria |
 | --- | --- | --- |
 | **Recebimento de cliente** | Uma parcela da fatura é quitada — no link de pagamento, na baixa manual ou na conferência do caixa da rua | Receita de locação/venda |
 | **Taxa do pagamento online** | O processador informa o valor real da tarifa daquele pagamento | Taxa de Gateway |
 | **Repasse de parceria** | Você deve (ou quita) o valor de um pedido repassado a um parceiro | Repasse de parceria |
+| **Recebimento da rede** | Um repasse que **você** tinha a receber da rede é pago — pelo split na fonte, pela quitação do saldo ou por fora | Rede de Parcerias |
 | **Custo de frete de terceiro** | Um pedido cujo frete é de uma transportadora contratada é reservado — nasce como **conta a pagar** | A categoria do serviço de frete |
 
 {% hint style="warning" %}
