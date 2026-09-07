@@ -153,7 +153,7 @@ As provas vão da mais simples (foto e vídeo) à mais forte (código confirmado
 * **Urgente quando a janela começa em** — padrão **4h**, o que o mercado pratica para pedido de urgência: locadoras com entrega no mesmo dia e terminais logísticos costumam pedir essa antecedência para ainda encaixar um pedido no dia. Quem despacha do pátio em uma hora pode baixar para 1h ou 2h; quem viaja para outra cidade pode subir para 24h ou 48h.
 * **Atrasado depois que a janela abriu há** — padrão **24h**: um dia de trabalho para honrar o compromisso saindo agora. Em **0h**, o movimento vira atrasado assim que a janela abre sem roteiro.
 
-> Os dois valem para o ⚠ do painel e do calendário logístico e para a legenda deles. O sinal vermelho do **menu** e o aviso diário de "movimentos do dia sem roteiro" continuam contando por **dia** (hoje ou atrasado), não por hora.
+> Os dois valem para o ⚠ do painel e do calendário logístico, para a legenda deles e para o **sinal vermelho do menu** (que conta os urgentes). Só o aviso diário de "movimentos do dia sem roteiro", que chega de manhã, continua sendo um resumo do **dia**: ele lista o que tem janela para hoje sem roteiro, urgente ou não.
 
 **Forma de operação.** Diz como a sua locadora costuma operar — e deixa o app já no formato dela:
 
