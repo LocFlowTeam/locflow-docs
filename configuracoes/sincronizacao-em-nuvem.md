@@ -32,13 +32,20 @@ Tudo fica dentro de uma pasta chamada **`LocFlow`** no seu Drive, **organizada p
   * **Faturas** — as faturas de locação
   * **Boletos** — os boletos bancários emitidos
   * **Recibos de pagamento** — os comprovantes de quitação
+  * **Comprovantes** — os comprovantes anexados aos lançamentos do financeiro
+  * **Comprovantes de recebimento** — a foto do comprovante que o motorista anexa ao registrar um pagamento recebido na rua ou no balcão (dinheiro, Pix, maquininha)
 * **Logística**
   * **Provas** — as fotos e vídeos das entregas e devoluções
   * **Roteiros** — os PDFs de roteiro da rota (um roteiro pode reunir vários pedidos)
   * **Ordens de carga** — as ordens logísticas de separação
+* **Estoque**
+  * **Conferências de retorno** — as fotos e vídeos que o conferente registra ao conferir o material que voltou ao galpão (inclusive o que voltou de uma entrega pulada)
 * **Contábil**
   * **NFS-e** — notas de serviço autorizadas (PDF **e** XML, para o contador)
   * **NF-e** — notas fiscais autorizadas (PDF **e** XML)
+  * **MDF-e** e **CT-e** — os documentos de transporte autorizados
+  * **Outros** — qualquer outro documento fiscal emitido
+* **Documentos** — a pasta de reserva: um documento de um modelo que ainda não tem pasta própria cai aqui, para nunca se perder
 
 {% hint style="success" %}
 **Ache tudo de um pedido pelo código.** Todo arquivo leva o código do orçamento no nome (por exemplo `ORC-482 | Contrato de locação`). Pesquise por **ORC-482** na busca do Google Drive e ele reúne, de todas as pastas, cada documento daquele pedido — pronto para baixar de uma vez.
@@ -130,6 +137,8 @@ Desconectar **não apaga** nada do seu Drive. Apenas interrompe o envio das pró
 
 * **"Quero um backup dos meus contratos e recibos."** Conecte o Google Drive uma vez. Daí em diante, cada contrato ganha uma cópia em **Orçamentos → Contratos** e cada recibo de pagamento em **Cobranças → Recibos de pagamento**.
 * **"Preciso das fotos da entrega num computador."** As provas de entrega vão para **Logística → Provas** — abra direto no Google Drive, sem precisar do app.
+* **"O motorista recebeu em dinheiro e tirou foto do comprovante."** A foto vai para **Cobranças → Comprovantes de recebimento**, com o código do pedido e o meio de pagamento no nome (`ORC-482 | Comprovante de recebimento Dinheiro`).
+* **"Quero ver em que estado o material voltou do evento."** As fotos e vídeos que o conferente registra na conferência de retorno vão para **Estoque → Conferências de retorno** — uma pasta separada das provas de entrega, porque respondem a outra pergunta: não "foi entregue?", e sim "como voltou?".
 * **"O contador pediu as notas fiscais do mês."** Elas ficam em **Contábil**, com o **PDF e o XML** lado a lado (NFS-e e NF-e) — é só baixar a pasta.
 * **"Quero tudo de um pedido específico de uma vez."** Pesquise o código do orçamento (por exemplo **ORC-482**) na busca do Google Drive: ele traz contrato, fatura, boleto, recibo, comprovantes e notas daquele pedido, de todas as pastas.
 * **"Acabei de gerar vários documentos e quero garantir que foram para a nuvem."** Toque em **Sincronizar agora** e confira o indicador **Em dia**.
