@@ -38,6 +38,12 @@ Quando o material chegou num **roteiro** (a equipe foi buscar), a fila oferece d
 A lente por roteiro **não muda a ordem de atendimento**: o número de cada cartão é a posição na fila, esteja ele em que grupo estiver.
 {% endhint %}
 
+### Conferir a descarga do veículo de uma vez
+
+Na prática, ninguém confere pedido a pedido enquanto o caminhão está na doca: descarrega-se tudo e confere-se a carga. Por isso cada grupo de roteiro tem o botão **Conferir descarga**. Ele abre o veículo inteiro numa folha só: no topo, **o que desceu** por produto ("68 itens em 2 produtos · 3 pedidos" e um chip por produto com o total) — é o número que você bate contra o caminhão; abaixo, **uma seção por pedido**, porque o destino de cada item (e a cobrança de uma avaria) continua sendo de um cliente. A retirada tem o mesmo **Tudo OK** e **Separar por destino**; a entrega pulada é um toque em **Recebido**. **Tudo OK em todos os pedidos** resolve a descarga limpa em um gesto, e a foto da doca, tirada uma vez, fica registrada em todas as conferências daquele veículo.
+
+O botão diz **Concluir descarga** quando tudo está decidido, ou **Concluir parte** quando sobra saldo. Se algum pedido não puder ser conferido, o LocFlow avisa qual e por quê — ele continua na fila para você resolver sozinho.
+
 ### Conferir um retorno
 
 Ao abrir um retorno, o conferente vê no topo **de onde o material veio** (o roteiro e o condutor, ou "devolvido no balcão"), quando chegou e o progresso (*2 de 5 itens conferidos*), e abaixo a **lista consolidada de produtos** — kits explodidos em componentes, itens iguais somados.
@@ -85,7 +91,7 @@ A conferência é **opcional** e escala com a operação — o gatilho é o risc
 * **Locação de som e iluminação:** o material volta de madrugada. De manhã, o conferente abre a fila, confere item a item e identifica um cabo faltando — ainda dá para ligar à locação certa.
 * **Itens caros que giram muito:** sem conferência, a peça danificada voltaria à prateleira e só apareceria quebrada no próximo cliente. Com a fila, o problema é pego **na volta**.
 * **Galpão com equipe dividida:** o Separador prepara as saídas do dia e o Conferente cuida só dos retornos — cada um na sua fila, sem pisar no trabalho do outro.
-* **Um caminhão volta com quatro retiradas e uma entrega que não aconteceu:** na lente por roteiro, o conferente vê o veículo inteiro num grupo só, tria as quatro retiradas e registra a entrega pulada com uma foto — o pedido segue separado para a nova tentativa.
+* **Um caminhão volta com quatro retiradas e uma entrega que não aconteceu:** o conferente toca em **Conferir descarga** no grupo do roteiro, bate o consolidado com a carga, marca **Tudo OK em todos os pedidos**, ajusta a avaria de um deles, tira uma foto da doca e conclui — as quatro retiradas triadas e a entrega pulada recebida de uma vez, e o pedido pulado segue separado para a nova tentativa.
 
 {% hint style="info" %}
 Quando é o **próprio cliente** que devolve no galpão (em vez de a equipe ir buscar), esse retorno é confirmado no [balcão](balcao.md) — e, se você tiver ligado a conferência, o material segue normalmente para esta fila depois.
