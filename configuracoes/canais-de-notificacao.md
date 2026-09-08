@@ -1,6 +1,6 @@
 ---
 icon: sliders
-description: Um canal define quem recebe um aviso (a pool) e como ele chega (todo o grupo ou rodízio). Crie, edite e reaproveite canais entre vários avisos.
+description: Um canal define quem recebe um aviso (a pool) e como ele chega (todo o grupo ou rodízio). Crie, edite, teste e reaproveite canais entre vários avisos.
 ---
 
 # Canais de notificação
@@ -113,7 +113,7 @@ Na lista de canais, toque no **+** para criar um. Preencha:
 4. **Quem recebe** — marque uma ou mais pools (e, em *Por competência*, marque as competências).
 5. **Ativo** — deixe ligado para o canal ficar disponível para uso.
 
-Salve. O canal novo já aparece para ser escolhido em qualquer aviso da Central de Notificações.
+Salve. O canal novo já aparece para ser escolhido em qualquer aviso da Central de Notificações. Depois de salvo, vale [testar o canal](#testar-um-canal) para confirmar quem ele alcança.
 
 {% hint style="info" %}
 Você chega à gestão de canais por **Ajustes → Central de Notificações → Gerenciar canais**, ou direto pelo seletor de canal de um aviso (botão **Gerenciar canais**).
@@ -124,6 +124,50 @@ Você chega à gestão de canais por **Ajustes → Central de Notificações →
 Toque no canal na lista para editar **nome, descrição, pool e roteamento**. A mudança vale **imediatamente** para **todos os avisos** que apontam para ele — esse é o ponto de reaproveitar canais.
 
 Um canal pode ser deixado **Inativo** (badge **"Inativo"** na lista) quando você quer guardá-lo sem usá-lo por enquanto.
+
+## Testar um canal <a href="#testar-um-canal" id="testar-um-canal"></a>
+
+Até aqui, a única forma de saber se um canal alcançava alguém era esperar um evento real acontecer. Agora dá para **confirmar na hora**: abra um canal **já salvo** e, no fim do formulário, no bloco **Confirmar quem recebe**, toque em **Testar canal**.
+
+O teste envia um aviso **de verdade** — *"Teste do canal «Nome do canal» — pode ignorar."* — a todo mundo que a pool do canal resolve **naquele instante**, pelos dois caminhos de sempre: no **sino** (a Central de avisos recebidos) e como **push no celular** de cada pessoa. Em seguida abre a folha **Teste enviado**, com o horário do envio, a contagem de destinatários e **uma linha por pessoa**, com o resultado do push:
+
+| Resultado | O que significa |
+| --- | --- |
+| **Aceito** | O serviço de push aceitou a mensagem para um aparelho da pessoa. Não é prova de que ela viu — é que chegou ao aparelho. |
+| **Sem aparelho** | A pessoa não tem nenhum aparelho registrado para push. O aviso ficou só no sino dela. |
+| **Falhou** | Tinha aparelho, mas o envio falhou em todos. |
+| **Sem push** | O push não saiu para ninguém porque o aviso de teste está como **Informativo** nesta organização (só o sino). É um caso raro — o padrão do aviso é **Importante**. |
+
+{% hint style="info" %}
+Como diz a própria folha: *"Aceito" é o serviço de push ter aceitado a mensagem para um aparelho da pessoa. O aviso também está no sino de cada uma.* Quem recebeu pode simplesmente ignorar o aviso.
+{% endhint %}
+
+### "Teste não enviado" <a href="#teste-nao-enviado" id="teste-nao-enviado"></a>
+
+Se a pool **não resolve ninguém** naquele momento, nada é enviado — a folha abre como **Teste não enviado** e explica o porquê, em linguagem de quem configura o canal:
+
+| Pool | Por que não há a quem enviar |
+| --- | --- |
+| **Responsável pela operação** | Esse responsável **só existe durante um evento real** (quem executa a rota, quem conduz o orçamento). Num teste não há operação — logo, não há a quem enviar. |
+| **Por competência** | Ninguém na organização tem as competências deste canal no momento. Confira as [funções e competências](../conceitos/papeis-funcoes-competencias.md). |
+| **Cliente** | É o público do WhatsApp (em breve) — não alcança ninguém da equipe. |
+
+### O canal lembra o último teste <a href="#ultimo-teste" id="ultimo-teste"></a>
+
+O resultado fica **gravado no canal**, não no seu aparelho. No formulário do canal aparece a legenda **"Último teste: 08/09/2026 14:32 · 3 destinatários · push: 2 aceitos, 1 sem aparelho, 0 falhas"** (ou *"Nunca testado."*), e o cartão do canal na lista mostra **"Testado 08/09/2026 14:32 · …"**. Quem abrir o canal em **outro aparelho** vê que ele foi testado, quando e com que resultado.
+
+### O que o teste não faz <a href="#o-que-o-teste-nao-faz" id="o-que-o-teste-nao-faz"></a>
+
+* **Não mexe na operação.** Num canal por **Rodízio**, o teste vai para **todos** da pool — a pergunta é "quem *pode* receber por este canal?" — e **não gasta a vez de ninguém**: a fila do rodízio real continua exatamente onde estava.
+* **Não alcança o parceiro externo** num canal de **Toda a organização** — ele é uma organização à parte, e o disparo real também não o alcança. Listá-lo prometeria uma entrega que nunca acontece.
+* **Não testa edições pendentes.** Se você mudou o canal e ainda não salvou, o botão espera: *"Salve antes de testar — o teste usa o canal como está salvo."*
+* **Não liga um canal inativo.** O teste envia mesmo assim, mas os avisos reais não passam por ele até você ativá-lo — a tela avisa.
+
+{% hint style="warning" %}
+**Limite: 5 testes por canal por hora.** Passou, o LocFlow recusa com *"Este canal já foi testado 5 vezes na última hora. Aguarde um pouco para testar de novo."* É o suficiente para conferir, sem virar spam para a equipe.
+{% endhint %}
+
+Testar um canal exige a mesma permissão de **gerenciar notificações** usada para criar e editar canais.
 
 ## Remover um canal <a href="#remover-um-canal" id="remover-um-canal"></a>
 
@@ -139,9 +183,10 @@ Por isso, antes de remover um canal que está em uso, vale **conferir quais avis
 
 ## Situações reais <a href="#situacoes-reais" id="situacoes-reais"></a>
 
+* **"Não sei se esse aviso está chegando a alguém."** Abra o canal do aviso e toque em **Testar canal**: a folha lista, pessoa por pessoa, quem recebeu e como — e o canal guarda o resultado do último teste para quem abrir depois.
 * **"Meus dois vendedores estão recebendo todos os follow-ups."** Crie (ou ajuste para) um canal de **Rodízio** sobre a competência **Vender orçamentos** e aponte o aviso de follow-up para ele. Os novos avisos passam a se dividir, um para cada vez.
 * **"Só quem está na rota deveria receber o aviso de ajuste em execução."** Use um canal com a pool **Responsável pela operação** — o sistema resolve, na hora, quem está executando aquela rota.
-* **"Contratei um separador novo e ele não recebe os avisos de separação."** O canal por competência está certo; falta dar a **competência Separação** à **função** dele. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
+* **"Contratei um separador novo e ele não recebe os avisos de separação."** O canal por competência está certo; falta dar a **competência Separação** à **função** dele. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md). Depois, **Testar canal** confirma que ele passou a receber.
 * **"Criei um canal de teste e quero apagar."** Abra o canal e use **Remover canal**. Confira antes se algum aviso o estava usando — ele será desvinculado deles.
 
 ## Próximo passo <a href="#proximo-passo" id="proximo-passo"></a>

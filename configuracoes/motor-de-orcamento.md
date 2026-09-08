@@ -1,18 +1,18 @@
 ---
 icon: file-invoice
-description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade, intervalo mínimo da logística e o teto de desconto.
+description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade, intervalo mínimo da logística, o teto de desconto e as seções opcionais do formulário.
 ---
 
 # Motor de Orçamento
 
-O **Motor de Orçamento** é onde você define os **padrões da sua proposta**: a partir de quanto um orçamento vale a pena fechar, qual taxa de serviço já vem sugerida, por quantos dias a proposta fica de pé e qual a folga mínima de horário em cada entrega ou retirada. Configura uma vez, e o LocFlow já monta os orçamentos novos seguindo essas regras.
+O **Motor de Orçamento** é onde você define os **padrões da sua proposta**: a partir de quanto um orçamento vale a pena fechar, qual taxa de serviço já vem sugerida, por quantos dias a proposta fica de pé, qual a folga mínima de horário em cada entrega ou retirada — e quais seções o formulário de orçamento mostra. Configura uma vez, e o LocFlow já monta os orçamentos novos seguindo essas regras.
 
 Por dentro, ele tem **dois lados** que funcionam de maneira diferente — e vale entender a diferença antes de mexer:
 
 | Lado | O que guarda | Como salva |
 | --- | --- | --- |
 | **Valor mínimo de orçamento** | O **corte** mínimo do orçamento | Tem **histórico de versões** |
-| **Operação do orçamento** | Taxa de serviço, validade, intervalo logístico e **teto de desconto** | **Configuração única**, sem histórico |
+| **Operação do orçamento** | Taxa de serviço, validade, intervalo logístico, **teto de desconto** e **seções opcionais do formulário** | **Configuração única**, sem histórico |
 
 {% hint style="info" %}
 **Por que dois lados?** O **valor mínimo** é uma regra comercial — vale guardar o registro de quando você mudou esse limite, para relatórios de venda. Os demais são **padrões operacionais**: ajustes do dia a dia que só precisam refletir o estado atual. Por isso um é versionado e o outro é editado direto.
@@ -120,6 +120,38 @@ Dois detalhes que evitam surpresa:
 
 O vendedor não descobre isso ao salvar: enquanto monta a proposta, o cartão de descontos mostra o placar (*"8% concedidos — o teto sem aprovação é 15%"*) e, ao passar, o aviso âmbar de que o orçamento vai para aprovação. Veja [Valores](../orcamentos/valores.md#teto-de-desconto).
 
+### Seções opcionais do formulário {#secoes-opcionais}
+
+**Acréscimos e descontos**, **Observações** e **Validade** são seções que um orçamento dispensa: dá para fechar uma proposta sem mexer em nenhuma delas. Este parâmetro decide se elas **aparecem** no formulário de orçamento ou ficam **escondidas** até alguém pedir — três decisões a menos na tela de quem não as usa.
+
+Na tela, ele fica na seção **Formulário do orçamento**, como **Seções opcionais**, com três valores:
+
+| Valor | O que faz |
+| --- | --- |
+| **Conforme o porte** *(padrão)* | O LocFlow decide pelo tamanho da operação: numa operação **pequena** as três ficam escondidas e o formulário abre mais curto; nas **médias e grandes** aparecem como as outras seções. A tela diz o que vale para você — por exemplo, *"Pelo seu porte (Pequeno), acréscimos, observações e validade ficam escondidos até você pedir."* |
+| **Mostrar** | Sempre aparecem, retraídas como as demais seções — seja qual for o porte. |
+| **Ocultar** | Ficam escondidas até alguém pedir: o atalho **"Mostrar seções opcionais"**, no fim do formulário, revela as três. |
+
+{% hint style="info" %}
+O texto de ajuda da tela:
+
+> Acréscimos e descontos, observações e validade são seções que um orçamento dispensa: dá para fechar sem mexer em nenhuma delas.
+>
+> Conforme o porte: numa operação pequena elas ficam escondidas e o formulário abre mais curto; nas médias e grandes aparecem como as outras.
+>
+> Mostrar: sempre aparecem, retraídas como as demais seções.
+>
+> Ocultar: ficam escondidas até você pedir — o atalho "Mostrar seções opcionais" no fim do formulário revela as três. Uma seção com conteúdo (um desconto dado, uma observação escrita) ou com erro nunca some; a validade continua valendo pelo prazo padrão mesmo escondida.
+{% endhint %}
+
+Esconder não é apagar. Três garantias valem em qualquer valor:
+
+* uma seção **com conteúdo** — um desconto já dado, uma observação já escrita — **continua aparecendo**, retraída, com o resumo no cabeçalho: decisão tomada não some;
+* uma seção **com erro ou aviso** também aparece, para o problema ser resolvido onde ele está;
+* a **validade** é a exceção: ela fica escondida **mesmo tendo valor**, porque o valor não é decisão de ninguém — vem do padrão de [Validade do orçamento](#validade-do-orcamento) acima — e **continua valendo** por baixo. Uma proposta criada com a seção escondida vence no prazo padrão normalmente.
+
+Se o LocFlow não conseguir saber o porte da organização (sem permissão para lê-lo, por exemplo), ele **mostra** as seções: esconder por engano custa mais do que mostrar por engano. E, como os demais, é um padrão do formulário — quem preenche pode revelar as seções a qualquer momento. Veja como isso aparece na proposta em [Operação pequena: um formulário mais curto](../orcamentos/criando-um-orcamento.md#secoes-opcionais).
+
 ## Versionado × operacional {#versionado-x-operacional}
 
 Para fixar a diferença entre os dois lados do motor:
@@ -133,13 +165,14 @@ flowchart TB
     O --> VA[Validade]
     O --> I[Intervalo logistico]
     O --> D[Teto de desconto]
+    O --> S[Secoes opcionais<br/>do formulario]
 ```
 
 | | Valor mínimo | Operação do orçamento |
 | --- | --- | --- |
 | **Guarda histórico?** | Sim — versões com data | Não — vale a versão atual |
 | **Ao salvar** | Publica uma nova versão | Edita direto |
-| **Trava o orçamento?** | Sim — abaixo do corte, não cria | O intervalo **alerta** mas deixa seguir; o **teto de desconto** congela para aprovação |
+| **Trava o orçamento?** | Sim — abaixo do corte, não cria | O intervalo **alerta** mas deixa seguir; o **teto de desconto** congela para aprovação; as **seções opcionais** só mudam o que o formulário mostra |
 
 {% hint style="warning" %}
 **Duas travas de aprovação, em telas diferentes.** Aqui mora o **teto de desconto** — orçamento com abatimento acima do teto vai para aprovação. Já o travamento **por frete** (frete acima de um limite) é outra configuração, que vive na **Operação do Frete**. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor; quem decide se aquele frete precisa de aval é a **Operação do Frete**. As duas desembocam na mesma fila — veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
@@ -151,8 +184,8 @@ A mesma tela serve do autônomo ao operador grande — muda o quanto você mexe.
 
 | Seu porte | Como usar o Motor de Orçamento |
 | --- | --- |
-| **Autônomo / micro** | Deixe no padrão. Sem valor mínimo, taxa de serviço em branco, validade de 7 dias, **sem teto de desconto**. Você precifica caso a caso e nada trava. |
-| **Médio** | Defina um **valor mínimo** que faça o pedido pequeno valer a pena, e uma **taxa de serviço** padrão para não esquecer de cobrar a mão de obra. Ajuste a **validade** ao seu ciclo de fechamento. |
+| **Autônomo / micro** | Deixe no padrão. Sem valor mínimo, taxa de serviço em branco, validade de 7 dias, **sem teto de desconto** e **seções opcionais conforme o porte** — o formulário de orçamento já abre sem acréscimos, observações e validade, e você revela quando precisar. Você precifica caso a caso e nada trava. |
+| **Médio** | Defina um **valor mínimo** que faça o pedido pequeno valer a pena, e uma **taxa de serviço** padrão para não esquecer de cobrar a mão de obra. Ajuste a **validade** ao seu ciclo de fechamento. Se o time não usa descontos nem observações, **Ocultar** as seções opcionais encurta o formulário mesmo fora do porte pequeno. |
 | **Grande** | Use o **histórico do valor mínimo** para acompanhar como o seu piso evoluiu, aperte o **intervalo logístico** para casar a margem das janelas com a realidade da sua frota, e ligue o **teto de desconto** para que a equipe negocie dentro de um limite conhecido. |
 
 ---
@@ -168,10 +201,11 @@ A partir daqui é detalhe de quem gosta de saber a conta por trás. Você **não
 - **Validade:** conta os dias **a partir da data de criação**. Dentro do prazo, a pré-reserva dos itens vale; vencida, os itens deixam de ficar segurados.
 - **Intervalo mínimo logístico:** para cada movimento **agendado** com janela de horário, o sistema compara a **duração da janela** com o mínimo. Se for **menor ou igual**, alerta — mas, com o seu consentimento, deixa prosseguir.
 - **Teto de desconto:** ao salvar o orçamento, o sistema soma **tudo** o que foi abatido e compara com o teto **em reais** (não em porcentagem arredondada, para meio centavo não mandar à aprovação um desconto que estava no limite). Passou, o orçamento nasce congelado e entra na fila de **Pendentes de aprovação**.
+- **Seções opcionais:** ao abrir o formulário, o LocFlow lê o valor gravado no motor. Só **Mostrar** e **Ocultar** são gravados; *Conforme o porte* é a ausência de valor, e aí o **porte** decide — pequeno esconde, médio e grande mostram. Escondida, uma seção volta a aparecer quando ganha conteúdo ou erro, ou quando alguém toca em *"Mostrar seções opcionais"*; a validade escondida segue o prazo padrão.
 
 ### Sobre o versionamento do valor mínimo {#versionamento}
 
-O **valor mínimo** é o único parâmetro deste motor com versão. Cada vez que você salva, ele **publica uma nova versão em vigor** para a organização e arquiva a anterior, com a data de quando passou a valer. O cartão **"Configuração em vigor"** e o **"Ver histórico de versões"** existem por causa disso. A **operação do orçamento** (taxa, validade, intervalo) é gravada por cima da configuração atual, sem trilha de versões.
+O **valor mínimo** é o único parâmetro deste motor com versão. Cada vez que você salva, ele **publica uma nova versão em vigor** para a organização e arquiva a anterior, com a data de quando passou a valer. O cartão **"Configuração em vigor"** e o **"Ver histórico de versões"** existem por causa disso. A **operação do orçamento** (taxa, validade, intervalo, teto de desconto e seções opcionais) é gravada por cima da configuração atual, sem trilha de versões.
 
 {% hint style="info" %}
 Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso de leitura, vê os valores em vigor mas não consegue salvar; se não encontra a opção, fale com quem administra a conta. Veja [Colaboradores e acessos](colaboradores-e-acessos.md).
@@ -185,11 +219,13 @@ Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso 
 - **Janela de entrega apertada demais.** O operador agenda uma entrega com janela de 30 minutos e o mínimo é 60. O sistema alerta sobre o risco de atraso; o operador confirma que entende e segue.
 - **Desconto além do combinado.** Você define o **teto em 15%**. Um vendedor fecha com 20% para segurar o cliente: o orçamento nasce congelado e o gestor decide — aprova ou rejeita com o motivo. Nada de descobrir o abatimento só no fechamento do mês.
 - **Acompanhar a evolução do seu piso.** Você subiu o valor mínimo no início do ano. Meses depois, o **histórico de versões** mostra desde quando cada piso valeu — útil para entender relatórios de venda.
+- **O formulário de orçamento é comprido demais para o que eu faço.** Numa operação pequena ele já abre curto (*Conforme o porte*). Se o seu porte é outro e mesmo assim o time não usa acréscimos, observações nem validade, escolha **Ocultar** em **Seções opcionais** — o atalho *"Mostrar seções opcionais"* continua lá para a exceção.
 
 ## Próximo passo
 
 - Veja todos os motores e como se encaixam em [Motores operacionais](motores-operacionais.md).
 - Entenda como a taxa de serviço entra no preço em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
+- Veja como o formulário de orçamento se comporta — seções retraídas, "Concluir seção" e as seções opcionais — em [Criando um orçamento](../orcamentos/criando-um-orcamento.md#concluir-secao).
 - Para o **travamento por frete** (que fica na **Operação do Frete**, não aqui), veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Para como a validade se relaciona com a reserva de itens, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 - Para definir quem pode editar este motor, veja [Colaboradores e acessos](colaboradores-e-acessos.md).
