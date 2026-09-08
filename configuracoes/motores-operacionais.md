@@ -35,6 +35,7 @@ flowchart TB
     OPER --> OPO[Operação do Orçamento]
     OPER --> OPF[Operação do Frete]
     OPER --> OPC[Operação da Cobrança]
+    OPER --> OPCT[Operação de Contatos]
 ```
 
 ---
@@ -223,6 +224,33 @@ Define o destino **padrão** de um valor a favor do cliente — quando uma ediç
 
 O sistema **aplica esse padrão automaticamente e avisa a equipe**, que pode trocar a forma em cada caso.
 
+### Operação de Contatos {#operacao-de-contatos}
+
+O card no hub resume a pergunta que este motor responde: **"quando dois cadastros são a mesma pessoa"**. Ele tem uma seção, **Identidade do contato**, com um único interruptor:
+
+> **Telefone identifica o contato** — *"Avisa ao cadastrar um celular que já é de outro contato."*
+
+**Ele nasce desligado, e desligado nada muda.** Dois contatos podem ter o mesmo número, como sempre puderam — é o comportamento que a sua organização já tinha. Ligue quando a sua base começar a doer: o mesmo cliente cadastrado duas vezes parte o histórico em dois, e ninguém percebe na hora, só meses depois.
+
+**Ligado**, o celular passa a ser o sinal de que aquele cliente já existe, em dois lugares:
+
+| Onde | O que acontece |
+| --- | --- |
+| **Cadastro de contato** | Ao sair do campo de celular, a tela **avisa** que o número já é de outro contato e oferece abrir aquele cadastro. Salvar assim mesmo é recusado, com o mesmo aviso. |
+| **Importação por planilha** | A linha cujo celular já existe **é vinculada ao cadastro atual**, em vez de criar um segundo — acrescentando a ele só o papel que a planilha traz. |
+
+Os detalhes de cada tela estão em [Contatos](../cadastros/contatos.md#telefone-identifica) e em [Importando dados de outro sistema](importacao-de-dados.md#telefone-identifica).
+
+{% hint style="info" %}
+**Só o celular conta.** Telefone fixo e e-mail ficam de fora, e **contato sem celular nunca é barrado** — quem só tem e-mail continua entrando normalmente. A comparação é feita sobre o número **como o LocFlow o guarda** (com o código do país), não sobre o que foi digitado: um cadastro antigo com o número escrito de qualquer jeito não vira falso alarme.
+{% endhint %}
+
+{% hint style="success" %}
+**Ligar e desligar é seguro a qualquer momento.** **Nada é apagado nem mesclado**, e a regra **não vale para trás**: as duplicatas que você já tem continuam exatamente onde estão. A regra só olha o que for cadastrado (ou importado) daí em diante — por isso dá para ligá-la numa base bagunçada sem medo, e desligá-la de novo se atrapalhar.
+{% endhint %}
+
+Como todo motor deste grupo, o ajuste **vale na hora**: não há versão para publicar.
+
 ---
 
 ## Versões e publicação {#versoes-e-publicacao}
@@ -253,6 +281,7 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 * **"O mesmo item foi reservado para dois clientes."** Revise o **Motor de Estoque**: provavelmente está no **mínimo justo**, sem folga nenhuma entre uma locação e a próxima. Passe para **Com folga** e informe quanto tempo a sua operação costuma precisar depois que o material volta.
 * **"Quero que fretes altos passem por mim antes de fechar."** Em **Operação do Frete**, escolha **Aprovar acima de um valor** e defina o limite.
 * **"Um cliente pagou a mais e não sei o que fazer com o troco."** O **Operação da Cobrança** já decide o padrão (crédito ou dinheiro) e avisa a equipe.
+* **"Descobri o mesmo cliente cadastrado duas vezes, com o histórico partido."** Em **Operação de Contatos**, ligue **Telefone identifica o contato**: da próxima vez, quem digitar aquele celular é avisado na hora. As duplicatas que já existem continuam lá — a regra não mexe no passado.
 
 ## Próximo passo {#proximo-passo}
 
