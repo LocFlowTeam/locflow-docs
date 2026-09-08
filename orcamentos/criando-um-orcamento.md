@@ -61,7 +61,7 @@ flowchart LR
 **Por que os itens vêm antes do evento e do frete.** A logística divide os **materiais** em viagens, e o frete depende do peso e do volume que vão no veículo. Sem itens, as duas etapas ficariam sem base. E juntar trajeto, viagens e frete numa etapa só resolve o incômodo antigo: quem mexia nas viagens só via o efeito no preço uma tela adiante.
 {% endhint %}
 
-Dentro de cada etapa, o formulário se divide em **seções** — Natureza, Cliente, Itens, Evento, Saída do material, Retorno do material, Duração, Acréscimos e descontos, Observações, Vendedor e Validade (na venda não há Retorno do material nem Duração). Cada seção tem um cabeçalho com o nome, um resumo do que há dentro e um selo — e é assim que você percorre a proposta: seção por seção, concluindo cada uma. Veja [Seções retraídas e "Concluir seção"](#concluir-secao).
+Dentro de cada etapa, o formulário se divide em **seções** — Tipo de negócio, Cliente, Itens, Evento, Saída do material, Retorno do material, Duração, Acréscimos e descontos, Observações, Vendedor e Validade (na venda não há Retorno do material nem Duração). Cada seção tem um cabeçalho com o nome, um resumo do que há dentro e um selo — e é assim que você percorre a proposta: seção por seção, concluindo cada uma. Veja [Seções retraídas e "Concluir seção"](#concluir-secao).
 
 A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
 

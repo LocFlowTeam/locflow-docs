@@ -106,7 +106,7 @@ O campo de busca é inteligente: procure pelo **nome do cliente** ou pelo **cód
 
 Toque em **Filtros** para abrir a folha de filtros. Ela tem **três grupos**, que combinam entre si:
 
-* **Natureza** (o tipo da cobrança) — Aluguel, Venda.
+* **Tipo de negócio** — Aluguel, Venda.
 * **Status** — Pendente, Parcialmente paga, Paga, Cancelada.
 * **Logística** — a etapa em que está o **pedido de origem** da cobrança, na ordem do fluxo: Não iniciada, A separar, Separado, Saiu para entrega, Entregue, Retirado na loja, Saiu para retirada, Retirado, Devolvido na loja, A conferir, Conferido. É o grupo que responde à pergunta que trava a decisão de cobrar — *o material já rodou?* — e que nem o tipo nem o status respondem.
 
