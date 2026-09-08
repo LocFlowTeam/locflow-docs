@@ -102,6 +102,35 @@ O que o prazo desloca depende do formato:
 **A prazo mexe nas DATAS, não nos valores.** D+30 adia o vencimento; não muda quanto se cobra em cada parcela. É o "pagamento faturado" que o cliente PJ costuma pedir — entrega agora, pagamento daqui a X dias.
 {% endhint %}
 
+## Como o cliente vai pagar (indicativo) {#pagamento-combinado}
+
+Logo abaixo do "a prazo", pouco antes do resumo das parcelas, há uma seção — **"Como o cliente vai pagar (indicativo)"** —, **fechada por padrão**, com o resumo **"Nada combinado"** enquanto você não mexe nela. É onde você anota **o que o cliente falou**: "no Pix", "metade na entrega", "dinheiro na retirada".
+
+Até aqui esse acerto morria na conversa entre o vendedor e o cliente. Quem ia receber — o operador no balcão, o motorista na porta — chegava sem saber.
+
+{% hint style="warning" %}
+**Combinado é recado, não regra.** O que você marca aqui **não cria parcela, não muda vencimento, não escolhe o meio de pagamento e não impede receber por outro**. O método que vale continua sendo o que for registrado **no ato do recebimento** — a [baixa manual](recebendo-pagamentos.md) ou o [pagamento online](pagamento-online.md). Por isso a tela escreve "indicativo" com todas as letras.
+{% endhint %}
+
+**Não confunda com o formato da cobrança.** *À vista*, *sinal + restante* e *parcelado* são a **regra** que cria as parcelas — é o que você escolheu lá em cima, e é o que move dinheiro. O combinado é o acerto de balcão: muda a qualquer momento e não move um centavo.
+
+### O que você informa
+
+**A forma**, num toque, entre as mesmas opções do lançamento manual do financeiro, na ordem em que aparecem: **Boleto**, **Pix**, **Transferência**, **Cartão de crédito**, **Cartão de débito**, **Dinheiro**, **Maquininha** e **Outra**.
+
+{% hint style="info" %}
+**O cartão de débito existe aqui e não existe na baixa.** Ele faz parte do vocabulário do combinado (e do [lançamento manual](../financeiro/lancamentos.md)), mas **não** é uma das formas da [baixa de parcela](recebendo-pagamentos.md#os-metodos-de-recebimento). Faz sentido: "combinei receber no débito" é uma informação; um recebimento "no débito" não é algo que a cobrança saiba registrar.
+{% endhint %}
+
+**A observação**, opcional, que só aparece **depois** de você escolher a forma. É a frase curta que dá o contexto — o próprio campo sugere *"ex.: metade na entrega"* —, com até **140 caracteres** e um contador ao lado.
+
+Para desfazer, **toque de novo no chip já marcado**: ele desmarca e a cobrança volta a "nada combinado". Nada disso é obrigatório — a maioria das emissões não usa, e é por isso que a seção nasce fechada. Fechada, ela ainda mostra no cabeçalho o que você combinou.
+
+### Os outros dois lugares onde se informa
+
+* **Na cobrança avulsa** — o botão **Cobrança avulsa**, na lista de Cobranças, abre **"Nova cobrança avulsa"** (cliente, valor, motivo, vencimento). Ali o mesmo campo fica **sempre visível**, no fim do formulário.
+* **Depois, a qualquer momento** — pelo lápis na ficha da cobrança. Veja [Faturas e parcelas](faturas-e-parcelas.md#pagamento-combinado).
+
 ## O resumo das parcelas
 
 Enquanto você mexe nas opções, a folha mostra um **Resumo das parcelas** ao vivo: cada linha com o rótulo (Sinal, Restante, Parcela 1, 2…), a **data em que vence** e o **valor**, mais o **total** no rodapé. É a sua conferência antes de confirmar — o que você vê ali é exatamente o que será gerado.
@@ -152,6 +181,7 @@ A ideia é a mesma de todo o LocFlow: **simples para quem quer simples, flexíve
 * **Cliente PJ que paga faturado:** **À vista**, mas com **a prazo D+30**: você entrega agora e a cobrança vence daqui a 30 dias.
 * **Locação grande dividida:** **Parcelado** em 3x mensais. Você ativa o valor por parcela, deixa a primeira maior (a "entrada") e ajusta as outras até a soma fechar o total.
 * **Precisou empurrar uma parcela:** o cliente pediu mais uma semana. Você abre a parcela em aberto, troca a data no lápis e salva — se havia boleto, ele continua o mesmo, só com o novo vencimento.
+* **"Ele disse que paga metade na entrega":** você emite normalmente (o formato e as datas não mudam) e, na seção **Como o cliente vai pagar (indicativo)**, marca **Pix** e escreve *metade na entrega*. Quem for receber lê o recado na lista e na ficha — e continua livre para registrar o que de fato entrar.
 
 ## Para quem quer os números
 

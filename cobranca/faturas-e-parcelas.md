@@ -66,6 +66,31 @@ Na linha de cada parcela em aberto você tem dois ícones:
 * **lápis** — **reagenda o vencimento** da parcela (precisa da permissão certa; não aparece em parcela já paga ou congelada);
 * **relógio** — abre o **histórico** de tentativas e recebimentos daquela parcela.
 
+## Pagamento combinado: o recado de como o cliente vai pagar {#pagamento-combinado}
+
+No cabeçalho da ficha, junto do valor e do vencimento, há uma linha curta: **"Pagamento combinado: Pix · metade na entrega"**. É o que o cliente disse na negociação, anotado por quem vendeu — e fica ali porque é o que orienta **quem vai receber**.
+
+{% hint style="warning" %}
+**Ele não decide nada.** O combinado não cria parcela, não muda vencimento, não escolhe instrumento e não impede receber por outro meio. Quem decide o método é o **ato do recebimento**. É por isso que a linha diz "combinado", e não "forma de pagamento": sem esse adjetivo, é fácil ler a linha como uma trava do sistema.
+{% endhint %}
+
+**Não é o modelo da cobrança.** *Parcela única*, *sinal + restante*, *parcelado* — isso é a regra que criou as parcelas acima. O combinado é outra camada, e as duas convivem: uma cobrança em sinal + restante pode ter o combinado "dinheiro na retirada".
+
+### Anotar, corrigir e apagar {#editar-o-combinado}
+
+Toque no **lápis** ao lado da linha. Abre a folha **Pagamento combinado**, com as mesmas opções e a mesma observação da [emissão](emitindo-a-cobranca.md#pagamento-combinado), e a folha lembra: *"É só um lembrete de como o cliente disse que vai pagar. Não muda parcelas nem vencimentos, e o recebimento pode ser registrado por qualquer forma."*
+
+* Para **corrigir**, marque outra forma (ou edite a observação) e toque em **Salvar combinado**.
+* Para **apagar**, desmarque a forma — tocando de novo no chip aceso — e o botão vira **Remover combinado**. Tirar o combinado é sempre um ato explícito; nada some sozinho.
+
+{% hint style="info" %}
+**Quem vê e quem edita.** O lápis usa a **mesma permissão de editar a fatura**. Quem não a tem lê a linha quando há combinado, e não vê nada quando não há — uma linha "—" sem ação seria só ruído numa ficha já densa. Quem pode editar vê a linha sempre, com **"Pagamento combinado: não informado"** enquanto ninguém anotou.
+{% endhint %}
+
+{% hint style="warning" %}
+**Cobrança cancelada não aceita mais combinado.** O lápis some — não há mais o que combinar numa cobrança encerrada. O que já estava anotado continua na linha, agora só para leitura.
+{% endhint %}
+
 ## A parcela é atômica
 
 Esta é a regra mais importante da cobrança no LocFlow: **a parcela é atômica**. Não existe parcela "meio paga". Uma parcela está **pendente**, **aguardando conferência**, **paga** ou **congelada** — nunca "50% paga".

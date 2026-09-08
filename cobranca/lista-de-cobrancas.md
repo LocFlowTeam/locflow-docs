@@ -30,11 +30,34 @@ Cada cobrança aparece como um cartão (no celular) ou como uma linha de tabela 
 | **Tipo** | Se é uma cobrança de **locação** (aluguel) ou de **venda**. |
 | **Total** | O valor cheio da cobrança. |
 | **Parcelas** | Em quantas parcelas o pagamento foi dividido. |
+| **Vencimento** | A data da **próxima parcela que ainda pode receber** — veja abaixo. |
+| **Pagamento combinado** | Como o cliente disse que vai pagar, quando alguém anotou — veja abaixo. |
 | **Saldo devedor** | Quanto ainda falta receber (só aparece quando há saldo em aberto). |
 | **Status** | A situação real do pagamento — veja abaixo. |
 
 {% hint style="info" %}
 O **saldo devedor** do cartão só aparece quando ainda há algo a receber. Se a cobrança já foi totalmente paga, ele some — o que você vê é o status **Paga**.
+{% endhint %}
+
+### O vencimento: a próxima parcela que ainda pode receber {#vencimento}
+
+A lista mostra **uma data por cobrança**: a **menor** entre as parcelas que **não estão pagas nem canceladas**. É a resposta à pergunta que decide o dia — *cobro hoje?* — sem você abrir a fatura para procurar.
+
+Repare que não é "o vencimento da fatura": **quem vence é a parcela**. Numa cobrança parcelada, a data que aparece é a da parcela da vez; quando ela é paga, a lista já mostra a seguinte.
+
+{% hint style="info" %}
+**Cobrança quitada ou cancelada aparece sem data.** Não há mais nada a receber, e uma data qualquer ali mandaria cobrar quem não deve nada. Na tabela fica um travessão; no cartão, a data apenas não aparece.
+{% endhint %}
+
+### A forma combinada na lista {#forma-combinada}
+
+Quando alguém anotou **como o cliente disse que vai pagar** (veja [Emitindo a cobrança](emitindo-a-cobranca.md#pagamento-combinado)), o recado viaja com a cobrança:
+
+* **No cartão** (celular), numa linha só, junto do vencimento — por exemplo: *"Pagamento combinado: Pix · metade na entrega · vence 15/09/2026"*. Sem combinado, a linha vira só *"Vence 15/09/2026"*; sem os dois, ela nem existe.
+* **Na tabela** (telas grandes), na coluna **Forma combinada**. Ela **nasce desligada**: é um recado opcional que a maioria das cobranças não tem, e uma coluna quase toda em travessões roubaria largura das que decidem o dia. Quem trabalha com combinado liga a coluna no botão **Colunas** — ali ela aparece como *Forma combinada (indicativa)* — e a escolha fica gravada para você.
+
+{% hint style="warning" %}
+**É indicativo, e a tela repete isso de propósito.** O rótulo diz "combinado" em todos os lugares justamente para ninguém ler a linha como uma regra do sistema e deixar de receber de outro jeito quando o cliente muda de ideia na porta.
 {% endhint %}
 
 ### Locação ou venda: o tipo da cobrança
@@ -130,6 +153,8 @@ A mesma tela serve a quem está começando e a quem fatura alto — ela cresce c
 * **Fechar o caixa da locação** — Marque **Aluguel** e **Paga** para ver o que já entrou no período; para ver o que ainda falta, tire o chip *Paga* e marque *Pendente*.
 * **"O material já foi entregue e ainda não cobrei"** — Marque **Entregue** em Logística e **Pendente** em Status: sobram os pedidos que já rodaram e ainda não pagaram nada.
 * **Achei pelo número do pedido** — Digite o código do orçamento na busca: a cobrança daquele pedido aparece direto.
+* **"O que vence esta semana?"** — A data na linha de cada cobrança já é a da **próxima parcela cobrável**. Marque **Pendente** e **Parcialmente paga** e leia as datas: as quitadas e as canceladas nem trazem data.
+* **"Ele ia pagar no Pix ou na maquininha?"** — Se o vendedor anotou, está na própria linha da lista (*Pagamento combinado: …*). Em tela grande, ligue a coluna **Forma combinada** no botão **Colunas** para ver todas de uma vez.
 
 ## Próximo passo
 
