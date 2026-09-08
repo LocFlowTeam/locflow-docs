@@ -90,6 +90,8 @@ Só três coisas abrem uma seção:
 
 No fim de cada seção há o botão **Concluir seção**. Ele faz três coisas num toque: **marca** a seção como concluída, **retrai** e **abre a próxima que ainda falta** — pulando as já concluídas e as que não aparecem — rolando a tela até ela. Dá para percorrer um orçamento inteiro sem retrair nada à mão: preencheu, concluiu, a próxima já está aberta. Concluída a última, a vez volta para a primeira que ainda estiver pendente lá em cima.
 
+Depois dos movimentos, a próxima é o painel **Frete, cargas e viagens**, que abre uma vez para você conferir o frete e as viagens (ele não tem botão de concluir: siga pelo cabeçalho da seção seguinte ou pelo Concluir dela). Ao concluir a última seção, o botão só volta ao início se ainda houver seção **incompleta**; com tudo completo, nada abre — os selos dizem o que ficou sem carimbo. Com um erro em vermelho dentro da seção, o botão fica desabilitado até você corrigir. Se a próxima estiver em outra etapa do celular, um aviso diz qual é; a troca de etapa é sua, pelo Avançar.
+
 {% hint style="info" %}
 **Concluir não valida nada** — é a sua marca de "já vi". Se a seção ainda tem algo em falta, o selo do cabeçalho avisa (abaixo). O que impede de **salvar** continua sendo o erro em vermelho, como sempre.
 {% endhint %}
@@ -108,9 +110,9 @@ Ao lado do nome de cada seção, o selo cruza duas coisas: o que **você** decla
 
 A frase do "com pendência" diz exatamente o que falta, sem precisar abrir a seção: *"Falta escolher o cliente"*, *"Falta adicionar itens"*, *"Falta a data do evento"*, *"Falta combinar quando o material sai"*, *"Falta a validade da proposta"*…
 
-### No celular: o Avançar conclui a etapa {#avancar-conclui}
+### No celular: o Avançar conclui as etapas de uma seção só {#avancar-conclui}
 
-No passo a passo do celular, o botão **Avançar** do rodapé faz o papel do "Concluir seção" para a etapa inteira: ele confere a etapa (um erro em vermelho segura você nela) e, estando tudo certo, **conclui todas as seções daquela etapa de uma vez**. As etapas de uma seção só (**Itens** e **Evento**) nem têm o botão próprio — é o Avançar que as conclui. Nas etapas com mais de uma seção (Cliente, Movimentos, Valores), cada seção tem o seu "Concluir seção", e o Avançar conclui o que sobrou. Assim você chega à **Revisão** com os selos certos sem ter apertado nada além do Avançar. Se a próxima seção pendente está na etapa seguinte, ela já recebe você **aberta** quando você chegar lá.
+No passo a passo do celular, as etapas que têm **uma seção só** (Itens e Evento) não mostram o botão "Concluir seção": ali o **Avançar** do rodapé faz esse papel — confere a etapa (um erro em vermelho segura você nela) e, estando tudo certo, conclui a seção e segue. Nas etapas com mais de uma seção (Cliente, Movimentos, Valores), o Avançar só muda de etapa; cada seção tem o próprio Concluir.
 
 ### A conferência fica salva {#conferencia}
 
