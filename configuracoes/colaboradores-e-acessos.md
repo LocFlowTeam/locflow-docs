@@ -195,7 +195,9 @@ A **função** reúne competências. Elas não dão acesso a telas — dizem **h
 | **Operar Logística** | Operar roteiros, entregas e retiradas | — |
 | **Separação** | Separar e preparar o material para envio | — |
 | **Conferência** | Conferir o material no retorno ao galpão | — |
-| **Atendimento no balcão** | Atender o cliente presencialmente no balcão — as retiradas e devoluções no galpão | — |
+| **Atendimento na loja** | Atender o cliente presencialmente na loja — as retiradas e devoluções no galpão | — |
+| **Manutenção** | Reparar itens na bancada de manutenção e devolvê-los ao estoque | — |
+| **Pagar contas** | Acompanhar e quitar o que a organização deve — contas a pagar e faturas de cartão | É o público do canal *Quem cuida do financeiro* |
 
 {% hint style="info" %}
 Papel e função são **eixos diferentes**: o papel libera **o que a pessoa vê**; a função registra **o que ela sabe fazer**. Um *Motorista* tem o papel de motorista (vê só a rota dele) e a função de motorista (competência *Dirigir Veículos*, que pede CNH).

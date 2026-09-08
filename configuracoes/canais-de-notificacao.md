@@ -45,10 +45,12 @@ Só quem tem a **competência** marcada entra na pool. As competências disponí
 
 * **Vender orçamentos**
 * **Operar logística**
-* **Atendimento no balcão**
+* **Atendimento na loja**
 * **Conferência**
 * **Separação**
 * **Dirigir veículos**
+* **Manutenção**
+* **Pagar contas**
 
 A competência vem da **função** de cada colaborador. Para um canal por competência funcionar, atribua a competência às pessoas certas — veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md). Assim o canal entrega **só para quem tem a habilidade** — e, no modo rodízio, reveza entre elas.
 
@@ -91,11 +93,15 @@ Toda organização já vem com canais prontos — você não monta tudo do zero:
 | **Organização** | Toda a organização | Todo o grupo |
 | **Responsável pela operação** | Quem está por trás da operação (ex.: quem executa a rota) | — |
 | **Operadores logísticos** | Competência *Operar logística* | Todo o grupo |
-| **Responsável pelo balcão** | Competência *Atendimento no balcão* | Todo o grupo |
+| **Responsável pela loja** | Competência *Atendimento na loja* | Todo o grupo |
+| **Operadores de manutenção** | Competência *Manutenção* | Todo o grupo |
 | **Vendedores (rodízio)** | Competência *Vender orçamentos* | Rodízio |
 | **Aprovadores de orçamento** | Competência *Vender orçamentos* | Todo o grupo |
+| **Quem cuida do financeiro** | Competência *Pagar contas* | Todo o grupo |
 
 O **Aprovadores de orçamento** é o canal do aviso de **orçamento congelado aguardando aprovação** — por exemplo, quando o frete passa de um limite e o pedido trava esperando um aval. Ele fala com todo o grupo que pode **vender orçamentos**, porque é quem decide aprovar ou rejeitar. Repare que ele usa a **mesma competência** do *Vendedores (rodízio)*, mas entrega de forma diferente: aqui **todo o grupo** recebe (uma aprovação parada não pode depender de uma só pessoa da fila).
+
+O **Quem cuida do financeiro** é o canal do dinheiro que SAI e do que está atrasado — conta a vencer, fatura de cartão fechada, parcela vencida. Ele mira *Pagar contas* porque essa é a pergunta certa: "a quem eu aviso que a fatura fechou?" não é a mesma que "quem pode editar um lançamento". Numa locadora é o dono; noutra, a pessoa do administrativo.
 
 Na lista, um canal padrão traz o selo **"Recebe por padrão"**. Você pode **editar a pool e o roteamento** dele e reaproveitá-lo nos avisos — mas **não pode removê-lo**, porque ele é a opção que os avisos usam quando você não escolhe outra.
 

@@ -144,7 +144,7 @@ Ele sai pelo canal **Quem cuida do financeiro** — quem tem a competência *Pag
 | Entrega ou retirada concluída | A equipe concluiu uma parada | Operadores logísticos | Informativo | Disponível |
 | Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operadores logísticos | Importante | Disponível |
 | Roteiro ajustado em execução | O operador ajustou um roteiro que já estava em andamento | Responsável pela operação | Crítico | Disponível |
-| Atendimento no balcão (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente no balcão | Responsável pelo balcão | Informativo | Disponível |
+| Atendimento na loja (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente na loja | Responsável pela loja | Informativo | Disponível |
 | Movimentos do dia sem roteiro | Toda manhã, quando há entregas ou retiradas com data para hoje (ou atrasadas) que ainda não foram incluídas em um roteiro | Operadores logísticos | Importante | Disponível |
 
 Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o condutor não recebe a mudança crua) em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
