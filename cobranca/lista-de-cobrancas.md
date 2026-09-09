@@ -1,6 +1,6 @@
 ---
 icon: receipt
-description: A porta do módulo de Cobrança — encontre qualquer fatura pela busca, filtre por tipo, status e etapa logística em um toque, e veja o saldo do que está em aberto.
+description: A porta do módulo de Cobrança — encontre qualquer fatura pela busca, filtre por tipo, status, etapa logística, vencimento, forma combinada e link de pagamento em um toque, e veja o saldo do que está em aberto.
 ---
 
 # Cobranças: a lista e o que mostra
@@ -104,11 +104,14 @@ O campo de busca é inteligente: procure pelo **nome do cliente** ou pelo **cód
 
 ### Filtros
 
-Toque em **Filtros** para abrir a folha de filtros. Ela tem **três grupos**, que combinam entre si:
+Toque em **Filtros** para abrir a folha de filtros. Ela tem **seis grupos**, que combinam entre si:
 
 * **Tipo de negócio** — Aluguel, Venda.
 * **Status** — Pendente, Parcialmente paga, Paga, Cancelada.
 * **Logística** — a etapa em que está o **pedido de origem** da cobrança, na ordem do fluxo: Não iniciada, A separar, Separado, Saiu para entrega, Entregue, Retirado na loja, Saiu para retirada, Retirado, Devolvido na loja, A conferir, Conferido. É o grupo que responde à pergunta que trava a decisão de cobrar — *o material já rodou?* — e que nem o tipo nem o status respondem.
+* **Vencimento** — **Vencidas**, **Vence hoje**, **Próximos 7 dias** ou **um período** à sua escolha. É escolha única: tocar de novo desmarca. A conta é sobre a **próxima parcela cobrável**: uma cobrança só entra em "Vencidas" se ainda tem parcela em aberto vencida — as quitadas e as canceladas não vencem mais nada.
+* **Forma combinada** — o que o vendedor anotou como combinado com o cliente (Pix, dinheiro, maquininha, cartão de débito…), o mesmo vocabulário da emissão. Quem não combinou nada fica fora de qualquer recorte deste grupo — não há filtro "sem combinado".
+* **Link de pagamento** — **Sem link**, **Ativo** ou **Expirado ou revogado**. O grupo só aparece para quem pode criar pagamento online.
 
 A regra é uma só, e a própria folha a diz: **"Sem nada marcado, a lista mostra todas as cobranças."** A lista abre **inteira**, e **marcar é recortar**: um toque em **Entregue** mostra só as cobranças de pedidos entregues — e só elas. Dentro de um grupo, marcar mais de uma opção amplia o recorte (*Pendente* **ou** *Parcialmente paga*); entre grupos, os recortes se somam (*Aluguel* **e** *Paga*).
 
@@ -123,7 +126,7 @@ Cada opção marcada vira um **chip com "x"**, logo abaixo do botão **Filtros**
 ```mermaid
 flowchart LR
     L[Lista de cobrancas] --> B[Busca: cliente ou codigo]
-    L --> F[Filtros: natureza + status + logistica]
+    L --> F[Filtros: tipo + status + logistica + vencimento + forma combinada + link]
     B --> R[Resultado filtrado]
     F --> R
     R --> S[Saldo devedor somado no topo]
@@ -144,7 +147,7 @@ A mesma tela serve a quem está começando e a quem fatura alto — ela cresce c
 | --- | --- |
 | **Pequeno** (autônomo, MEI) | Uma lista simples do que entrou e do que falta. O saldo no topo já é o seu controle de recebimentos — sem planilha paralela. |
 | **Médio** | Marca **Pendente** para focar no que falta e **Aluguel** ou **Venda** para separar os dois lados; usa a busca para achar o cliente e cobrar na hora. |
-| **Grande** | Em tela larga, vê tudo em tabela densa com colunas, cruza natureza + status + etapa logística para fechar o caixa por recorte e lê o saldo somado de cada visão. |
+| **Grande** | Em tela larga, vê tudo em tabela densa com colunas, cruza tipo + status + etapa logística + vencimento para fechar o caixa por recorte e lê o saldo somado de cada visão. |
 
 ## Situações reais
 
@@ -153,7 +156,9 @@ A mesma tela serve a quem está começando e a quem fatura alto — ela cresce c
 * **Fechar o caixa da locação** — Marque **Aluguel** e **Paga** para ver o que já entrou no período; para ver o que ainda falta, tire o chip *Paga* e marque *Pendente*.
 * **"O material já foi entregue e ainda não cobrei"** — Marque **Entregue** em Logística e **Pendente** em Status: sobram os pedidos que já rodaram e ainda não pagaram nada.
 * **Achei pelo número do pedido** — Digite o código do orçamento na busca: a cobrança daquele pedido aparece direto.
-* **"O que vence esta semana?"** — A data na linha de cada cobrança já é a da **próxima parcela cobrável**. Marque **Pendente** e **Parcialmente paga** e leia as datas: as quitadas e as canceladas nem trazem data.
+* **"O que vence esta semana?"** — Marque **Próximos 7 dias** em Vencimento (e, se quiser, **Pendente** e **Parcialmente paga** em Status). A data na linha de cada cobrança é a da **próxima parcela cobrável**; as quitadas e as canceladas nem trazem data.
+* **"O que já venceu e ainda não recebi?"** — Marque **Vencidas**: cada linha passa a dizer há quantos dias venceu.
+* **"Para quem ainda preciso mandar o link?"** — Marque **Sem link** em Link de pagamento e **Pendente** em Status.
 * **"Ele ia pagar no Pix ou na maquininha?"** — Se o vendedor anotou, está na própria linha da lista (*Pagamento combinado: …*). Em tela grande, ligue a coluna **Forma combinada** no botão **Colunas** para ver todas de uma vez.
 
 ## Próximo passo
