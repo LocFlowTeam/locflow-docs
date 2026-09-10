@@ -215,9 +215,13 @@ O saldo **acumula por parceiro**, não por pedido: vários repasses pequenos de 
 
 O fluxo é uma **via de mão dupla** — um lado sozinho nunca dá o repasse por pago:
 
-1. **Você declara** ter pago o valor do parceiro (o líquido dele — a taxa da plataforma **não** entra nesse valor, porque ela não é dele).
-2. **O parceiro confirma** ("recebi") ou **contesta** ("não recebi", com o motivo) — nos **Meus ganhos** dele.
-3. Confirmado, os repasses são dados como **pagos**: entram nos ganhos do parceiro, saem do seu saldo devedor e viram **saída** no seu financeiro.
+1. **Você declara** ter pago o valor do parceiro (o líquido dele — a taxa da plataforma **não** entra nesse valor, porque ela não é dele). Na folha, você diz **de qual conta saiu** o dinheiro (a conta padrão já vem escolhida; troque se saiu de outra) e **como pagou** — Pix, transferência, dinheiro ou outro. A observação continua livre, para o que os chips não dizem.
+2. **O parceiro confirma** ("recebi") ou **contesta** ("não recebi", com o motivo) — nos **Meus ganhos** dele. Se o parceiro é uma **organização parceira** (parceria interna), ao confirmar ele também diz **em qual conta o dinheiro caiu** e **como** — o parceiro externo não vê esses campos, porque não tem financeiro no LocFlow.
+3. Confirmado, os repasses são dados como **pagos**: entram nos ganhos do parceiro, saem do seu saldo devedor e viram **saída** no seu financeiro — **da conta que você declarou**, com o método. É o que faz o repasse aparecer no [extrato](../financeiro/contas.md) da conta certa, e não sempre na padrão.
+
+{% hint style="info" %}
+**A conta é sua; o parceiro não a vê.** Na lista de "aguardando confirmação" ele lê **como** você pagou (Pix, dinheiro…), que é o que o ajuda a conferir — mas não de qual conta saiu. De onde a sua organização tira o dinheiro é assunto interno dela.
+{% endhint %}
 
 Enquanto a declaração aguarda a resposta, a **quitação via PIX daquele parceiro fica travada** (o mesmo saldo não pode ser pago por dois caminhos) — e você pode **cancelar a declaração** a qualquer momento para voltar ao fluxo normal.
 

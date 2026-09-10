@@ -40,6 +40,15 @@ O link é **público e por fatura**: o cliente paga **parcela a parcela** por um
 
 Por padrão o link já vem só com **PIX**. Para aceitar boleto ou cartão, basta ligar o método no link — um toque. **Mantenha sempre ao menos um método habilitado.**
 
+### O link escreve no combinado {#o-link-e-o-combinado}
+
+O link e o [pagamento combinado](emitindo-a-cobranca.md#pagamento-combinado) eram duas declarações da mesma intenção, digitadas duas vezes. Agora **gerar o link ou ligar uma forma nele escreve no combinado da cobrança**: link com PIX vira combinado "Pix"; link com PIX e cartão vira "Pix ou Cartão de crédito". A ficha mostra a linha com o selo **"segue o link"**.
+
+Dois limites, de propósito:
+
+* **A mão de gente vence.** Assim que alguém edita o combinado pelo lápis da ficha, ele para de seguir o link — ligar ou desligar um método no link não muda mais o que foi combinado. É o operador quem sabe o que o cliente disse; o link só ajuda enquanto ninguém disse nada.
+* **O link só conhece o que ele oferece.** PIX, boleto e cartão. Dinheiro, maquininha, transferência e débito continuam sendo marcados à mão, e o link nunca os apaga.
+
 {% hint style="info" %}
 **Dados do cliente:** alguns métodos pedem mais informação. **CPF/CNPJ e e-mail** são exigidos por todos — sem eles, o link nem é gerado. O **boleto** ainda precisa do **endereço**. O LocFlow mostra um checklist do que falta e deixa você completar ali mesmo, no mesmo gesto.
 {% endhint %}
