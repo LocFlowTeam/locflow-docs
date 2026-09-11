@@ -148,6 +148,13 @@ As provas vão da mais simples (foto e vídeo) à mais forte (código confirmado
 
 **Agendamento padrão.** Uma sugestão de datas ao criar um orçamento: ao informar a data do evento, a entrega e a retirada são preenchidas automaticamente (e podem ser ajustadas). Você diz quantos dias **antes** do evento é a entrega e quantos dias **depois** é a retirada. Deixe em branco para não sugerir.
 
+**Urgência e atraso.** <a id="urgencia-e-atraso"></a> Os dois prazos que o painel logístico usa para gritar por você. Um movimento **sem roteiro** ganha o **⚠ de urgente** quando a janela dele começa em menos de **N horas** — é o "planeje já". Quando a janela já abriu há mais de **M horas** e segue sem roteiro, ele deixa de ser urgente e vira **atrasado**, com marca própria: ali não há mais o que planejar dentro do combinado, o que se faz é conferir o que aconteceu (foi executado e ninguém registrou? o pedido morreu?).
+
+* **Urgente quando a janela começa em** — padrão **4h**, o que o mercado pratica para pedido de urgência: locadoras com entrega no mesmo dia e terminais logísticos costumam pedir essa antecedência para ainda encaixar um pedido no dia. Quem despacha do pátio em uma hora pode baixar para 1h ou 2h; quem viaja para outra cidade pode subir para 24h ou 48h.
+* **Atrasado depois que a janela abriu há** — padrão **24h**: um dia de trabalho para honrar o compromisso saindo agora. Em **0h**, o movimento vira atrasado assim que a janela abre sem roteiro.
+
+> Os dois valem para o ⚠ do painel e do calendário logístico, para a legenda deles e para o **sinal vermelho do menu** (que conta os urgentes). Só o aviso diário de "movimentos do dia sem roteiro", que chega de manhã, continua sendo um resumo do **dia**: ele lista o que tem janela para hoje sem roteiro, urgente ou não.
+
 **Forma de operação.** Diz como a sua locadora costuma operar — e deixa o app já no formato dela:
 
 * **Mista** *(padrão)* — você decide pedido a pedido. O menu mostra Roteirização e [Balcão](../logistica/balcao.md); ao criar um orçamento, os botões "Cliente retira / devolve no galpão" ficam livres. É o comportamento de sempre.

@@ -119,10 +119,10 @@ Com a rota iniciada, o app mostra **uma parada de cada vez** — a atual, em des
 
 ### A bolha de retorno do mapa (Android)
 
-Quando o motorista toca em **traçar a rota**, o app de mapas abre por cima do LocFlow — e é fácil "perder" a tela da execução. Para resolver isso, no **Android** o LocFlow mostra uma **bolha flutuante** com o logo por cima do mapa: tocar nela traz o app de volta à rota num instante (no mesmo espírito de apps de entrega).
+Quando o motorista toca em **traçar a rota** (ou em **ver a localização**), o app de mapas abre por cima do LocFlow — e é fácil "perder" a tela da execução. Para resolver isso, no **Android** o LocFlow mostra uma **bolha flutuante** por cima do mapa, com três coisas: uma **seta de voltar** (tocar em qualquer ponto da bolha traz o app de volta à rota num instante), o **logo** e o **número do endereço** da parada — mais o **complemento**, quando o endereço tem um. É o que o motorista precisa ler quando está chegando: o mapa leva à rua, o número e o complemento levam à porta. Endereço sem número aparece como **s/n**. A bolha pode ser arrastada; soltá-la sobre o **X** que aparece embaixo a fecha sem fechar o app.
 
 {% hint style="info" %}
-**Como a permissão funciona (verbatim do app):** *"Enquanto você usa o mapa, o LocFlow mostra uma bolha flutuante por cima dos outros apps — toque nela para voltar à rota num instante."* O Android pede uma permissão de **"aparecer sobre outros apps" / "sobrepor a outras telas"**. Na primeira vez, o LocFlow explica para quê serve e como conceder **antes** de te mandar para as Configurações — você não cai numa tela de sistema sem contexto.
+**Como a permissão funciona (verbatim do app):** *"Enquanto você usa o mapa, o LocFlow mostra uma bolha flutuante por cima dos outros apps, com o número e o complemento do endereço da parada — e uma seta para voltar à rota num instante."* O Android pede uma permissão de **"aparecer sobre outros apps" / "sobrepor a outras telas"**. Na primeira vez, o LocFlow explica para quê serve e como conceder **antes** de te mandar para as Configurações — você não cai numa tela de sistema sem contexto.
 {% endhint %}
 
 A bolha é **opcional e some sozinha** quando você volta ao app. Se você escolher "Agora não", o mapa abre normalmente, sem bolha, e o app não insiste de novo. No **iPhone (iOS)** esse recurso não existe — o app simplesmente ignora, sem nenhum efeito colateral.

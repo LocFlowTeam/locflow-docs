@@ -36,7 +36,7 @@ A cor resume **em que etapa do ciclo operacional** o movimento está:
 | Cor | Estado | O que significa | Sua ação |
 | --- | --- | --- | --- |
 | **Âmbar** | **Livre (sem roteiro)** | O movimento existe e ainda **não entrou** num roteiro | **Planejar** |
-| **Âmbar + ⚠** | **Urgente** | Livre com a janela começando em **menos de 48h** | **Planejar JÁ** |
+| **Âmbar + ⚠** | **Urgente** | Livre com a janela começando em **menos de 4h** (o prazo é seu: veja [Urgência e atraso](../configuracoes/motores-operacionais.md#urgencia-e-atraso)) | **Planejar JÁ** |
 | **Verde** | **Em roteiro** | Já está num roteiro planejado (dia, veículo, equipe) | Aguardar a saída |
 | **Teal** | **Em execução** | O roteiro dele está **na rua agora** | Acompanhar |
 | **Cinza** | **Concluído** | **Já aconteceu** — ancorado na hora real do registro | Histórico |
@@ -131,7 +131,7 @@ Há também o botão de **legenda** (mostrar/ocultar), que exibe a escala de cor
 Uma rotina simples para usar o calendário todo dia:
 
 1. **Olhe o menu:** se o Calendário está com o **sinal vermelho**, há urgência esperando.
-2. **Abra na visão Mês** e ataque os **⚠** primeiro: são movimentos livres com a janela em menos de 48h. Selecione-os e monte um [roteiro planejado](../logistica/planejando-o-roteiro.md).
+2. **Abra na visão Mês** e ataque os **⚠** primeiro: são movimentos livres com a janela prestes a abrir (menos de 4h, ou o prazo que você definiu em [Urgência e atraso](../configuracoes/motores-operacionais.md#urgencia-e-atraso)). Selecione-os e monte um [roteiro planejado](../logistica/planejando-o-roteiro.md).
 3. **Depois, os âmbares** dos próximos dias — planeje antes que virem ⚠.
 4. **Olhe os pontilhados:** janelas ainda não confirmadas com o cliente. Confirme as dos próximos dias.
 5. **Confie no verde e no teal:** em roteiro e na rua — é acompanhar, não mexer.
@@ -147,7 +147,7 @@ Uma rotina simples para usar o calendário todo dia:
 ## Situações reais <a id="situacoes-reais"></a>
 
 * **Entrega da semana sem roteiro:** o pedido foi ganho e a entrega aparece **âmbar**. Selecione-a e monte o roteiro → vira **verde**.
-* **Janela em menos de 48h:** o âmbar ganha o **⚠** (e o menu acende o sinal). É o primeiro item do seu dia.
+* **Janela prestes a abrir sem roteiro:** o âmbar ganha o **⚠** — por padrão a 4h da janela, e você ajusta esse prazo em [Urgência e atraso](../configuracoes/motores-operacionais.md#urgencia-e-atraso). É o primeiro item do seu dia. Se a janela abriu há mais de um dia e nada foi feito, o movimento vira **atrasado**, com marca própria: aí não é mais planejar, é conferir o que aconteceu.
 * **Carga dividida:** a viagem 1 saiu no ROT-7 (**verde/teal**) e a viagem 2 segue **âmbar** — o calendário mostra as duas separadas ("V1/2" e "V2/2"), e você seleciona só a que falta.
 * **Cliente retira no galpão:** sem rota — o movimento aparece **azul**; você só confirma a janela em que ele vem buscar.
 * **Locação de evento em outra cidade:** o horário foi combinado no fuso do cliente. O calendário mostra no **fuso da sua operação** e exibe o **selo** do fuso original.
