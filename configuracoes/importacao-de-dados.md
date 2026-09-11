@@ -104,6 +104,22 @@ percorrer as linhas daquele motivo, uma a uma, com o problema destacado e o cons
 
 Se preferir corrigir no Excel, **baixe o arquivo** com as linhas de fora e o motivo de cada uma.
 
+#### Quando a planilha traz um cliente que você já tem {#telefone-identifica}
+
+O **CPF/CNPJ** sempre foi o elo: linha com um documento que já existe é **vinculada** ao cadastro atual, não duplicada. Se você ligou **Telefone identifica o contato** em [Ajustes › Motores › Operação de Contatos](motores-operacionais.md#operacao-de-contatos), o **celular** passa a valer como um segundo elo — útil justamente na planilha antiga, em que metade dos clientes está sem documento.
+
+Nesse caso, na conferência a linha aparece em **Entram com ressalva**, com um aviso na coluna do celular:
+
+> Já existe um contato com este telefone — a linha será vinculada a ele (o cadastro dele é mantido, e só o tipo de contato é acrescentado).
+
+É exatamente isso que acontece ao aplicar: **nenhum segundo cadastro é criado**, os dados de quem já está na base **não são reescritos** pela planilha, e a única coisa acrescentada é o **tipo de contato** que a linha traz.
+
+{% hint style="info" %}
+**O documento vence o telefone.** Se a linha já foi reconhecida pelo CPF/CNPJ, é esse o aviso que aparece — não faz sentido conferir duas vezes a mesma coisa. E um contato que está na **Lixeira** nunca é vinculado: para reaproveitá-lo, restaure-o antes de importar.
+{% endhint %}
+
+Com a regra **desligada** (o padrão), nada disso acontece: a linha entra como um cadastro novo, mesmo que o celular se repita.
+
 ### 4. Importar
 
 Aqui, sim, os dados entram. A tela mostra **quantos vão entrar**, o que acontece com quem já existe
@@ -138,7 +154,7 @@ Pode ficar tranquilo — a importação foi desenhada para **nunca perder nem du
 
 ## Dicas para a planilha
 
-* **CPF/CNPJ é o elo.** É por ele que o histórico encontra o cliente — capriche nessa coluna nos dois arquivos. Com ou sem máscara, tanto faz: o LocFlow normaliza e valida;
+* **CPF/CNPJ é o elo.** É por ele que o histórico encontra o cliente — capriche nessa coluna nos dois arquivos. Com ou sem máscara, tanto faz: o LocFlow normaliza e valida. Sem documento na planilha, o **celular** pode servir de elo — se você tiver ligado [Telefone identifica o contato](#telefone-identifica);
 * **Número do pedido evita duplicar — e continua pesquisável.** Se a planilha de pedidos tiver o número original de cada um, reimportar o mesmo arquivo nunca cria cópia; e depois de importar, sua equipe encontra qualquer pedido **buscando pelo número antigo** na lista de orçamentos (ele aparece como "nº 1042" ao lado do código novo). O código do LocFlow é a referência oficial daqui para frente — o número antigo fica como ponte durante a transição;
 * **Endereço completo entra junto** (CEP, rua, número, bairro, cidade e UF). Se vier pela metade, o cliente entra mesmo assim — só o endereço fica para completar depois;
 * **Itens do pedido são opcionais.** No modo **Rápido**, cada pedido entra só com o valor total; no modo **Integridade**, cada item é ligado a um produto do seu catálogo (pelo nome ou código) — se a planilha tiver uma linha por item, linhas com o mesmo número de pedido viram um pedido só. Comece pelo Rápido se quiser velocidade;

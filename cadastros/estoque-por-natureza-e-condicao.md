@@ -30,6 +30,12 @@ Tocando na ajuda, o sistema explica o porquê — exatamente como aparece no app
 
 ### Eixo 1 — Natureza: aluguel x venda {#eixo-natureza}
 
+{% hint style="info" %}
+Nas telas este eixo aparece como **"Tipo de negócio"** — é a mesma coisa. "Natureza" é como o
+LocFlow o chama por dentro, e continua no cabeçalho do relatório contábil em CSV, que a
+contabilidade já importa.
+{% endhint %}
+
 A **natureza** responde "o que acontece com a peça": ela **vai e volta** (aluguel) ou **sai em definitivo** (venda). No produto, isso são duas perguntas independentes que você liga ou desliga:
 
 - **Você vai alugar este produto?** — habilita o **preço de aluguel**.

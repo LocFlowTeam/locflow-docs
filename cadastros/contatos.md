@@ -93,6 +93,38 @@ flowchart LR
     L --> N[Novo contato +]
 ```
 
+## Quando o celular identifica o contato {#telefone-identifica}
+
+O mesmo cliente cadastrado duas vezes é um problema silencioso: o histórico dele fica partido em dois, e ninguém percebe na hora. Se você quiser, o LocFlow passa a **avisar** — usando o **celular** como o sinal de que aquela pessoa já está na base.
+
+Isso é uma escolha da sua organização, e ela **vem desligada**. Enquanto estiver assim, nada muda: dois contatos podem ter o mesmo número, como sempre puderam. Para ligar, vá a **Ajustes › Motores › [Operação de Contatos](../configuracoes/motores-operacionais.md#operacao-de-contatos)** e ative **Telefone identifica o contato**.
+
+### O aviso ao digitar o número
+
+Com a regra ligada, ao **sair do campo de celular** aparece um aviso em âmbar — um alerta, não um erro:
+
+> **Já existe um contato com este telefone: Maria Souza**
+
+E, logo abaixo, um atalho que muda conforme de onde você veio:
+
+| Situação | O que o aviso oferece |
+| --- | --- |
+| Você está cadastrando pela lista de Contatos | **Abrir cadastro existente** — vai direto para a ficha da Maria. |
+| Você abriu o cadastro **de dentro de um orçamento** | **Usar este contato** — seleciona a Maria e volta para o orçamento, sem você refazer o caminho. |
+| O número é de um contato que está na **Lixeira** | **Ver na lixeira** — o aviso diz *"Restaure-o para reutilizar o número"*. |
+
+{% hint style="warning" %}
+**Salvar assim mesmo não passa.** Se você ignorar o aviso e tocar em salvar, o LocFlow recusa e mostra o mesmo aviso, rolando a tela até o campo do celular. Isso não é teimosia da tela: cobre o caso de **outra pessoa** ter cadastrado aquele número enquanto você preenchia o formulário.
+{% endhint %}
+
+### O que a regra não faz
+
+- **Só o celular conta.** Telefone fixo e e-mail ficam de fora, e **contato sem celular nunca é barrado** — quem tem só e-mail entra normalmente.
+- **Cadastro antigo não vira falso alarme.** A comparação é feita sobre o número **como o sistema o guarda** (com o código do país), e não sobre o que foi digitado — máscara, espaço e traço não confundem a conferência.
+- **Nada é apagado nem mesclado.** Ligar a regra não junta cadastros nem limpa a base, e ela **não vale para trás**: as duplicatas que já existem continuam onde estão, para você resolver na sua hora. Desligar também é seguro, a qualquer momento.
+
+A mesma regra vale na **importação por planilha** — só que lá, em vez de avisar, ela **vincula** a linha ao cadastro que já existe. Veja [Importando dados de outro sistema](../configuracoes/importacao-de-dados.md#telefone-identifica).
+
 ## Completar dados na hora certa {#completar-dados-sob-demanda}
 
 Como o cadastro pode nascer enxuto, vai haver momentos em que a operação **exige um dado que ainda falta** — por exemplo, gerar uma cobrança online costuma pedir CPF/CNPJ e e-mail do pagador; certos métodos de pagamento pedem também o telefone ou o endereço.
@@ -155,6 +187,7 @@ Se o contato ainda **não tem endereço** quando você escolhe "Endereço do con
 - **Lead que ainda não fechou:** um possível cliente pediu cotação pelo WhatsApp. Você cadastra só **nome + celular (WhatsApp)** e manda a proposta. Ele entra como **Contato qualificado (lead)** — e fica na sua lista para o follow-up.
 - **Faltou o CPF na hora da cobrança:** você vai gerar um link de pagamento e o método pede CPF e e-mail do cliente. Em vez de abrir o cadastro inteiro, a janela **"Completar dados do contato"** pede só esses dois campos; você preenche, toca em **"Salvar e gerar PIX"** e a cobrança segue na sequência.
 - **Empresa com nota fiscal:** uma construtora vai alugar andaimes e precisa de nota. Você cadastra como **Pessoa Jurídica**, com CNPJ, Razão Social, Nome fantasia e IE — pronto para a operação fiscal quando ela exigir.
+- **O cliente ligou e a atendente cadastrou de novo:** com **Telefone identifica o contato** ligado, ela digita o celular, o aviso aparece na hora — *"Já existe um contato com este telefone: Maria Souza"* — e ela toca em **Usar este contato**. O orçamento sai no cadastro certo, com o histórico inteiro.
 
 {% hint style="success" %}
 **Filosofia por porte:** quem está começando cadastra só nome e telefone e segue em frente. Quem cresceu vai preenchendo documento, endereço e dados fiscais — e o sistema pede cada um **só quando a operação precisa**. O cadastro **abstrai para o pequeno e revela para o grande**: você nunca é obrigado a preencher o que não usa.

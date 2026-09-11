@@ -17,7 +17,7 @@ Toda notificação tem quatro partes:
 
 | Parte | O que é |
 | --- | --- |
-| **Acionador** | O que dispara o aviso: um **evento** (ex.: a equipe saiu do galpão) ou uma **data** (ex.: "3 dias antes do vencimento"). |
+| **Acionador** | O que dispara o aviso: um **evento** (ex.: a equipe saiu do galpão) ou uma **data** — antes dela ("3 dias antes do vencimento") ou depois ("vencida há 3 dias"). |
 | **Canal** | Para onde o aviso vai. Cada aviso aponta para um **canal**, que define **quem recebe** e **como** o aviso é distribuído. Veja [Canais de notificação](canais-de-notificacao.md). |
 | **Nível de atenção** | Quanto o aviso deve **interromper** quem recebe (ver abaixo). |
 | **Ação rápida (opcional)** | Um botão de atalho para resolver, dentro do próprio aviso — ex.: "Abrir a fatura", "Ver no roteiro". |
@@ -63,7 +63,7 @@ Quando você **muda o nível** ou **troca o canal** de um aviso, está criando u
 {% hint style="info" %}
 **Voltar ao padrão:** para retornar ao comportamento de fábrica de um aviso, basta reescolher o nível/canal originais (mostrados como sugestão na lista). O ajuste da sua organização só existe enquanto você o mantém diferente do padrão.
 
-Nos avisos com **lembretes por data** (como o *Acompanhamento de orçamento em aberto*), toque em **Restaurar padrão** no editor de lembretes para voltar aos valores de fábrica (1 dia antes do evento, no aluguel; 7 dias antes do vencimento, na venda). Deixar a lista **vazia** mantém o aviso por data **desligado**.
+Nos avisos com **lembretes por data**, toque em **Restaurar padrão** no editor de lembretes para voltar aos valores de fábrica — 1 dia antes do evento (aluguel) e 7 dias antes do vencimento (venda) no *Acompanhamento de orçamento em aberto*; 3, 10 e 30 dias de atraso na *Parcela vencida há X dias*. Deixar a lista **vazia** mantém o aviso por data **desligado**.
 {% endhint %}
 
 ## Ligar, desligar e ajustar um aviso {#configurando}
@@ -104,7 +104,35 @@ Alguns avisos aparecem numa seção **"Em breve"**, recolhida no fim da lista, c
 | Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito, vale ou reembolso | Organização | Importante | Disponível |
 | Pagamento confirmado | O cliente pagou um valor online | Organização | Importante | Em breve |
 | Parcela a vencer | Faltam alguns dias para o vencimento | — | Informativo | Em breve |
-| Parcela vencida | A parcela passou da data de vencimento | — | Importante | Em breve |
+| **Parcela vencida há X dias** | A parcela passou do vencimento e continua em aberto — 3, 10 e 30 dias depois, por padrão | Quem cuida do financeiro | Importante | Disponível |
+
+#### Como funciona o "Parcela vencida há X dias" {#parcela-vencida}
+
+Este aviso era só uma promessa — ficava na seção **Em breve**, sem poder ser ligado. Agora ele funciona: **toda manhã**, cada parcela que passou do vencimento e **continua em aberto** vira um aviso para quem cuida do dinheiro, com **o cliente**, **o valor que falta receber**, **desde quando** e o atalho **Abrir a fatura**. Na prática, o aviso chega assim:
+
+> **Parcela vencida há 10 dias**
+> Maria Souza está com R$ 1.200,00 em aberto desde 05/08/2026 (orçamento ORC-142). Abra a fatura para cobrar ou registrar o pagamento.
+
+Ele sai pelo canal **Quem cuida do financeiro** — quem tem a competência *Pagar contas* (e quem tem a função "Todas"). Não há "responsável" por uma dívida: o lembrete é da organização. Para estreitar o público, conceda a competência só a quem cuida do dinheiro, ou troque o canal do aviso.
+
+**Você decide em quantos dias de atraso quer ser lembrado.** O padrão são **três lembretes — 3, 10 e 30 dias** —, e cada organização monta os seus na **mesma tela** do acompanhamento de orçamento: abra o aviso e, no bloco **Quando lembrar**, use **Adicionar lembrete** para incluir quantos quiser, cada um de **1 a 90 dias** depois do vencimento. **Restaurar padrão** devolve os três de fábrica.
+
+{% hint style="info" %}
+**Lista vazia desliga o lembrete sem desligar o aviso.** Apague todos os lembretes e a tela diz: *"Nenhum lembrete — você não será avisado por atraso."* O aviso continua ligado (e configurado) — ele só não tem mais nenhuma data para disparar. Para silenciá-lo de vez, use o interruptor no topo.
+{% endhint %}
+
+**Cada lembrete chega uma vez por parcela.** Rodar o dia de novo não repete o aviso, e 3, 10 e 30 dias não colidem entre si — são três cobranças diferentes da mesma parcela, e cada uma acontece uma vez só. **Reagendar o vencimento também não reabre um lembrete já dado**: o aviso é do atraso, não do dia em que o sistema passou.
+
+**Só o que é dívida entra:**
+
+| Parcela | Entra no lembrete? |
+| --- | --- |
+| **Pendente** | Sim — é o caso comum. |
+| **Aguardando conferência** | **Sim.** O dinheiro da rua ainda não foi conferido; até lá, a dívida existe. |
+| **Congelada** | **Sim.** É dinheiro parado esperando alguém decidir — exatamente o que o lembrete existe para lembrar. |
+| **Paga** | Não. |
+| **Cancelada** | Não. |
+| Qualquer parcela de uma **cobrança cancelada** | Não — cobrar por ela seria pedir um dinheiro que a organização já decidiu não cobrar. |
 
 ### Logística
 
@@ -116,7 +144,7 @@ Alguns avisos aparecem numa seção **"Em breve"**, recolhida no fim da lista, c
 | Entrega ou retirada concluída | A equipe concluiu uma parada | Operadores logísticos | Informativo | Disponível |
 | Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operadores logísticos | Importante | Disponível |
 | Roteiro ajustado em execução | O operador ajustou um roteiro que já estava em andamento | Responsável pela operação | Crítico | Disponível |
-| Atendimento no balcão (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente no balcão | Responsável pelo balcão | Informativo | Disponível |
+| Atendimento na loja (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente na loja | Responsável pela loja | Informativo | Disponível |
 | Movimentos do dia sem roteiro | Toda manhã, quando há entregas ou retiradas com data para hoje (ou atrasadas) que ainda não foram incluídas em um roteiro | Operadores logísticos | Importante | Disponível |
 
 Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o condutor não recebe a mudança crua) em [Quando um pedido muda depois de fechado](../logistica/quando-um-pedido-muda.md).
@@ -183,6 +211,8 @@ Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam
 - **"Mudei o nível de um aviso e me arrependi."** Tente sair sem salvar: o LocFlow pergunta **"Salvar alterações?"** e deixa **descartar**, voltando à última versão salva. Ou reescolha o nível original para voltar ao padrão.
 - **"Os operadores estão sendo interrompidos por um aviso pouco urgente."** Baixe o nível dele para **Informativo** (só conta no sino) ou troque o canal para um público mais estreito — e salve.
 - **"Esse aviso aqui está apagado e não consigo mexer."** Ele está na seção **Em breve**: é só visualização, ainda não dá para ligar/ajustar.
+- **"Estou cobrando atraso na mão, cliente por cliente."** Abra **Parcela vencida há X dias** e confira os lembretes em **Quando lembrar**. Sem mexer, você já é avisado aos 3, 10 e 30 dias de atraso, com o valor em aberto e o atalho para a fatura.
+- **"Meu time reclama que o aviso de atraso é demais."** No mesmo bloco, tire os lembretes que não usa (ou deixe só um). Lista vazia desliga o lembrete e mantém o aviso configurado, pronto para você voltar atrás.
 - **"Configurei o aviso, mas não sei se ele chega a alguém."** Abra o **canal** que o aviso usa (em **Gerenciar canais**) e toque em **Testar canal**: um aviso de teste sai na hora para quem o canal alcança — no sino e no celular — e a folha mostra o resultado pessoa por pessoa. Veja [Testar um canal](canais-de-notificacao.md#testar-um-canal).
 
 ## Próximo passo

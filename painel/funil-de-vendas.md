@@ -37,7 +37,7 @@ O caminho do **aluguel** é diferente do caminho da **venda**, então o funil é
 
 A diferença mais importante está no **fechamento**:
 
-| Natureza | Como fecha |
+| Tipo de negócio | Como fecha |
 | --- | --- |
 | **Venda** | Fecha direto em **vendido** — um único degrau de fechamento. |
 | **Aluguel** | Fecha por **dois caminhos**: **pré-reserva** (com sinal, estoque pré-travado) **ou** **reserva direta**. |

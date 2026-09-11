@@ -175,7 +175,7 @@ Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido
 | --- | --- |
 | **Papel** | O que a pessoa **vê e faz** (permissões). Ex.: Motorista, Separador. |
 | **Função** | O **cargo** na operação (Vendedor, Motorista…). |
-| **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística, Atendimento no balcão). |
+| **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística, Atendimento na loja, Manutenção, Pagar contas). |
 | **Responsável pela operação** | Quem está **por trás** daquela operação (ex.: quem executa a rota) — descoberto pelo sistema, sem você nomear. |
 | **Colaborador × parceiro** | O **colaborador** é da sua equipe e você o convida em **Colaboradores**. O **parceiro externo** é gente de fora e entra por outro caminho — o convite da **Rede de Parceiros**. O papel de parceiro **não aparece** na lista de papéis do convite de colaborador. Veja [Entrando na rede](../parcerias/entrando-na-rede.md). |
 
