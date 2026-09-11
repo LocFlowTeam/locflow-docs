@@ -183,9 +183,10 @@ Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam
 - **"Mudei o nível de um aviso e me arrependi."** Tente sair sem salvar: o LocFlow pergunta **"Salvar alterações?"** e deixa **descartar**, voltando à última versão salva. Ou reescolha o nível original para voltar ao padrão.
 - **"Os operadores estão sendo interrompidos por um aviso pouco urgente."** Baixe o nível dele para **Informativo** (só conta no sino) ou troque o canal para um público mais estreito — e salve.
 - **"Esse aviso aqui está apagado e não consigo mexer."** Ele está na seção **Em breve**: é só visualização, ainda não dá para ligar/ajustar.
+- **"Configurei o aviso, mas não sei se ele chega a alguém."** Abra o **canal** que o aviso usa (em **Gerenciar canais**) e toque em **Testar canal**: um aviso de teste sai na hora para quem o canal alcança — no sino e no celular — e a folha mostra o resultado pessoa por pessoa. Veja [Testar um canal](canais-de-notificacao.md#testar-um-canal).
 
 ## Próximo passo
 
-- [Canais de notificação](canais-de-notificacao.md) — crie e edite **quem recebe** cada aviso (toda a organização, por competência, o responsável da operação) e **como** (todo o grupo ou rodízio).
+- [Canais de notificação](canais-de-notificacao.md) — crie e edite **quem recebe** cada aviso (toda a organização, por competência, o responsável da operação) e **como** (todo o grupo ou rodízio) — e **teste** um canal para confirmar quem ele alcança.
 - [Colaboradores e acessos](colaboradores-e-acessos.md) — atribua **competências** às funções para que os canais por competência entreguem só a quem deve.
 - [Motores operacionais](motores-operacionais.md) — onde a Central de Notificações vive, junto dos demais motores da organização.

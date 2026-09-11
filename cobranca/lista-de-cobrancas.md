@@ -1,6 +1,6 @@
 ---
 icon: receipt
-description: A porta do módulo de Cobrança — encontre qualquer fatura pela busca, filtre por tipo e status, e veja o saldo do que está em aberto.
+description: A porta do módulo de Cobrança — encontre qualquer fatura pela busca, filtre por tipo, status e etapa logística em um toque, e veja o saldo do que está em aberto.
 ---
 
 # Cobranças: a lista e o que mostra
@@ -81,17 +81,26 @@ O campo de busca é inteligente: procure pelo **nome do cliente** ou pelo **cód
 
 ### Filtros
 
-Toque em **Filtros** para refinar por dois eixos, que combinam entre si:
+Toque em **Filtros** para abrir a folha de filtros. Ela tem **três grupos**, que combinam entre si:
 
-* **Tipo** — Aluguel e/ou Venda.
+* **Natureza** (o tipo da cobrança) — Aluguel, Venda.
 * **Status** — Pendente, Parcialmente paga, Paga, Cancelada.
+* **Logística** — a etapa em que está o **pedido de origem** da cobrança, na ordem do fluxo: Não iniciada, A separar, Separado, Saiu para entrega, Entregue, Retirado na loja, Saiu para retirada, Retirado, Devolvido na loja, A conferir, Conferido. É o grupo que responde à pergunta que trava a decisão de cobrar — *o material já rodou?* — e que nem o tipo nem o status respondem.
 
-Por padrão, **tudo vem selecionado** (você vê todas as cobranças). Ao desmarcar opções, você restringe a lista — e o saldo do topo passa a refletir só o que sobrou. O botão **Limpar** devolve a lista ao padrão (todas).
+A regra é uma só, e a própria folha a diz: **"Sem nada marcado, a lista mostra todas as cobranças."** A lista abre **inteira**, e **marcar é recortar**: um toque em **Entregue** mostra só as cobranças de pedidos entregues — e só elas. Dentro de um grupo, marcar mais de uma opção amplia o recorte (*Pendente* **ou** *Parcialmente paga*); entre grupos, os recortes se somam (*Aluguel* **e** *Paga*).
+
+{% hint style="info" %}
+**Um filtro é um toque.** Antes, o painel abria com tudo marcado, e "só as entregues" custava desmarcar todo o resto. Agora nada vem marcado — o que você toca é exatamente o que você vê.
+{% endhint %}
+
+Cada opção marcada vira um **chip com "x"**, logo abaixo do botão **Filtros** (e no topo da folha, em **Filtros aplicados**). Para tirar uma opção sem mexer nas outras — deixar só *Pendente* depois de ter marcado *Pendente* e *Paga* — basta tocar no "x" do chip dela. O número no botão **Filtros** conta **quantos grupos** estão recortando a lista, não quantas opções: *Pendente* e *Paga* marcados são **uma** pergunta só (o status), e o botão mostra **1**.
+
+**Limpar** — ao lado do botão Filtros e no rodapé da folha — devolve a lista inteira de uma vez. **Concluído** só fecha a folha: os filtros valem ao vivo, e o saldo do topo acompanha cada toque.
 
 ```mermaid
 flowchart LR
     L[Lista de cobrancas] --> B[Busca: cliente ou codigo]
-    L --> F[Filtros: tipo + status]
+    L --> F[Filtros: natureza + status + logistica]
     B --> R[Resultado filtrado]
     F --> R
     R --> S[Saldo devedor somado no topo]
@@ -111,14 +120,15 @@ A mesma tela serve a quem está começando e a quem fatura alto — ela cresce c
 | Porte | Como a lista te ajuda |
 | --- | --- |
 | **Pequeno** (autônomo, MEI) | Uma lista simples do que entrou e do que falta. O saldo no topo já é o seu controle de recebimentos — sem planilha paralela. |
-| **Médio** | Filtra por status para focar nas **pendentes** e por tipo para separar locação de venda; usa a busca para achar o cliente e cobrar na hora. |
-| **Grande** | Em tela larga, vê tudo em tabela densa com colunas, cruza tipo + status para fechar o caixa por recorte e lê o saldo somado de cada visão. |
+| **Médio** | Marca **Pendente** para focar no que falta e **Aluguel** ou **Venda** para separar os dois lados; usa a busca para achar o cliente e cobrar na hora. |
+| **Grande** | Em tela larga, vê tudo em tabela densa com colunas, cruza natureza + status + etapa logística para fechar o caixa por recorte e lê o saldo somado de cada visão. |
 
 ## Situações reais
 
-* **"Quem ainda me deve?"** — Filtre por status **Pendente** e **Parcialmente paga**. A lista mostra só quem tem saldo, e o topo soma o total a receber.
+* **"Quem ainda me deve?"** — Marque **Pendente** e **Parcialmente paga** em Status. A lista mostra só quem tem saldo, e o topo soma o total a receber.
 * **Cobrar um cliente específico** — Busque pelo nome. Abra a cobrança e gere o [link de pagamento](pagamento-online.md) ou registre o que ele já pagou por fora.
-* **Fechar o caixa da locação** — Filtre por tipo **Aluguel** e status **Paga** para ver o que já entrou no período; troque para **Pendente** para ver o que ainda falta.
+* **Fechar o caixa da locação** — Marque **Aluguel** e **Paga** para ver o que já entrou no período; para ver o que ainda falta, tire o chip *Paga* e marque *Pendente*.
+* **"O material já foi entregue e ainda não cobrei"** — Marque **Entregue** em Logística e **Pendente** em Status: sobram os pedidos que já rodaram e ainda não pagaram nada.
 * **Achei pelo número do pedido** — Digite o código do orçamento na busca: a cobrança daquele pedido aparece direto.
 
 ## Próximo passo
