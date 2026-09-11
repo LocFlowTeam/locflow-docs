@@ -30,18 +30,19 @@ Antes de registrar qualquer coisa, vale separar dois mundos que convivem na mesm
 
 ## A baixa manual
 
-Na parcela em aberto, você informa **quanto recebeu** e **por qual método**. O LocFlow atualiza o status na hora.
+No cartão da parcela em aberto, toque em **Registrar recebimento**. Abre uma folha só para isso — o saldo em aberto no cabeçalho, os campos no meio, o botão no rodapé — onde você informa **quanto recebeu**, **por qual método**, **em que dia** e **em qual conta** o dinheiro entrou. O cartão fica com a cobrança online e esse botão; o formulário não mora mais dentro dele.
 
 ```mermaid
 flowchart LR
     A[Parcela em aberto] --> B[Baixa manual]
     B --> C[Informa valor + metodo]
-    C --> D{Valor = saldo?}
-    D -->|Sim| E[Parcela Paga]
+    C --> D{Valor x saldo?}
+    D -->|Igual| E[Parcela Paga]
     D -->|Parte do saldo| F[Desdobra:<br/>parte Paga + restante em aberto]
+    D -->|Acima do saldo| G[Pergunta:<br/>troco ou vale-locacao?]
 ```
 
-Se o valor recebido for **igual** ao saldo em aberto, a parcela fica **Paga**. Se for **parte** do saldo, a parcela **se desdobra** — a parte recebida vira uma parcela paga e o restante vira uma nova parcela em aberto, com o vencimento que você escolher. Essa é a regra da parcela atômica: não existe "meia paga". (Mais em [Faturas e parcelas](faturas-e-parcelas.md).)
+Se o valor recebido for **igual** ao saldo em aberto, a parcela fica **Paga**. Se for **parte** do saldo, a parcela **se desdobra** — a parte recebida vira uma parcela paga e o restante vira uma nova parcela em aberto, com o vencimento que você escolher. Essa é a regra da parcela atômica: não existe "meia paga". (Mais em [Faturas e parcelas](faturas-e-parcelas.md).) Se for **mais** do que o saldo, a folha pergunta o que fazer com a diferença — veja abaixo.
 
 ### Os métodos de recebimento
 
@@ -54,11 +55,24 @@ Na hora da baixa, os métodos vêm **agrupados** para facilitar a leitura:
 
 O método é apenas um **registro** de por onde o dinheiro entrou. Você escolhe na hora — ele não fica "preso" à parcela de antemão. É o seu controle de caixa, não uma cobrança que vai sair.
 
-### A baixa nunca passa do saldo
+### Recebeu mais do que a parcela devia: troco ou vale {#troco-ou-vale}
 
-Uma trava de segurança: **você não consegue baixar mais do que a parcela deve**. Se digitar um valor acima do saldo em aberto, o sistema avisa ("Valor acima do saldo em aberto") e o botão **Registrar baixa** fica bloqueado. Isso evita anotar a mais por engano e deixar a fatura "paga demais".
+O cliente devia R$ 200 e pôs R$ 300 na mesa. Você digita **R$ 300** — o valor que de fato entrou — e a folha pergunta, no lugar onde antes havia um aviso de erro, **o que fazer com a diferença**:
 
-Se o cliente, de fato, pagou um valor a mais, esse excedente vira valor a favor dele (crédito ou reembolso, pela política da sua locadora) — veja [Faturas e parcelas](faturas-e-parcelas.md).
+* **Devolver R$ 100,00 agora** — é o **troco**. O dinheiro volta para a mão do cliente ali mesmo, e o seu caixa registra os R$ 200 que ficaram. O histórico da parcela guarda a conta inteira: *"Recebido R$ 300,00 · troco de R$ 100,00"*.
+* **Virar vale de R$ 100,00** — os R$ 100 ficam como **vale-locação** do cliente, para a próxima locação. O caixa registra os R$ 300 que entraram, e a carteira dele ganha o crédito na mesma hora. O histórico diz *"Recebido R$ 300,00 · R$ 100,00 em vale-locação"*.
+
+Uma das duas já vem **marcada**: é o padrão que a sua locadora definiu no [Motor de Cobrança](../configuracoes/motores-operacionais.md) (de fábrica, o vale). Marcada, mas não escolhida por você — as duas ficam visíveis, e você pode trocar num toque antes de registrar. Sem responder, o registro não segue: o LocFlow nunca decide sozinho que saiu dinheiro do seu caixa.
+
+Se outra pessoa registrou um recebimento nessa parcela enquanto você preenchia, o saldo mudou e a pergunta volta com os números atualizados — o que você vê é sempre o que vai ser gravado.
+
+{% hint style="info" %}
+**Troco é troco; reembolso é outra coisa.** O troco é devolvido no ato, pela sua mão, e não passa pelo banco. A **devolução bancária** com comprovante — a de uma cobrança cancelada depois de paga — é outro fluxo, com outro rito. Veja [Cancelar uma cobrança com segurança](faturas-e-parcelas.md#cancelar-uma-cobranca-com-seguranca).
+{% endhint %}
+
+{% hint style="warning" %}
+**Um recebimento com troco ou vale não se desfaz.** Ele mexe em dois lugares ao mesmo tempo — a parcela e a carteira do cliente — e desfazer só um deixaria o mesmo dinheiro contado duas vezes. Se registrou errado, fale com quem administra a cobrança na sua empresa.
+{% endhint %}
 
 {% hint style="warning" %}
 **Confira antes de registrar — é dinheiro.** A baixa manual entra direto no controle de caixa da fatura e fica no histórico da parcela. Registre só o que realmente entrou, com o método certo. Em caso de erro, fale com quem administra a cobrança na sua empresa.

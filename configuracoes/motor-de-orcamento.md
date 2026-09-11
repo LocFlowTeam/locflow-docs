@@ -225,7 +225,7 @@ Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso 
 
 - Veja todos os motores e como se encaixam em [Motores operacionais](motores-operacionais.md).
 - Entenda como a taxa de serviço entra no preço em [Valores: acréscimos, frete e descontos](../orcamentos/valores.md).
-- Veja como o formulário de orçamento se comporta — seções retraídas, "Concluir seção" e as seções opcionais — em [Criando um orçamento](../orcamentos/criando-um-orcamento.md#concluir-secao).
+- Veja como o formulário de orçamento se comporta — seções retraídas, o "Concluir" de cada seção e as seções opcionais — em [Criando um orçamento](../orcamentos/criando-um-orcamento.md#concluir-secao).
 - Para o **travamento por frete** (que fica na **Operação do Frete**, não aqui), veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
 - Para como a validade se relaciona com a reserva de itens, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 - Para definir quem pode editar este motor, veja [Colaboradores e acessos](colaboradores-e-acessos.md).

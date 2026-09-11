@@ -116,7 +116,7 @@ Até aqui esse acerto morria na conversa entre o vendedor e o cliente. Quem ia r
 
 ### O que você informa
 
-**A forma**, num toque, entre as mesmas opções do lançamento manual do financeiro, na ordem em que aparecem: **Boleto**, **Pix**, **Transferência**, **Cartão de crédito**, **Cartão de débito**, **Dinheiro**, **Maquininha** e **Outra**.
+**As formas** — uma ou várias — entre as mesmas opções do lançamento manual do financeiro, na ordem em que aparecem: **Boleto**, **Pix**, **Transferência**, **Cartão de crédito**, **Cartão de débito**, **Dinheiro**, **Maquininha** e **Outra**. O cliente que disse "Pix ou dinheiro na entrega" combinou as duas coisas: marque as duas. A tela mostra o combinado como uma frase — *"Pix ou Dinheiro"* —, e o filtro da lista enxerga cada uma delas.
 
 {% hint style="info" %}
 **O cartão de débito existe aqui e não existe na baixa.** Ele faz parte do vocabulário do combinado (e do [lançamento manual](../financeiro/lancamentos.md)), mas **não** é uma das formas da [baixa de parcela](recebendo-pagamentos.md#os-metodos-de-recebimento). Faz sentido: "combinei receber no débito" é uma informação; um recebimento "no débito" não é algo que a cobrança saiba registrar.
@@ -124,7 +124,11 @@ Até aqui esse acerto morria na conversa entre o vendedor e o cliente. Quem ia r
 
 **A observação**, opcional, que só aparece **depois** de você escolher a forma. É a frase curta que dá o contexto — o próprio campo sugere *"ex.: metade na entrega"* —, com até **140 caracteres** e um contador ao lado.
 
-Para desfazer, **toque de novo no chip já marcado**: ele desmarca e a cobrança volta a "nada combinado". Nada disso é obrigatório — a maioria das emissões não usa, e é por isso que a seção nasce fechada. Fechada, ela ainda mostra no cabeçalho o que você combinou.
+Para desfazer uma forma, **toque de novo no chip marcado**: só ela desmarca. Desmarcando a última, a cobrança volta a "nada combinado". Nada disso é obrigatório — a maioria das emissões não usa, e é por isso que a seção nasce fechada. Fechada, ela ainda mostra no cabeçalho o que você combinou.
+
+{% hint style="info" %}
+**O link de pagamento também escreve aqui.** Quando você gera o [link de pagamento](pagamento-online.md#o-link-e-o-combinado) ou liga uma forma nele, o combinado da cobrança passa a **acompanhar o link** — sem você digitar de novo. Isso dura até alguém mexer no combinado à mão: a partir daí, o link não sobrescreve mais. Veja o detalhe na página do pagamento online.
+{% endhint %}
 
 ### Os outros dois lugares onde se informa
 

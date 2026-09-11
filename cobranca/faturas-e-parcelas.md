@@ -68,7 +68,9 @@ Na linha de cada parcela em aberto você tem dois ícones:
 
 ## Pagamento combinado: o recado de como o cliente vai pagar {#pagamento-combinado}
 
-No cabeçalho da ficha, junto do valor e do vencimento, há uma linha curta: **"Pagamento combinado: Pix · metade na entrega"**. É o que o cliente disse na negociação, anotado por quem vendeu — e fica ali porque é o que orienta **quem vai receber**.
+No cabeçalho da ficha, junto do valor e do vencimento, há uma linha curta: **"Pagamento combinado: Pix ou Dinheiro · metade na entrega"**. É o que o cliente disse na negociação — uma forma ou várias —, anotado por quem vendeu, e fica ali porque é o que orienta **quem vai receber**.
+
+Quando o combinado veio do **link de pagamento** (e ninguém o editou à mão), a linha traz o selo **"segue o link"**: ligar ou desligar uma forma no link atualiza a linha sozinho.
 
 {% hint style="warning" %}
 **Ele não decide nada.** O combinado não cria parcela, não muda vencimento, não escolhe instrumento e não impede receber por outro meio. Quem decide o método é o **ato do recebimento**. É por isso que a linha diz "combinado", e não "forma de pagamento": sem esse adjetivo, é fácil ler a linha como uma trava do sistema.
@@ -80,8 +82,12 @@ No cabeçalho da ficha, junto do valor e do vencimento, há uma linha curta: **"
 
 Toque no **lápis** ao lado da linha. Abre a folha **Pagamento combinado**, com as mesmas opções e a mesma observação da [emissão](emitindo-a-cobranca.md#pagamento-combinado), e a folha lembra: *"É só um lembrete de como o cliente disse que vai pagar. Não muda parcelas nem vencimentos, e o recebimento pode ser registrado por qualquer forma."*
 
-* Para **corrigir**, marque outra forma (ou edite a observação) e toque em **Salvar combinado**.
-* Para **apagar**, desmarque a forma — tocando de novo no chip aceso — e o botão vira **Remover combinado**. Tirar o combinado é sempre um ato explícito; nada some sozinho.
+* Para **corrigir**, marque ou desmarque formas (ou edite a observação) e toque em **Salvar combinado**.
+* Para **apagar**, desmarque todas as formas — tocando de novo em cada chip aceso — e o botão vira **Remover combinado**. Tirar o combinado é sempre um ato explícito; nada some sozinho.
+
+{% hint style="warning" %}
+**Salvar à mão desliga o acompanhamento do link.** Se o combinado estava seguindo o link de pagamento, a folha avisa: *"Este combinado acompanha o link de pagamento. Se você salvar aqui, ele para de acompanhar."* A partir do primeiro toque de gente, o link não sobrescreve mais o que foi combinado — o que você salvou é o que fica.
+{% endhint %}
 
 {% hint style="info" %}
 **Quem vê e quem edita.** O lápis usa a **mesma permissão de editar a fatura**. Quem não a tem lê a linha quando há combinado, e não vê nada quando não há — uma linha "—" sem ação seria só ruído numa ficha já densa. Quem pode editar vê a linha sempre, com **"Pagamento combinado: não informado"** enquanto ninguém anotou.
@@ -110,7 +116,7 @@ A parte recebida vira uma parcela **paga**; o restante vira uma **nova parcela p
 {% endhint %}
 
 {% hint style="warning" %}
-**Pagamento parcial vale para dinheiro de fora.** O desdobramento acontece quando entra um pagamento real menor que o saldo (PIX, cartão, ou uma baixa de dinheiro/maquininha). Numa **baixa manual**, o LocFlow **não deixa** você registrar mais do que o saldo em aberto da parcela — isso seria erro de digitação, não crédito. Veja [Recebendo pagamentos](recebendo-pagamentos.md).
+**Pagamento parcial vale para dinheiro de fora.** O desdobramento acontece quando entra um pagamento real menor que o saldo (PIX, cartão, ou uma baixa de dinheiro/maquininha). Numa **baixa manual** acima do saldo, o LocFlow **pergunta** o que fazer com a diferença — troco devolvido na hora, ou vale-locação do cliente — e não registra sem a resposta. Veja [Recebendo pagamentos](recebendo-pagamentos.md#troco-ou-vale).
 {% endhint %}
 
 ## Status: a fatura não é "marcada", ela é calculada
@@ -192,7 +198,7 @@ Cancelar um pedido — por exemplo, movê-lo para **Cancelado** ou **Perdido** �
 
 ## Valor a favor do cliente (saldo a favor)
 
-Às vezes sobra um valor **a favor do cliente**. O caso mais comum: uma edição **reduz** o total do pedido **depois** de o cliente já ter pago algo — aí o que ele pagou a mais vira um **saldo a favor** dele. (Também pode acontecer de um pagamento entrar acima do saldo: o excedente vira **crédito** automaticamente.)
+Às vezes sobra um valor **a favor do cliente**. O caso mais comum: uma edição **reduz** o total do pedido **depois** de o cliente já ter pago algo — aí o que ele pagou a mais vira um **saldo a favor** dele. (Um pagamento **online** acima do saldo também gera excedente, que vira crédito automaticamente. Na **baixa manual** o caminho é outro: a folha pergunta na hora se é troco ou vale — veja [Recebendo pagamentos](recebendo-pagamentos.md#troco-ou-vale).)
 
 Assim que esse saldo aparece, o LocFlow **já resolve sozinho** — na hora, aplicando a **política padrão da sua locadora** (definida no Motor de Cobrança). Você não precisa abrir a fatura nem clicar em nada: o saldo não fica "pendurado" esperando alguém decidir.
 

@@ -1,6 +1,6 @@
 ---
 icon: file-invoice-dollar
-description: A visão geral de montar uma proposta no LocFlow — um assistente de 6 etapas, da natureza e do cliente até a revisão dos totais e o envio, na ordem Cliente, Itens, Evento, Movimentos, Valores e Revisão — com as seções retraídas e o "Concluir seção" guiando o preenchimento.
+description: A visão geral de montar uma proposta no LocFlow — um assistente de 6 etapas, da natureza e do cliente até a revisão dos totais e o envio, na ordem Cliente, Itens, Evento, Movimentos, Valores e Revisão — com as seções retraídas e o "Concluir" de cada seção guiando o preenchimento.
 ---
 
 # Criando um orçamento
@@ -61,7 +61,7 @@ flowchart LR
 **Por que os itens vêm antes do evento e do frete.** A logística divide os **materiais** em viagens, e o frete depende do peso e do volume que vão no veículo. Sem itens, as duas etapas ficariam sem base. E juntar trajeto, viagens e frete numa etapa só resolve o incômodo antigo: quem mexia nas viagens só via o efeito no preço uma tela adiante.
 {% endhint %}
 
-Dentro de cada etapa, o formulário se divide em **seções** — Tipo de negócio, Cliente, Itens, Evento, Saída do material, Retorno do material, Duração, Acréscimos e descontos, Observações, Vendedor e Validade (na venda não há Retorno do material nem Duração). Cada seção tem um cabeçalho com o nome, um resumo do que há dentro e um selo — e é assim que você percorre a proposta: seção por seção, concluindo cada uma. Veja [Seções retraídas e "Concluir seção"](#concluir-secao).
+Dentro de cada etapa, o formulário se divide em **seções** — Tipo de negócio, Cliente, Itens, Evento, Saída do material, Retorno do material, Duração, Acréscimos e descontos, Observações, Vendedor e Validade (na venda não há Retorno do material nem Duração). Cada seção tem um cabeçalho com o nome, um resumo do que há dentro e um selo — e é assim que você percorre a proposta: seção por seção, concluindo cada uma. Veja [Seções retraídas e o "Concluir" de cada seção](#concluir-secao).
 
 A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
 
@@ -76,19 +76,20 @@ A cada etapa, o LocFlow mostra **onde você está** e **quanto ainda falta**:
 **O vendedor já vem preenchido.** Ao criar uma proposta, o LocFlow assume **você** como vendedor. Se outra pessoa fez a venda, basta trocar — útil para acompanhar o desempenho de cada um depois.
 {% endhint %}
 
-## Seções retraídas e "Concluir seção" {#concluir-secao}
+## Seções retraídas e o "Concluir" de cada seção {#concluir-secao}
 
-O formulário **abre com todas as seções retraídas** — ao criar um orçamento e ao reabrir um já salvo para conferir, no celular e no computador. Cada seção é uma linha com o nome, o resumo do que há dentro e um selo; abrir é um toque no cabeçalho. Nada abre sozinho ao entrar na tela.
+O formulário **abre com as seções retraídas** — ao reabrir um orçamento já salvo para conferir, **todas**; ao criar um orçamento novo, **Tipo de negócio** e **Cliente** já nascem abertas (é por onde toda proposta começa) e o resto retraído, no celular e no computador. Cada seção é uma linha com o nome, o resumo do que há dentro e um selo; abrir é um toque no cabeçalho. Fora dessas duas, na criação, nada abre sozinho ao entrar na tela.
 
-Só três coisas abrem uma seção:
+Só quatro coisas abrem uma seção:
 
 1. **o seu toque** no cabeçalho;
 2. **um erro ou aviso** apontando para ela — a seção abre sozinha e fica aberta até você concluí-la, salvar ou fechá-la pelo cabeçalho (ninguém corrige um campo que não está na tela);
-3. o **"Concluir seção"** da seção anterior, que abre a próxima que ainda falta.
+3. o **"Concluir"** da seção anterior, que abre a próxima que ainda falta;
+4. na criação de um orçamento novo, ser **Tipo de negócio** ou **Cliente** — as duas seções de partida.
 
-### O botão "Concluir seção" {#botao-concluir-secao}
+### O botão "Concluir" {#botao-concluir-secao}
 
-No fim de cada seção há o botão **Concluir seção**. Ele faz três coisas num toque: **marca** a seção como concluída, **retrai** e **abre a próxima que ainda falta** — pulando as já concluídas e as que não aparecem — rolando a tela até ela. Dá para percorrer um orçamento inteiro sem retrair nada à mão: preencheu, concluiu, a próxima já está aberta. Concluída a última, a vez volta para a primeira que ainda estiver pendente lá em cima.
+No fim de cada seção há o botão **Concluir** (com o ícone de check). Ele faz três coisas num toque: **marca** a seção como concluída, **retrai** e **abre a próxima que ainda falta** — pulando as já concluídas e as que não aparecem — rolando a tela até ela. Dá para percorrer um orçamento inteiro sem retrair nada à mão: preencheu, concluiu, a próxima já está aberta. Concluída a última, a vez volta para a primeira que ainda estiver pendente lá em cima.
 
 Depois dos movimentos, a próxima é o painel **Frete, cargas e viagens**, que abre uma vez para você conferir o frete e as viagens (ele não tem botão de concluir: siga pelo cabeçalho da seção seguinte ou pelo Concluir dela). Ao concluir a última seção, o botão só volta ao início se ainda houver seção **incompleta**; com tudo completo, nada abre — os selos dizem o que ficou sem carimbo. Com um erro em vermelho dentro da seção, o botão fica desabilitado até você corrigir. Se a próxima estiver em outra etapa do celular, um aviso diz qual é; a troca de etapa é sua, pelo Avançar.
 
@@ -96,7 +97,7 @@ Depois dos movimentos, a próxima é o painel **Frete, cargas e viagens**, que a
 **Concluir não valida nada** — é a sua marca de "já vi". Se a seção ainda tem algo em falta, o selo do cabeçalho avisa (abaixo). O que impede de **salvar** continua sendo o erro em vermelho, como sempre.
 {% endhint %}
 
-Abriu uma seção já concluída para conferir? O botão vira **Reabrir seção**: desfaz a marca e deixa a seção aberta para você mexer.
+Abriu uma seção já concluída para conferir? O botão vira **Desfazer** (com o ícone de seta): tira a marca e deixa a seção aberta para você mexer.
 
 ### O selo do cabeçalho {#selo-da-secao}
 
@@ -112,7 +113,7 @@ A frase do "com pendência" diz exatamente o que falta, sem precisar abrir a se�
 
 ### No celular: o Avançar conclui as etapas de uma seção só {#avancar-conclui}
 
-No passo a passo do celular, as etapas que têm **uma seção só** (Itens e Evento) não mostram o botão "Concluir seção": ali o **Avançar** do rodapé faz esse papel — confere a etapa (um erro em vermelho segura você nela) e, estando tudo certo, conclui a seção e segue. Nas etapas com mais de uma seção (Cliente, Movimentos, Valores), o Avançar só muda de etapa; cada seção tem o próprio Concluir.
+No passo a passo do celular, as etapas que têm **uma seção só** (Itens e Evento) não mostram o botão "Concluir": ali o **Avançar** do rodapé faz esse papel — confere a etapa (um erro em vermelho segura você nela) e, estando tudo certo, conclui a seção e segue. Nas etapas com mais de uma seção (Cliente, Movimentos, Valores), o Avançar só muda de etapa; cada seção tem o próprio Concluir.
 
 ### A conferência fica salva {#conferencia}
 
@@ -138,7 +139,7 @@ Quem decide se essas seções aparecem é o Motor de Orçamento (**Conforme o po
 
 ## O caminho feliz {#caminho-feliz}
 
-Para a maioria das propostas, o caminho segue as etapas na ordem — e, a cada seção preenchida, **Concluir seção** (ou o **Avançar**, no celular) leva você à próxima:
+Para a maioria das propostas, o caminho segue as etapas na ordem — e, a cada seção preenchida, **Concluir** (ou o **Avançar**, no celular) leva você à próxima:
 
 1. **Cliente** — escolha a **natureza** (locação ou venda) e **selecione o cliente** (e o responsável, se for empresa).
 2. **Itens** — adicione produtos e kits, com quantidades e valores.
@@ -176,7 +177,7 @@ A mesma tela atende quem quer rapidez e quem quer controle:
 | --- | --- |
 | **Autônomo / pequeno** | Use o caminho feliz e confie nas sugestões (datas, taxa de serviço, frete). O formulário já abre mais curto — acréscimos, observações e validade ficam [escondidos até você pedir](#secoes-opcionais). Em poucos toques a proposta está pronta para enviar. |
 | **Operação média** | Ajuste o vendedor, refine as datas de entrega/retirada e use endereços salvos para clientes recorrentes. |
-| **Locadora grande** | Controle cada movimento separadamente, número de viagens, política de duração e descontos — cada etapa abre o nível de detalhe que você precisar. Ao reabrir um orçamento para revisar, use o [Concluir seção](#concluir-secao) como lista de conferência: a auditoria retoma de onde parou. |
+| **Locadora grande** | Controle cada movimento separadamente, número de viagens, política de duração e descontos — cada etapa abre o nível de detalhe que você precisar. Ao reabrir um orçamento para revisar, use o [Concluir](#concluir-secao) de cada seção como lista de conferência: a auditoria retoma de onde parou. |
 
 ## Salvando e enviando {#salvar-e-enviar}
 
