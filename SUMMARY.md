@@ -128,6 +128,7 @@
   * [Motor de Frete por detentor](configuracoes/motor-de-frete-detentor.md)
   * [Motor de Orçamento](configuracoes/motor-de-orcamento.md)
 * [Regras de desconto](configuracoes/regras-de-desconto.md)
+* [Automações](configuracoes/automacoes.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
   * [Canais de notificação](configuracoes/canais-de-notificacao.md)
 * [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
