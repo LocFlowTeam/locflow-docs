@@ -1,11 +1,11 @@
 ---
 icon: address-book
-description: Sua agenda de clientes — cadastre uma vez, reaproveite em todo orçamento e complete os dados só quando a operação pedir.
+description: Sua agenda de clientes, fornecedores e equipe — cadastre uma vez, reaproveite em todo orçamento e complete os dados só quando a operação pedir.
 ---
 
 # Contatos
 
-O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e possíveis clientes), pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** em qualquer orçamento — você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
+O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e possíveis clientes), mas também os seus **fornecedores** e a sua **equipe** — pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** — no orçamento, no cadastro de fornecedor, no de colaborador — e você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
 
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** uma base de clientes organizada é uma base que **recompra**. Quando todo cliente já está cadastrado, com canal de contato e histórico, fazer follow-up vira questão de minutos — e cliente que você consegue chamar de volta é cliente que aluga (ou compra) de novo.
@@ -13,27 +13,42 @@ O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e po
 
 ## O que é um contato {#o-que-e-um-contato}
 
-Um contato representa **uma pessoa ou empresa** com quem você se relaciona — o seu cliente, ou um possível cliente. O cadastro é enxuto de propósito: para começar, basta o nome e **um canal de contato** (celular ou e-mail). O resto é opcional e você completa quando precisar.
+Um contato representa **uma pessoa ou empresa** com quem você se relaciona — um cliente (ou possível cliente), um fornecedor, alguém da sua equipe. O cadastro é enxuto de propósito: para começar, basta o nome e **um canal de contato** (celular ou e-mail). O resto é opcional e você completa quando precisar.
 
 ```mermaid
 flowchart TD
-    C[Contato] --> P[Perfil]
-    C --> K[Contato / canal]
-    C --> E[Endereço]
-    P --> PF[Pessoa física<br/>CPF]
-    P --> PJ[Pessoa jurídica<br/>CNPJ]
-    K --> CEL[Celular + WhatsApp]
-    K --> EM[E-mail]
+    C[Contato] --> T[Tipo de contato<br/>cliente · fornecedor · colaborador]
+    C --> P[Como se identifica<br/>pessoa física ou jurídica]
+    C --> K[Contato<br/>celular, WhatsApp, e-mail]
+    C --> O[Blocos opcionais<br/>documento, endereço,<br/>dados pessoais, CNH, observações]
 ```
+
+### Tipo de contato: cliente, fornecedor, colaborador {#tipo-de-contato}
+
+Um contato pode ter **um ou mais papéis** — e é comum ter mais de um: a mesma empresa que aluga com você pode ser a que te presta frete.
+
+| Tipo | Quando usar |
+| --- | --- |
+| **Cliente** | Quem aluga ou compra de você (ou pode vir a alugar). É o padrão de um contato novo. |
+| **Fornecedor** | Quem você contrata para prestar um serviço — frete, mão de obra, montagem e outros. |
+| **Colaborador** | Quem trabalha na sua operação. |
+
+O **Tipo de contato** é a primeira escolha do formulário, e o contato precisa de **pelo menos um**. Atalhos como **Novo fornecedor** e **Novo colaborador** (nas Ações rápidas e nas listas de Fornecedores e de Colaboradores) abrem **este mesmo formulário**, com o papel já marcado; depois de salvar, o LocFlow pede só o que é específico de cada um — os serviços do fornecedor, as funções e o acesso do colaborador. Ninguém precisa cadastrar a mesma pessoa duas vezes.
+
+{% hint style="info" %}
+**Papel com cadastro ligado não se desmarca.** Enquanto houver um fornecedor ou um colaborador cadastrado ligado a este contato, o papel correspondente fica preso — se você tentar desmarcar, o app explica: *"Existe um fornecedor ligado a este contato. Desfaça o vínculo no cadastro dele."* (o mesmo vale para colaborador). E vincular um fornecedor ou colaborador a um contato já garante o papel nele.
+{% endhint %}
 
 ### Perfil: pessoa física ou jurídica {#perfil-pessoa-fisica-ou-juridica}
 
-| Tipo | Documento | Campos extras |
-| --- | --- | --- |
-| **Pessoa física** | CPF | Nome completo |
-| **Pessoa jurídica** | CNPJ | Razão social, Nome fantasia, Inscrição estadual (IE), Contribuinte ICMS |
+Logo abaixo do tipo, **Como se identifica** define o perfil:
 
-O **documento (CPF/CNPJ) é opcional** no cadastro — você pode salvar um contato só com o nome e o telefone. A obrigatoriedade do documento aparece mais adiante, quando a operação realmente exige (por exemplo, na emissão fiscal ou na cobrança online). Para uma empresa, ao informar a IE você ainda marca se ela é **Contribuinte ICMS**.
+| Perfil | Nome | Documento e campos extras |
+| --- | --- | --- |
+| **Pessoa física** | Nome completo | CPF; e, se quiser, **Dados pessoais** e **CNH** |
+| **Pessoa jurídica** | Razão social e Nome fantasia | CNPJ, Inscrição estadual (IE), Contribuinte de ICMS |
+
+O **documento (CPF/CNPJ) é opcional** no cadastro — você pode salvar um contato só com o nome e o telefone. A obrigatoriedade do documento aparece mais adiante, quando a operação realmente exige (por exemplo, na emissão fiscal ou na cobrança online). Para uma empresa, ao informar a IE você ainda marca se ela é **Contribuinte de ICMS**.
 
 ### Canal de contato: celular, WhatsApp e e-mail {#canal-de-contato}
 
@@ -45,15 +60,44 @@ O **documento (CPF/CNPJ) é opcional** no cadastro — você pode salvar um cont
 O cadastro pede **ao menos um canal**: celular **ou** e-mail. Sem um meio de contato, você não consegue dar follow-up — por isso o sistema garante esse mínimo.
 {% endhint %}
 
+### Os blocos opcionais {#blocos-opcionais}
+
+O formulário mostra sempre a **Identificação** e o **Contato** (*"Pelo menos um canal"*). O resto entra **só se você quiser**: cada bloco opcional aparece como um cartão tracejado com um **+** — toque para abrir. Cada bloco aberto tem um **×** para removê-lo (e o que estava nele não é salvo).
+
+| Bloco | O que guarda | Para quem |
+| --- | --- | --- |
+| **Documento fiscal** | CPF ou CNPJ; na empresa, inscrição estadual e Contribuinte de ICMS | Todos |
+| **Endereço** | Comece pelo CEP (veja abaixo) | Todos |
+| **Dados pessoais** | Gênero, estado civil, data de nascimento, escolaridade e tipo sanguíneo | Só pessoa física |
+| **CNH** | Número, categorias e validade | Só pessoa física |
+| **Observações internas** | Combinados de pagamento, entrega — *"Só a sua equipe vê"* | Todos |
+
 ### Endereço {#endereco}
 
-O endereço fica em **"Editar mais informações"** (junto de CPF/CNPJ e demais dados opcionais). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local** (Residencial ou Condomínio); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo.
+O endereço entra pelo bloco **Endereço** (*"Comece pelo CEP"*). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local** (Residencial ou Condomínio); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo. Não sabe o CEP? O formulário de endereço é o mesmo do orçamento, com as outras portas — buscar no mapa ou colar o link do Google Maps que o cliente mandou. Veja [Endereços e endereços salvos](../orcamentos/enderecos.md).
 
 Esse endereço não é decorativo: ele é reaproveitado no orçamento como **endereço de entrega** (veja [mais abaixo](#reaproveitar-no-orcamento)).
 
+### Dados pessoais e CNH {#dados-pessoais-e-cnh}
+
+Na **pessoa física**, dois blocos a mais ficam à mão — úteis principalmente para quem é da sua equipe:
+
+- **Dados pessoais** — gênero, estado civil, data de nascimento (não pode estar no futuro), escolaridade e tipo sanguíneo.
+- **CNH** — número, **categorias** e validade. A categoria se escolhe **como está escrita na carteira** (ACC, A, B, AB, C, AC, D, AD, E, AE), numa escolha só.
+
+A CNH é uma só: a que você preenche no contato aparece sozinha no cadastro do colaborador ligado a ele, e o que for preenchido lá volta para o contato.
+
+### Observações internas {#observacoes-internas}
+
+É uma nota da sua equipe sobre o contato — por exemplo, *"só paga por depósito em conta; entrega pela portaria dos fundos"*. O ganho está em **quando** ela aparece: no orçamento, assim que o vendedor **seleciona o cliente**, as observações internas dele surgem na tela — o combinado chega antes de alguém mandar um PIX ou marcar a entrega no portão errado.
+
+{% hint style="info" %}
+**Fica entre vocês.** As observações internas ficam **fora** do PDF que o cliente recebe, da busca por texto da lista, das informações que os modelos de documento podem imprimir e do que a [Flo](../flo/conheca-a-flo.md) lê. Na ficha do contato elas aparecem recolhidas, e podem vir prontas da planilha na [importação de dados](../configuracoes/importacao-de-dados.md).
+{% endhint %}
+
 ### O estágio de funil (categoria) {#estagio-de-funil}
 
-Todo contato tem um **estágio de funil**, que o LocFlow calcula sozinho a partir das reservas fechadas:
+Todo **cliente** tem um **estágio de funil**, que o LocFlow calcula sozinho a partir das reservas fechadas. (Fornecedores e colaboradores não entram no funil — o selo de estágio só aparece para quem é cliente.)
 
 | Estágio | O que significa |
 | --- | --- |
@@ -61,13 +105,19 @@ Todo contato tem um **estágio de funil**, que o LocFlow calcula sozinho a parti
 | **Cliente ativo** | Já fechou ao menos uma reserva com você. |
 | **Cliente fidelizado** | Tem duas ou mais reservas fechadas — recorrência e fidelidade. |
 
-Você não precisa mexer nisso no cadastro: o estágio **evolui automaticamente** conforme o cliente fecha pedidos. Apenas na **edição** de um contato é possível fixar o estágio manualmente — o seletor traz a opção **Automático** (recomendada) ou um estágio fixo. Como diz a própria ajuda da tela: *"Automático = derivado das reservas fechadas. Fixe manualmente só em exceções (ex.: VIP)."*
+Você não precisa mexer nisso no cadastro: o estágio **evolui automaticamente** conforme o cliente fecha pedidos. Só na **edição** de um cliente aparece o bloco **Estágio no funil** (*"Automático pelas reservas fechadas"*), onde dá para fixar o estágio manualmente — o seletor traz a opção **Automático** (recomendada) ou um estágio fixo. Como diz a própria ajuda da tela: *"Automático = derivado das reservas fechadas. Fixe manualmente só em exceções (ex.: VIP)."*
 
 ## Criar, buscar e filtrar {#criar-buscar-filtrar}
 
 ### Criar um contato {#criar-um-contato}
 
-Na lista de contatos, toque no botão **+** para abrir o cadastro. Preencha o **Nome** e um canal (celular ou e-mail) e salve — só isso já cria o contato. Precisa de mais dados (CPF/CNPJ, endereço)? Abra **"Editar mais informações"** e complete. Para uma empresa, troque o perfil para **Pessoa Jurídica** e o rótulo do nome muda para **Razão Social**.
+Na lista de contatos, toque no botão **+** para abrir o cadastro:
+
+1. Em **Tipo de contato**, confira o papel (vem **Cliente**; marque **Fornecedor** ou **Colaborador** se for o caso — pode ser mais de um).
+2. Em **Como se identifica**, escolha **Pessoa física** ou **Pessoa jurídica** — na empresa, o nome vira **Razão Social** e aparece o **Nome Fantasia**.
+3. Preencha o **Nome** e um canal (celular ou e-mail).
+4. Precisa de mais dados (CPF/CNPJ, endereço, observações)? Toque no **+** do bloco opcional correspondente e complete.
+5. Salve — só nome e canal já criam o contato.
 
 {% hint style="info" %}
 Começou a digitar e precisou sair? O LocFlow guarda um **rascunho** do cadastro e oferece retomar depois — você não perde o que já tinha preenchido.
@@ -84,6 +134,8 @@ Veja [Conheça a Flo](../flo/conheca-a-flo.md#criar-contato).
 ### Buscar e filtrar na lista {#buscar-e-filtrar}
 
 A lista tem uma **busca inteligente** no topo: digite nome, documento, parte do telefone ou e-mail e os resultados se ajustam. Quando a base cresce, a lista é **paginada** (você escolhe quantos por página e navega entre as páginas). Tocar em um contato abre a **ficha** com Perfil, Contato e Endereço; o lápis leva direto para a edição. Em telas largas (no computador), a lista vira uma **tabela** ao lado da ficha — você seleciona um contato à esquerda e lê os detalhes à direita.
+
+Nos filtros, **Tipo de contato** aceita **vários tipos ao mesmo tempo** — "só fornecedores", "fornecedores e equipe", o que você precisar: aparece quem tiver qualquer um dos tipos marcados, e o filtro aplicado fica à vista como um chip removível. Na lista, cada contato mostra os **selos dos seus tipos**, com ícone — é o que confirma o recorte do filtro. Na ficha, o tipo só aparece quando foge do comum: para quem é só cliente, quem fala é o selo do estágio do funil.
 
 ```mermaid
 flowchart LR
@@ -187,6 +239,8 @@ Se o contato ainda **não tem endereço** quando você escolhe "Endereço do con
 - **Lead que ainda não fechou:** um possível cliente pediu cotação pelo WhatsApp. Você cadastra só **nome + celular (WhatsApp)** e manda a proposta. Ele entra como **Contato qualificado (lead)** — e fica na sua lista para o follow-up.
 - **Faltou o CPF na hora da cobrança:** você vai gerar um link de pagamento e o método pede CPF e e-mail do cliente. Em vez de abrir o cadastro inteiro, a janela **"Completar dados do contato"** pede só esses dois campos; você preenche, toca em **"Salvar e gerar PIX"** e a cobrança segue na sequência.
 - **Empresa com nota fiscal:** uma construtora vai alugar andaimes e precisa de nota. Você cadastra como **Pessoa Jurídica**, com CNPJ, Razão Social, Nome fantasia e IE — pronto para a operação fiscal quando ela exigir.
+- **A transportadora que também aluga:** a empresa que faz os seus fretes também aluga tendas com você. É **um contato só**, com os tipos **Cliente** e **Fornecedor** marcados — os dados ficam num cadastro, e não em dois que envelhecem separados.
+- **O combinado que ninguém lembrava:** o Buffet do Marcos só paga por depósito em conta. Você escreve isso nas **Observações internas** do contato; no próximo orçamento, assim que a atendente seleciona o Buffet, o recado aparece na tela — antes de alguém mandar um link de PIX.
 - **O cliente ligou e a atendente cadastrou de novo:** com **Telefone identifica o contato** ligado, ela digita o celular, o aviso aparece na hora — *"Já existe um contato com este telefone: Maria Souza"* — e ela toca em **Usar este contato**. O orçamento sai no cadastro certo, com o histórico inteiro.
 
 {% hint style="success" %}

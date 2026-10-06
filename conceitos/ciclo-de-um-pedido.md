@@ -20,17 +20,17 @@ flowchart LR
     C -->|Não| P[Perdido<br/>pode reabrir]
     C -->|Sim| G[Ganho]
     G --> L[Logística liberada]
-    L --> S[Separação] --> E[Entrega]
-    E --> R[Retirada<br/>só locação] --> CF[Conferência<br/>só locação]
+    L --> S[Separação] --> E[Entrega ou<br/>retirada na loja]
+    E --> R[Retirada ou<br/>devolução na loja<br/>só locação] --> CF[Conferência<br/>só locação]
     CF --> FIM[Finalizado<br/>logística concluída]
     G -.->|eixo independente| F[Fatura / cobrança]
     F -.-> PG[Pagamento]
 ```
 
-Leitura rápida: você **monta** o orçamento, **envia**, o cliente **aceita** (vira *Ganho*), e a partir daí correm **duas trilhas independentes** — a **logística** (separar → entregar → retirar → conferir) e a **cobrança** (fatura → pagamento). Quando a **logística** termina, o pedido é **Finalizado**. A cobrança **não** faz parte desse gatilho: ela segue seu próprio ritmo e você pode gerá-la e recebê-la **antes, durante ou depois** de finalizar.
+Leitura rápida: você **monta** o orçamento, **envia**, o cliente **aceita** (vira *Ganho*), e a partir daí correm **duas trilhas independentes** — a **logística** (separar → entregar → retirar → conferir, com a loja podendo fazer as vezes da entrega e da retirada) e a **cobrança** (fatura → pagamento). Quando a **logística** termina, o pedido é **Finalizado**. A cobrança **não** faz parte desse gatilho: ela segue seu próprio ritmo e você pode gerá-la e recebê-la **antes, durante ou depois** de finalizar.
 
 {% hint style="info" %}
-**Finalizado é sobre a LOGÍSTICA, não sobre a cobrança.** O pedido é finalizado quando o material cumpre o ciclo (entregue na venda; devolvido/conferido na locação). Isso **não fecha** o financeiro: mesmo depois de finalizado você ainda pode **gerar a cobrança** e registrar o pagamento — os dois eixos são independentes de propósito, para você nunca ficar "sem como faturar" um pedido que já foi entregue.
+**Finalizado é sobre a LOGÍSTICA, não sobre a cobrança.** O pedido é finalizado quando o material cumpre o ciclo (entregue ou retirado na loja, na venda; de volta — e conferido, se a conferência estiver ligada — na locação). Isso **não fecha** o financeiro: mesmo depois de finalizado você ainda pode **gerar a cobrança** e registrar o pagamento — os dois eixos são independentes de propósito, para você nunca ficar "sem como faturar" um pedido que já foi entregue.
 {% endhint %}
 
 ## As três trilhas dentro do ciclo
@@ -39,9 +39,9 @@ Um pedido tem três "linhas da vida" que andam em paralelo. Você acompanha qual
 
 | Linha | O que controla | Onde você vê |
 | --- | --- | --- |
-| **Comercial** | A negociação: aberto → em negociação → ganho/perdido | Lista de orçamentos (funil) |
+| **Comercial** | A negociação: aberto → em negociação → ganho/perdido (ou cancelado depois do ganho) | Lista de orçamentos (funil) |
 | **Financeira** | A cobrança: fatura → parcelas → pago | Cobranças |
-| **Logística** | O material: separar → entregar → retirar → conferir | Roteiros e filas internas |
+| **Logística** | O material: separar → entregar (ou o cliente retira na loja) → retirar (ou o cliente devolve na loja) → conferir | Roteiros, Minha Loja e filas internas |
 
 ## Linha comercial: estados do orçamento
 
@@ -55,6 +55,8 @@ flowchart LR
     NEG --> PER[Perdido]
     RES --> FIN[Finalizado]
     VEN --> FIN
+    RES --> CAN[Cancelado]
+    VEN --> CAN
 ```
 
 - **Em aberto** — criado, ainda sem ação.
@@ -62,13 +64,14 @@ flowchart LR
 - **Pré-reservado** *(opcional, só locação)* — um "segurar" antes de confirmar de vez. Quem quer pode **pular** e ir direto ao Reservado.
 - **Reservado** *(locação)* / **Vendido** *(venda)* — o **ganho**. A partir daqui nascem a cobrança e a logística.
 - **Perdido** — não fechou; pode ser **reaberto** para uma nova tentativa.
+- **Cancelado** — o negócio caiu **depois** de reservado ou vendido. Como já existiam cobrança e logística, o cancelamento tem consequências a tratar; veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md#perda-e-cancelamento-com-motivo).
 
 {% hint style="info" %}
 **Todo orçamento tem validade.** A proposta vale por um prazo (padrão **7 dias**, ajustável). Passou o prazo, ela fica **vencida**: continua no funil onde estava, mas **não avança** até você **renovar a validade** ou **criar um novo** — porque preços e regras podem ter mudado. Detalhes em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
 {% endhint %}
 
 {% hint style="info" %}
-**Locação x venda:** na **locação** o item volta (tem retirada e conferência); na **venda** ele sai em definitivo (o ciclo termina na entrega). Veja [Locação e venda](locacao-e-venda.md).
+**Locação x venda:** na **locação** o item volta (tem retirada ou devolução, e conferência se você usar); na **venda** ele sai em definitivo (o ciclo termina na entrega ou na retirada pelo cliente na loja). Veja [Locação e venda](locacao-e-venda.md).
 {% endhint %}
 
 ## Linha logística: o caminho do material
@@ -81,17 +84,31 @@ flowchart LR
     AS --> SEP[Separado]
     SEP --> SAI[Saiu para entrega]
     SAI --> ENT[Entregue]
+    SEP --> RL[Retirado na loja<br/>o cliente busca]
     ENT --> SR[Saiu para retirada<br/>locação]
+    RL --> SR
     SR --> RET[Retirado]
+    ENT --> DL[Devolvido na loja<br/>locação · o cliente devolve]
+    RL --> DL
     RET --> AC[A conferir<br/>opcional]
+    DL --> AC
     AC --> CON[Conferido]
 ```
 
-- **Separação** (*A separar → Separado*) e **Conferência** (*A conferir → Conferido*) são **opcionais** — quem está começando entrega direto; quem cresceu liga essas etapas para ter controle. Detalhes em [Logística](../logistica/visao-geral.md).
+O material pode ir e voltar de dois jeitos, e eles se combinam:
+
+| Trecho | Pela equipe | Pela loja |
+| --- | --- | --- |
+| **Ida** | *Saiu para entrega → Entregue* | *Retirado na loja* — o cliente busca |
+| **Volta** *(só locação)* | *Saiu para retirada → Retirado* | *Devolvido na loja* — o cliente devolve |
+
+Na **venda** só existe a ida: o ciclo termina em *Entregue* ou em *Retirado na loja*. Na **locação**, ida e volta podem ser pela equipe, pela loja ou misturadas (o cliente busca na loja e a equipe recolhe depois, por exemplo). O atendimento na loja acontece em **Logística › Minha Loja** — veja [Loja: retirada e devolução pelo cliente](../logistica/balcao.md).
+
+- **Separação** (*A separar → Separado*) e **Conferência** (*A conferir → Conferido*) são **opcionais** — quem está começando entrega direto; quem cresceu liga essas etapas para ter controle. A conferência só existe na locação, depois da volta. Detalhes em [Logística](../logistica/visao-geral.md).
 
 ## Situações reais
 
-- **Venda no balcão:** orçamento → Vendido → entrega na hora. Sem retirada, sem conferência.
+- **Venda na loja:** orçamento → Vendido → *Retirado na loja*. Sem retirada de volta, sem conferência.
 - **Locação de evento:** orçamento → Reservado → separação → entrega na véspera → retirada no dia seguinte → conferência (checar avarias).
 - **Entrega de última hora:** pulou o planejamento? Toca em **Planejar entrega** no próprio pedido — o movimento já vem selecionado e você salva em seguida. O sistema nunca trava o caminho mais simples.
 
