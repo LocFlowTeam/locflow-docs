@@ -11,7 +11,7 @@ Nem todo pagamento entra pelo sistema. O cliente paga no balcão, passa o cartã
 **Por que isso importa:** o dinheiro que entra por fora some do controle se ninguém registrar. Com a baixa manual, todo recebimento — de qualquer canal — aparece na fatura. Você sempre sabe quanto já recebeu e quanto ainda falta, sem planilha paralela e sem cobrar duas vezes quem já pagou.
 {% endhint %}
 
-A fatura já nasce pronta quando o orçamento é ganho (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)) e se organiza em parcelas. Se ainda não viu como ela se monta, comece por [Faturas e parcelas](faturas-e-parcelas.md).
+A fatura nasce quando você **gera a cobrança** do orçamento (veja [Emitindo a cobrança](emitindo-a-cobranca.md)) e se organiza em parcelas. Se ainda não viu como ela se monta, comece por [Faturas e parcelas](faturas-e-parcelas.md).
 
 ## Pagamento manual x pagamento online
 
@@ -75,7 +75,7 @@ Se outra pessoa registrou um recebimento nessa parcela enquanto você preenchia,
 {% endhint %}
 
 {% hint style="warning" %}
-**Confira antes de registrar — é dinheiro.** A baixa manual entra direto no controle de caixa da fatura e fica no histórico da parcela. Registre só o que realmente entrou, com o método certo. Em caso de erro, fale com quem administra a cobrança na sua empresa.
+**Confira antes de registrar — é dinheiro.** A baixa manual entra direto no controle de caixa da fatura e fica no histórico da parcela. Registre só o que realmente entrou, com o método certo. Errou **o dia, a forma ou a conta**? Dá para [corrigir](#corrigir-uma-baixa). Errou **o valor**? Esse não muda por ali — fale com quem administra a cobrança na sua empresa.
 {% endhint %}
 
 ## Recebendo na rua, com o motorista
@@ -116,7 +116,7 @@ O acordo pode dar a ele a prerrogativa de **receber do cliente na porta**. Aí v
 | Quanto ele pode receber | Qualquer valor, inclusive parcial | **Tudo ou nada**: só a cobrança inteira daquela operação |
 
 {% hint style="info" %}
-**Por que a parcela não espera conferência nesse caso:** não há dinheiro seu para conferir. O caixa é dele, e o acerto passa a ser entre vocês dois — vira um saldo que ele te paga por PIX. A conta completa está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#parceiro-recebeu-na-entrega).
+**Por que a parcela não espera conferência nesse caso:** não há dinheiro seu para conferir. O caixa está com ele, e o acerto passa a ser entre vocês dois: ele te devolve, por PIX, tudo o que recebeu — e o repasse dele pelo acordo continua de pé, do seu lado. A conta completa está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md#repasse-inverso).
 {% endhint %}
 
 ## Reagendar o vencimento de uma parcela
@@ -134,13 +134,16 @@ Algumas condições:
 
 ## Histórico de pagamento da parcela
 
-Toda parcela guarda um **histórico** — toque no ícone de **relógio** para abrir. Ele lista **todas as tentativas de pagamento** daquela parcela, da mais recente para a mais antiga, com o método, o desfecho e a data. É só leitura: serve para você entender o que já aconteceu ali.
+Toda parcela guarda um **histórico** — toque no ícone de **relógio** para abrir. Ele lista **todas as tentativas de pagamento** daquela parcela, da mais recente para a mais antiga, com o método, o desfecho e a data — e também as baixas manuais, os estornos e as contestações de cartão. Serve para você entender o que já aconteceu ali, e é também de lá que se [corrige uma baixa](#corrigir-uma-baixa).
 
 Os desfechos que você pode ver:
 
 | No histórico | O que significa |
 | --- | --- |
 | **Pago** | Pagamento online confirmado pelo provedor. |
+| **Pago pelo cliente · confirmando** | O cliente já pagou (um cartão aprovado, por exemplo) e a confirmação ainda está chegando. Não peça para pagar de novo. |
+| **Cartão em análise pela operadora** | A operadora está analisando a transação; a resposta aparece ali. |
+| **Pago e estornado pelo provedor** | O dinheiro entrou e depois voltou (estorno, antifraude ou contestação no cartão). São dois fatos, e o histórico conta os dois. |
 | **Conferido** | Recebimento da rua já conferido pela tesouraria. |
 | **Registrado na rua** | Recebimento presencial anotado em campo, aguardando conferência. |
 | **Aguardando pagamento** | Cobrança online gerada, esperando o cliente pagar. |
@@ -148,7 +151,21 @@ Os desfechos que você pode ver:
 | **Em divergência** | O caixa não bateu na conferência — precisa de atenção. |
 | **Cartão recusado** | A tentativa no cartão não foi autorizada. |
 | **Expirada** | A cobrança venceu sem ser paga. |
+| **Cancelamento solicitado** | O LocFlow pediu ao provedor o cancelamento da cobrança e aguarda a resposta. |
+| **Cancelada no provedor** | O provedor confirmou o cancelamento. |
+| **Encerrada · boleto ainda pode ser pago** | O boleto foi cancelado, mas continua no DDA do cliente até expirar — se ele pagar, o recebimento entra. Veja [Pagamento online](pagamento-online.md#boleto-cancelado-continua-no-dda-e-isso-nao-e-um-defeito-do-locflow). |
 | **Cancelada** | A cobrança foi cancelada (ex.: você trocou o método e gerou outra). |
+
+**Estornos e contestações de cartão** aparecem no mesmo histórico, cada um com quanto já foi comprovado e o andamento: **Solicitação registrada**, **Enviando ao provedor**, **Aguardando confirmação**, **Nova tentativa agendada**, **Confirmada pelo provedor** ou **Exige atenção**.
+
+### Corrigir uma baixa {#corrigir-uma-baixa}
+
+Quem registra a baixa costuma registrá-la no dia em que senta para digitar — não no dia em que o cliente pagou. Para isso existe o **Corrigir**, na linha de cada recebimento manual do histórico (para quem tem a permissão):
+
+* Na **baixa manual**, a folha **Corrigir baixa manual** ajusta **Recebido em** (a data em que o dinheiro entrou), o **método** e a **conta** do recebimento.
+* No **recebimento da rua já conferido** pela tesouraria, a folha **Corrigir recebimento conferido** ajusta só a **data** e a **conta** — a forma foi confirmada na conferência e não muda.
+
+**O valor nunca muda por aqui.** Se a nova data cair num período já fechado, o app mostra a orientação do que fazer (por exemplo, reabrir o fechamento antes de corrigir).
 
 {% hint style="success" %}
 **Por que o histórico te ajuda:** se o cliente disser "já paguei" ou "o Pix não funcionou", você abre o histórico e vê exatamente o que rolou — método, valor e quando. Fim do "será que entrou?".

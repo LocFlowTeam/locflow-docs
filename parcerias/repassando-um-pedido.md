@@ -5,7 +5,7 @@ description: O passo a passo de repassar um pedido ganho a um parceiro — esbo�
 
 # Repassando um pedido
 
-**Onde fica:** a ação **"Repassar a parceiro"** aparece nas **ações do orçamento** quando ele foi **ganho** e existe acordo que cobre os itens. O acompanhamento vive **na sua própria esteira de orçamentos**: todo pedido repassado ganha o selo **"da rede"** (com o nome do parceiro e o estado do aceite) no funil, na tabela e na ficha — e o filtro **Procedência › Da rede de parcerias** lista só eles. Do detalhe do repasse dá para voltar ao orçamento em um toque, e vice-versa.
+**Onde fica:** a ação **"Repassar a parceiro"** aparece nas **ações do orçamento** quando ele foi **ganho** e existe acordo que cobre os itens. Depois, o acompanhamento fica em dois lugares: na **Rede de Parceiros › Repasses da rede**, a lista de todos os pedidos que correram pela rede; e na sua **lista de orçamentos**, onde todo pedido repassado ganha o selo **"da rede"** (com o nome do parceiro e o estado do aceite) no funil, na tabela e na ficha — e o filtro **Procedência › Da rede de parcerias** lista só eles. Do detalhe do repasse dá para voltar ao orçamento em um toque, e vice-versa.
 
 Repassar é isto: você fechou um pedido com o **seu** cliente, mas quem vai executar a operação — separar o material, entregar, retirar — é um **parceiro**. O LocFlow cuida do meio do caminho inteiro: mostra **qual parceiro rende mais** para você, envia a **solicitação**, controla o **prazo de aceite**, e deixa o dinheiro combinado no [acordo](acordos-de-parceria.md) pronto para a divisão. O cliente continua sendo seu; a logística passa a ser do parceiro.
 
@@ -112,7 +112,7 @@ Todo repasse é uma **solicitação** — o parceiro nunca é atropelado. Ele re
 
 E decide:
 
-* **Aceitar** — ele assume a logística da operação. Na parceria entre organizações, o material passa a sair do **estoque dele**: o sistema traduz os itens pelo mapeamento do acordo e reserva no galpão dele mais próximo da entrega. Há um guarda no aceite: **sem estoque disponível na janela, o aceite é barrado** (itens que ele nunca cadastrou não barram — só avisam).
+* **Aceitar** — ele assume a logística da operação. Na parceria entre organizações, o material passa a sair do **estoque dele**: o sistema traduz os itens pelo mapeamento do acordo e reserva no galpão de onde a operação sai — que ele escolhe no aceite, quando tem mais de um (veja [De qual galpão a operação sai](#galpao-de-origem)). Há um guarda no aceite: **sem estoque disponível na janela, o aceite é barrado** (itens que ele nunca cadastrou não barram — só avisam).
 * **Recusar** — sempre com **motivo obrigatório**, que chega a você. A posse do pedido volta e você repassa a outro parceiro ou opera você mesmo.
 
 {% hint style="info" %}
@@ -127,7 +127,7 @@ Estourou o prazo? **O sistema expira a solicitação sozinho** — uma varredura
 
 ## Desistência depois do aceite {#desistencia}
 
-Aceitou e a realidade mudou? Enquanto a operação **ainda não começou**, o parceiro pode **desistir**, sempre com motivo. O acordo define uma **janela de desistência** (padrão de 24 horas antes da operação):
+Aceitou e a realidade mudou? Enquanto a operação **ainda não começou**, o parceiro pode **desistir** — no app dele, a ação se chama **"Não vou conseguir fazer esta operação"** —, sempre com motivo. O acordo define uma **janela de desistência** (padrão de 24 horas antes da operação):
 
 | Quando desiste | O que acontece |
 | --- | --- |
@@ -135,14 +135,35 @@ Aceitou e a realidade mudou? Enquanto a operação **ainda não começou**, o pa
 | **Fora da janela (tardia)** | A desistência fica no **histórico** e gera **penalidade** no índice de confiabilidade, **maior quanto mais perto da operação** — quem desiste em cima da hora te deixa mais na mão, e pesa mais. |
 
 {% hint style="warning" %}
-**Depois que a execução começa, não dá mais para desistir.** Se o parceiro **já saiu para a entrega** (ou já cumpriu um lado da operação), o botão de desistir some — você e o cliente estão contando com aquela entrega a caminho. Um imprevisto real (o caminhão quebrou) se resolve **falando com você**, não com um cancelamento pelo app.
+**Depois que a execução começa, o parceiro não desiste mais pelo app.** Se ele **já saiu para a entrega** (ou já cumpriu um lado da operação), a tela dele diz *"A execução já começou — não é mais possível desistir."* — você e o cliente estão contando com aquela entrega a caminho. Um imprevisto real (o caminhão quebrou) se resolve **falando com você**: daí em diante, quem pode tirar a operação dele é **você**, [retomando o repasse](#quem-repassa-pode-voltar-atras).
 {% endhint %}
 
 Na parceria entre organizações, a desistência (antes da execução) também **libera** o estoque que estava reservado no galpão do parceiro.
 
+## Quem repassa pode voltar atrás {#quem-repassa-pode-voltar-atras}
+
+A desistência é a saída do parceiro. Você também tem as suas — uma para cada momento —, todas no detalhe do repasse, em **Rede de Parceiros › Repasses da rede**:
+
+| Momento | A ação | O que acontece |
+| --- | --- | --- |
+| O parceiro **ainda não decidiu** | **Cancelar envio** — *"Retira a solicitação do parceiro antes da decisão dele"* | A solicitação é retirada: ele não pode mais aceitá-la e o convite some das notificações dele. Em seguida você repassa a outro parceiro ou assume a execução. |
+| O **prazo de aceite estourou** e a solicitação ainda não expirou sozinha | **Prazo de aceite expirou — retomar** | A operação volta para você repassar a outro ou assumir, sem esperar a expiração automática. |
+| **Depois do aceite** — por exemplo, o parceiro avisou que não vai conseguir | **Retomar o repasse** — *"A operação volta para a sua logística"* | O pedido continua fechado; o que termina é o repasse. Você roteiriza com a sua frota ou repassa a outro parceiro. |
+
+Ao **retomar o repasse**, o app pergunta **"Por que está retomando?"**, com duas respostas — e mostra, **antes** de você confirmar, quem paga a conta:
+
+* **"O parceiro não vai conseguir atender"** — fora da janela de desistência do acordo, registra **35 pontos** de penalidade na reputação dele, que ele pode contestar.
+* **"É uma decisão minha"** — fora da janela, registra a penalidade de **cancelamento tardio** na reputação da **sua** organização, com a mesma régua que vale para o outro lado.
+
+Dentro da janela de desistência, retomar não penaliza ninguém. Você também escreve o **motivo da retomada** — o parceiro lê esse texto, e é por ele que uma penalidade se explica. A tabela completa fica no **"?"** do próprio modal (veja [Índice de confiabilidade](reputacao-e-boas-praticas.md#indice-de-confiabilidade)).
+
+{% hint style="warning" %}
+**Retomar não traz o material de volta.** Se a equipe do parceiro já está em campo, o modal avisa: *"Retomar NÃO tira a rota dele do caminho nem traz o material de volta — combine a devolução diretamente com ele."* A retomada muda de quem é a operação no sistema; o caminhão na rua é uma conversa entre vocês.
+{% endhint %}
+
 ## Reverter o ganho desfaz o repasse {#reverter-ganho}
 
-Se você **reverte o ganho** do orçamento — o cliente desistiu, o negócio voltou à negociação —, o repasse é **cancelado automaticamente**. O parceiro é notificado, o estoque espelhado (se houver) é liberado, e a reserva fica registrada como **"Orçamento revertido — repasse desfeito"**. Nenhuma ação manual, nenhuma ponta solta.
+Se você **reverte o ganho** do orçamento — o cliente desistiu, o negócio voltou à negociação —, o repasse é **cancelado automaticamente**. O parceiro é notificado, o estoque espelhado (se houver) é liberado, e o repasse passa a aparecer como **"Repasse cancelado"** para você e **"Solicitação cancelada"** para ele. Nenhuma ação manual, nenhuma ponta solta.
 
 ## Depois do aceite: a execução é do parceiro {#execucao}
 
@@ -206,17 +227,20 @@ O caminho completo de um repasse, do envio ao desfecho:
 
 ```mermaid
 stateDiagram-v2
+    state "Concluído" as Concluido
     [*] --> Aguardando: você repassa
     Aguardando --> Aceito: parceiro aceita
     Aguardando --> Recusado: parceiro recusa (motivo)
     Aguardando --> Expirado: prazo de aceite estoura
-    Aguardando --> Cancelado: ganho revertido
+    Aguardando --> Cancelado: você cancela o envio ou reverte o ganho
     Aceito --> Desistido: parceiro desiste (motivo)
+    Aceito --> Retomado: você retoma o repasse
     Aceito --> Cancelado: ganho revertido
-    Aceito --> EmExecucao: operação nos roteiros do parceiro
+    Aceito --> Concluido: a operação terminou
     Recusado --> Aguardando: re-repasse a outro parceiro
     Expirado --> Aguardando: re-repasse a outro parceiro
     Desistido --> Aguardando: re-repasse a outro parceiro
+    Retomado --> Aguardando: re-repasse a outro parceiro
 ```
 
 O **re-repasse** é sempre a mesma solicitação seguindo para **outro** parceiro — você volta ao comparativo e escolhe de novo.
@@ -232,14 +256,18 @@ A mesma reserva aparece com rótulos diferentes conforme **quem olha** — a tel
 | Recusada | **Recusado** | **Recusado** |
 | Desistida pós-aceite | **Parceiro desistiu** | **Você desistiu** |
 | Prazo estourado | **Prazo expirou — retomado** | **Prazo de aceite expirou** |
-| Ganho revertido | **Orçamento revertido — repasse desfeito** | **Orçamento revertido — repasse desfeito** |
+| Envio cancelado ou ganho revertido | **Repasse cancelado** | **Solicitação cancelada** |
+| Retomada depois do aceite | **Você retomou** | **Retomado por quem repassou** |
+| Operação terminada | **Concluído** | **Concluído** |
 | Com desvio dos termos | **Fora do acordo — aguardando parceiro** | **Fora do acordo — revise** |
 
-Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, o que fica é a **[central de avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)**: avaliar o parceiro e acompanhar a revelação das notas.
+**Concluído** é um estado de sucesso: a operação terminou, e o repasse ao parceiro continua devido até ser pago.
+
+Todos aparecem **no selo "da rede" da sua lista de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, a lista **[Repasses da rede](reputacao-e-boas-praticas.md#central-de-avaliacoes)** reúne todos eles: é ali que você acompanha cada repasse, avalia o parceiro e vê a revelação das notas.
 
 ## De qual galpão a operação sai {#galpao-de-origem}
 
-Na **parceria entre organizações**, quem executa pode ter mais de um galpão. Por isso, **no aceite** a parceira escolhe **de qual galpão dela** a operação sai — com o sistema sugerindo o mais indicado. Essa escolha vira a referência única de tudo o que vem depois: o **frete** calcula a partir dele, o **estoque** movimenta nele e o **roteiro** nasce saindo dele.
+Na **parceria entre organizações**, quem executa pode ter mais de um galpão. Por isso, **no aceite**, a tela da parceira pergunta **"De qual galpão esta operação sai?"**. Quando há um galpão sugerido, ele já vem marcado; quando nenhum vem marcado, escolher é condição para aceitar — *"é nele que o material fica reservado e é de lá que a rota parte"*. Com um galpão só, não há o que escolher. Essa escolha vira a referência única de tudo o que vem depois: o **frete** calcula a partir dele, o **estoque** movimenta nele e o **roteiro** nasce saindo dele.
 
 Errou a escolha? No **roteiro**, a base ainda pode ser trocada **até a saída ser registrada** — depois disso a rota partiu de lá, e a base vira fato.
 
@@ -265,6 +293,8 @@ O bloco **"A rota do parceiro"** responde o que o seu cliente pergunta, sem abri
 - **Card apagado no comparativo.** A parceira aparece com **"Sem estoque para a data"** — as mesas dela estão em outro evento na mesma janela. O card desabilita e te poupa de um aceite que seria barrado de qualquer jeito.
 - **"Ele não vai fornecer 3 itens."** O card avisa no esboço: três itens do pedido não estão mapeados no acordo com aquela parceira. Você toca no aviso, cai no acordo, mapeia os três em dois minutos e volta — agora a cobertura é total. Corrigir ali custa muito menos do que descobrir no galpão dela.
 - **Cliente cancelou tudo.** Você reverteu o ganho do orçamento; o repasse se desfez sozinho, o parceiro foi avisado e o estoque dele voltou a ficar livre. Zero telefonema. (Se ele já tinha aceitado e você reverteu em cima da hora, isso conta na **sua** reputação — veja [o índice](reputacao-e-boas-praticas.md#indice-de-confiabilidade).)
+- **"Repassei para o parceiro errado."** Enquanto ele não decidiu, toque em **Cancelar envio** no detalhe do repasse: a solicitação some da caixa dele e você repassa ao certo.
+- **"O parceiro aceitou e agora diz que não vai dar."** Se ainda está dentro da janela, peça que ele desista pelo app. Se a janela fechou — ou a execução já começou —, use **Retomar o repasse**, escolha o motivo e escreva o porquê: a operação volta para a sua logística.
 - **"Preciso dividir a entrega em duas viagens, mas já repassei."** O comando é do parceiro agora. Fale com ele — ou desfaça o repasse, se ainda houver tempo.
 - **"O parceiro não entregou e eu só soube pelo cliente."** Não deve mais acontecer: o aviso **"Parceiro não cumpriu a entrega ou retirada"** chega com o motivo do pulo. Se você não o recebeu, confira os canais na [Central de notificações](../configuracoes/central-de-notificacoes.md).
 

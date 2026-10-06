@@ -13,11 +13,11 @@ Quando um cliente paga **pelo cartão** (pelo [Pagamento online](pagamento-onlin
 
 ## Onde você vê o seu saldo
 
-- **Sua organização:** em **Configurações → Integração de Pagamento**, no card **Recebíveis**.
-- **Parceiro externo:** em **Parcerias → Meu recebimento** (você vê o **seu próprio** saldo, separado do da organização).
+- **Sua organização:** em **Ajustes › Integração de Pagamento**, no cartão **Recebíveis**. Ele mostra o saldo da conta que recebe hoje; se a sua organização tem [mais de uma conta de recebimento](pagamento-online.md#mais-de-uma-conta), cada conta da lista tem o próprio **Saldo desta conta** — dá para sacar e antecipar o que entrou em cada uma, mesmo depois de ela deixar de ser a que recebe.
+- **Parceiro externo:** em **Recebimento**, nas **Suas áreas** do seu espaço (você vê o **seu próprio** saldo, separado do da organização).
 
 {% hint style="warning" %}
-**Para o parceiro, "Meu recebimento" não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo em Meus Ganhos, mas não há como pagá-lo pelo app. O mesmo vale no sentido inverso: se você recebeu do cliente na rua e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
+**Para o parceiro, o Recebimento não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo em Ganhos, mas não há como pagá-lo pelo app. O mesmo vale no sentido contrário: se você recebeu do cliente na porta e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
 {% endhint %}
 
 ## Os três números do seu saldo
@@ -26,9 +26,9 @@ O saldo vem direto do gateway e se divide em três partes. Todos os valores são
 
 | No app | O que é | Cor |
 | --- | --- | --- |
-| **Disponível** | Já compensou. **Pode ser transferido** para o seu banco agora. | Verde |
-| **A receber** | Vendas no cartão que **ainda estão compensando** (no prazo do adquirente). Ainda não dá para sacar — mas **já é seu**. | Azul |
-| **Já transferido** | Total que **já foi enviado** para a sua conta bancária ao longo do tempo. | Neutro |
+| **Disponível** — *"Pode transferir agora"* | Já compensou. **Pode ser transferido** para o seu banco agora. | Verde |
+| **A receber** — *"Recebíveis a compensar"* | Vendas no cartão que **ainda estão compensando** (no prazo do adquirente). Ainda não dá para sacar — mas **já é seu**. | Azul |
+| **Já transferido** | Total que **já foi enviado** para a sua conta bancária ao longo do tempo. Em telas estreitas, aparece numa linha abaixo: *"Já transferido ao banco"*. | Neutro |
 
 ```mermaid
 flowchart LR
@@ -46,10 +46,10 @@ flowchart LR
 
 O saldo **Disponível** vai para a sua conta bancária por **transferência**. Isso pode acontecer de duas formas:
 
-- **Automática:** o gateway envia sozinho, no intervalo que você configurar (diário, semanal, etc.).
-- **Manual:** quando a transferência automática está desligada, aparece o botão **Sacar agora** para você enviar o disponível na hora.
+- **Automática:** o gateway envia sozinho, no intervalo que você configurar (diário, semanal ou mensal). Ela é **de cada conta de recebimento**: ao trocar a conta que recebe, confira a da conta nova.
+- **Manual:** toque em **Sacar para o banco**, no bloco **Disponível**. A folha **Sacar para o meu banco** mostra **para qual conta** o dinheiro vai (*"Para: …"*) antes de você digitar o valor; ao concluir, mostra a **taxa da Stone** e quanto saiu do seu saldo.
 
-Só entra na transferência o que está **Disponível** — o que está **A receber** precisa compensar primeiro (ou ser **antecipado**, abaixo).
+Só entra na transferência o que está **Disponível** — o que está **A receber** precisa compensar primeiro (ou ser **antecipado**, abaixo). No financeiro da sua organização, cada saque concluído aparece como uma transferência **"Saque do gateway"**, com a taxa junto — veja [Taxas do pagamento online](taxas-do-gateway.md#saque-vira-transferencia).
 
 ## Antecipação: receber antes
 
@@ -61,10 +61,10 @@ A **antecipação** traz o que está **A receber** para o seu saldo **Disponíve
 
 ### Passo a passo
 
-1. Na tela de recebimento, toque em **Antecipar recebíveis**.
+1. Na tela de recebimento, toque em **Antecipar**, no bloco **A receber**. Abre a folha **Antecipar recebíveis**.
 2. O LocFlow consulta a sua **disponibilidade** e mostra o **máximo** que dá para antecipar hoje.
-3. Informe **quanto** você quer antecipar (ou deixe o valor cheio) e toque em **Simular**.
-4. Você vê a **simulação**: o **valor líquido** que cai na conta, a **taxa de antecipação**, o **custo** e a **data** em que o dinheiro fica disponível.
+3. Informe **quanto** você quer antecipar (ou toque em **Antecipar tudo**) e toque em **Simular**.
+4. Você vê a **simulação**: quanto **você recebe**, o **valor solicitado**, a **taxa de antecipação**, o **custo operacional** (quando houver) e a data do **crédito**.
 5. Se estiver bom, toque em **Confirmar**. Pronto — o valor entra no seu saldo **Disponível** assim que o gateway processar.
 
 ```mermaid
@@ -86,7 +86,8 @@ O valor antecipado cai no **Disponível** — de lá você transfere para o banc
 
 - **"Meu saldo está zerado, mas vendi no cartão."** O valor provavelmente está em **A receber** (compensando). Ele vira **Disponível** no prazo do adquirente — ou você **antecipa** para receber antes.
 - **"Recebi menos do que a venda."** No cartão, o adquirente desconta as taxas dele; se você antecipou, há também a **taxa de antecipação** (que você viu na simulação).
-- **"Sou parceiro externo, vejo o saldo da organização?"** Não. Em **Meu recebimento** você vê **apenas o seu** saldo e antecipa **os seus** recebíveis.
+- **"Sou parceiro externo, vejo o saldo da organização?"** Não. Em **Recebimento** você vê **apenas o seu** saldo e antecipa **os seus** recebíveis.
+- **"Troquei a conta que recebe. E o dinheiro da conta antiga?"** Continua nela, disponível para saque — nada é transferido entre as contas. Abra a conta antiga na lista e use o **Saldo desta conta**.
 - **"Onde vejo isso sem entrar na Pagar.me?"** Tudo aqui no LocFlow — é o mesmo saldo do painel do gateway, só que dentro do app.
 
 ## Próximo passo

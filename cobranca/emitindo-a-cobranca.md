@@ -73,7 +73,7 @@ O **restante é deduzido automaticamente** — você não calcula nada. O LocFlo
 
 Para dividir em várias vezes. Aqui você define:
 
-* **Número de parcelas** — quantas vezes.
+* **Número de parcelas** — quantas vezes, **até 24**: a tela não aceita mais que isso.
 * **Intervalo** — de quanto em quanto tempo elas vencem: **Mensal** (a cada 30 dias) ou **Quinzenal** (a cada 15 dias).
 
 A partir da **data de vencimento** da primeira, o LocFlow espaça as demais pelo intervalo escolhido. Por padrão, ele **divide o total igualmente** entre as parcelas (qualquer sobra de centavos vai para a última). Se você quiser controlar o valor de cada uma, dá — veja [Definir o valor exato de cada parcela](#definir-o-valor-exato-de-cada-parcela).
@@ -86,7 +86,7 @@ Todo formato pede uma **data de vencimento** base. O LocFlow já chega com uma *
 * **Sinal + restante:** é a data do **restante** (o sinal vence hoje).
 * **Parcelado:** é a data da **primeira** parcela; as outras vão se espaçando a partir dela.
 
-## Pagamento a prazo (D+X)
+## Pagamento a prazo (D+X) {#pagamento-a-prazo}
 
 Quer dar um **prazo** ao cliente — pagar 30 dias depois, por exemplo? Ative **Pagamento a prazo** e escolha **D+X**: D+15, D+30, D+45, ou um número livre de dias.
 
@@ -145,10 +145,10 @@ Quando o resumo estiver do seu jeito, toque em **Gerar cobrança**. Pronto: o or
 
 Na folha de emissão há o bloco **Gerar fatura de locação**: *"Ao gerar a cobrança, cria também o PDF da fatura de locação nos Documentos."* É o documento de cobrança para mandar ao cliente, com parcelas e vencimentos reais.
 
-Marcando a caixa, a emissão **não fica mais lenta por causa disso**. A cobrança é confirmada na hora, a folha fecha e o aviso diz para onde olhar: *"A fatura de locação está sendo gerada em Documentos."* Lá, o documento aparece como **"Gerando…"** e vira **"Gerado"** sozinho, sem você precisar ficar na tela.
+Marcando a caixa, a emissão **não fica mais lenta por causa disso**. A cobrança é confirmada na hora, a folha fecha e o aviso diz para onde olhar: *"A fatura de locação está sendo gerada em Documentos."* Na seção **Documentos gerados** do pedido, aparece uma linha **"Gerando…"**; quando o arquivo fica pronto, ele toma o lugar dessa linha, como qualquer outro documento — sem você precisar ficar na tela.
 
 {% hint style="info" %}
-Se o nome do arquivo do seu modelo tiver campos para preencher, a folha os pede **antes** de emitir. Se ainda assim faltar alguma informação, o documento fica em **"Falta preencher"** na lista — e a cobrança, que é o que importa, já está feita.
+Se o nome do arquivo do seu modelo tiver campos para preencher, a folha os pede **antes** de emitir. Se ainda assim faltar uma informação que só uma pessoa tem, a linha do documento diz qual: *"Falta preencher "X" para gerar este documento."* — e a cobrança, que é o que importa, já está feita. Erro de verdade só aparece para o que não adianta repetir, com a frase explicada em português.
 {% endhint %}
 
 A fatura de locação só existe em **aluguel**; na venda a caixa não aparece.

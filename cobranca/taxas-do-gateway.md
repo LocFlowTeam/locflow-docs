@@ -47,7 +47,16 @@ Quem arca com a **taxa de gateway** numa operação repassada é um termo do pr�
 A forma de mostrar depende do tipo de taxa:
 
 - **Taxa de transação — junto do recebimento.** Na lista de lançamentos, o **recebimento** e a **taxa** da mesma cobrança aparecem como **uma operação só**, já com o **resultado líquido** (o que entrou, menos a taxa). Toque na operação para ver a **composição**: entrou `+X`, saiu a taxa `−T`, sobrou `X − T`.
-- **Taxa de antecipação e taxa de saque — como despesa avulsa.** Elas não pertencem a uma cobrança específica (são da operação de antecipar ou de sacar), então entram como uma **despesa própria** no razão, identificando a operação que a gerou.
+- **Taxa de saque — junto do saque.** O saque aparece como uma **transferência** entre duas contas suas (veja abaixo), e a taxa real daquele saque vem ligada a ele, na mesma operação.
+- **Taxa de antecipação — como despesa avulsa.** Ela não pertence a uma cobrança específica (é da operação de antecipar), então entra como uma **despesa própria** no razão, identificando a operação que a gerou.
+
+### O saque vira transferência {#saque-vira-transferencia}
+
+No seu financeiro, todo pagamento online entra na conta **Stone** — a conta do gateway, criada pelo sistema, onde os recebíveis ficam até o saque. Quando um saque é concluído no gateway — pelo botão **Sacar para o banco** ou pela transferência automática —, ele aparece como uma transferência **"Saque do gateway"**: sai da Stone e entra na sua **conta de recebimento**, a que estava cadastrada quando o saque foi criado. Assim a Stone mostra o que ainda está no gateway, e o banco mostra o que de fato chegou.
+
+{% hint style="info" %}
+**Saques antigos ficam como estavam.** A transferência vale para os saques concluídos depois que essa mudança entrou no ar. Os anteriores continuam com a taxa como despesa avulsa — o histórico não é refeito. E os saques do recebimento de um **parceiro externo** não entram no seu financeiro: aquele dinheiro é dele.
+{% endhint %}
 
 Todas caem na categoria **Taxa de Gateway** do seu plano de contas, para você ver o total gasto em taxas nos relatórios.
 
@@ -75,7 +84,7 @@ O LocFlow **não estima** a taxa: ele usa o **valor real**, lido do extrato de m
 
 - **"Recebi R$ 500 mas no banco veio menos":** é a taxa de transação. No LocFlow ela aparece agrupada ao recebimento — abra a operação e veja o `+500 −5 = 495`. O que veio no banco bate com o líquido.
 - **"Antecipei meu saldo":** além do recebimento, entra uma despesa de **taxa de antecipação** — o custo de receber antes do prazo.
-- **"Deixei o saque automático ligado":** a cada transferência para o seu banco, entra uma pequena despesa de **taxa de saque**. Você não fez nada, mas o custo real fica registrado.
+- **"Deixei o saque automático ligado":** a cada transferência para o seu banco, o financeiro registra o **Saque do gateway** (da Stone para a sua conta de recebimento) com a **taxa de saque** junto. Você não fez nada, mas o movimento e o custo real ficam registrados.
 
 ## Próximo passo
 

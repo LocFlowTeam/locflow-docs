@@ -23,18 +23,18 @@ São **três sinais diferentes**, e cada um responde a uma pergunta:
 **A régua também aponta para você.** Reputação na rede não é só sobre o parceiro: quem **repassa** também é medido — e um cancelamento tardio custa pontos na reputação da **sua organização**. Veja [Índice de confiabilidade](#indice-de-confiabilidade).
 {% endhint %}
 
-## A central de avaliações: tudo num lugar só {#central-de-avaliacoes}
+## Repasses da rede: tudo num lugar só {#central-de-avaliacoes}
 
-**Onde fica:** **Rede de Parceiros › Avaliações de parceria.** É a central que responde, linha a linha, três perguntas sem abrir nada:
+**Onde fica:** **Rede de Parceiros › Operar › Repasses da rede.** É a lista de todos os pedidos que correram pela rede — cada linha é um pedido repassado, e a avaliação é o que você faz com ele. Ela responde, linha a linha, três perguntas sem abrir nada:
 
 1. **Já avaliei esta operação?** Quem está pendente aparece com o botão **Avaliar**; quem já foi avaliada mostra a sua nota (★).
 2. **O outro lado já avaliou?** Na parceria entre organizações, a linha diz **o fato** — nunca a nota, enquanto o [duplo-cego](#duplo-cego) estiver valendo.
 3. **Em que pé está a revelação?** Cada linha carrega o estado: **"Oculta até o outro lado avaliar"** (com a data em que se revela sozinha), **"O parceiro já avaliou — falta a sua"** ou **"Notas reveladas"**.
 
-Dá para buscar por pedido, cliente ou parceiro, e filtrar por **Pendentes de avaliar** × **Avaliadas**. Tocar numa linha abre o detalhe do repasse — é lá que a avaliação acontece (estrelas + comentário).
+Dá para buscar por pedido, cliente ou parceiro, e filtrar por **Todos**, **A avaliar** ou **Avaliados**. Tocar numa linha abre o detalhe do repasse — é lá que a avaliação acontece (estrelas + comentário), e é lá também que ficam as ações do repasse: aceitar, cancelar o envio, retomar a operação.
 
 {% hint style="info" %}
-**E os pedidos repassados em si?** A gestão da operação mora na **sua esteira de orçamentos**, com o selo **"da rede"** e o filtro de procedência — veja [Repassando um pedido](repassando-um-pedido.md). A central cuida do que vem depois da operação: a confiança.
+**E na lista de orçamentos?** Cada pedido repassado também aparece na sua lista de orçamentos, com o selo **"da rede"** e o filtro **Procedência**. No orçamento, a linha **Repasse a parceiro** leva direto ao detalhe do repasse. Veja [Repassando um pedido](repassando-um-pedido.md).
 {% endhint %}
 
 ## Avaliação privada: a sua opinião, para os seus repasses {#avaliacao-privada}
@@ -94,7 +94,7 @@ Repare no detalhe que faz diferença para quem está chegando: **quem entra na r
 Cada faixa exige volume **e** qualidade crescentes. Uma única nota 5 não faz um Diamante — a confiança vem da consistência. Os números exatos de cada faixa estão em ["Para quem quer os números"](#para-quem-quer-os-numeros).
 {% endhint %}
 
-E quando um [parceiro externo cresce e vira organização](parceiro-logistico-externo.md), promovendo o acordo para o modelo entre organizações? **A reputação acumulada carrega junto** — ninguém recomeça do zero por ter crescido.
+E quando um [parceiro externo cresce e vira organização](parceiro-logistico-externo.md#crescendo-na-rede)? **A reputação que ele construiu com você vai junto**: as avaliações e as penalidades que a sua organização registrou sobre ele passam para a organização nova, e no seu ranking e no seu comparativo ele não volta a ser "Novo". Já a **vitrine pública** da organização nova, em **Descobrir parceiros**, nasce zerada — a reputação de parceiro convidado não vai para lá.
 
 ## Índice de confiabilidade: 0 a 100, baseado em fatos {#indice-de-confiabilidade}
 
@@ -109,15 +109,22 @@ O índice de confiabilidade é o sinal **objetivo** da reputação — separado 
 | **Prazo de aceite estourado** — a solicitação expirou sem resposta e o vendedor teve de retomar | Parceiro | **−8** |
 | **Desistência tardia** — desistiu de uma reserva aceita **fora** da janela de desistência | Parceiro | **−15 a −25** |
 | **Falha de entrega** — aceitou, mas a operação falhou (movimento pulado / não compareceu) | Parceiro | **−25** |
-| **Cancelamento tardio pelo vendedor** — desfez o repasse (revertendo o ganho, por exemplo) **depois** do aceite e **fora** da janela de desistência | **Organização vendedora** | **−15 a −25** |
+| **Não conseguiu atender depois da janela** — avisou que não ia conseguir atender depois de a janela fechar, e quem repassou teve de retomar a operação para reencaixá-la na logística dele | Parceiro | **−35** |
+| **Cancelamento tardio pelo vendedor** — cancelou ou retomou a operação (revertendo o ganho, por exemplo) **depois** do aceite e **fora** da janela de desistência | **Organização vendedora** | **−15 a −25** |
 
 As duas penalidades **tardias** são **graduadas pela antecedência**: quanto mais perto da operação, mais pesado — começa em **−15** logo depois de a janela fechar e chega a **−25** (o mesmo peso de uma falha de entrega) quando é praticamente em cima da hora. Desistir (ou cancelar) com um dia de antecedência machuca menos do que fazê-lo com o cliente já esperando.
+
+O **−35** é fixo e pesa mais que a desistência tardia de propósito: o parceiro largou um compromisso já assumido **e** obrigou o outro lado a agir para salvar a operação. Quem retoma escolhe, no próprio modal, o motivo — **"O parceiro não vai conseguir atender"** ou **"É uma decisão minha"** — e vê antes de confirmar quem paga a conta. Dentro da janela de desistência, retomar não penaliza ninguém.
+
+{% hint style="info" %}
+**A tabela completa está no app.** O **"?"** da tela de reputação e o do modal de retomada mostram cada penalidade, quando ela acontece e quanto pesa — você não descobre o preço depois de pagar.
+{% endhint %}
 
 {% hint style="info" %}
 **Por que o cancelamento tardio pesa igual à desistência tardia?** Porque o dano é o mesmo, com os papéis trocados. Quem aceitou um repasse já se organizou: reservou material, alocou motorista, montou rota. Perder isso na véspera custa o mesmo, venha de que lado vier — e sem essa simetria o parceiro não teria como julgar quem repassa.
 {% endhint %}
 
-As penalidades são registradas **automaticamente** pelo sistema quando o fato ocorre — ninguém "dá" uma penalidade na mão. E cada operação só pode gerar uma penalidade de cada tipo para o mesmo penalizado: não existe punição em dobro.
+As penalidades são registradas **automaticamente** pelo sistema quando o fato ocorre — ninguém digita uma penalidade. A única escolha humana é a da retomada: quem retoma responde **"Por que está retomando?"**, e é essa resposta que diz de quem é a marca. O motivo escrito ao lado, o parceiro lê. E cada operação só pode gerar uma penalidade de cada tipo para o mesmo penalizado: não existe punição em dobro.
 
 {% hint style="warning" %}
 **Desistir dentro da janela combinada não penaliza.** A [janela de desistência do acordo](acordos-de-parceria.md) existe justamente para isso: dentro dela, desistir é um direito. O que marca o índice é a desistência **tardia** — aquela que deixa o vendedor sem tempo de reagir.
@@ -183,15 +190,15 @@ A reputação não é um jogo a vencer — é o retrato de como você trabalha. 
 
 * **Acordos claros desde o início.** Itens, preços, modelo de pagamento e janelas bem definidos no [acordo](acordos-de-parceria.md) evitam a discussão que vira nota baixa.
 * **Repasse com antecedência.** Quanto mais perto da operação, mais apertado o prazo de aceite do parceiro — e maior a chance de expirar ou de uma recusa por agenda.
-* **Não desfaça um repasse em cima da hora.** Depois do aceite, o parceiro já reservou material e montou rota. Cancelar fora da janela de desistência custa **−15 a −25** na reputação da **sua** organização — e, o que é pior, custa a confiança de quem você vai querer chamar no próximo pico.
+* **Não desfaça um repasse em cima da hora.** Depois do aceite, o parceiro já reservou material e montou rota. Cancelar ou retomar por decisão sua, fora da janela de desistência, custa **−15 a −25** na reputação da **sua** organização — e, o que é pior, custa a confiança de quem você vai querer chamar no próximo pico.
 * **Avalie sempre.** Cada avaliação melhora o ranking dos seus próprios repasses. É você ajudando o seu "eu" do mês que vem a escolher melhor.
 * **Prefira parceiro com estoque cadastrado.** Na parceria entre organizações, o comparativo mostra a [disponibilidade de estoque](estoque-na-parceria.md) da parceira para a data — "Disponível" é uma promessa que o sistema consegue verificar; "Estoque não cadastrado" é um risco que só a conversa cobre.
 
 ### Para quem executa (recebe repasses) {#boas-praticas-parceiro}
 
 * **Aceite ou recuse rápido — com motivo honesto.** Solicitação parada é a pior resposta: se o prazo estourar, o sistema expira sozinho e o índice cai (−8). Uma recusa rápida e sincera não penaliza nada e mantém o relacionamento.
-* **Mantenha estoque e frota cadastrados.** Estoque em dia faz você aparecer como "Disponível" no comparativo do vendedor; fichas de veículo em dia destravam o frete por motor nos acordos.
-* **Se precisar desistir, desista o quanto antes.** Dentro da janela de desistência é um direito, sem marca nenhuma. Tardia, marca o histórico (−15) — e falhar a operação sem avisar marca muito mais (−25).
+* **Mantenha estoque e frota cadastrados.** Estoque em dia faz você aparecer como "Disponível" no comparativo do vendedor; tipos de veículo em dia destravam o frete por motor nos acordos.
+* **Se precisar desistir, desista o quanto antes.** Dentro da janela de desistência é um direito, sem marca nenhuma. Tardia, marca o histórico (−15 a −25). Deixar para quem repassou retomar a operação, depois da janela, custa −35 — e falhar a operação sem avisar marca o histórico com −25 e não paga.
 * **Nunca resolva um problema de campo marcando o movimento como pulado.** É a saída que parece mais rápida e é a mais cara: pular reverte o status, dispara o aviso **"Parceiro não cumpriu a entrega ou retirada"** para quem repassou, pesa **−25** no seu índice — e **não paga**. Se o problema foi só não conseguir capturar a prova (assinatura, foto), o caminho certo é a **dispensa justificada** de evidência, que registra o motivo e mantém a operação cumprida. Veja [A logística é sua](parceiro-logistico-externo.md#minha-logistica).
 * **Capriche no perfil público.** Bio, cidade, galpões e catálogo público bem preenchidos são a sua vitrine no **Descobrir parceiros** — a reputação atrai, o perfil converte.
 
