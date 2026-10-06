@@ -223,17 +223,17 @@ A conta tem três passos, sempre nesta ordem.
 
 | Como o material sai | Abertura da operação |
 | --- | --- |
-| Sua equipe entrega, com janela de horário | O **início** da janela de entrega |
-| Sua equipe entrega, sem horário definido | O **começo do dia** da entrega |
+| Sua equipe entrega (o dia e a faixa de horário) | O **início** da janela de entrega |
 | O cliente retira na loja | O **começo do dia** contratado (vale o dia todo) |
+| A saída ainda está **a definir** | Não há abertura — a janela não é calculada (veja abaixo) |
 
 **Passo 2 — achar o fechamento (quando o material volta):**
 
 | Como o material volta | Fechamento da operação |
 | --- | --- |
-| Sua equipe recolhe, com janela de horário | O **fim** da janela de recolhimento |
-| Sua equipe recolhe, sem horário definido | O **fim do dia** do recolhimento |
+| Sua equipe recolhe (o dia e a faixa de horário) | O **fim** da janela de recolhimento |
 | O cliente devolve na loja | O **fim do dia** contratado (vale o dia todo) |
+| O retorno ainda está **a definir** | Não há fechamento — a janela não é calculada (veja abaixo) |
 
 **Passo 3 — aplicar a folga da política:**
 
@@ -256,6 +256,10 @@ E o mesmo pedido, mas com o cliente devolvendo na loja na segunda (folga de clie
 Operação   →  sexta 08:00  ..  segunda, fim do dia
 Bloqueio   →  sexta 07:00  ..  segunda, fim do dia   (−60 min de equipe / +0 de cliente)
 ```
+
+{% hint style="info" %}
+**Com uma ponta a definir, não há janela para calcular.** Os passos 1 e 2 precisam das duas pontas agendadas: a entrega e o recolhimento da sua equipe com o dia e a faixa de horário, ou a data da retirada e a da devolução na loja. Enquanto uma delas estiver **a definir**, a política não calcula a janela de bloqueio, e o pedido só pode ser **reservado** depois que você agendar o que falta. O ajuste à mão (logo abaixo) define a janela, mas não dispensa esse agendamento. Veja [Quando a data ainda não está combinada](movimentos-e-janelas.md#a-definir).
+{% endhint %}
 
 {% hint style="info" %}
 **Quando você ajusta à mão**, a janela é exatamente a que você informou — a folga da política **não** é somada por cima, senão você nunca conseguiria definir o período que pediu. Mas a verificação continua valendo: a janela precisa cobrir a operação.

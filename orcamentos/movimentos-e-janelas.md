@@ -125,12 +125,12 @@ Vale saber: **é daqui que sai o bloqueio de estoque**. O LocFlow não olha as d
 
 | O que você preenche aqui | O que vira lá no bloqueio |
 | --- | --- |
-| Janela da **entrega** pela equipe | O **início** da janela abre o bloqueio |
-| Janela da **recolha** pela equipe | O **fim** da janela fecha o bloqueio |
+| Janela da **entrega** pela equipe (o dia e a faixa) | O **início** da faixa abre o bloqueio |
+| Janela da **recolha** pela equipe (o dia e a faixa) | O **fim** da faixa fecha o bloqueio |
 | **Retirada ou devolução na loja** pelo cliente | Vale o **dia inteiro** — não há hora garantida |
-| Movimento sem horário definido | Vale o **dia inteiro** daquela data |
+| Movimento [**a definir**](#a-definir) | Ainda não abre nem fecha nada: sem as duas pontas agendadas, a política não calcula o bloqueio, e o pedido só pode ser reservado depois que você agendar o que falta |
 
-Sobre esse período o Motor de Estoque ainda soma a **folga** configurada. Por isso, definir o horário de um movimento não é burocracia: **quanto mais preciso o horário, mais apertado (e mais rentável) o bloqueio**. Uma recolha marcada para "terça, das 14h às 18h" libera o item na terça à noite; a mesma recolha sem horário trava a terça inteira.
+Sobre esse período o Motor de Estoque ainda soma a **folga** configurada. Por isso, escolher a faixa com cuidado não é burocracia: **quanto mais justa a faixa, mais apertado (e mais rentável) o bloqueio**. Uma recolha marcada para "terça, das 8h às 12h" libera o item na terça à tarde; a mesma recolha das 14h às 18h, só à noite. Já a devolução do cliente na loja, na terça, trava a terça inteira — na loja não há hora garantida.
 
 {% hint style="warning" %}
 **As datas precisam fazer sentido entre si.** O material tem de sair **antes** de o evento começar e voltar **depois** de ele terminar. Se você agendar um recolhimento antes do fim do evento, o LocFlow avisa e pede correção — não deixa passar. Entenda a regra em [Duração, cobrança e bloqueio de uso](duracao-e-bloqueio.md#a-regra-que-o-locflow-cobra-de-voce).
