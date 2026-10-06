@@ -147,7 +147,7 @@ No topo da tela ficam o **resumo da viagem** e, quando há o que fazer, os botõ
 **"Este roteiro sai muito à frente."** Se a saída prevista está a mais de **12 horas**, o botão Executar fica apagado e a tela diz quando o preparo libera (*"Este roteiro sai muito à frente — o preparo libera em…"*). Veja [a margem de 12 horas](execucao-em-campo.md#margem-roteiro-futuro).
 {% endhint %}
 
-Quem pode excluir roteiros vê também a **lixeira** no topo, enquanto a viagem não começou. **Excluir roteiro** pede confirmação: as entregas e retiradas voltam para a fila de roteirização, e dá para restaurar o roteiro pela lixeira, em Configurações. Roteiro concluído não se exclui.
+Quem pode excluir roteiros vê também a **lixeira** no topo, enquanto a viagem não começou. **Excluir roteiro** pede confirmação: as entregas e retiradas voltam para a fila de roteirização, e dá para restaurar o roteiro pela [Lixeira](../configuracoes/lixeira.md), em **Ajustes › Conta e segurança › Lixeira**. Roteiro concluído não se exclui.
 
 ### Resumo da viagem <a id="resumo-da-viagem"></a>
 

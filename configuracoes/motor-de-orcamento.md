@@ -184,7 +184,7 @@ flowchart TB
 | **Trava o orçamento?** | Sim — abaixo do corte, não cria | O intervalo **alerta** mas deixa seguir; o **teto de desconto** congela para aprovação; as **seções opcionais** só mudam o que o formulário mostra |
 
 {% hint style="warning" %}
-**Duas travas de aprovação, em telas diferentes.** Aqui mora o **teto de desconto** — orçamento com abatimento acima do teto vai para aprovação. Já o travamento **por frete** (frete acima de um limite) é outra configuração, que vive na **Operação do Frete**. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor; quem decide se aquele frete precisa de aval é a **Operação do Frete**. As duas desembocam na mesma fila — veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md).
+**Duas travas de aprovação, em telas diferentes.** Aqui mora o **teto de desconto** — orçamento com abatimento acima do teto vai para aprovação. Já o travamento **por frete** (frete acima de um limite) é outra configuração, que vive na **Operação do Frete**. Cuidado para não confundir: o **Motor de Frete** só **calcula** o valor; quem decide se aquele frete precisa de aval é a **Operação do Frete**. As duas levam ao mesmo lugar: a coluna **Pendente** do funil, onde alguém aprova ou rejeita — veja [Operação do Frete](motores-operacionais.md#operacao-do-frete) e [Aprovação de orçamento](../orcamentos/aprovacao.md#onde-voce-aprova).
 {% endhint %}
 
 ## Por porte {#por-porte}
@@ -209,7 +209,7 @@ A partir daqui é detalhe de quem gosta de saber a conta por trás. Você **não
 - **Taxa de serviço:** quando definida, ela incide **sobre o total dos itens** (não sobre o frete) — `total dos itens × (taxa ÷ 100)` é somado como acréscimo. Sem taxa configurada, não muda nada. É a mesma lógica da mão de obra em porcentagem descrita em [Valores](../orcamentos/valores.md#acrescimos).
 - **Validade:** conta os dias **a partir da data de criação**. Dentro do prazo, a pré-reserva dos itens vale; vencida, os itens deixam de ficar segurados.
 - **Intervalo mínimo logístico:** para cada movimento **agendado** com janela de horário, o sistema compara a **duração da janela** com o mínimo. Se for **menor ou igual**, alerta — mas, com o seu consentimento, deixa prosseguir.
-- **Teto de desconto:** ao salvar o orçamento, o sistema soma **tudo** o que foi abatido e compara com o teto **em reais** (não em porcentagem arredondada, para meio centavo não mandar à aprovação um desconto que estava no limite). Passou, o orçamento nasce congelado e entra na fila de **Pendentes de aprovação**.
+- **Teto de desconto:** ao salvar o orçamento, o sistema soma **tudo** o que foi abatido e compara com o teto **em reais** (não em porcentagem arredondada, para meio centavo não mandar à aprovação um desconto que estava no limite). Passou, o orçamento nasce congelado e aparece na coluna **Pendente** do funil, esperando aprovação.
 - **Seções opcionais:** ao abrir o formulário, o LocFlow lê o valor gravado no motor. Só **Mostrar** e **Ocultar** são gravados; *Conforme o porte* é a ausência de valor, e aí o **porte** decide — pequeno esconde, médio e grande mostram. Escondida, uma seção volta a aparecer quando ganha conteúdo ou erro, ou quando alguém toca em *"Mostrar seções opcionais"*; a validade escondida segue o prazo padrão.
 
 ### Sobre o versionamento do valor mínimo {#versionamento}

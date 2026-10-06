@@ -152,7 +152,7 @@ Por isso uma unidade comprometida para venda **não** entra na conta do aluguel,
 {% endhint %}
 
 {% hint style="info" %}
-**Onde ver quantas peças há em cada estoque.** No **Painel de Estoque** (menu **Estoque**), a lista de **Itens** mostra o saldo de cada produto separado por tipo de negócio e condição, com filtros para aluguel ou venda e para Novo, Seminovo ou Usado. As **Movimentações** têm o filtro **Vendas** (o que já saiu em definitivo), e a ação **Reclassificar** move material de um estoque para outro — por exemplo, do aluguel para a venda como usado. Veja [Painel de Estoque](../estoque/painel.md) e [Posição e previsão de estoque](../estoque/posicao-e-previsao.md).
+**Onde ver quantas peças há em cada estoque.** No **Painel de Estoque** (menu **Estoque**), a lista de **Itens** mostra o saldo de cada produto separado por tipo de negócio e condição, com filtros para aluguel ou venda e para Novo, Seminovo ou Usado. As **Movimentações** têm o filtro **Vendas** (o que já saiu em definitivo), e a ação **Reclassificar** move material de um estoque para outro — por exemplo, do aluguel para a venda como usado. Veja [Painel de Estoque](../estoque/painel.md) e [O estoque de agora e a previsão](../estoque/posicao-e-previsao.md).
 {% endhint %}
 
 ## Próximo passo

@@ -7,7 +7,7 @@ description: A fatura nasce quando a cobrança é gerada — parcelas atômicas,
 
 Quando você toca em **Gerar cobrança**, o LocFlow cria a **fatura** do orçamento. É a **conta** que organiza tudo o que o cliente tem a pagar daquele pedido e continua ligada a ele durante todo o fluxo.
 
-Você pode gerar a cobrança antes da reserva. O LocFlow apenas recomenda **Pré-reserva** ou **Reservado**, quando há mais certeza de faturamento. Se o Motor Operacional exigir cobrança para reservar, as duas ações são feitas juntas; caso contrário, cobrar continua opcional.
+A cobrança pode ser gerada **da pré-reserva em diante** — a partir do **Reservado**, para quem não usa pré-reserva, e do **Vendido**, na venda. Antes disso o cliente ainda não assumiu compromisso, e o link de pagamento não abriria para ele (veja [Onde emitir](emitindo-a-cobranca.md#onde-emitir)). Se o Motor Operacional exigir cobrança para reservar, as duas ações são feitas juntas; caso contrário, cobrar continua opcional.
 
 {% hint style="success" %}
 **Por que isso te faz receber melhor:** você escolhe o momento comercial da cobrança sem perder o vínculo com o pedido. Quando a sua regra exigir pagamento para reservar, o LocFlow garante que a cobrança seja criada junto.

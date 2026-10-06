@@ -131,6 +131,10 @@ o que passou.
   por organização; acima disso, o caminho é renomear o item no catálogo.
 * **Selo "Gerado pela Flo".** O texto criado na conversa leva esse selo onde é usado. Se depois você
   editar à mão, o que já estava lá não se perde.
+* **Versões do texto.** Quando já há mais de uma versão, uma barra acima do resultado mostra qual
+  você está vendo — por exemplo, *"Versão 3 · Flo · atual"*. As setas trazem as versões anteriores
+  **sem gravar nada** (a barra fica âmbar enquanto você olha o passado). Gostou mais de uma antiga?
+  **Voltar para esta** a transforma na versão atual — e o que veio depois continua no histórico.
 * **Créditos de cortesia.** A conversa de criação do texto tem créditos de cortesia próprios,
   concedidos **uma vez** por organização e usados **antes** do seu saldo — inclusive no teste grátis.
   Uma parte fica guardada para fechar a conversa num modelo. Quando a cortesia acaba, o gasto passa

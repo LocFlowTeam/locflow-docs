@@ -174,7 +174,7 @@ Ao **editar** um produto aparece o bloco **Manutenção e giro**. É ali que voc
 | **Durante o preparo** | Aparece quando há tempo de preparo. **Com aviso** — pode ser alocado já durante o preparo, com um aviso para a equipe (que você escreve em **Aviso para a equipe**). **Bloqueia** — fica bloqueado até o preparo terminar. |
 | **O que costuma ser feito** | Só para itens de aluguel: a lista de serviços (ex.: *Lavagem externa*, com o detalhe *com hidrojato*), até 20. Vira o roteiro que aparece para quem faz a manutenção deste item. Opcional. |
 
-Esse bloco tem o próprio botão **Salvar manutenção**. A previsão de estoque usa esse tempo para dizer quando o item estará livre de novo — veja [Posição e previsão de estoque](../estoque/posicao-e-previsao.md) e [Manutenção: o desfecho do reparo](../estoque/manutencao.md).
+Esse bloco tem o próprio botão **Salvar manutenção**. A previsão de estoque usa esse tempo para dizer quando o item estará livre de novo — veja [O estoque de agora e a previsão](../estoque/posicao-e-previsao.md) e [Manutenção: o desfecho do reparo](../estoque/manutencao.md).
 
 ### Galpões: do cadastro ao estoque {#galpoes}
 

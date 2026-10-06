@@ -98,7 +98,7 @@ Voltar ao galpão não é o mesmo que estar pronto para sair de novo. Depois do 
 No **Motor de Estoque** existe um campo de **tempo de preparo**, em minutos, e ele tem efeito real no cálculo. Funciona como um **piso**: vale para os produtos que não têm um tempo de manutenção próprio cadastrado (quando o produto tem o seu, o dele vence). Enquanto o preparo corre, o item ainda **não conta como disponível** — é isso que faz a data em que ele "reaparece" na previsão ser um pouco depois do retorno físico.
 
 {% hint style="info" %}
-Quer ver esse efeito na prática? É a **Data de Liberação** que aparece em [Posição e previsão de estoque](../estoque/posicao-e-previsao.md).
+Quer ver esse efeito na prática? Na previsão do estoque, em **Quem está segurando**, o período de cada pedido vai da entrega até a **liberação** — o retorno mais o preparo. Veja [O estoque de agora e a previsão](../estoque/posicao-e-previsao.md#quem-esta-segurando).
 {% endhint %}
 
 ## Política de bloqueio {#politica-de-bloqueio}

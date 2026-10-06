@@ -25,7 +25,9 @@ A maioria das telas depende das **permissões** do seu usuário. Se algo não ap
 
 ## Como adiciono pessoas à minha equipe?
 
-Você convida por um **link**, e esse link já é a credencial — não pedimos senha. Marque um ou mais **papéis prontos** (Administrador, Motorista, Separador, Conferente…) e mande o link.
+Em **Ajustes › Empresa e equipe › Colaboradores**, na aba **Pessoas**, toque no **+**. O cadastro tem duas etapas: primeiro os dados da pessoa, no mesmo formulário de **Contato** (o nome e um celular ou e-mail bastam); depois **Funções** (o que ela faz na operação) e **Acesso**, onde você escolhe se ela vai ter login ou se é **só cadastro**.
+
+Com login, marque um ou mais **papéis prontos** (Administrador, Motorista, Separador, Conferente…). Ao concluir, o LocFlow gera um **link** de convite, e esse link já é a credencial — não pedimos senha. É só mandar.
 
 O **e-mail é opcional** e muda duas coisas quando você o preenche: o LocFlow **envia o convite por e-mail sozinho**, e só quem entrar com **aquela** conta consegue aceitar — o link deixa de servir para qualquer um. Deixou em branco? Você mesmo envia, e quem tiver o link aceita. Veja [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 

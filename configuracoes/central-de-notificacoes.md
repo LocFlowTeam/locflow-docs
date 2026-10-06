@@ -245,7 +245,7 @@ Cada aviso ocupa **uma linha**, com o ícone do módulo pintado na **cor do nív
 **Ler é um gesto seu.** O aviso sai de "Precisa de ação" ou "Para saber" quando você toca em **Marcar como lida** ou quando abre a **ação** dele (por exemplo, *Abrir a fatura*), que já conta como lido. Para limpar tudo de uma vez, use **Marcar todas como lidas**. **Nada some** — o que foi lido vai para o grupo **Lidas**, e o histórico permanece.
 
 {% hint style="info" %}
-**E a aba Novidades?** Ela não traz avisos da sua operação: mostra **o que está mudando no LocFlow** — cada pedido de melhoria numa trilha de cinco etapas (*Na fila → Em desenvolvimento → Em testes → Lançando → No ar*), que também serve de filtro.
+**E a aba Novidades?** Ela não traz avisos da sua operação: mostra **o que está mudando no LocFlow** — cada pedido de melhoria numa trilha de cinco etapas (*Na fila → Em desenvolvimento → Em testes → Lançando → No ar*), que também serve de filtro. Veja [Novidades do LocFlow](../ajuda/novidades-do-sistema.md).
 {% endhint %}
 
 ## Situações reais

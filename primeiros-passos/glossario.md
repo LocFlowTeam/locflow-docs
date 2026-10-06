@@ -61,7 +61,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Folga de equipe** | Minutos extras de bloqueio quando **você** entrega e recolhe; cobre trânsito e imprevisto de rota. Padrão: 60 min de cada lado. |
 | **Folga de cliente** | Minutos extras de bloqueio quando **o cliente** retira e devolve na loja; cobre o cliente que atrasa ou remarca. |
 | **Preparo** | O tempo de conferência, limpeza e manutenção **depois** que o item volta, antes de contar como disponível de novo. |
-| **Data de Liberação** | A data em que o item volta a contar como disponível: o retorno **mais** o preparo. |
+| **Liberação** | Quando o item volta a contar como disponível: o retorno **mais** o preparo. Na previsão do estoque, o período de cada reserva vai da entrega até a liberação — veja [Quem está segurando](../estoque/posicao-e-previsao.md#quem-esta-segurando). |
 
 {% hint style="info" %}
 Regra que o sistema cobra: **o bloqueio cobre a operação, e a operação cobre o evento**. Se um orçamento sair disso, o LocFlow avisa e pede correção antes de seguir.
@@ -128,7 +128,7 @@ Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% +
 
 | Termo | O que é |
 | --- | --- |
-| **Fatura** | A cobrança do pedido; nasce automática ao ganhar o orçamento e **espelha** o orçamento. |
+| **Fatura** | A cobrança do pedido: nasce quando você **gera a cobrança** — da pré-reserva em diante (ou junto com a reserva, quando a sua operação exige) — e **espelha** o orçamento. |
 | **Parcela** | Uma divisão da fatura, com vencimento próprio. É **atômica** (não existe "meia paga": pagamento parcial **desdobra** a parcela). |
 | **Baixa manual** | Registrar um recebimento feito por fora (dinheiro, pix, maquininha). |
 | **Pagamento online** | Link de pagamento (PIX/cartão/boleto) com baixa automática, em tempo real. |
@@ -196,7 +196,8 @@ Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido
 | **Canal** | Para onde um aviso vai: **quem recebe** (pool) + **como** (todos ou rodízio). |
 | **Pool** | De onde saem os destinatários: organização, competência, responsável pela operação, cliente. |
 | **Rodízio** | Distribui 1 a 1, revezando (ex.: leads entre vendedores). |
-| **Nível de atenção** | Quanto o aviso interrompe: **Crítico** (modal + som), **Importante** (toast), **Informativo** (só o sino). |
+| **Nível de atenção** | Quanto o aviso interrompe: **Crítico** (modal que interrompe + som), **Importante** (aviso discreto no topo), **Informativo** (só conta no sino). Veja [Níveis de atenção](../configuracoes/central-de-notificacoes.md#niveis-de-atencao). |
+| **Sino** | Onde ficam os **seus** avisos, no topo da tela, em três abas: **Todas**, **Não lidas** e **Novidades** — esta mostra o que está mudando no LocFlow, não avisos da sua operação. Os avisos aparecem em três grupos: **Precisa de ação**, **Para saber** e **Lidas**. Veja [Vendo e gerenciando os avisos recebidos](../configuracoes/central-de-notificacoes.md#avisos-recebidos) e [Novidades do LocFlow](../ajuda/novidades-do-sistema.md). |
 
 → Detalhes em [Canais de notificação](../configuracoes/canais-de-notificacao.md).
 

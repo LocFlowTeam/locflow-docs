@@ -123,5 +123,5 @@ A reserva no estoque da parceira acompanha o ciclo do pedido do começo ao fim:
 ## Próximo passo {#proximo-passo}
 
 * O mapeamento item-a-item que faz a tradução vive no [acordo de parceria](acordos-de-parceria.md).
-* Como o seu próprio estoque reserva e libera: [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md) e [Posição e previsão de estoque](../estoque/posicao-e-previsao.md).
+* Como o seu próprio estoque reserva e libera: [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md) e [O estoque de agora e a previsão](../estoque/posicao-e-previsao.md).
 * Ainda não conhece os dois modelos de parceria? Comece pela [visão geral](visao-geral.md).

@@ -47,6 +47,10 @@ Quando o cliente é uma **empresa (PJ)**, o orçamento pede também o **respons�
 
 Na etapa **Itens**, toque em **Buscar produto ou kit…**: a folha **Adicionar itens** abre com o cursor **já no campo de busca** — é abrir e digitar. Em cada resultado, **Adicionar** coloca o item no carrinho, e o topo da folha conta quantos você já adicionou. No carrinho, você ajusta as quantidades, vê o subtotal de cada linha e o aviso de estoque.
 
+{% hint style="info" %}
+**"Estoque não lido" não é falta de cadastro.** Quando o app não consegue ler o estoque naquele momento — sem conexão, ou porque o seu acesso não inclui ver o estoque —, a linha diz isso e não impede salvar: a disponibilidade é conferida de novo quando você salva. O aviso **Estoque não cadastrado** fica para o item que nunca teve estoque registrado — e, num kit, só quando alguma peça dele está nessa situação.
+{% endhint %}
+
 Faltou um produto no catálogo? O **+** ao lado da busca cadastra um novo sem sair do orçamento — e, com o catálogo ainda vazio, a própria folha oferece **Cadastrar meu primeiro produto**.
 
 ### Venda de seminovo e usado {#condicao-na-venda}

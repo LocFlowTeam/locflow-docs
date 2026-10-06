@@ -50,6 +50,12 @@ Quando você emite a NF-e de venda **a partir de um orçamento**, a nota ganha a
 
 Uma **nota avulsa** (emitida sem orçamento) sai **sem transporte**, e a tela avisa: *"A nota sai sem transporte — para veículo, transportadora ou local de entrega, emita a partir de um orçamento."*
 
+## Seminovo e usado: a condição vai na descrição do item {#condicao-na-descricao}
+
+Quando a NF-e de venda sai de um orçamento com itens **seminovos** ou **usados**, a nota declara a condição na **descrição de cada item**: *"Cadeira dourada (Usado)"*, *"Cadeira dourada (Seminovo)"*. O item **novo** sai só com o nome, sem sufixo. Num kit, as peças levam a condição do kit, que é vendido inteiro naquela condição.
+
+Se o nome do item for comprido demais para o limite da descrição na nota, o LocFlow encurta o **nome**, nunca a condição — é ela que a nota precisa declarar. Veja como as condições funcionam em [Estoque por natureza e condição](../cadastros/estoque-por-natureza-e-condicao.md#eixo-condicao).
+
 ## Corrigir uma nota já autorizada: a carta de correção {#carta-de-correcao}
 
 Errou um dado numa NF-e que a SEFAZ já autorizou? Nem sempre é preciso cancelar. Na ficha da nota, **Corrigir com carta de correção** envia à SEFAZ uma **carta de correção (CC-e)**, que fica vinculada à nota.

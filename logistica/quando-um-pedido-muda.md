@@ -156,7 +156,7 @@ Passou a **retirar na loja**? Trocou o **galpão de origem**? Uma venda virou lo
 Esta é a única linha que **não** mexe no roteiro. Ela ajusta a **fatura** (gerando crédito ou reembolso se você reduzir além do que já foi pago) — veja [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 
 {% hint style="warning" %}
-**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **dividir ou consolidar o movimento** no planejamento do roteiro — veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
+**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **ajustá-las na bancada de carga** (**Cargas e viagens**, no planejamento do roteiro) — veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -318,7 +318,7 @@ Você muda as duas datas (entrega e retirada). O estoque deixa de ficar preso ne
 Era um **endereço salvo**. Todo pedido ganho que aponta para ele passou a ter um destino novo. Ajuste cada roteiro; os chips vão mostrar *"Desatualizado · detalhes"*, que aqui quer dizer "o endereço salvo mudou".
 
 **"Subi o frete porque o cliente mudou para um bairro mais longe."**
-A fatura sobe. O roteiro **não** muda por causa disso (mas o endereço novo muda!). E as **viagens** não se redividem sozinhas: se o novo trajeto exige duas viagens em vez de uma, é preciso dividir o movimento no planejamento do roteiro.
+A fatura sobe. O roteiro **não** muda por causa disso (mas o endereço novo muda!). E as **viagens** não se redividem sozinhas: se o novo trajeto exige duas viagens em vez de uma, é preciso ajustar as viagens na bancada de carga — **Cargas e viagens**, no detalhe do movimento, ao planejar o roteiro (veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens)).
 
 **"Cancelei um pedido cuja fatura já tinha o sinal pago."**
 O sistema recusa e explica: estorne ou cancele a cobrança antes. Não é burocracia — é o dinheiro do cliente já dentro de casa.

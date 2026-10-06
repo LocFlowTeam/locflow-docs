@@ -161,8 +161,8 @@ E, logo abaixo, um atalho que muda conforme de onde você veio:
 
 | Situação | O que o aviso oferece |
 | --- | --- |
-| Você está cadastrando pela lista de Contatos | **Abrir cadastro existente** — vai direto para a ficha da Maria. |
-| Você abriu o cadastro **de dentro de um orçamento** | **Usar este contato** — seleciona a Maria e volta para o orçamento, sem você refazer o caminho. |
+| Você está cadastrando pela lista de Contatos, ou **editando** um contato — inclusive pelo lápis do cliente, dentro do orçamento | **Abrir cadastro existente** — vai direto para a ficha da Maria. |
+| Você está **criando** o contato **de dentro de um orçamento** (o **+** do cliente) | **Usar este contato** — seleciona a Maria e volta para o orçamento, sem você refazer o caminho. |
 | O número é de um contato que está na **Lixeira** | **Ver na lixeira** — o aviso diz *"Restaure-o para reutilizar o número"*. |
 
 {% hint style="warning" %}
@@ -214,6 +214,8 @@ Excluir um contato é uma ação **reversível**: em vez de apagar de vez, o Loc
 
 - **Excluir** (lixeira) — exige a permissão de **excluir contato**; o contato é removido da lista corrente.
 - **Excluir permanentemente** — uma ação à parte, mais restrita, para tirar o contato da lixeira de vez. É irreversível e fica reservada a perfis com esse acesso específico.
+
+O contato excluído fica em **Ajustes › Conta e segurança › Lixeira**: ali, **Restaurar** o devolve à lista de contatos, e **Excluir de vez** é o apagamento permanente. Veja [Lixeira](../configuracoes/lixeira.md).
 
 {% hint style="warning" %}
 Mande para a lixeira em vez de apagar de vez sempre que houver dúvida. Cliente excluído por engano pode estar ligado a um histórico que você ainda vai querer consultar.

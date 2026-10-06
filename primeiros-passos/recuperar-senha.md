@@ -74,6 +74,7 @@ Veja os detalhes em [Minha conta e preferências](../configuracoes/minha-conta.m
 * **"Sempre entrei com o botão do Google e agora aparece pedindo senha."** Você não precisa de senha: toque em **Continuar com Google**. O campo de senha é só para quem criou a conta com e-mail e senha.
 * **"Pedi o link, mas não lembro qual e-mail usei."** Tente o e-mail principal da sua locadora. Se mesmo assim nada chegar, é provável que a conta use o **Google** — entre por ele.
 * **"Recebi um convite da equipe e esqueci a senha que defini."** O fluxo é o mesmo desta página: peça o link de recuperação com o e-mail do convite. Se você aceitou o convite **com o Google**, é só entrar com o Google.
+* **"Recuperei o acesso e o LocFlow pediu um código de 6 números."** É a [verificação em duas etapas](../configuracoes/verificacao-em-duas-etapas.md): a senha nova não a desliga. Abra o aplicativo autenticador do seu celular e digite o código atual.
 
 ## Próximo passo <a href="#proximo-passo" id="proximo-passo"></a>
 
