@@ -1,6 +1,6 @@
 ---
 icon: book
-description: Os termos do LocFlow em uma linha — orçamento, movimento, frete por viagem, fatura, canal, crédito e mais. Consulte sempre que bater dúvida.
+description: Os termos do LocFlow em uma linha — orçamento, loja e galpão, movimento, frete por viagem, fatura, repasse, crédito e mais. Consulte sempre que bater dúvida.
 ---
 
 # Glossário do LocFlow
@@ -17,7 +17,9 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Contato** | Um cliente — ou possível cliente — pessoa física ou jurídica. |
 | **Produto** | Um item do seu catálogo, com preço de aluguel e/ou venda. |
 | **Kit** | Um pacote de produtos vendido/alugado como um conjunto. |
-| **Galpão** | A base de onde seus itens saem e para onde voltam. É também o **balcão** de atendimento — onde o cliente retira/devolve presencialmente (hoje, no mesmo endereço do galpão). |
+| **Tipo de negócio** | Se o orçamento é de **Aluguel** ou de **Venda**. Antes, as telas chamavam isso de "natureza" — e o nome antigo ainda aparece em poucos lugares, como a planilha do relatório contábil e uma coluna da Tabela do Painel Logístico. Veja [Locação e venda](../conceitos/locacao-e-venda.md). |
+| **Galpão** | A base de onde seus itens saem e para onde voltam — onde o material fica guardado. Veja [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md). |
+| **Loja** | O ponto comercial onde o **cliente retira e devolve** presencialmente, sempre ligado a um galpão — no mesmo endereço ou em outro. Quem opera de um endereço só vê os dois como um local só. No menu, o atendimento fica em **Minha Loja**; o cadastro, em **Lojas**. Veja [Lojas](../estoque/lojas.md) e [Loja: retirada e devolução pelo cliente](../logistica/balcao.md). |
 
 ## Orçamento (estados) {#orcamento-estados}
 
@@ -26,7 +28,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Pendente (aguardando aprovação)** | Pré-etapa do funil: uma **política** deixou o pedido congelado até o aval de um responsável — frete acima do limite, **desconto acima do teto** ou frete de fornecedor. **Não é o mesmo que "Em aberto"** — só depois de aprovado o orçamento entra no funil. |
 | **Em aberto** | Criado, ainda sem ação. |
 | **Em negociação** | Enviado ao cliente, aguardando resposta. |
-| **Pré-reservado** | "Segurar" o aluguel antes de confirmar (opcional, só locação). Você decide na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento) se essa etapa entra no seu funil — desligada, a negociação vai direto para reservado. |
+| **Pré-reservado** | Um acerto comercial antes de confirmar o aluguel — por exemplo, enquanto o sinal não chega (opcional, só locação). **Não bloqueia estoque**: o bloqueio começa no **Reservado**. Você decide na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento) se essa etapa entra no seu funil — desligada, a negociação vai direto para reservado. |
 | **Reservado** | Aluguel confirmado — o **ganho** da locação; estoque bloqueado. |
 | **Vendido** | Venda confirmada — o **ganho** da venda. |
 | **Perdido** | Não fechou; pode ser reaberto. |
@@ -39,7 +41,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | Termo | O que é |
 | --- | --- |
 | **Movimento logístico** | Cada deslocamento dos seus itens: a **entrega** (saída) e, na locação, a **retirada** (retorno). |
-| **Forma de operação** | Como sua locadora opera: **Só balcão** (cliente retira/devolve no galpão), **Só rota** (equipe entrega/retira) ou **Mista**. Define o padrão dos movimentos no orçamento e oculta do menu o que você não usa — sem bloquear (a exceção abre em "Operação avançada"). Configurada no [Motor de Logística](../configuracoes/motores-operacionais.md#motor-de-logistica). |
+| **Forma de operação** | Como sua locadora opera: **Só loja** (o cliente retira e devolve na loja), **Só rota** (sua equipe entrega e recolhe) ou **Mista**. Define o padrão dos movimentos no orçamento e oculta do menu o que você não usa — sem bloquear (a exceção abre em "Operação avançada"). Configurada no [Motor de Logística](../configuracoes/motores-operacionais.md#motor-de-logistica). |
 | **Janela** | A data + a faixa de horário em que um movimento deve acontecer. |
 | **Galpão de origem** | De onde a carga **sai** para aquele movimento — o LocFlow ranqueia seus galpões por proximidade do destino. |
 | **Raio (máximo) de atendimento** | A distância máxima, a partir do galpão, que ele cobre; um destino fora do raio fica indisponível para aquele galpão. |
@@ -57,7 +59,7 @@ Os termos que você vê pelo sistema, explicados em uma linha. Bateu dúvida em 
 | **Janela de bloqueio de uso** | O período em que o item fica reservado a um cliente e indisponível para os outros: a **operação mais a folga**. |
 | **Política de bloqueio** | A escolha, no Motor de Estoque, entre **Mínimo justo** (sem folga) e **Com folga** (recomendada). Só decide a folga — a base é sempre a operação. |
 | **Folga de equipe** | Minutos extras de bloqueio quando **você** entrega e recolhe; cobre trânsito e imprevisto de rota. Padrão: 60 min de cada lado. |
-| **Folga de cliente** | Minutos extras de bloqueio quando **o cliente** retira e devolve no galpão; cobre o cliente que atrasa ou remarca. |
+| **Folga de cliente** | Minutos extras de bloqueio quando **o cliente** retira e devolve na loja; cobre o cliente que atrasa ou remarca. |
 | **Preparo** | O tempo de conferência, limpeza e manutenção **depois** que o item volta, antes de contar como disponível de novo. |
 | **Data de Liberação** | A data em que o item volta a contar como disponível: o retorno **mais** o preparo. |
 
@@ -99,7 +101,8 @@ Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% +
 | **Parada** | Um ponto de entrega ou retirada dentro do roteiro. |
 | **Planejar entrega/retirada** | Ação rápida do pedido que abre o planejamento do roteiro com aquele movimento já selecionado — o jeito de despachar na hora, sem montar a rota do dia antes. |
 | **Comprovação (POD)** | Prova de entrega/retirada: foto, vídeo, assinatura. Quando a sua empresa exige, **sem ela o registro não fecha**. |
-| **Dispensa de evidência** | Fechar um registro **sem a prova** que a política exigia, escrevendo um **motivo obrigatório** que fica carimbado no registro. É uma válvula para quem lança o que já aconteceu (retaguarda, balcão) e depende de uma **permissão dedicada** — motorista e parceiro externo **não a têm**, justamente porque existem para produzir a prova. |
+| **Dispensa de evidência** | Fechar um registro **sem a prova** que a política exigia, escrevendo um **motivo obrigatório** que fica carimbado no registro. É uma válvula para quem lança o que já aconteceu (retaguarda, loja) e depende de uma **permissão dedicada** — motorista e parceiro externo **não a têm**, justamente porque existem para produzir a prova. |
+| **Painel Logístico** | A mesa de controle da logística, em **Logística › Painel Logístico**: um recorte só (período, mundo da operação, filtros) visto de seis jeitos — Mapa, Mês, Dia, Lista, Kanban e Tabela. Substituiu o antigo calendário logístico. Veja [Painel Logístico](../logistica/painel-logistico.md). |
 | **Desatualizado (defasado)** | Um movimento ficou **velho** no roteiro porque o pedido mudou depois. Ele fica **só de leitura** e trava quem está na rua até alguém **ressincronizar** a parada com o pedido atual. Num pedido **repassado a um parceiro**, quem ressincroniza é **o parceiro**, não você — veja [O pedido já estava com um parceiro](../logistica/efeitos-na-parceria.md). |
 
 → Comece por [Visão geral da logística](../logistica/visao-geral.md).
@@ -111,7 +114,7 @@ Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% +
 | **Rota Estimada** | O trajeto de **ida e volta** de um movimento que o motor mede para cobrar o frete, no **pior cenário** (veículo dedicado só àquele pedido). |
 | **Viagem** | A unidade de cálculo do frete: um movimento (a **entrega** ou a **retirada**), com a **ida e a volta contando como uma coisa só**. |
 | **Frete por viagem** | Cada valor do motor é aplicado a **cada viagem** — o valor fixo e a carga contam 1× por viagem; km e tempo já somam a ida e a volta. Um aluguel típico tem **2 viagens** (a entrega e a retirada). |
-| **Detentor** | O titular de uma ficha de frota, de um motor de frete e de uma porção do frete: a sua **organização** ou um **fornecedor de frete**. Cada detentor cobra pela **tabela dele**. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#detentor). |
+| **Detentor** | O titular de um tipo de veículo, de um motor de frete e de uma porção do frete: a sua **organização** ou um **fornecedor de frete**. Cada detentor cobra pela **tabela dele**. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#detentor). |
 | **Transportadora** | Quem leva uma porção da carga — a sua organização ou um fornecedor. No cálculo do frete, é o mesmo que **detentor**. |
 | **Composição do frete** | Como o valor final é montado: o **custo** de cada porção (cotado pelo motor de quem transporta) somado, mais o **repasse** ao cliente. Veja [Valores](../orcamentos/valores.md#composicao-do-frete). |
 | **Repasse (frete)** | Quanto do frete você **cobra do cliente** — pode ser igual, menor ou maior que o custo. Nada a ver com o **repasse da parceria** (o pedido e o dinheiro que vão para um parceiro): veja [Rede de Parceiros](#rede-de-parceiros). |
@@ -130,6 +133,8 @@ Descontos **nunca se aplicam em cascata**: todos partem do valor original. 10% +
 | **Baixa manual** | Registrar um recebimento feito por fora (dinheiro, pix, maquininha). |
 | **Pagamento online** | Link de pagamento (PIX/cartão/boleto) com baixa automática, em tempo real. |
 | **Recebedor** | A conta da sua locadora que **recebe** os valores das cobranças online. |
+| **Conta de recebimento** | A sua conta bancária para onde vai o dinheiro do pagamento online, cadastrada em **Ajustes › Integração de Pagamento**. Na Gestão Financeira, ela aparece sozinha como uma conta com o selo **Conta de recebimento**, e cada saque vira uma transferência para ela. Veja [Contas de recebimento](../financeiro/contas.md#conta-de-recebimento). |
+| **Central de Notas** | A lista das notas fiscais emitidas (NFS-e, NF-e de venda e de remessa), em **Fiscal › Notas Fiscais** — onde você acompanha, baixa o PDF e o XML, reenvia e cancela. Veja [Nota fiscal na locação](../conceitos/nota-fiscal-na-locacao.md). |
 | **Validação (KYC)** | Checagem de identidade exigida por lei, feita pelo responsável via link, antes de liberar o recebedor. |
 | **Saldo a favor do cliente** | Valor que sobra a favor do cliente (ex.: edição que reduz o total depois de já pago). |
 | **Crédito / vale-locação** | Esse saldo a favor virando crédito reaproveitável na **próxima locação**, sem operação bancária. |
@@ -145,18 +150,22 @@ Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido
 | --- | --- |
 | **Vendedor** | O lado **dono do cliente**: fez o orçamento, emite a fatura e responde pela relação comercial. |
 | **Parceiro logístico** | O lado que **executa**: entrega, retira e cuida do material — e, quando o acordo permite, recebe do cliente na porta. |
-| **Linha logística** | O pedaço da operação que passa a ser do parceiro quando você repassa: o roteiro, o plano de movimentos (dividir, juntar, remarcar), a entrega, a retirada e o balcão daquele pedido. |
+| **Linha logística** | O pedaço da operação que passa a ser do parceiro quando você repassa: o roteiro, o plano de movimentos (dividir, juntar, remarcar), a entrega, a retirada e o atendimento na loja daquele pedido. |
 | **Linha comercial e de cobrança** | O pedaço que continua **seu**, sempre: o cliente, o orçamento, o preço final, a fatura e a relação de crédito. Não muda de dono — nem quando o parceiro recebe o dinheiro na porta. |
 | **Parceiro externo** | Uma pessoa ou empresa **convidada por link**, que trabalha **dentro da sua conta** com um papel fixo de parceiro. Veja [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md). |
 | **Parceria interna (org↔org)** | Duas organizações LocFlow de verdade, cada uma na sua conta, ligadas por um **vínculo**. |
 | **Vínculo** | O "sim" entre duas organizações, que abre a porta para vocês montarem acordos. **Aceitar um vínculo concede algo:** a outra parte passa a poder usar o seu **motor de frete publicado**, os seus **galpões** e o seu **preço de tabela** como sugestão ao montar um acordo — e o que ela derivar fica guardado lá, mesmo que o acordo não feche. Dá para desligar essa sugestão no **Perfil de parceria** sem romper o vínculo. |
 | **Acordo de parceria** | Os termos do trabalho conjunto: quais itens, por qual preço, quando o parceiro recebe, quem paga o quê. Só vale depois do aceite dos **dois** lados. |
 | **Repasse (parceria)** | Duas coisas com o mesmo nome: o **ato** de entregar um pedido já ganho a um parceiro, e o **valor** que você deve a ele por ter executado. |
-| **Saldo devedor do repasse** | O repasse **ao contrário**. Se quem ficou com o dinheiro do cliente foi o parceiro, não é você que deve a ele — **é ele que deve a você** (a sua margem mais a taxa da plataforma). Ele vê *"A pagar à organização"*; você vê *"A receber de parceiros"*. |
+| **Saldo devedor do repasse** | O que o parceiro **devolve a você** quando recebe o dinheiro do cliente na porta: **o valor que ele recebeu** (a taxa da plataforma entra uma vez só por pedido). Ele **não substitui** o repasse do acordo — você continua devendo a ele o que foi combinado; são duas contas de sentidos opostos, quitadas hoje em dois PIX separados. Ele vê *"A pagar à organização"*; você acompanha em **Financeiro › Repasses**, na seção *"Quem me paga"*. Veja [Quando o parceiro recebe do cliente](../parcerias/dinheiro-da-parceria.md#repasse-inverso). |
 | **Taxa da plataforma** | **8% fixos** (iguais em qualquer plano) sobre o **total da operação** — itens + mão de obra + frete − descontos — e só sobre o que o cliente **efetivamente pagou**. O acordo decide como esses 8% se dividem entre as partes; o padrão é 8% no vendedor e 0% no parceiro. **O teto é por orçamento**: a mesma venda nunca é taxada duas vezes, mesmo que passe por dois parceiros. |
 | **Modelo de pagamento (gatilho)** | *Quando* o parceiro recebe e *quanto*. Ao **montar** o acordo ele aparece como **"Como você paga o parceiro"**; ao **revê-lo depois**, o mesmo bloco se chama **"Quando você paga"**. Do lado de quem executa, os dois momentos dizem **"Quando você recebe"**. Há três atalhos prontos — *Pago pelo que ele fez*, *Só quando o cliente pagar*, *Confio, pago adiantado* — e um caminho **Do meu jeito** para o ajuste fino. Veja [Acordos de parceria](../parcerias/acordos-de-parceria.md#gatilho-de-pagamento). |
-| **Cobrança na rua** | A permissão, combinada no acordo, de o **parceiro receber do cliente no ponto de entrega**. A fatura, a razão e a relação com o cliente continuam suas — ele age como **coletor**, não como dono do crédito. Vale hoje só com o **parceiro externo**; entre duas organizações, quem recebe do cliente continua sendo você. E a coleta é **tudo ou nada**: ou ele fecha a cobrança inteira, ou o caminho é o seu PIX. Veja [Cobrança na rua](../parcerias/cobranca-na-rua.md). |
-| **Coletor** | Quem de fato **ficou com o dinheiro** do cliente naquela operação: você ou o parceiro. É esse fato — e não o que está escrito no acordo — que decide para que lado o repasse corre. |
+| **Cobrança na rua** | A permissão, combinada no acordo, de o **parceiro receber do cliente no ponto de entrega**. A fatura, a razão e a relação com o cliente continuam suas — ele recebe **em seu nome**, não como dono do crédito. Vale hoje só com o **parceiro externo**; entre duas organizações, quem recebe do cliente continua sendo você. E a coleta é **tudo ou nada**: ou ele fecha a cobrança inteira, ou o caminho é o seu PIX. Veja [Cobrança na rua](../parcerias/cobranca-na-rua.md). |
+| **Receber na porta** | A opção do acordo que diz **quem pode** receber do cliente na entrega. Ela **não muda** o sentido nem o momento do repasse: o repasse ao parceiro nasce no marco que o acordo combinou — num acordo "Na Retirada", por exemplo, na retirada, tenha o cliente pago ou não. Se o parceiro receber, nasce ao lado o **saldo devedor do repasse**. |
+| **Retomar o repasse** | Quando quem repassou **reassume a operação** depois de o parceiro já ter aceitado — por exemplo, porque ele avisou que não vai conseguir. O pedido continua fechado; o que termina é o repasse. Veja [Quem repassa pode voltar atrás](../parcerias/repassando-um-pedido.md#quem-repassa-pode-voltar-atras). |
+| **Perfil público** | Como a sua organização aparece para outras locadoras em **Rede › Descobrir parceiros**. Só entra na vitrine quando você liga **Aparecer na descoberta**. Veja [Entrando na rede](../parcerias/entrando-na-rede.md#perfil-publico). |
+| **Reputação** | O que a Rede sabe de cada parceiro: as **estrelas** das avaliações (na avaliação mútua, duplo-cega: ninguém vê a nota do outro antes de dar a sua), o **selo** (de Novo a Diamante) e o **índice de confiabilidade**, de 0 a 100, calculado a partir de fatos. Veja [Reputação e boas práticas](../parcerias/reputacao-e-boas-praticas.md). |
+| **Acesso assistido** | Entrar na conta de um **parceiro externo** para ajudá-lo a destravar algo, vendo as telas dele. Ele é avisado na hora e pode encerrar quando quiser; o acesso expira sozinho em **duas horas**, tudo fica registrado no seu nome, e dinheiro e contrato ficam fora do alcance. Veja [Acesso assistido](../parcerias/acesso-assistido.md). |
 | **Cobertura parcial** | Itens daquela operação que o acordo **não traduz** para o catálogo da parceira: ela não vai fornecê-los. Aparece como faixa âmbar no comparativo e no aceite, **antes** do repasse. **Avisa, não bloqueia.** |
 
 {% hint style="warning" %}
@@ -177,6 +186,7 @@ Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido
 | **Função** | O **cargo** na operação (Vendedor, Motorista…). |
 | **Competência** | A **habilidade** ligada à função (Dirigir veículos, Vender orçamentos, Separação, Conferência, Operar logística, Atendimento na loja, Manutenção, Pagar contas). |
 | **Responsável pela operação** | Quem está **por trás** daquela operação (ex.: quem executa a rota) — descoberto pelo sistema, sem você nomear. |
+| **Verificação em duas etapas** | Uma segunda tranca na entrada: além da senha (ou do Google), um **código de 6 números** gerado por um aplicativo autenticador no seu celular. Quem administra pode exigir de toda a equipe. Veja [Verificação em duas etapas](../configuracoes/verificacao-em-duas-etapas.md). |
 | **Colaborador × parceiro** | O **colaborador** é da sua equipe e você o convida em **Colaboradores**. O **parceiro externo** é gente de fora e entra por outro caminho — o convite da **Rede de Parceiros**. O papel de parceiro **não aparece** na lista de papéis do convite de colaborador. Veja [Entrando na rede](../parcerias/entrando-na-rede.md). |
 
 ## Notificações {#notificacoes}
@@ -195,16 +205,17 @@ Quando você faz negócio junto com outra operação, o LocFlow reparte o pedido
 | Termo | O que é |
 | --- | --- |
 | **Motor** | Uma regra da sua operação que o sistema segue sozinho (frete, cobrança, logística, estoque, orçamento). |
-| **Crédito (moeda de mapa)** | A "moeda" que cobre o custo dos recursos de **mapa do Google** (geocodificar, traçar e otimizar rota); pino e onboarding são grátis. |
-| **Classe / Especificação / Veículo** | Como a frota é organizada: tipo → ficha técnica → o veículo com placa. |
+| **Automação** | Uma regra do tipo **"quando acontecer isto, faça aquilo"** que o LocFlow executa sozinho — por exemplo, gerar o contrato quando o orçamento é ganho. Fica em **Ajustes › Automações**. Veja [Automações](../configuracoes/automacoes.md). |
+| **Crédito** | A "moeda" da sua organização para o que tem **custo por uso**: os recursos de **mapa** (localizar endereço, traçar e otimizar rota), a **emissão de notas fiscais** em produção (25 créditos por nota; as notas de teste e a carta de correção não consomem) e a **Flo** — mensagens, respostas faladas e conversa por voz, cobrada por minuto. O pino no mapa e o onboarding são grátis. O **parceiro externo** não tem carteira de créditos: o que cobra crédito fica indisponível para ele. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md#o-que-consome). |
+| **Grupo / Tipo de veículo / Veículo** | Como a frota é organizada: o **grupo** diz quais veículos se substituem, o **tipo de veículo** diz o que aquele modelo carrega, e o **veículo** é a unidade com placa. Antes se chamavam **classe** e **especificação** (ou ficha técnica). Veja [Frota](../cadastros/frota.md). |
 | **Fornecedor de frete** | Uma **transportadora terceira** que você cadastra e gerencia por inteiro (ela **não tem login**) para terceirizar o transporte de um pedido. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md). |
-| **Frota-espelho** | As **fichas de veículo** que você cria no seu sistema atribuídas a um fornecedor — é o que permite a ele cotar frete sem ter acesso ao app. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#frota-espelho). |
+| **Frota-espelho** | Os **tipos de veículo** que você cria no seu sistema atribuídos a um fornecedor — é o que permite a ele cotar frete sem ter acesso ao app. Veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md#frota-espelho). |
 | **Capacidade** | Como o LocFlow avalia se a carga **cabe** no veículo: **contagem** (quantos de cada produto cabem — os kits entram diluídos nos seus produtos) ou **volumétrica** (volume do baú × cubagem da carga, pelo fator de cubagem de cada item), usada quando não há limite de contagem. |
 | **Fator de cubagem** | O **volume efetivo (m³)** que um item (produto ou kit) ocupa numa carga, **considerando o empilhamento** — empírico, aferido na prática. Base da estratégia volumétrica. Não pode passar do volume das dimensões da peça; o kit tem fator próprio (não é a soma das peças). |
 | **Baú fechado** | A chave que confirma uma carroceria cubável e **libera** a estratégia volumétrica. |
 | **Vistoria** | Checklist do veículo antes de rodar. |
 
-→ Créditos em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md); capacidade em [Especificações: capacidade](../cadastros/frota-capacidade.md).
+→ Créditos em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md); capacidade em [Tipos de veículo: capacidade](../cadastros/frota-capacidade.md).
 
 ## Próximo passo {#proximo-passo}
 

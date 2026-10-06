@@ -1,166 +1,142 @@
 ---
 icon: list-checks
-description: O detalhe dos 5 passos do setup do LocFlow — o que cada um pede, por quê, como retomar de onde parou e a celebração ao concluir no catálogo.
+description: O detalhe das quatro etapas da configuração inicial do LocFlow — CNPJ, confirmação, como você trabalha e de onde sai o material —, como retomar de onde parou e o que aparece ao concluir.
 ---
 
 # O setup passo a passo
 
-A página [Configuração inicial](configurando-sua-empresa.md) mostra o mapa: cinco passos curtos que deixam o LocFlow com a cara da sua locadora. Aqui a gente abre **cada um deles** — o que pede, por que pede, e o que os textos de ajuda dentro do app querem te dizer.
+A página [Configuração inicial](configurando-sua-empresa.md) mostra o mapa: quatro perguntas curtas que deixam o LocFlow pronto para a sua operação. Aqui a gente abre **cada uma delas** — o que pede, por que pede, e o que os textos dentro do app querem te dizer.
 
-A boa notícia: **nada aqui precisa sair perfeito de primeira.** O setup quer só o essencial para você fechar o primeiro orçamento. O refino vem depois, no seu ritmo.
+A boa notícia: **nada aqui precisa sair perfeito de primeira.** O setup quer só o essencial para você fechar o primeiro orçamento. O refino vem depois, no seu ritmo, em **Ajustes**.
 
 {% hint style="info" %}
-**Onde isso acontece.** A configuração inicial é **web-first**: a parte de criar a empresa e escolher o plano você faz no navegador. Os passos abaixo — nome, Google, horários, galpão e catálogo — rodam tanto no computador quanto no celular, com o mesmo visual de cartão centralizado.
+**Onde isso acontece.** No **navegador** (computador ou celular) e no **aplicativo para Android**, as quatro etapas acontecem ali mesmo. No **iPhone**, a criação da empresa ainda é feita pelo navegador — veja [Criando sua locadora](criando-sua-locadora.md#web-first).
 {% endhint %}
 
-## Os 5 passos <a id="os-5-passos"></a>
+## As 4 etapas <a id="as-4-etapas"></a>
 
-São exatamente **cinco** passos — nem mais, nem menos. (Versões antigas tinham um passo de "motores"; ele saiu do caminho e virou um ajuste opcional, lá nas Configurações.)
+É uma trilha só, com uma barra de progresso no topo (**Etapa N de 4**). As duas primeiras criam a sua empresa; as duas últimas dizem como ela trabalha.
 
 ```mermaid
 flowchart LR
-    A[1. Seu nome] --> B[2. Google Meu Negocio]
-    B --> C[3. Fuso e horario]
-    C --> D[4. Galpao]
-    D --> E[5. Catalogo inicial]
-    E --> F((Pronto para operar))
+    A[1. CNPJ] --> B[2. Confirmar e nomear]
+    B --> C[3. Como você trabalha]
+    C --> D[4. De onde sai o material]
+    D --> E((Operação de pé))
 ```
 
-O assistente é **só para frente**: cada vez que você toca em **"Próximo"**, o passo fica salvo. Por isso não existe botão "Anterior" — qualquer ajuste depois você faz nas telas normais do sistema. E no topo de cada passo há um indicador de progresso ("passo N de 5") para você saber onde está.
-
 ***
 
-## Passo 1 — Seu nome <a id="passo-1-seu-nome"></a>
+## Etapa 1 — CNPJ <a id="etapa-1-cnpj"></a>
 
-O primeiro passo pergunta, com todas as letras: **"Como quer ser chamado(a)?"**
+A pergunta é uma só: **"Qual o CNPJ da sua empresa?"** E a tela já avisa:
 
-Esse nome identifica **você como administrador** da conta. A ajuda do passo explica o porquê:
+> *É só isso que você digita. A Flo busca o resto e já deixa a operação montada.*
 
-> *Esse nome vai aparecer em orçamentos, conversas e logs da operação. Pode ser primeiro nome, apelido ou nome completo.*
+Digite o CNPJ e toque em **Buscar CNPJ**. O LocFlow consulta a Receita e traz, sem você redigitar:
 
-E logo abaixo, no cartão de dica:
-
-> *Não precisa ser o nome formal do CNPJ — escolha como a equipe vai te chamar.*
-
-Ou seja: **não é a razão social.** É como as pessoas vão te ver no dia a dia — "João", "João Silva" ou "Joãozinho", tanto faz. Basta ter pelo menos dois caracteres.
+* **razão social e nome fantasia**;
+* **endereço, situação e município**;
+* **regime tributário e CNAE**.
 
 {% hint style="warning" %}
-**Este passo é definitivo.** Diferente dos outros, o administrador é criado uma única vez. Se você voltar a esta tela depois, o sistema pula direto para o passo seguinte — não dá para recriar o administrador.
+**A empresa é sempre um CNPJ.** Não existe cadastro só com CPF. É autônomo com MEI? Use o **CNPJ do MEI** — o regime vem da Receita. Se aparecer *"CNPJ não encontrado na Receita"*, confira o número e tente de novo.
 {% endhint %}
 
 ***
 
-## Passo 2 — Google Meu Negócio <a id="passo-2-google-meu-negocio"></a>
+## Etapa 2 — Confirmar e nomear <a id="etapa-2-confirmar"></a>
 
-Este passo é **opcional** — e ele avisa isso na própria etiqueta: *"Opcional · economiza 3 minutos"*. A pergunta é direta: **"Sua locadora está no Google Maps?"**
+A tela pergunta **"É essa a sua empresa?"** e mostra o que veio da Receita. Aqui você:
 
-Se estiver, o LocFlow se oferece para fazer o trabalho por você. A ajuda resume:
+1. Confere o **CNPJ** (errou? toque no cartão do CNPJ para corrigir) e os dados da Receita, com o regime tributário.
+2. Ajusta, se quiser, o nome em **"Como sua equipe chama a empresa?"** — ele já vem preenchido pela Receita, mas pode ser o nome que todo mundo usa no dia a dia.
+3. Toca em **Confirmar**.
 
-> *Importamos endereço, telefone e horários automaticamente para os próximos passos.*
+Ao confirmar, **a empresa é criada e o teste grátis começa**. Não há escolha de plano nem pagamento neste caminho: plano e pagamento ficam para depois, em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 
-Você digita o nome da sua empresa (ex.: *"Locadora ABC Eventos"*), seleciona o resultado certo, e o sistema mostra um cartão **"Dados importados!"** com o que encontrou: endereço, telefone, horários e até o fuso horário. Esses dados já chegam preenchidos nos passos 3 e 4 — você só confere.
+{% hint style="info" %}
+O **e-mail** vem da sua conta. **Logo, inscrições e celular** ficam para depois, no [Perfil da Empresa](../configuracoes/perfil-da-empresa.md).
+{% endhint %}
 
-Não está no Google, ou prefere preencher na mão? Sem stress. O cartão de ajuda diz:
+***
 
-> *Não encontrou? Sem problema. Use "Pular" e preenchemos manualmente.*
+## Etapa 3 — Como você trabalha <a id="etapa-3-como-voce-trabalha"></a>
 
-É só tocar em **"Pular"** e seguir. Nada se perde.
+> *Duas respostas e a gente monta o menu. O que você não usa fica guardado até precisar.*
+
+| Pergunta | Opções |
+| --- | --- |
+| **Você aluga, vende ou os dois?** | **Aluga** (o item volta) · **Vende** (o item não volta) · **Os dois** (no mesmo acervo) |
+| **Quantas pessoas trabalham na empresa?** | **1 ou 2** (eu e mais alguém) · **3 a 10** (time montado) · **Mais de 10** (vários setores) |
+
+Enquanto você responde, o cartão **Seu LocFlow agora** mostra quantas telas ficam ligadas no seu menu — e quais ficam guardadas. Embaixo dele, a promessa: *"Cresceu? Liga em Ajustes, sem migrar nada."*
 
 {% hint style="success" %}
-**Vale a pena quando dá.** Se a sua locadora já está no Google Maps, esse passo poupa digitação repetida — endereço e horários entram sozinhos nos passos seguintes. Mas é genuinamente opcional: pular não bloqueia nada.
+**Guardado não é proibido.** O que não aparece no menu continua a um toque — no **Personalizar** do menu — e volta sozinho quando você começa a usar (por exemplo, ao cadastrar o primeiro veículo). Veja [A filosofia do LocFlow](filosofia.md#interface-adapta).
 {% endhint %}
 
 ***
 
-## Passo 3 — Fuso e horário comercial <a id="passo-3-fuso-e-horario-comercial"></a>
+## Etapa 4 — De onde sai o material <a id="etapa-4-de-onde-sai-o-material"></a>
 
-Aqui você diz **quando sua locadora funciona**. A ajuda explica o impacto:
+A pergunta é **"O material sai de onde?"** — e a tela explica por que ela importa:
 
-> *Quando sua locadora funciona? Afeta lembretes, relatórios e cobranças.*
+> *É o ponto que o sistema usa para calcular frete, prazo e o que está livre.*
 
-São duas coisas neste passo:
+O LocFlow já sugere o **endereço da Receita**, com o ponto no mapa. Dê um nome em **Nome do local** (se não mudar, fica *Local principal*) e escolha:
 
-* **Fuso horário** — aparece numa linha enxuta (ex.: *"Fuso · America/Sao_Paulo"*). Veio do Google ou está no padrão Brasília. Toque em **"Trocar"** só se precisar ajustar.
-* **Horário comercial** — os sete dias da semana, cada um com hora de abrir e fechar (ou marcado como **"Fechado"**). Por padrão, segunda a sexta das 08:00 às 18:00; sábado e domingo fechados. Você confere o resumo e, se quiser mexer, toca em **"Editar horários"** para abrir os campos dia a dia.
+* **É aqui** — o material sai desse endereço; o local é criado na hora.
+* **É outro** — abre o cadastro completo do local, com o ponto já posicionado, para você informar outro endereço.
 
 {% hint style="info" %}
-**Você precisa de pelo menos um dia aberto.** Se marcar todos os dias como fechados, o sistema avisa: *"Marque ao menos um dia de funcionamento para continuar."* — afinal, uma locadora sempre abre algum dia.
+**Prefere achar pelo nome?** Use o atalho **Busque sua empresa no Google** e escolha o seu negócio na lista: o cadastro do local abre com o ponto já no lugar. É opcional — quem opera no mesmo endereço da Receita nem precisa dele.
 {% endhint %}
 
-> **Nota:** apesar do título dentro do app dizer "Identidade & horários", aqui você ajusta só fuso e horário. **Logo e cores** da sua marca ficam para depois, no Perfil da empresa (veja [Identidade visual](../documentos/identidade-visual.md)).
+Com o local definido, mais uma ou duas perguntas:
+
+| Pergunta | Opções |
+| --- | --- |
+| **Geralmente, o cliente busca ou você entrega?** | **Ele busca** (retira na loja) · **Eu entrego** (minha equipe leva) · **Os dois** (depende do pedido) |
+| **Quantos veículos você usa para entregar?** *(só para quem entrega)* | **Nenhum** (contrato frete) · **1 a 3** (veículos próprios) · **Mais de 3** (frota) |
+
+Uma faixa confirma o que já ficou pronto: **horário comercial de segunda a sexta, das 08:00 às 18:00**, o **fuso** do estado da sua empresa e um **raio de atendimento de 30 km** — tudo ajustável depois. Toque em **Concluir**.
 
 ***
 
-## Passo 4 — Galpão <a id="passo-4-galpao"></a>
+## O que saiu do caminho <a id="o-que-saiu-do-caminho"></a>
 
-Hora de criar o seu **galpão principal** — o primeiro local de estoque. A ajuda pergunta:
+Versões antigas desta configuração pediam mais coisas. Elas não sumiram — só deixaram de travar o começo:
 
-> *Onde os itens ficam guardados? Filiais e depósitos extras podem ser cadastrados depois.*
-
-E o cartão de dica explica por que esse ponto importa tanto:
-
-> *O sistema usa este ponto pra calcular rotas, controlar estoque e organizar a logística.*
-
-O galpão é **de onde os itens saem e para onde voltam**. É a referência que o LocFlow usa para medir distâncias, planejar entregas e saber o que está disponível. Por isso ele é o coração da parte logística.
-
-Você toca em **"Cadastrar Galpão Principal"** e o sistema abre o formulário **com o nome já sugerido** — e, se você usou o Google no passo 2, **com o mapa já posicionado no seu endereço**. Ao salvar, você volta ao passo e vê o cartão *"Galpão cadastrado!"*. Pode adicionar mais de um, se já tiver filiais.
-
-{% hint style="info" %}
-O cadastro completo do galpão (endereço, posição no mapa) tem sua própria tela e seus próprios detalhes — veja [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md).
-{% endhint %}
-
-***
-
-## Passo 5 — Catálogo inicial <a id="passo-5-catalogo-inicial"></a>
-
-O **último passo** — a etiqueta mostra um *"Último passo"* com um brilhinho. Aqui você cadastra o seu **primeiro produto**:
-
-> *Cadastre 1 produto com preço de aluguel pra simular seu primeiro orçamento.*
-
-E a dica reforça o porquê de bastar um:
-
-> *Com 1 produto e preço de aluguel, dá pra simular um orçamento e gerar PDF.*
-
-A lógica é simples: **sem itens não há orçamento.** Um único produto com preço de aluguel já destrava o primeiro pedido — você não precisa cadastrar o catálogo inteiro agora. Toque em **"Cadastre um item"**, escolha pelo **catálogo oficial** (mais rápido) ou cadastre na mão, e volte. O cartão *"Catálogo iniciado!"* confirma.
-
-{% hint style="info" %}
-**Por que pede preço de aluguel?** O LocFlow precisa de pelo menos um item "alugável" para você simular um orçamento de ponta a ponta. Se sua operação é **só de venda**, ainda assim cadastre um item para concluir o setup — depois você ajusta o catálogo do jeito da sua loja em [Catálogo: produtos](../cadastros/catalogo-produtos.md).
-{% endhint %}
-
-Com o produto no lugar, o botão muda para **"Concluir"** — e aí acontece a parte boa.
-
-***
+| Antes era uma etapa | Agora |
+| --- | --- |
+| **Seu nome** | Vem da sua conta. |
+| **Google Meu Negócio** | Virou o atalho opcional da etapa 4. |
+| **Fuso e horário comercial** | Já vêm prontos; ajuste em [Horários e sazonalidades](../configuracoes/horarios-e-sazonalidades.md). |
+| **Catálogo inicial** | Cadastre seus itens quando precisar, pelo [Catálogo](../cadastros/catalogo-produtos.md) ou na hora de montar o orçamento. |
+| **Plano e pagamento** | Todo mundo começa no teste grátis; o resto fica em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md). |
 
 ## Como retomar de onde parou <a id="como-retomar-de-onde-parou"></a>
 
-A vida acontece: você é interrompido no meio do passo 3 e fecha o app. Sem problema — o LocFlow **lembra exatamente onde você parou.**
+Cada etapa concluída já fica salva. Se você fechar o app no meio, na próxima vez que entrar o LocFlow **leva você direto à etapa que falta** — sem repetir o que já respondeu. (As duas respostas da etapa 3 ficam guardadas no aparelho até você tocar em **Concluir**: se trocar de aparelho no meio do caminho, o LocFlow volta a fazer essas duas perguntas.)
 
-* Na próxima vez que entrar, a tela de boas-vindas mostra **"Continuar de onde parei"** em vez de "Bora começar", e te leva direto ao passo certo. Os passos já concluídos aparecem com um ✓.
-* Os passos do galpão e do catálogo (4 e 5) abrem telas reais do sistema. Enquanto você está lá dentro — e se decidir adiar — um **lembrete flutuante** segue te acompanhando pelo painel, dizendo em que passo você está e levando você de volta com um toque.
-
-A partir do **passo do galpão**, há também um link discreto **"Prefiro configurar depois"**. Tocar nele abre um aviso:
-
-> *Você está no passo N de 5 do onboarding. A configuração inicial fica pausada e você pode retomar de onde parou a qualquer momento.*
-
-Você escolhe entre **"Continuar configuração"** e **"Sair e fazer depois"**. Se sair, vai para o painel — e o lembrete continua ali, paciente, até você terminar.
+* Quando a etapa 4 abre o **cadastro completo do local** (no **É outro**), uma faixa no topo mostra **Configuração · Etapa 4 de 4** e o atalho **Voltar ao guia**.
+* Na etapa 4 há também o link discreto **Prefiro configurar depois**. Ele abre o aviso *"Você está no passo 4 de 4 do onboarding. A configuração inicial fica pausada e você pode retomar de onde parou a qualquer momento."*, com **Continuar configuração** ou **Sair e fazer depois**.
 
 {% hint style="success" %}
-**Nada se perde, nada trava.** Cada passo concluído já está salvo. Pausar o setup nunca te impede de usar o resto do sistema — é só uma pendência que fica te esperando.
+**Nada se perde.** Pausar não apaga nada. Ao abrir o LocFlow de novo, ele retoma a configuração de onde você parou.
 {% endhint %}
 
-## A celebração no fim <a id="a-celebracao-no-fim"></a>
+## Ao concluir <a id="ao-concluir"></a>
 
-Quando você toca em **"Concluir"** no passo do catálogo, o LocFlow comemora com você. Uma tela cheia de confete aparece:
+Quando você toca em **Concluir**, o LocFlow comemora com você:
 
-> **Tudo pronto! Sua locadora está no ar**
->
-> *Você concluiu a configuração inicial. Daqui pra frente, explore o LocFlow no seu ritmo — é assim que sua operação cresce.*
+> **Sua operação está de pé**
 
-É um momento proposital: a partir daqui, **o sistema deixa de te guiar passo a passo** e você passa a explorar sozinho. A própria tela te dá a bússola:
+A tela diz quantas telas ficaram ligadas no seu menu (e quantas ficaram guardadas até você precisar), resume o que já está funcionando e lembra que a [Rede de Parceiros](../parcerias/visao-geral.md) já está no menu, para quando faltar item. Dois botões fecham a celebração:
 
-> *Qualquer dúvida, procure o **?** nas telas. E vale abrir a **Central de ajuda** no menu para ler a documentação e ver tudo o que dá pra fazer.*
-
-Dois botões fecham a celebração: **"Explorar o LocFlow"** (vai para o painel) e **"Abrir Central de ajuda"** (te traz justamente para cá, esta documentação).
+* **Criar orçamento com a Flo** — para fechar o primeiro pedido pedindo em vez de preencher. Veja [Conheça a Flo](../flo/conheca-a-flo.md).
+* **Ir para o painel** — a sua [tela inicial](../painel/o-painel.md).
 
 {% hint style="info" %}
 **E os "motores"?** Frete, cobrança e logística têm ajustes finos — mas eles **não fazem parte do setup**. Ficam disponíveis quando a sua operação pedir, em [Motores operacionais](../configuracoes/motores-operacionais.md). Essa é a [filosofia do LocFlow](filosofia.md): você liga cada coisa na hora em que ela passa a valer a pena.
@@ -168,18 +144,19 @@ Dois botões fecham a celebração: **"Explorar o LocFlow"** (vai para o painel)
 
 ## Situações reais <a id="situacoes-reais"></a>
 
-* **"Não acho minha empresa no Google."** Normal — muita locadora pequena não tem perfil. Toque em **"Pular"** no passo 2 e preencha endereço e horários na mão. Não muda nada no resultado.
-* **"Errei meu nome de administrador."** O nome em si você ajusta depois nas suas preferências de conta; o administrador como pessoa é que é definitivo. Veja [Minha conta e preferências](../configuracoes/minha-conta.md).
-* **"Só trabalho com venda, não com aluguel."** Cadastre um item para concluir o passo 5 e siga em frente — depois molde o catálogo à sua loja. Entenda a diferença em [Locação e venda](../conceitos/locacao-e-venda.md).
-* **"Fechei o app no meio do setup."** Entre de novo: o botão vira **"Continuar de onde parei"** e te leva ao passo exato onde você estava.
-* **"Quero usar o sistema antes de terminar o setup."** Use o **"Prefiro configurar depois"** (a partir do galpão). O lembrete flutuante segura a pendência para você até quando quiser.
+* **"Sou autônomo e não tenho CNPJ."** A empresa no LocFlow é sempre um CNPJ. Se você tem MEI, use o CNPJ do MEI.
+* **"O endereço da Receita não é onde fica o meu material."** Na etapa 4, toque em **É outro** (ou use a busca no Google) e informe o endereço certo.
+* **"Só trabalho com venda."** Na etapa 3, escolha **Vende**. Entenda a diferença em [Locação e venda](../conceitos/locacao-e-venda.md).
+* **"Terceirizo todo o transporte."** Na etapa 4, em quantos veículos, escolha **Nenhum**: Frota e Roteirização ficam guardadas no menu até você precisar.
+* **"Fechei o app no meio do setup."** Entre de novo: o LocFlow abre direto na etapa que falta.
+* **"Quero usar o sistema antes de terminar."** Use o **Prefiro configurar depois**, na etapa 4.
 
 ## Próximo passo <a id="proximo-passo"></a>
 
 Setup concluído? Hora de colocar para rodar:
 
-* [Criando um orçamento](../orcamentos/criando-um-orcamento.md) — feche o primeiro pedido com o item que você acabou de cadastrar.
+* [Criando um orçamento](../orcamentos/criando-um-orcamento.md) — feche o primeiro pedido.
 * [Contatos](../cadastros/contatos.md) — cadastre o cliente do orçamento.
 * [Trilhas de leitura: por onde começar](trilhas-de-leitura.md) — siga o caminho do seu porte.
 
-E, se travar em algo, lembre da promessa da tela de celebração: procure o **"?"** nas telas, ou volte a [Onde tirar dúvidas](onde-tirar-duvidas.md).
+E, se travar em algo, procure o **"?"** nas telas, ou volte a [Onde tirar dúvidas](onde-tirar-duvidas.md).

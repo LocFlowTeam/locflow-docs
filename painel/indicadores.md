@@ -15,6 +15,8 @@ Cada cartão tem um **botão de ajuda (i)** no canto, com a explicação curta e
 
 ## Os quatro cartões, um por um
 
+Na tela, eles aparecem nesta ordem: **Faturamento do mês**, **Negócios ganhos**, **Cancelamento** e **Conversão · Perda**. Quem não vê cobrança fica só com os três últimos.
+
 ### Faturamento do mês {#faturamento-do-mes}
 
 Dois valores empilhados: **Contratado** e **Recebido**. A ajuda do cartão resume assim, quase com estas palavras:
@@ -36,28 +38,13 @@ Este cartão só aparece se o seu acesso enxerga **cobrança**. Sem acesso a fat
 
 ### Negócios ganhos {#negocios-ganhos}
 
-Um número grande em destaque — quantos negócios você **fechou** no período — quebrado em duas linhas: **Locação** e **Venda**, cada uma com seu ícone de natureza. A ajuda diz:
+Um número grande em destaque — quantos negócios você **fechou** no período — quebrado em duas linhas: **Aluguel** e **Venda**, cada uma com o ícone do seu tipo de negócio. A ajuda diz:
 
 > Quantos negócios você **fechou** no mês, separados em **Aluguel** e **Venda** — assim você vê de onde veio cada ganho. (O que foi cancelado depois também conta aqui.)
 
 {% hint style="warning" %}
 **O que cancelou depois também conta aqui.** "Negócios ganhos" mede o que você **conquistou** no funil, não o que sobreviveu. Um aluguel que você fechou e o cliente cancelou na semana seguinte **continua** somando em Negócios ganhos — o cancelamento aparece no cartão próprio (abaixo). Isso é proposital: cancelar não apaga o fato de que você ganhou a disputa.
 {% endhint %}
-
-### Conversão e Perda {#conversao-e-perda}
-
-Um par complementar, lado a lado, com uma barrinha verde/vermelha embaixo. A ajuda explica:
-
-> De tudo que **já foi decidido**: **Conversão** é a fatia que você ganhou; **Perda** é a que escapou (juntas dão 100%). Mostramos também o **maior motivo de perda** — onde você mais deixa negócio escapar.
-
-A palavra-chave é **decidido**. Conversão e Perda olham só para os orçamentos que **já tiveram um desfecho** — fecharam ou foram perdidos. Os que ainda estão em negociação **não entram na conta** (eles aparecem no [funil](../orcamentos/acompanhando-e-fechando.md), que inclui o pipeline aberto e por isso oscila mais).
-
-* **Convertido** — a fatia que virou negócio.
-* **Perdido** — a fatia que escapou (proposta que não fechou).
-
-Como são complementares sobre a mesma base, **somam 100%**. Se metade dos seus orçamentos decididos vira negócio, você vê 50% / 50%.
-
-Quando há perdas, o cartão mostra também o **maior motivo de perda** — veja [Maior motivo](#maior-motivo).
 
 ### Cancelamento {#cancelamento}
 
@@ -70,6 +57,21 @@ A taxa de negócios que você **chegou a fechar** e que **caíram depois**. É u
 {% endhint %}
 
 Sem cancelamentos no período, o cartão mostra **0%** com a nota *"Sem cancelamentos no período"* — o que é uma boa notícia.
+
+### Conversão · Perda {#conversao-e-perda}
+
+O último cartão é um par complementar, lado a lado, com uma barrinha verde/vermelha embaixo. A ajuda explica:
+
+> De tudo que **já foi decidido**: **Conversão** é a fatia que você ganhou; **Perda** é a que escapou (juntas dão 100%). Mostramos também o **maior motivo de perda** — onde você mais deixa negócio escapar.
+
+A palavra-chave é **decidido**. Conversão e Perda olham só para os orçamentos que **já tiveram um desfecho** — fecharam ou foram perdidos. Os que ainda estão em negociação **não entram na conta** (eles aparecem no [funil](../orcamentos/acompanhando-e-fechando.md), que inclui o pipeline aberto e por isso oscila mais).
+
+* **Convertido** — a fatia que virou negócio.
+* **Perdido** — a fatia que escapou (proposta que não fechou).
+
+Como são complementares sobre a mesma base, **somam 100%**. Se metade dos seus orçamentos decididos vira negócio, você vê 50% / 50%.
+
+Quando há perdas, o cartão mostra também o **maior motivo de perda** — veja [Maior motivo](#maior-motivo).
 
 ### O maior motivo {#maior-motivo}
 
