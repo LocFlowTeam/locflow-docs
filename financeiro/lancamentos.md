@@ -1,6 +1,6 @@
 ---
 icon: list-ol
-description: O razão do seu caixa — previsto e realizado, como confirmar um pagamento pelo valor que realmente saiu, data de caixa e competência, e o que o LocFlow lança sozinho.
+description: O razão do seu caixa — previsto e realizado, como registrar uma despesa ou receita (e o lançamento rápido), contas fixas e parcelamentos, como confirmar um pagamento pelo valor que realmente saiu, data de caixa e competência, e o que o LocFlow lança sozinho.
 ---
 
 # Lançamentos
@@ -36,7 +36,7 @@ Quando um previsto se cumpre, você o **confirma** — e é nesse momento que el
 
 * **Agrupada por dia**, do mais recente para o mais antigo, com os cabeçalhos *Hoje*, *Ontem* e a data nos dias anteriores.
 * **Busca** por descrição, cliente, fornecedor, categoria ou código do orçamento (*ORC-1*).
-* **Filtros** por tipo (Entradas / Saídas) e por situação (Realizado / Previsto / Cancelado ou revertido).
+* **Filtros** por tipo (Entradas / Saídas) e por situação (Realizado / Previsto / Cancelado ou revertido). Nos filtros avançados, você também escolhe **qual data o período recorta** — vencimento, competência, pagamento ou registro (sem escolher, cada conta usa a data que responde por ela: o vencimento no que está previsto, o pagamento no que já saiu) — e **se a conta se repete**: **Fixas** (as que têm repetição por trás, mesmo com valor que varia, como a energia) ou **Variáveis**.
 * **Totais** de Entradas e Saídas do recorte visível — e eles contam **só o realizado**: previsto e revertido não inflam o cabeçalho.
 * Em telas largas, a lista vira uma **tabela** com data, descrição, categoria, situação e valor.
 
@@ -48,57 +48,92 @@ Toque em qualquer linha para abrir o **detalhe**: valor, situação, forma de pa
 
 ## Registrar um lançamento {#registrar-um-lancamento}
 
-O botão **+** abre **Nova despesa** ou **Nova receita**, e o caminho é um passo a passo de quatro etapas.
+O botão **+** (ou **Novo lançamento**, em telas largas) abre **Novo lançamento**, com três caminhos:
 
-### Passo 1 — Valor
+| Caminho | Para quê |
+| --- | --- |
+| **Nova despesa** | Dinheiro que sai: aluguel do galpão, combustível, conserto, salário |
+| **Nova receita** | Dinheiro que entra fora das cobranças: a venda de um ativo, um reembolso combinado |
+| **Lançamento rápido** | O atalho de quem lança muitas contas por dia — veja [abaixo](#lancamento-rapido) |
 
-Escolha **Despesa** ou **Receita**, digite o **valor** e uma **descrição** (*"Gasolina do caminhão"*, *"Aluguel do galpão 2"*). A tela inteira ganha o tom do tipo: vermelho para despesa, verde para receita.
+Despesas e receitas manuais entram no caixa junto com o que o sistema já registra sozinho — recebimentos de clientes e repasses você **não** precisa lançar.
 
-### Passo 2 — Categoria
+### No celular: três passos
 
-Em que o dinheiro entrou ou saiu. A escolha vem do seu [plano de contas](categorias-e-plano-de-contas.md), com busca e as subcategorias visíveis sob a categoria-mãe. Se a categoria estiver ligada a um **serviço** (frete, mão de obra, montagem…), aparece um aviso explicando que aquele valor vai ser comparado, no relatório, com o que você **cobra** por aquele serviço.
+Uma barra no topo mostra onde você está: **O que foi?**, **Quanto e quando?** e **Confirmar**. A tela ganha a cor do tipo — vermelho para o dinheiro que sai, verde para o que entra.
 
-Não achou a categoria? Dá para **criar** ali mesmo, sem perder o que já foi preenchido.
+#### 1. O que foi?
 
-### Passo 3 — Quando
+1. Confirme o tipo: **Dinheiro que saiu** ou **Dinheiro que entrou**.
+2. **Do que foi esse gasto?** (ou *De onde veio esse dinheiro?*) — escolha a **categoria**. As mais usadas aparecem numa grade; a busca abre o [plano de contas](categorias-e-plano-de-contas.md) inteiro, com as subcategorias, e ali também dá para **criar** uma categoria sem perder o que já foi preenchido. *A categoria define o resto do formulário.*
+3. Escolhida a categoria, um cartão mostra o que **já vem resolvido por ela**: como o valor **entra na margem** — aluguel, venda ou estrutura do negócio — e se é preciso dizer de qual **veículo**, **funcionário** ou **galpão** é a despesa. Discordou? Toque em **Trocar**. Se a categoria não decide a margem, o cartão fica âmbar — *"Escolha como isto entra na margem"* — e pede um toque em **Escolher**. Veja [A natureza](#natureza).
+4. **Para quem você paga?** (ou *De quem você recebe?*) — o fornecedor ou o cliente. Os mais recentes aparecem em chips; **Outro** busca os demais ou cadastra um novo.
+5. **Na lista vai aparecer como** — a descrição se monta sozinha a partir da categoria e de quem recebe. Se o padrão não servir, toque em **Apelido** e dê outro nome (*"Aluguel do galpão 2"*).
 
-A pergunta é uma só: **já foi paga?** (ou *já foi recebida?*).
-
-* **Sim** → você informa a **data do pagamento** e o lançamento nasce **realizado**, entrando no caixa naquele dia.
-* **Não** → você informa o **vencimento** e ele nasce **previsto**, indo para as [Contas a pagar / a receber](contas-a-pagar-e-a-receber.md).
-
-Ainda no "não", aparece **Repete?** — *Mensal*, *Semanal* ou *Anual*. Escolhendo uma frequência, você cria uma **conta fixa**: o LocFlow já materializa os próximos vencimentos, e uma prévia mostra quais datas vão nascer.
-
-{% hint style="info" %}
-**Contas fixas guardam só o essencial** — valor, categoria e vencimento. Fornecedor, veículo, forma de pagamento e comprovante ficam nos lançamentos avulsos, e por isso o passo 4 não aparece quando você marca uma frequência. A tela avisa isso antes de salvar.
+{% hint style="success" %}
+**Escolher o fornecedor pode preencher a categoria por você.** Se você escolhe o fornecedor antes da categoria e ele tem serviços cadastrados, o LocFlow sugere a categoria do mesmo serviço e avisa que foi sugestão — troque se não for o caso. É o vínculo explicado em [Fornecedores](fornecedores.md).
 {% endhint %}
 
-### Passo 4 — Detalhes
+#### 2. Quanto e quando?
 
-**Tudo opcional**, tudo visível de uma vez. Cada campo aqui é um relatório que passa a existir:
+1. Digite o **valor**.
+2. **Esse dinheiro já saiu da conta?** (ou *já entrou na conta?*):
+   * **Sim, já paguei** (ou *já recebi*) — *entra no caixa*: o lançamento nasce **realizado**;
+   * **Ainda vou pagar** (ou *receber*) — *vira conta a pagar* (ou a receber): o lançamento nasce **previsto** e vai para as [Contas a pagar e a receber](contas-a-pagar-e-a-receber.md).
+3. A data: **Quando saiu?** (ou *Quando entrou?*) se já foi pago; **Vence quando?** se ainda vai ser. Os atalhos **Hoje** e **Em 7 dias** — e, quando o histórico daquela categoria com aquele fornecedor (ou cliente) mostra um dia de sempre, *Dia 10 · como sempre* — resolvem o caso comum; o calendário fica logo abaixo.
+4. Só no que ainda vai acontecer aparece **Repetir automaticamente** — veja [Contas fixas e parcelamentos](#conta-fixa).
+
+#### 3. Confirmar
+
+1. Um **resumo** do lançamento, em que cada linha se toca para trocar — categoria, quem recebe, a margem, a recorrência.
+2. **Quer melhorar o registro?** — tudo opcional, e cada campo é um relatório que passa a existir:
 
 | Campo | Para que serve |
 | --- | --- |
-| **Isto sustenta qual operação?** | A natureza do gasto: **Aluguel**, **Venda**, **As duas** ou **Não sei**. É o que permite a margem por operação — veja [abaixo](#natureza) |
-| **Conta** | Em qual [conta](contas.md) o dinheiro se moveu. Em branco = a conta padrão |
-| **Cliente** (em receitas) | De quem veio o dinheiro — alimenta o relatório de receita por cliente |
-| **Fornecedor** (em despesas) | A quem você pagou. Veja [Fornecedores](fornecedores.md) |
-| **Veículo** | O veículo como centro de custo — responde *"qual caminhão me custa mais?"*. Recomendado nas despesas de frete |
-| **Forma de pagamento** | Pix, dinheiro, maquininha, transferência, boleto ou outro |
-| **Comprovante** | Foto ou PDF da nota, do cupom, do recibo — anexado ao lançamento |
-| **Data de competência** | A que mês o valor pertence, quando diferente da data de caixa. Veja [abaixo](#caixa-x-competencia) |
-
-{% hint style="success" %}
-**Escolher o fornecedor pode preencher a categoria por você.** Se aquele fornecedor tem serviços cadastrados e você ainda não escolheu categoria, o LocFlow sugere a categoria do mesmo serviço e avisa que foi sugestão — troque se não for o caso. É o vínculo explicado em [Fornecedores](fornecedores.md).
-{% endhint %}
+| **Comprovante** | *Fotografar o recibo* — foto ou PDF da nota, do cupom, do recibo, anexado ao lançamento |
+| **Como você paga** | Boleto, Pix, transferência, cartão de crédito, cartão de débito, dinheiro, maquininha… Com cartão, a tela pergunta **qual cartão** — opcional no crédito; no débito, havendo cartão de débito cadastrado, a escolha é obrigatória. Veja [Cartões](cartoes.md) |
+| **Sai de** / **Entra em** | Em qual [conta](contas.md) o dinheiro se moveu. Em branco = a conta padrão |
+| **Observações** | Uma anotação sobre a conta |
+| **Em que isto foi gasto?** | O **veículo**, o **funcionário** ou o **galpão** da despesa — é o que responde *"qual caminhão me custa mais?"*. Toque para vincular; quando a categoria exige um deles, ele já aparece aberto e é obrigatório |
 
 Tocar duas vezes em **Salvar** (ou repetir depois de um erro de rede) **não gera dois lançamentos**: o LocFlow reconhece que é a mesma tentativa.
+
+### No computador: um formulário só
+
+Em telas largas não há passos: é um formulário único, com **O essencial** (tipo, categoria, para quem, valor, se já foi pago, data e repetição) e **Comprovação** (conta, forma de pagamento, cartão e comprovante). À direita, uma coluna mostra **como vai aparecer na lista** e o **efeito no relatório de margem** — quanto cada coluna (aluguel, venda, estrutura) muda com este lançamento.
+
+### Contas fixas e parcelamentos {#conta-fixa}
+
+Em **Quanto e quando?**, para o que ainda vai ser pago, ligue **Repetir automaticamente** e escolha **Todo mês**, **Toda semana** ou **Todo ano**. O LocFlow já cria os próximos vencimentos nas Contas a pagar (ou a receber), e uma prévia mostra as próximas datas.
+
+Escolha também **quantas vezes**:
+
+* **sem fim** — a **conta fixa** de sempre: aluguel, internet, contador;
+* **3x, 6x, 10x ou 12x** — um **parcelamento**: o valor digitado é **dividido** entre as parcelas (a prévia mostra, por exemplo, *"12x de R$ 250,00"*), a tela diz em que dia cai a última e a série se encerra sozinha.
+
+{% hint style="info" %}
+**A conta fixa repete tudo o que você preencheu.** Fornecedor, veículo, funcionário, conta, forma de pagamento, a margem e o comprovante continuam em **cada** mês gerado — você não perde nada por marcar *todo mês*. Uma despesa **já paga** não vira conta fixa: a repetição só aparece para o que ainda vai vencer.
+{% endhint %}
+
+### Lançamento rápido {#lancamento-rapido}
+
+Para quem lança dezenas de contas por dia, a tela é uma **frase pronta**: *"Paguei R$ 4.500,00 de aluguel para Cíntia hoje"*. Cada parte da frase é um botão:
+
+* o **valor** é a única coisa digitada, no teclado da própria tela;
+* toque na **categoria**, em **para quem**, na **data** ou na **forma de pagamento** para trocar cada uma;
+* atalhos para **Recibo** (fotografar o comprovante) e para **repetir todo mês**.
+
+Toque em **Lançar** — ou **Lançar e repetir**, que grava e já deixa a tela pronta para o próximo, com a mesma categoria e o mesmo fornecedor (ou cliente).
+
+{% hint style="warning" %}
+**É atalho, não substituto.** Se a categoria exige dizer de qual **veículo** ou de qual **funcionário** é a despesa, a frase não tem esse campo: a tela avisa e oferece **Abrir formulário completo**, levando o tipo, o valor, a data e a categoria que você já escolheu.
+{% endhint %}
 
 ## Confirmar um pagamento pelo valor real {#confirmar}
 
 Quase nunca a conta chega exatamente pelo valor previsto. A luz vinha R$ 480, veio R$ 512. O frete estimado em R$ 300 saiu por R$ 285.
 
-Ao confirmar um previsto (na lista ou em [Contas a pagar](contas-a-pagar-e-a-receber.md)), o LocFlow pergunta três coisas:
+Ao confirmar um previsto (na lista ou na tela [Contas](contas-a-pagar-e-a-receber.md)), o LocFlow pergunta três coisas:
 
 1. **Valor realmente pago** (ou recebido) — já vem preenchido com o previsto, e é **editável**. É **este** valor que entra no saldo.
 2. **Dia em que o dinheiro saiu** (ou entrou) — a data de caixa.
@@ -117,34 +152,33 @@ Duas datas, duas perguntas diferentes:
 | | **Data de caixa** | **Data de competência** |
 | --- | --- | --- |
 | Responde | *Quando o dinheiro se moveu?* | *A que mês esse valor pertence?* |
-| Manda no | **Saldo**, extrato e resultado do período | Leitura por mês de referência |
+| Manda no | **Saldo**, extrato e os relatórios no modo **Caixa** | Os relatórios no modo **Competência** |
 | Exemplo | Você pagou a energia de junho no dia 8 de julho: **08/07** | O mês da energia: **junho** |
 
-Na prática, para quase todo lançamento as duas são a **mesma data** — e é por isso que a competência é opcional e vem pré-preenchida. Ela existe para os casos em que separar importa:
+Na prática, para quase todo lançamento as duas são a **mesma data** — e é por isso que, ao criar o lançamento, a competência nasce igual à data do movimento. Para mudar, abra o lançamento depois e use **Contabilidade · competência, apelido e observações**. Separar existe para os casos em que importa:
 
 * **A conta de um mês paga no outro** — energia, água, telefone.
 * **O aluguel do galpão pago adiantado** — sai em dezembro, mas é despesa de janeiro.
 * **O seguro anual pago de uma vez** — o dinheiro saiu num dia, o mês de referência é aquele.
 
 {% hint style="info" %}
-**Qual olhar no dia a dia:** a **data de caixa**. É ela que diz se você tem dinheiro na conta hoje — e é em regime de caixa que o LocFlow calcula saldo, extrato e resultado. A competência serve para conversar com o contador e para entender um mês que "parece" caro só porque duas contas do mês anterior caíram nele.
+**Qual olhar no dia a dia:** a **data de caixa**. É ela que diz se você tem dinheiro na conta hoje — saldo e extrato são sempre de caixa. A competência serve para conversar com o contador e para entender um mês que "parece" caro só porque duas contas do mês anterior caíram nele: nos [Relatórios](relatorios.md), troque para **Competência** e cada valor volta para o mês a que pertence.
 {% endhint %}
 
 ## A natureza: aluguel, venda ou as duas {#natureza}
 
-Toda despesa sustenta alguma parte do seu negócio. O campo **Isto sustenta qual operação?** guarda qual:
+Toda despesa sustenta alguma parte do seu negócio. No lançamento, isso aparece como **como o valor entra na margem** — no cartão *Já resolvido pela categoria*, no primeiro passo:
 
 | Resposta | Quando usar |
 | --- | --- |
 | **Aluguel** | Sustenta a locação: manutenção dos bens móveis que você aluga, insumos de limpeza e inspeção do acervo |
 | **Venda** | Sustenta a venda: mercadoria para revenda, equipe comercial |
-| **As duas** | Serve às duas ao mesmo tempo: galpão, contador, sistema, marketing, administrativo |
-| **Não sei** | Você não decidiu — e isso é visível, não some |
+| **Estrutura do negócio** ("as duas") | Serve às duas ao mesmo tempo: galpão, contador, sistema, marketing, administrativo |
 
-A **categoria sugere**, o **lançamento decide**: se a categoria escolhida costuma ser de aluguel, a resposta já vem pré-selecionada com um aviso de que foi sugestão. Você troca quando o caso é outro — o freelancer contratado para a equipe de vendas está na mesma categoria do freelancer da locação, e só quem lançou sabe para qual foi.
+A **categoria sugere**, o **lançamento decide**: cada categoria diz que operação costuma sustentar (o campo **Sustenta qual operação?** do [plano de contas](categorias-e-plano-de-contas.md)), e o lançamento já nasce com essa resposta — *"Entra na margem como aluguel"*. Você toca em **Trocar** quando o caso é outro: o freelancer contratado para a equipe de vendas está na mesma categoria do freelancer da locação, e só quem lançou sabe para qual foi. Se a categoria não decide, o cartão fica âmbar e pede a sua escolha.
 
 {% hint style="info" %}
-**"As duas" é uma resposta certa, não uma desistência.** O aluguel do galpão não é 60% locação e 40% venda: ele é indivisível. No relatório de margem ele aparece numa camada própria, **sem ser rateado** — e sem estragar os dois números. O que ficar em **Não sei** aparece como **Não classificado**: visível, fora das colunas de aluguel e de venda, esperando a sua decisão. A leitura completa está em [Entender seus números](../conceitos/entender-seus-numeros.md).
+**"As duas" é uma resposta certa, não uma desistência.** O aluguel do galpão não é 60% locação e 40% venda: ele é indivisível. No relatório de margem ele aparece numa camada própria, **sem ser rateado** — e sem estragar os dois números. O lançamento que ficar sem resposta aparece como **Não classificado**: visível, fora das colunas de aluguel e de venda, esperando a sua decisão. A leitura completa está em [Entender seus números](../conceitos/entender-seus-numeros.md).
 {% endhint %}
 
 ## O que o LocFlow lança sozinho
@@ -163,8 +197,25 @@ Boa parte do seu razão você **não digita**. Estas linhas nascem de fatos que 
 | **Recebimento da rede** | Um repasse que **você** tinha a receber da rede é pago — pelo split na fonte, pela quitação do saldo ou por fora | Rede de Parcerias |
 | **Custo de frete de terceiro** | Um pedido cujo frete é de uma transportadora contratada é reservado — nasce como **conta a pagar** | A categoria do serviço de frete |
 
+Além dessas, o detalhe de um lançamento pode dizer que ele veio de outros fatos — todos automáticos:
+
+| Aparece como | De onde vem |
+| --- | --- |
+| **Reembolso ao cliente** | Um pedido já pago foi cancelado e o dinheiro voltou ao cliente |
+| **Recebimento de parceiro** | O parceiro logístico cobrou o cliente na rua e acertou com você a parte que era sua. Se esse pagamento for estornado, nasce a **Devolução de recebimento de parceiro**. Veja [Cobrança na rua](../parcerias/cobranca-na-rua.md) |
+| **Taxa da plataforma** | A taxa da plataforma numa operação de parceria. Volta como **Estorno de taxa da plataforma** quando o pagamento é revertido |
+| **Estorno de repasse ao logístico** | O repasse que você pagou ao parceiro voltou, porque o pagamento foi revertido |
+| **Estorno de taxa do gateway** | O processador devolveu a tarifa depois de um estorno ou contestação |
+| **Devolução de recebimento da rede** | Um valor que você tinha recebido da rede foi estornado |
+| **Saque do gateway** | Um saque concluído do pagamento online — uma transferência da Stone para a sua conta de recebimento. Veja [Contas](contas.md#conta-de-recebimento) |
+| **Documento fiscal** | Uma nota fiscal **avulsa** autorizada cria uma **entrada prevista** — o faturado que ainda vai entrar. A nota de um pedido ou de um lançamento não cria nada novo: aquela receita já está no razão |
+| **Conta recorrente** | Um mês gerado por uma [conta fixa](#conta-fixa) |
+| **Importado do extrato** | Um lançamento criado a partir de uma linha do extrato do banco, na [conciliação](conciliacao-e-fechamento.md#extrato) |
+| **Ajuste de conciliação** | A diferença entre o razão e o extrato, registrada ao [fechar o mês](conciliacao-e-fechamento.md#fechamento-mensal) |
+| **Transferência entre contas** | As duas pernas de uma [transferência](contas.md#transferir) — fora do resultado |
+
 {% hint style="warning" %}
-**Essas linhas não se editam à mão — e é de propósito.** Cada uma é o **espelho de um fato** que vive em outro lugar: a parcela da fatura, o extrato do processador, o acordo com o parceiro, o frete daquele pedido. Se você pudesse mudar o valor aqui, o razão passaria a discordar da fatura, e nenhum dos dois números seria confiável. O caminho é sempre corrigir **na origem**: na cobrança, no orçamento, no acordo — e o razão acompanha sozinho.
+**Essas linhas não se editam à mão — e é de propósito.** Cada uma é o **espelho de um fato** que vive em outro lugar: a parcela da fatura, o extrato do processador, o acordo com o parceiro, o frete daquele pedido, a nota fiscal. Se você pudesse mudar o valor aqui, o razão passaria a discordar da fatura, e nenhum dos dois números seria confiável. O caminho é sempre corrigir **na origem**: na cobrança, no orçamento, no acordo — e o razão acompanha sozinho.
 {% endhint %}
 
 O que você **pode** fazer com elas:

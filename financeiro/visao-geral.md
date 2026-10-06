@@ -25,7 +25,7 @@ O menu do financeiro tem **cinco destinos**, divididos em dois grupos:
 | --- | --- | --- |
 | **Operação** | **Visão geral** | Como está o caixa hoje |
 | **Operação** | [Lançamentos](lancamentos.md) | Todo o razão de entradas e saídas |
-| **Operação** | [Contas a pagar](contas-a-pagar-e-a-receber.md) | O que vence e o que já venceu |
+| **Operação** | [Contas](contas-a-pagar-e-a-receber.md) | O que vence e o que já venceu — a pagar e a receber |
 | **Análise** | Extrato | Movimentos do mês com saldo acumulado |
 | **Análise** | [Relatórios](relatorios.md) | Categorias, insights, DRE e serviços |
 
@@ -33,18 +33,23 @@ No celular, o **título do topo** abre uma lista com as seções (a ativa vem ma
 
 ### Ajustes do financeiro (a engrenagem)
 
-O que é **estrutura** ou **fila de trabalho** não ocupa o menu do dia a dia: mora atrás da **engrenagem**, no canto do cabeçalho.
+O que é **estrutura** ou **fila de trabalho** não ocupa o menu do dia a dia: mora atrás da **engrenagem**, no canto do cabeçalho, em **Ajustes do financeiro**. São seis itens, em dois grupos:
 
-| Em Ajustes | O que é |
-| --- | --- |
-| **Contas** | Onde o dinheiro vive — caixa, banco, carteira. Veja [Contas](contas.md) |
-| **Categorias** | O plano de contas. Veja [Categorias e plano de contas](categorias-e-plano-de-contas.md) |
-| **Fornecedores** | A quem você paga e os serviços que ele presta. Veja [Fornecedores](fornecedores.md) |
-| **Fechamento de caixa** | Conferir o dinheiro que o motorista recebeu na rua |
-| **Conciliação** | Extrato do banco × razão, mês a mês |
+| Grupo | Em Ajustes | O que é |
+| --- | --- | --- |
+| **Estrutura** | **Contas** | Onde o dinheiro vive — caixa, banco, carteira e gateway. Veja [Contas](contas.md) |
+| **Estrutura** | **Cartões** | Crédito e débito, com a fatura de cada ciclo. Veja [Cartões](cartoes.md) |
+| **Estrutura** | **Categorias** | O plano de contas. Veja [Categorias e plano de contas](categorias-e-plano-de-contas.md) |
+| **Estrutura** | **Fornecedores** | Quem você paga, com categoria e serviços. Veja [Fornecedores](fornecedores.md) |
+| **Filas de trabalho** | **Fechamento de caixa** | Conferir o dinheiro que o motorista recebeu na rua |
+| **Filas de trabalho** | **Conciliação** | Extrato do banco × razão, mês a mês |
 
 {% hint style="info" %}
-**Por que essas cinco saíram do menu.** Contas, Categorias e Fornecedores você configura uma vez e revisita raramente. Fechamento e Conciliação são **filas**: só importam quando existe algo esperando — e, quando existe, elas se anunciam sozinhas (veja [Quando há trabalho esperando](#trabalho-esperando)). Um menu curto é um menu que você lê.
+**Por que esses seis saíram do menu.** Contas, Cartões, Categorias e Fornecedores são **cadastros** — você configura uma vez e revisita raramente. Fechamento e Conciliação são **filas**: só importam quando existe algo esperando — e, quando existe, elas se anunciam sozinhas (veja [Quando há trabalho esperando](#trabalho-esperando)). Um menu curto é um menu que você lê.
+{% endhint %}
+
+{% hint style="info" %}
+**Duas telas chamadas "Contas".** A do menu — **Contas**, *o que vence e o que já venceu* — é a fila de [contas a pagar e a receber](contas-a-pagar-e-a-receber.md). A da engrenagem — **Contas**, *caixa, banco, carteira e gateway* — é o cadastro dos lugares onde o dinheiro fica ([Contas](contas.md)).
 {% endhint %}
 
 O **Fechamento de caixa** também aparece no **menu principal do app** quando há recebimentos a conferir, com o número de pendências ao lado.
@@ -89,13 +94,13 @@ O filtro de contas só aparece quando a sua organização tem **mais de uma cont
 1. **Saldo atual** — o herói do topo. É a soma do que já aconteceu (o **realizado**) nas contas do recorte.
 2. **Entradas** e **Saídas** — os totais realizados do período.
 3. **Resultado** — *o que sobrou (ou faltou)*: entradas menos saídas. Verde quando sobrou, vermelho quando faltou.
-4. **Aviso de vencimentos** — uma faixa âmbar quando há contas **vencidas** ou vencendo **hoje**, com o total e um toque para as [Contas a pagar](contas-a-pagar-e-a-receber.md).
+4. **Aviso de vencimentos** — uma faixa âmbar quando há contas **vencidas** ou vencendo **hoje**, com o total e um toque para as [Contas](contas-a-pagar-e-a-receber.md) a pagar.
 5. **Evolução do caixa** — o gráfico de entradas × saídas × saldo acumulado ao longo do período. A legenda liga e desliga cada linha, e você pode **salvar a visão** que usa sempre como um preset nomeado.
 6. **Vencimentos** (telas largas) — uma coluna ao lado do gráfico com vencidas, vence hoje e próximos 7 dias.
 7. **Últimos lançamentos** — as últimas linhas do razão, com **Ver todos** para a lista completa.
 
 {% hint style="warning" %}
-**O previsto não entra no saldo.** Uma conta a pagar que ainda não foi paga (e um recebimento que ainda não caiu) **não** mexe no saldo nem no resultado — ela aparece nas contas a pagar/receber e no *previsto em aberto* das contas. O saldo é dinheiro que já se moveu. O porquê está em [Lançamentos](lancamentos.md#previsto-x-realizado).
+**O previsto não entra no saldo.** Uma conta a pagar que ainda não foi paga (e um recebimento que ainda não caiu) **não** mexe no saldo nem no resultado — ela aparece nas contas a pagar/receber e no *previsto em aberto* das contas. O mesmo vale para a fatura do cartão de crédito: o que você deve no cartão é previsto, não dinheiro que já saiu. O saldo é dinheiro que já se moveu. O porquê está em [Lançamentos](lancamentos.md#previsto-x-realizado).
 {% endhint %}
 
 ## Quando há trabalho esperando {#trabalho-esperando}
@@ -111,12 +116,13 @@ Com zero pendência, **nada é desenhado** — sem "tudo em ordem" ocupando espa
 
 ## Registrar uma entrada ou saída
 
-O botão **+** (ou **Novo lançamento**, em telas largas) oferece dois caminhos:
+O botão **+** (ou **Novo lançamento**, em telas largas) abre **Novo lançamento**, com três caminhos:
 
 * **Nova despesa** — dinheiro saindo.
 * **Nova receita** — dinheiro entrando.
+* **Lançamento rápido** — o atalho de quem lança muitas contas por dia: uma frase pronta em que você só digita o valor.
 
-Os dois abrem o mesmo passo a passo, descrito em [Lançamentos](lancamentos.md#registrar-um-lancamento). Recebimentos de clientes e repasses a parceiros **você não precisa registrar**: eles entram sozinhos.
+O passo a passo de cada um está em [Lançamentos](lancamentos.md#registrar-um-lancamento). Recebimentos de clientes e repasses a parceiros **você não precisa registrar**: eles entram sozinhos.
 
 ## Por porte
 
@@ -136,5 +142,5 @@ Os dois abrem o mesmo passo a passo, descrito em [Lançamentos](lancamentos.md#r
 ## Próximo passo
 
 * Para entender cada linha do razão e o que o sistema lança sozinho: [Lançamentos](lancamentos.md).
-* Para preparar as contas onde o dinheiro vive: [Contas](contas.md).
+* Para preparar as contas onde o dinheiro vive: [Contas](contas.md) — e os cartões da empresa: [Cartões](cartoes.md).
 * Para aprender a ler os números e decidir com eles: [Entender seus números](../conceitos/entender-seus-numeros.md).

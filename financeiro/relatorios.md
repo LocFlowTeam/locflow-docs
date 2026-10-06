@@ -1,6 +1,6 @@
 ---
 icon: chart-pie
-description: As quatro abas do relatório, a pergunta que cada uma responde, como ler cada número — e a armadilha de interpretação de cada uma.
+description: As quatro abas do relatório, a pergunta que cada uma responde, os regimes de caixa e de competência, como ler cada número — e a armadilha de interpretação de cada uma.
 ---
 
 # Relatórios: como ler
@@ -24,15 +24,25 @@ A tabela acima está na ordem em que as abas aparecem na tela; as seções abaix
 
 Se você quer primeiro o **raciocínio** por trás dos números (competência e caixa, margem de contribuição, estrutura), comece por [Entender seus números](../conceitos/entender-seus-numeros.md) e volte para cá.
 
-## Dois controles no topo, valendo para tudo
+## Três controles no topo, valendo para tudo
 
 1. **Período** — abre com o **mês corrente** e tem cinco modos: intervalo livre, semana, mês, últimos 30/60/90 dias e ano.
-2. **Olho de privacidade** — esconde os valores (viram `••••`) para você abrir o relatório na frente de alguém sem mostrar faturamento.
+2. **Caixa | Competência** — o regime, em que mês cada valor conta. O padrão é **Caixa**. Veja [abaixo](#regime).
+3. **Olho de privacidade** — esconde os valores (viram `••••`) para você abrir o relatório na frente de alguém sem mostrar faturamento.
 
-A aba **DRE** é a exceção: ela é sempre de um **ano inteiro**, e você troca de ano nas setinhas.
+A aba **DRE** é a exceção no período: ela é sempre de um **ano inteiro**, e você troca de ano nas setinhas — mas também tem o seletor de regime.
+
+### Caixa ou competência {#regime}
+
+| Regime | Em que mês o valor conta | Exemplo: a energia de junho, paga em 8 de julho |
+| --- | --- | --- |
+| **Caixa** *(padrão)* | No dia em que o dinheiro **realmente se moveu** | Conta em **julho** |
+| **Competência** | No mês **a que o valor pertence** — a [data de competência](lancamentos.md#caixa-x-competencia) do lançamento | Conta em **junho** |
+
+Nos dois regimes, o relatório fala só do que **já foi realizado**: o que está previsto (a receber ou a pagar) **não entra no resultado** — ele vive em [Contas a pagar e a receber](contas-a-pagar-e-a-receber.md). Isso é deliberado: relatório não mente sobre dinheiro que ainda pode não vir. Saldo e extrato não têm regime: são sempre de caixa.
 
 {% hint style="info" %}
-**Todas as abas são regime de caixa.** Um valor entra no relatório no dia em que o dinheiro **realmente se moveu** — não no dia em que você faturou. O que está previsto (a receber ou a pagar) **não aparece** aqui; ele vive em [Contas a pagar e a receber](contas-a-pagar-e-a-receber.md). Isso é deliberado: relatório de caixa não mente sobre dinheiro que ainda pode não vir.
+**Quando trocar para Competência.** Para conversar com o contador, e para entender um mês que "parece" caro só porque contas do mês anterior foram pagas nele. Uma compra no cartão de crédito, em competência, conta no mês da compra; em caixa, no mês em que a fatura é paga. Num parcelamento, cada parcela tem o seu mês: em competência, o do vencimento dela; em caixa, o do pagamento.
 {% endhint %}
 
 ## Aba Categorias — "onde meu dinheiro foi?"
@@ -41,7 +51,7 @@ Um botão alterna entre **Despesas** e **Receitas**. Você vê uma rosca com o t
 
 **Como ler:**
 
-* As **subcategorias** aparecem recuadas sob a categoria-mãe. O total da mãe **já inclui** as filhas — não some as duas.
+* As **subcategorias** aparecem recuadas sob a categoria-mãe. O total da mãe **já inclui** as filhas — não some as duas. O que foi lançado **direto na mãe**, sem escolher uma filha, aparece numa linha própria — *Direto em Manutenção* —, para as partes fecharem com o total.
 * Quando há muitas categorias, as menores são agrupadas numa fatia **"Outras"**. Se ela ficou gorda, é sinal de que vale criar categoria para algo que está escondido ali.
 * O **%** é a participação dentro do recorte que está na tela. Trocou o período, muda a base do percentual.
 
@@ -67,7 +77,7 @@ Abaixo você tem o detalhe categoria por categoria, o gráfico de **Evolução m
 **Como ler:** comece pela linha **Resultado** de cada mês na tabela. Um ano fechando positivo com quatro meses negativos é um negócio sazonal saudável; um ano positivo apenas por causa de **um** mês excepcional é um negócio frágil.
 
 {% hint style="warning" %}
-**A armadilha: é regime de caixa, e caixa distorce compras grandes.** No mês em que você paga 200 cadeiras novas, o DRE mostra um mês terrível — e nos meses seguintes, em que essas cadeiras estão faturando sem custo nenhum aparecendo, ele mostra meses ótimos. Nenhum dos dois é a verdade da operação. Da mesma forma, uma fatura emitida e **não paga** não aparece aqui: para você o pedido "aconteceu", para o relatório de caixa ainda não. Veja [Competência e caixa](../conceitos/entender-seus-numeros.md#1-competencia-e-caixa-faturei-nao-e-recebi).
+**A armadilha: compras grandes distorcem o mês — nos dois regimes.** No mês em que você compra 200 cadeiras novas, o DRE mostra um mês terrível — e nos meses seguintes, em que essas cadeiras estão faturando sem custo nenhum aparecendo, ele mostra meses ótimos. Nenhum dos dois é a verdade da operação. Trocar para **Competência** não espalha a compra pelos meses de uso: ela conta no mês da compra (em caixa, no mês em que foi paga). Da mesma forma, uma fatura emitida e **não paga** não aparece aqui: para você o pedido "aconteceu", para o relatório ainda não. Veja [Competência e caixa](../conceitos/entender-seus-numeros.md#1-competencia-e-caixa-faturei-nao-e-recebi).
 {% endhint %}
 
 ## Aba Serviços — o coração da análise
@@ -168,18 +178,20 @@ E, quando existe frete de terceiro no período, **Custo por transportadora** —
 Frete subsidiado não é necessariamente erro: tem locadora que entrega "de graça" de propósito para fechar o aluguel. O relatório não decide isso por você — ele só garante que a decisão seja **consciente e medida**, e não uma surpresa no fim do ano.
 {% endhint %}
 
-## Aba Insights — seis cortes do mesmo dinheiro
+## Aba Insights — oito cortes do mesmo dinheiro
 
 | Corte | O que mostra |
 | --- | --- |
 | **Fazer × repassar** | Margem do frete por quem executou: sua frota, fornecedor ou parceiro |
 | **Fornecedor** | Com quem você mais gasta |
-| **Funcionário** | Quanto custa cada funcionário (salário, benefícios, diárias atribuídos a ele) |
+| **Funcionário** | Quanto custa cada funcionário (salário, benefícios, diárias atribuídos a ele). O que ainda vai ser pago aparece à parte, pelo vencimento |
 | **Veículo** | Qual veículo custa mais |
+| **Galpão** | Qual unidade custa mais — aluguel, energia, água, internet. Conta lançada sem galpão fica de fora |
+| **Cartão** | Quanto passou em cada cartão — crédito e débito juntos. Compra sem cartão informado fica de fora. Veja [Cartões](cartoes.md) |
 | **Método** | Como você paga (Pix, boleto, cartão, dinheiro…) |
 | **Cliente** | De quem vem o dinheiro |
 
-Os cinco últimos são rankings com rosca e barra — leitura direta. O primeiro merece parágrafo próprio.
+Os sete últimos são rankings com rosca e barra — leitura direta. Veículo, funcionário e galpão só aparecem nos lançamentos em que alguém disse de quem era a despesa — é por isso que as [categorias](categorias-e-plano-de-contas.md) podem exigir esse campo. O primeiro corte merece parágrafo próprio.
 
 ### Fazer × repassar: a decisão da frota
 
@@ -222,7 +234,7 @@ Faça nesta sequência — cada passo prepara o próximo. Leva uns dez minutos.
 
 ## Antes de confiar nos números, leia isto
 
-O resultado é **regime de caixa**, e isso tem uma consequência importante na comparação entre aluguel e venda: o **desgaste dos seus itens locáveis não aparece como custo**, enquanto na venda o custo da mercadoria aparece inteiro. Ou seja, **a comparação de hoje favorece o aluguel**. Não é bug e não é opinião — é como o caixa funciona, e você precisa saber disso para ajustar a leitura na sua cabeça. O ajuste, com exemplo, está em [O aviso honesto](../conceitos/entender-seus-numeros.md#6-o-aviso-honesto-o-desgaste-do-seu-acervo-nao-aparece).
+O resultado — em caixa ou em competência — **não desconta o desgaste** dos seus itens locáveis, e isso tem uma consequência importante na comparação entre aluguel e venda: o **desgaste do acervo não aparece como custo**, enquanto na venda o custo da mercadoria aparece inteiro. Ou seja, **a comparação de hoje favorece o aluguel**. Não é bug e não é opinião — é como o resultado é montado, e você precisa saber disso para ajustar a leitura na sua cabeça. Quanto o seu acervo já se desgastou aparece no [Patrimônio](../estoque/patrimonio.md) do estoque. O ajuste, com exemplo, está em [O aviso honesto](../conceitos/entender-seus-numeros.md#6-o-aviso-honesto-o-desgaste-do-seu-acervo-nao-aparece).
 
 ## Próximo passo
 

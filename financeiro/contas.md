@@ -1,6 +1,6 @@
 ---
 icon: building-columns
-description: Onde o dinheiro da sua locadora vive — caixa, banco, carteira e a conta do pagamento online — com conta padrão, dados bancários, transferência, mesclagem e inativação.
+description: Onde o dinheiro da sua locadora vive — caixa, banco, carteira, a conta do pagamento online e as contas de recebimento — com conta padrão, dados bancários, transferência, mesclagem e inativação.
 ---
 
 # Contas
@@ -20,13 +20,14 @@ Você as encontra em **Gestão Financeira → engrenagem (Ajustes) → Contas**.
 | **Caixa** | Dinheiro em espécie que fica com você — a gaveta do balcão, o troco da rua. | Sim |
 | **Banco** | Uma conta bancária de verdade. É o tipo que aceita [dados bancários](#dados-bancarios) e extrato. | Sim |
 | **Carteira** | Dinheiro guardado fora do banco tradicional: carteira digital, aplicativo de pagamento. | Sim |
-| **Gateway** | A conta-espelho do **pagamento online**. Reflete o dinheiro que está no processador de pagamentos, antes de cair no seu banco. | Não — o LocFlow a mantém |
+| **Gateway** | A conta-espelho do **pagamento online**, com o nome **Stone**. Reflete o dinheiro que está no processador de pagamentos, antes de cair no seu banco. | Não — o LocFlow a mantém |
+| **Cartão de crédito** | A conta da **fatura** de um cartão: as compras feitas nele nascem aqui, como dívida prevista. | Não — nasce quando você cadastra o cartão em [Cartões](cartoes.md) |
 
 {% hint style="info" %}
-**Por que existe uma conta de gateway.** Quando o cliente paga pelo link, o dinheiro entra **no processador**, não no seu banco: ele fica compensando e só depois é saqueado. A conta-espelho mostra esse dinheiro no lugar certo do seu financeiro em vez de fingir que ele já está no banco. Os detalhes do ciclo estão em [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
+**Por que existe uma conta de gateway.** Quando o cliente paga pelo link, o dinheiro entra **no processador**, não no seu banco: ele fica compensando e só depois é sacado. A conta **Stone** mostra esse dinheiro no lugar certo do seu financeiro em vez de fingir que ele já está no banco — o próprio cartão dela diz: *"Conta temporária: os recebíveis caem aqui e os saques vão para as contas de recebimento."* Os detalhes do ciclo estão em [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
 {% endhint %}
 
-Para criar: **Criar conta**, escolha o nome (ex.: *Banco Azul PJ*) e o tipo.
+Para criar: **Criar conta**, escolha o nome (ex.: *Banco Azul PJ*) e o tipo — **Caixa**, **Banco** ou **Carteira**. A conta do gateway, as contas de recebimento e as de cartão não se criam aqui: o LocFlow as mantém sozinho.
 
 ## O que a tela mostra
 
@@ -37,7 +38,8 @@ Cada conta aparece como um cartão com:
 * o **ícone e a cor do tipo** (a mesma língua visual em todo o financeiro);
 * o **saldo realizado**, sempre **derivado dos lançamentos** — nunca um número digitado;
 * o **previsto**, quando existe;
-* os selos: ⭐ **Padrão**, ✔ **Recebedor**, **Inativa** e o resumo dos dados bancários.
+* os selos: ⭐ **Padrão**, ✔ **Conta de recebimento**, **Inativa** e o resumo dos dados bancários;
+* para a Stone e para uma conta de recebimento arquivada, uma frase que explica o papel dela.
 
 Saldo negativo aparece em vermelho com um sinal de atenção — não é bloqueado, porque conta no vermelho é um fato que precisa ser visto, não escondido.
 
@@ -72,25 +74,38 @@ Abre o extrato do mês **já filtrado nesta conta**: saldo anterior, cada linha 
 | Ação | O que faz | Volta atrás? |
 | --- | --- | --- |
 | **Definir como padrão** | Torna esta a conta que recebe o que não diz a conta | Sim, elegendo outra |
-| **Marcar como conta do recebedor** | Define onde caem os saques do pagamento online. Veja abaixo | Sim, marcando outra |
 | **Mesclar em outra conta** | Faz outra conta **absorver** esta | **Não** |
 | **Inativar** / **Reativar** | Tira a conta do caminho, preservando o histórico | Sim |
 
 {% hint style="info" %}
-**Ação indisponível não desaparece.** Quando algo não pode ser feito, a opção continua na tela, apagada, com o motivo curto no lugar do toque — *"Já é a padrão"*, *"Conta inativa"*, *"Conta do sistema não se mescla"*. Você entende o **porquê** sem ter de adivinhar.
+**Ação indisponível não desaparece.** Quando algo não pode ser feito, a opção continua na tela, apagada, com o motivo curto no lugar do toque — *"Já é a padrão"*, *"Conta inativa"*, *"Conta do sistema não se mescla"*, *"Edite em Ajustes › Integração de Pagamento"*. Você entende o **porquê** sem ter de adivinhar.
 {% endhint %}
 
-## A conta do recebedor {#recebedor}
+## Contas de recebimento {#conta-de-recebimento}
 
-Quando você usa o [pagamento online](../cobranca/pagamento-online.md), o dinheiro fica no processador e depois é **transferido para uma conta bancária sua**. A conta marcada como **Recebedor** é a que representa esse destino no seu financeiro: é nela que os **saques** aparecem quando o dinheiro sai do processador e chega ao banco.
+Quando você usa o [pagamento online](../cobranca/pagamento-online.md), o dinheiro fica no processador e depois é **sacado para uma conta bancária sua** — a **conta de recebimento**, cadastrada em **Ajustes › Integração de Pagamento**.
 
-* É **uma por organização** — marcar outra transfere o selo.
-* A conta-espelho do **Gateway** não pode ser o recebedor: ela é a origem do saque, não o destino.
-* Marque a conta **Banco** que você cadastrou no [recebimento online](../cobranca/saldo-e-antecipacao.md), para os dois lados falarem do mesmo lugar.
+**Toda conta de recebimento vira, sozinha, uma conta Banco do Financeiro**, com o selo **Conta de recebimento** e os dados bancários já preenchidos. Você não precisa criar nem marcar nada: é nela que os saques aparecem quando o dinheiro sai da Stone e chega ao banco.
+
+O que muda numa conta de recebimento — as três ações aparecem apagadas, com o motivo no lugar do toque:
+
+| Ação | O motivo |
+| --- | --- |
+| **Dados bancários** | *"Edite em Ajustes › Integração de Pagamento"* — o banco dela é o mesmo do cadastro de recebimento, e só se troca lá |
+| **Inativar** | Quando o banco muda, o LocFlow **arquiva** a conta antiga sozinho — com todo o histórico — e cria a do banco novo, que passa a ser a vigente. A arquivada diz isso no cartão e não se reativa |
+| **Mesclar em outra conta** | *"Conta de recebimento não se mescla em outra; mescle a outra nela"*. Cadastrou à mão a mesma conta do banco? Abra a duplicada e mescle-a na conta de recebimento |
+
+{% hint style="info" %}
+**Cada saque é uma transferência, não uma receita.** Quando um saque — manual ou automático — é concluído, ele aparece no Financeiro como uma **transferência da Stone para a conta de recebimento**, com a taxa do saque junto. O dinheiro já tinha entrado como receita quando o cliente pagou; o saque só muda o lugar onde ele está, por isso não mexe no resultado do mês.
+{% endhint %}
+
+{% hint style="warning" %}
+**Saques antigos podem não estar no Financeiro.** O saque só passou a virar transferência sozinho a partir de um certo momento; os anteriores podem não ter sido lançados. Se você já sacava antes e não lançou essas transferências à mão, o saldo da **Stone** no Financeiro pode ficar maior que o saldo real no processador. O saldo de verdade, disponível para sacar, é o da tela de [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
+{% endhint %}
 
 ## Dados bancários {#dados-bancarios}
 
-A conta **real** do banco por trás da sua conta do LocFlow. Preencha:
+A conta **real** do banco por trás da sua conta do LocFlow. (Numa [conta de recebimento](#conta-de-recebimento) eles já vêm preenchidos e são só de leitura.) Preencha:
 
 1. **Banco** — o campo tem **busca**: digite o nome (*Itaú*) ou o código (*341*) e escolha na lista.
 2. **Agência** e, se houver, o **dígito**.
@@ -128,16 +143,18 @@ Cadastrou a mesma conta duas vezes? A **mesclagem** resolve: a conta que você e
 1. Todo o **histórico** de lançamentos migra para a conta de destino.
 2. O **saldo de abertura** migra também.
 3. A conta absorvida fica **inativa, com o rastro** de que foi mesclada — nada é apagado.
-4. Se ela era a padrão (ou o recebedor), o selo é reatribuído na mesma operação.
+4. Se ela era a padrão, a estrela passa para a conta de destino na mesma operação.
 
 {% hint style="danger" %}
 **Mesclar não tem volta.** Não existe "desmesclar": o histórico passa a viver na outra conta. Antes de mesclar, confira que é realmente a mesma conta do mundo real — e não duas contas parecidas.
 {% endhint %}
 
-O LocFlow recusa a mesclagem em três casos, para proteger o seu saldo:
+O LocFlow recusa a mesclagem nestes casos, para proteger o seu saldo:
 
-* a conta é **do sistema** (a conta-espelho do gateway);
-* o **destino** é a conta de gateway;
+* a conta é **do sistema** (a Stone);
+* o **destino** é a conta do gateway;
+* a conta é uma **conta de recebimento** — mescle a outra **nela**, não o contrário;
+* a conta é a **fatura de um cartão** — mesclá-la viraria dívida em caixa;
 * uma das contas já tem **saldo de abertura definido** ou **extrato bancário importado** — nesses casos, juntar os históricos faria o saldo mentir.
 
 ## Inativar em vez de excluir
@@ -148,21 +165,24 @@ Não existe excluir conta: excluir apagaria o passado. **Inativar** faz o trabal
 * os lançamentos antigos continuam nela, e os relatórios de meses anteriores não mudam;
 * o cartão fica esmaecido com o selo **Inativa**, e **Reativar** a traz de volta.
 
+A **Stone** e a **conta de recebimento** vigente não se inativam à mão: os recebíveis do gateway caem na primeira antes de cada saque, e a segunda é arquivada sozinha quando o banco muda em Ajustes › Integração de Pagamento.
+
 ## O que é rotina e o que é estrutural
 
 | Rotina — faça sem medo | Estrutural — pense antes |
 | --- | --- |
 | Ver movimentos | Definir a conta padrão |
-| Transferir entre contas | Marcar a conta do recebedor |
-| Corrigir dados bancários | Inativar uma conta |
-| Renomear | **Mesclar** (irreversível) |
+| Transferir entre contas | Inativar uma conta |
+| Corrigir dados bancários | **Mesclar** (irreversível) |
+| Renomear | Trocar o banco da conta de recebimento (em Ajustes › Integração de Pagamento) |
 
 ## Situações reais
 
 * **"Depositei o dinheiro da semana no banco."** Abra a conta **Caixa** → **Transferir** → destino **Banco**, valor e data. O resultado do mês não muda: nada entrou nem saiu, só trocou de lugar.
 * **"Fechei a conta no banco antigo."** Inative a conta. Se ela era a padrão, o LocFlow pede a nova padrão na mesma hora. O histórico continua consultável.
 * **"Tenho 'Nubank' e 'Nu PJ' cadastrados, é a mesma conta."** Mescle a duplicada na que você usa — mas só se nenhuma das duas já tiver saldo de abertura ou extrato importado.
-* **"Recebo por PIX no link de pagamento e quero ver esse dinheiro separado."** Ele já aparece na conta-espelho do **Gateway**. Marque a sua conta **Banco** como **Recebedor** para os saques caírem no lugar certo.
+* **"Recebo por PIX no link de pagamento e quero ver esse dinheiro separado."** Ele já aparece na conta **Stone**, enquanto está no processador. Quando você saca, ele passa para a sua **conta de recebimento** — que aparece sozinha aqui, com o selo, sem você marcar nada.
+* **"Troquei o banco que recebe o pagamento online."** Edite em **Ajustes › Integração de Pagamento**. O Financeiro arquiva a conta antiga, com o histórico, e cria a do banco novo.
 
 ## Próximo passo
 
