@@ -13,12 +13,12 @@ Em vez de dizer, em cada aviso, "quem recebe isto", você configura **canais** e
 Aí, em cada aviso da [Central de Notificações](central-de-notificacoes.md), você só **aponta para um canal**. Mudou o canal? Todos os avisos que o usam acompanham — sem reconfigurar um por um.
 
 {% hint style="info" %}
-Quando você abre a lista de canais, o LocFlow lembra: *"Canais definem quem recebe e como (todos, por competência, responsável ou rodízio). Um canal pode ser reaproveitado em vários avisos."*
+Quando você abre a lista de canais, o LocFlow lembra: *"Canais definem quem recebe e como (todos, por competência, responsável, usuários específicos ou rodízio). Um canal pode ser reaproveitado em vários avisos."*
 {% endhint %}
 
 ## O que é um canal <a href="#o-que-e-um-canal" id="o-que-e-um-canal"></a>
 
-Pense no canal como uma **lista de distribuição inteligente**. Ele não guarda nomes de pessoas; guarda uma **regra** de quem deve receber. Quando o aviso dispara, o sistema resolve a regra **na hora** e entrega para quem se encaixa naquele momento.
+Pense no canal como uma **lista de distribuição inteligente**. Em geral, ele não guarda nomes de pessoas; guarda uma **regra** de quem deve receber. Quando o aviso dispara, o sistema resolve a regra **na hora** e entrega para quem se encaixa naquele momento. (A exceção é a pool [Usuários específicos](#usuarios-especificos), em que você escolhe os nomes.)
 
 ```mermaid
 flowchart LR
@@ -58,12 +58,20 @@ A competência vem da **função** de cada colaborador. Para um canal por compet
 
 Mira **quem está por trás daquela operação**, descoberto pelo sistema, sem você nomear ninguém. Na **logística**, é **quem está executando a rota** (o motorista/condutor). É a forma de falar **direto com a pessoa certa** sobre algo que só diz respeito a ela.
 
-### Cliente <a href="#cliente" id="cliente"></a>
+### Usuários específicos <a href="#usuarios-especificos" id="usuarios-especificos"></a>
 
-A pool **Cliente** mira o contato do pedido (por exemplo, lembretes via WhatsApp).
+Você marca **pessoas pelo nome**, entre os colaboradores da organização. É a saída quando o aviso tem de chegar a nomes exatos, e não a um grupo — por exemplo, só ao sócio que paga as contas, em vez de todo mundo que tem a competência *Pagar contas*.
 
 {% hint style="info" %}
-A pool **Cliente** está **em breve**: depende de recursos de mensagem ao cliente que ainda estão chegando. Por ora, monte canais com **organização**, **competência** e **responsável pela operação**.
+Diferente das outras pools, esta **não se atualiza sozinha**: quem entrar na equipe depois só recebe se você acrescentar o nome no canal.
+{% endhint %}
+
+### Cliente <a href="#cliente" id="cliente"></a>
+
+A pool **Cliente** vai mirar o contato do pedido (por exemplo, lembretes via WhatsApp).
+
+{% hint style="info" %}
+A pool **Cliente** está **em breve**: depende de recursos de mensagem ao cliente que ainda estão chegando, e por isso **não aparece** para escolher ao montar um canal. Por ora, monte canais com **Toda a organização**, **Por competência**, **Responsável pela operação** e **Usuários específicos**.
 {% endhint %}
 
 ## Como entrega: Todo o grupo ou Rodízio <a href="#como-entrega-todos-ou-rodizio" id="como-entrega-todos-ou-rodizio"></a>
@@ -90,7 +98,7 @@ Toda organização já vem com canais prontos — você não monta tudo do zero:
 
 | Canal | Quem recebe | Como entrega |
 | --- | --- | --- |
-| **Organização** | Toda a organização | Todo o grupo |
+| **Toda a organização** | Toda a organização | Todo o grupo |
 | **Responsável pela operação** | Quem está por trás da operação (ex.: quem executa a rota) | — |
 | **Operadores logísticos** | Competência *Operar logística* | Todo o grupo |
 | **Responsável pela loja** | Competência *Atendimento na loja* | Todo o grupo |
@@ -101,7 +109,7 @@ Toda organização já vem com canais prontos — você não monta tudo do zero:
 
 O **Aprovadores de orçamento** é o canal do aviso de **orçamento congelado aguardando aprovação** — por exemplo, quando o frete passa de um limite e o pedido trava esperando um aval. Ele fala com todo o grupo que pode **vender orçamentos**, porque é quem decide aprovar ou rejeitar. Repare que ele usa a **mesma competência** do *Vendedores (rodízio)*, mas entrega de forma diferente: aqui **todo o grupo** recebe (uma aprovação parada não pode depender de uma só pessoa da fila).
 
-O **Quem cuida do financeiro** é o canal do dinheiro que SAI e do que está atrasado — conta a vencer, fatura de cartão fechada, parcela vencida. Ele mira *Pagar contas* porque essa é a pergunta certa: "a quem eu aviso que a fatura fechou?" não é a mesma que "quem pode editar um lançamento". Numa locadora é o dono; noutra, a pessoa do administrativo.
+O **Quem cuida do financeiro** é o canal do dinheiro que SAI e do que está atrasado — conta a vencer, fatura de cartão fechada, parcela vencida. Ele mira *Pagar contas* porque essa é a pergunta certa: "a quem eu aviso que a fatura fechou?" não é a mesma que "quem pode editar um lançamento". Numa locadora é o dono; noutra, a pessoa do administrativo. Para estreitar, conceda a competência só a quem cuida do dinheiro — ou troque o público do canal por [Usuários específicos](#usuarios-especificos) e escolha os nomes.
 
 Na lista, um canal padrão traz o selo **"Recebe por padrão"**. Você pode **editar a pool e o roteamento** dele e reaproveitá-lo nos avisos — mas **não pode removê-lo**, porque ele é a opção que os avisos usam quando você não escolhe outra.
 
@@ -116,13 +124,13 @@ Na lista de canais, toque no **+** para criar um. Preencha:
 1. **Nome** — como você reconhece o canal (ex.: *Vendedores (rodízio)*).
 2. **Descrição** (opcional) — o que este canal faz.
 3. **Como entrega** — **Todo o grupo** ou **Rodízio**.
-4. **Quem recebe** — marque uma ou mais pools (e, em *Por competência*, marque as competências).
+4. **Quem recebe** — marque uma ou mais pools: **Toda a organização**, **Por competência** (e marque as competências), **Responsável pela operação** ou **Usuários específicos** (e marque as pessoas).
 5. **Ativo** — deixe ligado para o canal ficar disponível para uso.
 
 Salve. O canal novo já aparece para ser escolhido em qualquer aviso da Central de Notificações. Depois de salvo, vale [testar o canal](#testar-um-canal) para confirmar quem ele alcança.
 
 {% hint style="info" %}
-Você chega à gestão de canais por **Ajustes → Central de Notificações → Gerenciar canais**, ou direto pelo seletor de canal de um aviso (botão **Gerenciar canais**).
+Você chega à gestão de canais pelo item **Canais de Notificação**, em **Ajustes › Notificações**, ou direto pelo seletor de canal de um aviso da Central (botão **Gerenciar canais**).
 {% endhint %}
 
 ## Editar um canal <a href="#editar-um-canal" id="editar-um-canal"></a>

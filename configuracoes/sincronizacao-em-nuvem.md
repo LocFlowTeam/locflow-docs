@@ -10,7 +10,7 @@ A **Sincronização em Nuvem** mantém uma **cópia automática** dos documentos
 É um recurso recente e **opcional**: o LocFlow continua sendo o lugar onde tudo é gerado e organizado; a nuvem fica com uma **cópia de segurança** que é só sua.
 
 {% hint style="info" %}
-Você encontra esta tela em **Configurações → Integrações → Sincronização em Nuvem**.
+Você encontra esta tela em **Ajustes › Integrações › Sincronização em Nuvem**.
 {% endhint %}
 
 ## Para que serve <a id="para-que-serve"></a>
@@ -33,7 +33,7 @@ Tudo fica dentro de uma pasta chamada **`LocFlow`** no seu Drive, **organizada p
   * **Boletos** — os boletos bancários emitidos
   * **Recibos de pagamento** — os comprovantes de quitação
   * **Comprovantes** — os comprovantes anexados aos lançamentos do financeiro
-  * **Comprovantes de recebimento** — a foto do comprovante que o motorista anexa ao registrar um pagamento recebido na rua ou no balcão (dinheiro, Pix, maquininha)
+  * **Comprovantes de recebimento** — a foto do comprovante que o motorista anexa ao registrar um pagamento recebido na rua ou na loja (dinheiro, Pix, maquininha)
 * **Logística**
   * **Provas** — as fotos e vídeos das entregas e devoluções
   * **Roteiros** — os PDFs de roteiro da rota (um roteiro pode reunir vários pedidos)
@@ -48,7 +48,7 @@ Tudo fica dentro de uma pasta chamada **`LocFlow`** no seu Drive, **organizada p
 * **Documentos** — a pasta de reserva: um documento de um modelo que ainda não tem pasta própria cai aqui, para nunca se perder
 
 {% hint style="success" %}
-**Ache tudo de um pedido pelo código.** Todo arquivo leva o código do orçamento no nome (por exemplo `ORC-482 | Contrato de locação`). Pesquise por **ORC-482** na busca do Google Drive e ele reúne, de todas as pastas, cada documento daquele pedido — pronto para baixar de uma vez.
+**Ache tudo de um pedido pelo código.** Por padrão, todo arquivo leva o código do orçamento no nome (por exemplo `ORC-482 | Contrato de locação`). Pesquise por **ORC-482** na busca do Google Drive e ele reúne, de todas as pastas, cada documento daquele pedido — pronto para baixar de uma vez. Quer outro padrão? Ajuste em [Nomes de arquivo](nomes-de-arquivo.md).
 {% endhint %}
 
 {% hint style="info" %}
@@ -114,6 +114,16 @@ A tela mostra dois números para você acompanhar:
 
 Quando não há nada na fila, a tela mostra **Em dia**. É normal ver "pendentes" por alguns minutos logo depois de gerar vários documentos — eles somem sozinhos conforme o envio acontece.
 
+### O cartão de transferências <a id="cartao-de-transferencias"></a>
+
+Enquanto você envia ou baixa arquivos — uma foto de prova, o PDF de um documento, a nota fiscal em PDF e XML, um `.zip` com vários documentos —, aparece um **cartão de transferências** flutuando sobre a tela. Cada arquivo tem a sua linha, com o andamento:
+
+* **Enviando… 42%** ou **Baixando… 42%** — e **Enviado** / **Baixado** quando termina;
+* enquanto o LocFlow ainda prepara o arquivo, a linha diz o que está acontecendo (por exemplo, **Gerando o PDF…**), em vez de uma barra parada em zero;
+* se algo falhar, a linha diz que não foi possível enviar ou baixar — e o botão **Dispensar** limpa as transferências encerradas.
+
+Recolhido, o cartão vira uma pílula que resume o conjunto (por exemplo, *"Enviando 2 arquivos · 40%"*). Ele também mostra a situação da cópia no Drive — quantos arquivos ainda estão **a espelhar**, quando foi a última cópia e o atalho **Sincronizar agora**. Um detalhe que tranquiliza: o arquivo **já está salvo no LocFlow**; o que está pendente é só a cópia no Drive.
+
 ## Quando algo dá errado
 
 ### Reconectar <a id="reconectar"></a>
@@ -147,5 +157,6 @@ Desconectar **não apaga** nada do seu Drive. Apenas interrompe o envio das pró
 ## Próximo passo <a id="proximo-passo"></a>
 
 * Veja todas as conexões disponíveis em [Integrações](integracoes.md).
-* Personalize o que sai nos PDFs em [Modelos personalizados](../documentos/modelos-personalizados.md).
+* Personalize o que sai nos PDFs em [Modelos de documento](../documentos/modelos-personalizados.md).
+* Defina como cada arquivo é batizado em [Nomes de arquivo](nomes-de-arquivo.md).
 * Em dúvida com um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).

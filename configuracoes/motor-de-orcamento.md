@@ -1,6 +1,6 @@
 ---
 icon: file-invoice
-description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade, intervalo mínimo da logística, o teto de desconto e as seções opcionais do formulário.
+description: Os padrões da sua proposta — valor mínimo de orçamento (com histórico), taxa de serviço, validade, intervalo mínimo da logística, a pré-reserva, o teto de desconto e as seções opcionais do formulário.
 ---
 
 # Motor de Orçamento
@@ -12,7 +12,7 @@ Por dentro, ele tem **dois lados** que funcionam de maneira diferente — e vale
 | Lado | O que guarda | Como salva |
 | --- | --- | --- |
 | **Valor mínimo de orçamento** | O **corte** mínimo do orçamento | Tem **histórico de versões** |
-| **Operação do orçamento** | Taxa de serviço, validade, intervalo logístico, **teto de desconto** e **seções opcionais do formulário** | **Configuração única**, sem histórico |
+| **Operação do orçamento** | Taxa de serviço, validade, intervalo logístico, **pré-reserva**, **teto de desconto** e **seções opcionais do formulário** | **Configuração única**, sem histórico — cada ajuste salva sozinho |
 
 {% hint style="info" %}
 **Por que dois lados?** O **valor mínimo** é uma regra comercial — vale guardar o registro de quando você mudou esse limite, para relatórios de venda. Os demais são **padrões operacionais**: ajustes do dia a dia que só precisam refletir o estado atual. Por isso um é versionado e o outro é editado direto.
@@ -38,12 +38,10 @@ Na tela, você digita um valor em reais e salva. Como esse é o lado **versionad
 
 ## Operação do orçamento {#operacao-do-orcamento}
 
-Da tela do valor mínimo, o atalho **"Operação do orçamento"** leva aos **padrões operacionais** da proposta — e, ao contrário do corte, eles **não guardam histórico**: você edita direto e vale a versão atual.
+Da tela do valor mínimo, o atalho **"Operação do orçamento"** leva aos **padrões operacionais** da proposta — e, ao contrário do corte, eles **não guardam histórico**: cada ajuste **salva sozinho** e vale na hora, sem botão de salvar.
 
 {% hint style="info" %}
-O próprio LocFlow resume na tela:
-
-> Parâmetros padrão usados ao montar orçamentos. São políticas internas (sem histórico) — diferente do corte, que é versionado no Motor de Orçamento.
+A tela tem quatro seções, nesta ordem: **Padrões do orçamento** (taxa de serviço, validade e intervalo mínimo logístico), **Pré-reserva**, **Teto de desconto** e **Formulário do orçamento**. O **?** de cada parâmetro traz a explicação na própria tela.
 {% endhint %}
 
 ### Taxa de serviço {#taxa-de-servico}
@@ -55,9 +53,9 @@ A taxa de serviço é **opcional** — você pode deixar em branco e definir cas
 {% hint style="info" %}
 O texto de ajuda da tela:
 
-> A taxa de serviço é um valor padrão que auxilia na criação de orçamentos com mais agilidade.
+> Valor padrão que agiliza a criação de orçamentos.
 >
-> Ela serve como referência inicial ao montar um orçamento. Orçamentos com taxa diferente da configurada aqui ainda podem ser criados normalmente.
+> Serve como referência inicial — orçamentos com taxa diferente continuam permitidos.
 {% endhint %}
 
 Ou seja, é **só um padrão**: nada impede um orçamento com taxa diferente. Quando preenchida, precisa ficar entre **0,01% e 100%**.
@@ -69,15 +67,15 @@ Por **quantos dias**, a partir da criação, a proposta continua de pé. Serve p
 {% hint style="info" %}
 O texto de ajuda da tela:
 
-> A validade do orçamento define por quantos dias, a partir da data de criação, aquele orçamento permanece reservado.
+> Por quantos dias, a partir da criação, o orçamento permanece válido.
 >
-> Preços e políticas mudam com frequência; a validade evita orçamentos com regras antigas. O valor aqui definido é apenas um padrão para agilizar novos orçamentos — o operador pode alterar a validade em cada orçamento.
+> Preços e políticas mudam; a validade evita orçamentos com regras antigas. É só um padrão — o operador pode alterar em cada orçamento.
 >
-> Qualquer pré-reserva de itens deve respeitar o prazo de validade: os itens só ficam pré-reservados enquanto o orçamento não tiver vencido. Para saber se a pré-reserva bloqueia itens do estoque, consulte o Motor de Estoque.
+> Qualquer pré-reserva respeita este prazo: os itens só ficam pré-reservados enquanto o orçamento não vencer.
 {% endhint %}
 
 {% hint style="warning" %}
-**Validade e estoque andam juntos.** Enquanto a proposta está dentro da validade, qualquer pré-reserva de itens vale; depois de vencer, os itens deixam de ficar segurados. **Se** essa pré-reserva chega a bloquear o item para outro cliente é decisão do **Motor de Estoque** — veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
+**Validade e estoque andam juntos.** Enquanto a proposta está dentro da validade, qualquer pré-reserva de itens vale; depois de vencer, os itens deixam de ficar segurados. **Se** a sua operação usa a etapa de pré-reserva é decisão da [Pré-reserva](#pre-reserva), logo abaixo; **por quanto tempo**, em volta do uso, o item fica bloqueado é decisão do **Motor de Estoque** — veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 {% endhint %}
 
 Informe um número **inteiro de dias maior que zero**.
@@ -89,14 +87,24 @@ Toda entrega e retirada acontece **dentro de uma janela de horário** — não d
 {% hint style="info" %}
 O texto de ajuda da tela:
 
-> Toda entrega e retirada ocorre dentro de um intervalo de horários — não é possível garantir chegada em um minuto exato.
+> Toda entrega e retirada ocorre dentro de uma janela de horários — não dá para garantir chegada em um minuto exato.
 >
-> O intervalo mínimo logístico define a folga mínima exigida entre o início e o fim de cada movimento (entrega ou retirada), reduzindo risco de atrasos e imprevistos.
->
-> Se algum movimento tiver intervalo menor que o mínimo configurado, o sistema alerta o operador, que deve consentir com o risco para prosseguir com a criação do orçamento.
+> Este é o tamanho mínimo dessa janela. Se um movimento tiver intervalo menor, o sistema alerta o operador, que precisa consentir com o risco para prosseguir.
 {% endhint %}
 
-Você informa em **minutos** (número inteiro maior que zero), e a tela mostra o equivalente em horas logo abaixo — por exemplo, **90 min** vira *"Equivalente a 1h30"*. Diferente do corte, aqui o aviso **não trava**: se uma janela for mais apertada que o mínimo, o sistema alerta, mas você pode **consentir com o risco** e seguir.
+Você ajusta em **minutos** (os botões de mais e menos andam de 15 em 15), e a tela mostra o resultado em horas logo abaixo — por exemplo, **90 min** aparece como *"Janela de 1h30 em cada movimento"*. Diferente do corte, aqui o aviso **não trava**: se uma janela for mais apertada que o mínimo, o sistema alerta, mas você pode **consentir com o risco** e seguir.
+
+### Pré-reserva {#pre-reserva}
+
+No aluguel, a **pré-reserva** é uma etapa **opcional** do funil, entre *Em negociação* e *Reservado*: segurar os itens antes de o cliente confirmar. A seção **Pré-reserva** pergunta **"Orçamento aberto reserva itens?"**:
+
+| Valor | O que faz |
+| --- | --- |
+| **Conforme o porte** *(padrão)* | O LocFlow segue a sugestão pelo tamanho da operação — o locador pequeno costuma pular a pré-reserva; o médio e o grande, usar. A tela diz o que vale para você. |
+| **Sempre** | A etapa de pré-reserva fica disponível no funil, seja qual for o porte. |
+| **Nunca** | Só reserva ao fechar: o funil vai direto de negociação para reservado, e a etapa some das telas. Orçamentos que já estão pré-reservados continuam valendo. |
+
+Qualquer pré-reserva respeita a [validade](#validade-do-orcamento) do orçamento. Veja a etapa no funil em [Funil de vendas](../painel/funil-de-vendas.md).
 
 ### Teto de desconto {#teto-de-desconto}
 
@@ -158,20 +166,21 @@ Para fixar a diferença entre os dois lados do motor:
 
 ```mermaid
 flowchart TB
-    M[Motor de Orcamento] --> V[Valor minimo<br/>VERSIONADO]
-    M --> O[Operacao do orcamento<br/>OPERACIONAL]
-    V --> VH[Salvar publica<br/>nova versao + historico]
-    O --> T[Taxa de servico]
+    M[Motor de Orçamento] --> V[Valor mínimo<br/>VERSIONADO]
+    M --> O[Operação do orçamento<br/>OPERACIONAL]
+    V --> VH[Salvar publica<br/>nova versão + histórico]
+    O --> T[Taxa de serviço]
     O --> VA[Validade]
-    O --> I[Intervalo logistico]
+    O --> I[Intervalo logístico]
+    O --> P[Pré-reserva]
     O --> D[Teto de desconto]
-    O --> S[Secoes opcionais<br/>do formulario]
+    O --> S[Seções opcionais<br/>do formulário]
 ```
 
 | | Valor mínimo | Operação do orçamento |
 | --- | --- | --- |
 | **Guarda histórico?** | Sim — versões com data | Não — vale a versão atual |
-| **Ao salvar** | Publica uma nova versão | Edita direto |
+| **Ao salvar** | Publica uma nova versão | Salva sozinho, a cada ajuste |
 | **Trava o orçamento?** | Sim — abaixo do corte, não cria | O intervalo **alerta** mas deixa seguir; o **teto de desconto** congela para aprovação; as **seções opcionais** só mudam o que o formulário mostra |
 
 {% hint style="warning" %}
@@ -205,7 +214,7 @@ A partir daqui é detalhe de quem gosta de saber a conta por trás. Você **não
 
 ### Sobre o versionamento do valor mínimo {#versionamento}
 
-O **valor mínimo** é o único parâmetro deste motor com versão. Cada vez que você salva, ele **publica uma nova versão em vigor** para a organização e arquiva a anterior, com a data de quando passou a valer. O cartão **"Configuração em vigor"** e o **"Ver histórico de versões"** existem por causa disso. A **operação do orçamento** (taxa, validade, intervalo, teto de desconto e seções opcionais) é gravada por cima da configuração atual, sem trilha de versões.
+O **valor mínimo** é o único parâmetro deste motor com versão. Cada vez que você salva, ele **publica uma nova versão em vigor** para a organização e arquiva a anterior, com a data de quando passou a valer. O cartão **"Configuração em vigor"** e o **"Ver histórico de versões"** existem por causa disso. A **operação do orçamento** (taxa, validade, intervalo, pré-reserva, teto de desconto e seções opcionais) é gravada por cima da configuração atual, sem trilha de versões.
 
 {% hint style="info" %}
 Editar o Motor de Orçamento depende de **permissão**. Se você só tem acesso de leitura, vê os valores em vigor mas não consegue salvar; se não encontra a opção, fale com quem administra a conta. Veja [Colaboradores e acessos](colaboradores-e-acessos.md).

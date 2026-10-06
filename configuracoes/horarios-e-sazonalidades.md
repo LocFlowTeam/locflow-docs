@@ -15,9 +15,9 @@ A tela de **Horários** reúne quatro configurações:
 
 ```mermaid
 flowchart TD
-    H[Horarios] --> F[Fuso horario]
-    H --> C[Horario comercial]
-    H --> P[Periodos do dia]
+    H[Horários] --> F[Fuso horário]
+    H --> C[Horário comercial]
+    H --> P[Períodos do dia]
     H --> S[Sazonalidades anuais]
 ```
 

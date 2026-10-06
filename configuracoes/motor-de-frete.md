@@ -27,6 +27,10 @@ Texto de ajuda do próprio app (tela do motor):
 
 Por que "pior cenário"? Porque, na hora do orçamento, você ainda não sabe se aquele veículo vai sair só para esse cliente ou cheio de outras entregas. O motor assume o caso mais caro — ida e volta dedicadas — para **nunca subfaturar o transporte**. Quando o roteiro for de fato planejado, depois do pedido ganho, o LocFlow otimiza a logística de verdade; mas o **preço** que o cliente vê nasce dessa estimativa conservadora.
 
+{% hint style="info" %}
+**Pedido servido por mais de um galpão?** Quando parte do material sai de **galpões de apoio**, os quilômetros e os minutos da Rota Estimada **já incluem** as paradas nesses galpões para buscar (e, na volta, devolver) o material — o frete cobra o caminho que a equipe percorre de verdade. Veja [Um pedido pode somar o estoque de vários galpões](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
+{% endhint %}
+
 ### Por que "2 viagens" num aluguel {#a-base-de-tudo-a-rota-estimada}
 
 Cada **viagem** é **ida e volta como uma coisa só** — a Rota Estimada de um movimento já inclui o caminho de ida e o de volta. E um aluguel típico tem **dois movimentos** (a entrega e a retirada), ou seja, **duas viagens**:
@@ -43,10 +47,10 @@ Texto de ajuda do app:
 
 ```mermaid
 flowchart LR
-    G1[Galpao] -->|Viagem de entrega: ida| C1[Cliente]
-    C1 -->|volta| G2[Galpao]
+    G1[Galpão] -->|Viagem de entrega: ida| C1[Cliente]
+    C1 -->|volta| G2[Galpão]
     G2 -->|Viagem de retirada: ida| C2[Cliente]
-    C2 -->|volta| G3[Galpao]
+    C2 -->|volta| G3[Galpão]
 ```
 
 Numa **venda** não há devolução: o item sai em definitivo, então sobra **1 viagem** (a entrega, ida e volta). E se o cliente **retira no galpão**, ou **devolve no galpão**, aquele movimento some — e com ele some a sua viagem. O motor só conta o que tem deslocamento real.
