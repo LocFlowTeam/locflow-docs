@@ -1,6 +1,6 @@
 ---
 icon: timeline
-description: Veja a lista de roteiros e a linha do tempo de cada viagem — planejado, em andamento ou executado — e acompanhe tudo ao vivo, sem ligar para o motorista.
+description: Veja a lista de roteiros e a linha do tempo de cada viagem — planejado, em andamento ou executado —, acompanhe o andamento sem ligar para o motorista e troque quem dirige com a rota na rua.
 ---
 
 # Acompanhando seus roteiros
@@ -15,29 +15,32 @@ Esta página é sobre **olhar e acompanhar**. Quem está na rua **registrando** 
 
 ## A lista de roteiros <a id="a-lista-de-roteiros"></a>
 
-A tela de logística mostra seus roteiros separados em **duas abas**, conforme a fase da viagem:
+Em **Logística › Roteirização**, os roteiros aparecem numa **lista única** — ou no mapa, pelo seletor **Lista / Mapa** —, separados em seções:
 
-| Aba | O que mostra |
+| Seção | O que mostra |
 | --- | --- |
-| **Em execução e planejados** | O que ainda vai acontecer ou está acontecendo agora — as viagens do dia. |
-| **Executados** | O histórico: roteiros já concluídos, dos mais recentes para os mais antigos. |
+| **Atribuídos a você** | A sua fila de trabalho: primeiro o que está **em execução**, depois o que está **planejado**, pela saída mais próxima. Veja [quem entra aqui](#atribuidos-a-voce-e-disponiveis). |
+| **Disponíveis** | Roteiros ainda **sem responsável**. Só aparece para quem pode ver todos os roteiros da empresa. |
+| **Concluídos** | O histórico: roteiros já executados, dos mais recentes para os mais antigos. |
 
-### Em execução e planejados <a id="em-execucao-e-planejados"></a>
+O que entra na lista é você quem decide, no botão **Filtros** — e lista e mapa usam sempre os mesmos filtros:
 
-Esta aba é a sua **fila de trabalho**. Ela ordena os roteiros pela **saída mais próxima primeiro** e agrupa no topo o que é seu, em duas seções:
+* **Situação** — **Planejados**, **Em execução** e **Executados**. A tela abre com **Planejados + Em execução**; marque **Executados** para ver o histórico.
+* **Data** — pela saída do roteiro: **Hoje**, **Amanhã**, **7 dias**, **Período** ou **Tudo**.
+* **Atribuição** — todos, só os que têm responsável ou só os sem responsável.
+* **Colaborador responsável** — os roteiros de uma pessoa.
 
-* **Em execução** aparece antes de **planejados** — primeiro o que está acontecendo agora, depois o que ainda vai sair.
-* Roteiros **atrasados** ganham destaque (veja a seguir).
+O botão **Filtros** mostra quantos recortes estão diferentes do padrão.
 
-### Executados <a id="executados"></a>
-
-O histórico das viagens concluídas, em lista simples (sem seções), dos **mais recentes primeiro**. Tocar num roteiro aqui abre a mesma linha do tempo — agora como **registro do que aconteceu**: horários reais, desfechos e comprovações.
+Tocar num roteiro **concluído** abre a mesma linha do tempo — agora como **registro do que aconteceu**: horários reais, desfechos e comprovações.
 
 ## O cartão de roteiro <a id="o-cartao-de-roteiro"></a>
 
 Cada roteiro na lista vem num cartão enxuto, com o essencial para você decidir num relance:
 
-* **Código** do roteiro e um **selo de estado** — *Em execução*, *Executado*, ou se ele está atribuído a alguém.
+* **Código** do roteiro e um **selo de estado** — *Em execução*, *Executado*, ou se ele está *Atribuído* (ou *Desatribuído*).
+* Selos de atenção, quando é o caso: *Desatualizado* (o pedido mudou depois do planejamento — veja [Roteiro desatualizado](#roteiro-desatualizado)), *Sem ponto no mapa* (alguma parada sem localização) ou *Sem rota* (o trajeto ainda não foi traçado).
+* O selo *Ajudante*, quando você vai nessa viagem sem ser o motorista responsável (veja a seguir).
 * **Galpão-base** de onde a viagem sai.
 * **Previsão de saída** (ou, se já passou da hora, o **atraso**).
 * Quantos **movimentos** a viagem tem e sua **duração máxima** prevista.
@@ -52,12 +55,14 @@ O atraso é só um **sinal visual** para priorizar — não bloqueia nada. A via
 
 ### Atribuídos a você e Disponíveis <a id="atribuidos-a-voce-e-disponiveis"></a>
 
-Na aba **Em execução e planejados**, os roteiros vêm separados por responsabilidade:
+Os roteiros que ainda vão sair (ou estão na rua) vêm separados por responsabilidade:
 
-* **Atribuídos a você** — as viagens das quais você é o responsável (condutor ou equipe).
+* **Atribuídos a você** — as viagens em que você está: como **motorista responsável** ou como **ajudante** (alguém da equipe que vai junto). Para quem enxerga todos os roteiros da empresa, a seção reúne todos os que já têm responsável.
 * **Disponíveis** — roteiros ainda **sem responsável**. Esta seção só aparece para quem tem acesso a **ver todos os roteiros** da empresa (normalmente quem coordena a operação). Quem não tem esse acesso enxerga apenas os roteiros ligados a si.
 
-Você também pode usar os **filtros** da lista para recortar por **situação** (status), **data**, **atribuição** (todos, só atribuídos, só sem responsável) ou **colaborador responsável**. O botão **Filtros** mostra um contador quando algum recorte está ativo.
+{% hint style="info" %}
+**Motorista ou ajudante: quem registra a rota.** Estar na equipe de um roteiro não basta para executá-lo. Quem registra a saída, as chegadas, as entregas, as provas e o retorno é o **motorista responsável** (e a retaguarda, quem vê todos os roteiros). Quem vai junto como **ajudante** vê o selo *Ajudante* no cartão e, no detalhe do roteiro, o botão **Acompanhar execução** no lugar de **Executar**: acompanha as paradas e a carga e conversa pelos comentários da parada, mas não registra nada. Veja [Execução em campo](execucao-em-campo.md#motorista-e-ajudante).
+{% endhint %}
 
 ### Quando o filtro não encontra nada <a id="quando-o-filtro-nao-encontra-nada"></a>
 
@@ -73,9 +78,9 @@ No alto da lista há um seletor entre **lista** e **mapa**. No **mapa**, todos o
 
 | Cor do traçado | Estado |
 | --- | --- |
-| **Roxo** | Planejado (ainda vai sair) |
-| **Âmbar** | Em execução (acontecendo agora) |
-| **Verde** | Executado (histórico) |
+| **Roxo-claro** | Planejado (ainda vai sair) — de propósito discreto, para não disputar o olhar. |
+| **Roxo**, com o trecho já feito em cinza | Em execução (acontecendo agora) |
+| **Cinza** | Executado (histórico) |
 
 Cada **galpão** vira um pino de origem. **Tocar num traçado** seleciona o roteiro e abre o **detalhe ao lado** (em telas largas) ou numa **folha que sobe de baixo** (no celular) — a mesma linha do tempo de sempre, com paradas, chegada estimada, custos e pontualidade. Um botão de **tela cheia** amplia o mapa, escondendo o resto para você focar só nele.
 
@@ -95,17 +100,22 @@ Isso não está na coluna **Situação** de propósito: ela mostra primeiro se o
 
 #### Acompanhar a execução no mapa <a id="acompanhar-execucao-no-mapa"></a>
 
-Quando você seleciona um roteiro **em execução**, o mapa mostra o andamento na própria linha do trajeto:
+Quando você seleciona um roteiro **em execução**, o mapa mostra o andamento na própria linha do trajeto. A regra de leitura é simples: **o que se move é futuro, o que está parado é passado**.
 
-* **Linha contínua (verde)** — o trecho que a equipe **já percorreu**.
-* **Linha tracejada** — o que **falta** até o fim.
-* **Ponto roxo** — a **etapa atual** (a próxima parada a cumprir).
-* **Caminhão âmbar** — a **posição do motorista ao vivo**, atualizada enquanto ele dirige, **quando ele escolhe compartilhar** (veja abaixo).
+* **Cinza tracejado** — o trecho que a equipe **já percorreu**. Sem seta, sem animação: é contexto.
+* **Roxo contínuo, com setas no sentido da viagem** — o trecho até a **próxima parada**.
+* **Pontilhado** — o resto do caminho, até a última parada.
+* **Ponto roxo com anel** — a **etapa atual** (a próxima parada a cumprir).
+* **Avatar do motorista** (a foto dele, ou as iniciais) com um **anel pulsante** — a **posição ao vivo**, **quando ele escolhe compartilhar** (veja abaixo). Ao lado, um selo diz quão fresca está a posição: *"ao vivo"*, *"há 2 min"*, *"parou há 3 min"* ou *"sinal perdido"* — do verde ao âmbar e ao vermelho.
 
 Um roteiro **executado** mostra o trajeto completo como histórico.
 
 {% hint style="info" %}
-**De onde vem a posição ao vivo — e por que às vezes o caminhão não aparece.** Ver o motorista se mover no mapa **não é automático**. É uma **escolha do condutor**: por padrão o compartilhamento vem **desligado**, e ele precisa **ativá-lo** em **Configurações → Preferências → Localização em tempo real**. Só depois de ligar é que o app pede a permissão de localização do aparelho (inclusive com o app em segundo plano). Enquanto ele não ativa, o caminhão **não aparece** e o roteiro fica marcado como **em rota sem compartilhar** — isso é **normal**, não é sinal de que algo quebrou. A **etapa atual** continua sendo mostrada mesmo assim. Quando o compartilhamento está ligado, a posição se atualiza enquanto ele dirige e **para sozinha** ao fim da execução.
+**Ver o motorista se mover no mapa é do plano Pro.** A posição ao vivo dos entregadores, o selo **Ao vivo** do roteiro e a previsão de chegada recalculada com o trânsito do momento fazem parte do plano **Pro**. No **Starter** você já planeja, atribui, otimiza, executa com prova de entrega e registra em lote — o roteiro em andamento continua se atualizando sozinho de tempos em tempos e o mapa mostra o que já foi feito, mas o motorista não aparece se movendo. Veja o seu plano em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md#planos-por-nivel).
+{% endhint %}
+
+{% hint style="info" %}
+**De onde vem a posição ao vivo — e por que às vezes o motorista não aparece no mapa.** Ver o motorista se mover no mapa **não é automático**. É uma **escolha do condutor**: por padrão o compartilhamento vem **desligado**, e ele precisa **ativá-lo** em **Configurações → Preferências → Localização em tempo real**. Só depois de ligar é que o app pede a permissão de localização do aparelho (inclusive com o app em segundo plano). Enquanto ele não ativa, o avatar dele **não aparece** e o roteiro fica marcado como **em rota sem compartilhar** — isso é **normal**, não é sinal de que algo quebrou. A **etapa atual** continua sendo mostrada mesmo assim. Quando o compartilhamento está ligado, a posição se atualiza enquanto ele dirige e **para sozinha** ao fim da execução.
 {% endhint %}
 
 {% hint style="success" %}
@@ -126,13 +136,24 @@ flowchart LR
 * **Em andamento** — a viagem está na rua: a tela mostra o **que já foi feito** e destaca a **parada atual**, atualizando-se sozinha.
 * **Executado** — concluída: vira o **histórico** com horários reais, desfechos, comprovações e o saldo de carga.
 
-No topo da tela ficam o **resumo da viagem** e, quando há o que fazer, os botões **Editar roteiro** (enquanto não saiu) e **Executar** / **Continuar execução** — que abrem o app de quem vai para a rua.
+No topo da tela ficam o **resumo da viagem** e, quando há o que fazer, os botões:
+
+* **Editar roteiro** — abre o [planejamento](planejando-o-roteiro.md) para ajustar a rota (enquanto ela não foi concluída; com a rota na rua, veja [Editar um roteiro que já saiu](planejando-o-roteiro.md#editar-um-roteiro-que-ja-saiu)).
+* **Executar** — quando a sua permissão dá acesso aos dois jeitos de registrar, o app pergunta **"Como deseja registrar a execução?"**: **Passo a passo** (para acompanhar a rota agora; usa a localização nas chegadas e pede a evidência de cada movimento — no app ou no navegador) ou **Registro em lote** (para lançar depois o que já aconteceu; não usa GPS e exige o aceite do termo de responsabilidade — veja [Execução em lote](execucao-em-lote.md)). Com um jeito só, o botão vai direto para ele.
+* **Continuar execução** — quando a viagem já começou.
+* **Acompanhar execução** — no lugar de Executar, para quem vai na viagem como **ajudante**: abre a rota na rua em modo de acompanhamento.
+
+{% hint style="info" %}
+**"Este roteiro sai muito à frente."** Se a saída prevista está a mais de **12 horas**, o botão Executar fica apagado e a tela diz quando o preparo libera (*"Este roteiro sai muito à frente — o preparo libera em…"*). Veja [a margem de 12 horas](execucao-em-campo.md#margem-roteiro-futuro).
+{% endhint %}
+
+Quem pode excluir roteiros vê também a **lixeira** no topo, enquanto a viagem não começou. **Excluir roteiro** pede confirmação: as entregas e retiradas voltam para a fila de roteirização, e dá para restaurar o roteiro pela lixeira, em Configurações. Roteiro concluído não se exclui.
 
 ### Resumo da viagem <a id="resumo-da-viagem"></a>
 
 Um cartão de cabeçalho concentra os dados da viagem: o **galpão-base**, a **previsão de saída**, a **duração máxima** e o número de **movimentos**, e o **veículo** (ou "Veículo não definido", quando ficou em aberto no planejamento). Se a carga prevista **não couber** no veículo escolhido — por volume **ou por peso** —, aparece aqui um **aviso de capacidade**.
 
-Quando o roteiro foi traçado/otimizado, o cabeçalho também traz as **métricas da rota** — **distância**, **duração** e **paradas** —, depois a **ocupação** do veículo no pico e o **retorno previsto**, e uma linha de **custos previstos**: **combustível**, **pedágio** e o **gasto previsto** (a soma dos dois — quanto a viagem deve custar). São os mesmos números que apareceram no planejamento, agora **guardados com o roteiro**: não somem e **não custam crédito de novo** para você consultar.
+Quando o roteiro foi traçado/otimizado, o cabeçalho também traz as **métricas da rota** — **distância**, **duração** e **paradas** —, depois a **ocupação** do veículo no pico e o **retorno previsto**, e uma linha de **custos previstos**: **combustível**, **pedágio** e o **gasto previsto** (a soma dos dois — quanto a viagem deve custar). A distância, o tempo e o pedágio são os mesmos números do planejamento, agora **guardados com o roteiro**: não somem e **não custam crédito de novo** para você consultar. O **combustível** só aparece quando há um veículo com consumo e preço cadastrados — como o planejamento escolhe o tipo de veículo, e não a placa, essa estimativa não existe no planejamento.
 
 Quando a viagem já tem execução, o resumo também mostra **quem conduziu**, **a equipe presente**, a **duração total** e o status — *Em andamento* ou *Concluído*.
 
@@ -221,12 +242,12 @@ Se uma **retirada foi pulada**, o material **não foi recolhido** — a linha do
 
 ## Ao vivo <a id="ao-vivo"></a>
 
-Enquanto a viagem está **em andamento**, um selo no topo da tela mostra **Ao vivo** (em verde): a tela está conectada e **se atualiza sozinha** conforme a equipe registra cada passo — você não precisa recarregar nada. Quando não há viagem acontecendo, o selo fica em **Automático** (a tela se atualiza ao reabrir).
+Enquanto a viagem está **em andamento**, um selo no topo da tela mostra **Ao vivo** (em verde): a tela está conectada e **se atualiza na hora** em que a equipe registra cada passo — você não precisa recarregar nada. Quando a conexão em tempo real não está disponível, o selo mostra **Automático**: a tela continua se atualizando sozinha, de tempos em tempos. Quando não há viagem acontecendo, o selo não aparece (a tela se atualiza ao reabrir).
 
-Na própria lista, os roteiros **em execução** ganham um atalho **Ver andamento** com um ponto verde pulsante, levando direto à linha do tempo ao vivo.
+Na própria lista, os roteiros **em execução** ganham um atalho **Ver andamento** com um ponto verde pulsante, levando direto à linha do tempo.
 
 {% hint style="info" %}
-O acompanhamento ao vivo depende de a equipe estar registrando pelo aplicativo. Roteiros **planejados** (que ainda não saíram) e **concluídos** não mudam sozinhos — não há nada acontecendo em tempo real.
+O acompanhamento depende de a equipe estar registrando pelo aplicativo (ou pelo navegador). Roteiros **planejados** (que ainda não saíram) e **concluídos** não mudam sozinhos — não há nada acontecendo em tempo real. O selo **Ao vivo** é do plano **Pro**; no **Starter**, o selo fica em **Automático** e o roteiro em andamento continua se atualizando sozinho de tempos em tempos, enquanto a tela está aberta.
 {% endhint %}
 
 ## Roteiro desatualizado <a id="roteiro-desatualizado"></a>
@@ -264,7 +285,10 @@ Na parada, um chip **"Desatualizado · «motivo»"** diz o que mudou. São **sei
 Não há botão de "aceitar a nova versão": **abra o roteiro, confira o que mudou e salve a edição**. Salvar já sincroniza os movimentos para a versão atual — a marca some e a execução destrava.
 
 {% hint style="warning" %}
-**Roteiro concluído não se edita**, e **depois que a execução começa** veículo, condutor e equipe ficam travados. O que ainda muda com a rota na rua é a **composição** (quais movimentos ela leva) e a **ordem** das paradas — e aí o motorista recebe *"Roteiro ajustado em execução"*.
+**Roteiro concluído não se edita.** Com a rota na rua, **só o veículo fica travado** — quem está em campo carregou contra a capacidade dele. Ainda mudam:
+
+* a **composição** (quais movimentos a rota leva) e a **ordem** das paradas — e o motorista recebe o aviso *"Roteiro ajustado em execução"*, dizendo o que mudou;
+* **o motorista responsável e a equipe**, trocados pela retaguarda (quem enxerga todos os roteiros). Antes, o app avisa: *"A rota está na rua. Trocar o responsável ou a equipe vale para quem está em campo, e eles serão avisados. O veículo não muda mais."* Veja [Trocar o motorista com a rota na rua](#trocar-motorista-na-rua).
 {% endhint %}
 
 {% hint style="info" %}
@@ -274,6 +298,44 @@ Não há botão de "aceitar a nova versão": **abra o roteiro, confira o que mud
 {% endhint %}
 
 Entenda o porquê de tudo isso em [Quando um pedido muda depois de fechado](quando-um-pedido-muda.md).
+
+## Trocar o motorista com a rota na rua <a id="trocar-motorista-na-rua"></a>
+
+O motorista passou mal no meio do dia? A retaguarda (quem enxerga todos os roteiros) troca o **motorista responsável** e a **equipe** sem esperar a rota acabar:
+
+1. Abra o roteiro e toque em **Editar roteiro**. Com a rota na rua, a revisão se chama **A operação em andamento**.
+2. No cartão **Quem está na rua**, toque em **Trocar** e escolha o novo responsável (e, se for o caso, ajuste quem vai junto). O veículo aparece com o selo *"Definido na saída"*, sem botão: ele não muda mais.
+3. **Salve.** O que já foi registrado na rota fica como está, e a presença marcada no preparo (quem faltou, quem foi sem estar previsto) não é apagada.
+
+Quem é afetado fica sabendo:
+
+| Quem | O que recebe |
+| --- | --- |
+| **Quem assume** | O aviso *"Você assumiu o roteiro"*, que abre a execução — agora é dele, de onde parou. |
+| **Quem sai** | O aviso *"Roteiro reatribuído"*, dizendo se ele **segue na equipe como ajudante** (aí a rota continua aberta para ele, só para acompanhar) ou se **deixou a rota**. Quem estava com a tela aberta vê a mudança na atualização seguinte, e o app para de enviar a posição dele. |
+| **Quem só entra ou sai como acompanhante** | Nada — não houve troca de responsável a comunicar. |
+
+{% hint style="warning" %}
+**Motorista sem sinal: espere antes de trocar.** O que o motorista que sai registrou **sem sinal** e ainda não foi enviado **não entra na rota** depois da troca — fica no aparelho dele, marcado como falha, com o motivo. Se ele está sem sinal, espere a sincronização antes de trocar, ou registre essas paradas pela retaguarda.
+{% endhint %}
+
+{% hint style="info" %}
+**Tirar o responsável sem pôr outro no lugar continua bloqueado** com a rota na rua — alguém tem de responder pela viagem. E o titular que faltou **antes** da saída não precisa de edição: ao iniciar a rota (ou ao lançar o lote), a retaguarda escolhe quem de fato saiu; o substituto passa a ser o responsável, e o titular fica na equipe como acompanhante.
+{% endhint %}
+
+## Que roteiro usava este veículo? <a id="uso-do-veiculo"></a>
+
+Chegou uma multa com placa, data e hora? Na lista de Roteirização, o ícone de carro (**Consultar uso do veículo**) responde *"que roteiro usava este veículo naquele momento?"*:
+
+1. Escolha o **veículo** (por nome ou placa).
+2. Informe a **data** e a **hora** — ou ligue **Consultar um intervalo** para buscar entre duas datas e horas.
+3. Toque em **Consultar uso**.
+
+A consulta usa os **horários reais** da execução (da saída ao retorno ao galpão — não os planejados) e o **veículo que de fato saiu**. Cada ocorrência mostra o condutor, as placas, o galpão e o jeito como a rota foi registrada (passo a passo ou em lote), e tocar nela abre o registro do roteiro.
+
+{% hint style="info" %}
+A consulta encontra os roteiros em que o veículo foi **registrado na saída**. Hoje o [registro em lote](execucao-em-lote.md) não pergunta a placa: uma rota lançada assim fica sem veículo e não aparece nessa busca.
+{% endhint %}
 
 ## Acompanhar por porte <a id="acompanhar-por-porte"></a>
 
@@ -295,13 +357,15 @@ A linha do tempo de um roteiro executado guarda, para cada movimento, dados que 
 * **Duração total** da viagem.
 * **Saldo de carga real** por parada, item a item, já considerando os pulos.
 
-Esses números deixam claro **o que aconteceu de fato**, não só o que estava planejado — e ficam disponíveis para sempre no histórico de **Executados**.
+Esses números deixam claro **o que aconteceu de fato**, não só o que estava planejado — e ficam disponíveis para sempre no histórico (filtro **Executados**, seção **Concluídos**).
 
 ## Situações reais <a id="situacoes-reais"></a>
 
 * **"Já entregou no cliente X?"** — você abre o roteiro em andamento, vê o selo **Ao vivo**, e a parada do cliente X já está **verde** com a hora e a foto da entrega. Responde sem ligar para ninguém.
-* **Viagem atrasada:** na aba *Em execução e planejados*, um cartão está em vermelho com "atrasada". Você abre, vê os orçamentos envolvidos e cobra a saída.
-* **Cliente reclama dias depois:** vai em **Executados**, abre o roteiro, encontra o movimento **Entregue** e toca na **foto** — fim da discussão.
+* **Viagem atrasada:** na seção *Atribuídos a você*, um cartão está em vermelho com o atraso. Você abre, vê os orçamentos envolvidos e cobra a saída.
+* **Cliente reclama dias depois:** você marca **Executados** no filtro, abre o roteiro na seção **Concluídos**, encontra o movimento **Entregue** e toca na **foto** — fim da discussão.
+* **O motorista passou mal no meio da rota:** a retaguarda abre **Editar roteiro**, toca em **Trocar** no cartão *Quem está na rua* e põe outro motorista. Quem assume recebe *"Você assumiu o roteiro"* e segue de onde a rota parou; o que já foi entregue continua registrado.
+* **Multa de trânsito:** chegou a notificação com placa, data e hora. Em **Consultar uso do veículo**, você acha o roteiro e quem dirigia naquele momento.
 * **Retirada que não rolou:** a parada foi **pulada** e ganhou o chip **"Replanejar · nova tentativa pendente"**. Você vê o motivo ("Cliente ausente") e o movimento **já volta para a fila de roteirização na hora — sem esperar o motorista fechar a viagem**, como nova tentativa e priorizado. Dá para encaixá-lo em outro roteiro enquanto a rota original ainda está na rua (veja [Execução em campo](execucao-em-campo.md#quando-a-parada-nao-da-certo)).
 * **Pedido mudou no meio do caminho:** a tela mostra **"Roteiro desatualizado"**; você ajusta o roteiro para a versão nova e a equipe volta a poder concluir os movimentos afetados.
 * **Filtrou um status vazio:** você filtra por "Em execução" e nenhuma viagem está saindo agora. A tela avisa **"Nenhum roteiro neste filtro"** em vez de sugerir criar um roteiro do zero — você toca em **Ajustar filtros** e troca o recorte, sem perder o que já tinha escolhido nos outros filtros.
