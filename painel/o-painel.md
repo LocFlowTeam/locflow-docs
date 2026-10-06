@@ -1,6 +1,6 @@
 ---
 icon: gauge
-description: A tela inicial do LocFlow — os blocos de indicadores, funil, logística, calendário e faturamento, o que aparece para você e como personalizar.
+description: A tela inicial do LocFlow — os blocos de indicadores, funil, logística e faturamento, o que aparece para você e como personalizar.
 ---
 
 # O Painel (sua tela inicial)
@@ -29,23 +29,25 @@ Todos os indicadores do Painel são calculados a partir dos **seus dados reais**
 
 ## Os blocos do Painel <a id="os-blocos-do-painel"></a>
 
-O Painel é montado por **cinco blocos**. Cada um responde a uma pergunta diferente e tem o seu próprio botão de **ajuda** (o ícone de informação no canto do card) que explica o que aquele número significa.
+O Painel é montado por **quatro blocos** — são eles que o botão **Personalizar** lista, conforme o seu acesso. Cada um responde a uma pergunta diferente e tem o seu próprio botão de **ajuda** (o ícone de informação no canto do card) que explica o que aquele número significa.
 
 | Bloco | Pergunta que responde | Página |
 | --- | --- | --- |
-| **Indicadores** | Quanto fechei, quantos negócios ganhei, qual minha conversão e o que estou cancelando? | [Indicadores do painel](indicadores.md) |
+| **Indicadores** | Quanto fechei, quantos negócios ganhei, o que estou cancelando e qual minha conversão? | [Indicadores do painel](indicadores.md) |
 | **Funil de vendas** | Onde meus negócios estão e onde eles travam? | [O funil de vendas no painel](funil-de-vendas.md) |
 | **Logística** | O que precisa sair, voltar ou está pendente de informação? | [O card de Logística](card-logistica.md) |
-| **Calendário logístico** | Quando cada entrega e retirada acontece? | [Calendário logístico](calendario-logistico.md) |
 | **Faturamento** | Quanto contratei × quanto entrou no caixa, ao longo do tempo? | [Faturas e parcelas](../cobranca/faturas-e-parcelas.md) |
 
 Em poucas palavras, citando a própria ajuda de cada bloco dentro do app:
 
-- **Indicadores** — os números-chave do mês: **Faturamento** (Contratado × Recebido), **Negócios ganhos** (separados em Aluguel e Venda), **Conversão · Perda** e **Cancelamento**, cada um com o maior motivo quando faz sentido.
+- **Indicadores** — os números-chave do mês: **Faturamento do mês** (Contratado × Recebido), **Negócios ganhos** (separados em Aluguel e Venda), **Cancelamento** e **Conversão · Perda**, cada um com o maior motivo quando faz sentido.
 - **Funil de vendas** — *"mostra onde seus negócios estão e onde eles travam — do primeiro contato até fechar"*, com a etapa **gargalo** destacada. É separado por **Aluguel** e **Venda**.
 - **Logística** — *"a sua lista de tarefas do galpão — o que carregar, levar, buscar e guardar"*, em três pilhas: **Precisa sair**, **Precisa voltar** e **Pendente de informação** (esta última em destaque âmbar, porque é o que alguém precisa resolver agora).
-- **Calendário logístico** — *"aqui você organiza a logística — não vendas"*: quando cada entrega/retirada acontece, com cor por nível de definição do horário.
 - **Faturamento** — duas linhas no tempo: **Contratado** (o que você fechou) e **Recebido** (o dinheiro que entrou no caixa), com seletores de período e agrupamento.
+
+{% hint style="info" %}
+**Sentiu falta do calendário?** O bloco **Calendário logístico** saiu da Visão geral. Se ele estava ligado no seu **Personalizar**, não precisa fazer nada — ele só deixa de aparecer. Para ver quando cada entrega e retirada acontece, abra **Logística › Painel Logístico**, nas visões **Mês** e **Dia**. Veja [Painel Logístico](../logistica/painel-logistico.md).
+{% endhint %}
 
 {% hint style="info" %}
 Cada bloco tem páginas próprias nesta seção (links acima). Esta página é a **porta de entrada**: ela apresenta o conjunto. Use a ajuda **dentro do app** (ícone de informação no card) quando quiser a explicação rápida sem sair da tela.
@@ -76,7 +78,7 @@ Isso é proposital: você enxerga que aquela capacidade existe e para onde pode 
 
 Mesmo dentro do seu plano, cada bloco respeita o que o **seu acesso** permite ver (veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md)):
 
-- Quem **não pode ver orçamentos** não vê o **Funil**, o **Calendário** nem os indicadores de negócios.
+- Quem **não pode ver orçamentos** não vê o **Funil** nem os indicadores de negócios.
 - Quem **não pode ver faturas** não vê o **Faturamento** nem o indicador de faturamento.
 - Quem **não pode ver roteiros** não vê o bloco de **Logística**.
 
@@ -85,7 +87,7 @@ Quando o seu acesso não alcança **nenhum** bloco, o Painel mostra uma mensagem
 > Sem indicadores disponíveis para o seu acesso.
 
 {% hint style="info" %}
-Por isso é normal que **duas pessoas da mesma empresa vejam Painéis diferentes**. Um vendedor pode ver Funil e Indicadores; alguém da operação pode ver só a Logística e o Calendário. Cada um vê o que é do seu trabalho.
+Por isso é normal que **duas pessoas da mesma empresa vejam Painéis diferentes**. Um vendedor pode ver Funil e Indicadores; alguém da operação pode ver só a Logística. Cada um vê o que é do seu trabalho.
 {% endhint %}
 
 ## Personalizar o Painel <a id="personalizar-o-painel"></a>
@@ -125,7 +127,7 @@ O Painel é o mesmo para todos, mas **rende diferente conforme você cresce**:
 
 - **Quem está começando** vê os números essenciais sem configurar nada — fechamento, conversão, o que sair hoje. Blocos de planos superiores aparecem como convite, não como ruído.
 - **Operação em crescimento** começa a usar o **Funil** para achar o gargalo e a **Logística** para não deixar pedido parado, ocultando o que não acompanha no dia a dia.
-- **Operação grande** se beneficia do duplo filtro (plano + permissões): cada papel vê só o seu recorte, e cada pessoa personaliza o próprio Painel — o gestor vê faturamento e funil, a operação vê galpão e calendário.
+- **Operação grande** se beneficia do duplo filtro (plano + permissões): cada papel vê só o seu recorte, e cada pessoa personaliza o próprio Painel — o gestor vê faturamento e funil, a operação vê a logística (e acompanha o dia a dia no Painel Logístico).
 
 ## Situações reais <a id="situacoes-reais"></a>
 
@@ -136,14 +138,15 @@ Provavelmente o seu acesso alcança poucos blocos, ou você ocultou alguns. Toqu
 Aquele recurso existe, mas não está no seu plano. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md) para entender o que cada plano inclui.
 
 **"Quero ver só a logística do dia, sem os gráficos de venda."**
-Abra **Personalizar** e desligue Indicadores, Funil e Faturamento. Ficam só Logística e Calendário — e a escolha continua salva no seu aparelho na próxima vez que você entrar.
+Abra **Personalizar** e desligue Indicadores, Funil e Faturamento. Fica só a Logística — e a escolha continua salva no seu aparelho na próxima vez que você entrar. Para ver o dia hora a hora, use o [Painel Logístico](../logistica/painel-logistico.md).
 
 **"Apareceu uma faixa vermelha no rodapé."**
 É o status da assinatura: há faturas em atraso. Toque em **Resolver** e veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 
 ## Próximo passo <a id="proximo-passo"></a>
 
-- Entenda o bloco que mais te interessa: [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md) (o Funil), [Visão geral da logística](../logistica/visao-geral.md) e [Acompanhando seus roteiros](../logistica/acompanhando-roteiros.md) (o Calendário).
+- Entenda o bloco que mais te interessa: [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md) (o Funil) e [Visão geral da logística](../logistica/visao-geral.md) (a Logística).
+- Para quando cada entrega e retirada acontece, veja o [Painel Logístico](../logistica/painel-logistico.md).
 - Veja como o caixa entra em [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 - Ajuste quem vê o quê em [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 - Confira o que cada plano inclui em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).

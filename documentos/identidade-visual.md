@@ -7,7 +7,7 @@ description: Suba o logo da sua locadora e ele aparece nos documentos, faturas e
 
 A marca da sua locadora não vive só no papel timbrado. No LocFlow, o **logo** que você cadastra aparece nos documentos gerados, nas faturas e até nos links de pagamento que o cliente abre. É a sua cara em cada ponto de contato.
 
-Você configura isso em **Configurações → Perfil da empresa**, na seção _Identidade visual_ — no mesmo lugar onde ficam os dados cadastrais da locadora.
+Você configura isso em **Ajustes › Empresa e equipe › Perfil da Empresa**: toque em **Editar** e, na tela *Editar locadora*, use a seção _Identidade visual_ — no mesmo lugar onde ficam os dados cadastrais da locadora (veja [Perfil da Empresa](../configuracoes/perfil-da-empresa.md)).
 
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** quando o cliente recebe um orçamento, uma fatura e uma página de pagamento com a sua marca, ele sente que está lidando com uma empresa séria. Confiança fecha negócio e faz o cliente pagar sem hesitar.
@@ -22,13 +22,17 @@ flowchart LR
     L --> P[Links de pagamento]
 ```
 
-Você sobe **uma** imagem e ela é usada em todos esses lugares. Para enviar, toque no ícone de upload no quadro do logo, escolha a imagem na galeria e ajuste o corte se quiser. Para trocar, é só subir outra; para tirar, toque em remover (o sistema pede confirmação).
+Você sobe **uma** imagem e ela é usada em todos esses lugares. Para enviar, toque em **Enviar logo**, escolha a imagem na galeria e ajuste o corte se quiser. Para trocar, toque em **Substituir**; para tirar, em **Remover** (o sistema pede confirmação).
 
 | O que cuidar | Recomendação |
 | --- | --- |
-| **Formato** | PNG transparente fica melhor sobre qualquer fundo |
+| **Formato** | **PNG** ou **JPG** — PNG com fundo transparente fica melhor sobre qualquer fundo |
 | **Proporção** | **1:1 (quadrado)** — você pode cortar na hora do envio |
 | **Tamanho** | Até **2 MB** |
+
+{% hint style="info" %}
+**Quem pode trocar o logo.** Mexer no logo é uma permissão própria, separada da de editar os dados da empresa. Quem não a tem vê o logo atual com o aviso *"Sem permissão para editar o logo da organização."* — fale com quem administra os [acessos](../configuracoes/colaboradores-e-acessos.md).
+{% endhint %}
 
 {% hint style="info" %}
 **Por que quadrado?** O logo aparece em lugares de tamanhos bem diferentes — o topo de um PDF, uma lista, um ícone pequeno. Um logo quadrado escala e centraliza bem em qualquer um deles, sem distorcer.
@@ -40,4 +44,4 @@ Você fecha uma locação e gera a [fatura](../primeiros-passos/glossario.md). O
 
 ## Próximo passo
 
-Combine a marca com documentos sob medida em [Modelos personalizados](modelos-personalizados.md), ou veja como ela aparece na cobrança em [Pagamento online](../cobranca/pagamento-online.md).
+Combine a marca com documentos sob medida em [Modelos de documento](modelos-personalizados.md), ou veja como ela aparece na cobrança em [Pagamento online](../cobranca/pagamento-online.md).

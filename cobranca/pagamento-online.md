@@ -87,7 +87,7 @@ flowchart LR
     X -->|provedor confirma| C2[Nova cobranca]
 ```
 
-## Boleto cancelado continua no DDA — e isso não é um defeito do LocFlow
+## Boleto cancelado continua no DDA — e isso não é um defeito do LocFlow {#boleto-cancelado-continua-no-dda-e-isso-nao-e-um-defeito-do-locflow}
 
 Todo boleto registrado entra numa base centralizada do sistema bancário (a CIP), que é o que o
 DDA do seu cliente lê. Tirar um título dessa base antes da hora exige que o **emissor** comande a
@@ -128,7 +128,7 @@ deixam esse rastro no DDA que gera dúvida para o pagador.
 
 ## Pagamento confirmado não se desfaz na mão
 
-Diferente da baixa manual (que você lança e pode corrigir), o pagamento online é uma **transação real**, processada pelo recebedor. Não existe botão de "desfazer": o dinheiro saiu da conta do cliente e entrou na sua, e isso não se apaga por decisão de operador.
+Diferente da baixa manual (que você lança e pode [corrigir](recebendo-pagamentos.md#corrigir-uma-baixa) — a data, a forma e a conta, nunca o valor), o pagamento online é uma **transação real**, processada pelo recebedor. Não existe botão de "desfazer": o dinheiro saiu da conta do cliente e entrou na sua, e isso não se apaga por decisão de operador.
 
 Se sobrar valor a favor do cliente (por exemplo, uma edição que reduz o total depois de já ter sido pago), o LocFlow resolve pela **política de cobrança** da sua locadora — **crédito/vale** ou **reembolso**. Veja [Faturas e parcelas](faturas-e-parcelas.md).
 
@@ -153,21 +153,21 @@ mantém ligados o crédito original, o estorno e a cobrança de recuperação.
 
 ## Ativando o recebimento
 
-Para receber online, a sua organização precisa de uma **integração de pagamento ativa** — o **recebedor**, a conta da sua locadora que vai receber os valores das cobranças. A ativação é um cadastro guiado e passa por uma **verificação** (KYC) antes de liberar.
+Para receber online, a sua organização precisa de uma **integração de pagamento ativa** — o **recebedor**, a conta da sua locadora que vai receber os valores das cobranças (na tela, a **conta de recebimento**). A ativação é um cadastro guiado e passa por uma **verificação** (KYC) antes de liberar.
 
-Você configura tudo em **Configurações → Pagamento (Integração de Pagamento)**. Enquanto a integração não está ativa, a seção de cobrança online da fatura explica o motivo e oferece o atalho para ativar.
+Você configura tudo em **Ajustes › Integração de Pagamento**. Enquanto a integração não está ativa, a seção de cobrança online da fatura explica o motivo e oferece o atalho para ativar.
 
 {% hint style="info" %}
 **Quem ativa:** o cadastro do recebedor é feito por quem administra a conta. Se você não tem esse acesso, o sistema orienta a pedir ao responsável — ninguém fica travado sem entender o porquê.
 {% endhint %}
 
-### Recebedor, KYC e aprovação
+### Recebedor, validação e aprovação
 
-São três coisas que costumam confundir — explicadas em um lugar só, no texto do próprio app:
+São três coisas que costumam confundir — explicadas em um lugar só, no **"?"** do topo da tela (**Como funciona a integração**):
 
-> **Recebedor** — a conta da sua locadora que vai receber os valores das cobranças.
-> **Validação (KYC)** — checagem de identidade exigida por lei. O responsável confirma os dados pelo link.
-> **Aprovação** — o recebedor libera os recebimentos. Só então a integração fica **Ativa**.
+> **Primeiro, quem recebe o dinheiro:** o recebedor é a conta da sua locadora dentro do gateway de pagamento, ligada à conta bancária em que você já trabalha. O cadastro leva por volta de 8 minutos, e dá para parar no meio e voltar depois.
+> **Depois, a validação de identidade (KYC):** quem movimenta dinheiro de terceiros é obrigado por lei a confirmar com quem está falando. O gateway confere os seus dados e, em parte dos casos, pede uma **prova de vida** do responsável.
+> **No fim, recebendo:** aprovado o cadastro, as cobranças passam a aceitar PIX, boleto e cartão, e o valor cai no seu saldo dentro do gateway.
 
 ### O cadastro guiado do recebedor
 
@@ -185,55 +185,78 @@ flowchart LR
 | **1 · Identificação** | Quem vai receber: tipo (Pessoa Física ou Jurídica), nome, e-mail e CPF/CNPJ. Pode dar uma descrição interna (ex.: "Conta para recebimento das locações"). |
 | **2 · Endereço e contato** | Endereço **completo** (incluindo complemento e ponto de referência) e um telefone. A verificação exige todos os campos. |
 | **3 · Dados (PF ou PJ)** | **Pessoa Física:** data de nascimento, renda mensal e ocupação. **Pessoa Jurídica:** razão social, nome fantasia, faturamento anual e um **sócio administrador** completo (o representante legal com poderes de gestão). |
-| **4 · Conta bancária** | Banco, agência, conta e dígito, tipo de conta e titular. Mostra um **resumo** dos passos anteriores para conferência antes de concluir. É a conta para onde os recebimentos vão. |
+| **4 · Conta bancária** | Banco, agência, conta e dígito e tipo de conta. Mostra um **resumo** dos passos anteriores para conferência antes de concluir. É a conta para onde os recebimentos vão. |
 
 {% hint style="info" %}
 **Atalhos que poupam digitação:** no cadastro PJ, você pode marcar "usar o mesmo endereço/nome/e-mail/telefone do recebedor" para o sócio administrador, sem reescrever tudo. Em locadoras pequenas, o sócio costuma ser a mesma pessoa e o mesmo endereço da empresa.
 {% endhint %}
 
 {% hint style="warning" %}
+**A conta precisa estar no mesmo CPF ou CNPJ do cadastro.** O LocFlow não pergunta mais quem é o titular da conta: o titular é o próprio recebedor (o nome, o documento e o tipo de pessoa que você informou no passo 1), porque o meio de pagamento só aceita conta no mesmo documento. A tela escreve a regra com o seu documento — por exemplo, *"A conta precisa estar no CNPJ da empresa — 00.000.000/0001-00. Conta de sócio ou de terceiro é recusada."* Uma conta em outro nome é recusada **antes** de salvar. Quem estava no meio do cadastro não perde o que já tinha preenchido.
+{% endhint %}
+
+{% hint style="warning" %}
 **Na edição, alguns campos travam:** depois do cadastro criado, o **tipo de pessoa** e o **documento (CPF/CNPJ)** ficam bloqueados — mudá-los exigiria reabrir o cadastro no recebedor. Para corrigir esses dois, fale com o suporte.
 {% endhint %}
 
-### Estados da integração
+### Estados da integração {#estados-da-integracao}
 
-A integração caminha por quatro marcos: **Cadastrar recebedor → Validação (KYC) → Aprovação → Recebendo.** Os estados que você vê:
+A integração caminha por quatro passos, que a tela mostra num passo a passo: **Cadastrar a conta → Validação automática → Aprovação → Recebendo.** Os estados que você vê:
 
 ```mermaid
 flowchart LR
-    I[Inativo] -->|cadastra o recebedor| V[Em validacao / KYC]
-    V -->|aprovado| A[Ativo]
-    V -.recusado.-> R[Recusado]
-    R -->|revisa e reenvia| V
-    A -.bloqueado.-> B[Bloqueado]
+    I[Ative os pagamentos online] -->|cadastra a conta| V[Em validação pelo gateway]
+    V -->|aprovado| A[Recebendo]
+    V -.recusado.-> R[Cadastro recusado]
+    R -->|corrige e reenvia| V
+    A -.bloqueado.-> B[Recebimento bloqueado]
 ```
 
 | Estado | O que significa | O que fazer |
 | --- | --- | --- |
-| **Inativo** | Recebedor ainda não cadastrado. | Faça o cadastro guiado em 4 passos. |
-| **Em validação (KYC)** | Cadastro enviado, aguardando a verificação de identidade. | **Gere o link de KYC** e envie ao responsável para confirmar a identidade. Depois, é aguardar a aprovação. |
-| **Recusado** | A análise recusou o cadastro. | Revise os dados (documento e conta bancária) e **reenvie** para uma nova análise. |
-| **Bloqueado** | A integração foi bloqueada. | Fale com o suporte para reativar. |
-| **Ativo** | Tudo aprovado. | Pronto: PIX, boleto e cartão liberados nas cobranças, com repasse no seu banco. |
+| **Ative os pagamentos online** | A conta de recebimento ainda não foi cadastrada. | Faça o cadastro guiado em 4 passos. |
+| **Em validação pelo gateway** | Cadastro enviado; o gateway confere os dados sozinho. | Normalmente, só esperar — o app avisa quando aprovar. Se o gateway pedir a **prova de vida**, aparece o cartão para gerar o link (veja abaixo). |
+| **Cadastro recusado pelo gateway** | A análise recusou o cadastro. | **Revisar dados** — corrija o que for preciso (inclusive o documento) e reenvie: é feito um novo credenciamento. |
+| **Recebimento bloqueado pelo gateway** | A conta foi bloqueada no gateway. | Reenviar o cadastro **não** desbloqueia: **Falar com o suporte**. Enquanto isso, o saldo fica retido. |
+| **Recebendo** | Tudo aprovado. | Pronto: PIX, boleto e cartão liberados nas cobranças, com repasse no seu banco. |
 
 {% hint style="info" %}
-**O link de KYC** é o passo que mais gente esquece. Estar "Em validação" **não** é o mesmo que "Ativo": é preciso gerar o link de verificação e o responsável concluir a confirmação de identidade. Só depois da aprovação a cobrança online libera.
+**A prova de vida é o passo que mais gente esquece.** Às vezes o gateway pede uma confirmação de identidade por biometria do responsável. Aí aparece o cartão **"Falta a prova de vida para liberar seu saldo"**, com o botão **Fazer prova de vida agora**: ele gera um link (e um QR Code) para abrir no próprio aparelho, enviar ao responsável ou copiar. O link **vale 20 minutos** — se expirar, gere outro ali mesmo. Sem a prova de vida, o valor recebido fica retido. E se o painel do meio de pagamento pediu a prova de vida enquanto a tela ainda mostra só "em validação", use **Pediram a prova de vida? Gerar link**, no mesmo cartão.
+{% endhint %}
+
+### Mais de uma conta de recebimento {#mais-de-uma-conta}
+
+A sua organização pode ter **mais de uma conta de recebimento** — e escolher qual delas recebe. Com duas ou mais, a seção vira a lista **Contas de recebimento**, cada uma identificada pelo final do número da conta e com um selo: **RECEBENDO** (a que recebe hoje), **APROVADA**, **EM ANÁLISE**, **PROVA DE VIDA**, **RECUSADA** ou **BLOQUEADA**.
+
+1. Para incluir uma, toque em **Cadastrar outra conta** — é o mesmo cadastro guiado, e a regra do documento continua valendo.
+2. Para trocar a conta que recebe, toque na conta e em **Receber aqui**. Só uma conta **aprovada** pelo gateway pode passar a receber; se ainda não pode, o motivo aparece no lugar do botão.
+3. Confirme em **Receber nesta conta?**. O diálogo mostra de onde para onde o dinheiro passa a ir e quatro consequências:
+
+| Consequência | O que significa |
+| --- | --- |
+| **Cobranças novas** | Passam a cair na conta nova. Cobranças de cliente pedidas de novo são reemitidas nela. Já os PIX de quitação e de acerto de repasse que já tinham sido emitidos seguem na conta anterior até expirar — o app avisa isso ao reabrir um deles. |
+| **Cobranças abertas** | As já emitidas continuam caindo na conta anterior até serem pagas ou reemitidas. As emitidas antes de 16/09/2026 seguem na conta anterior mesmo se forem pedidas de novo. |
+| **Transferência automática** | É de cada conta e não é copiada — confira a da conta nova depois da troca, em **Recebíveis**. |
+| **Saldo da conta atual** | Continua disponível para saque — nada é transferido entre as contas. |
+
+{% hint style="info" %}
+**Cada conta tem o seu dinheiro.** Saldo, saque e antecipação são **por conta**: o cartão **Recebíveis** mostra a que recebe hoje, e cada conta da lista tem o próprio **Saldo desta conta**. Dá para sacar o que entrou numa conta mesmo depois de ela deixar de ser a que recebe. O saque sempre mostra **para qual conta** o dinheiro vai, antes do valor. Veja [Saldo e antecipação](saldo-e-antecipacao.md).
 {% endhint %}
 
 ## Recebíveis e transferências
 
-Quando um cliente paga, o dinheiro **não cai direto** na sua conta bancária: ele fica retido no recebedor por um período (prazo de liquidação) e depois é transferido. Em **Configurações → Pagamento → Recebíveis** você acompanha o saldo e define como o dinheiro chega até você.
+Quando um cliente paga, o dinheiro **não cai direto** na sua conta bancária: ele fica retido no recebedor por um período (prazo de liquidação) e depois é transferido. Em **Ajustes › Integração de Pagamento**, no cartão **Recebíveis**, você acompanha o saldo e define como o dinheiro chega até você.
 
 | Saldo | O que é |
 | --- | --- |
 | **Disponível** | Já pode ser sacado/transferido para a sua conta agora. |
-| **Em liquidação** | Ainda no prazo de processamento, aguardando liberar (em geral até 2 dias úteis). |
+| **A receber** | Ainda no prazo de processamento, aguardando liberar. |
 
 - **Transferência automática** (recomendada) — o saldo disponível vai para a sua conta sozinho, na frequência que você definir.
-- **Transferência manual** — com a automática desligada, o saldo acumula e você **saca o valor que quiser, quando quiser** (até o limite do disponível).
+- **Transferência manual** — com a automática desligada, o saldo acumula e você **saca o valor que quiser, quando quiser** (até o limite do disponível), pelo botão **Sacar para o banco**.
 
 {% hint style="info" %}
-**Por que o dinheiro não cai na hora:** segundo o próprio app, quando sua organização recebe um pagamento o valor fica **retido por um período que depende das configurações de transferência**. "Disponível" pode ser sacado agora; "em liquidação" ainda está no prazo do processador e não foi liberado para saque.
+**Por que o dinheiro não cai na hora:** quando sua organização recebe um pagamento, o valor fica **retido por um período que depende das configurações de transferência**. "Disponível" pode ser sacado agora; "A receber" ainda está no prazo do processador e não foi liberado para saque. Os detalhes estão em [Saldo e antecipação](saldo-e-antecipacao.md).
 {% endhint %}
 
 ---
@@ -243,7 +266,7 @@ Quando um cliente paga, o dinheiro **não cai direto** na sua conta bancária: e
 | Porte | Como tratar o pagamento online |
 | --- | --- |
 | **Autônomo / MEI** | Deixe só **PIX** (o padrão) e ligue a **transferência automática**. Você gera o link, manda no WhatsApp e o dinheiro entra sozinho. Não precisa pensar em mais nada. |
-| **Médio** | Ligue **boleto** para clientes PJ que pedem, mantenha o checklist de dados em dia e acompanhe **disponível × em liquidação** para prever o caixa. |
+| **Médio** | Ligue **boleto** para clientes PJ que pedem, mantenha o checklist de dados em dia e acompanhe **disponível × a receber** para prever o caixa. |
 | **Grande** | Combine os três métodos, use **transferência manual** para concentrar saques, e o **domínio personalizado** no link para reforçar a marca na hora de pagar. |
 
 ## Situações reais

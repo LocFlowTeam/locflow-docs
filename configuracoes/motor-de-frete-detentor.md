@@ -39,13 +39,13 @@ Isso é o que garante que o número bate com a realidade: você **paga cada forn
 
 ```mermaid
 flowchart TB
-    C[Carga do orcamento] --> P1[Porcao: sua organizacao]
-    C --> P2[Porcao: Fornecedor A]
-    C --> P3[Porcao: Fornecedor B]
-    P1 -->|motor da organizacao| V1[Frete da porcao]
-    P2 -->|motor do Fornecedor A| V2[Frete da porcao]
-    P3 -->|motor do Fornecedor B| V3[Frete da porcao]
-    V1 & V2 & V3 --> T[Frete final = soma das porcoes]
+    C[Carga do orçamento] --> P1[Porção: sua organização]
+    C --> P2[Porção: Fornecedor A]
+    C --> P3[Porção: Fornecedor B]
+    P1 -->|motor da organização| V1[Frete da porção]
+    P2 -->|motor do Fornecedor A| V2[Frete da porção]
+    P3 -->|motor do Fornecedor B| V3[Frete da porção]
+    V1 & V2 & V3 --> T[Frete final = soma das porções]
 ```
 
 {% hint style="info" %}

@@ -32,18 +32,20 @@ Mas quem está começando — ou quem tem uma entrega de última hora — **não
 **Planeje quando der; despache quando precisar.** O sistema incentiva o planejamento porque ele organiza melhor a sua operação — mas a entrega de última hora nunca fica esperando o "jeito certo".
 {% endhint %}
 
-## A interface mostra só o que você usa — e revela o resto a um toque
+## A interface mostra só o que você usa — e revela o resto a um toque {#interface-adapta}
 
-Quando você diz ao LocFlow **como costuma operar** — no [Motor de Logística](../configuracoes/motores-operacionais.md), em **Forma de operação**: só no balcão, só pela equipe ou as duas —, o sistema **enxuga a interface** para o seu jeito de trabalhar:
+O LocFlow monta o menu a partir do que você conta sobre a sua operação — primeiro nas respostas da [configuração inicial](configurando-sua-empresa.md) (aluga, vende ou os dois; quantas pessoas trabalham; se o cliente busca ou você entrega; quantos veículos) e, depois, no [Motor de Logística](../configuracoes/motores-operacionais.md#motor-de-logistica), em **Forma de operação**:
 
-* **Só no balcão** (o cliente retira e devolve no galpão): o menu esconde **Frota** e **Roteirização**, e o calendário passa a falar em **retirada e devolução no balcão** — não em roteiros.
-* **Só pela equipe** (entrega e retirada na rota): o **Balcão** sai do menu, e o calendário foca nos roteiros.
+* **Só loja** (o cliente retira e devolve na loja): o menu guarda **Frota** e **Roteirização**, e o [Painel Logístico](../logistica/painel-logistico.md) passa a se chamar **Atendimentos** e a falar em retirada e devolução na loja — não em roteiros.
+* **Só rota** (sua equipe entrega e recolhe): a **Minha Loja** sai do menu, e o Painel Logístico foca nos roteiros.
 * **Mista**: tudo aparece, porque você usa as duas formas.
+
+O menu também acompanha **o que já existe de verdade**. Quem terceiriza todo o transporte começa sem Frota e Roteirização no menu — mas a **Frota** volta sozinha quando você cadastra o primeiro **grupo**, **tipo de veículo**, **veículo** ou **extensão**, e a **Roteirização**, quando você monta o primeiro **roteiro**, mesmo que a resposta antiga dissesse outra coisa. E **trabalho real nunca fica escondido**: uma fila com pendência aparece no menu, seja qual for a configuração.
 
 O mesmo vale para a **pré-reserva**: se a sua operação não usa o passo de pré-reserva, ele some do funil de vendas — na lista de orçamentos e no painel. E para a **logística interna**: sem separação ou conferência ligadas, esses itens não ocupam o menu.
 
 {% hint style="success" %}
-**Esconder não é remover.** Em cada tela onde algo foi escondido, há um **olho** discreto: toque nele e a operação **inteira** reaparece — como se, só naquele momento, você passasse a operar de forma mista. É a mesma filosofia de novo, agora na própria tela: ela **abstrai** o que você não usa, mas **flexibiliza** na hora em que você precisar do resto. Você configura o fácil; a operação completa fica **a um toque**.
+**Esconder não é remover.** O que saiu do menu continua a um toque: no **Personalizar** do menu você vê quantos itens estão guardados, liga qualquer um de volta ou toca em **Mostrar tudo**. No orçamento, a **Operação avançada** abre as exceções que a sua forma de operação não usa no dia a dia. E a permissão de cada pessoa continua sendo a porta: guardar um item não muda quem pode usá-lo. É a mesma filosofia de novo: o LocFlow **abstrai** o que você não usa, mas **flexibiliza** na hora em que você precisar do resto.
 {% endhint %}
 
 ## Uma operação visível de ponta a ponta
@@ -65,11 +67,11 @@ O **mesmo** recurso abstrai para o pequeno, melhora para o médio e flexibiliza 
 | **Documentos** | Modelos padrão do sistema | Personaliza no designer | Layout em blocos + versão publicada (PDF/WhatsApp) |
 | **Aprovação de frete** | Automática — zero atrito | Por valor — só os fretes altos | Sempre manual — todo frete revisado |
 | **Aprovação de orçamento** | Nenhuma — fecha direto | Congela por regra (ex.: frete alto) | Papéis aprovar/rejeitar, com motivo |
-| **Reserva do aluguel** | Vai direto ao *Reservado* | Usa o *Pré‑reservado* para segurar | Pré‑reserva como etapa do funil (validade segura o estoque) |
+| **Reserva do aluguel** | Vai direto ao *Reservado* | Usa o *Pré‑reservado* como acerto antes de confirmar | Pré‑reserva com sinal: o pagamento do sinal reserva sozinho (o estoque só é bloqueado no *Reservado*) |
 | **Bloqueio de estoque** | Segue a entrega e a volta, com a folga padrão de 1h | Folgas ajustadas ao atraso real da sua operação | Folga fina por ponta (equipe × cliente) + ajuste manual por orçamento |
 | **Despacho da entrega** | Roteiro simples, despachado direto do pedido | Planeja o dia; despacha do pedido quando precisa | Roteiros planejados (ordem, veículo, responsável) |
 | **Ordem da rota** | Arrasta as paradas à mão | Otimização rápida (grátis) | Otimização inteligente Google (trajeto real, ETAs) |
-| **Frota e veículos** | Inicia sem veículo | Veículo com placa e status | Classes + especificações (capacidade, vistoria) |
+| **Frota e veículos** | Começa sem veículo: planeja e registra em lote sem cadastrar nenhum — só a saída passo a passo no app pede um veículo ativo ([veja](../cadastros/frota.md#iniciar-sem-veiculo)) | Veículo com placa e status | Grupos e tipos de veículo (capacidade, vistoria) e extensões, como reboques |
 | **Logística interna (galpão)** | Desligada — entrega direto | Liga a Separação | Separação + Conferência (papéis, evidências) |
 | **Comprovação de entrega** | 1 toque, sem prova | Foto/vídeo obrigatórios | Exigência diferente por operação (entrega ≠ devolução) |
 | **Cobrança** | Fatura e parcela única automáticas | Parcelas com vencimento e reagendamento | Baixa parcial, papéis de parcela, edição por delta |
@@ -83,7 +85,7 @@ O **mesmo** recurso abstrai para o pequeno, melhora para o médio e flexibiliza 
 {% endhint %}
 
 {% hint style="info" %}
-**Em breve.** O **giro do estoque** por produto (o tempo de preparo entre uma devolução e a próxima locação) e as provas de entrega mais fortes (assinatura, identificação e código no WhatsApp) ainda estão chegando — e nascem com a mesma lógica: você liga quando a operação pedir.
+**Em breve.** As provas de entrega mais fortes (assinatura, identificação de quem recebe e código no WhatsApp) ainda estão chegando — e nascem com a mesma lógica: você liga quando a operação pedir. Já o tempo de preparo de cada produto, entre a devolução e a próxima locação, você define hoje no cadastro do produto, em [Manutenção e giro](../cadastros/catalogo-produtos.md#manutencao-e-giro).
 {% endhint %}
 
 ## Em resumo

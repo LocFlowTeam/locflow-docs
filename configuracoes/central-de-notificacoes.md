@@ -8,7 +8,7 @@ description: Avise as pessoas certas, na hora certa. Defina o que dispara cada a
 A **Central de Notificações** avisa as pessoas certas, na hora certa, sobre o que acontece no seu negócio — de um valor a favor do cliente a uma parada pulada na rota. Você define **quais avisos** sua organização recebe, **quem** recebe cada um e **com que destaque** — e ainda vê uma **prévia de como o aviso chega** antes de salvar.
 
 {% hint style="info" %}
-As notificações são da **organização**, não de um usuário específico. Quem decide para quem cada aviso vai é o **canal** (quem recebe + como). Cada pessoa vê, na própria Central, só os avisos destinados a ela.
+As notificações são da **organização**, não de um usuário específico. Quem decide para quem cada aviso vai é o **canal** (quem recebe + como). Cada pessoa vê, no próprio **sino**, só os avisos destinados a ela (veja [Vendo e gerenciando os avisos recebidos](#avisos-recebidos)).
 {% endhint %}
 
 ## Como cada notificação funciona
@@ -68,7 +68,7 @@ Nos avisos com **lembretes por data**, toque em **Restaurar padrão** no editor 
 
 ## Ligar, desligar e ajustar um aviso {#configurando}
 
-Você chega à configuração por **Ajustes → Central de Notificações** (atalho direto) ou por **Ajustes → Motores → Central de Notificações**. Os avisos ficam **agrupados por módulo** (Cobrança, Logística, Orçamento e **Parceria**), com **busca** e um contador de quantos estão ligados em cada grupo. Escolha um aviso para configurá-lo:
+Você chega à configuração por **Ajustes › Notificações › Central de Notificações** — na mesma seção de Ajustes fica o item **Canais de Notificação**. Os avisos ficam **agrupados por módulo** (Cobrança, Logística, Orçamento, **Parceria**, **Financeiro** e **Estoque**), com **busca** e um contador de quantos estão ligados em cada grupo. Escolha um aviso para configurá-lo:
 
 1. **Ligar ou desligar** o aviso (o interruptor no topo do detalhe).
 2. **Escolher o nível de atenção** (Crítico / Importante / Informativo) — com a prévia atualizando ao vivo.
@@ -77,17 +77,17 @@ Você chega à configuração por **Ajustes → Central de Notificações** (ata
 No topo da tela há uma **legenda dos níveis** (cartões "Crítico / Importante / Informativo") para consulta rápida.
 
 {% hint style="info" %}
-As preferências de **som** e **pop-up** não ficam aqui — são **pessoais**, em **Ajustes → Conta → Notificações e avisos**. A configuração desta página é da **organização**.
+As preferências de **som** e **pop-up** não ficam aqui — são **pessoais**, na tela **Preferências**: toque no seu **avatar** (no topo) › **Preferências**, ou no atalho **Preferências** no alto de Ajustes. O link no rodapé de cada aviso também leva para lá. A configuração desta página é da **organização**. Veja [Preferências pessoais](minha-conta.md#preferencias-pessoais).
 {% endhint %}
 
-### Alterações não salvas (guard de saída) {#alteracoes-nao-salvas}
+### Alterações não salvas (o aviso ao sair) {#alteracoes-nao-salvas}
 
 A página **só aplica suas mudanças quando você salva**. Enquanto houver ajustes pendentes:
 
 - aparece o sinal **"● Alterações não salvas"** (no computador) ou a barra **"Você tem alterações não salvas"** com o botão **Salvar** (no celular);
 - se você tentar **sair, voltar ou trocar de tela**, o LocFlow pergunta **"Salvar alterações?"** — *"Você ajustou notificações que ainda não foram salvas."* — e deixa **salvar** ou **descartar** (voltando à última versão salva).
 
-Depois de salvar, aparece a confirmação **"Salvo"** (e o aviso de pendência some). Esse guard evita que um ajuste importante se perca por um toque distraído.
+Depois de salvar, aparece a confirmação **"Salvo"** (e o aviso de pendência some). Esse aviso evita que um ajuste importante se perca por um toque distraído.
 
 ## "Em breve": avisos que ainda estão chegando {#em-breve}
 
@@ -101,8 +101,9 @@ Alguns avisos aparecem numa seção **"Em breve"**, recolhida no fim da lista, c
 
 | Notificação | Quando avisa | Canal padrão | Nível padrão | Status |
 | --- | --- | --- | --- | --- |
-| Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito, vale ou reembolso | Organização | Importante | Disponível |
-| Pagamento confirmado | O cliente pagou um valor online | Organização | Importante | Em breve |
+| Reembolso ou crédito resolvido | Um valor a favor do cliente virou crédito, vale ou reembolso | Toda a organização | Importante | Disponível |
+| Cobrança órfã com pagamento a resolver | Um orçamento foi encerrado antes da reserva com o **sinal já pago**, e o valor não pôde virar crédito nem devolução sozinho — alguém precisa resolver à mão. Atalho: **Abrir a fatura** | Toda a organização | Importante | Disponível |
+| Pagamento confirmado | O cliente pagou um valor online | Toda a organização | Importante | Em breve |
 | Parcela a vencer | Faltam alguns dias para o vencimento | — | Informativo | Em breve |
 | **Parcela vencida há X dias** | A parcela passou do vencimento e continua em aberto — 3, 10 e 30 dias depois, por padrão | Quem cuida do financeiro | Importante | Disponível |
 
@@ -144,6 +145,7 @@ Ele sai pelo canal **Quem cuida do financeiro** — quem tem a competência *Pag
 | Entrega ou retirada concluída | A equipe concluiu uma parada | Operadores logísticos | Informativo | Disponível |
 | Roteiro precisa de ajuste | O pedido de uma parada mudou (datas, itens ou quem leva) e o roteiro planejado ficou desatualizado | Operadores logísticos | Importante | Disponível |
 | Roteiro ajustado em execução | O operador ajustou um roteiro que já estava em andamento | Responsável pela operação | Crítico | Disponível |
+| Condutor do roteiro trocado em execução | O operador trocou o motorista de um roteiro com a rota na rua — avisa quem **assumiu** (o aviso abre a execução) e quem **deixou** de ser o responsável, dizendo se ele segue na equipe como ajudante. Quem só entra ou sai como acompanhante não é avisado | Responsável pela operação | Crítico | Disponível |
 | Atendimento na loja (retirada/devolução) | O cliente retirou ou devolveu os itens presencialmente na loja | Responsável pela loja | Informativo | Disponível |
 | Movimentos do dia sem roteiro | Toda manhã, quando há entregas ou retiradas com data para hoje (ou atrasadas) que ainda não foram incluídas em um roteiro | Operadores logísticos | Importante | Disponível |
 
@@ -154,6 +156,7 @@ Entenda a fundo o aviso **"Roteiro precisa de ajuste"** (e por que o condutor n�
 | Notificação | Quando avisa | Canal padrão | Nível padrão | Status |
 | --- | --- | --- | --- | --- |
 | Acompanhamento de orçamento em aberto | Faltam X dias para a data do evento (aluguel) ou para o vencimento do orçamento — e o orçamento ainda está em aberto, em negociação ou pré-reservado | Responsável pela operação (o vendedor do orçamento) | Importante | Disponível |
+| Reserva automática não concluída | O **sinal** de uma pré-reserva foi pago, mas a reserva automática não pôde ser concluída — por exemplo, porque o estoque ficou indisponível — e precisa de ação manual. Atalho: **Abrir orçamento** | Toda a organização | Importante | Disponível |
 | Aguardando aprovação | Um orçamento fica congelado esperando um aval — por exemplo, quando o frete passa de um limite e pede aprovação manual | Aprovadores de orçamento | Importante | Já avisa · ajuste em breve |
 
 {% hint style="info" %}
@@ -186,10 +189,14 @@ Os que mais mudam o seu dia:
 | **Parceiro não cumpriu a entrega ou retirada** | O parceiro **pulou** uma parada, com o motivo informado por ele | Responsável pela operação | **Importante** |
 | A operação repassada mudou | O orçamento de um pedido já repassado foi editado | Responsável pela operação | Importante |
 | Reserva no galpão do parceiro não confirmada | O material não conseguiu ser reservado no estoque da parceira | Responsável pela operação | Importante |
-| Acordo aguardando aprovação / Acordo ativado | Um acordo espera a outra parte, ou passou a valer | Responsável pela operação · Organização | Importante |
-| Parceiro revogou o acordo | Ele saiu de um acordo já ativo | Organização | Importante |
-| Proposta de parceria recebida · Parceria encerrada | Alguém propôs (ou rompeu) o vínculo entre as duas organizações | Organização | Importante |
+| Acordo aguardando aprovação / Acordo ativado | Um acordo espera a outra parte, ou passou a valer | Responsável pela operação · Toda a organização | Importante |
+| Parceiro revogou o acordo | Ele saiu de um acordo já ativo | Toda a organização | Importante |
+| Proposta de parceria recebida · Parceria encerrada | Alguém propôs (ou rompeu) o vínculo entre as duas organizações | Toda a organização | Importante |
 | Repasse pago | Um repasse foi pago ao parceiro | Responsável pela operação | Informativo |
+| Repasse manual aguarda sua confirmação | Para o **parceiro**: a organização declarou ter pago o repasse dele **por fora** do sistema — ele confirma o recebimento ou contesta | Responsável pela operação | Importante |
+| Repasse manual confirmado | Para quem **repassou**: o parceiro confirmou o recebimento do repasse pago por fora — a taxa da plataforma daqueles repasses passa a ser devida | Toda a organização | Importante |
+| Repasse manual contestado | Para quem **repassou**: o parceiro nega ter recebido o pagamento declarado, com o motivo — o saldo volta a contar como devido | Toda a organização | Importante |
+| Taxa da plataforma quitada | Confirma o pagamento da taxa da plataforma dos repasses pagos por fora | Toda a organização | Informativo |
 
 {% hint style="success" %}
 **Os dois que valem ligar primeiro** são o *Parceiro concluiu* e o *Parceiro não cumpriu*. Quem responde ao cliente é **você**, não o parceiro — e antes eles a única forma de descobrir uma entrega frustrada era o telefone do cliente tocando. O "não cumpriu" chega como **Importante** e traz o **motivo** que o parceiro informou em campo.
@@ -197,16 +204,54 @@ Os que mais mudam o seu dia:
 
 A lista completa do módulo é maior que esta tabela (acordos, prazos, penalidades de reputação, cancelamentos, frete alterado, e as versões "parceria interna" de cada um) — abra o grupo **Parceria** na tela para vê-la inteira. Para entender o que cada aviso representa no negócio, comece por [Rede de Parceiros: a visão](../parcerias/visao-geral.md).
 
+### Financeiro {#avisos-do-financeiro}
+
+| Notificação | Quando avisa | Canal padrão | Nível padrão |
+| --- | --- | --- | --- |
+| Nota fiscal recusada | A SEFAZ ou a prefeitura **recusou** uma nota emitida pelo sistema. O motivo vem no aviso; a correção e o reenvio acontecem na Central de notas | Toda a organização | Importante |
+| Nota fiscal presa no envio | Uma nota ficou aguardando o provedor fiscal e o sistema desistiu de conferir sozinho, depois de várias tentativas — alguém precisa verificar a situação dela | Toda a organização | Importante |
+| Lançamento cancelado com nota fiscal ativa | Uma conta a receber foi cancelada, mas a nota fiscal dela **segue autorizada** — verifique se a nota também precisa ser cancelada | Toda a organização | Importante |
+| Fatura do cartão fechou | A fatura de um cartão de crédito da empresa fechou: o total do ciclo está definido e o vencimento se aproxima. Atalho: **Ver faturas** | Quem cuida do financeiro | Importante |
+| Fatura do cartão a vencer | A fatura de um cartão **vence hoje** e ainda tem saldo em aberto. Atalho: **Ver faturas** | Quem cuida do financeiro | **Crítico** |
+
+Os avisos fiscais só disparam para quem emite notas pela [Integração Fiscal](integracao-fiscal.md). Os de cartão vão para quem tem a competência *Pagar contas* — no canal [Quem cuida do financeiro](canais-de-notificacao.md#canais-padrao) dá para estreitar o público ou escolher nomes. Veja como as faturas do cartão funcionam em [Cartões](../financeiro/cartoes.md).
+
+### Estoque {#avisos-de-estoque}
+
+| Notificação | Quando avisa | Canal padrão | Nível padrão |
+| --- | --- | --- | --- |
+| Item na sua bancada de manutenção | Um item entrou na bancada e ganhou responsável. Os itens são distribuídos **em rodízio** entre os operadores de manutenção do galpão, para o trabalho ficar parelho — e o aviso vai para quem recebeu. Atalho: **Abrir a bancada** | Responsável pela operação | Importante |
+
+Veja o que acontece na bancada em [Manutenção: o desfecho do reparo](../estoque/manutencao.md).
+
 {% hint style="info" %}
 Esta lista cresce com o tempo. Se há um aviso que faria diferença para a sua operação, fale com o suporte.
 {% endhint %}
 
-## Vendendo e gerenciando os avisos recebidos
+## Vendo e gerenciando os avisos recebidos {#avisos-recebidos}
 
-Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam **agrupados por módulo**, com o número de não-lidos, **ordenados por urgência e horário** — os novos e os antigos juntos, para você ter o histórico completo. Cada aviso mostra o **nível** e a **hora** em que foi emitido; o **botão de ação** fica em destaque quando é novo e discreto depois. **Nada some** — o histórico permanece.
+Toque no **sino** (no topo) para abrir as **suas** notificações. No alto há três abas: **Todas**, **Não lidas** (com a contagem) e **Novidades**.
+
+A lista não separa os avisos por módulo, e sim pelo que eles pedem de você — em três grupos:
+
+| Grupo | O que entra | Ordem |
+| --- | --- | --- |
+| **Precisa de ação** | Avisos **não lidos** de nível **Crítico** ou **Importante** | Os mais urgentes primeiro |
+| **Para saber** | Avisos **não lidos** de nível **Informativo** | Os mais recentes primeiro |
+| **Lidas** | Tudo o que você já leu ou resolveu | Os mais recentes primeiro |
+
+Cada aviso ocupa **uma linha**, com o ícone do módulo pintado na **cor do nível** — o olho lê "vermelho na logística" antes de ler qualquer palavra. Tocar na linha **só abre o detalhe**: no computador ele aparece ao lado da lista; no celular, numa folha.
+
+**Ler é um gesto seu.** O aviso sai de "Precisa de ação" ou "Para saber" quando você toca em **Marcar como lida** ou quando abre a **ação** dele (por exemplo, *Abrir a fatura*), que já conta como lido. Para limpar tudo de uma vez, use **Marcar todas como lidas**. **Nada some** — o que foi lido vai para o grupo **Lidas**, e o histórico permanece.
+
+{% hint style="info" %}
+**E a aba Novidades?** Ela não traz avisos da sua operação: mostra **o que está mudando no LocFlow** — cada pedido de melhoria numa trilha de cinco etapas (*Na fila → Em desenvolvimento → Em testes → Lançando → No ar*), que também serve de filtro. Veja [Novidades do LocFlow](../ajuda/novidades-do-sistema.md).
+{% endhint %}
 
 ## Situações reais
 
+- **"Abro o sino e não sei por onde começar."** Comece pelo grupo **Precisa de ação**: são os avisos críticos e importantes que você ainda não leu, os mais urgentes no topo. O resto é recado, em **Para saber**.
+- **"Uma nota fiscal foi recusada e eu só descobri dias depois."** Confira se o aviso **Nota fiscal recusada** (grupo **Financeiro**) está ligado e se o canal dele alcança quem emite as notas.
 - **"Quero ver como um alerta vai aparecer antes de ligar."** Abra o aviso, troque entre os níveis e olhe a prévia **COMO O AVISO CHEGA** — ela mostra o modal, o aviso discreto ou o sino conforme o nível.
 - **"Mudei o nível de um aviso e me arrependi."** Tente sair sem salvar: o LocFlow pergunta **"Salvar alterações?"** e deixa **descartar**, voltando à última versão salva. Ou reescolha o nível original para voltar ao padrão.
 - **"Os operadores estão sendo interrompidos por um aviso pouco urgente."** Baixe o nível dele para **Informativo** (só conta no sino) ou troque o canal para um público mais estreito — e salve.
@@ -219,4 +264,4 @@ Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam
 
 - [Canais de notificação](canais-de-notificacao.md) — crie e edite **quem recebe** cada aviso (toda a organização, por competência, o responsável da operação) e **como** (todo o grupo ou rodízio) — e **teste** um canal para confirmar quem ele alcança.
 - [Colaboradores e acessos](colaboradores-e-acessos.md) — atribua **competências** às funções para que os canais por competência entreguem só a quem deve.
-- [Motores operacionais](motores-operacionais.md) — onde a Central de Notificações vive, junto dos demais motores da organização.
+- [Minha conta e preferências](minha-conta.md#preferencias-pessoais) — o **som** e o **pop-up** de cada pessoa, que não dependem desta página.

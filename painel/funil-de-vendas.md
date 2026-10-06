@@ -33,23 +33,23 @@ Ou seja: uma etapa **sem nenhum orçamento** aparece em **cinza** (um espaço re
 
 ### Aluguel e venda são separados <a id="aluguel-e-venda"></a>
 
-O caminho do **aluguel** é diferente do caminho da **venda**, então o funil é **de uma natureza por vez**. Use o seletor no topo do card para alternar entre **Aluguel** e **Venda**.
+O caminho do **aluguel** é diferente do caminho da **venda**, então o funil é **de um tipo de negócio por vez**. Use o seletor no topo do card para alternar entre **Aluguel** e **Venda**.
 
 A diferença mais importante está no **fechamento**:
 
 | Tipo de negócio | Como fecha |
 | --- | --- |
 | **Venda** | Fecha direto em **vendido** — um único degrau de fechamento. |
-| **Aluguel** | Fecha por **dois caminhos**: **pré-reserva** (com sinal, estoque pré-travado) **ou** **reserva direta**. |
+| **Aluguel** | Fecha por **dois caminhos**: **pré-reserva** (com sinal) **ou** **reserva direta**. |
 
-No aluguel, a **pré-reserva** é opcional — um jeito de "segurar" o aluguel antes de confirmar de vez (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)). Como o cliente pode fechar por qualquer um dos dois, o funil **soma os dois caminhos** ao medir quem saiu da negociação. Isso evita subestimar o avanço (e o gargalo) só porque parte das reservas passou pela pré-reserva. Se a sua operação não usa esse passo, dá para **desligar a pré-reserva** na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento): a etapa some do funil e a negociação vai direto para reservado (o LocFlow já sugere desligada para quem está começando).
+No aluguel, a **pré-reserva** é opcional — um acerto comercial antes de confirmar de vez, que **não bloqueia estoque**: o bloqueio começa quando o pedido vira **Reservado** (veja [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)). Como o cliente pode fechar por qualquer um dos dois, o funil **soma os dois caminhos** ao medir quem saiu da negociação. Isso evita subestimar o avanço (e o gargalo) só porque parte das reservas passou pela pré-reserva. Se a sua operação não usa esse passo, dá para **desligar a pré-reserva** na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento): a etapa some do funil e a negociação vai direto para reservado (o LocFlow já sugere desligada para quem está começando).
 
 {% hint style="info" %}
 **Estados terminais ficam de fora.** **Perdido**, **Cancelado** e **Finalizado** não entram no funil de conversão — ele é só o caminho de quem ainda pode (ou já conseguiu) fechar. Para olhar perdas e cancelamentos, use os **Indicadores** do painel e os motivos registrados em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
+{% endhint %}
 
 {% hint style="info" %}
-**E os orçamentos vencidos?** Um orçamento que passou da **validade** não é um estado terminal — ele continua contando como "em aberto" no funil, mas **não avança** até você renovar a validade ou refazer a proposta. Se um deles não vai mais fechar, vale **encerrá-lo** (marcar como Perdido) para o funil refletir só o que realmente está de pé. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
-{% endhint %}
+**E os orçamentos vencidos?** Um orçamento que passou da **validade** não é um estado terminal — ele continua contando no funil, na etapa em que estava, mas **não avança** até você renovar a validade ou refazer a proposta. Se um deles não vai mais fechar, vale **encerrá-lo** (marcar como Perdido) para o funil refletir só o que realmente está de pé. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
 {% endhint %}
 
 ## A taxa de passagem: quanto avança <a id="taxa-de-passagem"></a>
@@ -102,10 +102,10 @@ O resumo (sem etapa em foco) mostra o total **no topo**, a **conversão do funil
 ## Esses números são reais ou de exemplo? <a id="numeros-reais-ou-ilustrativos"></a>
 
 {% hint style="success" %}
-**O funil de vendas usa os seus dados reais.** As quantidades e valores de cada etapa vêm dos **seus orçamentos**, agregados por natureza e estado. Não são números de exemplo: se você fechou uma reserva hoje, ela conta no funil.
+**O funil de vendas usa os seus dados reais.** As quantidades e valores de cada etapa vêm dos **seus orçamentos**, agregados por tipo de negócio e estado. Não são números de exemplo: se você fechou uma reserva hoje, ela conta no funil.
 {% endhint %}
 
-Vale uma ressalva honesta: outros blocos do painel ainda podem mostrar **valores ilustrativos** enquanto ganham os dados reais (isso aparece sinalizado em cada bloco). O **funil de vendas**, porém, já lê os seus orçamentos de verdade.
+O mesmo vale para todos os blocos do [Painel](o-painel.md) — Indicadores, Funil, Logística e Faturamento: nenhum deles mostra valores de exemplo.
 
 ## Por porte: o que olhar primeiro <a id="por-porte"></a>
 
@@ -149,13 +149,13 @@ $$\text{conversão} = \frac{V_n}{V_0}$$
 
 Como $V_0$ inclui o **pipeline ainda aberto** (orçamentos que ainda podem fechar ou cair), essa conversão **oscila** com o tempo. Para a conversão "limpa" — só dos negócios já decididos (ganhos sobre ganhos + perdidos) —, use os **Indicadores** do painel.
 
-> **Base dos números:** os valores vêm dos seus orçamentos reais, agregados por natureza e estado atual. O funil é um retrato do **agora** — o estado em que cada orçamento está neste momento —, não um histórico de transições.
+> **Base dos números:** os valores vêm dos seus orçamentos reais, agregados por tipo de negócio e estado atual. O funil é um retrato do **agora** — o estado em que cada orçamento está neste momento —, não um histórico de transições.
 
 ## Situações reais <a id="situacoes-reais"></a>
 
 - **"Entra muito, fecha pouco":** o topo está cheio, mas a conversão do funil é baixa. Você abre o detalhe de cada etapa e o selo **Gargalo** está em **negociação** — propostas enviadas sem resposta. O problema não é falta de orçamento, é **follow-up**.
 - **"Some no aluguel?":** você acha que a passagem da negociação está baixa, mas lembra que metade fecha por **pré-reserva**. Tranquilo: o funil já **soma pré-reserva + reserva** — o número que você vê é o avanço real.
-- **"Uma etapa em cinza":** a etapa de pré-reserva aparece **cinza** porque você não usa pré-reserva — vai direto para reserva. Não é erro: é a etapa **sem orçamento**, desenhada como espaço reservado para o funil não deformar.
+- **"Uma etapa em cinza":** a etapa de pré-reserva aparece **cinza** porque, neste momento, nenhum orçamento está nela — os seus fecharam direto em reserva. Não é erro: é a etapa **sem orçamento**, desenhada como espaço reservado para o funil não deformar. Se você nunca usa esse passo, desligue a pré-reserva na [Operação do Orçamento](../configuracoes/motores-operacionais.md#operacao-do-orcamento) e a etapa sai do funil.
 
 ## Próximo passo <a id="proximo-passo"></a>
 

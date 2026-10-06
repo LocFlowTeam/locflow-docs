@@ -11,13 +11,32 @@ Esta página é para você que **recebeu** um convite. Se é você quem quer con
 
 ## Como o convite chega até você <a href="#como-chega"></a>
 
-O convite é um **link**, enviado por quem te convidou — por WhatsApp, e-mail, mensagem ou qualquer outro app. Não existe um e-mail automático do LocFlow caindo na sua caixa de entrada: quem te chamou copia o link e te manda.
+O convite é um **link**. Ele pode chegar de dois jeitos:
+
+| Como chega | Quando |
+| --- | --- |
+| **Por e-mail, enviado pelo próprio LocFlow** | Quando quem te convidou informou o **seu e-mail** no convite. O e-mail traz o link e até quando ele vale — e só a conta com **esse** e-mail consegue aceitar. |
+| **Por WhatsApp, mensagem ou qualquer outro app** | Quando quem te convidou copiou o link e te mandou — seja porque não informou e-mail, seja para reforçar o envio. |
 
 {% hint style="info" %}
-**Não recebeu nada?** Peça o link de novo para a pessoa que te convidou. É ela que envia — o LocFlow não dispara o convite por conta própria.
+**Não recebeu nada?** Olhe também a caixa de **spam** e, se nada chegou, peça o link de novo para a pessoa que te convidou: o link fica com ela, pronto para reenviar por WhatsApp.
 {% endhint %}
 
 Ao abrir o link, o LocFlow mostra uma tela do convite com o **nome da organização** que está te chamando e os **papéis oferecidos** (o que você vai poder fazer lá dentro). Você ainda não está dentro — primeiro precisa entrar com a sua conta.
+
+### Convite feito para o aplicativo <a href="#convite-para-o-app"></a>
+
+Quem te convidou pode ter escolhido que você vai usar o LocFlow **no aplicativo do celular** — o caso comum de quem trabalha em campo, como o motorista. Aí, ao abrir o link no navegador, aparece primeiro a tela **"Use a LocFlow no celular"**, avisando que o convite daquela organização *"foi configurado para uso no app (operação em campo)"* e pedindo para você baixar o app, entrar com a sua conta e aceitar por lá.
+
+Você escolhe:
+
+* **baixar o app**, entrar com a sua conta e aceitar por lá;
+* **Já tenho o app — abrir agora**, se ele já está instalado;
+* **Continuar no navegador** — vale tanto quanto baixar o app: o convite segue normalmente por aqui.
+
+### Convite de parceria <a href="#convite-de-parceria"></a>
+
+Se você foi convidado para **executar pedidos de outra locadora** como parceiro, a tela do convite leva o selo **Convite de parceria**, e o botão para aceitar é **Aceitar e começar a receber**. Veja [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md).
 
 ## Entrar e aceitar <a href="#entrar-e-aceitar"></a>
 
@@ -76,6 +95,7 @@ Se você não quiser entrar, dá para tocar em **Recusar convite**. Ao recusar, 
 * **"Cliquei no link e dizia que era para outro e-mail."** O convite tinha e-mail vinculado. Entre com a conta de e-mail para a qual ele foi enviado.
 * **"Já uso o LocFlow na minha própria empresa e me convidaram para outra."** Como cada conta fica em uma organização só, o sistema só vai te deixar **recusar**. Para participar da outra, use uma conta diferente ou combine com quem administra.
 * **"O link disse que o convite não é mais válido."** Ele já foi aceito, recusado ou venceu. Peça um novo para quem te convidou.
+* **"Abri o link e a tela pediu para usar o app no celular."** O convite foi feito para o aplicativo. Baixe o app e aceite por lá — ou toque em **Continuar no navegador**, que também vale.
 
 ## Próximo passo <a href="#proximo-passo"></a>
 

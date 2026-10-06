@@ -1,6 +1,6 @@
 ---
 icon: comments
-description: Respostas rápidas para as dúvidas mais comuns do dia a dia — orçamento, pré-reserva, separação, pagamento, papéis, créditos e a Rede de Parceiros.
+description: Respostas rápidas para as dúvidas mais comuns do dia a dia — orçamento, pré-reserva, separação, pagamento, papéis, créditos, Flo, nota fiscal, segurança e a Rede de Parceiros.
 ---
 
 # Perguntas frequentes
@@ -25,7 +25,9 @@ A maioria das telas depende das **permissões** do seu usuário. Se algo não ap
 
 ## Como adiciono pessoas à minha equipe?
 
-Você convida por um **link**, e esse link já é a credencial — não pedimos senha. Marque um ou mais **papéis prontos** (Administrador, Motorista, Separador, Conferente…) e mande o link.
+Em **Ajustes › Empresa e equipe › Colaboradores**, na aba **Pessoas**, toque no **+**. O cadastro tem duas etapas: primeiro os dados da pessoa, no mesmo formulário de **Contato** (o nome e um celular ou e-mail bastam); depois **Funções** (o que ela faz na operação) e **Acesso**, onde você escolhe se ela vai ter login ou se é **só cadastro**.
+
+Com login, marque um ou mais **papéis prontos** (Administrador, Motorista, Separador, Conferente…). Ao concluir, o LocFlow gera um **link** de convite, e esse link já é a credencial — não pedimos senha. É só mandar.
 
 O **e-mail é opcional** e muda duas coisas quando você o preenche: o LocFlow **envia o convite por e-mail sozinho**, e só quem entrar com **aquela** conta consegue aceitar — o link deixa de servir para qualquer um. Deixou em branco? Você mesmo envia, e quem tiver o link aceita. Veja [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 
@@ -39,9 +41,9 @@ Não. **Separação** (na ida) e **conferência** (na volta) são **opcionais**:
 
 ## O que é "pré-reservar" um orçamento?
 
-É **segurar** um aluguel antes de confirmar de vez — útil quando o cliente está quase fechando e você não quer que o item seja prometido a outra pessoa. Vale **só para locação** e é opcional. Veja os estados no [Glossário](../primeiros-passos/glossario.md) e o caminho completo no [Ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).
+É um **acerto comercial** antes de confirmar de vez — útil quando o cliente está quase fechando, por exemplo esperando o sinal. Vale **só para locação** e é opcional. Atenção: a pré-reserva **não bloqueia estoque** — enquanto o pedido está pré-reservado, os itens continuam disponíveis para outros clientes; o bloqueio começa no **Reservado**. Veja os estados no [Glossário](../primeiros-passos/glossario.md), o caminho completo no [Ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md) e os detalhes em [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md).
 
-## O que acontece quando um orçamento vence?
+## O que acontece quando um orçamento vence? {#orcamento-vence}
 
 Todo orçamento tem uma **validade** (padrão 7 dias, ajustável no Motor de Orçamento e em cada orçamento). Passado o prazo, ele fica **vencido**: continua no funil onde estava, mas **não avança** — ao tentar reservar, vender ou reabrir, o LocFlow pede para você **renovar a validade** ou **criar um orçamento novo**, porque preços e regras podem ter mudado. Se o cliente não vai voltar, marque como **Perdido**. "Vencido" **não é um novo estado** do catálogo, é uma condição sobre o orçamento. Veja [Quando o orçamento vence](../orcamentos/acompanhando-e-fechando.md#quando-o-orcamento-vence).
 
@@ -55,17 +57,60 @@ Sem problema: o convite tem prazo de validade. Em **Colaboradores → Convites p
 
 ## O que são os créditos e o que consome crédito?
 
-Créditos cobrem recursos que usam **mapas do Google** — como calcular endereço, **traçar a rota** e **otimizar o roteiro**. Seu plano inclui uma **franquia mensal**; se acabar, dá para comprar mais. Acompanhe o saldo e o extrato em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
+Créditos são a "moeda" do que tem custo por uso:
+
+* recursos de **mapa** — localizar endereço, **traçar a rota** e **otimizar o roteiro**;
+* a **emissão de notas fiscais** em produção (as notas de teste não consomem);
+* a **Flo** — mensagens, respostas faladas e **conversa por voz** (cobrada por minuto). O custo aparece na própria conversa, e a Flo tem um **limite diário** que renova à meia-noite.
+
+Seu plano inclui uma **franquia mensal**; se acabar, dá para comprar mais (pelo navegador). **No teste grátis**, valem **créditos de cortesia** que não se renovam — e, durante o teste, não dá para comprar mais: o caminho é assinar um plano. Acompanhe o saldo, o extrato e o cartão **Uso da Flo** em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md#creditos).
 
 ## Não consigo concluir a entrega sem a foto. Como resolvo? {#evidencia-obrigatoria}
 
-Se a sua empresa configurou que aquele tipo de movimento **exige comprovação**, o LocFlow não fecha o registro sem ela — nem na rua, nem no lançamento retroativo, nem no balcão. Isso é de propósito: a prova de entrega é o que te defende numa discussão com o cliente.
+Se a sua empresa configurou que aquele tipo de movimento **exige comprovação**, o LocFlow não fecha o registro sem ela — nem na rua, nem no lançamento retroativo, nem na loja. Isso é de propósito: a prova de entrega é o que te defende numa discussão com o cliente.
 
 Quando a foto é **impossível** (você está lançando ontem no escritório, o cliente foi embora, o celular falhou), existe a **dispensa de evidência**: você escreve o **motivo** no próprio card daquele atendimento e o registro fecha — com o motivo carimbado junto, para quem for auditar depois.
 
 {% hint style="warning" %}
 A dispensa depende de uma **permissão dedicada**, que **motorista e parceiro externo não têm** — eles estão em campo justamente para produzir a prova. Se o botão não aparece para você, é isso: peça a quem faz a retaguarda para lançar, ou fale com quem administra a conta.
 {% endhint %}
+
+## Por que não consigo reservar este orçamento? {#nao-consigo-reservar}
+
+Três motivos aparecem com mais frequência:
+
+* **A sua operação exige algo da cobrança antes.** No [Gatilho da reserva](../configuracoes/motores-operacionais.md#gatilho-da-reserva), com **Exigir cobrança gerada** falta gerar a cobrança do orçamento; com **Exigir sinal pago**, o pedido espera em pré-reservado e o pagamento do sinal reserva sozinho.
+* **O orçamento venceu.** Fora da validade ele não avança — renove a validade ou crie um novo (veja [acima](#orcamento-vence)).
+* **Ele está aguardando aprovação.** Uma política (frete acima do limite, desconto acima do teto) congelou o pedido até o aval de um responsável. Veja [Aprovação de orçamentos](../orcamentos/aprovacao.md).
+
+## Como começo a emitir nota fiscal? {#emitir-nota-fiscal}
+
+Em **Ajustes › Integrações › Integração Fiscal**, um assistente guiado credencia a sua empresa. O caminho tem quatro marcos: **credenciar**, enviar o **certificado digital**, emitir uma **nota de teste** (sem valor fiscal e sem custo) e **ativar a emissão em produção**. Depois disso, cada nota emitida em produção consome créditos. Veja [Integração Fiscal](../configuracoes/integracao-fiscal.md).
+
+## Como ligo a verificação em duas etapas? E como exijo de toda a equipe? {#verificacao-em-duas-etapas}
+
+Para a **sua** conta: em **Minha Conta › Segurança › Verificação em duas etapas**, toque em **Configurar autenticador**, escaneie o QR code num aplicativo autenticador (como o Google Authenticator) e digite o **código de 6 números**.
+
+Para **todo mundo**: quem administra vai em **Ajustes › Empresa e equipe › Perfil da Empresa**, no bloco **Verificação em duas etapas da equipe**, e toca em **Exigir da equipe**. Avise a equipe antes — quem não tiver o aplicativo vai precisar dele na próxima entrada. Veja [Verificação em duas etapas](../configuracoes/verificacao-em-duas-etapas.md).
+
+## Excluí um contato ou um colaborador por engano. Dá para voltar? {#excluido-por-engano}
+
+Dá. Contatos, colaboradores e roteiros excluídos vão para a **Lixeira**, em **Ajustes › Conta e segurança › Lixeira**. Ali, **Restaurar** devolve o item como estava; **Excluir de vez** apaga para sempre. Cada botão depende de uma permissão do seu papel. Veja [Lixeira](../configuracoes/lixeira.md).
+
+## A Flo disse que o limite de hoje acabou. O que eu faço? {#limite-da-flo}
+
+A Flo tem um **limite diário de créditos**, que protege o saldo de um dia fora da curva e **renova à meia-noite** (no fuso da organização). Você tem dois caminhos:
+
+* **Quem administra a conta** toca em **Ajustar limite** e sobe o número — ou tira o limite;
+* ou esperar a meia-noite. Quem não administra é orientado a pedir o aumento a quem administra.
+
+Comprar créditos não libera o limite do dia. Se a mensagem falar que os **créditos acabaram** (e não o limite de hoje), aí o problema é o saldo: **Comprar créditos**, pelo navegador — ou, no teste grátis, assinar um plano.
+
+Acompanhe o gasto no cartão **Uso da Flo**. Veja [Conheça a Flo](../flo/conheca-a-flo.md#limite-diario).
+
+## Onde vejo o que está mudando no LocFlow? {#novidades}
+
+No **sino**, na aba **Novidades**: cada melhoria aparece numa trilha de cinco etapas — da fila até **No ar**. Veja [Novidades do LocFlow](novidades-do-sistema.md).
 
 ## Rede de Parceiros {#rede-de-parceiros}
 
@@ -129,7 +174,14 @@ A taxa incide sobre o **total da operação** (itens + mão de obra + frete − 
 
 Depende do que o acordo combinou.
 
-**Se o acordo permite cobrança na rua**, o parceiro é o **coletor** daquele pedido: ele recebe do cliente na porta em seu nome (a fatura e a relação com o cliente continuam suas) e declara o recebimento no app dele. A partir daí a conta **vira do avesso** — em vez de você dever a ele, **ele deve a você** a sua margem mais a taxa da plataforma, e quita por PIX. Ele acompanha isso em **Meus Ganhos**, no cartão *"A pagar à organização"*; você, em **Financeiro › Repasses**, como valor a receber daquele parceiro.
+**Se o acordo permite cobrança na rua**, o parceiro recebe do cliente na porta **em seu nome** (a fatura e a relação com o cliente continuam suas) e declara o recebimento no app dele. A partir daí passam a existir **duas contas, de sentidos opostos**, sobre o mesmo pedido — uma não substitui a outra:
+
+| Conta | Quem paga a quem |
+| --- | --- |
+| **A devolução** | **Ele paga a você** o que recebeu do cliente — o valor inteiro da cobrança que ele fechou. |
+| **O repasse do acordo** | **Você continua pagando a ele** o que foi combinado, no momento que o acordo combinou — como em qualquer pedido. Receber na porta não adia nem cancela o repasse dele. |
+
+A taxa da plataforma entra **uma vez só** por pedido. Hoje são **dois PIX separados**: ele quita a devolução pelo botão **Quitar via PIX**, e você paga o repasse dele do jeito de sempre. Ele acompanha o que deve em **Repasses a pagar**, no valor *"A pagar à organização"* (em **Meus Ganhos** aparece o aviso de que há valor a repassar); você acompanha em **Financeiro › Repasses**, na seção *"Quem me paga"*.
 
 {% hint style="warning" %}
 **A coleta é tudo ou nada.** O parceiro só pode declarar o recebimento se ele **fechar a cobrança inteira** daquele pedido. Recebeu só uma parte? O caminho é o **PIX do vendedor** — que, aliás, é sempre o melhor: o dinheiro cai já repartido, sem sobrar saldo para ninguém acertar depois.
@@ -137,7 +189,7 @@ Depende do que o acordo combinou.
 
 **Se o acordo não permite**, o parceiro não consegue registrar esse recebimento — o app dele avisa para mostrar o **PIX do vendedor** ao cliente. Cobrança na rua vale hoje apenas para o **parceiro externo** (o convidado que trabalha dentro da sua conta); na parceria entre duas organizações, quem recebe do cliente continua sendo você.
 
-→ [Cobrança na rua](../parcerias/cobranca-na-rua.md) · [O parceiro recebeu do cliente?](../parcerias/dinheiro-da-parceria.md#parceiro-recebeu-na-entrega)
+→ [Cobrança na rua](../parcerias/cobranca-na-rua.md) · [Quando o parceiro recebe do cliente](../parcerias/dinheiro-da-parceria.md#repasse-inverso)
 
 ### Encerrei a parceria e o pedido continua com o parceiro. Por quê? {#encerrei-e-o-pedido-continua}
 
@@ -149,7 +201,7 @@ Porque **compromisso assumido é compromisso**. Encerrar a parceria corta o futu
 | Repassar um pedido **novo** | Bloqueado, mesmo pelos acordos que estavam ativos |
 | Solicitações que só **aguardavam resposta** | Encerradas — a operação volta para você, e o responsável é avisado |
 | O que o parceiro **já aceitou** | **Continua valendo** — ele executa e continua sendo pago |
-| O acesso dele aos seus dados (roteirização, balcão, cliente, situação da cobrança) | Cortado, exceto no que ele já assumiu |
+| O acesso dele aos seus dados (roteirização, atendimento na loja, cliente, situação da cobrança) | Cortado, exceto no que ele já assumiu |
 
 Ou seja: o pedido que "continua lá" é um pedido que o parceiro já tinha aceitado antes de você encerrar. Se você quer tirá-lo de fato daquela operação, o caminho é **desfazer aquele repasse** especificamente — e aí valem as regras de desistência do acordo.
 
@@ -168,7 +220,7 @@ Para destravar, alguém precisa **ressincronizar** aquela parada com o pedido at
 
 ### Sou o parceiro. Preciso ter frota e galpão cadastrados? {#parceiro-precisa-de-frota}
 
-Se você é o **parceiro convidado por link**: sim, e é rápido. Você cadastra a **sua própria frota** dentro da conta de quem te convidou — especificações e veículos com placa que são **seus** e só você enxerga — e o **Meu galpão**, que é o endereço de onde as suas viagens partem (é dele que sai o cálculo do frete do repasse). Nada disso se mistura com a frota de quem te convidou.
+Se você é o **parceiro convidado por link**: sim, e é rápido. Você cadastra a **sua própria frota** dentro da conta de quem te convidou — tipos de veículo e veículos com placa que são **seus** e só você enxerga — e o **Meu galpão**, que é o endereço de onde as suas viagens partem (é dele que sai o cálculo do frete do repasse). Nada disso se mistura com a frota de quem te convidou.
 
 Se você é uma **organização parceira** (parceria org↔org), o que pesa é o **estoque**: o material sai do **seu** galpão, e sem galpão cadastrado o sistema não reserva nada — o pedido chega marcado como sem cobertura, e quem corrige é você.
 

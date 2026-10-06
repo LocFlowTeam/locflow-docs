@@ -106,7 +106,10 @@ Aqui você casa o que o **banco** reportou com o que o **razão** registra — l
 
 ### Importar o extrato
 
-Na aba **Extrato bancário**, use **Importar extrato (OFX)** e escolha o arquivo que você baixou do internet banking. Ao terminar, o LocFlow diz o que fez: *"N novas, N conciliadas sozinhas, N repetidas"*.
+Na aba **Extrato bancário**, use **Importar extrato (OFX ou CSV)** e escolha o arquivo que você baixou do internet banking. Ao terminar, o LocFlow diz o que fez: *"N novas, N conciliadas sozinhas, N repetidas"*.
+
+* **OFX** — o formato que quase todo banco oferece para exportar o extrato. Entra direto.
+* **CSV** — a planilha do extrato. Como cada banco organiza as colunas de um jeito, abre a folha **Importar extrato em CSV**: você aponta qual coluna é a **Data**, qual é o **Histórico** e qual é o **Valor**, e a prévia **Como vai entrar** mostra as primeiras linhas antes de importar.
 
 {% hint style="success" %}
 **Importar o mesmo arquivo duas vezes não duplica nada.** O LocFlow reconhece cada movimento pelo identificador que o próprio banco dá — reimportar é seguro. Se ficou em dúvida se importou, importe de novo.
@@ -132,10 +135,16 @@ Três caminhos por linha:
 
 ### Desfazer uma conciliação
 
-A fila mostra o que está **pendente**, então uma linha já conciliada sai dela. Hoje, para desfazer:
+A fila mostra o que está **pendente**, então uma linha já conciliada sai dela — e vai para **Conciliadas recentes (N)**, logo abaixo: *"Casou errado? Desfaça e a linha volta para a fila."* Cada linha diz se foi **casada pelo motor** ou **casada manualmente**.
+
+1. Toque em **Desfazer** na linha.
+2. A confirmação **Desfazer conciliação** explica: *a linha volta para a fila e o selo sai dos lançamentos do grupo. Nenhum valor é alterado e nada é apagado — só o casamento deixa de existir.*
+3. Confirme, e case a linha com o lançamento certo.
+
+Duas exceções:
 
 * se o **banco retificou** a linha, ela volta sozinha para a fila (o caso acima);
-* se você conciliou errado num mês **já fechado**, é preciso **reabrir o mês** antes de qualquer correção — o selo protege o período de propósito.
+* se a linha está num mês **já fechado**, o LocFlow recusa — o selo protege o período de propósito — e oferece **Ir para o fechamento mensal**, para você reabrir o mês antes de corrigir.
 
 ## Fechamento de caixa: o dinheiro da rua {#fechamento-de-caixa}
 
@@ -143,18 +152,27 @@ Nada a ver com banco. Aqui você confere o que **pessoas** receberam fora do sis
 
 Quando alguém da sua equipe registra um recebimento presencial, a parcela **não** é quitada na hora: ela fica **Aguardando conferência**, e o recebimento entra nesta fila. É um cuidado deliberado — dinheiro de rua precisa bater no fim do dia. O outro lado dessa história está em [Recebendo pagamentos](../cobranca/recebendo-pagamentos.md).
 
-A tela mostra:
+A tela tem duas abas:
 
-* **A conferir · N recebimentos** e o total esperado.
-* A fila, **mais antigos primeiro**, com o **método** (dinheiro, maquininha, transferência, outro), o **valor**, **quem marcou** e o **roteiro**.
-* Filtros por **operador** que marcou e por **responsável do roteiro**.
+* **A conferir** — o que alguém recebeu e a tesouraria ainda não conferiu, com o total esperado;
+* **Divergências** — as parcelas congeladas por um caixa que não bateu, com o motivo de cada uma.
+
+Na fila, **mais antigos primeiro**, cada recebimento mostra o **cliente**, o **método** (dinheiro, maquininha, transferência, outro), o **valor**, **quem marcou** e o **roteiro**. Dá para filtrar por **operador** que marcou e por **responsável do roteiro**.
 
 Duas decisões por recebimento:
 
 | Decisão | Quando | O que acontece |
 | --- | --- | --- |
-| **Confirmar** | O dinheiro chegou. Você informa como veio (dinheiro, maquininha, transferência, outro) | A **parcela é liquidada** e a entrada passa a valer no seu financeiro |
-| **Divergência** | O caixa não bateu. Você escreve o motivo | A parcela é **congelada** para investigação, com o motivo registrado |
+| **Confirmar** | O dinheiro chegou. A folha **Confirmar recebimento** pede o **meio físico** realmente recebido, o **dia em que o dinheiro entrou** e a **conta que recebeu** (sem escolher, vale a conta de recebimento padrão) | A **parcela é liquidada** e a entrada passa a valer no seu financeiro, naquele dia e naquela conta |
+| **Divergência** | O caixa não bateu. Você descreve a divergência (*"valor do malote menor, comprovante ausente"*) e toca em **Reportar e congelar** | O valor em conferência é **descartado** — a dívida do cliente continua cheia — e a parcela é **congelada** para investigação, com o motivo registrado: enquanto isso, ela não pode ser baixada, receber outro recebimento de rua nem gerar cobrança online. Ela passa para a aba **Divergências** |
+
+### Liberar a parcela
+
+Na aba **Divergências**, depois de apurar, toque em **Liberar parcela**. A folha repete o motivo que foi reportado — é ele que você está decidindo aceitar — e explica: *a parcela volta a poder ser cobrada, reagendada e baixada. Isto não confirma o recebimento contestado: ele continua registrado como divergência, para auditoria.*
+
+{% hint style="warning" %}
+**Liberar vale para a parcela inteira.** Se a mesma parcela tem outras divergências em aberto, a folha avisa quantas são e mostra os motivos delas antes de você liberar — um toque solta a parcela para todas.
+{% endhint %}
 
 {% hint style="info" %}
 **Quando quem entregou foi um parceiro logístico com cobrança na rua, não há o que conferir aqui** — o dinheiro ficou com ele, e a parcela é quitada na hora. O acerto passa a ser entre vocês dois. A conta completa está em [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md).
@@ -181,7 +199,8 @@ flowchart TD
 * **"Estou migrando de outro sistema."** Defina o **saldo de abertura** de cada conta na data da virada, **antes** de fechar qualquer mês. O histórico antigo fica fora do saldo, como deve.
 * **"Esqueci uma despesa de junho e já fechei junho."** Reabra junho com a justificativa, lance a despesa, e refeche o mês.
 * **"O extrato tem duas saídas de R$ 150 no mesmo dia."** O LocFlow não escolhe por você: as duas vão para a fila para você casar cada uma com o lançamento certo.
-* **"O motorista disse que recebeu R$ 300, mas veio R$ 280."** Reporte **divergência** com o motivo. A parcela congela até alguém apurar — ninguém dá baixa em dinheiro que não chegou.
+* **"O motorista disse que recebeu R$ 300, mas veio R$ 280."** Reporte **divergência** com o motivo. A parcela congela até alguém apurar — ninguém dá baixa em dinheiro que não chegou. Resolvido, libere a parcela na aba **Divergências** e cobre o que faltar.
+* **"Conciliei a linha do banco com o lançamento errado."** Em **Conciliadas recentes**, toque em **Desfazer**: a linha volta para a fila, e você a casa com o lançamento certo.
 
 ## Próximo passo
 

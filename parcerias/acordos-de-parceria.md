@@ -38,6 +38,17 @@ O mecanismo é simples de lembrar: **quem edita já concorda**. Se o parceiro de
 **Cada um mexe no próprio lado.** Numa contraproposta, o parceiro logístico ajusta **o que ele recebe**; o preço ao cliente é seu e ele não altera. Se a proposta dele tentar mexer no seu bloco, o app **recusa e diz o motivo** — em vez de aceitar e descartar a alteração em silêncio, que era o comportamento antigo e a origem de discussões do tipo "mas eu mudei e não mudou".
 {% endhint %}
 
+### O que mudou nesta proposta {#o-que-mudou}
+
+Quando uma contraproposta chega esperando a **sua** decisão, você não precisa reler o acordo inteiro caçando a diferença. O detalhe do acordo abre o painel **"O que mudou nesta proposta"**, com só o que a outra parte alterou — cada linha com o **antes** e o **depois**:
+
+* os **itens**: o que cada lado recebe ou cobra, item novo, item retirado do acordo;
+* **quando** e **como** o valor é pago (por exemplo, de "na entrega" para "quando o cliente pagar");
+* a divisão da **taxa da plataforma**, quem paga a **maquininha** e quem devolve o dinheiro ao cliente;
+* se o parceiro **pode receber o cliente na porta**, o **frete** e as janelas de **aceite** e de **desistência**.
+
+Fora da sua vez, o painel aparece recolhido numa linha que diz quantas mudanças há e de quem são. Quem está montando a proposta vê o mesmo quadro **antes de enviar**, com o título **"O que você está mudando"**. E uma proposta reenviada sem nenhuma alteração não mostra painel — não há diferença a mostrar.
+
 ## Os termos, um a um {#os-termos}
 
 ### Itens acordados {#itens-acordados}
@@ -51,7 +62,7 @@ A regra de ouro: **o preço do parceiro é sempre menor que o seu, em todo item*
 
 *"As duas partes do acordo devem citar os mesmos itens: todo item precisa ter preço ao cliente (vendedor) e repasse (logístico)."*
 
-Não é burocracia: sem o preço ao cliente, **não existe a conta que protege a sua margem** — o acordo estaria prometendo repasse sobre uma receita que ninguém registrou. A regra vale ao criar, ao propor e ao promover o acordo.
+Não é burocracia: sem o preço ao cliente, **não existe a conta que protege a sua margem** — o acordo estaria prometendo repasse sobre uma receita que ninguém registrou. A regra vale ao criar, ao propor e quando o parceiro externo [vira organização](#promocao).
 {% endhint %}
 
 {% hint style="success" %}
@@ -115,7 +126,11 @@ Para você não montar isso do zero, a tela oferece três combinados prontos —
 
 Este termo responde a uma pergunta prática: **o parceiro pode receber o cliente na porta, em seu nome?**
 
-Por padrão, **não** — num acordo novo ele nasce desligado. Ligado, o parceiro passa a poder gerar o **PIX da sua organização** para o cliente pagar na hora, ou **declarar** que recebeu em espécie. Nesse segundo caso a direção do acerto se inverte: em vez de você dever a ele, **ele passa a dever a você** a sua margem mais a taxa de plataforma.
+Por padrão, **não** — num acordo novo ele nasce desligado. Ligado, o parceiro passa a poder gerar o **PIX da sua organização** para o cliente pagar na hora, ou **declarar** que recebeu em espécie. Nesse segundo caso, ele **devolve a você o que coletou** — e o repasse do acordo dele continua nascendo normalmente, no momento combinado. Uma conta não substitui a outra (veja [O dinheiro da parceria](dinheiro-da-parceria.md#repasse-inverso)).
+
+{% hint style="info" %}
+**Este termo não adia o repasse.** Ele só diz **quem pode** receber o cliente na porta. Num acordo "Na Retirada", o repasse do parceiro continua vencendo na retirada, com ou sem o pagamento do cliente.
+{% endhint %}
 
 O que **não** muda ao ligar: a fatura, a razão e a relação de crédito com o cliente continuam **suas**. O parceiro é **coletor no ponto de entrega**, nunca dono do crédito.
 
@@ -146,7 +161,7 @@ Depois de aceitar, o parceiro ainda pode **desistir** (sempre com um motivo). A 
 As duas janelas são o "SLA" do acordo: elas protegem **você** de ficar na mão e protegem **o parceiro** de compromissos impossíveis. Deixar de responder no prazo, desistir tarde ou cancelar tarde pesa na reputação de quem fez — de forma objetiva e contestável, não no grito.
 {% endhint %}
 
-### Frete do acordo {#frete-do-acordo}
+### Frete do acordo {#frete}
 
 O transporte de cada pedido repassado pode ser precificado de dois jeitos:
 
@@ -155,7 +170,7 @@ O transporte de cada pedido repassado pode ser precificado de dois jeitos:
 | **Manual (a combinar)** | O acordo não fixa regra de frete: o valor de cada operação é combinado caso a caso. | Parcerias começando, volumes baixos, rotas imprevisíveis. |
 | **Motor** | As **regras de preço do parceiro** ficam embutidas no acordo — por quilômetro, por viagem, por faixa — e o LocFlow calcula o frete de cada pedido sozinho. | Parcerias com volume: preço previsível, sem negociar toda vez. |
 
-No modo motor, as **especificações de veículo** citadas nas regras devem ser da **frota do parceiro** — é o caminhão dele que roda, então é a capacidade dele que precifica.
+No modo motor, os **tipos de veículo** citados nas regras devem ser da **frota do parceiro** — é o caminhão dele que roda, então é a capacidade dele que precifica. O frete é calculado **a partir do endereço do parceiro**, não do seu: é de lá que o material sai.
 
 {% hint style="success" %}
 **Na parceria interna existe um terceiro caminho, e é o mais prático: não preencher o frete.** Deixando o bloco de frete em branco num acordo org↔org, o LocFlow usa o **motor de frete que a parceira já publicou** — as regras reais dela, mantidas por ela, sem você copiar nada e sem ficar desatualizado quando ela reajustar. Preencher o frete à mão substitui isso pelo que **você** digitou naquele dia.
@@ -190,24 +205,24 @@ Tudo acima vale para qualquer acordo. Quando as duas partes são **organizaçõe
 
 **Mapeamento item a item.** Cada organização tem o **seu** catálogo — a sua "Mesa Rústica" e a "Mesa de Madeira 6 Lugares" dela podem ser o mesmo móvel com nomes diferentes. O acordo interno resolve isso com um **mapeamento item a item** entre os dois catálogos: o LocFlow sugere os pares automaticamente (**auto-match** pelo catálogo global) e você **valida** cada um. A **ativação exige o mapa completo** — todo item acordado precisa do seu correspondente do outro lado, porque é por essa tradução que o pedido repassado vira operação no sistema da parceira.
 
-**Estoque espelhado.** Com o mapa pronto, quando a parceira aceita um repasse o material passa a sair **do estoque dela** — o sistema traduz os itens e reserva no galpão dela mais próximo da entrega. Se ela não tem estoque disponível na janela do pedido, o próprio aceite é barrado. Os detalhes estão em [Estoque na parceria](estoque-na-parceria.md).
+**Estoque espelhado.** Com o mapa pronto, quando a parceira aceita um repasse o material passa a sair **do estoque dela** — o sistema traduz os itens e reserva no galpão de onde a operação sai. Se ela tem mais de um galpão, é ela quem escolhe esse galpão **no aceite**. Se ela não tem estoque disponível na janela do pedido, o próprio aceite é barrado. Os detalhes estão em [Estoque na parceria](estoque-na-parceria.md).
 
 {% hint style="success" %}
 **O que você ganha com a interna:** na hora de repassar um pedido, o comparativo já mostra a **cobertura e a disponibilidade** de cada parceira para a data — você descobre ali, e não no dia da entrega, que ela não tem o material ou que o acordo não traduz parte dos itens.
 {% endhint %}
 
-## Da externa para a interna: a promoção {#promocao}
+## Da externa para a interna: o parceiro vira organização {#promocao}
 
-Muita parceria começa **externa**: você convida um motorista ou uma transportadora pequena, que trabalha dentro da sua conta. Um dia esse parceiro cresce, cria a **própria organização** no LocFlow — e o acordo pode crescer junto, virando org↔org **sem recomeçar do zero**.
+Muita parceria começa **externa**: você convida um motorista ou uma transportadora pequena, que trabalha dentro da sua conta. Um dia esse parceiro cresce — e pode **virar organização**: criar a própria empresa no LocFlow a partir do que já tem na parceria com você, e a parceria passa a ser entre duas organizações, **sem recomeçar do zero**.
 
-Quem promove é **o parceiro** (é ele quem ganhou estrutura própria), a partir de um acordo **ativado**. A promoção exige:
+Quem dá esse passo é **o parceiro** (é ele quem ganhou estrutura própria), a partir de um acordo **ativado**: no detalhe do acordo aparece para ele o cartão **"Virar organização e receber direto"**. A criação da empresa é concluída **no navegador**, por um assistente — o passo a passo, com as condições, está em [Parceiro Logístico Externo](parceiro-logistico-externo.md#crescendo-na-rede).
 
-1. **Organização própria** dele, com um **vínculo ativo** com a sua.
-2. **Catálogos alinháveis**: o auto-match precisa completar o mapeamento item a item entre o acordo e o catálogo da organização dele.
-3. **Frota equivalente**, quando o frete do acordo é por motor: as fichas de veículo citadas nas regras precisam ter equivalentes na frota da organização dele — as regras de preço continuam fazendo sentido com os caminhões que passam a rodar.
+{% hint style="info" %}
+**Para você, o que muda:** o acordo passa a ser com a organização dele, e a parceria ganha os recursos da [parceria interna](#parceria-interna). Antes da virada, o sistema exige a casa em ordem do lado dele — nenhum repasse em aberto, nenhuma solicitação esperando a decisão dele e nenhum roteiro dele em andamento na sua conta. Depois, o acesso dele como convidado dentro da sua conta deixa de existir.
+{% endhint %}
 
 {% hint style="success" %}
-**A reputação carrega.** As avaliações e o histórico que o parceiro acumulou na fase externa **vão junto** na promoção. Crescer não zera a confiança construída — nem para ele, nem para você.
+**A reputação que ele construiu com você vai junto.** As avaliações e as penalidades que a sua organização registrou sobre ele passam para a organização nova: no seu ranking e no seu comparativo, ele não volta a ser "Novo". Já a **vitrine pública** dele, em **Descobrir parceiros**, nasce zerada — a reputação de parceiro convidado não vai para lá.
 {% endhint %}
 
 ## Para quem quer os números {#para-quem-quer-os-numeros}

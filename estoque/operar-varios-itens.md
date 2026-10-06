@@ -1,17 +1,17 @@
 ---
 icon: layer-group
-description: Confira a contagem, mande para reparo ou transfira vários itens de uma vez — com o limite de 25 por vez e o que acontece quando uma linha não passa.
+description: Confira a contagem, mande para reparo ou transfira vários itens de uma vez entre galpões e lojas — com o limite de 25 por vez e o que acontece quando uma linha não passa.
 ---
 
 # Operar vários itens de uma vez
 
-Depois de um evento, raramente você mexe em um item só: volta a bandeja inteira, e cada peça precisa ser conferida, mandada para o reparo ou levada para outro galpão. Fazer isso um a um é onde o tempo se perde — e onde alguém esquece de registrar o último.
+Depois de um evento, raramente você mexe em um item só: volta a bandeja inteira, e cada peça precisa ser conferida, mandada para o reparo ou levada para outro galpão ou loja. Fazer isso um a um é onde o tempo se perde — e onde alguém esquece de registrar o último.
 
-No **Estoque → Itens**, cada linha tem uma **caixinha de seleção**. Marque os [bens móveis](../primeiros-passos/glossario.md) que quer mexer e toque em **Operar**.
+Na lista de **Itens** do [Painel de Estoque](painel.md), cada linha tem uma **caixinha de seleção**. Marque os [bens móveis](../primeiros-passos/glossario.md) que quer mexer e toque em **Operar**. Item que ainda não tem estoque cadastrado fica de fora da folha: sem uma entrada registrada, não há número para conferir nem para mover.
 
 ## O que dá para fazer em lote
 
-<table><thead><tr><th width="220">Operação</th><th>O que ela faz</th></tr></thead><tbody><tr><td><strong>Conferir contagem</strong></td><td>Você digita quanto contou de cada item; o sistema corrige o saldo pela diferença.</td></tr><tr><td><strong>Enviar para reparo</strong></td><td>Manda a remessa para a oficina. Os itens saem do disponível até alguém <a href="manutencao.md">concluir o reparo</a> — voltando ao estoque, sendo descartados ou reclassificados.</td></tr><tr><td><strong>Transferir entre galpões</strong></td><td>Despacha tudo para o mesmo destino. O material sai daqui na hora e entra lá quando alguém confirmar a chegada.</td></tr></tbody></table>
+<table><thead><tr><th width="220">Operação</th><th>O que ela faz</th></tr></thead><tbody><tr><td><strong>Conferir contagem</strong></td><td>Você digita quanto contou de cada item; o sistema corrige o saldo pela diferença.</td></tr><tr><td><strong>Enviar para reparo</strong></td><td>Manda a remessa para a oficina. Os itens saem do disponível até alguém <a href="manutencao.md">concluir o reparo</a> — voltando ao estoque, sendo descartados, reclassificados ou separados em quarentena. Só o que está disponível vai: material reservado para um pedido fica.</td></tr><tr><td><strong>Transferir entre locais</strong></td><td>Despacha tudo para o mesmo destino — um galpão ou uma loja com estoque próprio. O material sai daqui na hora e entra lá quando alguém confirmar a chegada (veja <a href="transferencias.md">Transferências</a>).</td></tr></tbody></table>
 
 {% hint style="info" %}
 **A avaria continua item a item.** Ela é a exceção, quase sempre de uma peça só, e cada uma tem seu motivo e pode virar cobrança do cliente — decisões que pedem atenção individual. Registrar avarias em série convidaria ao erro caro.
@@ -52,12 +52,12 @@ Assim você corrige só o que precisa, sem recomeçar a conferência do zero.
 
 ## O que cada folha pergunta
 
-- **Contagem** — quanto você contou. A diferença aparece na hora, em verde quando bate, e em vermelho quando falta.
-- **Reparo** — uma **previsão de volta** para a remessa inteira (é um caminhão só indo para a oficina). Sem previsão, o material fica indisponível até você concluir o reparo.
-- **Transferência** — **para onde vai**. O destino começa vazio de propósito: ele decide para onde o material segue fisicamente. Escolhido o galpão, os itens que já estão lá saem da folha sozinhos.
+- **Contagem** — quanto você contou, ao lado do que está **na prateleira**. A diferença aparece na hora: *confere* ou *+2 sobra* em verde, *-3 falta* em vermelho. Se parte daquele lote está na bancada ou em quarentena, a linha avisa — *"2 unidades separadas em reparo ou quarentena — não conte"*. O botão diz quantas vai registrar: **Registrar 4 contagens**.
+- **Reparo** — uma **previsão de volta** para a remessa inteira (é um caminhão só indo para a oficina). Sem previsão, o material fica indisponível até alguém concluir o reparo. O teto de cada linha são as **disponíveis**, e lotes de loja ficam de fora: manutenção é operação de galpão — transfira o material para o galpão antes. O botão: **Enviar 3 lotes para reparo**.
+- **Transferência** — **Para onde vai?** O destino começa vazio de propósito: ele decide para onde o material segue fisicamente. Escolhido o destino, os itens que já estão lá saem da folha sozinhos. O teto de cada linha é o que dá **para despachar**, e o botão é **Despachar 3 lotes**. Entre a loja e o galpão do mesmo endereço a transferência conclui na hora; senão, o material entra no destino quando alguém confirmar a chegada.
 
-Em todas, tocar no número ao lado do campo preenche o lote inteiro — o caso comum é levar tudo.
+Em todas, tocar no número ao lado do campo preenche o lote inteiro — o caso comum é levar tudo. E o que falta para enviar vem escrito acima do botão (*"1 linha pede mais do que há disponíveis."*).
 
 ## Próximo passo
 
-Entenda o que cada número da tela significa em [Posição e previsão de estoque](posicao-e-previsao.md), o que acontece quando o item volta do reparo em [Manutenção: o desfecho do reparo](manutencao.md), e a regra que impede reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md).
+Entenda o que cada número da tela significa em [O estoque de agora e a previsão](posicao-e-previsao.md), veja as operações de um item só em [Operações de estoque](operacoes-de-estoque.md), o que acontece quando o item volta do reparo em [Manutenção: o desfecho do reparo](manutencao.md), e a regra que impede reserva dupla em [Galpões e disponibilidade](galpoes-e-disponibilidade.md).

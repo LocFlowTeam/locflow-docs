@@ -1,16 +1,16 @@
 ---
 icon: clipboard-check
-description: A vistoria do veículo na especificação — os gatilhos que dizem quando ela vence e os modelos de checklist que o motorista confere antes de rodar.
+description: A vistoria do veículo no tipo de veículo — os gatilhos que dizem quando ela vence e os modelos de checklist que o motorista confere antes de rodar.
 ---
 
-# Especificações: vistoria
+# Tipos de veículo: vistoria
 
-A **vistoria** é o checklist de checagem do veículo — o que conferir antes de sair com a carga. Você a configura **dentro da especificação** (a ficha técnica do modelo), e ela aparece sozinha para o motorista **no preparo da rota**, na hora certa.
+A **vistoria** é o checklist de checagem do veículo — o que conferir antes de sair com a carga. Você a configura **dentro do [tipo de veículo](frota-ficha-tecnica.md)** (o cadastro do modelo), e ela aparece sozinha para o motorista **no preparo da rota**, na hora certa. As [extensões](frota-extensoes.md) — reboques e carretas — têm vistoria própria, com os mesmos gatilhos.
 
 A ideia é simples: você decide **quando** o veículo precisa ser checado e **o que** olhar. O LocFlow faz o resto — avisa o motorista quando a vistoria vence e só libera a saída depois que ele confere os itens.
 
 {% hint style="info" %}
-A vistoria faz parte da **Frota**, um recurso **Pro**. Se você ainda não vê o módulo, é porque seu plano não o inclui — dá para operar entregas sem ela. Veja [Frota](frota.md).
+A vistoria faz parte da **Frota**, um recurso **Pro**. Se o item **Frota** aparece com um cadeado no menu, é porque o seu plano não o inclui — dá para operar entregas sem ela. Veja [Frota](frota.md).
 {% endhint %}
 
 {% hint style="success" %}
@@ -19,17 +19,17 @@ A vistoria faz parte da **Frota**, um recurso **Pro**. Se você ainda não vê o
 
 ## Onde fica e como ligar {#onde-fica}
 
-A vistoria é o **Passo 4** do formulário de especificação (depois de Identificação, Carroceria e Capacidade). Ela é **opcional**: começa desligada.
+A vistoria é o **bloco 4** do cadastro do tipo de veículo (depois de Identificação, Carroceria e Capacidade), em **Logística › Frota › Tipos de veículo**. Ela é **opcional**: começa desligada. (No cadastro rápido do veículo, quando você cria o tipo na hora, a vistoria fica de fora — configure depois, editando o tipo.)
 
-Quando está desligada, a tela explica:
+O bloco mostra a chave **Ativar vistoria**, com a explicação:
 
-> Checklist de inspeção do veículo, com a frequência por gatilho de operação. Configure separadamente da capacidade.
+> Checklist de inspeção do veículo, com a frequência por gatilho de operação.
 
-Ligue o botão e três blocos aparecem: **quando** fazer a vistoria (o gatilho), **qual modelo** de checklist usar e **os itens** a conferir. Ao ligar, o LocFlow já sugere o começo mais comum — uma vistoria **a cada 30 dias** com o **checklist padrão** — e você ajusta a partir daí.
+Ligue a chave e três partes aparecem: **quando** fazer a vistoria (o gatilho), **qual modelo** de checklist usar e **os itens** a conferir. Ao ligar, o LocFlow já sugere o começo mais comum — uma vistoria **a cada 30 dias** com o **checklist padrão** — e você ajusta a partir daí.
 
 ```mermaid
 flowchart LR
-    A[Especificacao] --> B[Passo 4: Vistoria]
+    A[Tipo de veículo] --> B[Bloco 4: Vistoria]
     B --> C[Gatilho: quando vence]
     B --> D[Modelo de checklist]
     B --> E[Itens a conferir]
@@ -37,7 +37,7 @@ flowchart LR
 
 ## Os gatilhos: quando a vistoria vence {#gatilhos}
 
-A frequência da vistoria **não é só "a cada N dias"**. O LocFlow trabalha com **cinco gatilhos** — cada um casa com um jeito diferente de operar. Você escolhe **um** por especificação.
+A frequência da vistoria **não é só "a cada N dias"**. O LocFlow trabalha com **cinco gatilhos** — cada um casa com um jeito diferente de operar. Você escolhe **um** por tipo de veículo.
 
 | Gatilho | Quando gera uma vistoria | Bom para |
 | --- | --- | --- |
@@ -54,6 +54,8 @@ Conforme você escolhe o gatilho, o LocFlow mostra uma **frase-resumo** confirma
 > Toda Seg, Sex.
 
 > Uma vistoria a cada roteiro finalizado.
+
+> Uma vistoria por dia, na primeira saída do veículo.
 
 ### Os gatilhos que pedem um ajuste
 
@@ -117,20 +119,22 @@ Aqui está a parte que conecta o cadastro à rua. Quando o motorista vai prepara
 
 ```mermaid
 flowchart TD
-    A[Motorista escolhe o veiculo] --> B{Vistoria vencida<br/>pelo gatilho?}
-    B -->|Sim| C[Checklist obrigatorio:<br/>conferir TODOS os itens]
-    B -->|Nao| D[Marcacao simples:<br/>Vistoria do veiculo conferida]
+    A[Motorista escolhe o veículo] --> B{Vistoria vencida<br/>pelo gatilho?}
+    B -->|Sim| C[Checklist obrigatório:<br/>conferir TODOS os itens]
+    B -->|Não| D[Marcação simples:<br/>Vistoria do veículo conferida]
     C --> E[Concluir preparo]
     D --> E
 ```
 
-- **Se a vistoria estiver vencida** (o gatilho disparou), aparece o **checklist obrigatório**. O app avisa: *"A vistoria está vencida. Confira todos os itens antes de sair."* O motorista precisa marcar **todos os itens** para poder avançar.
+- **Se a vistoria estiver vencida** (o gatilho disparou), aparece o **checklist obrigatório**. O app avisa: *"A vistoria está vencida. Confira cada item antes de sair."* O motorista precisa marcar **todos os itens** para poder avançar.
 - **Se não estiver vencida**, há apenas uma marcação simples: **"Vistoria do veículo conferida"** — o motorista confirma que o veículo está em condições de rodar.
+
+Quando o roteiro sai com uma [extensão](frota-extensoes.md) engatada e a vistoria dela está vencida, o passo vira **Vistoria da composição**: aparece o **Checklist da extensão** (e, se a vistoria do veículo também venceu, o do veículo ao lado), e todos os itens mostrados precisam ser conferidos.
 
 Na **revisão final** (Passo 4), a vistoria aparece como **Checklist completo**, **Conferida** ou **Pendente** — e fica em destaque âmbar se ainda faltar algo. Tudo isso fica registrado na viagem.
 
 {% hint style="info" %}
-**Veículo sem vistoria configurada?** Sem problema. Se a especificação não tem vistoria ligada, o motorista vê só a marcação simples "Vistoria do veículo conferida". Você nunca trava a saída por falta de cadastro.
+**Veículo sem vistoria configurada?** Sem problema. Se o tipo de veículo não tem vistoria ligada, o motorista vê só a marcação simples "Vistoria do veículo conferida". Você nunca trava a saída por falta de cadastro.
 {% endhint %}
 
 {% hint style="info" %}
@@ -145,4 +149,4 @@ Na **revisão final** (Passo 4), a vistoria aparece como **Checklist completo**,
 
 ## Próximo passo {#proximo-passo}
 
-A vistoria mora na especificação — entenda o resto da ficha em [Frota](frota.md). Para ver a vistoria em ação, leia [Execução em campo](../logistica/execucao-em-campo.md) (o preparo da rota). E, para enxergar o veículo certo no planejamento, veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).
+A vistoria mora no tipo de veículo — entenda o resto do cadastro em [Tipos de veículo](frota-ficha-tecnica.md) e a visão geral em [Frota](frota.md). Para ver a vistoria em ação, leia [Execução em campo](../logistica/execucao-em-campo.md) (o preparo da rota). E, para enxergar o veículo certo no planejamento, veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).

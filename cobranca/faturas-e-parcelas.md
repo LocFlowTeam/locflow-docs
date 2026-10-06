@@ -7,7 +7,7 @@ description: A fatura nasce quando a cobrança é gerada — parcelas atômicas,
 
 Quando você toca em **Gerar cobrança**, o LocFlow cria a **fatura** do orçamento. É a **conta** que organiza tudo o que o cliente tem a pagar daquele pedido e continua ligada a ele durante todo o fluxo.
 
-Você pode gerar a cobrança antes da reserva. O LocFlow apenas recomenda **Pré-reserva** ou **Reservado**, quando há mais certeza de faturamento. Se o Motor Operacional exigir cobrança para reservar, as duas ações são feitas juntas; caso contrário, cobrar continua opcional.
+A cobrança pode ser gerada **da pré-reserva em diante** — a partir do **Reservado**, para quem não usa pré-reserva, e do **Vendido**, na venda. Antes disso o cliente ainda não assumiu compromisso, e o link de pagamento não abriria para ele (veja [Onde emitir](emitindo-a-cobranca.md#onde-emitir)). Se o Motor Operacional exigir cobrança para reservar, as duas ações são feitas juntas; caso contrário, cobrar continua opcional.
 
 {% hint style="success" %}
 **Por que isso te faz receber melhor:** você escolhe o momento comercial da cobrança sem perder o vínculo com o pedido. Quando a sua regra exigir pagamento para reservar, o LocFlow garante que a cobrança seja criada junto.
@@ -46,11 +46,15 @@ Como a fatura é dividida depende do **modelo de cobrança** que você usou ao g
 
 | Modelo | Como fica | Quando faz sentido |
 | --- | --- | --- |
-| **À vista (parcela única)** | Uma só parcela, com a fatura inteira, vencendo na entrega. | Pedido simples, pagamento de uma vez. |
-| **Sinal + restante** | Duas parcelas: o **sinal** (entrada, vence já) e o **restante** (vence na entrega/combinado). | Eventos e locações — garantir o cliente com uma entrada. |
-| **Faturado (a prazo)** | Parcela que vence **depois** da entrega, no prazo combinado. | Cliente PJ com prazo de pagamento. |
+| **À vista** | Uma só parcela, com a fatura inteira, na data que você escolher. | Pedido simples, pagamento de uma vez. |
+| **Sinal + restante** | Duas parcelas: o **sinal** (entrada, vence já) e o **restante** (vence na data combinada). | Eventos e locações — garantir o cliente com uma entrada. |
+| **Parcelado** | Várias parcelas, mensais ou quinzenais. | Pedidos maiores, divididos em vezes. |
 
 No **sinal + restante**, você só informa o sinal (uma porcentagem ou um valor fixo) — o restante é **calculado sozinho**, de modo que sinal + restante sempre fecha o total. Sem conta na mão.
+
+{% hint style="info" %}
+**E o "faturado a prazo"?** Não é um modelo à parte: é a opção **Pagamento a prazo (D+X)**, que vale para qualquer um dos três e empurra os vencimentos X dias para a frente — o "entrega agora, paga em 30 dias" do cliente PJ. Veja [Emitindo a cobrança](emitindo-a-cobranca.md#pagamento-a-prazo).
+{% endhint %}
 
 Cada parcela mostra um **rótulo** com o papel dela:
 
@@ -59,12 +63,17 @@ Cada parcela mostra um **rótulo** com o papel dela:
 | **Parcela única** | A fatura inteira em uma só cobrança. |
 | **Sinal** | A entrada — o que o cliente paga para confirmar. |
 | **Restante** | O que falta depois do sinal. |
-| **Parcela** | Uma parcela de um faturamento a prazo (ou criada por um ajuste). |
+| **Parcela** | Uma parcela de um parcelamento (ou criada por um ajuste). |
 
-Na linha de cada parcela em aberto você tem dois ícones:
+Na linha de cada parcela em aberto você tem três ícones:
 
 * **lápis** — **reagenda o vencimento** da parcela (precisa da permissão certa; não aparece em parcela já paga ou congelada);
+* **proibido** (o círculo cortado) — **cancela a parcela** (com a permissão certa; veja [Cancelar uma cobrança com segurança](#cancelar-uma-cobranca-com-seguranca));
 * **relógio** — abre o **histórico** de tentativas e recebimentos daquela parcela.
+
+{% hint style="info" %}
+**Uma parcela de cada vez.** Numa fatura com mais de uma parcela, só a **parcela da vez** já vem com as ações de cobrança abertas (gerar o PIX, registrar o recebimento…). Nas outras, elas ficam atrás do botão **Cobrar** — e **Recolher** fecha de novo.
+{% endhint %}
 
 ## Pagamento combinado: o recado de como o cliente vai pagar {#pagamento-combinado}
 
@@ -131,6 +140,7 @@ O status **não é escolhido** — ele é **derivado** do que já entrou. Você 
 | **Aguardando conferência** | Há um recebimento de rua registrado, esperando a tesouraria conferir. |
 | **Paga** | Valor integralmente recebido. |
 | **Congelada** | Travada por uma divergência de caixa, até alguém destravar. |
+| **Cancelada** | A parcela foi cancelada e não recebe mais nada. |
 
 ### Status da fatura
 
@@ -229,7 +239,7 @@ Você define esse **padrão** em [Motores operacionais](../configuracoes/motores
 | --- | --- |
 | **Pequeno** | "À vista, uma parcela." Ao gerar a cobrança, a fatura fica pronta; você registra o recebimento e o status se cuida sozinho. |
 | **Médio** | Usa **sinal + restante** para garantir o cliente, reagenda vencimento quando o cliente pede mais prazo e começa a usar o **vale-locação** com quem volta sempre. |
-| **Grande** | **Faturado a prazo** para PJ, **conferência de caixa** do dinheiro da rua (parcela congelada quando não bate) e política de reembolso definida no Motor de Cobrança, igual para o time inteiro. |
+| **Grande** | **Pagamento a prazo (D+X)** para PJ, **conferência de caixa** do dinheiro da rua (parcela congelada quando não bate) e política de reembolso definida no Motor de Cobrança, igual para o time inteiro. |
 
 ## Situações reais
 

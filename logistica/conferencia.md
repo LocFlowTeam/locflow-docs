@@ -32,7 +32,7 @@ flowchart LR
 
 ### Ver a fila por roteiro
 
-Quando o material chegou num **roteiro** (a equipe foi buscar), a fila oferece duas formas de olhar: **por orçamento** (um cartão por pedido, na ordem de chegada) ou **por roteiro** — cada grupo é o veículo que voltou, com o condutor, a hora em que chegou ao galpão e o que trouxe ("3 retiradas · 1 entrega pulada"). Assim quem descarrega um caminhão confere tudo o que desceu dele de uma vez. A escolha fica guardada para a próxima visita. O que o cliente devolveu no **balcão** aparece por último, em "Sem roteiro".
+Quando o material chegou num **roteiro** (a equipe foi buscar), a fila oferece duas formas de olhar: **por orçamento** (um cartão por pedido, na ordem de chegada) ou **por roteiro** — cada grupo é o veículo que voltou, com o condutor, a hora em que chegou ao galpão e o que trouxe ("3 retiradas · 1 entrega pulada"). Assim quem descarrega um caminhão confere tudo o que desceu dele de uma vez. A escolha fica guardada para a próxima visita. O que o cliente devolveu na **loja** aparece por último, em "Sem roteiro".
 
 {% hint style="info" %}
 A lente por roteiro **não muda a ordem de atendimento**: o número de cada cartão é a posição na fila, esteja ele em que grupo estiver.
@@ -46,7 +46,7 @@ O botão diz **Concluir descarga** quando tudo está decidido, ou **Concluir par
 
 ### Conferir um retorno
 
-Ao abrir um retorno, o conferente vê no topo **de onde o material veio** (o roteiro e o condutor, ou "devolvido no balcão"), quando chegou e o progresso (*2 de 5 itens conferidos*), e abaixo a **lista consolidada de produtos** — kits explodidos em componentes, itens iguais somados.
+Ao abrir um retorno, o conferente vê no topo **de onde o material veio** (o roteiro e o condutor ou, quando o cliente devolveu na loja, "Devolvido no balcão"), quando chegou e o progresso (*2 de 5 itens conferidos*), e abaixo a **lista consolidada de produtos** — kits explodidos em componentes, itens iguais somados.
 
 Para cada item, o caso comum é um toque: **Tudo OK**. Quando algo voltou diferente, **Separar por destino** abre as quatro quantidades — **OK**, **Manutenção**, **Avaria** e **Baixa** — e o próprio cartão diz quanto ainda falta distribuir. O botão do rodapé diz o que vai acontecer: **Concluir conferência** quando tudo está decidido, ou **Concluir parte** quando ainda sobra saldo para um lote seguinte (o pedido continua na fila até o último item).
 
@@ -65,6 +65,30 @@ A conferência é a realidade do que aconteceu no roteiro: o que a equipe **reti
 ### As conferências já feitas
 
 A aba **Conferidas**, na mesma tela, lista o que foi conferido nos **últimos 30 dias**, com busca: **quem** conferiu e **quando**, o **roteiro** e o **pedido**, os quatro desfechos e as fotos registradas. É a trilha para responder, semanas depois, "em que estado esse item voltou?".
+
+## Quando a conferência abre — e quando não abre <a id="quando-a-conferencia-nao-abre"></a>
+
+A conferência abre sozinha quando o pedido entra em **A conferir** — **por qualquer caminho**:
+
+* pelo **roteiro**, quando a equipe registra a retirada e volta ao galpão (no campo ou [em lote](execucao-em-lote.md));
+* pelo **Kanban do [Painel Logístico](painel-logistico.md)**, quando alguém avança o cartão;
+* pela **troca de etapa direto no pedido**;
+* pela **devolução na [Loja](balcao.md)**, confirmada um a um ou em lote.
+
+Vale mesmo quando você registra que o fato aconteceu antes — *"a retirada foi ontem"*: o sistema guarda **quando o fato aconteceu** e **quando ele foi registrado**, e é o registro que diz que aquele avanço é do ciclo atual do pedido.
+
+**Quando a conferência não pode abrir**, a etapa avança assim mesmo — e o aviso sai **em âmbar**, com o motivo, no lugar do *"Etapa avançada."* em verde. Os motivos mais comuns:
+
+| O aviso diz | O que fazer |
+| --- | --- |
+| O pedido não tem **galpão ou loja de devolução** definido | Corrija a logística do pedido (para onde o material volta). |
+| Nenhuma saída de material pendente — **não há o que conferir** | Confira se a entrega foi registrada; sem material na rua, não há retorno a triar. |
+| O material está **com a parceira** | Não há triagem no seu galpão: quem confere é o parceiro. |
+| A triagem deste ciclo **já foi concluída** | Nada a fazer — o retorno já foi conferido. |
+
+{% hint style="info" %}
+**Se algo cair no meio, a abertura é refeita sozinha.** Quando o avanço foi gravado mas a conferência não conseguiu abrir naquele instante, a tela avisa em âmbar que a etapa avançou e que a conferência **será tentada de novo automaticamente**. Além disso, uma revisão automática feita toda noite procura pedidos parados em *A conferir* — inclusive os que chegaram ali sem roteiro — e abre a conferência que faltou; se a triagem já estava feita, o pedido avança para *Conferido* e é finalizado. O que **não** se resolve sozinho é o pedido parado por um dado dele (sem local de devolução, nada em campo): aí o conserto é no pedido.
+{% endhint %}
 
 ## O papel Conferente
 
@@ -94,7 +118,7 @@ A conferência é **opcional** e escala com a operação — o gatilho é o risc
 * **Um caminhão volta com quatro retiradas e uma entrega que não aconteceu:** o conferente toca em **Conferir descarga** no grupo do roteiro, bate o consolidado com a carga, marca **Tudo OK em todos os pedidos**, ajusta a avaria de um deles, tira uma foto da doca e conclui — as quatro retiradas triadas e a entrega pulada recebida de uma vez, e o pedido pulado segue separado para a nova tentativa.
 
 {% hint style="info" %}
-Quando é o **próprio cliente** que devolve no galpão (em vez de a equipe ir buscar), esse retorno é confirmado no [balcão](balcao.md) — e, se você tiver ligado a conferência, o material segue normalmente para esta fila depois.
+Quando é o **próprio cliente** que devolve na loja (em vez de a equipe ir buscar), esse retorno é confirmado na [Loja](balcao.md) — e, se você tiver ligado a conferência, o material segue normalmente para esta fila depois.
 {% endhint %}
 
 ## Próximo passo

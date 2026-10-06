@@ -5,15 +5,21 @@ description: O guia avançado do designer de PDF do LocFlow — variáveis, ocul
 
 # Designer de documentos
 
-Esta é a página de quem quer **dominar** o editor de documentos em PDF do LocFlow. Se você ainda não viu o panorama — quais documentos existem, natureza e canal, como salvar e publicar — comece por [Modelos personalizados](modelos-personalizados.md). Aqui a gente entra fundo nas peças que dão acabamento profissional: as **variáveis**, o **ocultar-quando-vazio**, o **kit agrupado**, o **compositor logístico**, a **coluna de foto** e o **total em destaque**.
+Esta é a página de quem quer **dominar** o editor de documentos em PDF do LocFlow. Se você ainda não viu o panorama — quais documentos existem, natureza e canal, como salvar e publicar — comece por [Modelos de documento](modelos-personalizados.md). Aqui a gente entra fundo nas peças que dão acabamento profissional: as **variáveis**, o **ocultar-quando-vazio**, o **kit agrupado**, o **compositor logístico**, a **coluna de foto** e o **total em destaque**.
 
 {% hint style="info" %}
-Tudo aqui é sobre o canal **PDF**, montado por blocos. O canal WhatsApp é um campo de texto único — veja [Modelos personalizados](modelos-personalizados.md).
+Tudo aqui é sobre o canal **PDF**, montado por blocos. O canal WhatsApp é um campo de texto único — e o orçamento no WhatsApp pode ser escrito conversando com a Flo. Veja [Modelos de documento](modelos-personalizados.md).
 {% endhint %}
 
 ## Como o editor é organizado
 
-O PDF é montado **empilhando blocos**. No topo do editor há uma régua de chips **Adicionar bloco**; abaixo, a lista dos blocos já adicionados, cada um num card. Você toca no card para abrir as opções daquele bloco, usa as **setas** para reordenar, o **olho** para esconder/mostrar e a **lixeira** para excluir.
+O PDF é montado **empilhando blocos**. No topo do editor há uma régua de chips **Adicionar bloco**; abaixo, a lista dos blocos já adicionados, cada um num card. No card de cada bloco:
+
+* **toque no card** para abrir as opções daquele bloco;
+* **segure a alça e arraste** para mudar o bloco de lugar;
+* o **olho** esconde ou mostra o bloco;
+* **Duplicar bloco** (o ícone de cópia) cria uma cópia logo abaixo — útil para repetir um texto com pequenas mudanças;
+* a **lixeira** exclui.
 
 | Bloco | O que faz |
 | --- | --- |
@@ -23,10 +29,19 @@ O PDF é montado **empilhando blocos**. No topo do editor há uma régua de chip
 | **Totais** | O fechamento de valores |
 | **Divisória** | Uma linha para separar seções |
 | **Rodapé** | O fim do documento: contatos, observações finais. Um por modelo, sempre no fim |
+| **Seção** | Uma parte pronta do modelo padrão — leva a etiqueta **do sistema** no card |
 
 {% hint style="info" %}
-**Cabeçalho e rodapé são únicos e fixos.** O sistema mantém o cabeçalho no topo e o rodapé no fim em todas as páginas. Por isso eles não duplicam nem trocam de lugar.
+**Cabeçalho e rodapé são únicos e fixos.** O sistema mantém o cabeçalho no topo e o rodapé no fim em todas as páginas. Por isso eles não duplicam nem trocam de lugar: só os blocos do meio se arrastam.
 {% endhint %}
+
+### Aparência do documento
+
+Nos modelos que vêm prontos do sistema, o topo da lista de blocos traz **Aparência do documento** — *"fonte e cores globais, reaproveitadas pelas seções"*. É ali que você troca, de uma vez, a fonte e as cores do documento inteiro, em vez de ajustar seção por seção.
+
+### Contrato: anexar o orçamento
+
+No **Contrato de locação**, um cartão a mais: **Anexar o orçamento ao contrato**. Ligado, *o contrato sai com a relação completa de itens e valores (Anexo I), em vez de apenas citar o código do orçamento*. É a preferência da organização para todo contrato — e quem gera pode desligar numa geração específica.
 
 ## A pré-visualização ao vivo <a id="pre-visualizacao"></a>
 
@@ -196,4 +211,4 @@ Para a **Info da empresa**, a dica é "Cada linha vira uma linha no PDF. Use var
 
 ## Próximo passo
 
-Suba sua marca em [Identidade visual](identidade-visual.md) — é ela que entra quando você deixa a logo do cabeçalho em branco. Para o panorama de modelos, natureza e canal, veja [Modelos personalizados](modelos-personalizados.md). Bateu dúvida? [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
+Suba sua marca em [Identidade visual](identidade-visual.md) — é ela que entra quando você deixa a logo do cabeçalho em branco. Para o panorama de modelos, natureza e canal, veja [Modelos de documento](modelos-personalizados.md). Bateu dúvida? [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).

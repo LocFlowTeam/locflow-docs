@@ -29,8 +29,9 @@ Um **"!"** (triângulo de atenção) sinaliza um ponto que merece cuidado — um
 
 ## 3. A Flo
 
-Toque em **Peça à Flo** para perguntar com suas palavras. Ela pode explicar conceitos que conhece,
-resumir algumas informações da sua operação ou oferecer o atalho para a tela adequada.
+Toque em **Peça à Flo** (no celular, no orbe da Flo, no topo da tela) para perguntar com suas
+palavras. Ela pode explicar conceitos que conhece, resumir informações da sua operação ou oferecer o
+atalho para a tela adequada.
 
 {% hint style="info" %}
 A Flo conhece uma parte crescente do sistema, mas não toda a central de ajuda. Se ela não tiver uma
@@ -40,14 +41,14 @@ créditos da organização; veja [Conheça a Flo](../flo/conheca-a-flo.md).
 
 ## 4. A aba "Ajuda"
 
-No menu do app, toque em **Ajuda** (ícone "?"). Você encontra:
+No menu do app, toque em **Ajuda** (ícone "?"). No alto, o atalho **Pergunte à Flo** (para quem tem a Flo); logo abaixo, você encontra:
 
 | Opção | Para quê |
 | --- | --- |
 | **Manuais e Tutoriais** | Abre esta central de ajuda (a documentação que você está lendo). |
-| **Falar com Suporte** | Abre o **chat** com o time LocFlow — tire dúvidas em tempo real. |
-| **WhatsApp e outras redes** | Fale pelo WhatsApp, Instagram ou e-mail de suporte. |
-| **Informar um erro** | Achou um problema? Relate direto pelo chat — a gente resolve. |
+| **Falar com Suporte** | Abre o **chat** com o time LocFlow, aqui pelo app — tire dúvidas em tempo real. |
+| **Informar um erro** | Algo travou? Relate direto pelo chat — a gente resolve. |
+| **Prefere falar direto?** | **WhatsApp**, **Instagram** ou **E-mail de Suporte**. |
 
 {% hint style="success" %}
 **Dica:** para uma dúvida comum de **conceito**, pergunte à Flo ou use os Manuais. Para um bloqueio da
@@ -58,4 +59,5 @@ investigar.
 ## Próximo passo
 
 Conheça os termos do sistema no [Glossário do LocFlow](glossario.md), veja como usar a
-[Flo](../flo/conheca-a-flo.md) ou escolha sua [trilha de leitura](trilhas-de-leitura.md).
+[Flo](../flo/conheca-a-flo.md) ou escolha sua [trilha de leitura](trilhas-de-leitura.md). Quer saber
+o que está mudando no LocFlow? Veja as [Novidades do LocFlow](../ajuda/novidades-do-sistema.md).

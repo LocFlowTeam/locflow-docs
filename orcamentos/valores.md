@@ -73,12 +73,12 @@ Se você configurou uma **taxa de serviço** padrão no [Motor de Orçamento](..
 O **frete** é o valor do transporte. No LocFlow ele não é um número solto: ele nasce dos **movimentos** da operação — a **entrega** (levar até o cliente) e, na locação, a **retirada** (buscar de volta). Cada movimento tem a sua origem (o galpão) e o seu destino, e o frete soma o que custa percorrer esses caminhos.
 
 {% hint style="info" %}
-**O frete mora na etapa "Movimentos", não em "Valores".** Ele é a **etapa ③** do cartão de movimentos, logo depois de ① *Trajeto e horários* e ② *Cargas e viagens* — assim você vê o preço mudar na mesma tela em que mexe nas viagens. Quando o cliente **retira e devolve no galpão**, não há viagem nenhuma e as etapas ② e ③ simplesmente não aparecem. Veja [Movimentos, janelas e galpão de origem](movimentos-e-janelas.md).
+**O frete mora na etapa "Movimentos", não em "Valores".** Ele fica na seção **Frete, cargas e viagens**, logo depois da **Saída** e do **Retorno do material** — dois blocos na mesma seção: **Cargas e viagens** e **Frete**. Assim você vê o preço mudar na mesma tela em que mexe nas viagens. Quando o cliente **retira e devolve na loja** (na venda, basta retirar), não há viagem nenhuma e a seção simplesmente não aparece. Veja [Movimentos, janelas e galpão de origem](movimentos-e-janelas.md).
 {% endhint %}
 
-### Cobrar frete {#cobrar-frete}
+### Cobrar o transporte do cliente? {#cobrar-frete}
 
-Existe uma chave **"Cobrar frete"**. Quando ela está ligada, abre o painel para informar ou calcular o valor. Quando você a desliga, o orçamento simplesmente não inclui frete — e o LocFlow deixa isso explícito:
+No bloco **Frete**, a primeira pergunta é **Cobrar o transporte do cliente?** — **Sim** ou **Não**. Com **Sim**, o painel abre para informar ou calcular o valor. Com **Não**, o orçamento simplesmente não inclui frete — e o LocFlow deixa isso explícito:
 
 {% hint style="info" %}
 *"Este orçamento não inclui cobrança de frete. Reative para informar ou calcular um valor."* {#frete-desativado}
@@ -86,34 +86,46 @@ Existe uma chave **"Cobrar frete"**. Quando ela está ligada, abre o painel para
 (É a mensagem que o app mostra com o frete desligado — útil quando você combina a entrega "por conta do cliente" ou quando o transporte já está embutido no preço dos itens.)
 {% endhint %}
 
+Responder **Não** não apaga as viagens: o bloco **Cargas e viagens** continua valendo para a logística.
+
 ### Viagens por movimento {#viagens-por-movimento}
 
 Cada movimento pode precisar de mais de uma **viagem** — idas do veículo para dar conta da carga. Uma festa grande pode exigir 2 ou 3 viagens de entrega; a retirada, outras tantas.
 
-Você define as viagens **distribuindo a carga**: em *Opções avançadas* do painel de frete, o botão **"Distribuir carga em viagens"**. Sem distribuir, o LocFlow considera **1 viagem por movimento**. O número de viagens **alimenta o frete** (mais idas, mais custo) e, depois que o pedido é ganho, **o planejamento do roteiro**.
+Você monta as viagens no bloco **Cargas e viagens**, na mesma seção do frete. A linha diz como está — **Viagem única por movimento** (o padrão) ou **N viagens montadas** — e o botão **Ajustar** abre a bancada de carga (abaixo). Sem montar nada, o LocFlow considera **1 viagem por movimento**. O número de viagens **alimenta o frete** (mais idas, mais custo) e, depois que o pedido é ganho, **o planejamento do roteiro**.
 
 {% hint style="info" %}
-**O LocFlow só pede o que a operação tem.** Se o cliente vai **retirar no galpão**, não existe movimento de entrega. Se, na locação, ele vai **devolver no galpão**, não há retirada com deslocamento. Se ele faz tudo no galpão, o aviso é direto: *"O cliente vai retirar e devolver no galpão, então não há frete a calcular."*
+**O LocFlow só pede o que a operação tem.** Se o cliente vai **retirar na loja**, não existe movimento de entrega. Se, na locação, ele vai **devolver na loja**, não há recolha com deslocamento. Se não sobra nenhum deslocamento — na locação, retirada e devolução na loja; na venda, a retirada na loja —, a seção **Frete, cargas e viagens** nem aparece: não há transporte a combinar nem a cobrar.
 {% endhint %}
 
-### Distribuir a carga: automático ou manual {#distribuir-carga}
+### Montar as viagens: a bancada de carga {#distribuir-carga}
 
-Ao tocar em **"Distribuir carga em viagens"**, abre a folha **Distribuir em viagens** — onde você fatia a carga do orçamento. São **dois modos**, e você escolhe o que combina com o seu jeito de trabalhar:
+Tocar em **Ajustar** abre **Construir viagens**, a bancada onde você reparte a carga do orçamento:
 
-| Modo | Quem monta as viagens | Quando usar |
-| --- | --- | --- |
-| **Automático** | Você escolhe **um veículo** e o LocFlow **propõe a divisão** — quantas viagens cabem, com que carga em cada uma. Ele ainda sugere a **melhor distribuição** (a que rende menos viagens), pronta para aplicar num toque. | Quando quer rapidez e confia no cálculo por capacidade do veículo. |
-| **Manual** | **Você monta** cada viagem à mão: distribui a quantidade de cada item entre as viagens e adiciona quantas precisar. Um marcador mostra quantos itens ainda faltam alocar até *"Toda a carga distribuída"*. | Quando quer controle fino — separar itens frágeis, respeitar uma ordem, montar as viagens do seu jeito. |
+1. **Nova viagem** cria um veículo vazio. Em cada viagem, escolha **Qual veículo?** (o tipo de veículo) e, se a sua frota tem carreta compatível, **Qual carreta?** — ela aparece ao lado, como uma segunda caixa.
+2. Toque num item para colocá-lo na caixa do veículo ou da carreta e diga quanto vai. O fundo da própria caixa mostra o quanto ela já está ocupada.
+3. Prefere que o LocFlow proponha? **Sugerir divisão**: você escolhe o veículo (e a carreta, se houver uma compatível) e a bancada devolve as viagens já repartidas entre eles.
+4. Com tudo distribuído, confirme em **Usar N viagens**. Enquanto faltar alguma unidade, o rodapé avisa quantas ainda faltam distribuir.
+
+{% hint style="info" %}
+**Tudo numa viagem só também vale.** Juntar a carga inteira num veículo é uma escolha tão legítima quanto repartir: deixe tudo numa viagem e confirme em **Usar 1 viagem**.
+{% endhint %}
 
 {% hint style="success" %}
-**Cada viagem pode usar a ficha de um fornecedor diferente.** Dentro da distribuição, você escolhe o **veículo de cada viagem** — e ele pode ser da sua frota **ou de um fornecedor de frete**. Ao apontar a ficha de um fornecedor, o frete **daquela viagem** passa a usar a **precificação desse fornecedor**, não a sua. É assim que uma mesma entrega combina, por exemplo, a sua frota numa viagem e uma transportadora parceira na outra — cada porção cobrada por quem a leva. Veja como os fornecedores entram em [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
+**Cada viagem pode usar o veículo de um fornecedor diferente.** Na bancada, o tipo de veículo de cada viagem pode ser da sua frota **ou de um fornecedor de frete** — o do fornecedor aparece com o selo dele. A porção que vai num veículo de fornecedor é precificada pelas **regras de frete desse fornecedor**, não pelas suas. É assim que uma mesma entrega combina, por exemplo, a sua frota numa viagem e uma transportadora parceira na outra — cada porção cobrada por quem a leva. Veja como os fornecedores entram em [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
 {% endhint %}
 
-**Elegibilidade: sem motor de frete, o veículo fica bloqueado.** Um fornecedor só cota transporte quando tem **motor de frete ativo**. Na distribuição, a ficha de um fornecedor **sem motor** aparece com um **cadeado** e a marca *"sem motor de frete"* — e **não pode ser escolhida**, porque a viagem sairia sem preço. A parte da carga que ficar sem veículo elegível é cobrada pelo **valor manual** do frete. Para destravar, configure o motor daquele fornecedor — veja [Motor de frete por detentor](../configuracoes/motor-de-frete-detentor.md).
+{% hint style="warning" %}
+**Trocou o veículo depois de calcular?** Se uma viagem sair num tipo de veículo diferente daquele em que o frete foi calculado, a bancada avisa — *"Frete calculado para outra classe"* — e, quando o veículo é de fornecedor, lembra que o custo vai para ele e **pode passar do frete cobrado**. Antes do ganho, dá para recalcular o frete.
+{% endhint %}
+
+**Fornecedor sem regras de frete não cota.** Na composição do frete, ele aparece como **Indisponível**, com o motivo (*"Sem regras de frete configuradas para este detentor."*). Se uma porção da sua divisão cair num veículo dele, o painel avisa que ela não pôde ser precificada e oferece **Informar manualmente**. Para destravar, configure as regras de frete daquele fornecedor — veja [Motor de frete por detentor](../configuracoes/motor-de-frete-detentor.md).
+
+Depois que a **logística começa**, o bloco **Cargas e viagens** passa a mostrar as viagens **reais**, uma linha por lado — por exemplo, *Entrega · 2 viagens*, com quantas já estão em roteiro. Ali o **Ajustar** fala com a logística, sem tocar no plano do pedido, e vira **Ver** quando tudo já está em roteiro. Veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md).
 
 ### Frete automático e ajuste manual {#frete-automatico-x-manual}
 
-Com a cobrança de frete ligada e o **Motor de Frete** configurado, o LocFlow calcula o valor a partir dos endereços e das suas regras. Antes de liberar o botão **Calcular frete**, ele mostra o card *"Antes de calcular, preencha"* com um **checklist** do que falta — e o checklist é **por movimento**, não um "destino" genérico. Assim você bate o olho e sabe exatamente onde clicar:
+Com **Sim** em *Cobrar o transporte do cliente?* e as **regras de frete** configuradas (no **Motor de Frete**), o LocFlow calcula o valor a partir dos endereços e das suas regras. Antes de liberar o botão **Calcular frete**, ele mostra o card *"Antes de calcular, preencha"* com um **checklist** do que falta — e o checklist é **por movimento**, não um "destino" genérico. Assim você bate o olho e sabe exatamente onde clicar:
 
 | Item do checklist | O que significa |
 | --- | --- |
@@ -121,30 +133,30 @@ Com a cobrança de frete ligada e o **Motor de Frete** configurado, o LocFlow ca
 | **Local de retirada** | Falta o endereço da **retirada** (aparece só na locação, quando há retirada com deslocamento). |
 | **Galpão de saída (entrega)** / **(retirada)** | Falta escolher de qual **galpão** a equipe sai. O rótulo separa entrega e retirada quando a operação tem os dois; se só um, aparece **Galpão de saída**. |
 
-Dependendo das suas regras, o motor pode ainda pedir **data** e **horário**. Preencheu tudo, o card fica verde (*"Tudo pronto para calcular o frete."*) e o botão libera.
+Dependendo das suas regras, o cálculo pode ainda pedir **data** e **horário**. Preencheu tudo, o botão **Calcular frete** libera.
 
-Calculou, você pode **ajustar o valor à mão** a qualquer momento pelo toggle **"Ajustar valor manualmente"** — útil quando prefere um valor fechado. E, quando há mais de uma rota possível, o painel oferece **cenários de rota** alternativos em *Opções avançadas* (veja adiante).
+Calculou, você pode **ajustar o valor à mão** a qualquer momento pelo interruptor **"Ajustar valor manualmente"** — útil quando prefere um valor fechado. E, quando há mais de uma rota possível, o painel mostra os **cenários de rota** junto da lista de transportadoras (veja adiante).
 
 {% hint style="warning" %}
-**O cálculo de frete consome créditos** — ele consulta o mapa para medir a rota real. O app sinaliza isso no botão. E atenção: se você **mudar o endereço de destino** depois de calcular, o LocFlow avisa *"Cálculo desatualizado — recalcule o frete antes de salvar"* — porque o valor antigo era de outro caminho.
+**O cálculo de frete consome créditos** — ele consulta o mapa para medir a rota real. Por isso o app pergunta antes de calcular, mostrando até quantos créditos o cálculo pode consumir. E atenção: se você **mudar o endereço de destino** depois de calcular, o LocFlow avisa — **Cálculo desatualizado**: *"Você mudou o destino depois de calcular. Recalcule o frete antes de salvar o orçamento."* —, porque o valor antigo era de outro caminho.
 {% endhint %}
 
-Quando você **não tem** um motor de frete ativo, o painel já abre direto no campo manual — não há o que calcular automaticamente. Se um cálculo falhar (um endereço que o mapa não localiza, um galpão sem coordenadas), o LocFlow explica o motivo e oferece **"Informar manualmente"** para você não travar a proposta.
+Quando você **não tem** regras de frete configuradas, o painel já abre direto no valor manual — não há o que calcular automaticamente — e oferece o atalho **Configurar regras de frete**. Se um cálculo falhar (um endereço que o mapa não localiza, um galpão sem coordenadas), o LocFlow explica o motivo e oferece **"Informar manualmente"** para você não travar a proposta.
 
 > A montagem das regras de frete (preço por quilômetro, por viagem, por peso/volume, faixas, veículos) vive no **Motor de Frete**, nas Configurações. Veja [Motores operacionais](../configuracoes/motores-operacionais.md). Aqui no orçamento você só **usa** o resultado.
 
 ### Cenários de rota {#cenarios-de-rota}
 
-Em *Opções avançadas*, **depois de calcular** o frete, o LocFlow mostra os **cenários de rota** — variações do caminho, cada uma com o seu preço, apresentadas como **chips** que você toca para escolher:
+**Depois de calcular** o frete, quando existem caminhos alternativos, o LocFlow mostra os **Cenários de rota** junto da lista de transportadoras — variações do caminho, cada uma com o seu preço, apresentadas como **chips** que você toca para escolher:
 
 | Cenário | O que muda |
 | --- | --- |
-| **Padrão** | A melhor rota que o mapa encontrou, com o valor cheio. |
+| **Base** | A melhor rota que o mapa encontrou, com o valor cheio. |
 | **Sem pedágio** | Evita praças de pedágio. Costuma ser mais longo — o preço acompanha a distância. |
 | **Sem balsa** | Evita travessias de balsa. |
 | **Sem rodovia** | Evita rodovias (fica por vias locais). |
 
-Os cenários alternativos só aparecem quando existem de fato para aquela rota. O valor de cada um é **proporcional à distância** do cenário em relação à rota padrão — um caminho mais longo por evitar o pedágio sai mais caro no transporte, e você decide se compensa. Tocar num chip **troca o valor do frete** para o daquele cenário; o **Padrão** continua ali para voltar quando quiser.
+Os cenários alternativos só aparecem quando existem de fato para aquela rota. O valor de cada um é **proporcional à distância** do cenário em relação à rota base — um caminho mais longo por evitar o pedágio sai mais caro no transporte, e você decide se compensa. Tocar num chip **troca o valor do frete** para o daquele cenário; o **Base** continua ali para voltar quando quiser.
 
 ### A composição do frete: uma ou várias transportadoras {#composicao-do-frete}
 
@@ -153,7 +165,7 @@ Depois de calcular, o frete aparece como uma **Composição do frete**: uma list
 * **Marque uma** transportadora → ela faz o **frete inteiro**.
 * **Marque várias** → a carga **divide as viagens** entre elas, e cada uma é cobrada pela **sua** precificação.
 
-Marcar é livre. Quando você marca **duas ou mais**, aparece o botão **"Dividir a carga"**: ao tocá-lo, o LocFlow monta a divisão (round-robin das viagens entre as marcadas, cada uma com o veículo equivalente) e **recalcula** o valor por porção. Como o cálculo **consome créditos**, essa divisão é uma ação sua — não recalcula a cada clique. Depois de dividida, você pode voltar à lista (**"Escolher outras transportadoras"**) sem gastar crédito e ajustar quem entra.
+Marcar é livre. Quando você marca **duas ou mais**, aparece o botão **"Dividir a carga"**: ao tocá-lo, o LocFlow monta a divisão (reparte as viagens entre as marcadas, cada uma com o veículo equivalente) e **recalcula** o valor por porção. Como o cálculo **consome créditos**, essa divisão é uma ação sua — não recalcula a cada clique. Depois de dividida, você pode voltar à lista (**"Escolher outras transportadoras"**) sem gastar crédito e ajustar quem entra.
 
 {% hint style="info" %}
 **Precificação por detentor.** Cada fornecedor tem o **seu** Motor de Frete: as viagens atribuídas a ele são cobradas pelas regras dele, não pelas suas. O **total** do frete é a **soma das porções**. Se qualquer fornecedor da divisão **pede confirmação**, o orçamento **nasce pendente** aguardando a resposta — o app avisa antes de você enviar.
@@ -234,16 +246,19 @@ O cadastro completo (com exemplos, prévia da frase e o diagrama da base) está 
 
 #### A base: sobre o que ele incide {#base-de-incidencia}
 
-Aqui mora a parte que mais muda dinheiro. **10% de desconto** pode significar três valores bem diferentes:
+Aqui mora a parte que mais muda dinheiro. O mesmo desconto pode significar valores bem diferentes — e são **quatro** bases:
 
-| Base | O que entra na conta | 10% num orçamento de R$ 2.000 em itens + R$ 300 de mão de obra + R$ 200 de frete |
+| Base | O que entra na conta | Num orçamento de R$ 2.000 em itens + R$ 300 de mão de obra + R$ 200 de frete |
 | --- | --- | --- |
-| **Sobre o total** | Itens **+** acréscimos **+** frete — tudo o que o cliente paga | **− R$ 250,00** |
-| **Sobre os itens** | Só os bens móveis; frete e serviços ficam de fora | **− R$ 200,00** |
-| **Sobre o item** | Só o produto/kit que **ativou a condição** de quantidade | 10% do subtotal daquele item — se as 10 cadeiras somam R$ 800, **− R$ 80,00** |
+| **Sobre o total** | Itens **+** acréscimos **+** frete — tudo o que o cliente paga | 10% → **− R$ 250,00** |
+| **Sobre os itens** | Só os bens móveis; frete e acréscimos ficam de fora | 10% → **− R$ 200,00** |
+| **Sobre o total do item** | Uma vez, sobre o total do produto/kit que **ativou a condição** de quantidade | 10% → se as 10 cadeiras somam R$ 800, **− R$ 80,00** |
+| **Em cada unidade** | Um valor fixo **por unidade** do item que ativou a condição — só em reais, nunca em % | R$ 5 por unidade em 10 cadeiras → **− R$ 50,00** |
+
+No cadastro da regra, a base é escolhida **antes** do valor, com um diagrama que mostra onde ela incide.
 
 {% hint style="warning" %}
-**"Sobre o item" só existe com a condição por quantidade.** É ela que define *qual* item ativou a regra — sem item ativador não há sobre o que incidir. Nas outras duas condições essa base fica indisponível, e o app explica por quê.
+**"Sobre o total do item" e "Em cada unidade" só existem com a condição por quantidade.** É ela que define *qual* item ativou a regra — sem item ativador não há sobre o que incidir. Nas outras condições essas bases ficam indisponíveis, e o app explica por quê.
 {% endhint %}
 
 {% hint style="success" %}
@@ -288,7 +303,7 @@ E há três travas para o abatimento nunca passar do que a base vale:
 
 ### O teto: quando o desconto pede aprovação {#teto-de-desconto}
 
-A sua organização pode definir um **teto de desconto**: o quanto o vendedor concede **sozinho**, sem pedir nada a ninguém. Ele fica em **Ajustes › Motores › Operação do orçamento** — veja [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#teto-de-desconto).
+A sua organização pode definir um **teto de desconto**: o quanto o vendedor concede **sozinho**, sem pedir nada a ninguém. Ele fica em **Ajustes › Motores › Operação do Orçamento** — veja [Motor de Orçamento](../configuracoes/motor-de-orcamento.md#teto-de-desconto).
 
 Enquanto você monta o orçamento, o cartão mostra o placar:
 
@@ -322,7 +337,7 @@ Se você gosta de saber exatamente como o total é montado, é assim (o LocFlow 
 1. **Total dos itens** = soma de (quantidade × valor) de cada produto e kit.
 2. **Acréscimos** = para cada linha, um valor fixo **ou** uma % aplicada **sobre o total dos itens**. Todas as porcentagens usam a **mesma** base — nenhuma incide sobre o resultado da outra.
 3. **Subtotal** = total dos itens **+** acréscimos **+** frete.
-4. **Descontos** = para cada linha, um valor fixo ou uma %, aplicada sobre **a base daquela linha** (o total, os itens, ou o item que ativou a condição). Todas partem do valor **original**.
+4. **Descontos** = para cada linha, um valor fixo ou uma %, aplicada sobre **a base daquela linha** (o total, os itens, o total do item que ativou a condição — ou um valor fixo multiplicado pelas unidades dele). Todas partem do valor **original**.
 5. **Total do cliente** = subtotal **−** soma dos descontos, nunca menor que zero.
 
 Pontos finos que valem lembrar:
@@ -337,8 +352,8 @@ Pontos finos que valem lembrar:
 ## Situações reais {#situacoes-reais}
 
 - **Evento com montagem:** itens + dois acréscimos (*"Montagem — 10%"* e *"Desmontagem — R$ 300"*) + frete automático calculado pelos endereços. O cliente lê as três linhas e entende pelo que paga.
-- **Carga grande:** 80 cadeiras não cabem numa viagem. Você coloca **2 viagens** na entrega — o frete dobra a perna do transporte e o roteiro já nasce sabendo das duas idas.
-- **Cliente busca no galpão:** retirada no galpão ligada. O frete some sozinho e o app explica que não há transporte a cobrar.
+- **Carga grande:** 80 cadeiras não cabem numa viagem. Em **Cargas e viagens → Ajustar**, você usa **Sugerir divisão** com o seu caminhão e a bancada propõe **2 viagens** na entrega — o frete dobra a perna do transporte e o roteiro já nasce sabendo das duas idas.
+- **Cliente busca na loja:** em *Quem leva o material?*, **Cliente retira**; na locação, ele também devolve na loja. Sem deslocamento nenhum, a seção de frete some sozinha — não há transporte a cobrar.
 - **Combo escondido:** o cliente pediu mesa, 4 cadeiras e toalha avulsos — que formam o seu "Kit Jantar". A sugestão **Automático** aparece entre os descontos e você fecha com a economia aplicada.
 - **Volume nas cadeiras, não no frete:** a regra *"a partir de 10 cadeiras, 10% sobre o item"* dispara sozinha quando o carrinho chega às 10 unidades. O abatimento sai do subtotal das cadeiras — o frete e a montagem seguem intactos.
 - **À vista, com aval:** o cliente pede 20% para pagar à vista e o seu teto é 15%. Você aplica assim mesmo; o orçamento nasce **aguardando aprovação** e o gestor decide pelo celular.

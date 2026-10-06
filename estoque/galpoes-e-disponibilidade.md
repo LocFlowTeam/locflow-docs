@@ -21,8 +21,8 @@ O cadastro é guiado e simples:
 O endereço vira a **origem das rotas** e o raio define até onde você atende. Por isso vale posicionar o pino com capricho — é dele que sai o cálculo de frete e o traçado das entregas.
 {% endhint %}
 
-{% hint style="warning" %}
-**Hoje, o galpão é também o balcão de atendimento.** Quando um cliente **retira ou devolve no galpão**, ele vem a este **mesmo endereço** — o [balcão](../logistica/balcao.md) é a parte de atendimento do galpão, não um ponto à parte. Você ainda não consegue ter um balcão (ponto de retirada do cliente) num endereço diferente do galpão. **Em breve**, locadoras maiores poderão separar os dois: armazéns em certos endereços e balcões/pontos de retirada em outros. Por enquanto, os dois andam sempre juntos.
+{% hint style="info" %}
+**Galpão e loja são cadastros diferentes.** O galpão **guarda** o material; a **loja** (em **Estoque › Lojas**) é onde o cliente **retira e devolve**. Toda loja é ligada a um galpão. Os dois podem ficar no **mesmo endereço** — a primeira loja nasce sozinha junto do primeiro galpão — ou em **endereços diferentes**: aí o material que o cliente vai buscar precisa chegar à loja antes, e o app mostra a transferência pendente. Veja [Lojas](lojas.md).
 {% endhint %}
 
 {% hint style="success" %}
@@ -46,7 +46,7 @@ flowchart LR
 ```
 
 {% hint style="info" %}
-**Quando a ponta é do cliente, vale o dia todo.** Se ele retira ou devolve no galpão, existe uma data contratada mas não existe hora garantida — então o LocFlow reserva o dia inteiro. Combine um horário com o cliente e a janela aperta sozinha.
+**Quando a ponta é do cliente, vale o dia todo.** Se ele retira ou devolve na loja, existe uma data contratada mas não existe hora garantida — então o LocFlow reserva o dia inteiro. Combine um horário com o cliente e a janela aperta sozinha.
 {% endhint %}
 
 ### A política: quanta folga somar
@@ -69,7 +69,7 @@ A folga não é um número só, porque o atraso tem **naturezas diferentes**. S�
 | A folga de… | Cobre o quê | Padrão |
 | --- | --- | --- |
 | **Equipe** (antes / depois) | Você entrega e recolhe: trânsito, rota mais lenta que o previsto, uma parada que demorou. | **60 min** de cada lado |
-| **Cliente** (antes / depois) | Ele retira e devolve no galpão: aparece mais tarde, remarca, devolve só no dia seguinte. | **0** — a ponta dele já vale o dia todo |
+| **Cliente** (antes / depois) | Ele retira e devolve na loja: aparece mais tarde, remarca, devolve só no dia seguinte. | **0** — a ponta dele já vale o dia todo |
 
 Numa operação **mista**, cada ponta usa a folga do seu grupo: se a sua equipe entrega e o cliente devolve, a abertura do bloqueio usa a folga de **equipe** e o fechamento usa a de **cliente**.
 
@@ -128,16 +128,16 @@ A equipe da Maria entrega sexta de manhã e recolhe **domingo às 18h**. Repare 
 
 - **Mínimo justo:** as cadeiras contam como livres às 18h de domingo, cravado. Se a rota atrasar uma hora, o LocFlow já terá oferecido as mesmas cadeiras para o almoço do Cliente B.
 - **Com folga de equipe (60 min depois):** o bloqueio só fecha às 19h. A hora de trânsito está coberta e ninguém promete cadeira que está na estrada.
-- **Se o Cliente B devolvesse no balcão:** a ponta seria dele, e valeria o dia inteiro — porque não há hora garantida de devolução.
+- **Se o Cliente B devolvesse na loja:** a ponta seria dele, e valeria o dia inteiro — porque não há hora garantida de devolução.
 
 O resultado: a Maria fecha os dois pedidos **com tranquilidade** ou sabe, na hora, que precisa de mais cadeiras — em vez de descobrir o problema no domingo de manhã.
 
 ## Acompanhando o estoque no dia a dia
 
-O bloqueio protege você **na hora de fechar** o pedido. Para ver o que existe no galpão agora e o que estará livre numa data futura, o LocFlow tem uma tela dedicada — com a **Posição** (o físico de agora), a **previsão por data** e a **Data de Liberação** de cada item, que já considera o retorno mais o tempo de preparo.
+O bloqueio protege você **na hora de fechar** o pedido. Para ver o que existe no galpão agora e o que estará livre numa data futura, use o [Painel de Estoque](painel.md): ele abre no **agora** (o que está na prateleira, pronto para sair) e, quando você escolhe um período, mostra a **previsão** — com os pedidos que seguram cada item, do dia da entrega até o dia em que o item fica livre de novo (o retorno mais o tempo de preparo).
 
-Veja [Posição e previsão de estoque](posicao-e-previsao.md).
+Veja [O estoque de agora e a previsão](posicao-e-previsao.md).
 
 ## Próximo passo
 
-Veja como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md) e ajuste suas regras em [Motores operacionais](../configuracoes/motores-operacionais.md#motor-de-estoque). Para entender a janela de bloqueio por dentro, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
+Cadastre o ponto de atendimento do cliente em [Lojas](lojas.md), veja como o pedido caminha em [O ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md) e ajuste suas regras em [Motores operacionais](../configuracoes/motores-operacionais.md#motor-de-estoque). Para entender a janela de bloqueio por dentro, veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).

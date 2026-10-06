@@ -21,25 +21,25 @@ A tela diz, com todas as letras: *"O valor é o total do orçamento. Escolha com
 
 Vale tanto para **locação** quanto para **venda** — o que muda é a sua escolha de formato, não a mecânica.
 
-## Onde emitir
+## Onde emitir {#onde-emitir}
 
-Abra as **Ações rápidas** do orçamento e toque em **Gerar cobrança**. A ação fica disponível enquanto o pedido ainda pode avançar no funil — inclusive **Em aberto** e **Em negociação**.
+Abra as **Ações rápidas** do orçamento e toque em **Gerar cobrança**, na linha **Cobrança**. A ação fica disponível **da pré-reserva em diante**: **Pré-reservado**, **Reservado**, **Vendido** e também **Finalizado** — quem entregou sem cobrar ainda consegue cobrar. Na organização que não usa pré-reserva, ela começa no **Reservado**; na venda, no **Vendido**.
 
-O LocFlow recomenda gerar a cobrança em **Pré-reserva** ou **Reservado**, quando há mais certeza de faturamento. Essa é uma recomendação, não uma obrigação: se você gerar antes, a tela avisa e pede sua confirmação.
+Nas etapas **Em aberto** e **Em negociação** ainda não dá para cobrar: o cliente não assumiu compromisso, e o link de pagamento não abriria para ele. Nelas, a linha **Cobrança** mostra *"Disponível na pré-reserva"* (ou *na reserva*, ou *na venda*) e, no lugar de **Gerar cobrança**, um botão para **avançar** o orçamento até lá — **Pré-reservar**, **Reservar** ou **Vender**. O orçamento **aguardando aprovação** também não cobra: a cobrança fica liberada depois que o valor for aprovado.
 
 ```mermaid
 flowchart LR
-    G[Orcamento no funil] --> AC[Acoes rapidas]
+    G[Orcamento pre-reservado,<br/>reservado ou vendido] --> AC[Acoes rapidas]
     AC --> GC[Gerar cobranca]
     GC --> P[Parcelas com<br/>valores e datas]
 ```
 
 {% hint style="info" %}
-**A sua operação define a trava da reserva.** Se o Motor Operacional exigir cobrança para reservar, ao tocar em **Reservar** o LocFlow abre a geração automaticamente e conclui as duas ações juntas. Se o Motor não exigir, a tela não força essa etapa: você pode reservar sem cobrança e gerar depois.
+**A sua operação define a trava da reserva.** Se o Motor Operacional exigir cobrança para reservar, ao tocar em **Reservar** o LocFlow abre a geração automaticamente e conclui as duas ações juntas — inclusive com o orçamento ainda **Em aberto** ou **Em negociação**: aí a cobrança nasce no mesmo ato da reserva. Se o Motor não exigir, a tela não força essa etapa: você pode reservar sem cobrança e gerar depois.
 {% endhint %}
 
 {% hint style="info" %}
-**Pré-reserva é opcional.** Algumas organizações não usam essa etapa. Isso não impede reservar nem cobrar: a recomendação também vale diretamente para **Reservado**.
+**Pré-reserva é opcional.** Algumas organizações não usam essa etapa. Isso não impede reservar nem cobrar: sem ela, a cobrança fica disponível a partir do **Reservado**.
 {% endhint %}
 
 ## Escolha como o cliente vai pagar
@@ -73,7 +73,7 @@ O **restante é deduzido automaticamente** — você não calcula nada. O LocFlo
 
 Para dividir em várias vezes. Aqui você define:
 
-* **Número de parcelas** — quantas vezes.
+* **Número de parcelas** — quantas vezes, **até 24**: a tela não aceita mais que isso.
 * **Intervalo** — de quanto em quanto tempo elas vencem: **Mensal** (a cada 30 dias) ou **Quinzenal** (a cada 15 dias).
 
 A partir da **data de vencimento** da primeira, o LocFlow espaça as demais pelo intervalo escolhido. Por padrão, ele **divide o total igualmente** entre as parcelas (qualquer sobra de centavos vai para a última). Se você quiser controlar o valor de cada uma, dá — veja [Definir o valor exato de cada parcela](#definir-o-valor-exato-de-cada-parcela).
@@ -86,7 +86,7 @@ Todo formato pede uma **data de vencimento** base. O LocFlow já chega com uma *
 * **Sinal + restante:** é a data do **restante** (o sinal vence hoje).
 * **Parcelado:** é a data da **primeira** parcela; as outras vão se espaçando a partir dela.
 
-## Pagamento a prazo (D+X)
+## Pagamento a prazo (D+X) {#pagamento-a-prazo}
 
 Quer dar um **prazo** ao cliente — pagar 30 dias depois, por exemplo? Ative **Pagamento a prazo** e escolha **D+X**: D+15, D+30, D+45, ou um número livre de dias.
 
@@ -141,6 +141,20 @@ Enquanto você mexe nas opções, a folha mostra um **Resumo das parcelas** ao v
 
 Quando o resumo estiver do seu jeito, toque em **Gerar cobrança**. Pronto: o orçamento vira parcelas reais, com datas, prontas para receber.
 
+## Gerar a fatura de locação junto
+
+Na folha de emissão há o bloco **Gerar fatura de locação**: *"Ao gerar a cobrança, cria também o PDF da fatura de locação nos Documentos."* É o documento de cobrança para mandar ao cliente, com parcelas e vencimentos reais.
+
+Marcando a caixa, a emissão **não fica mais lenta por causa disso**. A cobrança é confirmada na hora, a folha fecha e o aviso diz para onde olhar: *"A fatura de locação está sendo gerada em Documentos."* Na seção **Documentos gerados** do pedido, aparece uma linha **"Gerando…"**; quando o arquivo fica pronto, ele toma o lugar dessa linha, como qualquer outro documento — sem você precisar ficar na tela.
+
+{% hint style="info" %}
+Se o nome do arquivo do seu modelo tiver campos para preencher, a folha os pede **antes** de emitir. Se ainda assim faltar uma informação que só uma pessoa tem, a linha do documento diz qual: *"Falta preencher "X" para gerar este documento."* — e a cobrança, que é o que importa, já está feita. Erro de verdade só aparece para o que não adianta repetir, com a frase explicada em português.
+{% endhint %}
+
+A fatura de locação só existe em **aluguel**; na venda a caixa não aparece.
+
+**Não quer marcar a caixa toda vez?** Em [Automações](../configuracoes/automacoes.md), a receita **Gerei uma cobrança → gerar a Fatura de locação** gera esse documento sozinha quando a cobrança é gerada.
+
 ## Definir o valor exato de cada parcela
 
 No **Parcelado**, o padrão é dividir o total por igual. Mas às vezes você quer uma **primeira parcela maior**, ou valores combinados caso a caso. Para isso, ative a opção de definir o valor de cada parcela.
@@ -180,7 +194,7 @@ A ideia é a mesma de todo o LocFlow: **simples para quem quer simples, flexíve
 
 ## Situações reais
 
-* **Festa do fim de semana, venda à vista:** orçamento em negociação, você abre Gerar cobrança, confirma o aviso, deixa em **À vista** com vencimento na entrega e confirma. Uma parcela, pronto.
+* **Festa do fim de semana, venda à vista:** com o orçamento já **Vendido**, você abre Gerar cobrança, deixa em **À vista** com vencimento na entrega e confirma. Uma parcela, pronto.
 * **Reserva de um mês com entrada:** você escolhe **Sinal + restante**, define 30% de sinal — vence hoje — e o restante para a data da entrega. O cliente confirma pagando a entrada.
 * **Cliente PJ que paga faturado:** **À vista**, mas com **a prazo D+30**: você entrega agora e a cobrança vence daqui a 30 dias.
 * **Locação grande dividida:** **Parcelado** em 3x mensais. Você ativa o valor por parcela, deixa a primeira maior (a "entrada") e ajusta as outras até a soma fechar o total.

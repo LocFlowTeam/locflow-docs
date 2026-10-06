@@ -1,6 +1,6 @@
 ---
 icon: clock-rotate-left
-description: O LocFlow guarda toda mudança de preço dos seus produtos e kits. Consulte o histórico e volte para um preço anterior em um toque.
+description: O LocFlow guarda toda mudança de preço dos seus produtos e kits — e do valor de reposição. Consulte o histórico e volte para um valor anterior em um toque.
 ---
 
 # Histórico de preços
@@ -29,7 +29,7 @@ Duas situações cobrem quase tudo:
 O histórico vive **dentro de cada produto e de cada kit**, não numa tela à parte:
 
 1. Abra o **Catálogo** e toque no **produto** (ou no **kit**) que te interessa.
-2. Na ficha que abre, encontre o atalho **"Ver histórico de preços"**.
+2. Na ficha que abre, encontre o atalho **"Ver histórico de preços"**. No produto, logo abaixo, fica também **"Ver histórico do valor de reposição"** (veja [O valor de reposição tem histórico próprio](#valor-de-reposicao)).
 3. Abre uma lista com todas as versões daquele item.
 
 Como o histórico é por item, ele só existe para quem já teve **alguma** mudança de preço. Um item recém-cadastrado, que nunca teve o preço alterado, mostra pouca coisa — ou, no caso do kit, o aviso *"Sem histórico de preços ainda para este kit."*
@@ -87,6 +87,20 @@ flowchart LR
 
 Repare: a versão 3 com o erro **continua lá** — ela não some. Você só ganhou uma versão 4 com o valor correto de novo. Isso mantém a auditoria honesta: dá pra ver que houve um erro e que ele foi corrigido.
 
+## O valor de reposição tem histórico próprio {#valor-de-reposicao}
+
+O [valor de reposição](catalogo-produtos.md#valor-de-reposicao) — quanto custa comprar outra unidade do produto — não se mistura com os preços de aluguel e de venda, mas também **não muda sem deixar rastro**. Na ficha do produto, toque em **"Ver histórico do valor de reposição"**:
+
+- a lista mostra as versões, **da mais recente para a mais antiga**, cada uma com o valor;
+- a versão que vale hoje vem marcada como **vigente**;
+- nas outras aparece **"Voltar para esta versão"**.
+
+{% hint style="info" %}
+**Aqui a volta funciona um pouco diferente.** No valor de reposição, "Voltar para esta versão" faz **aquela versão** voltar a ser a vigente — o LocFlow não cria uma versão nova para isso, porque o valor já está guardado no histórico. Nada é apagado: as versões mais novas continuam na lista, e você pode voltar a elas do mesmo jeito.
+{% endhint %}
+
+O valor de reposição também pode mudar quando você **registra uma entrada de estoque** com o custo da compra: se o valor pago por unidade for diferente do cadastrado, a entrada mostra **"Atualizar o valor de reposição do produto"** — já ligado quando a compra é de hoje, e desligado quando a data da compra é anterior (a reposição deve refletir a compra mais recente). Com ele ligado, a compra vira o novo valor de reposição (e uma nova versão no histórico, se o valor for inédito); se for o mesmo valor de uma versão antiga, aquela versão volta a ser a vigente.
+
 ## Por porte {#por-porte}
 
 | Se você é… | Como o histórico costuma servir |
@@ -100,7 +114,7 @@ Repare: a versão 3 com o erro **continua lá** — ela não some. Você só gan
 - **A versão é por trilha, não por item.** Cada par *natureza × condição* (aluguel; venda Novo; venda Seminovo; venda Usado) tem sua própria numeração de versões, contada de forma independente.
 - **Reverter é uma nova alteração de preço.** Sob o capô, "voltar para a versão N" pega o valor daquela versão e o aplica como se você tivesse digitado o mesmo número à mão. Por isso ele gera uma versão nova no fim da fila.
 - **Não há limite prático de versões guardadas** que você precise gerenciar — o histórico cresce conforme você ajusta preços e a lista é paginada, então itens com muito histórico carregam aos poucos.
-- **O valor de reposição não entra aqui.** O histórico cobre **preço de aluguel** e **preço de venda**. O *valor de reposição* (quanto custa repor o item) é outro campo, com outra finalidade — veja a explicação dele em [Catálogo: produtos](catalogo-produtos.md).
+- **O valor de reposição tem a sua própria lista.** O histórico de preços cobre **preço de aluguel** e **preço de venda**. O *valor de reposição* (quanto custa repor o item) é outro campo, com outra finalidade — e com o seu próprio histórico, explicado em [O valor de reposição tem histórico próprio](#valor-de-reposicao).
 
 {% hint style="info" %}
 Quando você edita um produto ou kit, o app já avisa o que vai acontecer: *"Mudança de preço vira novo registro no histórico; orçamentos antigos não mudam."* É exatamente esta mecânica.

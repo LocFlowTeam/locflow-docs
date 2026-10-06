@@ -36,7 +36,7 @@ Essas duas pilhas são a operação normal, sem nenhum problema pendente:
 * **Precisa sair** são as **entregas**: o que a equipe carrega e leva (ou que o cliente vem buscar). É o material saindo.
 * **Precisa voltar** são as **retiradas e devoluções**: o que a equipe vai buscar de volta (ou que o cliente devolve). É o material retornando — só existe em locação, já que na venda o item não volta.
 
-Cada linha mostra o **código do pedido**, o **cliente** e o **selo de papel** (Rota ou Balcão — veja [abaixo](#selo-rota-balcao)). Os mais próximos da data vêm primeiro, para você priorizar o que é para já.
+Cada linha mostra o **código do pedido**, o **cliente** e o **selo de papel** (Rota ou Loja — veja [abaixo](#selo-rota-balcao)). Os mais próximos da data vêm primeiro, para você priorizar o que é para já.
 
 ### Pendente de informação <a href="#pendente-de-informacao" id="pendente-de-informacao"></a>
 
@@ -46,34 +46,33 @@ Esta é a pilha mais importante do card — e por isso fica em **âmbar** e na f
 A ajuda do card descreve esta pilha como *"o coração do bloco: itens bloqueados por falta de um dado"* — *"Enquanto esses dados não chegam, você não consegue montar a rota nem avisar o cliente. Por isso aparecem em destaque (âmbar) e em primeiro lugar — são o que alguém precisa resolver agora."*
 {% endhint %}
 
-Um pedido entra aqui quando, mesmo já **ganho**, ainda falta algo para virar uma operação real. As pendências possíveis, com a etiqueta que aparece em cada item:
+Um pedido entra aqui quando, mesmo já **ganho**, ainda falta algo para virar uma operação real. As pendências que o card aponta, com a etiqueta que aparece em cada item:
 
 | Etiqueta | O que está faltando | Onde resolver |
 | --- | --- | --- |
 | **Sem horário** | O movimento ainda **não tem janela** (data/horário) combinada — está preso a "o dia do evento" ou "algum dia", sem hora. | No [orçamento: movimentos e janelas](../orcamentos/movimentos-e-janelas.md). |
-| **Sem responsável** | Ainda **não foi definido quem transporta** — sua equipe leva, ou o cliente vem ao galpão? | No movimento do orçamento. |
-| **Sem endereço** | A equipe transporta, mas **falta o endereço de destino**. | No [endereço do orçamento](../orcamentos/enderecos.md). |
+| **Sem responsável** | Ainda **não foi definido quem transporta** — sua equipe leva, ou o cliente vem à loja? | No movimento do orçamento. |
 
-Um mesmo item pode ter **mais de uma** etiqueta ao mesmo tempo (por exemplo, sem horário **e** sem responsável). Resolvido o que falta, ele **sai da pilha âmbar** sozinho e passa para "Precisa sair" ou "Precisa voltar".
+Um mesmo item pode ter **as duas** etiquetas ao mesmo tempo. Resolvido o que falta, ele **sai da pilha âmbar** sozinho e passa para "Precisa sair" ou "Precisa voltar".
 
 {% hint style="warning" %}
-A pendência **"Sem endereço"** depende de dados que nem sempre chegam ao painel hoje — em parte da operação, esse aviso pode **não aparecer** no card mesmo quando o endereço falta. As pendências de **horário** e **responsável** são as que você verá com mais frequência. *(Em ajuste — veja as notas de revisão.)*
+**O card não aponta endereço faltando.** A ajuda do card cita o endereço entre as pendências, mas hoje a etiqueta **"Sem endereço"** não aparece — nem quando o destino falta. Confira o destino pelo [endereço do orçamento](../orcamentos/enderecos.md) antes de montar a rota.
 {% endhint %}
 
 > **"Pendente de informação" é diferente de "pendente de aprovação".** No card de Logística, pendente quer dizer *falta um dado para operar*. Já a aprovação de um orçamento (aguardando alguém aprovar antes de virar negócio) é outra coisa, do mundo comercial — veja [Aprovação de orçamentos](../orcamentos/aprovacao.md).
 
-## O selo de papel: Rota ou Balcão <a href="#selo-rota-balcao" id="selo-rota-balcao"></a>
+## O selo de papel: Rota ou Loja <a href="#selo-rota-balcao" id="selo-rota-balcao"></a>
 
 Cada movimento das pilhas "Precisa sair" e "Precisa voltar" traz um **selo de papel** que responde a uma pergunta simples: **quem se desloca?**
 
 * **Rota** (ícone de caminhão): **sua equipe** monta a rota e leva ou busca o material no endereço do cliente.
-* **Balcão** (ícone de loja): **o cliente vem até o galpão** — ele retira ou devolve no balcão, sem viagem da sua parte.
+* **Loja** (ícone de loja): **o cliente vem até a loja** — ele retira ou devolve presencialmente, sem viagem da sua parte.
 
 {% hint style="info" %}
-A ajuda do card: *"O selo de papel diz quem faz: Rota (sua equipe monta a rota) ou Balcão (cliente vem ao galpão). Isso muda o que planejar, não a pilha."*
+A ajuda do card: *"O selo de papel diz quem faz: Rota (sua equipe monta a rota) ou Loja (cliente vem à loja). Isso muda o que planejar, não a pilha."*
 {% endhint %}
 
-O selo **não muda a pilha** — uma entrega continua em "Precisa sair" seja ela Rota ou Balcão. Ele muda **o que você precisa preparar**: um item de **Rota** pede endereço e roteiro; um de **Balcão** dispensa trajeto, basta ter o galpão e a data certos. É o mesmo conceito de "retira/devolve no balcão" que você define no [movimento do orçamento](../orcamentos/movimentos-e-janelas.md), que aparece com mais detalhe na [jornada do pedido](../logistica/jornada-do-pedido.md) e que tem sua própria fila em [Balcão: retirada e devolução no galpão](../logistica/balcao.md).
+O selo **não muda a pilha** — uma entrega continua em "Precisa sair" seja ela Rota ou Loja. Ele muda **o que você precisa preparar**: um item de **Rota** pede endereço e roteiro; um de **Loja** dispensa trajeto, basta ter o local e a data certos. É o mesmo conceito de "cliente retira/devolve na loja" que você define no [movimento do orçamento](../orcamentos/movimentos-e-janelas.md), que aparece com mais detalhe na [jornada do pedido](../logistica/jornada-do-pedido.md) e que tem sua própria fila em [Loja: retirada e devolução pelo cliente](../logistica/balcao.md).
 
 ## Como ler o card, da esquerda para a direita <a href="#como-ler-o-card" id="como-ler-o-card"></a>
 
@@ -92,7 +91,7 @@ Para agir de fato, abra o **[acompanhamento de roteiros](../logistica/acompanhan
 ## De onde vem o dado <a href="#de-onde-vem-o-dado" id="de-onde-vem-o-dado"></a>
 
 {% hint style="success" %}
-**Estes números são reais.** O card de Logística lê os **seus orçamentos ganhos** e seus movimentos diretamente da operação (a mesma fonte do calendário logístico). Não há valores de exemplo aqui: o que você vê é o que está de fato na sua fila. Se o card não carregar, ele avisa em vez de inventar números.
+**Estes números são reais.** O card de Logística lê os **seus orçamentos ganhos** e seus movimentos diretamente da operação. Não há valores de exemplo aqui: o que você vê é o que está de fato na sua fila. Se o card não carregar, ele avisa em vez de inventar números.
 {% endhint %}
 
 O card aparece de acordo com a sua **permissão de logística** e com o seu plano. Quem ainda não usa logística não vê o card poluindo o painel; conforme a operação cresce, ele entra para organizar o galpão sem que você precise de planilha à parte — a [filosofia do LocFlow](../primeiros-passos/filosofia.md) de **abstrair para o pequeno e escalar para o grande**.
@@ -100,16 +99,16 @@ O card aparece de acordo com a sua **permissão de logística** e com o seu plan
 ## Situações reais
 
 * **"Bati o olho e tinha um item âmbar 'Sem horário'."** Aquela entrega foi ganha, mas ninguém combinou a janela com o cliente. Abra o orçamento, defina o horário, e o item migra para "Precisa sair" — pronto para entrar num roteiro.
-* **"Vejo 4 em 'Precisa voltar' e nenhuma pendência."** Sua operação está fluindo: são quatro devoluções a buscar (ou que o cliente devolve no balcão). Priorize pela data e organize a coleta.
+* **"Vejo 4 em 'Precisa voltar' e nenhuma pendência."** Sua operação está fluindo: são quatro devoluções a buscar (ou que o cliente devolve na loja). Priorize pela data e organize a coleta.
 * **"O card diz 'operação em dia', mas eu sei que tenho entregas amanhã."** Itens **já concluídos** não entram nas pilhas. Se uma entrega de amanhã não aparece, confira se ela não foi marcada como executada antes da hora.
 
 ## Para quem quer os números <a href="#para-quem-quer-os-numeros" id="para-quem-quer-os-numeros"></a>
 
 A classificação é **determinística** — sem estatística, sem chance de fechamento. Para cada movimento ainda não concluído:
 
-1. **A pendência vem primeiro.** O movimento é marcado **Pendente** se faltar **qualquer** um destes: horário/janela combinada, responsável definido, ou (quando a equipe transporta) endereço de destino. As etiquetas listam **todos** os motivos juntos.
+1. **A pendência vem primeiro.** O movimento é marcado **Pendente** se faltar **qualquer** um destes: horário/janela combinada ou responsável definido. As etiquetas listam **todos** os motivos juntos.
 2. **Sem pendência, decide o tipo.** Entrega → **Precisa sair**; retirada/devolução → **Precisa voltar**.
-3. **O selo de papel** é à parte: é **Balcão** quando o responsável é "cliente vem ao galpão"; caso contrário, **Rota**.
+3. **O selo de papel** é à parte: é **Loja** quando o responsável é "o cliente vem à loja"; caso contrário, **Rota**.
 
 Dentro de cada pilha, a ordem é por **urgência**: o movimento com a **data projetada mais próxima** vem primeiro; itens **sem data** vão para o fim. A prévia mostra os **3 primeiros** de cada pilha e o restante vira "+N mais".
 

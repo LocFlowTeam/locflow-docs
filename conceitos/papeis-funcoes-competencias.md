@@ -34,14 +34,22 @@ O LocFlow já vem com papéis de cada cargo — é só escolher ao convidar algu
 | Papel | Para quem | Enxerga |
 | --- | --- | --- |
 | **Administrador** | O sócio ou braço direito | Praticamente tudo — só o que **encerra a conta** (apagar a organização, mexer no contrato de assinatura) fica exclusivo do dono |
-| **Operador / Atendente** | Gestão e dia a dia | Orçamentos, frota, roteiros, equipe |
+| **Operador / Atendente** | Gestão e dia a dia | Orçamentos, frota, roteiros, equipe — e as notas fiscais da locação (**NFS-e** e **NF-e de remessa**: emitir, ver, listar e cancelar) |
 | **Motorista** | Quem roda a rota | Só os roteiros atribuídos a ele |
-| **Separador** | Galpão (ida) | A fila *A separar → Separado* |
-| **Conferente** | Galpão (volta) | A fila *A conferir → Conferido* |
-| **Operador de Balcão** | Loja física (as duas pontas) | O [balcão](../logistica/balcao.md) — entrega **e** recebe do cliente, e pode registrar **em lote** |
+| **Separador** | Galpão (ida) | A fila *A separar → Separado* — e a retirada do cliente na loja |
+| **Conferente** | Galpão (volta) | A fila *A conferir → Conferido* — e a devolução do cliente na loja |
+| **Operador de Loja** | Loja física (as duas pontas) | A tela **Minha Loja** ([retirada e devolução na loja](../logistica/balcao.md)) — entrega **e** recebe do cliente, pode confirmar **em lote** e dispensar a evidência |
+| **Operador de Manutenção** | A bancada de reparo | Manda itens para o reparo e tira de lá, põe um item em **quarentena** e encontra o material (galpão e saldo de aluguel e de venda) |
+| **Encarregado de Manutenção** | Quem decide o destino do material | Tudo o que o Operador de Manutenção faz, **mais** as saídas sem volta: **baixa** (descarte) do patrimônio, **reclassificação** (por exemplo, de aluguel para venda usada) e decidir o destino do que está em quarentena |
+
+Os dois papéis de manutenção **não mexem em orçamento**: a bancada cuida do material, não do comercial. Entenda o reparo em [Manutenção: o desfecho do reparo](../estoque/manutencao.md).
 
 {% hint style="info" %}
 O **dono** entra como **Superadmin** (acesso total) — por isso, quem está sozinho nem percebe que papéis existem. Eles só aparecem quando você convida a primeira pessoa.
+{% endhint %}
+
+{% hint style="info" %}
+**E a NF-e de venda?** Ela não vem pronta no Operador / Atendente: é recurso do plano **Pro**, e quem concede a permissão é o dono ou o administrador (marcando-a num papel personalizado, por exemplo). Veja [Nota fiscal na venda](nota-fiscal-na-venda.md) e [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 {% endhint %}
 
 ### E o parceiro? {#papel-de-parceiro}
@@ -54,8 +62,8 @@ O que ele faz é bem mais do que "ver roteiros": ele é o **gestor da logística
 | --- | --- |
 | Criar, editar e executar os **próprios roteiros** (só os dele) | Ver os roteiros da sua equipe, nem atribuir roteiro a alguém |
 | Registrar execução **em lote** (o pedido é dele) | **Otimizar rota** pelo mapa — ele roteiriza sem gastar o seu crédito |
-| Cadastrar e editar a **própria frota** (especificações e veículos) | Ver ou usar a sua frota |
-| Confirmar o **balcão** do que foi repassado a ele | Confirmar balcão em lote (isso é da sua retaguarda) |
+| Cadastrar e editar a **própria frota** (tipos de veículo e veículos) | Ver ou usar a sua frota |
+| Confirmar na **loja** a retirada e a devolução do que foi repassado a ele | Confirmar a loja em lote (isso é da sua retaguarda) |
 | Configurar o **próprio recebedor** bancário, para receber o repasse | Ver os seus outros clientes, orçamentos ou colaboradores |
 | Aceitar, recusar ou renegociar acordos e repasses **dele** | **Dispensar evidência** — ele está em campo para produzir a prova |
 | Registrar que recebeu do cliente na porta, **se o acordo permitir** | Ver o seu link de pagamento ou a sua carteira |

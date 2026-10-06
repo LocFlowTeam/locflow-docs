@@ -1,154 +1,151 @@
 ---
 icon: truck
-description: Cadastre sua frota no LocFlow — do "iniciar sem veículo" ao veículo com placa, organizado em classes e especificações com capacidade e vistoria.
+description: Sua frota no LocFlow — um painel com Veículos, Tipos de veículo e Extensões, o cadastro do veículo em três passos e o documento (CRLV) que libera ou segura a saída.
 ---
 
 # Frota
 
-A frota é o conjunto de veículos que leva seus [bens móveis](../primeiros-passos/glossario.md) até o cliente e os traz de volta — sejam eles da sua organização ou de um **fornecedor de frete** que você opera. No LocFlow, você cadastra a frota para **planejar roteiros com veículo e capacidade** — saber o que cabe em cada carro, quem está disponível e quanto a entrega vai render.
-
-Mas calma: cadastrar a frota **não é obrigatório para começar**. O LocFlow abstrai para quem está começando e revela detalhe para quem cresceu. Você sobe a escada no seu ritmo.
+A frota é o conjunto de veículos que leva seus [bens móveis](../primeiros-passos/glossario.md) até o cliente e os traz de volta — sejam eles da sua organização ou de um **fornecedor de frete** que você opera. No LocFlow, você cadastra a frota para **planejar roteiros com veículo e capacidade** — saber o que cabe em cada um, qual está disponível e quanto a entrega vai render.
 
 {% hint style="info" %}
-A Frota faz parte de um plano superior. Se você ainda não vê o módulo, é porque seu plano não o inclui — e tudo bem: dá para operar entregas sem ele (veja a seguir). Para liberar, vá em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
+A Frota faz parte do plano **Pro**. Se o item **Frota** aparece com um cadeado no menu, é porque o seu plano não o inclui — e dá para operar entregas sem ele (veja [Na hora de rodar](#iniciar-sem-veiculo)). Para liberar, vá em [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 {% endhint %}
 
-## A escada da frota <a href="#escada-da-frota" id="escada-da-frota"></a>
+## A frota numa tela só <a href="#painel-da-frota" id="painel-da-frota"></a>
 
-Você não precisa configurar tudo de uma vez. Cada degrau acrescenta controle, sem travar o anterior.
+Em **Logística › Frota**, a tela abre com **todos os seus veículos**, reunidos por grupo. O resto fica em abas, na mesma tela:
 
-```mermaid
-flowchart LR
-    A[Iniciar sem veiculo] --> B[Veiculo com placa]
-    B --> C[Classes]
-    C --> D[Especificacoes]
-    D --> E[Capacidade e vistoria]
-```
-
-| Degrau | O que você ganha | Para quem |
+| Aba | O que mostra | Botão de cadastro |
 | --- | --- | --- |
-| **Iniciar sem veículo** | Entrega sai mesmo sem frota cadastrada | Quem está começando ou faz entrega avulsa |
-| **Veículo com placa** | Saber qual carro saiu e seu status | Quem tem 1 ou 2 carros próprios |
-| **Classes** | Agrupar a frota — por capacidade ou por qualquer critério seu | Quem tem veículos variados |
-| **Especificações** | Ficha técnica por modelo (tipo de veículo, marca, ano, combustível) | Quem quer organizar por modelo |
-| **Capacidade e vistoria** | Saber o que cabe e checar o carro antes de rodar | Quem otimiza carga e cuida da manutenção |
+| **Veículos** | A frota inteira, agrupada. Busca por placa e filtros por **Situação** e **Grupo**. | **Novo veículo** |
+| **Tipos de veículo** | *"O que cada modelo carrega"* — marca, modelo, baú, capacidade e vistoria. | **Novo tipo** |
+| **Extensões** | *"Reboques e tudo que engata"* — carretinhas, reboques e carretas. | **Nova extensão** |
 
-### Degrau 1 — Iniciar sem veículo (opcional) <a href="#iniciar-sem-veiculo" id="iniciar-sem-veiculo"></a>
+Os conceitos ficam atrás do botão **?** de cada aba — a tela mostra os veículos, e a explicação aparece quando você pede.
 
-Você pode **iniciar uma entrega ou retirada sem selecionar nenhum veículo**. O LocFlow nunca trava o caminho mais simples: se você ainda não cadastrou a frota, ou se a entrega é avulsa, o sistema segue com um aviso suave (não bloqueante) de que o registro ficará sem veículo.
+## Como a frota se organiza <a href="#classes-e-especificacoes" id="classes-e-especificacoes"></a>
 
-{% hint style="success" %}
-**Por que isso te ajuda:** ninguém deixa de entregar por falta de cadastro. Você começa a faturar hoje e organiza a frota depois, quando fizer sentido. Zero fricção para quem está começando.
-{% endhint %}
-
-### Degrau 2 — Veículo com placa e status <a href="#veiculo-e-status" id="veiculo-e-status"></a>
-
-Quando quiser controle, cadastre o veículo. O essencial é simples:
-
-- **Especificação veicular** — qual ficha técnica esse veículo segue (veja os degraus 3 e 4). Você busca por marca ou modelo e seleciona.
-- **Identificador interno** — opcional, o apelido que sua equipe usa (ex.: "Caminhão 01").
-- **Placa** — obrigatória (ex.: `ABC1D23`). É o que identifica o veículo na rua.
-
-Todo veículo **nasce Ativo**. O status muda por **ações** na lista da frota, não no cadastro:
-
-| Status | O que significa |
-| --- | --- |
-| **Ativo** | Disponível para receber roteiros |
-| **Manutenção** | Parado para reparo — não entra em novas atribuições |
-| **Inativo** | Fora de operação — não aparece para atribuir |
-
-Na lista de veículos, cada carro tem as ações de status conforme onde está: **Enviar para manutenção** e **Inativar** (a partir de Ativo), **Reativar** e **Inativar** (a partir de Manutenção) ou **Reativar** (a partir de Inativo).
-
-{% hint style="info" %}
-**Em trânsito.** Quando um veículo está rodando em um roteiro ainda não concluído, ele aparece como **Em trânsito**, mesmo estando Ativo. É um status visual (derivado da operação, não algo que você define) — assim você não atribui dois roteiros ao mesmo carro por engano.
-{% endhint %}
-
-### Degraus 3 e 4 — Classes e Especificações <a href="#classes-e-especificacoes" id="classes-e-especificacoes"></a>
-
-Aqui está a organização que dá inteligência à frota. São três níveis encaixados — é a **hierarquia da frota**:
+São três níveis encaixados — e as extensões ao lado:
 
 ```mermaid
 flowchart TD
-    C["Classe<br/>(ex.: Caminhao Toco)"] --> E1["Especificacao<br/>(VW Delivery 2022, Diesel)"]
-    C --> E2["Especificacao<br/>(MB Accelo 2020, Diesel)"]
-    E1 --> V1["Veiculo<br/>placa ABC1D23"]
-    E1 --> V2["Veiculo<br/>placa DEF4G56"]
-    E2 --> V3["Veiculo<br/>placa GHI7J89"]
+    G["Grupo<br/>(ex.: Caminhão Toco)"] --> T1["Tipo de veículo<br/>(VW Delivery 2022, Diesel)"]
+    G --> T2["Tipo de veículo<br/>(MB Accelo 2020, Diesel)"]
+    T1 --> V1["Veículo<br/>placa ABC1D23"]
+    T1 --> V2["Veículo<br/>placa DEF4G56"]
+    T2 --> V3["Veículo<br/>placa GHI7J89"]
+    GE["Grupo de extensões<br/>(ex.: Carreta baú 14m)"] --> E1["Extensão<br/>placa JKL0M12"]
 ```
 
-- **Classe** é o nome que agrupa fichas com a mesma capacidade de carga — o que interessa não é mais "que tipo de veículo é" (isso agora mora na ficha, veja abaixo), e sim **quanto cabe** e **quem executa**. Duas classes já vêm prontas em toda organização — **Carro Utilitário** e **Caminhão**. As que você cria são um **agrupamento livre** das suas especificações: só o nome é obrigatório (ex.: "Van Furgão", "Minhas picapes"). O sistema gera um código por trás automaticamente — você não precisa se preocupar com ele. Toda classe também tem um **titular** — sua organização, um fornecedor ou um parceiro externo — e todas as fichas dentro dela são desse mesmo titular. O LocFlow ainda **sugere agrupamentos sozinho**, quando encontra especificações com a mesma capacidade de carga espalhadas em classes diferentes. Veja tudo isso, e como a classe entra no planejamento do roteiro, em [Classes veiculares](frota-classes.md).
-- **Especificação** é a **ficha técnica** de um modelo dentro de uma classe. Você escolhe a classe, diz se o veículo é **carro, caminhão ou moto** e, a partir disso, **marca, modelo e ano** vêm prontos do catálogo FIPE (basta buscar e selecionar). O **combustível** vem sugerido pela FIPE, e você pode ajustar (Gasolina, Etanol, Diesel, Flex, GNV, Elétrico). Além disso, cada ficha tem uma **[identificação interna](#identificacao-interna)** (o apelido que aparece nas listas) e um **[detentor](#detentor)** (de quem ela é).
-- **Veículo** é a unidade real, com **placa**, ligada a uma especificação.
+- **[Grupo](frota-grupos.md)** — reúne tipos que **carregam a mesma coisa**. Na hora de montar o roteiro, qualquer veículo do grupo é tratado como equivalente. É o nome que aparece no planejamento, no frete e nas telas que o seu cliente vê.
+- **[Tipo de veículo](frota-ficha-tecnica.md)** — descreve **o que um modelo carrega**: marca, modelo, ano, combustível, se tem baú fechado, quanto cabe e com que frequência passa por vistoria. Vários veículos iguais **compartilham o mesmo tipo**: cinco Fiorinos iguais são um tipo e cinco veículos.
+- **Veículo** — a unidade real, com **placa**, identificador interno, documento e situação.
+- **[Extensão](frota-extensoes.md)** — o que se acopla a um veículo para aumentar o que ele leva (reboque, carretinha). Tem placa, documento e situação próprios.
 
-Pense assim: a **Classe** diz *quanto cabe* (e *quem executa*), a **Especificação** diz *que tipo de veículo é* e *qual modelo*, e o **Veículo** diz *qual carro* (a placa).
-
-{% hint style="info" %}
-**Por que essa hierarquia?** Você descreve o **modelo uma vez** (na especificação) e cadastra **vários veículos** com a mesma ficha — só mudando a placa. Capacidade e vistoria ficam na especificação e valem para todos os carros daquele modelo.
-{% endhint %}
-
-### Identificação interna (o apelido da ficha) <a href="#identificacao-interna" id="identificacao-interna"></a>
-
-Cada especificação tem uma **identificação interna** — um apelido curto que é o **rótulo principal** exibido nas listas, nos cartões da frota e na hora de montar o roteiro. É ele que você vê primeiro, não o nome técnico. O nome técnico completo (marca, modelo e ano) continua ali, mas como **informação secundária**, embaixo.
-
-Para você não perder tempo, o LocFlow **sugere um apelido** assim que você escolhe o veículo — e cuida para que ele seja **único**, desambiguando contra as fichas irmãs (mesma marca e modelo) para você nunca confundir dois carros parecidos. Você decide:
-
-- Tocar em **"Usar sugestão"** e aceitar o nome pronto, ou
-- **Digitar o seu** (ex.: "Strada da equipe A", "Baú grande").
+Pense assim: o **grupo** diz *quais veículos se substituem*, o **tipo** diz *o que aquele modelo carrega* e o **veículo** diz *qual carro* (a placa).
 
 {% hint style="info" %}
-**Por que um apelido?** "VW Delivery 2022" não diz nada para quem está no pátio. "Baú grande" ou "Caminhão do Zé" diz. O apelido é a linguagem da sua equipe — e é por ele que a frota fica fácil de reconhecer numa lista cheia.
+**Mudou o nome, não a ideia.** O que antes se chamava **especificação** (ou **ficha técnica**) hoje é **tipo de veículo**, e o que se chamava **classe** hoje é **grupo**. Alguns pontos do app ainda usam as palavras antigas — por exemplo, no planejamento do roteiro o campo aparece como **"Tipo de veículo (classe)"**, e a classe ali é o grupo.
 {% endhint %}
 
-### De quem é a ficha (Detentor) <a href="#detentor" id="detentor"></a>
+## Cadastrar um veículo: três passos <a href="#cadastrar-veiculo" id="cadastrar-veiculo"></a>
 
-Toda especificação tem um **detentor** — o dono da ficha. Ele pode ser:
+O cadastro começa pelo que você tem na mão — o veículo. Na aba **Veículos**, toque em **Novo veículo**:
 
-- **Própria organização** (padrão) — a frota que é sua.
-- **Um fornecedor de frete** — quando a ficha descreve um veículo de um terceiro que roda para você.
+1. **Veículo** — a **Placa** (obrigatória, ex.: `ABC1D23`), o **Identificador interno** (opcional — o apelido que a equipe usa, ex.: "Caminhão 01") e o **Documento do veículo (CRLV)** (veja [abaixo](#documento-crlv)).
+2. **Tipo** — escolha entre **Usar uma ficha existente** (busque por marca ou modelo) ou **Criar uma ficha nova**. Criando na hora, você preenche a identificação, a carroceria, a capacidade e o **grupo** do tipo; vistoria, custo de combustível e titular ficam no cadastro completo do tipo, na aba **Tipos de veículo**.
+3. **Confirmar** — um resumo com placa, identificação, tipo, documento e capacidade. Toque em **Cadastrar veículo**.
 
-As fichas de um fornecedor formam a **frota-espelho** dele: você espelha, dentro do LocFlow, os veículos que aquele parceiro usa para te atender. Assim, na hora de planejar um roteiro com frete terceirizado, o sistema sabe qual carro do fornecedor está em jogo, com que capacidade. Quando a ficha é de um fornecedor, o cartão dela exibe um **selo com o nome do fornecedor**, para você distinguir num relance o que é seu do que é terceirizado.
+{% hint style="success" %}
+**Atalho:** na ficha de um tipo de veículo, **Adicionar veículo com esta ficha** abre o cadastro do veículo com o tipo já escolhido. Para editar um veículo depois, o formulário é simples, sem passos: tipo, placa, identificador e documento.
+{% endhint %}
 
-Você escolhe o detentor **ao criar** a especificação. E, na **edição**, pode **trocá-lo**:
+### Identificador do veículo e identificação do tipo <a href="#identificacao-interna" id="identificacao-interna"></a>
+
+São dois apelidos diferentes, e cada um tem o seu lugar:
+
+- O **identificador interno do veículo** (ex.: "Caminhão 01", "Strada da equipe A") diferencia um carro do outro. Na lista da frota, é ele que aparece primeiro — ou a placa, se você não der um.
+- A **identificação interna do tipo** (ex.: "Baú grande") é o nome curto do modelo, mostrado nas listas de tipos e ao montar o roteiro. O LocFlow sugere um nome assim que você informa marca, modelo e ano. Veja [Tipos de veículo](frota-ficha-tecnica.md#identificacao).
+
+## Situação do veículo <a href="#veiculo-e-status" id="veiculo-e-status"></a>
+
+Todo veículo **nasce Ativo**. A situação muda por **ações** na lista da frota, não no cadastro:
+
+| Situação | O que significa |
+| --- | --- |
+| **Ativo** | Disponível para sair em roteiros |
+| **Manutenção** | Parado para reparo — não sai em novas viagens |
+| **Inativo** | Fora de operação — aparece esmaecido e não pode ser escolhido para sair |
+
+Na lista de veículos, cada carro tem as ações conforme onde está: **Enviar para manutenção** e **Inativar** (a partir de Ativo), **Reativar** e **Inativar** (a partir de Manutenção) ou **Reativar** (a partir de Inativo).
+
+{% hint style="info" %}
+**Em trânsito.** Quando um veículo está rodando em um roteiro ainda não concluído, ele aparece como **Em trânsito**, mesmo estando Ativo. É uma situação visual (derivada da operação, não algo que você define) — assim ninguém escolhe para outra viagem um carro que está na rua.
+{% endhint %}
+
+## Documento do veículo (CRLV) <a href="#documento-crlv" id="documento-crlv"></a>
+
+No cadastro do veículo (e no da extensão), o bloco **Documento do veículo (CRLV)** guarda a **validade do licenciamento**: o campo **Documento válido até**, escolhido num calendário. A tela lembra por quê: *"O licenciamento vence na data impressa no CRLV — cada estado tem o seu calendário."*
+
+| Situação do documento | O que acontece na saída |
+| --- | --- |
+| **Em dia** | Nada a fazer. |
+| **Vence em poucos dias** | O selo avisa com antecedência (*"Documento vence em 12 dias"*; no cartão do celular, abreviado como *"Doc. em 12d"*), a partir de 30 dias antes. |
+| **Vencido** | **Bloqueia a saída** do roteiro: o veículo aparece esmaecido, com o selo **Documento vencido**, e não pode ser escolhido. É impedimento legal, não divergência de planejamento. |
+| **Não cadastrado** | A saída continua liberada — o sistema **apenas avisa** que não conseguiu conferir o documento. |
+
+Errou a data? Use **Remover a validade** para voltar a "não cadastrado".
 
 {% hint style="warning" %}
-**Trocar o detentor move a ficha inteira.** Ao mudar o detentor de uma especificação, ela **e todos os veículos ligados a ela** passam a pertencer ao novo titular. O app avisa quantos veículos serão movidos antes de confirmar. A troca fica **bloqueada** enquanto um motor de frete ativo estiver usando aquela especificação.
+**Reboque, semirreboque e carreta têm placa e CRLV próprios** — a carreta não se licencia pelo cavalo. Por isso o mesmo campo existe no cadastro das [extensões](frota-extensoes.md), com a mesma regra: vencido bloqueia, ausente avisa.
 {% endhint %}
 
-{% hint style="info" %}
-**Onde o campo aparece.** O **Detentor** só aparece se o seu plano e as suas permissões liberam frete por fornecedor — em planos como o Starter ele fica oculto e a ficha é sempre da sua organização. E o seletor lista **apenas fornecedores que prestam frete** (os que você marcou como transportadores).
-{% endhint %}
+## Na hora de rodar: planejamento e saída <a href="#iniciar-sem-veiculo" id="iniciar-sem-veiculo"></a>
 
-{% hint style="info" %}
-**A classe da ficha tem o mesmo titular.** Quando você agrupa fichas numa classe (ou aceita uma sugestão de agrupamento do LocFlow), todas precisam ser do mesmo detentor — você não mistura frota própria com frota de um fornecedor ou de um parceiro no mesmo grupo. Veja como isso conta na hora de montar o roteiro em [Classes veiculares](frota-classes.md#o-titular-da-classe).
-{% endhint %}
+O veículo entra em momentos diferentes da operação, e cada etapa pede uma coisa:
+
+| Etapa | O veículo é… | O que acontece |
+| --- | --- | --- |
+| **Planejar o roteiro** | Opcional — você escolhe o **grupo** (no campo **Tipo de veículo (classe)**), não a placa | Sem grupo escolhido, a tela avisa *"Sem veículo definido, a carga não é avaliada agora — dá para seguir assim."* |
+| **Sair para a rota** (execução passo a passo no app) | **Obrigatório**: um veículo **ativo**, do grupo planejado e com documento em dia | Sem veículo, o app pede *"Escolha um veículo ativo para a viagem."* Os indisponíveis aparecem com o motivo — Em trânsito, Em manutenção, Inativo, Documento vencido ou Classe diferente (de outro grupo). |
+| **Registrar em lote** (depois do fato) | Não é pedido | O roteiro é registrado sem veículo. |
+
+Sem a Frota, a entrega continua possível: o pedido avança pelas etapas da logística, o roteiro pode ser planejado sem grupo de veículo e registrado em lote. A execução passo a passo, com o motorista registrando no app, é que pede um veículo cadastrado. Veja [Planejando o roteiro](../logistica/planejando-o-roteiro.md), [Execução em campo](../logistica/execucao-em-campo.md) e [Execução em lote](../logistica/execucao-em-lote.md).
+
+## De quem é o tipo (titular) <a href="#detentor" id="detentor"></a>
+
+Todo tipo de veículo tem um **titular**. Quase sempre é a **sua empresa**. Quando você contrata frete de terceiros, pode cadastrar o tipo do veículo **do fornecedor** — aí o titular é ele, e o preço daquela viagem sai do motor de frete dele, não do seu. Os tipos de um fornecedor formam a **frota-espelho** dele dentro do LocFlow, e o cartão do tipo mostra um **selo com o nome do fornecedor**.
+
+O campo do titular só aparece se o seu plano e as suas permissões liberam frete por fornecedor. Como escolher, trocar e o que isso muda nos grupos: [Titular do tipo](frota-titular.md).
 
 Os **fornecedores de frete** são a forma **mais simples** de usar estrutura de fora: o fornecedor é um terceiro que **você gerencia por completo** (você o cadastra, monta a frota-espelho dele e configura o motor de frete que ele cobra) e que **não tem login** no LocFlow — quem opera tudo é você.
 
 Quando você precisa de mais do que isso — um parceiro com **conta e estrutura próprias**, que monta o roteiro dele, executa e recebe por isso —, o caminho é a [Rede de Parceiros](../parcerias/visao-geral.md), que é uma seção inteira à parte. Para cadastrar um fornecedor e montar a frota-espelho, veja [Fornecedores de frete](../parcerias/fornecedores-de-frete.md).
 
-### A especificação guarda capacidade e vistoria <a href="#capacidade-e-vistoria" id="capacidade-e-vistoria"></a>
+## Capacidade e vistoria <a href="#capacidade-e-vistoria" id="capacidade-e-vistoria"></a>
 
-Ao criar uma especificação, dois blocos **opcionais** dão superpoderes à frota.
+Os dois blocos que dão inteligência à frota moram no **tipo de veículo** e valem para todos os veículos daquele tipo.
 
 #### Capacidade — o que cabe no veículo <a href="#capacidade" id="capacidade"></a>
 
-Você descreve **o que cabe** naquele modelo — por **contagem de itens** (ex.: "10 tendas") e, em baús fechados, pela **volumétrica** (a cubagem do baú). Com isso, ao montar o roteiro, o LocFlow avalia se a carga cabe e avisa quando não cabe. Os detalhes — como o app **escolhe a estratégia** e por que a volumétrica **exige baú fechado** — estão em [Especificações: capacidade](frota-capacidade.md).
+Você descreve **o que cabe** naquele modelo — por **contagem de itens** (ex.: "10 tendas"), pelo **volume** do baú fechado e pelo **peso máximo**. Com isso, ao montar o roteiro, o LocFlow avalia se a carga cabe e avisa quando não cabe. Os detalhes estão em [Tipos de veículo: capacidade](frota-capacidade.md).
 
-#### Vistoria — o checklist de checagem do veículo <a href="#vistoria" id="vistoria"></a>
+#### Vistoria — o checklist do veículo <a href="#vistoria" id="vistoria"></a>
 
-Você define **quando** o veículo deve ser conferido (na primeira saída do dia, a cada N dias, a cada N roteiros…) e **o que** conferir, partindo de um modelo de checklist pronto. É esse checklist que aparece ao motorista no **preparo da saída**. Os gatilhos e os modelos estão em [Especificações: vistoria](frota-vistoria.md).
+Você define **quando** o veículo deve ser conferido (na primeira saída do dia, a cada N dias, a cada N roteiros…) e **o que** conferir, partindo de um modelo de checklist pronto. É esse checklist que aparece ao motorista no **preparo da saída**. Os gatilhos e os modelos estão em [Tipos de veículo: vistoria](frota-vistoria.md).
 
 {% hint style="success" %}
-**Por que capacidade e vistoria fazem você ganhar mais:** com a capacidade definida, o LocFlow avalia se a carga cabe e ajuda a otimizar o roteiro — menos viagens, mais entregas por dia. Com a vistoria em dia, você evita o carro quebrar no meio da rota (frete perdido, cliente irritado, avaria no material). Frota organizada = operação que não para.
+**Por que capacidade e vistoria fazem você ganhar mais:** com a capacidade definida, o LocFlow avalia se a carga cabe e ajuda a otimizar o roteiro — menos viagens, mais entregas por dia. Com a vistoria e o documento em dia, você evita o carro quebrar (ou ser parado) no meio da rota — frete perdido, cliente irritado, avaria no material. Frota organizada = operação que não para.
 {% endhint %}
 
 ## Situações reais <a href="#situacoes-reais" id="situacoes-reais"></a>
 
-- **Locadora de festas começando:** ainda não cadastrou frota. Recebe um pedido, despacha a entrega **sem veículo** e entrega na hora. Mês que vem, cadastra a Kombi com placa para começar a controlar.
-- **Quem tem caminhão e van:** cria duas classes ("Caminhão Toco" e "Van Furgão"), uma especificação por modelo e os veículos com placa. Agora sabe, na hora de planejar, qual carro tem baú maior para a carga do dia.
-- **Frota que cresceu:** liga a estratégia de **contagem** ("cabem 10 tendas no Toco") e, no baú fechado, também a **volumétrica**. O sistema passa a alertar quando a carga não cabe — e a vistoria a cada 30 dias mantém os caminhões rodando sem surpresa.
-- **Carro parado para reparo:** o operador envia o veículo para **Manutenção** na lista da frota. Ele some das atribuições até alguém **Reativar**, sem risco de cair num roteiro do dia.
+- **Locadora de festas começando:** ainda não usa a Frota. Recebe um pedido, faz a entrega e avança o pedido pelas etapas da logística — ou registra o roteiro em lote depois. Mês que vem, cadastra a Kombi com placa para o motorista registrar a rota no app.
+- **Quem tem caminhão e van:** cadastra cada veículo pela aba **Veículos** — placa primeiro, depois o tipo (criado na hora, com o grupo "Caminhão Toco" ou "Van Furgão"). Agora sabe, na hora de planejar, qual grupo tem baú maior para a carga do dia.
+- **Três Fiorinos iguais:** um tipo só, "Fiorino baú", e três veículos com placas diferentes. Quando o baú foi medido de novo, a medida mudou num lugar e valeu para os três.
+- **Licenciamento vencendo:** o selo **Documento vence em 12 dias** aparece na lista. O dono renova, atualiza a data no veículo e o selo volta a **Documento em dia** — sem roteiro travado na saída.
+- **Carro parado para reparo:** o operador envia o veículo para **Manutenção** na lista da frota. Ele não pode ser escolhido para sair até alguém **Reativar**.
 
 ## Próximo passo <a href="#proximo-passo" id="proximo-passo"></a>
 
-Com a frota pronta, veja como ela entra no dia a dia em [Planejando o roteiro](../logistica/planejando-o-roteiro.md) (veículo e capacidade na montagem da rota) e [Execução em campo](../logistica/execucao-em-campo.md) (a vistoria no preparo da saída). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
+Entenda cada peça da frota em [Tipos de veículo](frota-ficha-tecnica.md), [Grupos da frota](frota-grupos.md), [Extensões](frota-extensoes.md) e [Titular do tipo](frota-titular.md). Para ver a frota no dia a dia, vá a [Planejando o roteiro](../logistica/planejando-o-roteiro.md) (o tipo de veículo e a capacidade na montagem da rota) e [Execução em campo](../logistica/execucao-em-campo.md) (o veículo, o documento e a vistoria no preparo da saída). Em dúvida sobre um termo? Consulte o [Glossário](../primeiros-passos/glossario.md) ou veja [Onde tirar dúvidas](../primeiros-passos/onde-tirar-duvidas.md).
