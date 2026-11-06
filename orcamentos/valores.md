@@ -50,6 +50,8 @@ Ao tocar em **Adicionar acréscimo**, a folha pede três coisas:
 
 Sem descrição, o documento imprime o **nome do tipo** ("Montagem") — que já diz o suficiente. A exceção é **"Outros"**: ali o rótulo sozinho não informa nada ao cliente, então o texto passa a ser exigido.
 
+Os serviços que a sua empresa criou em [Campos Personalizados](../configuracoes/campos-personalizados.md) também aparecem como tipo. Ao escolher um deles, o nome entra na descrição, e você pode trocar o texto.
+
 {% hint style="info" %}
 **Todo acréscimo em % incide sobre o total dos itens** — não sobre o frete, nem sobre um total que já inclua outro acréscimo. Dois acréscimos de 10% somam **20% dos itens**, nunca 21%: eles não se empilham um sobre o outro. Por isso a **ordem** em que você lança não muda o total; ela só define a ordem em que o cliente lê as linhas.
 {% endhint %}

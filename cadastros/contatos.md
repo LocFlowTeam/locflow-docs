@@ -47,7 +47,7 @@ O cadastro pede **ao menos um canal**: celular **ou** e-mail. Sem um meio de con
 
 ### Endereço {#endereco}
 
-O endereço fica em **"Editar mais informações"** (junto de CPF/CNPJ e demais dados opcionais). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local** (Residencial ou Condomínio); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo.
+O endereço fica em **"Editar mais informações"** (junto de CPF/CNPJ e demais dados opcionais). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local**, com a mesma lista do orçamento, que você pode [personalizar](../configuracoes/campos-personalizados.md); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo.
 
 Esse endereço não é decorativo: ele é reaproveitado no orçamento como **endereço de entrega** (veja [mais abaixo](#reaproveitar-no-orcamento)).
 

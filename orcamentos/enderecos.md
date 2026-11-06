@@ -95,6 +95,10 @@ Quando o tipo é **Condomínio**, o **complemento vira obrigatório**. O app exp
 Faz sentido: sem o bloco/apartamento, o motorista chega ao portão e não sabe para onde ir.
 {% endhint %}
 
+{% hint style="info" %}
+**A lista pode ter os nomes da sua empresa.** Em [Campos Personalizados](../configuracoes/campos-personalizados.md) você cria tipos como *Buffet* e desativa os que não usa. Um tipo novo segue as regras do tipo que você escolher: se ele funciona como **Condomínio**, também pede o complemento.
+{% endhint %}
+
 ## Salvar um endereço para reusar {#salvar-um-endereco-para-reusar}
 
 Quando você perceber que um endereço vai se repetir, salve-o. No seletor de endereço do orçamento, escolha **Salvo** e use a opção de **criar um novo**. Você preenche:

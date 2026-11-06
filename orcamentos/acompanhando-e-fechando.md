@@ -11,6 +11,27 @@ Depois de criar a proposta, você acompanha cada orçamento até o fechamento. A
 O funil é de **uma natureza por vez** — alterne entre **Aluguel** e **Venda** no topo. Cada card mostra a **chance de fechar** (uma estimativa para você priorizar quem cobrar primeiro). Prefere a visão clássica? Alterne para **Lista**.
 {% endhint %}
 
+## O card do funil {#card-do-funil}
+
+As etapas do funil ficam num **bloco só**, separadas por um fio, e o card branco, com borda fina, é o que se destaca. Cada card tem três partes, sempre no mesmo lugar, para você varrer a coluna sem ler card por card:
+
+| Parte | O que mostra |
+| --- | --- |
+| **Faixa**, na cor da etapa | O código do orçamento, os selos de importado e da Rede e a **chance de fechar**, em número e em barra |
+| **Meio** | O **cliente**, em até duas linhas, e o **valor**, em destaque |
+| **Rodapé** | A **data do evento**, com quanto falta, e até quando a proposta vale |
+
+O que cada sinal quer dizer:
+
+* **Chance de fechar:** aparece enquanto o negócio está em aberto, até o pré-reservado. Reservado e vendido já estão decididos, então ela sai do card.
+* **Data do evento:** diz quanto falta, como *hoje*, *amanhã*, *em 7 dias* ou *há 2 dias*. Com o negócio em aberto, fica **âmbar** quando faltam até 3 dias e **vermelha** quando já passou. No aluguel, *Sem data do evento* mostra o que ainda falta combinar.
+* **Vale até:** só aparece quando faltam 3 dias ou menos para a proposta deixar de valer.
+* **Lápis, no canto:** abre o formulário do orçamento. Tocar no resto do card abre a ficha.
+
+Um orçamento **aguardando aprovação** fica fora do bloco, na coluna tracejada **Pendente**, com **Aprovar** e **Rejeitar** no próprio card. Aprovado, ele entra no funil.
+
+Quando as etapas não cabem lado a lado, elas ficam uma sobre a outra, no mesmo bloco.
+
 ## Os estados do orçamento
 
 Todo orçamento tem um **estado comercial** — onde ele está no funil. Os estados dependem da natureza (locação ou venda).
@@ -221,6 +242,8 @@ Nem todo orçamento fecha — e tudo bem. O LocFlow separa duas situações, e e
 | --- | --- | --- |
 | **Perdido** | Antes do ganho (no funil) | Cliente não respondeu · Preço · Redução de escopo · Desistência do evento · Mudança de data · Fora da área de entrega · Estoque indisponível · Capacidade operacional |
 | **Cancelado** | Depois do ganho | Desistência do evento · Mudança de data · Inadimplência · Erro no orçamento · Estoque indisponível · Capacidade operacional |
+
+As duas listas podem ter os motivos com os nomes que a sua empresa usa. Veja [Campos Personalizados](../configuracoes/campos-personalizados.md).
 
 {% hint style="success" %}
 **Por que registrar o motivo vale a pena:** com o tempo, o motivo das perdas vira um mapa do seu negócio — se "Preço" aparece sempre, talvez sua tabela esteja fora do mercado; se é "Não respondeu", o problema é o follow-up. Saber **por que** você perde é o primeiro passo para perder menos.
