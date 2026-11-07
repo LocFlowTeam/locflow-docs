@@ -10,7 +10,7 @@ description: O Início da Rede — quanto você tem a receber e a pagar, o que p
 Antes, para saber quanto um parceiro recebeu, quanto você recebeu e quanto foi de taxa, era preciso passar por várias telas e somar à mão. O painel junta tudo: abre no que precisa de você hoje, mostra a conta com cada parceiro e deixa pagar sem sair dali.
 
 {% hint style="info" %}
-**Nenhuma regra mudou.** O painel só mostra a conta que o LocFlow já fazia: o valor que aparece no botão **Pagar** é o mesmo do PIX gerado. As regras da conta estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
+**O valor que aparece no botão Pagar é o mesmo do PIX gerado.** A conta com cada parceiro é paga sempre num PIX só, pelo saldo, por quem deve, e a taxa da LocFlow em aberto vai junto do próximo PIX que você pagar. As regras da conta estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
 {% endhint %}
 
 ## A barra da Rede {#barra}
@@ -29,7 +29,7 @@ O Início é uma pilha de cartões. No celular eles aparecem nesta ordem; no com
 | Cartão | O que ele responde |
 | --- | --- |
 | **Alerta de atraso** | Um parceiro passou do prazo para acertar com você: quantos dias e quanto falta. Só aparece quando há atraso. |
-| **Saldo com os parceiros** | Quanto você tem **a receber** e **a pagar**, e de quem. Tem um botão para pagar, e a **taxa da LocFlow em aberto** quando há. |
+| **Saldo com os parceiros** | Quanto você tem **a receber** e **a pagar**, e de quem. Tem um botão para pagar, e a **taxa da LocFlow em aberto** quando há: com conta a pagar, ela aparece como **vai junto do próximo PIX** e já está somada no **a pagar**; sem conta a pagar, tem o botão **Pagar**. |
 | **Precisa de você** | Só o que é a **sua vez** de fazer, em atalhos com contador. |
 | **Contas com parceiros** | Um cartão por parceiro, com o resultado da conta e quem paga. **Ver todos** abre a lista de Parceiros. |
 | **Movimento** | O dinheiro do período: o que nasceu em repasses, o que os parceiros receberam, o que você recebeu e a sua parte da taxa. |
@@ -47,13 +47,14 @@ O botão do cartão **Saldo com os parceiros** muda conforme a conta:
 | Mais de uma conta a pagar | **Pagar vários parceiros**. Você escolhe quem entra num PIX só. |
 | Já existe um PIX de vários parceiros em aberto | **Ver o PIX em aberto**, que reabre o mesmo código em vez de gerar outro. |
 
-Em **Pagar vários parceiros**, cada parceiro aparece marcado, e você desmarca quem não quer pagar agora. Alguns ficam de fora do PIX único, com o motivo escrito ao lado:
+Em **Pagar vários parceiros**, cada parceiro aparece marcado pelo saldo da conta com ele, e você desmarca quem não quer pagar agora. O parceiro que também te deve entra **pela diferença**. A taxa da LocFlow em aberto vai junto, uma vez só. Alguns não entram no PIX único, com o motivo escrito ao lado:
 
-* **o parceiro que também te deve:** a conta com ele é paga pela diferença, à parte;
+* **o parceiro que te paga:** na conta com ele, quem deve a diferença é ele, e o PIX é dele. Ele aparece na lista, mas não dá para marcá-lo;
 * **a conta em que ele vende para você:** ela tem outro acerto;
-* **a conta que já tem um PIX em aberto.**
+* **a conta que já tem um PIX em aberto;**
+* **a conta com uma devolução antiga com taxa, ou em que só falta a taxa da LocFlow:** ela é paga pela conta dele.
 
-Para cada um desses há o botão **Pagar à parte**.
+Para quem você pode pagar, há o botão **Pagar à parte**.
 
 {% hint style="warning" %}
 **Fechar a folha não cancela o PIX.** Se você gerou o código e fechou, ele continua valendo: pagar de novo reabre o mesmo código, e a ficha do parceiro mostra o PIX em aberto. Para desistir, use **Cancelar o PIX**. O banco não cancela um PIX já gerado: até ele expirar, não pague o código antigo, porque se ele for pago o pagamento vale.
@@ -65,7 +66,7 @@ O cartão mostra só o que depende de você, agrupado em cinco atalhos. O que es
 
 | Atalho | O que entra nele |
 | --- | --- |
-| **Pagar** | As contas em que você paga, e a taxa da LocFlow em aberto. |
+| **Pagar** | As contas em que você paga, com a taxa da LocFlow em aberto somada ao PIX. A taxa sozinha só aparece aqui quando não há conta a pagar. |
 | **Confirmar o que recebeu** | Um parceiro disse que te pagou por fora e espera a sua resposta; ou você entregou, o cliente pagou na porta e falta dizer como. |
 | **Pedidos** | Um pedido esperando o seu aceite, ou um pedido recusado que você precisa passar a outro parceiro. |
 | **Acordos e conexões** | Uma proposta de acordo ou de conexão esperando você, ou um convite de parceiro externo perto de expirar. |
@@ -167,7 +168,7 @@ O detalhe da conta, com cada valor que a forma e o **Registrar o que recebi**, f
 ## Situações reais {#situacoes-reais}
 
 * **"Quanto paguei ao Transportes Aurora neste mês?"** Abra a ficha dele, aba **Histórico**: cada pagamento aparece com o dia e o valor que andou no PIX.
-* **"Tenho três parceiros para pagar."** No Início, **Pagar vários parceiros**: escolha quem entra e pague um PIX só. Quem também te deve fica de fora, com o motivo e o botão **Pagar à parte**.
+* **"Tenho três parceiros para pagar."** No Início, **Pagar vários parceiros**: escolha quem entra e pague um PIX só, cada um pelo saldo da conta. Quem também te deve entra pela diferença; quem te paga aparece sem poder ser marcado.
 * **"Gerei o PIX e fechei sem pagar."** O código continua valendo. O botão vira **Ver o PIX em aberto**, que reabre o mesmo código.
 * **"O contador de Precisa de você não zera."** Ele só conta o que é a sua vez. Abra cada atalho: o que sobrou é seu, como um pedido esperando o seu aceite ou uma declaração esperando a sua resposta.
 * **"O meu atendente não vê valores no painel."** É de propósito: quem não tem acesso ao dinheiro vê os pedidos, os acordos e a agenda, sem nenhum valor. O acesso é definido em [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).

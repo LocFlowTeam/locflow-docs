@@ -199,11 +199,13 @@ O valor a pagar aparece **detalhado**: quanto vai **ao parceiro** e quanto é **
 
 No Início da Rede, quando há mais de uma conta a pagar, o botão é **"Pagar vários parceiros"**: um único PIX que fecha o saldo dos parceiros que você marcar. A folha lista cada um com o valor; desmarque quem não quer pagar agora. Detalhes em [O painel da Rede](painel-da-rede.md#pagar).
 
-Quatro coisas que valem saber:
+O que vale saber:
 
+* **Cada parceiro entra pela conta dele, pelo saldo.** Se ele também te deve, entra pela **diferença**, e os dois lados da conta são dados como pagos quando o PIX cai.
+* **Quem te paga não pode ser marcado.** Se na conta com ele quem deve a diferença é ele, o parceiro aparece na lista com o aviso **"Ele te paga"**: o PIX daquela conta é dele.
+* **A taxa da LocFlow em aberto vai junto, uma vez só.** Veja [A taxa quando você paga por fora](#divida-de-taxa).
 * **Um PIX por vez.** Enquanto houver uma quitação em aberto (em lote ou individual), a outra fica travada. É o que impede pagar o mesmo repasse duas vezes.
-* **Quem também te deve fica de fora.** A conta com ele é paga pela diferença, à parte, pelo botão **Pagar à parte**.
-* **Quem não tem recebimento apto fica de fora** — e o LocFlow avisa quantos ficaram, para você quitá-los individualmente depois de eles completarem o cadastro.
+* **Alguns ficam de fora, com o motivo escrito** e o botão **Pagar à parte**: quem não tem recebimento apto, a conta com uma devolução antiga com taxa e a conta em que só falta a taxa da LocFlow.
 * **O PIX é reaproveitado.** Se você gerou e voltou depois, verá o **mesmo código**, não um novo (a menos que o anterior tenha expirado).
 
 {% hint style="info" %}
@@ -232,10 +234,11 @@ Enquanto a declaração aguarda a resposta, a **quitação via PIX daquele parce
 
 ### A taxa quando você paga por fora {#divida-de-taxa}
 
-Confirmado um repasse manual, a taxa daquela operação aparece no Início da Rede, no cartão **Saldo com os parceiros**, como **"Taxa da LocFlow em aberto"** — com o botão **"Pagar"**. Ela também entra em **Precisa de você › Pagar**. Vale saber:
+Confirmado um repasse manual, a taxa daquela operação aparece no Início da Rede, no cartão **Saldo com os parceiros**, como **"Taxa da LocFlow em aberto"**. Ela **vai junto do próximo PIX que você pagar** a qualquer parceiro (a conta de um, a de vários ou o acerto), uma vez só: o valor do botão **Pagar** já a inclui, e a folha do PIX mostra a linha **Taxa da LocFlow em aberto**. Vale saber:
 
-* **O valor do PIX é exatamente a dívida.** A tarifa da transação é da LocFlow — você não paga um centavo além dos 8% combinados.
-* **Um PIX recolhe tudo.** A dívida de vários repasses manuais (de vários parceiros) sai num PIX só — a mesma lógica do PIX de vários parceiros.
+* **Sem outro PIX a pagar, ela tem o seu.** Quando não há nenhuma conta a pagar, a linha da taxa mostra o botão **"Pagar"** e ela entra em **Precisa de você › Pagar**. O valor desse PIX é exatamente a dívida, e a tarifa da transação é da LocFlow.
+* **Nunca em dois PIX.** A taxa que já vai num PIX aberto não entra em outro. Se aquele PIX expirar ou for cancelado, ela volta para o próximo.
+* **Um PIX recolhe tudo.** A dívida de vários repasses manuais (de vários parceiros) sai de uma vez, junto do mesmo PIX.
 * **Se parte da taxa já tinha sido retida na fonte** (o cliente pagou online), a dívida é só a **diferença** — nunca 8% duas vezes.
 * **A taxa independe de como o cliente pagou.** Ela nasce da operação intermediada pela Rede — pagamento online, baixa manual ou dinheiro na porta, a taxa é a mesma; o que muda é apenas **por onde** ela é recolhida.
 
@@ -332,6 +335,10 @@ Tudo isso aparece no [painel da Rede](painel-da-rede.md), para os dois lados:
 ## Como ler a conta {#status-dos-ganhos}
 
 Com cada parceiro existe **uma conta**: o que um deve ao outro se abate, e só a diferença é paga, por quem deve, num PIX só. Na ficha do parceiro, a **Conta** mostra os dois lados, lado a lado, e diz quem paga quanto. Em **Valores desta conta** aparece cada valor que a forma, com o pedido que o originou.
+
+* **Quando o parceiro deve a diferença, o PIX dele leva primeiro a taxa da LocFlow daqueles pedidos** e o resto chega a você.
+* **Se o que ele deve não passa da taxa,** o PIX dele vai todo para a LocFlow e você não recebe nada nesse PIX. O que falta da taxa fica em aberto com você e [vai junto do seu próximo PIX](#divida-de-taxa).
+* **Devoluções antigas com taxa** (registradas antes da versão 3.3.0) entram na mesma conta: também ela é paga num PIX só, pelo saldo.
 
 {% hint style="info" %}
 Se você **recebeu do cliente na entrega** e ficou devendo ao vendedor, esse valor aparece na conta como **o que você deve**, com o botão **Pagar** quando é a sua vez. Veja [O sentido inverso do repasse](#repasse-inverso).
