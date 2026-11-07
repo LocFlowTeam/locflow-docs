@@ -14,10 +14,10 @@ Quando um cliente paga **pelo cartão** (pelo [Pagamento online](pagamento-onlin
 ## Onde você vê o seu saldo
 
 - **Sua organização:** em **Configurações → Integração de Pagamento**, no card **Recebíveis**.
-- **Parceiro externo:** em **Parcerias → Meu recebimento** (você vê o **seu próprio** saldo, separado do da organização).
+- **Parceiro externo:** em **Menu › Recebimento** (você vê o **seu próprio** saldo, separado do da organização).
 
 {% hint style="warning" %}
-**Para o parceiro, "Meu recebimento" não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo em Meus Ganhos, mas não há como pagá-lo pelo app. O mesmo vale no sentido inverso: se você recebeu do cliente na rua e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
+**Para o parceiro, o Recebimento não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo no seu Início, mas não há como pagá-lo pelo app. O mesmo vale no sentido inverso: se você recebeu do cliente na rua e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
 {% endhint %}
 
 ## Os três números do seu saldo
@@ -86,7 +86,7 @@ O valor antecipado cai no **Disponível** — de lá você transfere para o banc
 
 - **"Meu saldo está zerado, mas vendi no cartão."** O valor provavelmente está em **A receber** (compensando). Ele vira **Disponível** no prazo do adquirente — ou você **antecipa** para receber antes.
 - **"Recebi menos do que a venda."** No cartão, o adquirente desconta as taxas dele; se você antecipou, há também a **taxa de antecipação** (que você viu na simulação).
-- **"Sou parceiro externo, vejo o saldo da organização?"** Não. Em **Meu recebimento** você vê **apenas o seu** saldo e antecipa **os seus** recebíveis.
+- **"Sou parceiro externo, vejo o saldo da organização?"** Não. Em **Recebimento** você vê **apenas o seu** saldo e antecipa **os seus** recebíveis.
 - **"Onde vejo isso sem entrar na Pagar.me?"** Tudo aqui no LocFlow — é o mesmo saldo do painel do gateway, só que dentro do app.
 
 ## Próximo passo

@@ -25,11 +25,9 @@ A Rede em si vive no **alternador de espaço de trabalho** (*Operação ↔ Rede
 
 Imagine que você fecha um pedido com um cliente, mas quem entrega (ou parte do material) vem de uma **empresa parceira**. Em vez de fazer acertos por fora — planilha, conversa de WhatsApp, conferência no fim do mês — o LocFlow registra o **acordo** entre as duas empresas e, quando o cliente paga, **divide os valores conforme o combinado**.
 
-Em palavras simples, como diz a própria tela:
+Em palavras simples: você fecha acordos com parceiros, e o sistema organiza as regras, os valores e a divisão dos ganhos, com menos trabalho manual.
 
-> Você fecha acordos com parceiros e o sistema organiza regras, valores e divisão de ganhos para tudo funcionar com menos trabalho manual.
-
-O programa se apoia em quatro ideias:
+A parceria se apoia em quatro ideias:
 
 | Ideia | O que significa para você |
 | --- | --- |

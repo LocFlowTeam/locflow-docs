@@ -197,7 +197,7 @@ Quem responde ao cliente é você — então você não pode descobrir a falha d
 Os dois abrem direto a reserva, onde o acompanhamento da rota já está. Quem recebe é o **responsável pela operação** — dá para ajustar os canais na [Central de notificações](../configuracoes/central-de-notificacoes.md).
 
 {% hint style="info" %}
-**E o dinheiro?** O quanto o parceiro ganha vem dos **preços do acordo × quantidades × fator de locação** (as mesmas diárias/locações do preço ao cliente), mais o frete dele — e a liquidação acontece pelo gatilho do acordo (no pagamento, na entrega ou na retirada). O acompanhamento vive no Financeiro: **Repasses** (para você) e **Meus Ganhos** (para o parceiro), com o selo "Rede". Os detalhes dessa divisão estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
+**E o dinheiro?** O quanto o parceiro ganha vem dos **preços do acordo × quantidades × fator de locação** (as mesmas diárias/locações do preço ao cliente), mais o frete dele — e a liquidação acontece pelo gatilho do acordo (no pagamento, na entrega ou na retirada). O acompanhamento vive no [painel da Rede](painel-da-rede.md), para você e para o parceiro: o Início, a ficha de cada parceiro e Pedidos. Os detalhes dessa divisão estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
 {% endhint %}
 
 ## O ciclo da solicitação {#ciclo-da-solicitacao}
@@ -235,7 +235,7 @@ A mesma reserva aparece com rótulos diferentes conforme **quem olha** — a tel
 | Ganho revertido | **Orçamento revertido — repasse desfeito** | **Orçamento revertido — repasse desfeito** |
 | Com desvio dos termos | **Fora do acordo — aguardando parceiro** | **Fora do acordo — revise** |
 
-Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, o que fica é a **[central de avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)**: avaliar o parceiro e acompanhar a revelação das notas.
+Todos aparecem **no selo "da rede" da sua esteira de orçamentos** e no detalhe do repasse — e a linha "Repasse a parceiro" nas ações do orçamento reflete o mesmo estado, com atalho para o detalhe. Na Rede, **[Pedidos](painel-da-rede.md#pedidos)** mostra cada pedido repassado com a situação e o dinheiro juntos, e **[Avaliações](reputacao-e-boas-praticas.md#central-de-avaliacoes)** é onde você avalia o parceiro e acompanha a revelação das notas.
 
 ## De qual galpão a operação sai {#galpao-de-origem}
 

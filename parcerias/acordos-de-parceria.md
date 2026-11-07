@@ -5,7 +5,7 @@ description: O contrato da parceria — itens e preços, quando e quanto se paga
 
 # Acordos de parceria
 
-**Onde fica:** no espaço **Rede de Parceiros** (alterne o espaço pelo menu lateral ou pela aba Menu) → **Acordos**.
+**Onde fica:** no espaço **Rede de Parceiros** (alterne o espaço pelo menu lateral ou pela aba Menu) → **Parceiros**, na forma de ver **Acordos**. Os acordos com cada parceiro também aparecem na ficha dele. Para o parceiro convidado, em **Menu › Acordos**.
 
 O **acordo** é o contrato da parceria: o documento vivo, dentro do LocFlow, que registra **quem faz o quê e por quanto**. De um lado, o **vendedor** — dono do cliente, do orçamento e da fatura. Do outro, o **parceiro logístico** — quem executa a operação. O acordo diz quais itens entram, quanto o parceiro recebe por cada um, **quando e quanto** desse repasse é pago, como fica o frete e se ele pode receber o cliente na porta. Vale para **locação** e para **venda** de bens móveis.
 
@@ -108,7 +108,7 @@ Para você não montar isso do zero, a tela oferece três combinados prontos —
 {% endhint %}
 
 {% hint style="info" %}
-**Vencer não é o mesmo que ser pago na hora.** Quando o cliente paga online e o momento é o pagamento, a parte do parceiro se reparte **na fonte**. Nos demais casos, o repasse vira um **saldo a pagar** que você quita depois. Os caminhos do dinheiro — **Financeiro › Repasses** para você, **Meus Ganhos** para o parceiro — ficam em [O dinheiro da parceria](dinheiro-da-parceria.md).
+**Vencer não é o mesmo que ser pago na hora.** Quando o cliente paga online e o momento é o pagamento, a parte do parceiro se reparte **na fonte**. Nos demais casos, o repasse vira um **saldo a pagar** que você quita depois. O que está em aberto e o que já foi pago aparece no [painel da Rede](painel-da-rede.md), para os dois lados; os caminhos do dinheiro estão em [O dinheiro da parceria](dinheiro-da-parceria.md).
 {% endhint %}
 
 ### Cobrança na rua {#cobranca-na-rua}
@@ -186,7 +186,7 @@ A doutrina é a mesma nos quatro: **fecha a porta do que vem, não arranca o que
 
 Tudo acima vale para qualquer acordo. Quando as duas partes são **organizações LocFlow de verdade** — a parceria **interna** (org↔org) — o acordo ganha três características a mais:
 
-**Exige um vínculo ativo.** Antes do acordo vem o **vínculo** de parceria entre as duas organizações (uma propõe, a outra aceita — pela vitrine de **Descobrir parceiros** ou por convite direto). O acordo interno é **endereçado à organização parceira**, não a uma pessoa: quem tem permissão do lado de lá negocia por ela.
+**Exige um vínculo ativo.** Antes do acordo vem o **vínculo** de parceria entre as duas organizações (uma propõe, a outra aceita — pela vitrine de **Achar parceiros** ou por convite direto). O acordo interno é **endereçado à organização parceira**, não a uma pessoa: quem tem permissão do lado de lá negocia por ela.
 
 **Mapeamento item a item.** Cada organização tem o **seu** catálogo — a sua "Mesa Rústica" e a "Mesa de Madeira 6 Lugares" dela podem ser o mesmo móvel com nomes diferentes. O acordo interno resolve isso com um **mapeamento item a item** entre os dois catálogos: o LocFlow sugere os pares automaticamente (**auto-match** pelo catálogo global) e você **valida** cada um. A **ativação exige o mapa completo** — todo item acordado precisa do seu correspondente do outro lado, porque é por essa tradução que o pedido repassado vira operação no sistema da parceira.
 
@@ -255,7 +255,7 @@ Confira o **mapeamento**: a ativação exige que todo item acordado tenha o corr
 Considere subir a **janela de aceite** (força resposta cedo) e olhe o índice de confiabilidade dele — expirar prazo penaliza. Se o problema persistir, o comparativo de repasses vai naturalmente favorecer parceiros que respondem.
 
 **"Encerrei um acordo. E os pedidos que ele já executou?"**
-Permanecem devidos: encerrar corta **novas** reservas e **novos** repasses, não apaga o passado. Os saldos pendentes continuam em Financeiro › Repasses.
+Permanecem devidos: encerrar corta **novas** reservas e **novos** repasses, não apaga o passado. Os saldos pendentes continuam na conta com ele, no [painel da Rede](painel-da-rede.md).
 
 ## Próximo passo {#proximo-passo}
 

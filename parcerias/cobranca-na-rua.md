@@ -82,7 +82,7 @@ Três coisas acontecem na hora:
 Ele quita essa dívida por **PIX**, e a taxa da plataforma sai no mesmo ato. Zerou, acabou.
 
 {% hint style="info" %}
-**Onde cada um vê isso:** para o parceiro, em **Meus Ganhos**, como um valor **a pagar** (em âmbar), com o botão de quitar via PIX ali mesmo. Para você, em **Financeiro › Repasses**, como um valor **a receber** daquele parceiro.
+**Onde cada um vê isso:** para o parceiro, no Início dele e em **Sua conta**, como um valor **a pagar**, com o botão de pagar ali mesmo. Para você, no [painel da Rede](painel-da-rede.md), como um valor **a receber** daquele parceiro.
 {% endhint %}
 
 ### A conta, com números {#a-conta}
@@ -161,7 +161,7 @@ O dinheiro caiu na sua conta. Nada inverte: você deve o repasse a ele, como em 
 O app recusa a declaração. Não é bug: a coleta na rua é tudo-ou-nada. Peça ao parceiro para gerar o **PIX** da parcela e receber os R$ 400 por ali — o resto segue cobrável normalmente.
 
 **"O parceiro recebeu tudo em espécie e sumiu com o acerto."**
-O valor está registrado como **a receber daquele parceiro** em Financeiro › Repasses, com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele em Meus Ganhos e conta na relação de vocês.
+O valor está registrado como **a receber daquele parceiro** na ficha dele, no [painel da Rede](painel-da-rede.md#ficha), com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele no Início e em Sua conta, e conta na relação de vocês.
 
 **"Encerrei o acordo com esse parceiro. E o que ele coletou?"**
 Continua devido, e continua cobrável. Encerrar fecha a porta do que vem; não apaga o que já foi pactuado. Veja [Vigência do acordo](acordos-de-parceria.md#vigencia).
