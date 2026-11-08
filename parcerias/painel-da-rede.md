@@ -29,7 +29,7 @@ O Início é uma pilha de cartões. No celular eles aparecem nesta ordem; no com
 | Cartão | O que ele responde |
 | --- | --- |
 | **Alerta de atraso** | Um parceiro passou do prazo para acertar com você: quantos dias e quanto falta. Só aparece quando há atraso. |
-| **Saldo com os parceiros** | Quanto você tem **a receber** e **a pagar**, e de quem. Tem um botão para pagar, e a **taxa da LocFlow em aberto** quando há: com conta a pagar, ela aparece como **vai junto do próximo PIX** e já está somada no **a pagar**; sem conta a pagar, tem o botão **Pagar**. |
+| **Saldo com os parceiros** | Quanto você tem **a receber** e **a pagar**, e de quem. Tem um botão para pagar, o alternador **Total / Detalhado** e a **taxa da LocFlow em aberto** quando há: com conta a pagar, ela aparece como **vai junto do próximo PIX** e já está somada no **a pagar**; sem conta a pagar, tem o botão **Pagar**. |
 | **Precisa de você** | Só o que é a **sua vez** de fazer, em atalhos com contador. |
 | **Contas com parceiros** | Um cartão por parceiro, com o resultado da conta e quem paga. **Ver todos** abre a lista de Parceiros. |
 | **Movimento** | O dinheiro do período: o que nasceu em repasses, o que os parceiros receberam, o que você recebeu e a sua parte da taxa. |
@@ -59,6 +59,17 @@ Para quem você pode pagar, há o botão **Pagar à parte**.
 {% hint style="warning" %}
 **Fechar a folha não cancela o PIX.** Se você gerou o código e fechou, ele continua valendo: pagar de novo reabre o mesmo código, e a ficha do parceiro mostra o PIX em aberto. Para desistir, use **Cancelar o PIX**. O banco não cancela um PIX já gerado: até ele expirar, não pague o código antigo, porque se ele for pago o pagamento vale.
 {% endhint %}
+
+### Total ou Detalhado {#total-ou-detalhado}
+
+O alternador **Total / Detalhado** muda o quanto você vê de cada valor. O número grande **não muda** entre os dois: em **A pagar** é o que sai da sua conta, e em **A receber** é o que entra para você.
+
+* **Total:** só o número, como sempre.
+* **Detalhado:** embaixo do número aparece para onde vai o dinheiro: quanto vai aos parceiros, quanto entra para você e quanto é **taxa da LocFlow**, separada entre **a sua parte** e **a dos parceiros**. A parte do parceiro já sai do que ele recebe; quando é você quem paga, ela vai no seu PIX junto com o resto.
+
+A escolha vale para a Rede inteira (o Início, as contas com cada parceiro, a ficha do parceiro e os pedidos) e fica lembrada **neste aparelho**. Na hora de pagar, a composição aparece sempre, com o alternador em qualquer posição.
+
+A barra de cada valor usa as mesmas cores em toda a Rede: **roxo** é você, **verde-azulado** é o parceiro, **rosa** é a LocFlow. E o preenchimento diz em que pé o dinheiro está: **cheio** já foi pago, **claro com contorno** já é devido e ainda não foi pago, **tracejado** ainda vai acontecer.
 
 ### Precisa de você {#precisa-de-voce}
 
@@ -144,6 +155,8 @@ Em **Valores desta conta**, o **⋯** de cada valor serve para **contestar**; qu
 * **O pedido que espera o seu aceite** tem o botão **Aceitar**. A folha mostra quanto fica para você, as datas da entrega e da retirada e de qual galpão ele sai. Para ler os itens ou recusar com o motivo, abra o pedido inteiro.
 
 O valor de cada pedido aparece **para ele** ou **para você**. Antes da entrega, ele aparece como **previsto**: no Pro, e sempre para o parceiro convidado.
+
+Em **Detalhado**, cada pedido mostra as três partes (você, o parceiro e a taxa), cada uma no seu pé: pago, falta pagar ou previsto. Na ficha do parceiro, o filtro **Em aberto** soma os pedidos num cartão só: quanto os clientes pagam e para onde vai.
 
 ## Avaliações {#avaliacoes}
 
