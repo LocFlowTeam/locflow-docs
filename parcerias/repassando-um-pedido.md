@@ -180,7 +180,7 @@ Depois do aceite, a ficha do pedido se lê de cima para baixo:
 4. **O pedido:** a entrega, a retirada, os itens e o frete, numa seção que abre e fecha.
 5. **Mais deste pedido:** o pedido em Orçamentos, o acordo, **a conta com o parceiro** (onde você paga o acerto, contesta um valor ou registra que o cliente pagou direto a você), a avaliação e as saídas.
 
-O parceiro logístico vê, na ficha dele, só a parte dele: quanto o serviço valeu, a taxa dele e quanto recebeu. Quando ele recebeu do cliente, a ficha mostra também quanto ficou com ele e quanto pagou de diferença.
+O parceiro logístico vê, na ficha dele, só a parte dele: quanto o serviço valeu, a taxa dele e quanto recebeu. Quando ele recebeu do cliente, a ficha mostra também quanto ficou com ele e a diferença: ele paga a você quando o cliente deixou com ele mais do que o dele, e você paga a ele quando deixou menos.
 
 ### O que você passa a ver {#acompanhamento}
 
