@@ -1,11 +1,11 @@
 ---
 icon: address-book
-description: Sua agenda de clientes — cadastre uma vez, reaproveite em todo orçamento e complete os dados só quando a operação pedir.
+description: Sua agenda de clientes, fornecedores e colaboradores — cadastre uma vez, reaproveite em todo orçamento e complete os dados só quando a operação pedir.
 ---
 
 # Contatos
 
-O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e possíveis clientes), pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** em qualquer orçamento — você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
+O módulo de **Contatos** é a sua agenda dentro do LocFlow: seus clientes (e possíveis clientes), seus fornecedores e as pessoas da sua equipe, pessoas físicas ou jurídicas. Cada [contato](../primeiros-passos/glossario.md) que você cadastra fica disponível para ser **reaproveitado** em qualquer orçamento — você digita os dados uma vez e nunca mais precisa redigitar nome, celular ou endereço.
 
 {% hint style="success" %}
 **Por que isso te faz faturar mais:** uma base de clientes organizada é uma base que **recompra**. Quando todo cliente já está cadastrado, com canal de contato e histórico, fazer follow-up vira questão de minutos — e cliente que você consegue chamar de volta é cliente que aluga (ou compra) de novo.
@@ -43,6 +43,32 @@ O **documento (CPF/CNPJ) é opcional** no cadastro — você pode salvar um cont
 
 {% hint style="info" %}
 O cadastro pede **ao menos um canal**: celular **ou** e-mail. Sem um meio de contato, você não consegue dar follow-up — por isso o sistema garante esse mínimo.
+{% endhint %}
+
+### Tipo de contato: cliente, fornecedor e colaborador {#tipo-de-contato}
+
+O mesmo contato pode ser **cliente**, **fornecedor** e **colaborador** ao mesmo tempo — a transportadora que também aluga com você é **um** cadastro com dois tipos, não dois cadastros. O tipo é a primeira escolha do formulário, e dá para marcar mais de um.
+
+| Tipo | Ícone na lista | Quando marcar |
+| --- | --- | --- |
+| **Cliente** | 🛍️ sacola, em roxo | Quem aluga ou compra de você. É o tipo de todo contato novo. |
+| **Fornecedor** | 🏪 loja, em âmbar | Quem presta serviço ou vende para você: frete, montagem, mão de obra. |
+| **Colaborador** | 👤 pessoa com engrenagem, em azul | Quem trabalha com você e pode, se você quiser, entrar no sistema. |
+
+Na lista de contatos, o tipo aparece **só como ícone**, na cor do tipo — o nome completo aparece no filtro e na ficha do contato.
+
+#### O cadastro continua no passo de cada tipo {#passos-por-tipo}
+
+Marcou **Fornecedor** ou **Colaborador**? Ao salvar o contato, o cadastro segue para o passo daquele tipo — você não precisa ir a outra tela para terminar:
+
+1. **Contato** — nome, documento, canais, endereço. **Salvar e avançar.**
+2. **Fornecedor** — os **serviços** que ele presta (pelo menos um) e, se quiser, a **classificação**: Direto, Indireto ou Estratégico, com a matriz de impacto e risco como aprofundamento.
+3. **Colaborador** — as **funções** dele (pelo menos uma), onde ele trabalha, a CNH e, se ele vai entrar no sistema, o **acesso** e os **papéis**. Se o contato ainda não tem e-mail, o passo de acesso pede o e-mail ali mesmo e o grava no contato.
+
+Vale também na **edição**: marcar um tipo novo num contato que já existe abre o passo daquele tipo ao salvar.
+
+{% hint style="info" %}
+**Saiu antes de terminar?** Nada se perde. O contato fica com o tipo marcado e aparece como **Cadastro incompleto** em Colaboradores (e com **Completar o cadastro de fornecedor** em Fornecedores). A ficha do contato mostra o mesmo aviso, com o botão **Completar cadastro**, que volta direto ao passo que faltou.
 {% endhint %}
 
 ### Endereço {#endereco}
@@ -83,7 +109,7 @@ Veja [Conheça a Flo](../flo/conheca-a-flo.md#criar-contato).
 
 ### Buscar e filtrar na lista {#buscar-e-filtrar}
 
-A lista tem uma **busca inteligente** no topo: digite nome, documento, parte do telefone ou e-mail e os resultados se ajustam. Quando a base cresce, a lista é **paginada** (você escolhe quantos por página e navega entre as páginas). Tocar em um contato abre a **ficha** com Perfil, Contato e Endereço; o lápis leva direto para a edição. Em telas largas (no computador), a lista vira uma **tabela** ao lado da ficha — você seleciona um contato à esquerda e lê os detalhes à direita.
+A lista tem uma **busca inteligente** no topo: digite nome, documento, parte do telefone ou e-mail e os resultados se ajustam. Para ver só os fornecedores (ou só a equipe), filtre por **tipo de contato** — o ícone de cada linha confirma o recorte. Quando a base cresce, a lista é **paginada** (você escolhe quantos por página e navega entre as páginas). Tocar em um contato abre a **ficha** com Perfil, Contato e Endereço; o lápis leva direto para a edição. Em telas largas (no computador), a lista vira uma **tabela** ao lado da ficha — você seleciona um contato à esquerda e lê os detalhes à direita.
 
 ```mermaid
 flowchart LR
@@ -187,6 +213,7 @@ Se o contato ainda **não tem endereço** quando você escolhe "Endereço do con
 - **Lead que ainda não fechou:** um possível cliente pediu cotação pelo WhatsApp. Você cadastra só **nome + celular (WhatsApp)** e manda a proposta. Ele entra como **Contato qualificado (lead)** — e fica na sua lista para o follow-up.
 - **Faltou o CPF na hora da cobrança:** você vai gerar um link de pagamento e o método pede CPF e e-mail do cliente. Em vez de abrir o cadastro inteiro, a janela **"Completar dados do contato"** pede só esses dois campos; você preenche, toca em **"Salvar e gerar PIX"** e a cobrança segue na sequência.
 - **Empresa com nota fiscal:** uma construtora vai alugar andaimes e precisa de nota. Você cadastra como **Pessoa Jurídica**, com CNPJ, Razão Social, Nome fantasia e IE — pronto para a operação fiscal quando ela exigir.
+- **O cliente também presta frete:** a transportadora do Paulo aluga tendas com você e faz entregas para você. Em vez de cadastrá-la duas vezes, abra o contato, marque também **Fornecedor** e salve: o cadastro segue para os serviços que ela presta (Frete) e a classificação. Ela passa a aparecer em Fornecedores, com o mesmo cadastro.
 - **O cliente ligou e a atendente cadastrou de novo:** com **Telefone identifica o contato** ligado, ela digita o celular, o aviso aparece na hora — *"Já existe um contato com este telefone: Maria Souza"* — e ela toca em **Usar este contato**. O orçamento sai no cadastro certo, com o histórico inteiro.
 
 {% hint style="success" %}
