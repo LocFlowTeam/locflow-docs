@@ -91,7 +91,9 @@ O kit tem seus próprios toggles **"você vai alugar?"** e **"você vai vender?"
 A chave **"Disponível para locação/venda?"**, na seção Identidade, controla se o kit está **Ativo** ou **Inativo**.
 
 - **Ativo** (chave ligada): o kit aparece e pode ser jogado em um orçamento.
-- **Inativo** (chave desligada): o kit fica **recolhido** — na listagem ele aparece esmaecido, com um selo **INATIVO**, e sai do caminho de quem está montando um orçamento.
+- **Inativo** (chave desligada): o kit fica **recolhido** — na listagem ele aparece com o ícone de pausa cinza, e sai do caminho de quem está montando um orçamento.
+
+Como nos produtos, a lista de kits não tem botões: ativar, inativar e editar ficam na **ficha** do kit.
 
 {% hint style="info" %}
 Deixar inativo é melhor que excluir quando você só quer **pausar** um kit (ex.: combo de fim de ano fora de temporada). Você não perde a composição nem o histórico de preços — é só religar quando voltar a oferecer.
