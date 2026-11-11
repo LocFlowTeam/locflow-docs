@@ -205,7 +205,7 @@ Papel e função são **eixos diferentes**: o papel libera **o que a pessoa vê*
 
 ## Quem já está cadastrado
 
-A lista de **Pessoas** mostra a equipe e os convites. Na tela larga, a primeira coluna diz o acesso por um ícone, e os papéis aparecem pelo nome. Em **Filtros**, você recorta por grupo (cada um com a contagem ao lado):
+A lista de **Pessoas** mostra a equipe e os convites. O acesso aparece por um ícone: na tela larga, na primeira coluna; no celular, no cartão da pessoa. Na tela larga, os papéis aparecem pelo nome. O contato marcado como colaborador que ainda não tem cadastro diz isso por escrito no cartão: **Cadastro incompleto**. Em **Filtros**, você recorta por grupo (cada um com a contagem ao lado):
 
 * **Com acesso** — quem já tem login ativo.
 * **Sem acesso** — colaboradores cadastrados que ainda não entram no sistema. Use **Conceder acesso** para enviar o convite.

@@ -87,6 +87,8 @@ O status é **derivado dos pagamentos**, não definido na mão. À medida que vo
 
 A lista abre na aba **A receber**: as cobranças pendentes e as pagas em parte, que são as que pedem ação. As outras abas são **Pagas**, **Canceladas** e **Todas**. Cada aba é um atalho do filtro de **Status**, então aba e filtro nunca discordam.
 
+Cada aba mostra **quantas cobranças tem**, como em **A receber (11) · Pagas (5)**. O número acompanha a busca e os filtros: com a busca "Ana", **Pagas (2)** são as cobranças pagas da Ana. E ele é sempre o total da lista que a aba abre, então você sabe se há algo em **Canceladas** sem precisar tocar nela.
+
 ## O total a receber {#total-a-receber}
 
 À direita das abas (no celular, logo acima da lista), o LocFlow mostra:
@@ -138,7 +140,7 @@ flowchart LR
 
 ## Abrir o detalhe
 
-Toque em qualquer cobrança para abrir o **detalhe**: ali você vê as parcelas, os vencimentos, o que já foi pago, e tem as ações de receber e de gerar link de pagamento. Em telas grandes, o detalhe abre ao lado da lista; no celular, sobe como um painel. O detalhe sempre aponta de volta para o **orçamento de origem**.
+Toque em qualquer cobrança para abrir o **detalhe**: ali você vê as parcelas, os vencimentos, o que já foi pago, e tem as ações de receber e de gerar link de pagamento. Em telas grandes, o detalhe abre ao lado da lista, e a lista vira uma coluna estreita com o cliente, o vencimento, o valor e a situação, com a cobrança aberta marcada. Cobrança vencida aparece com o selo vermelho **Vencida**. Assim você passa de uma cobrança para a próxima sem fechar o detalhe. No celular, o detalhe sobe como um painel. O detalhe sempre aponta de volta para o **orçamento de origem**.
 
 Para o que fazer dentro do detalhe, veja [Recebendo pagamentos](recebendo-pagamentos.md) e [Pagamento online](pagamento-online.md).
 
