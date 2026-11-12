@@ -57,6 +57,8 @@ Confirmado, o lançamento sai desta tela e passa a compor o **saldo**.
 **Nem toda linha é confirmável aqui.** Você confirma o que o financeiro gerencia — despesas e receitas **manuais**, **contas fixas** e o **custo de frete de terceiro** provisionado por um pedido. O que espelha um fato de outro módulo (o recebimento de uma fatura, por exemplo) é resolvido na origem. E confirmar exige a permissão de editar lançamentos: se a opção não aparece, é acesso — fale com quem administra as permissões.
 {% endhint %}
 
+A fatura do cartão de crédito aparece aqui como uma linha só, **Fatura · nome do cartão**, com o que falta pagar, e se paga na tela de Cartões, para onde o toque leva — veja [Cartões de crédito](cartoes-de-credito.md#pagar).
+
 ## Criar uma conta a pagar ou a receber
 
 O botão **+** abre o lançamento já do lado certo e já como **previsto**: você informa valor, descrição, categoria e **vencimento**. No passo *Quando* dá para transformá-lo numa **conta fixa** (mensal, semanal ou anual) — e os próximos vencimentos já nascem nesta lista.

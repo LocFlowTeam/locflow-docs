@@ -102,6 +102,7 @@
 * [Lançamentos](financeiro/lancamentos.md)
 * [Contas a pagar e a receber](financeiro/contas-a-pagar-e-a-receber.md)
 * [Contas: caixa, banco e gateway](financeiro/contas.md)
+* [Cartões de crédito](financeiro/cartoes-de-credito.md)
 * [Categorias e plano de contas](financeiro/categorias-e-plano-de-contas.md)
 * [Fornecedores](financeiro/fornecedores.md)
 * [Conciliação e fechamento](financeiro/conciliacao-e-fechamento.md)

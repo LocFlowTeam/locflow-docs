@@ -169,3 +169,4 @@ Não existe excluir conta: excluir apagaria o passado. **Inativar** faz o trabal
 * Para lançar entradas e saídas nessas contas: [Lançamentos](lancamentos.md).
 * Para conferir uma conta contra o extrato do banco e selar o mês: [Conciliação e fechamento](conciliacao-e-fechamento.md).
 * Para entender o dinheiro que passa pelo processador: [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
+* Para o cartão de crédito e a fatura dele — pagar, antecipar, lançar juros e estornos: [Cartões de crédito](cartoes-de-credito.md).
