@@ -31,7 +31,7 @@ Por que "pior cenário"? Porque, na hora do orçamento, você ainda não sabe se
 **Pedido servido por mais de um galpão?** Quando parte do material sai de **galpões de apoio**, os quilômetros e os minutos da Rota Estimada **já incluem** as paradas nesses galpões para buscar (e, na volta, devolver) o material — o frete cobra o caminho que a equipe percorre de verdade. Veja [Um pedido pode somar o estoque de vários galpões](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
 {% endhint %}
 
-### Por que "2 viagens" num aluguel {#a-base-de-tudo-a-rota-estimada}
+### Por que "2 viagens" num aluguel {#por-que-2-viagens-num-aluguel}
 
 Cada **viagem** é **ida e volta como uma coisa só** — a Rota Estimada de um movimento já inclui o caminho de ida e o de volta. E um aluguel típico tem **dois movimentos** (a entrega e a retirada), ou seja, **duas viagens**:
 

@@ -1,6 +1,6 @@
 ---
 icon: table-columns
-description: A operação inteira numa tela — um recorte só (período, mundo, filtros) e seis jeitos de olhar para ele: mapa, mês, dia, lista, kanban e tabela.
+description: "A operação inteira numa tela — um recorte só (período, mundo, filtros) e seis jeitos de olhar para ele: mapa, mês, dia, lista, kanban e tabela."
 ---
 
 # Painel Logístico
