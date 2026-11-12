@@ -46,7 +46,7 @@ O acordo passa por um **fluxo de aceite** — um vai e volta entre as partes at�
 
 ```mermaid
 flowchart LR
-    A[Voce propoe<br/>o acordo] --> B[Parceiro ajusta<br/>ou aceita]
+    A[Você propõe<br/>o acordo] --> B[Parceiro ajusta<br/>ou aceita]
     B -->|aceita| C[Acordo ativo]
     B -->|ajusta| A
     B -->|recusa| D[Acordo recusado]
@@ -84,18 +84,22 @@ A tela acompanha quatro marcos. Cada um acende quando o anterior é concluído:
 
 ```mermaid
 flowchart LR
-    R[1. Cadastrar<br/>recebedor] --> K[2. Validacao<br/>automatica]
-    K --> V[3. Concluir<br/>validacao - KYC]
-    V --> A[4. Aprovacao<br/>do recebedor]
-    A --> L[Divisao e quitacao<br/>habilitadas]
+    R[1. Cadastrar<br/>recebedor] --> K[2. Validação<br/>automática]
+    K --> V[3. Concluir<br/>validação - KYC]
+    V --> A[4. Aprovação<br/>do recebedor]
+    A --> L[Divisão e quitação<br/>habilitadas]
 ```
 
 | Marco | O que acontece |
 | --- | --- |
-| **1) Cadastrar recebedor** | Você preenche os dados básicos e bancários da sua locadora. O cadastro é enviado para análise. |
+| **1) Cadastrar recebedor** | Você preenche os dados básicos e bancários da sua locadora. A **conta bancária precisa estar no mesmo CPF ou CNPJ do cadastro** — o titular é o próprio recebedor, e por isso a tela nem pergunta quem é; ela mostra o documento que a conta tem de ter. O cadastro é enviado para análise. |
 | **2) Validação automática** | O gateway confere os seus dados sozinho — **você não precisa fazer nada** aqui. |
 | **3) Concluir validação (KYC)** | Quando o gateway pede a confirmação de identidade do responsável, a tela da integração mostra o cartão **"Falta a prova de vida para liberar seu saldo"**, com o botão **"Fazer prova de vida agora"**. Ele gera um endereço (e um QR Code) para **abrir ali mesmo**, **enviar** ao responsável ou **copiar** — o link vale **20 minutos**; se expirar, gere outro no mesmo lugar. |
 | **4) Aprovação do recebedor** | Quando aprovado, o recebimento online fica **ativo**: a divisão automática no pagamento do cliente passa a funcionar e os PIX de quitação de repasse podem ser gerados. |
+
+{% hint style="danger" %}
+**Conta de outra pessoa é recusada.** Conta de sócio, de cônjuge, da matriz ou de terceiro — qualquer conta fora do CPF/CNPJ do cadastro — é recusada na validação de identidade do gateway, e a recusa pode chegar dias depois. Use uma conta **em nome do próprio recebedor** desde o começo.
+{% endhint %}
 
 {% hint style="warning" %}
 **A aprovação é automática e pode levar algumas horas.** Ela acontece em segundo plano — você não precisa ficar olhando. Quando quiser conferir, **puxe a tela para baixo para atualizar**. Estar "em validação" **não** é o mesmo que aprovado: se o gateway pediu a confirmação de identidade, alguém ainda precisa concluir a prova de vida — enquanto isso não acontece, a conta não é aprovada.

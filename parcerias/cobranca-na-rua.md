@@ -56,7 +56,7 @@ flowchart TD
     B -->|PIX gerado pelo parceiro| C[O dinheiro cai na SUA conta]
     C --> D[Repasse normal:<br/>você deve ao parceiro]
     B -->|Dinheiro / maquininha<br/>na mão do parceiro| E[O parceiro declara a coleta]
-    E --> F[Sentido invertido:<br/>o parceiro deve a você]
+    E --> F[Duas contas lado a lado:<br/>ele devolve o que coletou<br/>e você segue devendo o repasse]
 ```
 
 ### Caminho recomendado: o PIX da sua organização {#pix-do-vendedor}
@@ -76,28 +76,31 @@ Se o cliente crava o dinheiro na mão do parceiro (ou passa na maquininha dele),
 Três coisas acontecem na hora:
 
 1. **A fatura do cliente é quitada, direto.** A declaração dele **não** passa pela fila de conferência da sua tesouraria — não há dinheiro seu para conferir: o dinheiro está com ele. O cliente sai quitado e com recibo.
-2. **O seu caixa não registra entrada.** E está certo: você não recebeu nada ainda. O que nasce no lugar é um **valor a receber daquele parceiro**.
-3. **O sentido do repasse se inverte.** Em vez de você dever ao parceiro, **o parceiro passa a dever a você**: a sua margem **mais** a taxa de plataforma. Ele fica com o que era dele.
-
-Ele quita essa dívida por **PIX**, e a taxa da plataforma sai no mesmo ato. Zerou, acabou.
+2. **O seu caixa não registra entrada.** E está certo: você não recebeu nada ainda. O que nasce no lugar é um **valor a receber daquele parceiro**: tudo o que ele coletou.
+3. **O repasse dele continua de pé.** O que você deve ao parceiro pelo acordo segue o momento combinado, como em qualquer pedido. Uma conta não substitui a outra: ele **devolve o que coletou** e você **paga o repasse** dele.
 
 {% hint style="info" %}
-**Onde cada um vê isso:** para o parceiro, em **Meus Ganhos**, como um valor **a pagar** (em âmbar), com o botão de quitar via PIX ali mesmo. Para você, em **Financeiro › Repasses**, como um valor **a receber** daquele parceiro.
+**A taxa da plataforma entra uma vez só por pedido.** Se ela já veio no repasse do parceiro, a devolução vem sem taxa; se a devolução nasce antes, é ela que leva a taxa, e o repasse nasce sem. Hoje são **dois PIX separados**: ele paga o que devolve, e você paga o repasse dele.
+{% endhint %}
+
+{% hint style="info" %}
+**Onde cada um vê isso:** para o parceiro, em **Repasses a pagar**, como **"A pagar à organização"**, com o botão **Quitar via PIX** ali mesmo. Para você, em **Financeiro › Repasses**, na seção **"Quem me paga"** — só para acompanhar, porque quem quita é ele.
 {% endhint %}
 
 ### A conta, com números {#a-conta}
 
-Pedido de **R$ 1.000** ao cliente, repasse combinado de **R$ 600** ao parceiro, taxa de plataforma de **8%** inteirinha do lado do vendedor (o padrão).
+Pedido de **R$ 1.000** ao cliente, repasse combinado de **R$ 600** ao parceiro, taxa de plataforma de **8%** inteirinha do lado do vendedor (o padrão). No caminho em espécie, o repasse do parceiro já tinha nascido com a taxa.
 
 | | Cliente paga a **você** (PIX/link) | Cliente paga **ao parceiro**, em espécie |
 | --- | --- | --- |
 | Quem segura o dinheiro | Você — R$ 1.000 | O parceiro — R$ 1.000 |
-| Direção da obrigação | Você **deve** R$ 680 (repasse + taxa) | O parceiro **deve** R$ 400 (sua margem + taxa) |
+| O que o parceiro paga a você | Nada | **R$ 1.000** (tudo o que coletou) |
+| O que você paga | **R$ 680** (R$ 600 ao parceiro + R$ 80 de taxa) | **R$ 680** (R$ 600 ao parceiro + R$ 80 de taxa) |
 | Fica com você, no fim | R$ 320 | R$ 320 |
 | Fica com o parceiro, no fim | R$ 600 | R$ 600 |
 | Taxa de plataforma | R$ 80 | R$ 80 |
 
-O resultado é **exatamente o mesmo** nos dois caminhos. O que muda é só **quem paga a quem** — e, portanto, quem carrega o risco de o acerto demorar.
+Neste exemplo, o resultado é **o mesmo** nos dois caminhos. O que muda é que, no dinheiro em espécie, há um PIX a mais — a devolução do parceiro — e quem carrega o risco de esse acerto demorar.
 
 ## A regra do tudo ou nada {#tudo-ou-nada}
 
@@ -113,22 +116,23 @@ Na prática, a declaração do parceiro é recusada quando:
 
 * **já houve outro recebimento** naquele pedido — confirmado, ou ainda em conferência da sua tesouraria;
 * **há outra parcela em aberto** — uma fatura parcelada nunca fecha com uma coleta só;
+* **alguma parcela da cobrança foi cancelada** — aí o app avisa que aquela cobrança não pode mais ser recebida em dinheiro pelo parceiro e pede o PIX do vendedor;
 * **o valor não cobre** o saldo daquela parcela.
 
-**Por que a regra é dura assim?** Porque a dívida invertida — a que o parceiro passa a ter com você — é calculada **sobre o pedido inteiro**. Se ele recebesse metade e a conta nascesse cheia, ele estaria devendo por dinheiro que nunca segurou. E o caminho inverso é pior: sem a regra, um pagamento pela metade deixava o repasse **sem nascer de nenhum lado** — o parceiro terminava a operação com R$ 0,00 e a plataforma sem a taxa, para sempre.
+**Por que a regra é dura assim?** Porque a devolução do parceiro nasce **de uma vez só**, quando o recebimento dele fecha a cobrança inteira daquele pedido — por isso ela nunca aparece "pela metade". Com a regra, a conta é sempre simples: o que ele coletou é exatamente o que fechou a cobrança, e é exatamente o que ele devolve.
 
 **O caminho para o pagamento parcial existe e é simples:** o **PIX da sua organização**, para tudo. Ele aceita qualquer valor, quantas vezes for preciso, e mantém o repasse no fluxo normal.
 
 ## Desfazer uma coleta {#desfazer}
 
-Marcou por engano? O cliente disse que não pagou? **Os dois lados podem desfazer** — o parceiro, corrigindo o próprio registro; você, contestando. A fatura reabre, a dívida invertida some, e nenhum dinheiro se moveu no sistema.
+Marcou por engano? O cliente disse que não pagou? **Os dois lados podem desfazer** — o parceiro, corrigindo o próprio registro; você, contestando. A fatura reabre, a devolução do parceiro some, e nenhum dinheiro se moveu no sistema. O repasse do acordo continua como estava.
 
 Mas há dois momentos em que o app **barra** a reversão, e por bons motivos:
 
 | Situação | O que o app diz | Por quê |
 | --- | --- | --- |
 | Já existe um **PIX de acerto em aberto** para aquela coleta | *"Há um acerto PIX em aberto para esta coleta. Cancele ou aguarde a expiração antes de reverter."* | O código ainda é pagável. Reverter agora e o parceiro pagar depois viraria cobrança em dobro. |
-| O parceiro **já quitou** o valor invertido | *"O repasse inverso já foi quitado pelo parceiro. Use o estorno para desfazer com devolução."* | Dinheiro de verdade já mudou de mãos — o caminho é o **estorno**, com devolução e registro em trilha. |
+| O parceiro **já pagou** a devolução | *"O repasse inverso já foi quitado pelo parceiro. Use o estorno para desfazer com devolução."* | Dinheiro de verdade já mudou de mãos — o caminho é o **estorno**, com devolução e registro em trilha. |
 
 ## Quando ligar (e quando não) {#quando-ligar}
 
@@ -155,19 +159,22 @@ O texto abaixo da chave já diz o que você está concedendo: o parceiro passa a
 ## Situações reais {#situacoes-reais}
 
 **"O parceiro entregou e o cliente pagou o PIX que ele mostrou."**
-O dinheiro caiu na sua conta. Nada inverte: você deve o repasse a ele, como em qualquer pedido. É o caminho que você quer que aconteça na maioria das vezes.
+O dinheiro caiu na sua conta. Não há devolução nenhuma: você deve o repasse a ele, como em qualquer pedido. É o caminho que você quer que aconteça na maioria das vezes.
 
 **"O cliente pagou R$ 400 em dinheiro na porta, e o pedido é de R$ 1.000."**
 O app recusa a declaração. Não é bug: a coleta na rua é tudo-ou-nada. Peça ao parceiro para gerar o **PIX** da parcela e receber os R$ 400 por ali — o resto segue cobrável normalmente.
 
 **"O parceiro recebeu tudo em espécie e sumiu com o acerto."**
-O valor está registrado como **a receber daquele parceiro** em Financeiro › Repasses, com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele em Meus Ganhos e conta na relação de vocês.
+O valor está registrado como **a receber daquele parceiro** em Financeiro › Repasses, com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele em **Repasses a pagar** e conta na relação de vocês.
 
 **"Encerrei o acordo com esse parceiro. E o que ele coletou?"**
 Continua devido, e continua cobrável. Encerrar fecha a porta do que vem; não apaga o que já foi pactuado. Veja [Vigência do acordo](acordos-de-parceria.md#vigencia).
 
 **"O cliente pagou ao parceiro, mas o gatilho do acordo é 'na entrega'."**
-Sem problema. A entrega feita continua valendo o que valia: o direito do parceiro é apurado normalmente e entra na conta do acerto. O sentido da obrigação muda; o valor que cabe a cada um, não.
+Sem problema. A entrega feita continua valendo o que valia: o repasse do parceiro vence na entrega, como sempre, e você o paga. Ao lado dele nasce a devolução do que ele coletou. O valor que cabe a cada um, no fim, não muda.
+
+**"O acordo diz 'na retirada', ele pode receber na porta, e o cliente ainda não pagou."**
+Retirou, o repasse vence — como o acordo diz. Poder receber na porta não faz o repasse esperar o pagamento do cliente; cobrar o cliente continua sendo com você.
 
 ## Próximo passo {#proximo-passo}
 

@@ -20,7 +20,7 @@ flowchart LR
     P1[Mesa redonda] --> K[Kit Festa]
     P2[4 cadeiras] --> K
     P3[1 toalha] --> K
-    K --> O[Vai inteiro para o orcamento]
+    K --> O[Vai inteiro para o orçamento]
 ```
 
 Regras importantes do kit:
@@ -28,6 +28,7 @@ Regras importantes do kit:
 - Ele junta **produtos do seu catálogo**, cada um com uma **quantidade**.
 - Precisa de **pelo menos 2 unidades no total** — um "kit" de uma peça só não é um kit.
 - Tem **identidade própria** (nome, especificações, foto) e **preços próprios**.
+- Decide **por conta própria** se aluga e/ou vende — a composição só **sugere** o preço (veja [Quando o kit pode alugar ou vender](#elegibilidade-alugar-ou-vender)).
 
 ## Itens distintos x unidades {#itens-distintos-x-unidades}
 
@@ -51,7 +52,7 @@ Igual aos produtos, ao criar um kit o LocFlow pergunta **como você quer montar*
 | | Catálogo oficial (recomendado) | Por conta própria |
 | --- | --- | --- |
 | **O que é** | Kits prontos já curados (ex.: Jogo 1 mesa + 4 cadeiras) | Você escolhe os produtos do seu catálogo |
-| **O que vem pronto** | Itens sugeridos, categoria e preços sugeridos | Nada — você monta a composição |
+| **O que vem pronto** | Itens, categoria e preços sugeridos | Nada — você monta a composição |
 | **Ideal para** | Combinações clássicas do mercado | Combos exclusivos da sua operação |
 
 A própria tela resume: *"Escolha a forma que melhor se encaixa no que você quer alugar ou vender."* O cartão do catálogo oficial promete *"Escolha kits prontos (ex.: Jogo 1 mesa + 4 cadeiras) e ganhe itens, categoria e preços sugeridos."*; o de conta própria, *"Você escolhe quais produtos entram, em que quantidade, e define os preços. Ideal para combos exclusivos."*
@@ -64,11 +65,11 @@ O cadastro do kit é organizado em seções:
 
 Nome do kit, **especificações** (opcional, ex.: *"mesa branca plástica + 4 cadeiras plásticas brancas"*) e foto opcional. Dê um nome que venda: "Kit Festa Infantil 20 pessoas" diz mais que "Kit 1".
 
-Aqui também fica a chave **"Disponível para locação/venda?"** — é o **status** do kit (veja abaixo).
+O **status** do kit (ativo ou inativo) não fica no formulário: ativar e inativar é uma ação própria, com confirmação (veja [O status do kit](#status-do-kit)).
 
 ### Classificação na vitrine
 
-Como qualquer item, o kit precisa de uma **categoria** para aparecer organizado na vitrine, nos filtros e nos relatórios.
+A **categoria** ("Minha categoria") é **opcional** no kit, como no produto. Vale preencher mesmo assim: é ela que organiza o kit na vitrine, nos filtros e nos relatórios.
 
 ### Itens do kit
 
@@ -79,57 +80,77 @@ Aqui você escolhe **quais produtos** entram e **em que quantidade**. Lembre: pr
 Como o produto, o kit pode ter um **fator de cubagem** — o **volume efetivo (m³)** que o kit ocupa numa carga, considerando o **empilhamento do conjunto**. É o que a [estratégia volumétrica de capacidade](frota-capacidade.md#volumetrica) usa para medir o kit ao avaliar se a carga cabe no veículo.
 
 {% hint style="info" %}
-**O fator do kit é próprio — não é a soma das peças.** Um "jogo de mesa" montado ou empilhado ocupa um espaço característico, que raramente é a soma do espaço de cada cadeira e mesa solta. Por isso você informa um fator **para o kit inteiro**. (A contagem, ao contrário, **dilui** o kit nos produtos — são olhares diferentes para a mesma carga; entenda em [Especificações: capacidade](frota-capacidade.md#volumetrica).)
+**O fator do kit é próprio — não é a soma das peças.** Um "jogo de mesa" montado ou empilhado ocupa um espaço característico, que raramente é a soma do espaço de cada cadeira e mesa solta. Por isso você informa um fator **para o kit inteiro**. (A contagem, ao contrário, **dilui** o kit nos produtos — são olhares diferentes para a mesma carga; entenda em [Tipos de veículo: capacidade](frota-capacidade.md#volumetrica).)
 {% endhint %}
 
 ### Preços e negócio
 
-O kit tem seus próprios toggles **"você vai alugar?"** e **"você vai vender?"**, com as mesmas **condições de venda** (Novo, Seminovo, Usado) dos produtos.
+O kit tem as próprias chaves **Permite aluguel?** e **Permite venda?**, com as mesmas **condições de venda** (Novo, Seminovo, Usado) dos produtos. No fluxo guiado do catálogo oficial, as mesmas perguntas aparecem como *"Você vai alugar este kit?"* e *"Você vai vender este kit?"*. Quem decide é você, não as peças — veja a regra logo abaixo. (Habilitar o kit para **venda** faz parte do plano **Pro**, como toda a venda; o aluguel está em todos os planos.)
 
 ## O status do kit {#status-do-kit}
 
-A chave **"Disponível para locação/venda?"**, na seção Identidade, controla se o kit está **Ativo** ou **Inativo**.
+Todo kit nasce **ativo**. Ativar e inativar é uma **ação própria**, com confirmação, disponível no cartão do kit, na linha da tabela (em telas largas) e na ficha do kit (**Inativar kit** / **Ativar kit**).
 
-- **Ativo** (chave ligada): o kit aparece e pode ser jogado em um orçamento.
-- **Inativo** (chave desligada): o kit fica **recolhido** — na listagem ele aparece esmaecido, com um selo **INATIVO**, e sai do caminho de quem está montando um orçamento.
+Antes de inativar, o LocFlow pergunta **"Inativar kit?"** e explica o efeito: o kit *"deixa de aparecer na seleção de novos orçamentos. Orçamentos e histórico já existentes não mudam — dá para ativar de novo quando quiser."*
+
+- **Ativo**: o kit aparece e pode ser jogado em um orçamento.
+- **Inativo**: o kit fica **recolhido** — na listagem ele aparece esmaecido, com o selo **INATIVO**, e sai do caminho de quem está montando um orçamento.
 
 {% hint style="info" %}
-Deixar inativo é melhor que excluir quando você só quer **pausar** um kit (ex.: combo de fim de ano fora de temporada). Você não perde a composição nem o histórico de preços — é só religar quando voltar a oferecer.
+Deixar inativo é melhor que excluir quando você só quer **pausar** um kit (ex.: combo de fim de ano fora de temporada). Você não perde a composição nem o histórico de preços — é só ativar de novo quando voltar a oferecer.
 {% endhint %}
 
 ## Quando o kit pode alugar ou vender {#elegibilidade-alugar-ou-vender}
 
-Esta é a regra que diferencia o kit de um produto solto: **o kit só herda o que os seus itens permitem**. Ele não inventa uma modalidade que os produtos dentro dele não têm.
+**A natureza do kit é do kit.** Um kit pode ser alugado ou vendido **independentemente do que cada peça faz sozinha**: a composição não decide por você.
+
+| Situação | O que acontece |
+| --- | --- |
+| Cadeiras e mesa cadastradas só para **venda** | O conjunto pode ser **alugado** como kit, se você ligar **Permite aluguel?** no kit. |
+| Uma peça que não aluga nem vende sozinha (o parafuso que prende a mesa) | Não impede nada: o kit aluga (ou vende) do mesmo jeito. |
+| Algum item sem preço de aluguel | O kit aluga normalmente; esse item só fica **fora da soma** sugerida (veja abaixo). |
 
 ```mermaid
-flowchart TD
-    Q{O kit pode alugar?} -->|Todos os itens permitem aluguel<br/>E todos têm preço de aluguel| SIM[Pode alugar]
-    Q -->|Algum item não aluga| NAO[Não pode alugar]
+flowchart LR
+    I[Itens do kit] -->|sugerem| P[Preço do kit]
+    D[Você] -->|decide| N[Alugar e/ou vender]
+    N --> K[Kit pronto para o orçamento]
+    P --> K
 ```
 
-- **Para o kit poder alugar:** **todos** os itens precisam permitir aluguel **e** ter preço de aluguel cadastrado.
-- **Para o kit poder vender:** **todos** os itens precisam permitir venda.
-- **As condições de venda disponíveis** (Novo, Seminovo, Usado) são a **interseção** — o kit só oferece uma condição se **todos** os itens vendáveis tiverem preço cadastrado naquela condição.
+O que o cadastro cobra é o que está **na tela**: com **Permite aluguel?** ligado, o **preço de aluguel** do kit; com **Permite venda?** ligado, ao menos uma **condição de venda** e um **preço para cada condição** marcada. Se algo faltar, a mensagem aparece no próprio campo — nenhum erro fica escondido.
 
-Se você tentar ligar uma opção que a composição não suporta, o LocFlow não deixa em silêncio: ele revela um aviso amigável apontando **exatamente quais itens** travam, por exemplo *"Para alugar este kit, todos os itens precisam permitir aluguel"* ou *"Cadastre o preço de aluguel destes itens antes"*. Resolva no produto correspondente (ligue a modalidade ou cadastre o preço) e a opção destrava sozinha.
+{% hint style="info" %}
+**Editar um kit não religa nada por conta própria.** Se o aluguel está desligado, ele continua desligado quando você mexe em outra coisa. Para religar de propósito, ligue **Permite aluguel?**: se o kit já tinha um preço de aluguel, ele volta preenchido no campo; confirme ou ajuste e salve — tudo num salvar só. Ligar a venda pela primeira vez já começa o [histórico de preços](historico-de-precos.md) daquela condição.
+{% endhint %}
 
 {% hint style="success" %}
-Isso evita o erro clássico de oferecer um "kit para venda" em que uma das peças nunca foi marcada como vendável. O kit fica sempre **coerente** com o que você realmente tem para entregar.
+**Por que isso te dá liberdade:** você monta o pacote que o seu cliente procura — inclusive alugar como conjunto o que você só vende avulso — sem precisar mexer no cadastro de cada peça para "destravar" o kit.
 {% endhint %}
 
 ## Preço do kit e a sugestão da composição {#preco-e-sugestao}
 
-Esta é a mágica do kit: ao montar a composição, o LocFlow **calcula um preço sugerido** somando os preços dos produtos que você colocou (preço de cada item × quantidade). Esse valor aparece como referência no campo de preço — tanto para o aluguel quanto para cada condição de venda.
+Ao montar a composição, o LocFlow **soma os preços dos produtos** que você colocou (preço de cada item × quantidade). Essa soma é só uma **sugestão**: ela aparece embaixo do campo de preço — do aluguel e de cada condição de venda — e quem define o preço do kit é você.
 
-Abaixo do campo você vê *"Soma dos itens: R$ …"* com um atalho **"Usar sugestão"**. E quando você digita um valor diferente, o LocFlow mostra o quanto está fora da soma:
+O rodapé do campo muda conforme o que os itens têm de preço:
+
+| O que aparece embaixo do campo | Quando |
+| --- | --- |
+| *"Soma dos itens: R$ …"* e o atalho **Usar sugestão** | Todos os itens têm preço naquela modalidade. |
+| *"Soma parcial dos itens: R$ …"*, **Usar sugestão** e *"Fora da soma (sem preço de aluguel): A e B"* | Alguns itens não têm preço; o rodapé diz quais ficaram de fora. |
+| *"Nenhum item tem preço de aluguel: o preço do kit é o que você definir aqui."* | Nenhum item tem preço naquela modalidade. |
+
+Quando a soma está completa e você digita um valor diferente, o LocFlow mostra o quanto está fora dela:
 
 | O que aparece | O que significa |
 | --- | --- |
 | **−R$ … de desconto** | Você fechou o kit **abaixo** da soma das peças (preço de combo). |
 | **+R$ … acima da soma** | Você fechou **acima** da soma — geralmente sinal de revisar a conta. |
 
+Com a soma parcial, essa comparação não aparece: ela seria feita contra um número que não conta todos os itens.
+
 {% hint style="info" %}
-A sugestão é só um ponto de partida. Você pode **aceitar** ou **digitar outro valor** — por exemplo, dar um desconto de combo para incentivar o cliente a levar o pacote inteiro. O LocFlow **nunca sobrescreve** um preço que você já digitou; ele só preenche o campo que ainda estava em branco.
+A sugestão é só um ponto de partida. Você pode **aceitar** ou **digitar outro valor** — por exemplo, dar um desconto de combo para incentivar o cliente a levar o pacote inteiro. O LocFlow preenche com a sugestão só o campo de preço que ainda está **em branco** e **nunca sobrescreve** um valor que você digitou. Na **edição**, o preço de aluguel não é preenchido sozinho. Ao adotar um kit do catálogo oficial, a tela avisa: *"Sugerimos preços a partir dos itens que já têm preço. Ajuste para o valor que faz sentido pra você."*
 {% endhint %}
 
 ### O desconto de combo no orçamento {#desconto-de-combo}
@@ -147,8 +168,8 @@ O kit mostra o **valor de reposição somado** de todos os produtos da composiç
 Você atende muitos aniversários e sempre alugam o mesmo conjunto: **1 mesa redonda + 4 cadeiras + 1 toalha**. Em vez de o atendente montar item por item a cada orçamento, você cria um kit:
 
 1. **Itens do kit:** adiciona a mesa (1), as cadeiras (4) e a toalha (1) — 3 itens distintos, 6 unidades.
-2. **Elegibilidade:** como todos os três permitem aluguel e têm preço de aluguel, o kit já pode alugar.
-3. **Preço sugerido:** o LocFlow soma os aluguéis e sugere, digamos, R$ 95. Você fecha o kit em R$ 85 — e o app marca *"−R$ 10,00 de desconto"*.
+2. **Aluguel:** deixa **Permite aluguel?** ligado no kit. Não importa se a toalha, sozinha, você só vende: quem decide o que o kit faz é o kit.
+3. **Preço sugerido:** o LocFlow soma os aluguéis e sugere, digamos, R$ 95. Você fecha o kit em R$ 85 — e o app marca *"−R$ 10,00 de desconto"*. (Se a toalha não tivesse preço de aluguel, o rodapé mostraria a soma parcial e diria que ela ficou fora da conta.)
 4. **Reposição:** já vem somada (mesa + 4 cadeiras + toalha) — sua garantia se algo não voltar.
 
 Agora, quando chega um pedido de festa, o atendente joga **um kit** no orçamento em vez de seis itens. Mais rápido, sem esquecer nada e com um preço de pacote que o cliente sente como vantagem.
@@ -159,7 +180,7 @@ Agora, quando chega um pedido de festa, o atendente joga **um kit** no orçament
 
 ## Para quem quer os detalhes: montar vários kits prontos em lote {#fluxo-guiado-em-lote}
 
-Quando você adiciona **vários kits do catálogo oficial de uma vez**, o LocFlow abre um **fluxo guiado** que percorre os kits selecionados, um por um, mostrando *"Kit X de Y"* no topo. Em cada passo você só precisa fechar **preços e disponibilidade** — o nome, a foto, a categoria e a composição já vêm do catálogo.
+Quando você adiciona **vários kits do catálogo oficial de uma vez**, o LocFlow abre um **fluxo guiado** que percorre os kits selecionados, um por um, mostrando em que ponto da fila você está (*"2 de 5"*, por exemplo). Em cada passo você só precisa fechar **preços e disponibilidade** — o nome, a foto, a categoria e a composição já vêm do catálogo.
 
 Como o kit é feito de produtos, o fluxo faz uma verificação antes de liberar os preços:
 
@@ -172,8 +193,8 @@ flowchart LR
 ```
 
 - Se **faltam produtos** que compõem aquele kit, o fluxo mostra um aviso — *"Cadastre os produtos do kit primeiro"* — lista os que faltam e oferece um botão para **cadastrá-los na hora**. Depois de cadastrar, *"você voltará automaticamente para configurar este kit"*.
-- Quando **todos os produtos já existem**, você define os toggles de alugar/vender, os preços (com a mesma sugestão da composição) e cria o kit. Aí o fluxo avança para o próximo da fila.
-- Dá para **"Pular para o próximo kit da fila"** ou abrir **"Editar outras informações"** se quiser ajustar nome, foto ou categoria daquele kit específico.
+- Quando **todos os produtos já existem**, você responde *"Você vai alugar este kit?"* e *"Você vai vender este kit?"*, define os preços (com a mesma sugestão da composição) e cria o kit. Aí o fluxo avança para o próximo da fila.
+- Dá para tocar em **"Pular para o próximo kit"** ou abrir **"Editar outras informações"** se quiser ajustar nome, foto ou categoria daquele kit específico.
 
 {% hint style="info" %}
 No fluxo guiado, o **valor de reposição total** pode aparecer editável caso ainda não dê para somar pelos produtos locais (por exemplo, antes de todos estarem cadastrados). Sempre que possível, ele é calculado e travado, igual ao cadastro normal.

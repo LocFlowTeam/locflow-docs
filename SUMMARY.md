@@ -32,7 +32,7 @@
 * [Indicadores do painel](painel/indicadores.md)
 * [O funil de vendas no painel](painel/funil-de-vendas.md)
 * [O card de Logística no painel](painel/card-logistica.md)
-* [Calendário logístico](painel/calendario-logistico.md)
+* [Calendário logístico: onde foi parar](painel/calendario-logistico.md)
 
 ## Cadastros
 
@@ -42,9 +42,13 @@
   * [Histórico de preços](cadastros/historico-de-precos.md)
 * [Catálogo: kits](cadastros/catalogo-kits.md)
 * [Frota](cadastros/frota.md)
-  * [Classes veiculares](cadastros/frota-classes.md)
-  * [Especificações: capacidade](cadastros/frota-capacidade.md)
-  * [Especificações: vistoria](cadastros/frota-vistoria.md)
+  * [Tipos de veículo](cadastros/frota-ficha-tecnica.md)
+    * [Tipos de veículo: capacidade](cadastros/frota-capacidade.md)
+    * [Tipos de veículo: vistoria](cadastros/frota-vistoria.md)
+  * [Grupos da frota](cadastros/frota-grupos.md)
+  * [Extensões](cadastros/frota-extensoes.md)
+  * [Titular do tipo](cadastros/frota-titular.md)
+  * [Classes veiculares (agora: grupos)](cadastros/frota-classes.md)
 
 ## Rede de Parceiros
 
@@ -58,6 +62,7 @@
 * [Estoque na parceria](parcerias/estoque-na-parceria.md)
 * [Reputação e boas práticas](parcerias/reputacao-e-boas-praticas.md)
 * [Parceiro Logístico Externo](parcerias/parceiro-logistico-externo.md)
+  * [Acesso assistido](parcerias/acesso-assistido.md)
 * [Fornecedores de frete](parcerias/fornecedores-de-frete.md)
 
 ## Orçamentos
@@ -84,6 +89,7 @@
 ## Logística
 
 * [Visão geral da logística](logistica/visao-geral.md)
+* [Painel Logístico](logistica/painel-logistico.md)
 * [A jornada de um pedido (Ver Logística)](logistica/jornada-do-pedido.md)
 * [Acompanhando seus roteiros](logistica/acompanhando-roteiros.md)
 * [Separação no galpão](logistica/separacao.md)
@@ -92,7 +98,7 @@
 * [Execução em campo](logistica/execucao-em-campo.md)
 * [Execução em lote (retroativa)](logistica/execucao-em-lote.md)
 * [Conferência na devolução](logistica/conferencia.md)
-* [Balcão: retirada e devolução no galpão](logistica/balcao.md)
+* [Loja: retirada e devolução pelo cliente](logistica/balcao.md)
 * [Quando um pedido muda depois de fechado](logistica/quando-um-pedido-muda.md)
   * [O pedido já estava com um parceiro](logistica/efeitos-na-parceria.md)
 
@@ -102,26 +108,39 @@
 * [Lançamentos](financeiro/lancamentos.md)
 * [Contas a pagar e a receber](financeiro/contas-a-pagar-e-a-receber.md)
 * [Contas: caixa, banco e gateway](financeiro/contas.md)
+* [Cartões](financeiro/cartoes.md)
 * [Categorias e plano de contas](financeiro/categorias-e-plano-de-contas.md)
 * [Fornecedores](financeiro/fornecedores.md)
 * [Conciliação e fechamento](financeiro/conciliacao-e-fechamento.md)
 * [Relatórios: como ler](financeiro/relatorios.md)
 
+## Notas fiscais
+
+* [Central de notas](fiscal/central-de-notas.md)
+* [Emitir uma nota fiscal](fiscal/emitir-nota.md)
+
 ## Estoque
 
 * [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md)
-* [Posição e previsão de estoque](estoque/posicao-e-previsao.md)
-* [Operar vários itens de uma vez](estoque/operar-varios-itens.md)
+* [Lojas](estoque/lojas.md)
+* [Painel de Estoque](estoque/painel.md)
+  * [O estoque de agora e a previsão](estoque/posicao-e-previsao.md)
+  * [Patrimônio](estoque/patrimonio.md)
+* [Operações de estoque](estoque/operacoes-de-estoque.md)
+  * [Operar vários itens de uma vez](estoque/operar-varios-itens.md)
+  * [Transferências](estoque/transferencias.md)
 * [Manutenção: o desfecho do reparo](estoque/manutencao.md)
+  * [Quarentena](estoque/quarentena.md)
 
 ## Documentos e marca
 
-* [Modelos personalizados](documentos/modelos-personalizados.md)
+* [Modelos de documento](documentos/modelos-personalizados.md)
   * [Designer de documentos](documentos/designer-de-documentos.md)
 * [Identidade visual](documentos/identidade-visual.md)
 
 ## Configurações
 
+* [Ajustes: o mapa](configuracoes/ajustes-visao-geral.md)
 * [Motores operacionais](configuracoes/motores-operacionais.md)
   * [Motor de Frete: como calcula](configuracoes/motor-de-frete.md)
   * [Montando as cobranças do frete](configuracoes/motor-de-frete-cobrancas.md)
@@ -129,20 +148,26 @@
   * [Motor de Frete por detentor](configuracoes/motor-de-frete-detentor.md)
   * [Motor de Orçamento](configuracoes/motor-de-orcamento.md)
 * [Regras de desconto](configuracoes/regras-de-desconto.md)
+* [Nomes de arquivo](configuracoes/nomes-de-arquivo.md)
 * [Automações](configuracoes/automacoes.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
   * [Canais de notificação](configuracoes/canais-de-notificacao.md)
+* [Perfil da Empresa](configuracoes/perfil-da-empresa.md)
 * [Colaboradores e acessos](configuracoes/colaboradores-e-acessos.md)
 * [Histórico de auditoria](configuracoes/historico-de-auditoria.md)
+* [Lixeira](configuracoes/lixeira.md)
 * [Importando dados de outro sistema](configuracoes/importacao-de-dados.md)
   * [Migrar com segurança](configuracoes/migrar-com-seguranca.md)
 * [Horários e sazonalidades](configuracoes/horarios-e-sazonalidades.md)
 * [Minha assinatura e créditos](configuracoes/assinatura-e-creditos.md)
 * [Integrações](configuracoes/integracoes.md)
+  * [Integração Fiscal](configuracoes/integracao-fiscal.md)
+  * [Domínio personalizado](configuracoes/dominio-personalizado.md)
   * [Sincronização em Nuvem](configuracoes/sincronizacao-em-nuvem.md)
-* [Domínio personalizado](configuracoes/dominio-personalizado.md)
 * [Minha conta e preferências](configuracoes/minha-conta.md)
+  * [Verificação em duas etapas](configuracoes/verificacao-em-duas-etapas.md)
 
 ## Ajuda
 
 * [Perguntas frequentes](ajuda/perguntas-frequentes.md)
+* [Novidades do LocFlow](ajuda/novidades-do-sistema.md)

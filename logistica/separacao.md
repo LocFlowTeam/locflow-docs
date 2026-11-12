@@ -38,9 +38,9 @@ Quem trabalha no galpão recebe o papel **Separador**: ao abrir o app, enxerga *
 
 O papel já vem pronto no LocFlow — basta escolhê-lo ao convidar a pessoa. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
 
-## Retirada no balcão
+## Retirada na loja
 
-Quando o **cliente retira no galpão** (em vez de a equipe entregar), a separação continua valendo — e fica ainda mais útil. O material é separado e conferido **antes** de o cliente chegar, então a retirada no balcão é rápida: é só entregar o que já está pronto e marcar a saída. Sem rota, sem viagem. A confirmação desse atendimento — e a fila de quem está por vir — fica em [Balcão: retirada e devolução no galpão](balcao.md).
+Quando o **cliente retira na loja** (em vez de a equipe entregar), a separação continua valendo — e fica ainda mais útil. O material é separado e conferido **antes** de o cliente chegar, então a retirada na loja é rápida: é só entregar o que já está pronto e confirmar. Sem rota, sem viagem. A confirmação desse atendimento — e a fila de quem está por vir — fica em [Loja: retirada e devolução pelo cliente](balcao.md).
 
 ## Quando ligar a separação
 
@@ -59,7 +59,7 @@ A separação é **opcional** justamente porque nem toda operação precisa dela
 ## Situações reais
 
 * **Locadora de festas em alta temporada:** dez pedidos para o mesmo sábado. A fila de separação garante que cada um saia com louça, mesas e toalhas completas — ninguém separa "no olho".
-* **Cliente que busca no balcão:** o pedido é separado pela manhã; quando o cliente chega à tarde, está tudo embalado e conferido. Retirada em minutos.
+* **Cliente que busca na loja:** o pedido é separado pela manhã; quando o cliente chega à tarde, está tudo embalado e conferido. Retirada em minutos.
 * **Equipe nova no galpão:** o separador recém-contratado abre o app e vê só a fila dele, com a lista exata de itens e quantidades. Aprende a operação sem acesso ao resto do sistema.
 
 ## Próximo passo

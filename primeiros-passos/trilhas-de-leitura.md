@@ -45,10 +45,10 @@ Já tem ajudante, motorista, mais pedidos por dia.
 Operação madura: galpão, frota, separação e conferência.
 
 1. [Separação no galpão](../logistica/separacao.md) + [Conferência na devolução](../logistica/conferencia.md)
-2. [Frota](../cadastros/frota.md) + [Especificações: capacidade](../cadastros/frota-capacidade.md)
-3. [Calendário logístico](../painel/calendario-logistico.md) — organize os roteiros do dia a dia
+2. [Frota](../cadastros/frota.md) + [Tipos de veículo: capacidade](../cadastros/frota-capacidade.md)
+3. [Painel Logístico](../logistica/painel-logistico.md) — a operação do dia numa tela: mapa, mês, dia, lista, kanban e tabela
 4. [Estoque e disponibilidade](../estoque/galpoes-e-disponibilidade.md)
-5. [Modelos personalizados](../documentos/modelos-personalizados.md) + [Designer de documentos](../documentos/designer-de-documentos.md)
+5. [Modelos de documento](../documentos/modelos-personalizados.md) + [Designer de documentos](../documentos/designer-de-documentos.md)
 {% endtab %}
 {% endtabs %}
 
@@ -69,11 +69,11 @@ Você convida sua equipe por um **link**. Se preencher o e-mail da pessoa no con
 
 - **…fechar meu 1º orçamento** → [Catálogo](../cadastros/catalogo-produtos.md) → [Criando um orçamento](../orcamentos/criando-um-orcamento.md) → [Acompanhando e fechando](../orcamentos/acompanhando-e-fechando.md)
 - **…receber pelo sistema** → [Emitindo a cobrança](../cobranca/emitindo-a-cobranca.md) → [Faturas e parcelas](../cobranca/faturas-e-parcelas.md) → [Pagamento online](../cobranca/pagamento-online.md) → [A página de pagamento do cliente](../cobranca/pagina-de-pagamento.md)
-- **…organizar a entrega** → [Logística: visão geral](../logistica/visao-geral.md) → [Planejando o roteiro](../logistica/planejando-o-roteiro.md) → [Calendário logístico](../painel/calendario-logistico.md)
+- **…organizar a entrega** → [Logística: visão geral](../logistica/visao-geral.md) → [Painel Logístico](../logistica/painel-logistico.md) → [Planejando o roteiro](../logistica/planejando-o-roteiro.md)
 - **…acompanhar um pedido em andamento** → [A jornada de um pedido (Ver Logística)](../logistica/jornada-do-pedido.md) → [Acompanhando seus roteiros](../logistica/acompanhando-roteiros.md)
 - **…parar de calcular frete na mão** → [Motor de Frete: como calcula](../configuracoes/motor-de-frete.md) → [Montando as cobranças do frete](../configuracoes/motor-de-frete-cobrancas.md)
 - **…montar meu catálogo** → [Produtos](../cadastros/catalogo-produtos.md) → [Kits](../cadastros/catalogo-kits.md)
-- **…deixar os documentos com a minha cara** → [Modelos personalizados](../documentos/modelos-personalizados.md) → [Designer de documentos](../documentos/designer-de-documentos.md) → [Identidade visual](../documentos/identidade-visual.md)
+- **…deixar os documentos com a minha cara** → [Modelos de documento](../documentos/modelos-personalizados.md) → [Designer de documentos](../documentos/designer-de-documentos.md) → [Identidade visual](../documentos/identidade-visual.md)
 - **…dar acesso à equipe** → [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md)
 - **…vender sem ter frota e galpão** → [Rede de Parceiros: a visão](../parcerias/visao-geral.md) → [Entrando na rede](../parcerias/entrando-na-rede.md) → [Acordos de parceria](../parcerias/acordos-de-parceria.md) → [Repassando um pedido](../parcerias/repassando-um-pedido.md)
 - **…executar para quem vende (e faturar com a frota parada)** → [Parceiro Logístico Externo](../parcerias/parceiro-logistico-externo.md) → [Acordos de parceria](../parcerias/acordos-de-parceria.md) → [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md) → [Reputação e boas práticas](../parcerias/reputacao-e-boas-praticas.md)

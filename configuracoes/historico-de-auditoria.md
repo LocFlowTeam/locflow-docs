@@ -15,7 +15,7 @@ Conforme a equipe cresce, aparece a pergunta: "**quem mexeu nisso, e quando?**".
 
 Cada linha do histórico é uma ação registrada, com quatro informações:
 
-* **Quem** — a pessoa que fez a ação.
+* **Quem** — a pessoa que fez a ação (pelo e-mail dela).
 * **O que** — a ação em si (por exemplo, *"Criou um produto"* ou *"Editou um contato"*).
 * **Onde** — a área do sistema (Catálogo, Orçamentos, Logística, Estoque…).
 * **Quando** — a data e a hora.
@@ -26,31 +26,34 @@ O registro é **automático**: as ações vão entrando na lista à medida que a
 
 Há dois caminhos até o histórico:
 
-* **Completo:** em **Ajustes → Histórico de Auditoria**, com tudo o que aconteceu na organização.
+* **Completo:** em **Ajustes › Conta e segurança › Histórico de Auditoria**, com tudo o que aconteceu na organização.
 * **Por área:** no topo de cada tela (Contatos, Catálogo, Orçamentos…), o botão **Histórico** abre a lista já **filtrada** para aquela área — direto ao ponto.
 
-Dentro da tela você ainda **busca** por pessoa ou ação e **filtra por um ou vários módulos** ao mesmo tempo, para focar só no que interessa.
+Dentro da tela você ainda **busca** por ação, recurso ou pessoa e **filtra por um ou vários módulos** ao mesmo tempo, para focar só no que interessa.
 
-{% hint style="info" %}
-Ver o histórico depende de **permissão**. Por padrão, é o **dono** da conta quem enxerga — você pode liberar para outras pessoas ajustando o papel delas em [Colaboradores e acessos](colaboradores-e-acessos.md).
+{% hint style="warning" %}
+**A consulta do histórico é um recurso do plano Pro.** O registro acontece em **todos os planos** — o que muda é poder abrir a lista. Num plano sem o recurso, a tela oferece o upgrade.
 {% endhint %}
 
-## O que ele mostra hoje — e o que ainda não
+{% hint style="info" %}
+Ver o histórico também depende de **permissão**. Por padrão, enxergam o **dono** da conta e o **Administrador**; a atividade *Gerenciar a equipe e os acessos*, ao montar um papel personalizado, também inclui o histórico. Para liberar a outras pessoas, ajuste o papel delas em [Colaboradores e acessos](colaboradores-e-acessos.md#por-atividade).
+{% endhint %}
 
-O histórico de hoje é uma **linha do tempo das ações**: ele conta, de forma clara e rápida de consultar, **o que foi feito e quando**.
+## Ver o que mudou
 
-O que ele **ainda não** traz é o **"antes e depois"** de cada item — ou seja, como exatamente aquele contato, produto ou pedido estava antes da mudança e como ficou depois. Você vê que *"a Ana editou o produto às 14h"*, mas não uma comparação, campo a campo, do que mudou naquela edição.
+Quando a ação enviou dados — uma edição, por exemplo —, o registro traz o botão **Ver o que mudou**. Ele abre **os campos e os valores gravados** naquela ação: você vê que *"a Ana editou o produto às 14h"* e, logo abaixo, o que ela enviou.
 
 {% hint style="info" %}
-É um recurso que **evolui**. Hoje o foco é dar a visão de **quem fez o quê**; o comparativo detalhado de cada alteração é um passo seguinte.
+**O que ele ainda não faz:** comparar, campo a campo, com o valor que existia **antes** da mudança. O registro mostra o que foi gravado naquela ação — não o "antes e depois".
 {% endhint %}
 
 ## Situações reais
 
-* **"Quem baixou esse preço?"** Um item saiu mais barato do que devia. Abra o **Histórico** no topo do Catálogo, procure a ação de edição do produto e você vê a pessoa e a hora — a conversa começa com fato, não com suspeita.
-* **Conferir a movimentação do dia.** No fim do expediente, em **Ajustes → Histórico de Auditoria**, você filtra por Logística e Estoque e acompanha, numa lista só, tudo o que a equipe fez.
+* **"Quem baixou esse preço?"** Um item saiu mais barato do que devia. Abra o **Histórico** no topo do Catálogo, procure a ação de edição do produto e você vê a pessoa e a hora — e, em **Ver o que mudou**, o valor que foi gravado. A conversa começa com fato, não com suspeita.
+* **Conferir a movimentação do dia.** No fim do expediente, em **Ajustes › Conta e segurança › Histórico de Auditoria**, você filtra por Logística e Estoque e acompanha, numa lista só, tudo o que a equipe fez.
 
 ## Próximo passo
 
 * Defina quem vê o quê em [Colaboradores e acessos](colaboradores-e-acessos.md).
+* Recupere o que foi excluído na [Lixeira](lixeira.md).
 * Em dúvida com um termo? Consulte o [Glossário](../primeiros-passos/glossario.md).

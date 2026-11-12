@@ -2,7 +2,8 @@
 icon: file-invoice
 description: >-
   Locação pura de bem móvel não tem ISS — e a partir de 2027 a nota muda de vez.
-  O que isso significa para você, em linguagem clara.
+  O que isso significa para você, em linguagem clara, e como o LocFlow emite a
+  nota: NFS-e Nacional ou Municipal.
 ---
 
 # Nota fiscal na locação
@@ -19,18 +20,40 @@ Locação **pura** de bem móvel (o item vai, é usado e volta, sem mão de obra
 
 Isso não é opinião: o **STF** já pacificou o tema na **Súmula Vinculante 31**, e o item da lista de serviços que tratava de locação (o 3.01 da LC 116/2003) foi **vetado**. Não existe código de serviço municipal aplicável à locação pura.
 
-Por isso o LocFlow **não pede** um código de serviço da prefeitura quando você emite uma nota de locação. Não é limitação do sistema — é o caminho correto.
+Por isso, quando a sua nota sai como **NFS-e Nacional**, o LocFlow **não pede** um código de serviço da prefeitura. Não é limitação do sistema — é o caminho correto.
 
 ## Então qual é o documento certo?
 
-Com a Reforma Tributária, a locação passou a ser fato gerador de **IBS** e **CBS** (os novos tributos), e o documento próprio dela é a **NFS-e Nacional** — emitida no ambiente da Receita, com um código nacional específico, **independentemente do seu município**.
+Com a Reforma Tributária, a locação passou a ser fato gerador de **IBS** e **CBS** (os novos tributos), e o documento próprio dela é a **NFS-e Nacional** — emitida no ambiente nacional da Receita, com um código nacional específico, sem ISS.
+
+**Mas há uma condição:** a NFS-e Nacional só funciona se a **prefeitura da sua empresa aderiu ao Emissor Nacional**. Onde o município ainda mantém emissor próprio e não aderiu, a nota continua saindo pela prefeitura. Confira a situação da sua cidade no **Mapa da NFS-e**, no portal gov.br.
 
 | | Locação pura |
 | --- | --- |
 | **ISS (imposto municipal)** | Não incide |
 | **IBS / CBS (novos tributos)** | Incidem |
-| **Documento** | NFS-e Nacional (ambiente da Receita) |
-| **Código de serviço da prefeitura** | Nenhum |
+| **Documento** | NFS-e Nacional — se o município aderiu ao Emissor Nacional |
+| **Código de serviço da prefeitura** | Nenhum, na NFS-e Nacional |
+
+## No LocFlow: NFS-e Nacional ou Municipal {#nacional-ou-municipal}
+
+Ao configurar a emissão de notas (**Ajustes › Integrações › Integração Fiscal**), se você marcar a NFS-e, o LocFlow pergunta **"Como emitir a NFS-e?"**:
+
+| Opção | O que a tela diz | Quando escolher |
+| --- | --- | --- |
+| **NFS-e Nacional** *(exige adesão do município)* | Locação de bem móvel não tem ISS — sem código de serviço municipal. Funciona se a **sua** prefeitura aderiu ao Emissor Nacional. **MEI é sempre nacional.** | Sua prefeitura aderiu ao Emissor Nacional, ou sua empresa é MEI. É a opção que já vem marcada. |
+| **NFS-e Municipal** *(prefeitura · com ISS)* | Pela prefeitura, com o código da lista **LC 116** e **ISS**. | Quando o pedido tem **serviço ou mão de obra**, ou quando o seu município mantém emissor próprio e **não aderiu** ao Emissor Nacional. |
+
+Na prática, isso muda o que o LocFlow pede na hora de emitir:
+
+- **No modo Nacional**, a nota não pede código de serviço municipal.
+- **No modo Municipal**, a nota sai com o **código de serviço** — você cadastra um código padrão uma vez, na configuração, e pode trocar numa nota específica — e com a **tributação do ISS** (onde o imposto é devido).
+
+{% hint style="warning" %}
+**Seu município ainda não aderiu?** Então a nota da locação sai como NFS-e Municipal, que pede um código de serviço. Não escolha um código "qualquer": converse com o seu contador sobre qual código usar e como tratar o ISS no seu caso.
+{% endhint %}
+
+Os detalhes da configuração — o modo da NFS-e, o código de serviço padrão, o certificado, o teste e a produção — estão em [Integração Fiscal](../configuracoes/integracao-fiscal.md#nfse-nacional-ou-municipal).
 
 ## E quando tem mão de obra junto?
 
@@ -43,6 +66,14 @@ O caminho certo é **separar as duas coisas**, com valores individualizados:
 
 {% hint style="warning" %}
 O código de serviço da parte de mão de obra depende da natureza concreta do trabalho e varia por município — **quem define é o seu contador**. O LocFlow não escolhe esse código por você.
+{% endhint %}
+
+## E o transporte dos itens? {#nf-e-de-remessa}
+
+A nota de locação não é a única que pode acompanhar um pedido. Quando os itens **saem** para o cliente e **voltam**, a **NF-e de remessa** acompanha o transporte: ela **não gera imposto de venda** — é o documento que regulariza a circulação dos seus bens. O **MDF-e** (o manifesto que agrupa as notas de um roteiro) ainda aparece como **Em breve**.
+
+{% hint style="info" %}
+**Para quem quer os detalhes.** A NFS-e e a NF-e de remessa estão em todos os planos; a NF-e de venda é do plano Pro (veja [Nota fiscal na venda](nota-fiscal-na-venda.md)). Cada nota emitida **em produção** consome **25 créditos**; as notas de teste, em homologação, não consomem nada. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md#o-que-consome).
 {% endhint %}
 
 ## O que muda em 2027 (comece a olhar agora)

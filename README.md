@@ -7,7 +7,7 @@ description: A central de ajuda do LocFlow — tudo para gerir sua locadora do o
 
 O **LocFlow** é o sistema de gestão para locadoras de bens móveis. Ele acompanha o seu negócio de ponta a ponta: do **orçamento** ao **fechamento**, da **cobrança** (inclusive pagamento online) à **logística** de entrega e retirada.
 
-**Locação ou venda.** Além da locação, o LocFlow também atende quem **vende** seus bens móveis. A venda é uma **modalidade** tratada de ponta a ponta — com o mesmo orçamento, a mesma cobrança e a mesma logística de entrega. A diferença é que, na venda, o item sai em definitivo (não há retorno nem retirada).
+**Locação ou venda.** Além da locação, o LocFlow também atende quem **vende** seus bens móveis. A venda é uma **modalidade** tratada de ponta a ponta — com o mesmo orçamento, a mesma cobrança e a mesma logística de entrega. A diferença é que, na venda, o item sai em definitivo (não há retorno nem retirada). A venda faz parte do plano **Pro** — veja [Locação e venda](conceitos/locacao-e-venda.md).
 
 Esta é a central de ajuda para você e sua equipe. Aqui você encontra guias passo a passo, explicações dos conceitos e respostas para as dúvidas do dia a dia.
 
@@ -23,17 +23,22 @@ Prefere a ordem clássica? Siga assim:
 
 1. [**A filosofia do LocFlow**](primeiros-passos/filosofia.md) — a ideia por trás do produto e por que ele cresce com você.
 2. [**Criando sua conta**](primeiros-passos/criando-sua-conta.md) — entre no LocFlow e dê os primeiros passos.
-3. [**Configuração inicial**](primeiros-passos/configurando-sua-empresa.md) — deixe o sistema com a cara da sua locadora.
+3. [**Configuração inicial**](primeiros-passos/configurando-sua-empresa.md) — quatro perguntas rápidas: o CNPJ, o nome, como você trabalha e de onde sai o material.
 4. [**Criando um orçamento**](orcamentos/criando-um-orcamento.md) — o coração da operação.
 
 Novo em algum termo? Consulte o [**Glossário do LocFlow**](primeiros-passos/glossario.md).
 
 ## O que dá para fazer
 
-* **Orçamentos** — monte propostas com itens, valores, datas e frete; envie para o cliente e acompanhe até o fechamento.
-* **Cobrança** — gere faturas, divida em parcelas e receba **pagamento online** com link pronto para enviar ao cliente.
-* **Logística** — organize entregas e retiradas, monte o roteiro e acompanhe a execução em campo.
-* **Configurações (Motores)** — defina as regras da sua operação: frete, política de cobrança, prazos e mais.
+* **Orçamentos** — monte propostas com itens, valores, datas e frete; envie para o cliente e acompanhe até o fechamento. Veja [Criando um orçamento](orcamentos/criando-um-orcamento.md).
+* **Cobrança** — gere faturas, divida em parcelas e receba **pagamento online** com link pronto para enviar ao cliente. Veja [Faturas e parcelas](cobranca/faturas-e-parcelas.md).
+* **Logística** — organize entregas e retiradas, monte o roteiro e acompanhe a execução em campo — tudo de uma vez no [Painel Logístico](logistica/painel-logistico.md). Veja [Visão geral da logística](logistica/visao-geral.md).
+* **Estoque** — saiba quanto você tem em cada galpão, quanto vai sobrar numa data futura e o que está em manutenção. Veja [Galpões e disponibilidade](estoque/galpoes-e-disponibilidade.md).
+* **Gestão Financeira** — lançamentos, contas a pagar e a receber, conciliação e relatórios. Veja [Visão geral do financeiro](financeiro/visao-geral.md).
+* **Notas fiscais** — emita NFS-e, NF-e de remessa e NF-e de venda direto do pedido. Veja [Nota fiscal na locação](conceitos/nota-fiscal-na-locacao.md).
+* **Rede de Parceiros** — repasse pedidos a outras operações (ou execute os delas), com acordos e ganhos acompanhados no sistema. Veja [Rede de Parceiros: a visão](parcerias/visao-geral.md).
+* **Flo, a assistente** — pergunte, consulte e peça para ela adiantar formulários, por texto ou por voz. Veja [Conheça a Flo](flo/conheca-a-flo.md).
+* **Configurações (Motores)** — defina as regras da sua operação: frete, política de cobrança, prazos e mais. Veja [Motores operacionais](configuracoes/motores-operacionais.md).
 
 ## Precisa de ajuda?
 

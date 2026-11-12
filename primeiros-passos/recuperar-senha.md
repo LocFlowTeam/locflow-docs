@@ -1,6 +1,6 @@
 ---
 icon: key
-description: Esqueceu a senha? Peça um link de recuperação por e-mail e defina uma nova. Quem entra com Google não tem senha a recuperar.
+description: Esqueceu a senha? Peça um link de recuperação por e-mail e defina uma nova. Quem entra com Google não tem senha a recuperar — mas pode adicionar uma.
 ---
 
 # Recuperar sua senha
@@ -53,18 +53,29 @@ Por segurança, a tela mostra a mesma mensagem de confirmação **mesmo que o e-
 
 ## Você entra com o Google? <a href="#voce-entra-com-o-google" id="voce-entra-com-o-google"></a>
 
-Se você acessa o LocFlow **com a sua conta Google**, não existe senha a recuperar — quem cuida da sua senha é o próprio Google. Para entrar, é só tocar em **Continuar com Google** na tela de acesso.
+Se você acessa o LocFlow **só com a sua conta Google**, não existe senha do LocFlow a recuperar — quem cuida da sua senha é o próprio Google. Para entrar, é só tocar em **Continuar com Google** na tela de acesso. (Quer também uma senha do LocFlow? Veja [abaixo](#duas-formas-de-entrar).)
 
 {% hint style="success" %}
 **Sem senha para lembrar.** Entrar com o Google é o caminho mais rápido, no cadastro e no dia a dia. Se um dia esquecer a senha do seu Google, recupere-a pelo próprio Google.
 {% endhint %}
+
+## Quer as duas formas de entrar? <a href="#duas-formas-de-entrar" id="duas-formas-de-entrar"></a>
+
+Dá para ter **Google e senha** na mesma conta. Em **Minha Conta**, na seção **Acesso**, o cartão **Métodos vinculados** mostra como você entra hoje — *"Você pode entrar por qualquer método listado abaixo."*
+
+* **Entra só pelo Google?** Toque em **Adicionar senha** e defina uma senha do LocFlow (pelo menos 6 caracteres). A partir daí você entra pelo Google **ou** pela senha — e o **Esqueceu a senha?** desta página passa a valer para a sua conta.
+* **Entra só com e-mail e senha?** Toque em **Vincular Google** para passar a entrar também pelo botão **Continuar com Google**.
+* **Quer trocar o e-mail de login?** Quem entra com senha toca em **Alterar e-mail** e informa o **Novo e-mail de login**: o LocFlow manda um e-mail de confirmação, e a troca vale depois que você confirmar.
+
+Veja os detalhes em [Minha conta e preferências](../configuracoes/minha-conta.md#acesso).
 
 ## Situações reais <a href="#situacoes-reais" id="situacoes-reais"></a>
 
 * **"Sempre entrei com o botão do Google e agora aparece pedindo senha."** Você não precisa de senha: toque em **Continuar com Google**. O campo de senha é só para quem criou a conta com e-mail e senha.
 * **"Pedi o link, mas não lembro qual e-mail usei."** Tente o e-mail principal da sua locadora. Se mesmo assim nada chegar, é provável que a conta use o **Google** — entre por ele.
 * **"Recebi um convite da equipe e esqueci a senha que defini."** O fluxo é o mesmo desta página: peça o link de recuperação com o e-mail do convite. Se você aceitou o convite **com o Google**, é só entrar com o Google.
+* **"Recuperei o acesso e o LocFlow pediu um código de 6 números."** É a [verificação em duas etapas](../configuracoes/verificacao-em-duas-etapas.md): a senha nova não a desliga. Abra o aplicativo autenticador do seu celular e digite o código atual.
 
 ## Próximo passo <a href="#proximo-passo" id="proximo-passo"></a>
 
-Recuperou o acesso? Volte para [Criando sua conta](criando-sua-conta.md) para entender as formas de entrar, ou siga para [Configurando sua empresa](configurando-sua-empresa.md). Travou em outra coisa? Veja [Onde tirar dúvidas](onde-tirar-duvidas.md).
+Recuperou o acesso? Volte para [Criando sua conta](criando-sua-conta.md) para entender as formas de entrar, ou siga para a [Configuração inicial](configurando-sua-empresa.md). Travou em outra coisa? Veja [Onde tirar dúvidas](onde-tirar-duvidas.md).

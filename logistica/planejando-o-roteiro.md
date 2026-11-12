@@ -5,7 +5,11 @@ description: Monte a rota do dia — agrupe paradas, escolha quem vai e em qual 
 
 # Planejando o roteiro
 
-Um **roteiro** é a sequência de paradas de uma viagem: as entregas e retiradas que a equipe vai cumprir, na melhor ordem, com quem vai e em qual veículo. Planejar com antecedência é o que transforma várias entregas soltas em **uma viagem só, bem aproveitada**.
+Um **roteiro** é **uma viagem de um veículo**: ele sai do galpão, cumpre as paradas na melhor ordem e volta. As paradas são as entregas e retiradas que a equipe vai fazer nessa ida e volta. Planejar com antecedência é o que transforma várias entregas soltas em **uma viagem só, bem aproveitada**.
+
+{% hint style="info" %}
+**Um roteiro = um veículo = uma viagem.** O que você planeja aqui é **uma unidade que carrega e anda**: um veículo, com uma **carreta engatada** se precisar. Por isso cada pedido entra **uma vez** em cada roteiro — se a carga dele não cabe numa viagem só, você a reparte em [viagens](#cargas-e-viagens) e leva **uma delas** neste roteiro; as outras vão em outros roteiros, no mesmo veículo em outro turno ou em veículos diferentes.
+{% endhint %}
 
 O planejamento acontece em **passos**, sempre com o mapa à vista. Você não preenche um formulário longo: vai tocando os pinos, ajustando a ordem e o app vai mostrando o que dá para melhorar.
 
@@ -15,28 +19,28 @@ O planejamento acontece em **passos**, sempre com o mapa à vista. Você não pr
 
 ## Os passos
 
-O coração do planejamento são as decisões — **quem vai**, **em que tipo de veículo** (a classe ou a especificação) e **o que levar e em qual ordem** —, e por último a **jornada e a revisão**.
+O coração do planejamento são as decisões — **quem vai**, **em que tipo de veículo** (com carreta, se for o caso) e **o que levar e em qual ordem** —, e por último a **jornada e a revisão**.
 
-O passo dos **Movimentos** acontece em **dois momentos**, e o app te leva de um para o outro:
+O passo das **Paradas** acontece em **dois momentos**, e o app te leva de um para o outro:
 
-1. **O que levar** — você escolhe as paradas (os movimentos) e confere se a **carga cabe** no veículo.
+1. **O que levar** — você escolhe as paradas e confere se a **carga cabe** no veículo.
 2. **Ordenar a rota** — define a **saída**, coloca as paradas na **melhor ordem** e vê o **trajeto real** com tempos e informações.
 
-Sempre que você **adiciona um movimento**, o app volta para o **"o que levar"** — porque mudou a carga, e faz sentido reconferir a capacidade antes de reordenar.
+Sempre que você **adiciona uma parada**, o app volta para o **"o que levar"** — porque mudou a carga, e faz sentido reconferir a capacidade antes de reordenar.
 
 ```mermaid
 flowchart LR
-    P1[1. Responsavel<br/>quem vai] --> P2[2. Veiculo<br/>classe ou especificacao]
-    P2 --> P3a[3a. O que levar<br/>paradas + a carga cabe?]
-    P3a --> P3b[3b. Ordenar a rota<br/>saida + ordem + trajeto]
-    P3b --> P4[4. Jornada e revisao<br/>+ Criar roteiro]
+    P1[1. Equipe<br/>quem vai] --> P2[2. Tipo de veiculo<br/>+ carreta opcional]
+    P2 --> P3a[3. Paradas · o que levar<br/>viagens + a carga cabe?]
+    P3a --> P3b[3. Paradas · ordenar a rota<br/>saida + ordem + trajeto]
+    P3b --> P4[4. Revisao<br/>+ Criar roteiro]
 ```
 
-### Passo 1 — Responsável
+### Passo 1 — Equipe
 
-Você define quem responde pela viagem. Pode ser **você mesmo** (quando é você que vai dirigir/acompanhar) ou **outro colaborador**. Esse responsável é o **condutor** do roteiro — quem vai dirigir e tocar a operação.
+*"Quem vai executar este roteiro?"* Você define quem responde pela viagem. A lista já começa com **você** como responsável — o caso mais comum —, e você pode escolher **outro colaborador** no lugar. Esse responsável é o **condutor** do roteiro: quem vai dirigir e tocar a operação — e o **único da equipe que registra a execução** na rua (veja [Motorista e ajudante](execucao-em-campo.md#motorista-e-ajudante)).
 
-Em seguida, você pode somar **acompanhantes** — a equipe que vai junto na viagem (ajudantes de carga, conferentes). O condutor entra automaticamente na equipe; os acompanhantes são opcionais.
+Em seguida, você pode somar **acompanhantes** — a equipe que vai junto na viagem (ajudantes de carga, conferentes). O condutor entra automaticamente na equipe; os acompanhantes são opcionais. Para trocar quem dirige, toque em **Tornar responsável** ao lado de um acompanhante: os dois trocam de lugar.
 
 {% hint style="info" %}
 Quem aparece para escolher são os [colaboradores](../configuracoes/colaboradores-e-acessos.md) da sua empresa. Um colaborador apto a dirigir mostra **"Dirige veículos"** ao lado do nome (e a etiqueta **"Dirige"** na lista da equipe) — ajuda a não escalar como condutor alguém que só vai acompanhar.
@@ -56,92 +60,100 @@ O texto vem pronto, por exemplo: *"Fulano não tem a competência de dirigir e e
 Esse aviso **não impede** nada — você pode planejar o roteiro normalmente. Ele é um lembrete para você **regularizar antes de a equipe pôr o pé na estrada**: ajustar a função do colaborador ou atualizar a CNH dele no cadastro. A competência de dirigir e a validade da CNH vêm de [Colaboradores e acessos](../configuracoes/colaboradores-e-acessos.md).
 {% endhint %}
 
-### Passo 2 — Veículo
+### Passo 2 — Tipo de veículo
 
-No planejamento você diz **o tipo de veículo** — **não a placa**. Qual carro exatamente vai é uma decisão do **dia da operação** (depende do que está livre, abastecido, sem manutenção), então ela fica para a **execução**, não para o planejamento. Você define esse tipo de **duas formas**, e escolhe uma delas a cada roteiro:
+No planejamento você diz **o tipo de veículo** — **não a placa**. Qual carro exatamente vai é uma decisão do **dia da operação** (depende do que está livre, abastecido, sem manutenção), então ela fica para a **execução**.
 
-| Forma | O que é | Quando escolher |
-| --- | --- | --- |
-| **Especificação exata** | Uma ficha específica (marca/modelo/ano, com a vistoria e a capacidade dela). | Quando importa qual modelo exatamente sai — por exemplo, só um veículo tem o baú do tamanho certo. |
-| **Classe veicular** | Um **grupo** de especificações equivalentes — "qualquer veículo do grupo serve". | Quando vários modelos resolvem igualmente e você não quer prender o roteiro a uma ficha só. |
+Você escolhe uma **classe** — o grupo de tipos de veículo equivalentes que você montou em [Frota](../cadastros/frota.md) — e, se a viagem pedir, **engata uma carreta** (também pela classe dela). Classe + carreta é a **unidade** que vai rodar: é dela que sai a capacidade que o app usa para conferir a carga, e é ela que a execução tem de respeitar.
 
-Nos dois casos a **placa não muda nada** do planejamento — ela só é resolvida na execução (veja abaixo). Sem escolher nenhuma das duas, o app só não consegue avaliar a carga no passo seguinte (segue com um aviso).
+{% hint style="info" %}
+**Por que classe e não um veículo específico.** Prender o roteiro a um veículo só engessa o dia: se aquela placa quebrar ou atrasar, o roteiro trava. Escolhendo a classe, qualquer veículo do grupo serve — e o app ainda sabe quanto cabe, porque a classe reúne tipos de mesma capacidade.
+{% endhint %}
+
+Sem escolher a classe, o app só não consegue avaliar a carga no passo seguinte (segue com um aviso).
 
 #### O que é uma classe veicular
 
-Uma **classe** é uma **agregação de especificações** que você mesmo monta em [Frota](../cadastros/frota.md) — um jeito de dizer "estas fichas, para efeito de roteiro, são intercambiáveis". O critério do agrupamento é **seu**: você pode reunir especificações com a **mesma capacidade** (o caminho mais seguro, e o LocFlow chega a sugerir esse agrupamento sozinho) ou por **qualquer outro critério** que fizer sentido no seu negócio — nesse caso, assumindo o risco da escolha.
+Uma **classe** é um **grupo de tipos de veículo** que você mesmo monta em [Frota](../cadastros/frota.md) — um jeito de dizer "estes tipos, para efeito de roteiro, são intercambiáveis". O critério do agrupamento é **seu**: você pode reunir tipos com a **mesma capacidade** (o caminho mais seguro, e o LocFlow chega a sugerir esse agrupamento sozinho) ou por **qualquer outro critério** que fizer sentido no seu negócio — nesse caso, assumindo o risco da escolha.
 
 Além da capacidade, toda classe tem um **titular** — a sua organização, um fornecedor de frete ou um parceiro externo — e todas as fichas do grupo são desse mesmo titular. É por isso que escolher a classe no planejamento responde **duas** perguntas de uma vez: quanto cabe (a capacidade do grupo) e quem vai executar a viagem e por quanto (o titular).
 
-*Exemplo:* você tem três picapes — uma 2019, uma 2021 e uma 2023 — que carregam exatamente o mesmo tanto de material. Em vez de escolher uma ficha específica a cada roteiro, você agrupa as três numa classe chamada "Picape" e passa a planejar só com "Picape": qualquer uma das três serve, e o app confere a carga pela capacidade que elas garantem em comum.
+*Exemplo:* você tem três picapes — uma 2019, uma 2021 e uma 2023 — que carregam exatamente o mesmo tanto de material. Você agrupa as três numa classe chamada "Picape" e passa a planejar com "Picape": qualquer uma das três serve, e o app confere a carga pela capacidade que elas garantem em comum.
 
 {% hint style="info" %}
-Como criar suas classes, o agrupamento livre e a sugestão automática do LocFlow (quando duas especificações têm a mesma capacidade) ficam em [Classes veiculares](../cadastros/frota-classes.md). Aqui o foco é como a classe entra na **montagem do roteiro**.
+Como criar suas classes, o agrupamento livre e a sugestão automática do LocFlow (quando dois tipos de veículo têm a mesma capacidade) ficam em [Grupos da frota](../cadastros/frota-grupos.md) — na tela da frota, a classe aparece como **grupo**. Aqui o foco é como a classe entra na **montagem do roteiro**.
 {% endhint %}
 
-#### Como a classe confere a carga
+#### Como a classe confere a carga <a id="como-a-classe-confere-a-carga"></a>
 
 Como uma classe pode reunir fichas com capacidades diferentes, o painel **"a carga cabe?"** (veja [mais abaixo](#a-carga-cabe-no-veiculo)) se ajusta ao que o grupo de fato garante:
 
 | Situação da classe | Como a carga é conferida |
 | --- | --- |
-| **Capacidade verificada** — duas ou mais especificações com a mesma capacidade | A carga é conferida **por inteiro**, como se fosse uma especificação só. |
-| **Capacidade mista — vale a menor** — as especificações têm capacidades diferentes entre si | A carga é conferida pela **menor capacidade** do grupo (o piso) — a única garantia que vale para **qualquer** veículo dele. O app avisa quando é esse o caso. |
-| **Uma ficha só** — a classe tem uma única especificação | O app usa a capacidade dessa ficha, mas não chama de "verificada": ainda não há uma segunda ficha equivalente para comparar. |
-| **Sem capacidade cadastrada** — nenhuma especificação da classe tem capacidade cadastrada (ou a classe está vazia) | O app avisa que **não dá para conferir a carga** — a responsabilidade de saber se cabe passa a ser de quem está planejando. |
+| **Capacidade verificada** — dois ou mais tipos de veículo com a mesma capacidade | A carga é conferida **por inteiro**, como se fosse um tipo só. |
+| **Capacidade mista — vale a menor** — os tipos de veículo têm capacidades diferentes entre si | A carga é conferida pela **menor capacidade** do grupo (o piso) — a única garantia que vale para **qualquer** veículo dele. O app avisa quando é esse o caso. |
+| **Um tipo só** — a classe tem um único tipo de veículo | O app usa a capacidade desse tipo, mas não chama de "verificada": ainda não há um segundo tipo equivalente para comparar. |
+| **Sem capacidade cadastrada** — nenhum tipo de veículo da classe tem capacidade cadastrada (ou a classe está vazia) | O app avisa que **não dá para conferir a carga** — a responsabilidade de saber se cabe passa a ser de quem está planejando. |
 
 {% hint style="warning" %}
 A classe **nunca bloqueia** o planejamento — nem mesmo sem nenhuma capacidade cadastrada no grupo. Você continua podendo montar o roteiro normalmente; só fica sem a checagem automática de "a carga cabe?" para se apoiar, e a conta passa a ser sua.
 {% endhint %}
 
-| No planejamento | Na execução (PrepararSaída) |
+| No planejamento | Na execução (preparar a saída) |
 | --- | --- |
-| Você escolhe **a classe** ou **a especificação** (ou deixa em branco). | O app resolve **a placa** automaticamente, dentro do que a classe/especificação permite. |
+| Você escolhe **a classe** (e a carreta, se houver) — ou deixa em branco. | Quem vai para a rua escolhe **a placa**, dentro do que a classe permite, e acopla a carreta planejada. |
 
 {% hint style="info" %}
-**Quem aparece para escolher, na execução.** Planejou uma **classe**? Todo veículo que pertence a **alguma especificação daquela classe** fica selecionável; os de fora aparecem **esmaecidos**, com o selo **"Classe diferente"**. Planejou uma **especificação exata**? Só os veículos daquela ficha ficam selecionáveis; os demais aparecem esmaecidos com **"Especificação diferente"**. Além disso, o app sugere a placa nesta ordem: **(1)** o **veículo-padrão do motorista**, se ele tiver um; **(2)** senão, o **último veículo que ele usou**; **(3)** senão, ele **seleciona na hora** — sempre dentro do que a classe/especificação permite. Veja [Execução em campo](execucao-em-campo.md).
+**Quem aparece para escolher, na execução.** Todo veículo que pertence a **algum tipo daquela classe** fica selecionável; os de fora aparecem **esmaecidos**, com o selo **"Classe diferente"**. Além disso, o app sugere a placa nesta ordem: **(1)** o **veículo-padrão do motorista**, se ele tiver um; **(2)** senão, o **último veículo que ele usou**; **(3)** senão, ele **seleciona na hora** — sempre dentro do que a classe permite. Veja [Execução em campo](execucao-em-campo.md).
 {% endhint %}
 
 {% hint style="info" %}
-Definir a classe ou a especificação ajuda no passo seguinte: o app consegue avaliar se a carga **cabe**. Sem nenhuma das duas, essa conferência não aparece. Veja [Especificações: capacidade](../cadastros/frota-capacidade.md).
+Definir a classe ajuda no passo seguinte: o app consegue avaliar se a carga **cabe**. Sem ela, essa conferência não aparece. Veja [Tipos de veículo: capacidade](../cadastros/frota-capacidade.md).
 {% endhint %}
 
-### Passo 3a — O que levar
+### Passo 3 — Paradas: o que levar
 
 No mapa, cada pino é um **movimento** (uma entrega ou uma retirada) esperando para ser roteirizado. Aqui você escolhe **quais** vão nesta viagem:
 
-* **Toque nos pinos** para adicionar paradas à rota. O **primeiro** movimento define o **galpão de origem**; os demais precisam sair do mesmo galpão.
+* **Toque nos pinos** para adicionar paradas à rota.
+* O **Galpão de saída** é de onde a equipe sai e para onde volta. Você o escolhe em **Escolher** / **Trocar**; enquanto não escolher, o **primeiro** movimento adicionado define a saída. Trocar a saída não desfaz a seleção: o que era saída vira coleta, e vice-versa.
+* **Movimentos de outros galpões também entram.** Se o material de um pedido está em outro galpão, a rota passa lá para **coletar** antes de seguir para os clientes — e o app avisa: *"A rota ganhou uma coleta — A rota vai passar em (galpão) para coletar o material."* Uma rota passa por até **10 galpões de coleta** além do de saída; acima disso, o movimento fica de fora (*"Rota de coleta cheia"*).
 * Use o **filtro de data** (Hoje, Amanhã, 7 dias, Período ou Tudo) para ver no mapa só o que cai no dia que você está planejando.
-* Use o **laço** para cercar uma área no mapa e adicionar de uma vez todos os movimentos ali dentro. Só entram movimentos do mesmo galpão de origem.
+* Use o **laço** para cercar uma área no mapa e adicionar de uma vez todos os movimentos ali dentro — inclusive os de outros galpões, que entram como coleta, até o limite da rota.
 * Pontos no mesmo endereço aparecem agrupados — toque para adicionar ou remover cada um.
 
-No topo deste momento fica o painel **"a carga cabe?"** (veja [mais abaixo](#a-carga-cabe-no-veiculo)). Cada movimento selecionado vira um **card** com o orçamento, o endereço e a sua **carga**. A carga aparece resumida (ex.: *"7 itens"*), e ao tocar na **setinha** o card **expande o detalhe item a item** — produto/kit, miniatura e quantidade. Você também vê a carga no **detalhe do movimento** (ao tocar/passar o mouse no pino) **antes** de incluí-lo.
+{% hint style="info" %}
+**Cada galpão a mais é uma parada de coleta**: ela consome tempo da janela e ocupa o baú desde o começo da rota. Confira o trajeto antes de gastar créditos com otimização. Na execução, a passagem pelo galpão de apoio é registrada à parte — veja [Coletar em outro galpão no caminho](execucao-em-campo.md#galpao-de-apoio).
+{% endhint %}
+
+No topo deste momento ficam as duas âncoras do roteiro — a **Data do roteiro** e o **Galpão de saída** — e, logo abaixo, o painel que confere se **a carga cabe** no veículo (veja [mais abaixo](#a-carga-cabe-no-veiculo)). Cada movimento selecionado vira um **card** com o orçamento, o endereço e a sua **carga**. A carga aparece resumida (ex.: *"7 itens"*), e ao tocar na **setinha** o card **expande o detalhe item a item** — produto/kit, miniatura e quantidade. Você também vê a carga no **detalhe do movimento** (ao tocar/passar o mouse no pino) **antes** de incluí-lo.
 
 Quando a carga estiver montada, toque em **Ordenar a rota** para avançar.
 
-### Passo 3b — Ordenar a rota
+### Passo 3 — Paradas: ordenar a rota
 
 Aqui você decide **quando sair** e em **qual ordem** atender, e vê o **trajeto real**.
 
-**Saída do galpão.** Antes de otimizar, defina a **data** e a **hora de saída** — a otimização e os tempos dependem dela. Você tem dois modos:
+**Saída do galpão.** Antes de otimizar, confira a **Hora de saída** — a otimização e os tempos dependem dela. A **data** é a *Data do roteiro*, definida no momento anterior ("o que levar"); aqui há um campo só, o da hora.
 
-* **Hora fixa** — a equipe sai na hora que você informar.
-* **Melhor saída** — você liga *"Melhor saída (o sistema escolhe)"* e informa só o **"sair a partir de"**; a otimização inteligente calcula a **melhor hora de partir** para cumprir as janelas e mostra *"Sairá ~HH:MM"*.
+Você não precisa adivinhar o melhor horário: a **otimização inteligente** sempre procura a **melhor hora de partir** para cumprir as janelas e **preenche o campo sozinha**, com a marca *"Horário escolhido pela otimização do Google · edite se quiser"*. Se você mudar a hora depois de calcular, a tela avisa — *"O horário de saída mudou — as chegadas estimadas e o trânsito ficaram desatualizados. Recalcule para a nova saída."* — e oferece **Recalcular**.
 
 A rota aparece como uma **linha do tempo**, no jeito de um app de mapas: começa na **Saída do galpão**, desce pelas **paradas numeradas** e fecha no **Retorno ao galpão**. Entre cada ponto aparece a **distância e o tempo** do trecho — inclusive do galpão à primeira parada e da última de volta (depois de traçar a rota real). Cada parada tem uma **alça** para **arrastar e reordenar**, e a mesma **setinha** que expande o detalhe da carga (o que **embarca** ou **desembarca** ali). Os nós de **Saída** e **Retorno** também expandem para mostrar o que carrega/descarrega no galpão.
 
 Com base nisso, a linha do tempo projeta a carga **planejada**: a **carga de saída** no galpão (tudo que será entregue), o **saldo a bordo após** cada parada e a **carga de retorno** no fim. Esses números são uma **estimativa do planejamento** (por isso o rótulo *planejado*) — o saldo **real** é o que a execução registra parada a parada.
 
 {% hint style="info" %}
-**Um roteiro pode passar em mais de um galpão.** Ele tem um **galpão-base** (de onde a equipe sai e para onde volta) e pode ter **galpões de apoio** no caminho, para completar a carga. A regra é: **todo galpão de que um movimento precisa tem de estar na rota** (base + apoios). Se faltar, o app diz qual — *"O movimento precisa do galpão X, que não está na rota do roteiro"* — e basta **acrescentar o galpão à rota**, sem quebrar o roteiro em dois. Entenda como o sistema escolhe as origens em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
+**Um roteiro pode passar em mais de um galpão.** Ele tem um **galpão de saída** (a base: de onde a equipe sai e para onde volta) e pode ter **galpões de apoio** no caminho, para completar a carga. A regra é: **todo galpão de que um movimento precisa tem de estar na rota** (base + apoios). Ao adicionar um movimento de outro galpão, o app já inclui a coleta e avisa. Se mesmo assim faltar algum — por exemplo, depois de uma mudança no pedido —, o app diz qual (*"O movimento precisa do galpão X, que não está na rota do roteiro"*), e basta **acrescentar o galpão à rota**, sem quebrar o roteiro em dois. Entenda como o sistema escolhe as origens em [Movimentos, janelas e galpão de origem](../orcamentos/movimentos-e-janelas.md#varios-galpoes).
 {% endhint %}
 
-#### Endereços sem localização no mapa
+#### Endereços sem ponto no mapa
 
-Um movimento só aparece como pino se o endereço dele já tiver **coordenadas**. Quando algum não tem, o app avisa no topo (**"X sem localização no mapa"**) e oferece **Resolver** — ele busca as coordenadas pelo endereço. Cada endereço novo resolvido consome **1 crédito** (movimentos no mesmo endereço contam como um só; endereços já resolvidos antes não custam nada).
+Um movimento só aparece como pino se o endereço dele já tiver **ponto no mapa** (coordenadas). Quando algum não tem, o app avisa no topo (**"N sem ponto no mapa"**), com **Listar** (para ver quais são) e **Resolver**. A folha **Resolver pontos no mapa** mostra quantos endereços novos são e o custo antes de você aceitar (*"Resolver (usa até N créditos)"*): cada endereço novo resolvido consome **1 crédito** (movimentos no mesmo endereço contam como um só; endereços já resolvidos antes não custam nada).
+
+Para uma parada que **já tem pino**, mas no lugar errado, o detalhe do movimento oferece **Ajustar ponto no mapa** — você arrasta o pino para o ponto certo.
 
 {% hint style="warning" %}
-**Resolver as localizações vem primeiro.** As ações de mapa — **otimização inteligente**, **traçar rota real** e **trânsito/pedágio** — só funcionam com todas as paradas localizadas. Enquanto houver alguma parada sem localização, o app **não otimiza nem traça** e leva você a **Resolver** antes. Assim o custo do mapa fica transparente: você paga o **geocode** num passo (e vê quantos endereços novos são), e só depois usa as ações pagas sobre dados já resolvidos — em vez de tudo junto numa conta só. (A **otimização rápida**, que ordena pelas janelas sem usar o mapa, funciona mesmo sem localização.)
+**Resolver os pontos vem primeiro.** As ações de mapa — **otimização inteligente**, **traçar o trajeto real** e **trânsito e pedágio** — só funcionam com todas as paradas no mapa. Enquanto houver alguma parada sem ponto, o app **não otimiza nem traça** e leva você a **Resolver** antes. Assim o custo do mapa fica transparente: você paga o **geocode** num passo (e vê quantos endereços novos são), e só depois usa as ações pagas sobre dados já resolvidos — em vez de tudo junto numa conta só. (A **Rápida**, que ordena pelas janelas sem usar o mapa, funciona mesmo sem localização — desde que o traçado esteja desligado.)
 {% endhint %}
 
 {% hint style="info" %}
@@ -150,33 +162,48 @@ Resolver localização usa o mapa por trás do app e por isso consome créditos.
 
 ## A ordem da rota
 
-A ordem das paradas é **arrastável**: segure um item da lista e arraste para cima ou para baixo. Mas você não precisa fazer tudo na mão — o app ajuda em três níveis.
+A ordem das paradas é **arrastável**: segure um item da lista e arraste para cima ou para baixo. Mas você não precisa fazer tudo na mão — toque em **Calcular a rota** e o app ajuda.
+
+### A folha "Calcular a rota" <a id="calcular-a-rota"></a>
+
+A folha tem **duas decisões**, na ordem em que as coisas acontecem:
+
+1. **No mapa** — o que fazer com o trajeto:
+   * **Traçar o trajeto real** — desenha o caminho de verdade, pelas ruas: distância e tempo deixam de ser linha reta.
+   * **Considerar trânsito e pedágio** — a chegada de cada parada leva o engarrafamento em conta, e o app estima o pedágio. Só aparece com o traçado ligado.
+
+   Os dois já vêm **ligados**: quem monta rota quer a hora em que o caminhão chega de verdade. Desligar é um toque.
+2. **Como reordenar as paradas?** — escolher aqui é o que dispara o cálculo:
+   * **Rápida** — ordena pelas **janelas de horário**. Instantânea, sem estimar horários de chegada.
+   * **Inteligente · via Google** (marcada **Recomendado**) — reordena pelo **trajeto real** e estima o **horário de chegada de cada parada**.
+   * **Só traçar, sem reordenar** — com o traçado ligado, desenha o caminho mantendo **a ordem que está na tela** (útil quando a ordem veio de um combinado com o cliente ou do seu arrasto).
+
+Cada opção mostra **o total que vai gastar**, com os interruptores como estão: **Grátis** ou **até N créditos**. Você não precisa somar de cabeça.
 
 ```mermaid
 flowchart TD
-    A[Voce arrasta<br/>ordem manual] --> B{Quer ajuda?}
-    B -->|Rapida gratis| C[Ordena pelas janelas<br/>sem custo]
-    B -->|Inteligente| D[Trajeto real<br/>ETAs + paradas que nao couberam]
-    A --> E[Tracar rota real<br/>desenha o trajeto no mapa]
-    E --> F[Transito + pedagio<br/>opcional]
+    A[Voce arrasta<br/>ordem manual] --> B[Calcular a rota]
+    B --> M[No mapa: tracar o trajeto real<br/>+ transito e pedagio]
+    B --> R{Como reordenar?}
+    R -->|Rapida| C[Ordena pelas janelas]
+    R -->|Inteligente| D[Trajeto real<br/>chegadas + paradas que nao couberam]
+    R -->|So tracar| E[Mantem a ordem da tela]
 ```
 
-### Otimização rápida (grátis)
+### Rápida
 
-Toque em **Otimizar** e escolha **Rápida (grátis)**. O app reordena as paradas priorizando as **janelas de horário** que fecham antes — ou seja, atende primeiro quem precisa ser atendido mais cedo. É instantâneo e **não consome créditos**.
+A **Rápida** reordena as paradas priorizando as **janelas de horário** que fecham antes — ou seja, atende primeiro quem precisa ser atendido mais cedo. É instantânea e **não consome créditos**; se o traçado estiver ligado, o único custo é o do traçado.
 
-### Otimização inteligente
+### Inteligente
 
-A opção **Inteligente** vai além: usa o mapa real para calcular a **melhor sequência pelo trajeto** (não só pelas janelas), **desenha a rota no mapa** e calcula os **ETAs** (a previsão de horário de chegada em cada parada). Ela tenta também **chegar com a maior antecedência possível** dentro de cada janela — para a equipe ter folga, não chegar "em cima da hora".
+A **Inteligente** vai além: usa o mapa real para calcular a **melhor sequência pelo trajeto** (não só pelas janelas), **desenha a rota no mapa** e calcula a **chegada estimada** em cada parada. Ela tenta também **chegar com a maior antecedência possível** dentro de cada janela — para a equipe ter folga, não chegar "em cima da hora" — e procura a **melhor hora de partir**, que já entra no campo **Hora de saída**.
 
 Quando termina, o resultado **aparece na própria tela dos movimentos**: as paradas se **reorganizam com uma animação** e cada uma passa a mostrar a **chegada estimada** — um selo *"chega ~HH:MM"*. Quando essa previsão cai **fora da janela** combinada, o app já marca ali *"Deve atrasar"* (âmbar) ou *"Deve atrasar muito"* (vermelho): você vê, **ainda no planejamento**, quais paradas tendem a furar o horário e pode reagir antes de sair. Não é um quadro que some: a informação **fica nos cards** para você consultar quando quiser.
 
-Se alguma parada **não couber** no tempo, nas janelas ou na **capacidade** do veículo, o app avisa ("X parada(s) não couberam") logo na sequência e a deixa ao final da lista, para você decidir o que fazer.
-
-Por usar o mapa real, ela **consome créditos** — o app sempre mostra **quanto pode custar** e pede sua confirmação antes de cobrar.
+Se alguma parada **não couber** no tempo, nas janelas ou na **capacidade** do veículo, o app avisa (*"X parada(s) não couberam"*) logo na sequência e a deixa ao final da lista, para você decidir o que fazer.
 
 {% hint style="warning" %}
-A otimização inteligente **cobra por parada**. Antes de confirmar, o app exibe "Esta ação usa até N crédito(s)" e o seu saldo atual. Você só paga depois de confirmar.
+A otimização inteligente **cobra por parada** (1 crédito por parada), mais o traçado, quando ligado. Antes de cobrar, o app mostra **quanto pode custar e o seu saldo atual**, e você só paga depois de confirmar.
 {% endhint %}
 
 {% hint style="success" %}
@@ -184,47 +211,40 @@ A otimização inteligente **cobra por parada**. Antes de confirmar, o app exibe
 {% endhint %}
 
 {% hint style="warning" %}
-**Um roteiro é uma viagem só — no máximo 24 horas.** Um roteiro cobre **um dia operacional** (um turno, uma jornada contínua); ele **não** abrange paradas espalhadas por vários dias. Por isso o app barra isso **já na seleção**: se você tentar **adicionar** um movimento com janela **muito distante** (uma de hoje e outra de amanhã, por exemplo), ele **avisa na hora e não inclui a parada** — *"Fora do horizonte do roteiro: com esta parada as janelas cobrem ~X; um roteiro vai até 24h."* As ações de mapa (**otimizar** e **traçar**) reforçam o mesmo limite. É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros** (um por dia).
+**Um roteiro é uma viagem só — no máximo 24 horas.** Um roteiro cobre **um dia operacional** (um turno, uma jornada contínua); ele **não** abrange paradas espalhadas por vários dias. Por isso o app barra isso **já na seleção**: se você tentar **adicionar** um movimento com janela **muito distante** (uma de hoje e outra de amanhã, por exemplo), ele **avisa na hora e não inclui a parada** — *"Fora do horizonte do roteiro: com esta parada as janelas cobrem ~X; um roteiro vai até 24h."* As ações de mapa (**calcular** e **traçar**) reforçam o mesmo limite. É um sinal de que provavelmente há uma **data errada** numa das paradas — ou de que aquilo são, na verdade, **dois roteiros** (um por dia).
 {% endhint %}
 
 {% hint style="info" %}
 Esse limite de **24 horas** é uma **regra do LocFlow**, não um detalhe técnico escondido: o planejamento é sempre de **uma viagem de um dia**. Para entregas de outro dia, monte **outro roteiro** — um por dia. Entenda o **porquê** do número (e as referências) em [O limite de 24h do roteiro](limite-de-24h.md).
 {% endhint %}
 
-### Traçar rota real
+### O trajeto real, o trânsito e o pedágio
 
-Quer apenas **ver o trajeto desenhado no mapa** sem reordenar nada (mantendo a sua ordem manual)? Use **Traçar rota real**. Ele calcula o caminho real entre as paradas, na ordem que você definiu. Se você já tiver traçado esse mesmo trajeto antes, o app **reaproveita sem custo**.
+Com o traçado ligado, a rota aparece desenhada pelas ruas — e, com **trânsito e pedágio**, **colorida por trânsito** (verde onde flui, amarelo e vermelho onde trava), com o **pedágio** estimado do percurso.
 
 {% hint style="info" %}
-Ao reordenar ou mudar as paradas, o traçado desenhado fica **desatualizado** e o mapa volta à linha reta — é só traçar de novo. Isso evita mostrar um caminho que já não corresponde à rota.
+Ao reordenar ou mudar as paradas, o traçado desenhado fica **desatualizado** e o mapa volta à linha reta — é só calcular de novo. Isso evita mostrar um caminho que já não corresponde à rota.
 {% endhint %}
-
-### Ver trânsito e pedágio
-
-No passo da ordenação há um botão **Trânsito** (com ícone de velocímetro). Ligá-lo pede o **traçado enriquecido**: além do caminho real, o app mostra a rota **colorida por trânsito** — verde onde flui, amarelo e vermelho onde trava — e estima o **pedágio** do percurso. Com o Trânsito ligado, o botão de traçar passa a se chamar **"Traçar com trânsito"** — é por ali que você enriquece a rota otimizada com as cores e o pedágio.
 
 #### O resumo "Ida e volta" {#o-resumo-ida-e-volta}
 
-Logo acima da sequência fica o card **"Ida e volta"**, que reúne tudo o que a otimização trouxe — e **fica fixo** ali (não some quando você fecha nada):
+Logo acima da sequência fica o card **"Ida e volta"**, que reúne tudo o que o cálculo trouxe — e **fica fixo** ali (não some quando você fecha nada). Um selo diz se os números são **com trânsito** ou **sem trânsito**.
 
 | O que mostra | Significado |
 | --- | --- |
 | **Distância** | quilômetros do percurso completo (ida + volta ao galpão) |
 | **Tempo** | duração estimada da viagem |
-| **Pedágio** | valor estimado do percurso (com o Trânsito ligado) |
-| **Ocupação** | quão cheio o veículo fica no **pico** da rota (%) |
+| **Pedágio** | valor estimado do percurso (com trânsito e pedágio ligado) |
+| **Ocupação** | quão cheio o veículo fica no **pico** da rota (%) — quando o tipo de veículo tem capacidade cadastrada |
 | **Retorno** | hora prevista de volta ao galpão |
-| **Combustível** | custo estimado de combustível da rota (R$) |
-
-A **ocupação** e o **combustível** dependem do **veículo** escolhido — só aparecem quando a especificação tem capacidade e [custo operacional](../cadastros/frota-capacidade.md#custo-operacional) cadastrados. Assim você vê, antes de sair, que o crédito gasto virou informação útil para o dia.
 
 {% hint style="info" %}
-**Ligar o botão "Trânsito" não cobra nada por si só.** A cobrança acontece quando você de fato **traça** a rota com trânsito — e, como nas outras ações pagas, o app mostra "usa até N crédito(s)" e pede confirmação antes.
+**E o combustível?** Ele não aparece no planejamento: consumo e preço são de **cada veículo**, e o planejamento escolhe só o **tipo** de veículo — que pode reunir veículos com consumos diferentes. A estimativa de combustível aparece no detalhe do roteiro, junto dos custos previstos, quando há veículo com consumo e preço cadastrados. Veja [Acompanhando seus roteiros](acompanhando-roteiros.md#resumo-da-viagem).
 {% endhint %}
 
-{% hint style="success" %}
-**Você paga uma vez por percurso, não por modo.** Se você já traçou um trajeto **sem trânsito** e depois quer vê-lo **com trânsito**, o app **adiciona o trânsito sem cobrar de novo** — é o mesmo caminho, só com as cores e o pedágio por cima. O segundo crédito só sairia se você **mudasse o percurso** (reordenar paradas, trocar a saída).
-{% endhint %}
+**Pedágio na rota.** Quando o percurso tem pedágio, o card oferece **Comparar rota que evita pedágio**. Depois de comparar, ele mostra as duas opções lado a lado — **Com pedágio** (*mais rápida*) e **Sem pedágio** (com o tempo e a economia) — e você troca entre elas sem pagar de novo. A comparação é uma consulta paga à parte (até 2 créditos), com o custo mostrado antes.
+
+Com a rota já na rua, o card passa a se chamar **"Falta percorrer"** — veja [Editar um roteiro que já saiu](#editar-um-roteiro-que-ja-saiu).
 
 ### Quando consome créditos
 
@@ -233,63 +253,71 @@ Para deixar claro o que é grátis e o que cobra no planejamento:
 | Ação | Consome crédito? |
 | --- | --- |
 | Arrastar a ordem na mão | Não |
-| **Otimização rápida** (pelas janelas) | Não |
-| Ligar o botão **Trânsito** | Não (só liga o modo) |
-| **Resolver localização** de um endereço novo | Sim — 1 por endereço novo |
-| **Otimização inteligente** | Sim — por parada (e **grátis** se reaproveitar a mesma otimização) |
-| **Traçar rota real** | Sim — uma vez por percurso (e **grátis** se reaproveitar um traçado igual) |
-| **Traçar com trânsito** | **Grátis** se você já traçou esse mesmo percurso (sem trânsito); senão, cobra uma vez |
+| **Rápida** (pelas janelas), sem traçado | Não |
+| **Resolver pontos no mapa** | Sim — 1 por endereço novo |
+| **Inteligente** | Sim — 1 por parada (e **grátis** se reaproveitar a mesma otimização) |
+| **Traçar o trajeto real** (sem trânsito) | Sim — 1 por percurso (e **grátis** se reaproveitar um traçado igual) |
+| **Traçar com trânsito e pedágio** | Sim — 2 por percurso. Se você já traçou o mesmo percurso **sem** trânsito, paga só a **diferença** (1). Se já pagou **com** trânsito e volta ao simples, não paga nada. |
+| **Comparar rota que evita pedágio** | Sim — até 2 |
+
+{% hint style="success" %}
+**Um percurso nunca paga mais que o seu nível mais alto.** Repetir um traçado igual sai de graça; ligar o trânsito depois cobra só a diferença; desligar não cobra nada. O segundo pagamento cheio só acontece quando o **percurso muda** (reordenar paradas, trocar a saída).
+{% endhint %}
 
 Em toda ação paga, o app **mostra o quanto pode custar e o seu saldo antes**, e só cobra depois que você confirma. Se o saldo não cobrir, ele avisa em vez de tentar cobrar. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
 
-## Passo 4 — Jornada e revisão
+## Passo 4 — Revisão
 
 Com a rota pronta, o último passo é enxuto: você confere a **jornada** (a **duração máxima** da viagem — sugerida pela própria rota, com folga, e editável) e faz a **revisão** antes de criar. O **mapa** fica **focado só na rota final**: os movimentos que ficaram de fora somem do mapa para você ver com clareza o que de fato vai rodar. Conferiu? Toque em **Criar roteiro**.
 
-## A carga cabe no veículo?
+## A carga cabe no veículo? <a id="a-carga-cabe-no-veiculo"></a>
 
-Se você escolheu uma classe, uma especificação (ou um veículo concreto) no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
+Se você escolheu uma classe no passo 2, o app **avalia a capacidade** enquanto você monta a rota: ele soma o que vai ser transportado e compara com o que o veículo comporta. Essa avaliação é **um aviso, não um bloqueio** — quando algo não cabe, a parada crítica é destacada na lista para você decidir (tirar uma parada, dividir em duas viagens ou trocar o veículo).
 
 {% hint style="info" %}
-**Quando o passo 2 escolheu uma classe**, essa conferência usa a capacidade **agregada** do grupo: por inteiro, se todas as especificações da classe forem iguais; pela **menor** delas, se forem diferentes; ou nem isso, se nenhuma tiver capacidade cadastrada — veja [Como a classe confere a carga](#como-a-classe-confere-a-carga).
+Essa conferência usa a capacidade **agregada** do grupo: por inteiro, se todos os tipos da classe forem iguais; pela **menor** delas, se forem diferentes; ou nem isso, se nenhuma tiver capacidade cadastrada — veja [Como a classe confere a carga](#como-a-classe-confere-a-carga).
 {% endhint %}
 
-O painel aparece **no topo do "o que levar"** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem por produto → cabe (a cadeira é o item que mais pesa: 110 de 120)"*. Os **kits são diluídos** nos seus produtos, então a contagem vale mesmo quando a carga é misturada (jogos + cadeiras avulsas, por exemplo). Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou produtos sem limite) e o que fazer. Entenda as estratégias em [Especificações: capacidade](../cadastros/frota-capacidade.md).
+O painel aparece **no topo do "o que levar"** e é **didático**: ele mostra a **estratégia escolhida** (contagem ou volume) e, ao expandir **"Como chegamos nessa estratégia"**, revela o passo a passo — por exemplo, *"contagem por produto → cabe (a cadeira é o item que mais pesa: 110 de 120)"*. Os **kits são diluídos** nos seus produtos, então a contagem vale mesmo quando a carga é misturada (jogos + cadeiras avulsas, por exemplo). Quando não dá para verificar, ele diz o **motivo concreto** (baú aberto, baú fechado sem dimensões cadastradas, ou produtos sem limite) e o que fazer. Entenda as estratégias em [Tipos de veículo: capacidade](../cadastros/frota-capacidade.md).
 
-Além do volume e da contagem, a otimização inteligente também respeita o **peso máximo** do veículo (quando cadastrado): uma parada cuja carga ultrapassaria o peso é apontada como *"acima do peso máximo do veículo"*. Veja [custo operacional e peso](../cadastros/frota-capacidade.md#custo-operacional).
+Além do volume e da contagem, a otimização inteligente também respeita o **peso máximo** do veículo (quando cadastrado): uma parada cuja carga ultrapassaria o peso é apontada como *"acima do peso máximo do veículo"*. Veja [peso máximo de carga](../cadastros/frota-capacidade.md#peso).
 
 {% hint style="success" %}
 Saber antes de sair que a carga não cabe evita a pior cena da operação: o motorista chega no cliente e descobre que faltou item no caminhão. Menos viagem perdida, menos cliente esperando, menos retrabalho.
 {% endhint %}
 
-## Dividir um movimento em viagens
+## Cargas e viagens <a id="cargas-e-viagens"></a>
 
-Quando a carga de **uma** entrega (ou retirada) **não cabe num veículo só**, você não precisa criar a rota na mão tentativa e erro: o LocFlow **divide o movimento em partes** — cada parte é uma **viagem** que cabe no veículo. Cada parte vira um item que você coloca num roteiro; assim a mesma entrega pode sair em **duas viagens** (no mesmo veículo em dias/turnos diferentes, ou em **veículos diferentes**).
+Quando a carga de **uma** entrega (ou retirada) **não cabe numa viagem só**, você não precisa criar rotas na tentativa e erro: o LocFlow monta a **bancada de carga**, onde você reparte o pedido em **viagens** — e cada viagem é uma ida e volta de **um veículo** (com carreta, se você engatar uma).
 
-No detalhe de um movimento, toque em **Dividir movimento**. A folha de divisão tem **dois modos**:
+No detalhe do movimento, toque em **Cargas e viagens**. A bancada mostra os itens do pedido de um lado e as viagens do outro:
 
-* **Por veículo** — escolha a **especificação** ou a **classe**, e o app **propõe as viagens** na hora, sem gastar créditos, mostrando **quantas viagens** dá e **quantos itens** vão em cada uma. Escolhendo a classe, ele usa a capacidade que o grupo garante (por inteiro quando é verificada, pela menor quando é mista) — e, se nenhuma ficha da classe tiver capacidade cadastrada, ele **recusa a proposta automática e diz o motivo**, sugerindo cadastrar a capacidade em ao menos uma ficha ou passar para o modo manual. Se outro veículo aproveitaria melhor a carga, ele **avisa qual seria o ideal** (*"para este movimento, o ideal seria o Furgão Branco"*) — você decide manter o que escolheu ou trocar.
-* **Manual** — você monta cada viagem **item a item**, escolhendo as quantidades; a última viagem fica com **o resto**, automaticamente. É o caminho indicado quando os itens **não têm volume cadastrado** (a divisão automática avisa que não consegue calcular e sugere a manual) — ou quando você simplesmente prefere decidir a repartição.
+* **Nova viagem** cria um veículo vazio. Escolha o **tipo de veículo** dele e, se precisar, **engate uma carreta** — o app só oferece as carretas compatíveis com aquele veículo, e só se você tiver alguma cadastrada.
+* **Toque num item** para jogá-lo dentro do veículo (ou dentro da carreta, que tem o seu próprio espaço). Cada caixa mostra **quanto já está ocupado** — quando passa do que cabe, ela avisa.
+* **Sugerir divisão** faz o trabalho por você: escolha o veículo (e a carreta, se for o caso) e o app propõe as viagens na hora, sem gastar créditos, dizendo **quantas viagens** dá e **quantos itens** vão em cada uma.
+* Uma viagem só, com tudo dentro, é o mesmo que **não dividir** — é assim que você desfaz uma divisão que não quer mais.
 
-Os **bens móveis** de cada parte somam **exatamente** o total do movimento — nada se perde nem se duplica na divisão.
+Os **bens móveis** de todas as viagens somam **exatamente** o total do pedido: nada se perde nem se duplica.
 
-Depois de dividir, as viagens ficam **aninhadas no próprio movimento** — na lista e no mapa continua **um pino só** por destino. Ao selecionar o movimento para uma rota, o app leva a **primeira viagem ainda livre**, mas você pode **tocar e escolher qual viagem entra nesta rota**: cada viagem mostra o seu status (**livre** ou já **em um roteiro**, com o código RT-XXXX).
+{% hint style="success" %}
+**Por que dizer o tipo de veículo aqui.** É a classe escolhida na bancada que **calcula o frete** daquela viagem. Se depois o roteiro sair numa classe diferente, o app avisa — o valor cobrado do cliente foi feito para o veículo que você declarou aqui.
+{% endhint %}
+
+Depois de repartir, as viagens ficam **aninhadas no próprio pedido** — na lista e no mapa continua **um pino só** por destino. Ao escolher o pedido para uma rota, o app leva a **primeira viagem ainda livre**, e você pode **tocar e escolher qual viagem entra nesta rota**: cada uma mostra o seu estado (**livre**, **em ROT-XXXX** ou **cumprida**).
 
 {% hint style="info" %}
-A divisão é **opcional**. O caso comum — a carga cabe num veículo — não muda em nada: você seleciona o movimento inteiro e segue. Divida só quando precisar repartir a carga entre viagens.
+Repartir é **opcional**. O caso comum — a carga cabe numa viagem — não muda em nada: você seleciona o pedido e segue.
 {% endhint %}
-
-Mudou de ideia? Enquanto as viagens ainda estiverem **livres** (fora de roteiro), o botão **Reagrupar viagens** desfaz a divisão e o movimento volta a ser um só.
 
 {% hint style="warning" %}
-**Um pedido dividido só conta como entregue no fim.** Cada viagem é concluída na sua rota, mas o **status do pedido** (*Entregue* / *Retirado*) só avança quando a **última viagem** termina — até lá, o pedido segue em aberto, com as viagens já cumpridas registradas. Na execução, o motorista vê o selo **"Viagem N de M"** em cada parada dividida (veja [Execução em campo](execucao-em-campo.md)).
+**Um pedido repartido só conta como entregue no fim.** Cada viagem é concluída na sua rota, mas o **status do pedido** (*Entregue* / *Retirado*) só avança quando a **última viagem** termina — até lá, o pedido segue em aberto, com as viagens já cumpridas registradas. Na execução, o motorista vê o selo **"Viagem N de M"** em cada parada repartida (veja [Execução em campo](execucao-em-campo.md)).
 {% endhint %}
 
-## Editar um roteiro que já saiu
+## Editar um roteiro que já saiu <a id="editar-um-roteiro-que-ja-saiu"></a>
 
 Um roteiro planejado não vira pedra quando o motorista sai. À medida que ele cumpre as paradas, o roteiro se **parte em dois**: o que já aconteceu e o que ainda falta.
 
-O que já aconteceu é **história** — aparece em cima, com o desfecho de cada parada, e não se reordena nem se remove. O que falta é um **roteiro planejado menor**, e aceita tudo o que um roteiro novo aceita: você reordena arrastando, usa a otimização rápida, a inteligente, traça a rota real e liga o trânsito.
+O que já aconteceu é **história** — aparece em cima, com o desfecho de cada parada, e não se reordena nem se remove. O que falta é um **roteiro planejado menor**, e aceita tudo o que um roteiro novo aceita: você reordena arrastando e usa o **Calcular a rota** — Rápida, Inteligente, traçado e trânsito.
 
 Só duas coisas mudam.
 
@@ -311,7 +339,7 @@ Você nunca fica sem rota por causa disso: sem permissão para ver a localizaç�
 
 Isso muda o que os cálculos usam como partida. Um horário no passado faria o Google devolver a rota **sem trânsito**, calada — você pagaria a otimização justamente para fugir de um congestionamento e receberia a rota livre. Então o que falta é calculado para **daqui a pouco**, e a tela diz para que horário: *"Calculado para sair às 14:35"*. O card de números também muda de nome — passa a ser **"Falta percorrer"**, porque a quilometragem e o tempo ali são só do trecho restante.
 
-E como equipe, veículo e saída viraram fato, a tela de revisão deixa de ser um formulário: ela vira a **ficha da operação**. Os cartões de responsável e veículo aparecem com o selo *"Definido na saída"*, sem botão de editar — antes havia um, e ele levava a um passo bloqueado. O que continua editável continua com botão: os movimentos a planejar e a duração da jornada.
+E como o veículo e a saída viraram fato, a tela de revisão passa a se chamar **A operação em andamento**. O cartão do **veículo** aparece com o selo *"Definido na saída"*, sem botão de editar: quem está em campo carregou contra a capacidade dele, e ele não muda mais. O cartão da **equipe** — **Quem está na rua** — continua com o botão **Trocar**: quem enxerga todos os roteiros pode trocar o motorista responsável e a equipe com a rota na rua, e quem está em campo é avisado (veja [Trocar o motorista com a rota na rua](acompanhando-roteiros.md#trocar-motorista-na-rua)). Também seguem editáveis os movimentos a planejar e a duração da jornada. Roteiro **concluído** não se edita mais.
 
 ### O mapa conta a mesma história
 
@@ -342,8 +370,8 @@ A mesma tela atende quem está começando e quem já roda dezenas de entregas po
 | Porte | Como costuma montar a ordem |
 | --- | --- |
 | **Pequeno** | Poucas paradas: arrasta na mão e pronto. A ordem manual já resolve. |
-| **Médio** | Várias paradas com horários a respeitar: usa a **otimização rápida (grátis)** para ordenar pelas janelas. |
-| **Grande** | Muitas paradas, tempo apertado e combustível pesando: usa a **inteligente** para o melhor trajeto, ETAs e ver o que não cabe — e liga o **Trânsito** para fugir dos pontos travados e prever pedágio. |
+| **Médio** | Várias paradas com horários a respeitar: usa a **Rápida** para ordenar pelas janelas — grátis, se desligar o traçado. |
+| **Grande** | Muitas paradas, tempo apertado e quilometragem pesando: usa a **Inteligente** para o melhor trajeto, as chegadas estimadas e ver o que não cabe — com **trânsito e pedágio** ligados, para fugir dos pontos travados e prever o pedágio. |
 
 ## Despachar uma entrega na hora
 
@@ -353,18 +381,18 @@ A diferença é que agora, se der, você **aproveita a viagem**: dá para acresc
 
 ## Situações reais
 
-* **Manhã de entregas:** filtra por **Hoje**, dá um laço na região do bairro, otimiza pela **rápida (grátis)** e sai com a sequência que respeita os horários combinados.
-* **Dia cheio com tempo curto:** dez paradas, várias com janela apertada. Usa a **inteligente**: ela ordena pelo trajeto real, mostra que duas paradas não cabem antes do fim do expediente e você as joga para amanhã — em vez de descobrir isso no meio da rua.
-* **Cidade congestionada:** liga o **Trânsito** antes de traçar; vê a rota vermelha numa avenida e o pedágio do trecho, e decide sair mais cedo ou desviar.
+* **Manhã de entregas:** filtra por **Hoje**, dá um laço na região do bairro, toca em **Calcular a rota**, desliga o traçado e escolhe a **Rápida** (grátis) — e sai com a sequência que respeita os horários combinados.
+* **Dia cheio com tempo curto:** dez paradas, várias com janela apertada. Usa a **Inteligente**: ela ordena pelo trajeto real, mostra que duas paradas não cabem antes do fim do expediente e você as joga para amanhã — em vez de descobrir isso no meio da rua.
+* **Cidade congestionada:** calcula a rota com **trânsito e pedágio** ligados; vê a rota vermelha numa avenida e o pedágio do trecho, toca em **Comparar rota que evita pedágio** e decide entre sair mais cedo ou desviar.
 * **Escalou quem não pode dirigir:** ao atribuir um colaborador como condutor, aparece o **aviso de CNH vencida**. Monta o roteiro mesmo assim e, antes da execução, atualiza a habilitação dele no cadastro.
-* **Qual carro só se sabe no dia:** no planejamento você escolhe a **especificação** (um furgão); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
-* **Três picapes que carregam a mesma coisa:** você tem uma picape 2019, uma 2021 e uma 2023, todas com a mesma capacidade. Em vez de escolher uma ficha específica em cada roteiro, você as agrupa numa classe "Picape" e passa a planejar só pela classe; na execução, as três aparecem selecionáveis, e a carga é conferida por inteiro porque as três garantem a mesma capacidade.
+* **Qual carro só se sabe no dia:** no planejamento você escolhe a **classe** (os furgões); na execução, o app já sugere o **veículo-padrão** do motorista (ou o último que ele usou), e ele confirma a placa do furgão que estiver livre.
+* **Três picapes que carregam a mesma coisa:** você tem uma picape 2019, uma 2021 e uma 2023, todas com a mesma capacidade. Você as agrupa numa classe "Picape" e passa a planejar por ela; na execução, as três aparecem selecionáveis, e a carga é conferida por inteiro porque as três garantem a mesma capacidade.
 * **Frota própria e fornecedor não se misturam:** você tem uma classe "Caminhão" da sua frota e, separadamente, uma frota-espelho de um fornecedor de frete. São classes diferentes, cada uma com seu titular — ao planejar, escolher uma ou outra já diz quem vai executar a viagem.
 * **Entrega que apareceu agora:** não dá para esperar o planejamento — toca em **Planejar entrega** direto no pedido, o movimento já vem selecionado e você salva. Se, ao abrir, notar outra parada no mesmo bairro, leva as duas na mesma viagem.
-* **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Dividir por veículo** o app propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
-* **Apareceu uma entrega urgente com o motorista já na rua:** ele cumpriu duas das cinco paradas. Você abre o roteiro, adiciona a nova entrega, e manda **otimizar** — a ordem das três que faltam é recalculada a partir de onde ele está agora, não do galpão. As duas já feitas ficam intactas, em cinza no mapa.
+* **Carga grande que não cabe:** uma festa com 300 cadeiras não entra na van. Em **Cargas e viagens**, **Sugerir divisão** propõe **2 viagens**; você manda a 1ª hoje e a 2ª amanhã — ou põe cada parte num veículo, cada um no seu roteiro.
+* **Apareceu uma entrega urgente com o motorista já na rua:** ele cumpriu duas das cinco paradas. Você abre o roteiro, adiciona a nova entrega e toca em **Calcular a rota** — a ordem das três que faltam é recalculada a partir de onde ele está agora, não do galpão. As duas já feitas ficam intactas, em cinza no mapa.
 * **A rua estava interditada:** o motorista pulou a parada 3. Ela não fica presa neste roteiro: volta para a lista de movimentos disponíveis com o motivo registrado, e você decide se tenta de novo hoje — colocando-a de volta — ou se ela entra no roteiro de amanhã.
 
 ## Próximo passo
 
-Com a rota montada, é hora de colocar na rua: veja [Execução em campo](execucao-em-campo.md). Antes de despachar, a equipe pode [separar o material no galpão](separacao.md). Para criar e agrupar suas classes veiculares, veja [Classes veiculares](../cadastros/frota-classes.md). Para entender onde o roteiro se encaixa no todo, veja a [Visão geral da logística](visao-geral.md) e o [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).
+Com a rota montada, é hora de colocar na rua: veja [Execução em campo](execucao-em-campo.md). Antes de despachar, a equipe pode [separar o material no galpão](separacao.md). Para criar e agrupar suas classes veiculares, veja [Grupos da frota](../cadastros/frota-grupos.md). Para entender onde o roteiro se encaixa no todo, veja a [Visão geral da logística](visao-geral.md) e o [ciclo de um pedido](../conceitos/ciclo-de-um-pedido.md).

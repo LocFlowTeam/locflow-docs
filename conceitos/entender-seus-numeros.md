@@ -32,7 +32,7 @@ São duas datas diferentes para o mesmo negócio, e confundi-las é a causa núm
 | **Por competência** (quando o negócio aconteceu) | R$ 30.000 | — |
 | **Por caixa** (quando o dinheiro entrou) | R$ 15.000 | R$ 15.000 |
 
-Os relatórios do LocFlow são **regime de caixa**: eles contam o dinheiro no dia em que ele se moveu. Então esse pedido aparece em setembro com R$ 15.000, e os outros R$ 15.000 aparecem em outubro.
+Os relatórios do LocFlow abrem no **regime de caixa**: eles contam o dinheiro no dia em que ele se moveu. Então esse pedido aparece em setembro com R$ 15.000, e os outros R$ 15.000 aparecem em outubro. (Nos **Relatórios** há a chave **Caixa | Competência** para ver também pela outra régua — veja a dica logo abaixo.)
 
 E o que ainda não entrou? Fica registrado como **previsto** — visível em [Contas a pagar e a receber](../financeiro/contas-a-pagar-e-a-receber.md), somado ali como "a receber", mas **fora do saldo** que você vê na [Visão geral](../financeiro/visao-geral.md).
 
@@ -41,7 +41,7 @@ E o que ainda não entrou? Fica registrado como **previsto** — visível em [Co
 {% endhint %}
 
 {% hint style="info" %}
-O lançamento tem um campo opcional **Data de competência** (no passo *Detalhes*). Ele serve para você registrar a qual mês aquele gasto pertence de verdade — a conta de energia de junho paga em julho, por exemplo. Os relatórios continuam lendo o **dia do caixa**; a competência fica como memória sua, para quando você conversar com o contador.
+**Caixa ou competência: você escolhe a régua.** Na ficha do lançamento, o campo opcional **Competência** diz a que mês aquele valor pertence de verdade — a conta de energia de junho paga em julho, por exemplo. Nos **Relatórios**, a chave **Caixa | Competência** decide como ler: em **Caixa** (o padrão), cada valor conta no mês em que o dinheiro se moveu; em **Competência**, no mês a que ele pertence — o que você marcou, ou, sem marcação, a data do próprio movimento (por isso, num lançamento sem competência marcada, as duas réguas dão o mesmo mês). O fluxo de caixa e o extrato são sempre por caixa, por definição.
 {% endhint %}
 
 ## 2. Margem de contribuição: o número de decisão
@@ -83,7 +83,7 @@ Repare no que **não** entrou: o aluguel do galpão, o contador, o salário do a
 | Marketing | Não (é decisão sua, não do pedido) |
 | Energia da parte administrativa | Quase nada |
 
-No LocFlow, esses lançamentos recebem a natureza **"As duas"** e aparecem no relatório num bloco de **largura cheia, indivisível**: `Estrutura (as duas)`. Eles **não são divididos entre aluguel e venda**.
+No LocFlow, esses lançamentos entram na margem como **Estrutura do negócio** (na categoria, a opção se chama **As duas**) e aparecem no relatório num bloco de **largura cheia, indivisível**: `Estrutura (as duas)`. Eles **não são divididos entre aluguel e venda**.
 
 Isso costuma soar estranho na primeira leitura — "mas parte do galpão é do aluguel e parte é da venda, não é?". Na intuição, sim. Na prática, **qualquer régua para fazer essa divisão produz um número pior do que não dividir**.
 
@@ -166,22 +166,29 @@ Três coisas que a cobertura resolve:
 
 ## 5. Natureza e serviço: a categoria sugere, o lançamento decide
 
-Para o relatório separar aluguel de venda, cada movimento de dinheiro precisa responder a uma pergunta: **"isto sustenta qual operação?"**. São quatro respostas possíveis:
+Para o relatório separar aluguel de venda, cada movimento de dinheiro precisa dizer **qual operação ele sustenta** — em outras palavras, **como ele entra na margem**. No lançamento, são três respostas possíveis; enquanto ninguém decide, o valor fica pendente:
 
 | Resposta | Quando usar | No relatório |
 | --- | --- | --- |
 | **Aluguel** | Sustenta a locação: manutenção do acervo, freela da equipe de montagem, frete de entrega | Entra na coluna Aluguel |
 | **Venda** | Sustenta a venda: mercadoria comprada para revender, comissão do vendedor | Entra na coluna Venda |
-| **As duas** | Galpão, contador, sistema, administrativo, marketing | Bloco `Estrutura (as duas)`, inteiro |
-| **Não sei** | Ninguém decidiu ainda | Bloco `Não classificado`, fora das colunas |
+| **Estrutura do negócio** | Serve ao aluguel e à venda ao mesmo tempo: galpão, contador, sistema, administrativo, marketing | Bloco `Estrutura (as duas)`, inteiro |
+| *(sem decisão)* | Ninguém decidiu ainda | Bloco `Não classificado`, fora das colunas |
 
 ### Por que a categoria sugere e o lançamento decide
 
-A **categoria** carrega uma sugestão (em **Gestão Financeira → Categorias**, campo *Sustenta qual operação?*). Ela pré-seleciona a resposta quando você registra um lançamento naquela categoria — e resolve 90% dos casos sem você pensar.
+A **categoria** carrega uma sugestão (em **Gestão Financeira → Categorias**, campo *Sustenta qual operação?*, com as opções **Não sei**, **Aluguel**, **Venda** e **As duas** — "As duas" é o nome curto de Estrutura do negócio). Ela já decide a resposta quando você registra um lançamento naquela categoria — e resolve 90% dos casos sem você pensar.
 
-Mas ela não pode ser a palavra final, e o exemplo é o **freelancer**. Você tem uma categoria "Freelancers". No sábado você contrata dois para montar uma tenda — isso é **aluguel**. Na terça, contrata um para o mutirão de venda de itens de mostruário — isso é **venda**. **Mesma categoria, naturezas diferentes.** Se a categoria decidisse, um dos dois estaria no lugar errado, para sempre.
+Mas ela não pode ser a palavra final, e o exemplo é o **freelancer**. Você tem uma categoria "Freelancers". No sábado você contrata dois para montar uma tenda — isso é **aluguel**. Na terça, contrata um para o mutirão de venda de itens de mostruário — isso é **venda**. **Mesma categoria, naturezas diferentes.** Se a categoria decidisse sozinha, um dos dois estaria no lugar errado, para sempre.
 
-Por isso a decisão fica **no lançamento**: no passo **Detalhes** do novo lançamento (e direto no formulário, quando você edita), o campo *"Isto sustenta qual operação?"* já vem com a sugestão da categoria marcada — e você troca quando o caso for diferente.
+Por isso a palavra final fica **no lançamento**. No novo lançamento (logo no passo **O que foi?**) e na ficha de um lançamento existente, um cartão presta contas do que a categoria decidiu:
+
+| O cartão mostra | Quando | O que você faz |
+| --- | --- | --- |
+| **Já resolvido pela categoria** — *"Entra na margem como aluguel — sustenta a operação de locação."* (ou *"…como venda…"*, ou *"…como estrutura do negócio — serve ao aluguel e à venda ao mesmo tempo."*) | A categoria tem uma sugestão | Nada — ou toque em **Trocar** quando o caso for diferente |
+| **Precisa da sua decisão** — *"Escolha como isto entra na margem."*, em âmbar | A categoria está como **Não sei** (ou o lançamento chegou sem natureza, como os da Rede de Parcerias — veja abaixo) | Toque em **Escolher** e decida entre Aluguel, Venda e Estrutura do negócio |
+
+Repare: o lançamento **não oferece "Não sei"** como resposta. "Não sei" existe só na categoria — uma categoria pode legitimamente não opinar; o lançamento, quando ninguém decidiu, mostra uma pendência visível em vez de arquivar a dúvida.
 
 {% hint style="success" %}
 **O que o LocFlow responde sozinho, sem te perguntar:**
@@ -197,12 +204,16 @@ Sobra para você **o caso ambíguo** — que é exatamente o caso em que só voc
 
 O LocFlow **não chuta**. Sem resposta, o valor vai para o bloco `Não classificado`: visível, contado no resultado do período, e **fora** das colunas de aluguel e venda. Preferimos te mostrar uma pendência de R$ 1.900 a te entregar uma margem de aluguel silenciosamente errada.
 
+{% hint style="info" %}
+**De onde mais vem o "Não classificado": a Rede de Parcerias.** O dinheiro que a sua organização recebe por executar o pedido de outra (a entrada na categoria **Rede de Parcerias**) nasce **sem natureza** de propósito: o pedido é de quem vendeu, e só ele sabe se aquilo era locação ou venda. Esse valor fica em `Não classificado` até você decidir. Do outro lado, quem repassa vê a saída na categoria **Repasse a Parceiro**. Veja [O dinheiro da parceria](../parcerias/dinheiro-da-parceria.md).
+{% endhint %}
+
 Para zerar a fila:
 
 1. Abra **Gestão Financeira → Relatórios → Serviços**.
 2. Toque no bloco **Não classificado** — o LocFlow leva você para a lista de [Lançamentos](../financeiro/lancamentos.md).
-3. Abra cada lançamento. Na edição, o campo *"Isto sustenta qual operação?"* aparece direto no formulário.
-4. Responda e salve. Se aquela categoria vai sempre para o mesmo lado, aproveite e marque a sugestão **na categoria** — assim os próximos já nascem certos.
+3. Abra cada lançamento. Na ficha, o cartão **Precisa da sua decisão** pede *"Escolha como isto entra na margem."*
+4. Toque em **Escolher** (ou em **Trocar**, se já houver uma resposta), decida entre Aluguel, Venda e Estrutura do negócio, e salve. Se aquela categoria vai sempre para o mesmo lado, aproveite e marque a sugestão **na categoria** — assim os próximos já nascem certos.
 
 ### O serviço: o outro lado da mesma moeda
 
@@ -214,7 +225,7 @@ A **natureza** diz *qual operação* aquele dinheiro sustenta. O **serviço asso
 
 Este é o ponto em que a maioria dos sistemas fica calada. Nós não vamos ficar, porque a leitura errada aqui custa dinheiro de verdade.
 
-Os relatórios são **regime de caixa** — contam o dinheiro no dia em que ele se moveu. Consequência direta:
+Os relatórios abrem no **regime de caixa** — contam o dinheiro no dia em que ele se moveu. E, mesmo lendo por competência, o LocFlow não espalha o custo do seu acervo pelos meses em que ele é usado. Consequência direta:
 
 | | Como o custo aparece hoje |
 | --- | --- |

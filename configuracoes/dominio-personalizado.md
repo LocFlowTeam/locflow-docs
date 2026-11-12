@@ -26,7 +26,7 @@ Esse é um recurso para quem já tem **domínio próprio** e quer levar a marca 
 **Você não precisa disso para cobrar.** Mesmo sem o domínio próprio, o seu **endereço oficial LocFlow** — que já traz o nome da sua empresa — funciona desde o primeiro dia, é **gratuito e fica ativo para sempre**. O domínio personalizado é um endereço **a mais**, com a sua marca; o oficial nunca deixa de funcionar.
 {% endhint %}
 
-A disponibilidade aparece em **Ajustes → Domínio personalizado**. Se o seu plano ainda não inclui, a tela mostra um botão **Fazer upgrade**.
+A disponibilidade aparece em **Ajustes › Integrações › Domínio Personalizado**. Se o seu plano ainda não inclui, a tela mostra um botão **Fazer upgrade**.
 
 {% hint style="warning" %}
 **A contratação ou troca de plano é feita na versão web** (no navegador). No celular, você consulta o seu plano e gerencia a assinatura, mas a compra em si acontece no site — é uma exigência das lojas de aplicativos. Veja [Minha assinatura e créditos](assinatura-e-creditos.md).
@@ -54,19 +54,23 @@ A própria tela resume a conexão em três etapas, e acompanha o progresso de ca
 
 ```mermaid
 flowchart LR
-    A[Digita o subdominio] --> B[Adiciona o registro<br/>no seu provedor de DNS]
+    A[Digita o subdomínio] --> B[Adiciona o registro<br/>no seu provedor de DNS]
     B --> C[LocFlow verifica<br/>sozinho]
-    C --> D[Dominio ativo<br/>links com a sua marca]
+    C --> D[Domínio ativo<br/>links com a sua marca]
 ```
 
 ## Passo a passo
 
-1. No app, abra **Ajustes → Domínio personalizado**.
+1. No app, abra **Ajustes › Integrações › Domínio Personalizado**.
 2. No campo **Domínio**, digite o endereço que você quer usar — só o domínio, **sem `https://` e sem barra** (ex.: `pagamento.suaempresa.com.br`). Toque em **Começar configuração**.
 3. O LocFlow mostra um **registro de DNS** para você criar — um **CNAME**, com três campos: **Tipo**, **Nome** e **Valor (alvo)**. Toque em qualquer um para **copiar**.
 4. Abra o **painel de DNS** do seu provedor de domínio e **crie esse registro exatamente como mostrado** (veja abaixo como).
-5. Pronto. **Você não precisa apertar mais nada:** o LocFlow verifica sozinho de tempos em tempos. Se quiser conferir na hora, puxe a tela para baixo para **atualizar**.
+5. De volta ao LocFlow, toque em **Verificar agora**: o LocFlow consulta o provedor na hora. Se a propagação ainda não terminou, o app avisa — *"Ainda verificando. O DNS/SSL pode levar alguns minutos após apontar o CNAME. Tente de novo em instantes."* Não precisa ficar repetindo: o LocFlow também **verifica sozinho**, em segundo plano, de tempos em tempos.
 6. Quando o domínio estiver pronto, o selo muda de **Aguardando DNS** para **Domínio ativo** (verde) — e seus links já passam a usar o seu endereço.
+
+{% hint style="info" %}
+O botão só vira **Atualizar domínio** quando você **altera o endereço** digitado no campo. Puxar a tela para baixo apenas recarrega o que já se sabe — quem consulta o provedor é o **Verificar agora**.
+{% endhint %}
 
 {% hint style="info" %}
 A **propagação do DNS** pode levar de alguns **minutos a algumas horas** — é normal. Você pode fechar o app e voltar depois: a verificação continua acontecendo em segundo plano e ativa assim que o domínio estiver pronto. Não precisa configurar nada de certificado/HTTPS: o LocFlow cuida do cadeado de segurança automaticamente, sem custo extra.
@@ -76,8 +80,10 @@ A **propagação do DNS** pode levar de alguns **minutos a algumas horas** — �
 
 | Selo na tela | O que está acontecendo |
 | --- | --- |
-| **Aguardando DNS** (âmbar) | Você já registrou o domínio, mas o LocFlow ainda não confirmou o registro no seu provedor. Confira se o CNAME foi salvo certo e aguarde a propagação. |
+| **Aguardando DNS** (âmbar) | Você já registrou o domínio, mas o LocFlow ainda não confirmou o registro no seu provedor. Confira se o CNAME foi salvo certo, aguarde a propagação e toque em **Verificar agora**. |
 | **Domínio ativo** (verde) | Tudo certo: o cadeado de segurança foi emitido e os links já saem com o seu endereço. |
+
+No item **Domínio Personalizado** de Ajustes, o mesmo estado aparece resumido: **Inativo** (nada configurado), **Pendente** (aguardando o DNS) ou **Ativo**.
 
 ## Como criar o registro no seu provedor
 
@@ -114,6 +120,9 @@ Pode. É só informar o novo endereço e tocar em **Atualizar domínio** — a v
 
 **Tem custo de certificado de segurança (HTTPS)?**\
 Não. O cadeado de segurança é emitido e renovado pelo LocFlow, sem custo extra para você.
+
+**Já criei o CNAME, mas continua "Aguardando DNS".**\
+A propagação pode levar de minutos a algumas horas. Confira se o registro foi criado **exatamente** como o app mostra e toque em **Verificar agora** de vez em quando — ou simplesmente espere: a verificação em segundo plano ativa o domínio assim que ele estiver pronto.
 
 ## Próximo passo
 

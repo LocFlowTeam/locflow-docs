@@ -5,7 +5,7 @@ description: Mudou a data, os itens, o endereço ou o frete de um pedido já fec
 
 # Quando um pedido muda depois de fechado
 
-Pedido fechado raramente fica parado: o cliente **adia a entrega**, **troca a data da retirada**, **tira ou acrescenta um item**, **muda o endereço da festa**, ou resolve **passar para pegar no balcão**. O LocFlow trata cada uma dessas mudanças com cuidado — porque uma data, um item ou um endereço que muda **depois** que a operação já está rolando pode fazer o motorista ir ao lugar errado, na hora errada, ou levar a carga errada.
+Pedido fechado raramente fica parado: o cliente **adia a entrega**, **troca a data da retirada**, **tira ou acrescenta um item**, **muda o endereço da festa**, ou resolve **passar para pegar na loja**. O LocFlow trata cada uma dessas mudanças com cuidado — porque uma data, um item ou um endereço que muda **depois** que a operação já está rolando pode fazer o motorista ir ao lugar errado, na hora errada, ou levar a carga errada.
 
 A regra de ouro é simples: **o pedido é a fonte da verdade; a logística segue o pedido.** Quando você edita um pedido já fechado, o LocFlow descobre sozinho o que aquilo afeta — no roteiro, no estoque e na cobrança — e **avisa quem pode agir**.
 
@@ -75,10 +75,10 @@ flowchart TD
 
 **O motorista, enquanto isso, fica protegido.** Um movimento desatualizado fica **bloqueado**: se ele tentar registrar a chegada ou concluir aquela parada, o app não deixa e mostra *"Este movimento foi alterado e aguarda ajuste do roteiro"*. Assim ninguém cumpre a versão velha por engano.
 
-**O motorista é avisado depois.** Só **quando o roteiro é ajustado** é que o motorista daquela rota recebe *"Roteiro ajustado em execução"* e deve conferir antes de seguir.
+**O motorista é avisado depois — e fica sabendo o que mudou.** Só **quando o roteiro é ajustado** é que o motorista daquela rota recebe o aviso *"Roteiro ajustado em execução"*. Ele já diz a diferença na própria frase — por exemplo, *"Cadeira Tiffany de 36 para 40"* — e tocar nele abre a execução. Na parada afetada, uma faixa mostra o que mudou (itens, janela, endereço), e o motorista toca em **Ciente, seguir** para registrar que viu. Veja [Quando o pedido muda no meio da rota](execucao-em-campo.md#pedido-mudou-na-rota).
 
 {% hint style="info" %}
-Resumindo: **quem tem o plano conversa com a central; o motorista conversa com o roteiro.** O motorista nunca recebe "o cliente mudou tal item" — ele recebe "o seu roteiro foi ajustado", que é o que de fato muda o trabalho dele.
+Resumindo: **quem tem o plano conversa com a central; o motorista conversa com o roteiro.** O motorista não recebe cada edição do pedido enquanto ninguém ajustou o plano — ele recebe o roteiro **já ajustado**, com o que mudou no trabalho dele: a carga, a janela ou o endereço daquela parada.
 {% endhint %}
 
 ## O que cada mudança provoca {#o-que-cada-mudanca-provoca}
@@ -91,7 +91,7 @@ Um mapa rápido; os detalhes de cada linha vêm logo abaixo.
 | Data ou janela de **retirada / devolução** | **Sim** | **Sim** — o mesmo | Não |
 | **Itens** (o que vai ou volta) | **Sim** | **Sim** — reserva o acréscimo, libera o excedente | **Sim** — a fatura acompanha |
 | **Endereço** de entrega ou de retirada | **Sim** | Não | Só se mudar o frete |
-| **Quem leva / de onde sai** (balcão, troca de galpão) | **Sim** | **Sim** — na troca de galpão, libera lá e reserva aqui | Não |
+| **Quem leva / de onde sai** (loja, troca de galpão) | **Sim** | **Sim** — na troca de galpão, libera lá e reserva aqui | Não |
 | **Valor, desconto ou frete** | **Não** | Não | **Sim** — ajusta a **fatura** |
 
 ### Mudar a data ou a janela {#mudar-a-data}
@@ -143,7 +143,7 @@ Só que há **duas formas** de mudar o endereço, e elas têm alcances muito dif
 
 ### Mudar quem leva ou de onde sai {#mudar-quem-leva}
 
-Passou a **retirar no balcão**? Trocou o **galpão de origem**? Uma venda virou locação e surgiu uma **retirada** que não existia?
+Passou a **retirar na loja**? Trocou o **galpão de origem**? Uma venda virou locação e surgiu uma **retirada** que não existia?
 
 * O movimento é **refeito** — e pode até **surgir um movimento novo** (a retirada que passou a existir).
 * **Trocar o galpão de origem mexe no estoque nos dois lados:** o material é **liberado no galpão antigo** e **reservado no novo**. Sem isso, faltaria material no lugar errado e sobraria no certo.
@@ -156,7 +156,7 @@ Passou a **retirar no balcão**? Trocou o **galpão de origem**? Uma venda virou
 Esta é a única linha que **não** mexe no roteiro. Ela ajusta a **fatura** (gerando crédito ou reembolso se você reduzir além do que já foi pago) — veja [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 
 {% hint style="warning" %}
-**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **dividir ou consolidar o movimento** no planejamento do roteiro — veja [Dividir um movimento em viagens](planejando-o-roteiro.md#dividir-um-movimento-em-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
+**Refazer o frete NÃO reorganiza a operação.** A divisão de um movimento em **viagens** nasce da distribuição do frete, mas só **no momento em que a logística inicia**. Depois disso, mudar a transportadora ou o número de viagens na composição **não redivide nem reagrupa nada**: a operação continua como nasceu. Para mudar de fato as viagens, o caminho é **ajustá-las na bancada de carga** (**Cargas e viagens**, no planejamento do roteiro) — veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens) e [a composição do frete](../orcamentos/valores.md#composicao-do-frete).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -173,7 +173,7 @@ Nem toda edição pós-ganho passa. São **três** motivos, e vale conhecê-los 
 
 | Por que foi recusada | Quando acontece | O que fazer |
 | --- | --- | --- |
-| **"Os itens não podem ser alterados após o despacho"** | O material já está **com o cliente** (entregue, retirado no balcão) ou já entrou na volta (saiu para retirada, retirado, em conferência). | Só valores mudam. Para trocar material, **crie um novo orçamento**. |
+| **"Os itens não podem ser alterados após o despacho"** | O material já está **com o cliente** (entregue, retirado na loja) ou já entrou na volta (saiu para retirada, retirado, em conferência). | Só valores mudam. Para trocar material, **crie um novo orçamento**. |
 | **Sem estoque na janela nova** | Você mexeu em **itens** ou em **datas** e o material não cabe na nova janela: *"Não há estoque disponível para todos os itens na janela de uso"* (ou a mensagem do **teto de overbooking**, se a sua regra permite furar com limite). | Ajuste as quantidades, escolha outra data, cadastre mais estoque ou reveja as regras em [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md). |
 | **Bloqueio de uso indefinido** | As datas novas não permitem calcular a janela de bloqueio, ou o **bloqueio manual** que você definiu não cobre a logística nova. | Complete as datas do movimento ou ajuste o bloqueio manual — veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md#politica-de-bloqueio). |
 
@@ -182,7 +182,7 @@ Nem toda edição pós-ganho passa. São **três** motivos, e vale conhecê-los 
 {% endhint %}
 
 {% hint style="success" %}
-**Boa notícia sobre o "despacho":** com o caminhão **já na rua** você ainda consegue trocar itens — a diferença vira um movimento novo a encaixar num roteiro. O bloqueio só começa quando o material **chega ao cliente** (ou quando ele retira no balcão).
+**Boa notícia sobre o "despacho":** com o caminhão **já na rua** você ainda consegue trocar itens — a diferença vira um movimento novo a encaixar num roteiro. O bloqueio só começa quando o material **chega ao cliente** (ou quando ele retira na loja).
 {% endhint %}
 
 ## Depende de em que ponto o pedido está {#depende-do-ponto}
@@ -194,7 +194,7 @@ A mesma edição tem efeitos diferentes conforme o momento — e, quando há par
 | **Fechado, logística ainda não começou** | Só atualiza os dados. Quando a logística iniciar, o movimento já nasce com a versão certa. Ninguém na sua equipe precisa ser avisado — **mas se o pedido já foi repassado, o parceiro é avisado assim mesmo.** |
 | **Logística começou, mas o movimento ainda não entrou num roteiro** | Atualiza nos bastidores; o movimento aparece já com os dados novos quando for roteirizado. De novo: **um parceiro que já aceitou é avisado mesmo sem roteiro montado.** |
 | **O movimento já está num roteiro planejado** | O roteiro fica **desatualizado** e vira uma **pendência** para quem o montou (sua central ou o parceiro). |
-| **O roteiro já está em execução** (motorista a caminho) | Além do aviso, o movimento fica **bloqueado** para quem está na rua. Ajustado o roteiro, o motorista recebe *"Roteiro ajustado em execução"*. |
+| **O roteiro já está em execução** (motorista a caminho) | Além do aviso, o movimento fica **bloqueado** para quem está na rua. Ajustado o roteiro, o motorista recebe *"Roteiro ajustado em execução"*, dizendo o que mudou. |
 
 {% hint style="info" %}
 **Por que o parceiro é avisado mesmo antes de existir roteiro?** Porque a janela entre "ele aceitou" e "ele montou a rota" é exatamente a janela em que o vendedor costuma mexer no pedido. Se ninguém avisasse, ele descobriria a mudança na porta do cliente. Uma mudança que chega ao cliente tem de chegar a quem vai executar.
@@ -213,7 +213,7 @@ Não existe um botão "aceitar a nova versão", e você não precisa procurar po
 **Duas travas para conhecer:**
 
 * **Roteiro concluído não se edita** (*"Não é possível editar um roteiro já concluído"*). Se a mudança chegou depois que a viagem fechou, o caminho é uma nova operação.
-* **Depois que a execução começa, veículo, condutor e equipe ficam travados** (*"Não é possível alterar veículo, condutor ou equipe após o início da execução"*). O que ainda muda é a **composição** (quais movimentos a rota leva) e a **ordem** das paradas — e aí o motorista recebe *"Roteiro ajustado em execução"*.
+* **Depois que a execução começa, só o veículo fica travado** — quem está em campo carregou contra a capacidade dele. Ainda mudam a **composição** (quais movimentos a rota leva) e a **ordem** das paradas — e o motorista recebe *"Roteiro ajustado em execução"*, dizendo o que mudou. E a retaguarda (quem enxerga todos os roteiros) ainda pode trocar **o motorista responsável e a equipe**; o app avisa antes: *"A rota está na rua. Trocar o responsável ou a equipe vale para quem está em campo, e eles serão avisados. O veículo não muda mais."* O que já foi registrado fica, e tirar o responsável sem pôr outro no lugar continua bloqueado. Veja [Trocar o motorista com a rota na rua](acompanhando-roteiros.md#trocar-motorista-na-rua).
 {% endhint %}
 
 ## O que já foi cumprido não fica para trás {#ja-cumprido}
@@ -263,6 +263,17 @@ Rota em campo e material já movimentado **não barram** o cancelamento — mas 
 **Cancelar não cancela a fatura sozinho.** Diferente de "voltar para negociação", o cancelamento **não** mexe na cobrança: você decide se cancela a fatura, se cobra uma multa contratual ou se mantém o que já foi faturado. Veja [Faturas e parcelas](../cobranca/faturas-e-parcelas.md).
 {% endhint %}
 
+### Cancelou, reabriu e ganhou de novo {#ganho-de-novo}
+
+Um orçamento cancelado pode voltar à negociação e ser **ganho de novo**. Nesse caso, a logística **recomeça de onde parou de fato**:
+
+* o pedido volta a aparecer no [planejamento](planejando-o-roteiro.md) e no [Painel Logístico](painel-logistico.md) com o que **ainda falta fazer** — por exemplo, se o material está com o cliente, o que aparece é a **retirada**, não uma nova entrega;
+* se a carga mudou enquanto o pedido estava cancelado, o que foi **acrescentado** entra junto na operação — e sai do galpão, em vez de ser só faturado.
+
+{% hint style="warning" %}
+**Locação que já tinha se fechado não é reaproveitada.** Se o material já tinha sido entregue **e devolvido**, ganhar o mesmo orçamento de novo não reabre a operação antiga com a carga pela metade: o pedido não volta sozinho para o planejamento. Para uma nova locação com os mesmos itens, o caminho mais seguro é um **orçamento novo**.
+{% endhint %}
+
 ### Se havia uma rota em campo {#rota-em-campo}
 
 Quando a equipe **já está na rua**, nada é removido à força — seria corromper o registro de uma viagem acontecendo. Em vez disso, o **motorista é avisado de que o plano mudou** e o operador resolve à mão. E as paradas **já cumpridas** nunca são apagadas.
@@ -287,7 +298,9 @@ Tudo isso, delta por delta, está em **[O pedido já estava com um parceiro](efe
 | --- | --- | --- |
 | **Operador logístico** (com a competência [Operar Logística](../conceitos/papeis-funcoes-competencias.md)) | *"Roteiro precisa de ajuste"* | Só quando a logística é **da sua própria organização**. |
 | **Parceiro logístico** (ou a organização parceira) | *"A operação repassada mudou"* / *"O frete de uma operação repassada mudou"* | Quando o pedido está **repassado e vivo**. |
-| **Motorista (executor da rota)** | *"Roteiro ajustado em execução"* | Só **depois** que alguém ajusta o roteiro que ele está rodando. |
+| **Motorista (executor da rota)** | *"Roteiro ajustado em execução"* — já dizendo o que mudou (por exemplo, *"Cadeira Tiffany de 36 para 40"*) | Só **depois** que alguém ajusta o roteiro que ele está rodando. |
+| **Motorista que assume a rota** | *"Você assumiu o roteiro"* — abre a execução, que agora é dele | Quando a retaguarda troca o motorista responsável com a rota na rua. |
+| **Motorista que deixa de ser o responsável** | *"Roteiro reatribuído"* — dizendo se ele segue na equipe como ajudante | Na mesma troca. Quem só entra ou sai da equipe como acompanhante não recebe aviso. |
 | **Operador logístico** | *"Estoque descoberto"* · *"Condição de disponibilidade quebrada"* | Quando a mudança deixa material a descoberto ou quebra a promessa de outro pedido. |
 
 Você ajusta o público de cada aviso na [Central de Notificações](../configuracoes/central-de-notificacoes.md).
@@ -305,7 +318,7 @@ Você muda as duas datas (entrega e retirada). O estoque deixa de ficar preso ne
 Era um **endereço salvo**. Todo pedido ganho que aponta para ele passou a ter um destino novo. Ajuste cada roteiro; os chips vão mostrar *"Desatualizado · detalhes"*, que aqui quer dizer "o endereço salvo mudou".
 
 **"Subi o frete porque o cliente mudou para um bairro mais longe."**
-A fatura sobe. O roteiro **não** muda por causa disso (mas o endereço novo muda!). E as **viagens** não se redividem sozinhas: se o novo trajeto exige duas viagens em vez de uma, é preciso dividir o movimento no planejamento do roteiro.
+A fatura sobe. O roteiro **não** muda por causa disso (mas o endereço novo muda!). E as **viagens** não se redividem sozinhas: se o novo trajeto exige duas viagens em vez de uma, é preciso ajustar as viagens na bancada de carga — **Cargas e viagens**, no detalhe do movimento, ao planejar o roteiro (veja [Cargas e viagens](planejando-o-roteiro.md#cargas-e-viagens)).
 
 **"Cancelei um pedido cuja fatura já tinha o sinal pago."**
 O sistema recusa e explica: estorne ou cancele a cobrança antes. Não é burocracia — é o dinheiro do cliente já dentro de casa.

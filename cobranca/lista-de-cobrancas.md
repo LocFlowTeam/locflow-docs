@@ -13,9 +13,11 @@ A tela de **Cobranças** é a porta do módulo financeiro. Ela reúne todas as *
 
 ## De onde vêm as cobranças
 
-Você não cria uma cobrança nesta tela. A **fatura nasce quando você gera a cobrança** pelo orçamento. Se o Motor Operacional exigir cobrança para reservar, a geração abre junto com a reserva; nos demais casos, você escolhe quando gerar. Se ainda não houver nenhuma cobrança, a lista mostra um aviso convidando você a ir para Orçamentos:
+A cobrança de um pedido nasce **no orçamento**: a **fatura nasce quando você gera a cobrança** por ele. Se o Motor Operacional exigir cobrança para reservar, a geração abre junto com a reserva; nos demais casos, você escolhe quando gerar.
 
-> **Nenhuma cobrança ainda.** Abra um orçamento e toque em **Gerar cobrança** para criar a primeira.
+A exceção é a **cobrança avulsa** — para cobrar o cliente por algo que não veio de um orçamento (uma multa, uma avaria, um serviço extra). Ela nasce aqui mesmo, no botão **Cobrança avulsa**, no topo da lista (para quem pode emitir cobranças). A folha **Nova cobrança avulsa** pede o **cliente**, o **valor**, o **motivo** e o **vencimento** — e, se quiser, como o cliente combinou pagar. Depois, ela é recebida como qualquer outra cobrança.
+
+Se ainda não houver nenhuma cobrança, a lista mostra **"Nenhuma cobrança ainda"**, com o botão **Ir para Orçamentos**.
 
 Para entender como a fatura é montada (parcelas, vencimentos, sinal), veja [Faturas e parcelas](faturas-e-parcelas.md).
 
