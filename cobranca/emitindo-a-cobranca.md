@@ -141,6 +141,18 @@ Enquanto você mexe nas opções, a folha mostra um **Resumo das parcelas** ao v
 
 Quando o resumo estiver do seu jeito, toque em **Gerar cobrança**. Pronto: o orçamento vira parcelas reais, com datas, prontas para receber.
 
+## Gerar a fatura de locação junto
+
+Na folha de emissão há o bloco **Gerar fatura de locação**: *"Ao gerar a cobrança, cria também o PDF da fatura de locação nos Documentos."* É o documento de cobrança para mandar ao cliente, com parcelas e vencimentos reais.
+
+Marcando a caixa, a emissão **não fica mais lenta por causa disso**. A cobrança é confirmada na hora, a folha fecha e o aviso diz para onde olhar: *"A fatura de locação está sendo gerada em Documentos."* Lá, o documento aparece como **"Gerando…"** e vira **"Gerado"** sozinho, sem você precisar ficar na tela.
+
+{% hint style="info" %}
+Se o nome do arquivo do seu modelo tiver campos para preencher, a folha os pede **antes** de emitir. Se ainda assim faltar alguma informação, o documento fica em **"Falta preencher"** na lista — e a cobrança, que é o que importa, já está feita.
+{% endhint %}
+
+A fatura de locação só existe em **aluguel**; na venda a caixa não aparece.
+
 ## Definir o valor exato de cada parcela
 
 No **Parcelado**, o padrão é dividir o total por igual. Mas às vezes você quer uma **primeira parcela maior**, ou valores combinados caso a caso. Para isso, ative a opção de definir o valor de cada parcela.
