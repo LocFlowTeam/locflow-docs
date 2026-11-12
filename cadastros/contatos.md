@@ -132,7 +132,7 @@ Quando a mesma pessoa já está cadastrada duas vezes — um cadastro com o ende
 ### Como mesclar
 
 1. Abra a ficha de um dos dois e toque em **Mais › Mesclar com outro contato…**
-2. **Escolha o outro cadastro.** O LocFlow já mostra os **parecidos** e diz por quê: **Mesmo celular**, **Mesmo e-mail** ou **Nome parecido**. Se o outro não estiver ali, busque por nome, celular ou documento. Contatos na lixeira não aparecem.
+2. **Escolha o outro cadastro.** O LocFlow já mostra os **parecidos** e diz por quê: **Mesmo celular**, **Mesmo e-mail** ou **Nome parecido**. Se o outro não estiver ali, busque por nome, celular ou documento. Contatos na lixeira não aparecem, nem os pares que alguém já marcou como [**Não é duplicata**](#possiveis-duplicados).
 3. **Compare.** A tela **Mesclar 2 cadastros** mostra só o que importa: *"Só os campos diferentes pedem escolha."*
 4. **Confirme.** Antes de mesclar, o LocFlow mostra o que fica, o que vem do outro e o que muda de lugar. Toque em **Mesclar** e pronto: *"Cadastros mesclados."*
 
@@ -176,6 +176,38 @@ O LocFlow avisa **antes** de você comparar campo a campo, e oferece abrir o out
 | **Os dois têm carteira de vale-locação** | Juntar duas carteiras mexe em dinheiro do cliente e chega numa próxima versão. |
 | **Devolução de vale-locação estornada no gateway** | Esse histórico não pode mudar de cadastro. Fale com o suporte para mesclar estes dois. |
 
+### Encontrar os duplicados da base inteira {#possiveis-duplicados}
+
+Mesclar pela ficha resolve quando você já sabe quem está repetido. Para descobrir **onde** estão as repetições, abra a lista de contatos e toque em **Mais › Possíveis duplicados**.
+
+A tela **Possíveis duplicados · N** mostra os pares de cadastros que parecem a mesma pessoa, **do motivo mais forte para o mais fraco**: quem tem o mesmo celular **e** o mesmo e-mail vem antes de quem só tem o nome parecido. Cada par mostra os motivos (**Mesmo celular**, **Mesmo e-mail**, **Nome parecido**), os dois nomes — *João Silva · João Silva Pereira* — e duas ações:
+
+| Ação | O que acontece |
+| --- | --- |
+| **Comparar** | Abre a mesma comparação de [Como mesclar](#como-mesclar), já com os dois cadastros escolhidos. Daí em diante é igual: escolher os campos diferentes, conferir e **Mesclar**. |
+| **Não é duplicata** | Você conferiu e são pessoas diferentes (pai e filho com o mesmo nome, dois funcionários da mesma empresa com o e-mail da firma). O par sai da lista na hora e **não volta** — nem aqui, nem entre os parecidos sugeridos ao mesclar pela ficha. |
+
+No computador, a lista vira uma tabela com os mesmos dados e as mesmas ações. Quando não há nada para revisar, a tela diz: *"Nenhum possível duplicado. Os cadastros desta organização não se repetem pelo celular, pelo e-mail nem pelo nome."*
+
+{% hint style="info" %}
+**O que fica de fora de propósito.** Um mesmo celular ou e-mail repetido em **mais de 10 cadastros** não entra na lista: isso é número ou e-mail genérico (como *sem@email.com*), não a mesma pessoa. Em bases grandes, o **nome parecido** é conferido nos **cadastros mais recentes** — que é onde a duplicata costuma nascer — e a própria tela avisa quando foi assim. Para dois cadastros antigos que só têm o nome parecido, use **Mesclar com outro contato…** na ficha.
+{% endhint %}
+
+### O aviso ao cadastrar um contato novo {#aviso-contato-parecido}
+
+Melhor que mesclar depois é não duplicar. Ao cadastrar um contato **novo**, quando você **sai** do campo de nome, de celular ou de e-mail, o LocFlow confere se já existe alguém parecido. Se existir, aparece um aviso em âmbar no fim do cartão de contato:
+
+> **Parece com João Silva (mesmo e-mail). Abrir ou mesclar?**
+
+É um **aviso, não um erro**: nada do que você digitou está errado e você pode salvar normalmente. As opções:
+
+| Opção | O que faz |
+| --- | --- |
+| **Abrir** | Abre o cadastro que já existe. Se você veio de um orçamento, a opção vira **Usar este contato** e seleciona o cadastro existente no pedido. |
+| **Mesclar** | **Salva** o contato novo (com as validações de sempre) e abre a comparação dos dois, para você juntá-los na hora. Só aparece quando salvar simplesmente levaria você de volta à lista. Vindo de um orçamento, ou cadastrando um fornecedor ou alguém da equipe (que têm uma segunda etapa), ela tiraria você do que estava fazendo. |
+
+Se você não tem permissão para mesclar, o aviso pergunta só *"Quer abrir o cadastro?"*. Com [Telefone identifica o contato](#telefone-identifica) ligado, o **celular** igual continua com o aviso próprio dessa regra (que impede salvar); o aviso de parecido cuida do e-mail e do nome, para o mesmo cadastro não ganhar dois avisos.
+
 ## Completar dados na hora certa {#completar-dados-sob-demanda}
 
 Como o cadastro pode nascer enxuto, vai haver momentos em que a operação **exige um dado que ainda falta** — por exemplo, gerar uma cobrança online costuma pedir CPF/CNPJ e e-mail do pagador; certos métodos de pagamento pedem também o telefone ou o endereço.
@@ -202,7 +234,7 @@ O acesso aos contatos é controlado por **permissões** do colaborador (definida
 | **Criar contato** | Cadastrar novos contatos (botão **+**). |
 | **Editar contato** | Alterar dados de um contato existente (o lápis). |
 | **Excluir contato** | Enviar um contato para a lixeira. |
-| **Editar** + **Excluir contato** | [Mesclar dois cadastros](#mesclar-contatos) — mesclar edita um e manda o outro para a lixeira, por isso pede as duas. |
+| **Editar** + **Excluir contato** | [Mesclar dois cadastros](#mesclar-contatos) e ver os [Possíveis duplicados](#possiveis-duplicados) — mesclar edita um e manda o outro para a lixeira, por isso pede as duas. |
 
 {% hint style="info" %}
 Sem a permissão de **criar**, o botão **+** não fica disponível. Sem a de **visualizar**, tocar num contato avisa que falta acesso. Assim cada pessoa da equipe enxerga e mexe só no que faz parte do trabalho dela.
@@ -243,6 +275,7 @@ Se o contato ainda **não tem endereço** quando você escolhe "Endereço do con
 - **Empresa com nota fiscal:** uma construtora vai alugar andaimes e precisa de nota. Você cadastra como **Pessoa Jurídica**, com CNPJ, Razão Social, Nome fantasia e IE — pronto para a operação fiscal quando ela exigir.
 - **O cliente ligou e a atendente cadastrou de novo:** com **Telefone identifica o contato** ligado, ela digita o celular, o aviso aparece na hora — *"Já existe um contato com este telefone: Maria Souza"* — e ela toca em **Usar este contato**. O orçamento sai no cadastro certo, com o histórico inteiro.
 - **O mesmo cliente, cadastrado duas vezes há meses:** "João Silva" tem 12 orçamentos, 1 cobrança e o endereço; "João Silva Pereira" tem 1 orçamento, 2 cobranças, o e-mail e a data de nascimento. Na ficha do João Silva, **Mais › Mesclar com outro contato…** já sugere o outro (**Mesmo celular**, **Nome parecido**). A comparação marca o João Silva para ficar, traz o e-mail e o nascimento sozinhos e pergunta só o nome — você escolhe o mais completo. Depois de mesclar, um cadastro só tem os 13 orçamentos e as 3 cobranças.
+- **Faxina depois da importação:** você trouxe 2 mil clientes de uma planilha antiga. Em **Mais › Possíveis duplicados**, a lista abre com *"Possíveis duplicados · 37"*. Os primeiros pares têm o mesmo celular e o mesmo e-mail: **Comparar**, **Mesclar**, próximo. Mais abaixo, "Ana Paula Costa · Ana Paula Costa" só tem o nome igual — são mãe e filha. **Não é duplicata**, e o par não volta mais.
 
 {% hint style="success" %}
 **Filosofia por porte:** quem está começando cadastra só nome e telefone e segue em frente. Quem cresceu vai preenchendo documento, endereço e dados fiscais — e o sistema pede cada um **só quando a operação precisa**. O cadastro **abstrai para o pequeno e revela para o grande**: você nunca é obrigado a preencher o que não usa.

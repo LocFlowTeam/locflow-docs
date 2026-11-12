@@ -161,8 +161,8 @@ base — e todo dado ruim que você traz vai atrapalhar por anos.
   busca da sua equipe. Ele continua no sistema antigo se você precisar consultar um dia.
 * **Duplicados óbvios.** Se o mesmo cliente aparece três vezes na planilha com grafias diferentes,
   junte antes de importar. É muito mais fácil resolver no Excel, de uma vez, do que depois no
-  LocFlow — onde dá para [mesclar os que escaparem](../cadastros/contatos.md#mesclar-contatos),
-  mas um par de cada vez.
+  LocFlow — onde a tela [Possíveis duplicados](../cadastros/contatos.md#possiveis-duplicados)
+  aponta os que escaparem, mas você os mescla um par de cada vez.
 * **Colunas que só faziam sentido no sistema antigo** — códigos internos, flags de controle,
   campos que ninguém preenchia.
 
