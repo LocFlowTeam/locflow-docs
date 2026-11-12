@@ -5,7 +5,7 @@ description: Como o dinheiro se reparte entre vendedor e parceiro — a conta do
 
 # O dinheiro da parceria
 
-**Onde fica:** para o vendedor, em **Financeiro › Repasses**; para o parceiro, em **Meus Ganhos** — as duas telas carregam o selo **"Rede"** e aparecem também como atalhos no espaço **Rede de Parceiros**, no grupo **Financeiro da rede** (ali, a tela do vendedor se chama **Repasses a pagar**). Para uma organização, as duas fazem parte do plano **Pro**: no Starter, aparecem com um cadeado (veja [o que é de cada plano](visao-geral.md#espaco-de-trabalho)). O parceiro externo tem as dele no próprio menu, em qualquer plano: **Ganhos** e **Repasses a pagar**.
+**Onde fica:** no [painel da Rede](painel-da-rede.md) — no **Início** e na **ficha de cada parceiro**, para quem vende e para quem entrega. No espaço Operação, o item **Contas com parceiros** do menu **Financeiro** leva ao mesmo lugar.
 
 Quando você repassa um pedido a um parceiro, dois preços convivem no mesmo negócio: o que o **cliente paga a você** e o que **você paga ao parceiro**. A diferença entre eles, menos a taxa da plataforma que couber a você, é a **sua margem** — e o LocFlow faz essa conta sozinho, mostra antes de você decidir e liquida do jeito combinado no acordo. Esta página explica a conta, o momento do pagamento, os caminhos pelos quais o dinheiro chega ao parceiro e o que acontece quando ele volta.
 
@@ -207,14 +207,17 @@ O botão do cartão de cada parceiro paga **tudo** o que você deve a ele, num t
 
 Os que ficaram desmarcados seguem pendentes, prontos para o outro caminho.
 
-#### Quitar todos os parceiros num PIX só {#quitar-em-lote}
+#### Pagar vários parceiros num PIX só {#quitar-em-lote}
 
-Na tela de **Repasses**, a ação principal é **"Quitar todos via PIX"**: um único PIX que fecha o saldo de **todos** os parceiros de uma vez. O resumo no topo mostra o total decomposto — quanto vai aos parceiros e quanto é taxa da plataforma — antes de você gerar qualquer coisa.
+No Início da Rede, quando há mais de uma conta a pagar, o botão é **"Pagar vários parceiros"**: um único PIX que fecha o saldo dos parceiros que você marcar. A folha lista cada um com o valor; desmarque quem não quer pagar agora. Detalhes em [O painel da Rede](painel-da-rede.md#pagar).
 
-Três coisas que valem saber:
+O que vale saber:
 
+* **Cada parceiro entra pela conta dele, pelo saldo.** Se ele também te deve, entra pela **diferença**, e os dois lados da conta são dados como pagos quando o PIX cai.
+* **Quem te paga não pode ser marcado.** Se na conta com ele quem deve a diferença é ele, o parceiro aparece na lista com o aviso **"Ele te paga"**: o PIX daquela conta é dele.
+* **A taxa da LocFlow em aberto vai junto, uma vez só.** Veja [A taxa quando você paga por fora](#divida-de-taxa).
 * **Um PIX por vez.** Enquanto houver uma quitação em aberto (em lote ou individual), a outra fica travada. É o que impede pagar o mesmo repasse duas vezes.
-* **Quem não tem recebimento apto fica de fora** — e o LocFlow avisa quantos ficaram, para você quitá-los individualmente depois de eles completarem o cadastro. Também fica de fora quem tem um [pagamento por fora](#repasse-manual) declarado e ainda sem a confirmação dele; a tela diz isso antes de você gerar o PIX.
+* **Alguns ficam de fora, com o motivo escrito** e o botão **Pagar à parte**: quem não tem recebimento apto, a conta com uma devolução antiga com taxa e a conta em que só falta a taxa da LocFlow.
 * **O PIX é reaproveitado.** Se você gerou e voltou depois, verá o **mesmo código**, não um novo (a menos que o anterior tenha expirado). E se a conta de recebimento de quem recebe mudou depois da emissão, a folha avisa: *"Este PIX foi emitido antes da troca de conta e continua caindo na conta anterior até expirar."*
 
 {% hint style="info" %}
@@ -223,12 +226,12 @@ O saldo **acumula por parceiro**, não por pedido: vários repasses pequenos de 
 
 ### Paguei o parceiro por fora (repasse manual) {#repasse-manual}
 
-Às vezes o dinheiro corre **fora do LocFlow**: você fez um Pix direto para o parceiro, pagou em dinheiro na entrega — ou o parceiro **ainda não tem recebimento apto** e o PIX de quitação nem sai. Para esses casos existe o **repasse manual**, na tela de **Repasses**, no card do parceiro: **"Paguei por fora (Pix direto/dinheiro)"**.
+Às vezes o dinheiro corre **fora do LocFlow**: você fez um Pix direto para o parceiro, pagou em dinheiro na entrega — ou o parceiro **ainda não tem recebimento apto** e o PIX de quitação nem sai. Para esses casos existe o **repasse manual**, na [ficha do parceiro](painel-da-rede.md#ficha), na conta com ele: **"Já paguei por fora"**.
 
 O fluxo é uma **via de mão dupla** — um lado sozinho nunca dá o repasse por pago:
 
 1. **Você declara** ter pago o valor do parceiro (o líquido dele — a taxa da plataforma **não** entra nesse valor, porque ela não é dele). Na folha, você diz **de qual conta saiu** o dinheiro (a conta padrão já vem escolhida; troque se saiu de outra) e **como pagou** — Pix, transferência, dinheiro ou outro. A observação continua livre, para o que os chips não dizem.
-2. **O parceiro confirma** ("Recebi, confirmar") ou **contesta** ("Não recebi", com o motivo). O parceiro externo faz isso em **Repasses a pagar**, no cartão **"Confirme um pagamento por fora"**; a organização parceira (parceria interna), em **Meus Ganhos** — e, ao confirmar, ela também diz **em qual conta o dinheiro caiu** e **como**. O parceiro externo não vê esses dois campos, porque não tem financeiro no LocFlow.
+2. **O parceiro confirma** ("recebi") ou **contesta** ("não recebi", com o motivo) — no Início dele, em **Precisa de você › Confirmar o que recebeu**. Se o parceiro é uma **organização parceira** (parceria interna), ao confirmar ele também diz **em qual conta o dinheiro caiu** e **como** — o parceiro externo não vê esses campos, porque não tem financeiro no LocFlow.
 3. Confirmado, os repasses são dados como **pagos**: entram nos ganhos do parceiro, saem do seu saldo devedor e viram **saída** no seu financeiro — **da conta que você declarou**, com o método. É o que faz o repasse aparecer no [extrato](../financeiro/contas.md) da conta certa, e não sempre na padrão.
 
 {% hint style="info" %}
@@ -243,10 +246,11 @@ Enquanto a declaração aguarda a resposta, **os repasses declarados ficam fora 
 
 ### A taxa quando você paga por fora {#divida-de-taxa}
 
-Confirmado um repasse manual, a taxa daquela operação aparece na tela de **Repasses** como **"Taxa da plataforma a pagar"** — com o botão **"Pagar taxa via PIX"**. Vale saber:
+Confirmado um repasse manual, a taxa daquela operação aparece no Início da Rede, no cartão **Saldo com os parceiros**, como **"Taxa da LocFlow em aberto"**. Ela **vai junto do próximo PIX que você pagar** a qualquer parceiro (a conta de um, a de vários ou o acerto), uma vez só: o valor do botão **Pagar** já a inclui, e a folha do PIX mostra a linha **Taxa da LocFlow em aberto**. Vale saber:
 
-* **O valor do PIX é exatamente a dívida.** A tarifa da transação é da LocFlow — você não paga um centavo além dos 8% combinados.
-* **Um PIX recolhe tudo.** A dívida de vários repasses manuais (de vários parceiros) sai num PIX só — a mesma lógica do "quitar todos".
+* **Sem outro PIX a pagar, ela tem o seu.** Quando não há nenhuma conta a pagar, a linha da taxa mostra o botão **"Pagar"** e ela entra em **Precisa de você › Pagar**. O valor desse PIX é exatamente a dívida, e a tarifa da transação é da LocFlow.
+* **Nunca em dois PIX.** A taxa que já vai num PIX aberto não entra em outro. Se aquele PIX expirar ou for cancelado, ela volta para o próximo.
+* **Um PIX recolhe tudo.** A dívida de vários repasses manuais (de vários parceiros) sai de uma vez, junto do mesmo PIX.
 * **Se parte da taxa já tinha sido retida na fonte** (o cliente pagou online), a dívida é só a **diferença** — nunca 8% duas vezes.
 * **A taxa independe de como o cliente pagou.** Ela nasce da operação intermediada pela Rede — pagamento online, baixa manual ou dinheiro na porta, a taxa é a mesma; o que muda é apenas **por onde** ela é recolhida.
 
@@ -311,14 +315,7 @@ O repasse do acordo **não muda** por causa de quem recebeu do cliente: ele segu
 
 No fim, o parceiro fica com R$ 300,00, você com R$ 620,00 e a plataforma com R$ 80,00 — o mesmo resultado de quando o cliente paga direto a você.
 
-* **Por que ele devolve tudo, e não só a sua margem?** Porque o repasse dele continua nascendo do seu lado. Se ele devolvesse só a sua margem e ainda recebesse o repasse, ficaria com o dobro do que combinou.
-* **A taxa da plataforma entra uma vez só por pedido.** Se ela já foi contada no repasse dele, a devolução vem sem taxa. Se a devolução nasce antes, é ela que leva a taxa — e o repasse nasce sem.
-* **Hoje são dois PIX separados:** ele paga o que devolve e recebe o que é dele. Não existe, por enquanto, um acerto só pela diferença.
-
-**Onde cada um vê:**
-
-* **O parceiro externo**, em **Repasses a pagar**: o valor **"A pagar à organização"**, dividido entre o que vai à sua organização e a taxa da plataforma, com o botão **Quitar via PIX** (se o recebimento dele não estiver ativo, a tela mostra **Ativar recebimento**). Na mesma tela ele vê o que você ainda deve a ele, em **"A receber de [sua organização]"**. Em **Ganhos** fica só o aviso de que há valor a repassar.
-* **Você**, em **Financeiro › Repasses**, na seção **"Quem me paga"**. É só acompanhamento: quem quita é o parceiro, pelo app dele.
+Para o parceiro isso aparece no Início dele, como valor **a pagar**, com o botão **Pagar**, e em **Sua conta**; para você, no [painel da Rede](painel-da-rede.md), como um valor **a receber** daquele parceiro.
 
 {% hint style="warning" %}
 **Marcou errado? Dá para desfazer — enquanto ninguém pagou.** Tanto o **parceiro** (corrigindo um engano) quanto **você** (se o cliente disser que não pagou) podem desfazer a baixa: a fatura volta a ficar em aberto e a devolução some, sem dinheiro nenhum ter se movido. O repasse do acordo continua como estava. Duas exceções: se já existe um **PIX de acerto em aberto**, cancele-o (ou espere expirar) antes de reverter; e se o parceiro **já pagou** o acerto, o caminho deixa de ser desfazer e passa a ser **estorno**, com devolução e registro em trilha.
@@ -343,49 +340,45 @@ Um detalhe que joga a favor: uma linha de repasse **estornada ou cancelada deixa
 
 ## Onde ver {#onde-ver}
 
-| Você é… | A sua tela | O que mostra |
-| --- | --- | --- |
-| **Vendedor** | **Financeiro › Repasses** | Tudo o que você deve a parceiros, em **"Quem eu pago"** — e, quando um parceiro recebeu do cliente por você, também **o que ele tem a te devolver**, em **"Quem me paga"**. |
-| **Organização parceira** | **Meus Ganhos** | O que você tem a receber, o que já recebeu e o que está em processamento — e a confirmação dos pagamentos que o vendedor declarou ter feito por fora. |
-| **Parceiro externo** | **Ganhos** e **Repasses a pagar** | Em **Ganhos**, o que já andou, por período. Em **Repasses a pagar**, as pendências: o que você deve à organização por ter recebido do cliente, o que ela ainda deve a você e os pagamentos por fora esperando a sua confirmação. |
+Tudo isso aparece no [painel da Rede](painel-da-rede.md), para os dois lados:
 
-Se você opera uma organização, as duas telas vivem no menu **Financeiro** com um selo **"Rede"** — porque são dinheiro de verdade, junto do resto do seu financeiro — e têm **atalhos fixos** no espaço **Rede de Parceiros**, no grupo **Financeiro da rede**. Se você é um **parceiro externo**, **Ganhos** está na barra de baixo do seu app e **Repasses a pagar** fica em **Suas áreas** (no menu da conta), na grade do **Início** e na seção **Mais** da barra lateral.
+| Você é… | Onde olhar | O que mostra |
+| --- | --- | --- |
+| **Quem vende** | **Início** da Rede e **ficha do parceiro** | O que você deve e o que cada parceiro te deve, quem paga quanto, o que já foi pago e, no Pro, o movimento do período. |
+| **Organização que entrega** | **Início** da Rede e **ficha da vendedora** | O que você tem a receber e o que deve a cada vendedora, com o acerto de cada conta. |
+| **Parceiro convidado** | **Início** e **Menu › Sua conta** | O que você tem a receber e o que deve, cada valor que forma a conta e o que vem nos próximos dias. |
 
 ## O que você recebe da rede entra na sua Gestão Financeira {#recebimento-na-gestao-financeira}
 
-**Meus Ganhos responde "quanto a rede me deve e me pagou". A Gestão Financeira responde "e daí?".**
+**A conta da Rede responde "quanto a rede me deve e me pagou". A Gestão Financeira responde "e daí?".**
 
 Quando um repasse seu é **pago** — pelo split na fonte, pela quitação do saldo acumulado ou por fora —, o LocFlow lança uma **entrada** no seu razão, sozinho, na categoria **Rede de Parcerias**. Com a **organização que repassou** como contraparte, e o código do pedido na descrição.
 
-A partir daí aquele dinheiro é dinheiro como qualquer outro: entra no **saldo**, no **fluxo de caixa** do período, no **DRE** e no **relatório por categoria**. É o que permite perguntas que a tela de ganhos não responde:
+A partir daí aquele dinheiro é dinheiro como qualquer outro: entra no **saldo**, no **fluxo de caixa** do período, no **DRE** e no **relatório por categoria**. É o que permite perguntas que a conta da Rede não responde:
 
 * *Quanto a rede me trouxe neste mês?* — filtre a categoria **Rede de Parcerias** nos lançamentos.
 * *De qual parceiro veio?* — a contraparte de cada linha é a organização vendedora.
 * *Isso cobrou o combustível e o motorista dessas entregas?* — o custo está no mesmo razão, no mesmo período.
 
 {% hint style="info" %}
-**Vale para a parceria entre organizações.** Se você é um **parceiro externo** (opera dentro da conta de outra locadora, sem plano próprio), você não tem uma Gestão Financeira sua — seus valores vivem em **Ganhos** e **Repasses a pagar**. [Virar organização](parceiro-logistico-externo.md#crescendo-na-rede) é o que abre o financeiro completo no seu nome.
+**Vale para a parceria entre organizações.** Se você é um **parceiro externo** (opera dentro da conta de outra locadora, sem plano próprio), você não tem uma Gestão Financeira sua — seus valores vivem no **Início** e em **Sua conta**. [Virar organização](parceiro-logistico-externo.md#crescendo-na-rede) é o que abre o financeiro completo no seu nome.
 {% endhint %}
 
 Do outro lado, nada muda: quem **repassou** continua vendo a **saída** no razão dele, na categoria **Repasse de parceria**. O mesmo dinheiro, os dois lados.
 
-## Como ler seus ganhos {#status-dos-ganhos}
+## Como ler a conta {#status-dos-ganhos}
 
-Em **Meus Ganhos**, todo valor está num de três **estágios de liquidação** — os mesmos três que aparecem coloridos logo abaixo do total, e que voltam agrupando as operações no detalhe de cada acordo:
+Com cada parceiro existe **uma conta**: o que um deve ao outro se abate, e só a diferença é paga, por quem deve, num PIX só. Na ficha do parceiro, a **Conta** mostra os dois lados, lado a lado, e diz quem paga quanto. Em **Valores desta conta** aparece cada valor que a forma, com o pedido que o originou.
 
-| Estágio | Cor | O que significa |
-| --- | --- | --- |
-| **Realizado** | verde | Já liquidado — o dinheiro é seu neste período. |
-| **A receber** | azul | Combinado e confirmado, aguardando a liquidação (a quitação do saldo pelo vendedor, ou o vencimento pelo acordo). |
-| **Em processamento** | âmbar | O pagamento online do cliente ainda está sendo compensado pelo gateway; assim que cai, vira **realizado**. |
-
-O número em destaque no topo **soma os três**: é tudo o que você tem para o período escolhido, tratando o que está a caminho como já sendo seu. É a mesma leitura no detalhe de um acordo, onde as operações aparecem **agrupadas por estágio**, com as mesmas cores.
+* **Quando o parceiro deve a diferença, o PIX dele leva primeiro a taxa da LocFlow daqueles pedidos** e o resto chega a você.
+* **Se o que ele deve não passa da taxa,** o PIX dele vai todo para a LocFlow e você não recebe nada nesse PIX. O que falta da taxa fica em aberto com você e [vai junto do seu próximo PIX](#divida-de-taxa).
+* **Devoluções antigas com taxa** (registradas antes da versão 3.3.0) entram na mesma conta: também ela é paga num PIX só, pelo saldo.
 
 {% hint style="info" %}
-Se você **recebeu do cliente na porta** e ficou devendo ao vendedor, os ganhos mostram um aviso: **"Há valor a repassar à organização — veja em Repasses a pagar"**. É lá, e não nos ganhos, que fica o valor com o botão **Quitar via PIX**: uma pendência não depende do período escolhido. Veja [Quando o parceiro recebe do cliente](#repasse-inverso).
+Se você **recebeu do cliente na entrega** e ficou devendo ao vendedor, esse valor aparece na conta como **o que você deve**, com o botão **Pagar** quando é a sua vez. Veja [O sentido inverso do repasse](#repasse-inverso).
 {% endhint %}
 
-O período (mês, semana, intervalo…) vale para as duas telas e pode ser ajustado **dentro** do detalhe do acordo — útil para filtrar as operações sem voltar. Use o **"?"** no topo de Meus Ganhos para rever esses estágios a qualquer momento.
+O que já foi pago fica no **Histórico** da ficha, pelo dia do dinheiro, com o valor que andou no PIX. O que nasceu, foi pago e foi recebido no período está no cartão **Movimento** do Início.
 
 ## O recebedor: sem ele o dinheiro empaca {#recebedor-do-parceiro}
 
@@ -519,8 +512,8 @@ Eles são independentes de propósito: dá para combinar que o parceiro absorve 
 
 - **Cliente paga o link inteiro, acordo "Só quando o cliente pagar", parceiro com recebedor.** O pagamento se reparte na hora em três: a parte do parceiro cai direto para ele, a taxa vai para a plataforma, o resto fica com você. Ninguém gera nada.
 - **Cliente paga a primeira de três parcelas, online.** Não há split completo (o pagamento não quita a fatura inteira), mas os 8% **daquela parcela** já são retidos ali. Se o acordo tem a trava *"só depois que o cliente pagar"*, o direito do parceiro vence pro-rata e vira saldo — limitado ao que ele já cumpriu, quando o acordo é *por parte cumprida*. Sem a trava (*"Na Entrega"*, *"Na Retirada"*), o pagamento do cliente não faz nada vencer: quem manda ali é o marco. Na quitação, o LocFlow cobra só a parte da taxa que ainda faltava.
-- **Cliente paga na entrega, em dinheiro, à sua equipe.** A baixa entra em conferência, e quando a tesouraria confirma o direito do parceiro vence. No fim da semana você abre **Financeiro › Repasses** e usa **Quitar todos via PIX** — um código fecha os três parceiros do mês.
-- **Cliente paga na entrega, em dinheiro, ao parceiro (acordo permite).** A palavra dele fecha a fatura na hora e nasce a devolução: ele te paga, por PIX, tudo o que recebeu do cliente. O repasse dele segue o caminho de sempre e você o paga no momento combinado. Marcou por engano? Um dos dois desfaz, enquanto ninguém pagou.
+- **Cliente paga na entrega, em dinheiro, à sua equipe.** A baixa entra em conferência, e quando a tesouraria confirma o direito do parceiro vence. No fim da semana você abre o Início da Rede e usa **Pagar vários parceiros** — um código fecha os três parceiros do mês.
+- **Cliente paga na entrega, em dinheiro, ao parceiro (acordo permite).** A palavra dele fecha a fatura na hora e nasce o saldo ao contrário: ele te repassa a sua margem + a taxa, por PIX. Marcou por engano? Um dos dois desfaz, enquanto ninguém pagou.
 - **Acordo "Na Retirada", o parceiro pode receber na porta, e o cliente não pagou nada.** O parceiro retirou o material: o repasse dele vence assim mesmo, como o acordo diz. Cobrar o cliente continua sendo com você.
 - **Cliente quer pagar metade em dinheiro ao parceiro.** Não passa — a coleta na rua é tudo ou nada. O parceiro mostra o **seu PIX** para a parte que o cliente vai pagar, e o resto segue na fatura.
 - **Acordo "Na Entrega", cliente ainda não pagou.** A entrega concluiu, o parceiro fez a parte dele — o repasse vira devido mesmo sem o pagamento do cliente. O risco de cobrança do cliente é seu, como combinado no acordo.
@@ -532,6 +525,7 @@ Eles são independentes de propósito: dá para combinar que o parceiro absorve 
 
 - Entenda os termos que definem a conta — itens acordados, marco do pagamento, janelas — em [Acordos de parceria](acordos-de-parceria.md).
 - Veja o caso do parceiro que recebe o cliente na porta, do começo ao fim, em [Cobrança na rua](cobranca-na-rua.md).
+- Veja onde acompanhar e pagar cada conta em [O painel da Rede](painel-da-rede.md).
 - Veja o panorama da Rede de Parceiros em [Rede de Parceiros: a visão](visao-geral.md).
 - Configure o seu recebedor (ou oriente o parceiro a configurar o dele) em [Pagamento online](../cobranca/pagamento-online.md).
 - Entenda a diferença entre os 8% da Rede e a tarifa do processador em [Taxas do pagamento online](../cobranca/taxas-do-gateway.md).

@@ -1,6 +1,6 @@
 ---
 icon: truck
-description: A experiência de quem entra pelo convite — o espaço só seu, as solicitações de repasse, os ganhos, a reputação e o caminho para virar org↔org.
+description: A experiência de quem entra pelo convite — o espaço só seu, os pedidos repassados, a sua conta, a reputação e o caminho para virar org↔org.
 ---
 
 # Parceiro Logístico Externo
@@ -35,27 +35,28 @@ Tudo começa com um **link de convite** que a locadora te manda — por WhatsApp
 **O link não abre?** O convite vale por **7 dias** — provavelmente expirou. Peça outro à locadora: ela [gera um novo link na hora](entrando-na-rede.md#renovar-convite), sem refazer nada do seu cadastro.
 {% endhint %}
 
-A diferença está no destino. Ao aceitar, você **não** cai no painel da locadora — cai direto no **seu espaço**, com uma navegação enxuta feita para o seu trabalho, e começa pelo **Início**.
-
-No celular, a barra de baixo tem **quatro itens** — o que você usa todo dia:
+A diferença está no destino. Ao aceitar, você **não** cai no painel da locadora — cai direto no **seu espaço**, com uma navegação enxuta feita para o seu trabalho. A barra (no celular, embaixo; no computador, o menu lateral) tem quatro itens:
 
 | Item | O que você faz nele |
 | --- | --- |
-| **Início** | A sua casa. Em **Para você resolver**: acordos esperando a sua aprovação, repasses esperando o seu aceite, pagamentos por fora para confirmar e o recebimento, se ainda não estiver ativo. Abaixo, os seus valores e as suas áreas. |
+| **Início** | A sua conta com a locadora, o que precisa de você — um pedido para aceitar, um pagamento para confirmar — e os próximos dias. |
+| **Pedidos** | Os pedidos que a locadora passou a você, com a linha do tempo e o valor de cada um. É onde você aceita. |
 | **Logística** | Os roteiros das **suas** operações: você planeja, ordena e executa as entregas e retiradas repassadas a você. |
-| **Repasses** | Os pedidos repassados a você (a tela se chama **Repasses recebidos**): aceitar, recusar, desistir. Sem esta lista, uma notificação perdida vira um repasse invisível. |
-| **Ganhos** | O que você tem a receber, o que já recebeu e o que está em processamento. |
+| **Menu** | O resto do seu espaço, logo abaixo. |
 
-O resto — o que você mexe bem menos — fica em **Suas áreas**, no menu da conta (o seu avatar, no topo da tela). As mesmas áreas aparecem na grade de atalhos do **Início** e, em tela larga, na seção **Mais** da barra lateral:
+No **Menu**:
 
 | Item | O que você faz nele |
 | --- | --- |
 | **Acordos** | O combinado com cada locadora — itens, preços, prazos. |
-| **Repasses a pagar** | As pendências de dinheiro: o que você deve à locadora e o que ela deve a você. Veja [abaixo](#repasses-a-pagar). |
-| **Frota** | Os **tipos de veículo** da sua frota. O frete calculado por motor no acordo pode depender deles. |
+| **Rede** | Os Termos da Rede e os pedidos que você aceita. |
+| **Sua conta** | A conta com a locadora em detalhe: cada valor que a forma, o que você deve e o que tem a receber. |
+| **Frota** | As fichas dos **seus** veículos. O frete calculado por motor no acordo pode depender delas. |
 | **Galpão** | O seu **ponto de saída** — a origem do frete que você cobra. Endereço e pino no mapa. |
 | **Reputação** | As suas estrelas, o selo e o índice de confiabilidade — e o botão de contestar penalidade. |
-| **Recebimento** | Os seus dados bancários — para onde o seu dinheiro vai. |
+| **Recebimento** | Os seus dados bancários — para onde o dinheiro vai. |
+
+Ao entrar, você cai no **Início**. Na primeira vez, um aviso no topo mostra o que mudou de lugar.
 
 {% hint style="info" %}
 **Duas coisas para deixar prontas cedo:** o **recebimento** (sem ele, o repasse com divisão automática não tem para onde ir — veja [abaixo](#recebedor)) e o seu **galpão** (a origem do frete; um pino fora do lugar no mapa deixa o frete impreciso). O galpão normalmente já vem preenchido pela locadora, no próprio convite — mas confira antes da primeira operação.
@@ -73,7 +74,7 @@ O ciclo completo do acordo — termos, aprovação bilateral, frete manual ou po
 
 ## As solicitações de repasse {#solicitacoes}
 
-Quando a locadora fecha um pedido e repassa a operação para você, chega uma **solicitação** — você recebe uma notificação e a reserva aparece com o convite claro: *"Toque para revisar e decidir"*.
+Quando a locadora fecha um pedido e repassa a operação para você, chega uma **solicitação** — você recebe uma notificação, e o pedido aparece no seu **Início**, em **Precisa de você › Pedidos**, e em **Pedidos**, com o botão **Aceitar**.
 
 ### O que você vê {#o-que-voce-ve}
 
@@ -93,8 +94,8 @@ O detalhe do repasse mostra tudo o que você precisa para decidir — e nada do 
 
 A decisão é sua, e as duas saídas são legítimas:
 
-- **Aceitar repasse** — a operação vira sua: os roteiros dela passam a viver em **Logística** e o seu ganho entra na fila de [Ganhos](#meus-ganhos). **A rota sai do SEU galpão**: o nome, o ponto no mapa e a conferência de saída/retorno usam o endereço cadastrado em **Galpão** — mantenha o pino no lugar certo antes de criar o roteiro.
-- **Recusar** — o app pede o **motivo**, obrigatório: *"Diga ao vendedor por que você não vai fazer este trabalho"*. O motivo volta para a locadora, que pode repassar a outro parceiro. Recusar **não** gera penalidade — dizer "não" a tempo é melhor do que aceitar e falhar.
+- **Aceitar** — a operação vira sua: os roteiros dela passam a viver em **Logística** e o valor dela entra na [sua conta](#sua-conta). A folha do aceite mostra quanto fica para você, as datas da entrega e da retirada e de qual galpão o pedido sai. **A rota sai do SEU galpão**: o nome, o ponto no mapa e a conferência de saída/retorno usam o endereço cadastrado em **Galpão** — mantenha o pino no lugar certo antes de criar o roteiro.
+- **Recusar** — pelo pedido inteiro (na folha do aceite, **Ver o pedido inteiro ou recusar**). O app pede o **motivo**, obrigatório: *"Diga ao vendedor por que você não vai fazer este trabalho"*. O motivo volta para a locadora, que pode repassar a outro parceiro. Recusar **não** gera penalidade — dizer "não" a tempo é melhor do que aceitar e falhar.
 
 ### O prazo de aceite {#prazo-de-aceite}
 
@@ -137,9 +138,9 @@ Do aceite em diante, quem manda na execução é você. Em **Logística** você 
 **Sem créditos de mapa.** Traçar o trajeto real, reordenar as paradas pelo mapa e localizar endereços consomem créditos — e a carteira de créditos é da organização que te convidou: como parceiro convidado, você não tem uma. Esses botões aparecem apagados para você; o roteiro funciona normalmente, com as paradas na ordem que você definir. Ter os seus próprios créditos é uma das coisas que mudam ao [virar organização](#crescendo-na-rede).
 {% endhint %}
 
-Em **Frota** ficam os **tipos de veículo** da sua frota. Eles importam por dois motivos: quando o **frete do acordo é por motor**, o cálculo cita tipos de veículo que precisam ser da **sua** frota; e, se um dia você [virar organização](#crescendo-na-rede), a sua frota já cadastrada vai junto.
+Em **Menu › Frota** ficam os **tipos de veículo** da sua frota. Eles importam por dois motivos: quando o **frete do acordo é por motor**, o cálculo cita tipos de veículo que precisam ser da **sua** frota; e, se um dia você [virar organização](#crescendo-na-rede), a sua frota já cadastrada vai junto.
 
-**Galpão** é item próprio do menu, ao lado da Frota — é o **seu ponto de saída**, a **origem do frete** que você cobra. Ali você confere e ajusta o endereço e o pino no mapa quando mudar de base. Trocar o local muda **só o valor do frete** das próximas propostas; quem decide aceitar continua sendo o vendedor.
+**Galpão** é item próprio do Menu, ao lado da Frota — é o **seu ponto de saída**, a **origem do frete** que você cobra. Ali você confere e ajusta o endereço e o pino no mapa quando mudar de base. Trocar o local muda **só o valor do frete** das próximas propostas; quem decide aceitar continua sendo o vendedor.
 
 ### Quando não dá para tirar a prova {#dispensa-de-evidencia}
 
@@ -165,29 +166,26 @@ Só que **essa saída não é sua**: quem dispensa é a **retaguarda da locadora
 **Falha de entrega pesa.** Um movimento pulado ou uma entrega que não aconteceu é a penalidade mais dura do índice de confiabilidade. Se algo sair do controle, comunique e reorganize o roteiro — não deixe o movimento morrer em silêncio.
 {% endhint %}
 
-## Ganhos {#meus-ganhos}
+## Sua conta {#sua-conta}
 
-A tela **Ganhos** mostra o que já andou, no período que você escolher, separado em três estágios:
+O que você tem com a locadora aparece em dois lugares:
 
-| Número | O que significa |
+| Onde | O que mostra |
 | --- | --- |
-| **Realizado** | O que de fato já entrou para você. |
-| **A receber** | O que a locadora ainda vai quitar — operações com entregas/retiradas concluídas aguardando o acerto. |
-| **Em processamento** | Pagamento online do cliente que ainda está caindo — o seu pedaço chega junto. |
-
-Abaixo, as operações de cada acordo, com o valor líquido e o estágio do repasse.
+| **Início** | **A receber** e **A pagar**, com o botão de pagar quando é a sua vez; o **Movimento** do período — o que você recebeu, a sua parte da taxa e os pedidos —; e os **próximos dias**, com o valor previsto de cada entrega e retirada. |
+| **Menu › Sua conta** | A conta inteira: o que você tem a receber, o que deve, quem paga a diferença e cada valor que a forma, pedido a pedido. É também onde você **registra o que recebeu** do cliente. |
 
 {% hint style="info" %}
-**Pendência não mora em Ganhos.** O que depende de uma ação sua — devolver à locadora o que você recebeu do cliente, ou confirmar um pagamento que ela diz ter feito por fora — fica em [Repasses a pagar](#repasses-a-pagar), que não muda com o período escolhido. Quando você tiver valor a devolver, Ganhos mostra o aviso *"Há valor a repassar à organização — veja em Repasses a pagar"*.
+**A conta é uma só.** O que você deve à locadora e o que ela te deve se abatem, e só a diferença é paga, por quem deve, num PIX só. Quando é ela quem paga, a tela diz quanto: *"O parceiro vendedor te paga R$ X pelo app dele."*
 {% endhint %}
 
 ### Como o dinheiro chega {#como-o-dinheiro-chega}
 
 O valor de cada operação nasce do **acordo** (os seus preços × quantidades × diárias/locações, mais o frete quando é você quem roda — o frete não multiplica por diária). Do acordo até a sua conta, há três caminhos:
 
-- **Divisão na fonte (split)** — quando o cliente paga online e o gatilho do acordo é "no pagamento", o seu pedaço **se separa automaticamente** na hora do pagamento e cai direto para você. Para isso funcionar, o seu [recebimento](#recebedor) precisa estar pronto.
-- **Saldo a receber** — quando o gatilho dispara sem um pagamento online repartível (o cliente pagou em dinheiro, ou o gatilho é "na entrega"/"na retirada"), o valor vira **saldo** que a locadora te deve. Ela quita gerando uma **cobrança de repasse** (PIX) — e o valor migra de "A receber" para "Realizado".
-- **Pagamento por fora, com a sua confirmação** — a locadora pode ter te pago **fora do app** (um Pix direto, dinheiro na mão). Nesse caso ela **declara** o pagamento e **você confirma**, em [Repasses a pagar](#repasses-a-pagar). Só a **sua confirmação** dá o repasse por pago; enquanto você não responde, nada muda no seu saldo.
+- **Divisão na fonte (split)** — quando o cliente paga online e o gatilho do acordo é "no pagamento", o seu pedaço **se separa automaticamente** na hora do pagamento e cai direto para você. Para isso funcionar, o seu [recebedor](#recebedor) precisa estar pronto.
+- **Saldo a receber** — quando o gatilho dispara sem um pagamento online repartível (o cliente pagou em dinheiro, ou o gatilho é "na entrega"/"na retirada"), o valor vira **saldo** que a locadora te deve. Ela quita gerando uma **cobrança de repasse** (PIX) — e o valor sai de **A receber** e entra no **Movimento**, em **Você recebeu**.
+- **Pagamento por fora, com a sua confirmação** — a locadora pode ter te pago **fora do app** (um Pix direto, dinheiro na mão). Nesse caso ela **declara** o pagamento e **você confirma**: aparece no seu Início, em **Precisa de você › Confirmar o que recebeu**, o pedido de confirmação — *"a locadora declarou ter pago R$ X a você por fora. Você recebeu?"* — com **"Recebi, confirmar"** e **"Não recebi"** (aí o app pede o motivo, que volta para ela). Só a **sua confirmação** dá o repasse por pago; enquanto você não responde, nada muda no seu saldo.
 
 Se o cliente pagou tudo **antes** de você aceitar a operação, nada se perde: o seu saldo nasce no aceite, calculado sobre o que já foi quitado — sem dupla contagem e sem depender de novo pagamento.
 
@@ -204,7 +202,7 @@ Quando ela está ligada, você vê, daquele pedido, **quanto o cliente deve** �
 | Caminho | O que acontece |
 | --- | --- |
 | **Gerar o PIX** e mostrar ao cliente | O dinheiro cai na conta **da locadora**. Nada muda para você: o seu repasse vem pelo caminho de sempre. **É o caminho recomendado.** |
-| **Declarar que recebeu** (dinheiro, maquininha) | O dinheiro fica com você — e nasce um valor **a pagar à locadora**: tudo o que você recebeu do cliente. Você quita por PIX, em [Repasses a pagar](#repasses-a-pagar). O seu repasse pelo acordo **continua nascendo** normalmente, como em qualquer entrega: são duas contas lado a lado, uma não substitui a outra. |
+| **Declarar que recebeu** (dinheiro, maquininha) | O dinheiro fica com você — e nasce um valor **a pagar à locadora**: a margem dela mais a taxa de plataforma. Você paga por PIX, pelo botão **Pagar** do seu Início. |
 
 {% hint style="danger" %}
 **Os dois números da tela são diferentes, e não podem se misturar.** Em destaque aparece *"O cliente deve a \[locadora]: R$ 1.000,00"* — é isso que você cobra. Em outra linha, *"Você recebe R$ 300,00 por esta operação"* — é isso que você ganha, e **nunca** é o que se cobra do cliente.
@@ -216,33 +214,17 @@ Quando ela está ligada, você vê, daquele pedido, **quanto o cliente deve** �
 
 Marcou por engano? Dá para desfazer, enquanto ninguém tiver pago o acerto. A história completa está em [Cobrança na rua](cobranca-na-rua.md).
 
-## Repasses a pagar {#repasses-a-pagar}
+### O recebedor {#recebedor}
 
-**Repasses a pagar** reúne as **pendências de dinheiro** entre você e a locadora — as que não dependem do período escolhido. Fica em **Suas áreas** (no menu da conta), na grade do **Início** e na seção **Mais** da barra lateral. São três blocos:
-
-| Bloco | O que mostra | O que você faz |
-| --- | --- | --- |
-| **A pagar à organização** | O que você deve por ter recebido do cliente na porta, dividido entre o que vai à locadora e a taxa da plataforma. Zerado, o bloco continua lá: é o lugar de conferir que você não deve nada. | **Quitar via PIX**. Se o seu recebimento ainda não está ativo, a tela mostra **Ativar recebimento** no lugar. |
-| **Confirme um pagamento por fora** | A locadora declarou ter pago você fora do sistema — com o valor, a forma e a data. *"Você recebeu?"* | **Recebi, confirmar** ou **Não recebi** (o app pede o motivo, que volta para ela). |
-| **A receber de [locadora]** | O que ela ainda deve a você. | Nada: *"Ela quita pelo app dela"*. |
-
-Os dois últimos blocos só aparecem quando há o que mostrar.
-
-{% hint style="info" %}
-**Por que eu estou devendo, se eu sou o parceiro?** Porque, quando o cliente paga na sua mão, o dinheiro inteiro do pedido fica com você — e ele é da locadora. Não é um custo novo: é o que você recebeu **no lugar** dela. O seu ganho pelo acordo continua nascendo normalmente e aparece em **A receber**. A taxa da plataforma entra uma vez só por pedido: se já foi contada no seu ganho, a dívida vem sem ela; se não, ela vem na dívida e o seu ganho nasce sem ela. Hoje são dois PIX separados: você paga o que devolve e recebe o que é seu.
-{% endhint %}
-
-### O recebimento {#recebedor}
-
-O **Recebimento** são os seus dados bancários no meio de pagamento online — o mesmo tipo de cadastro que as locadoras usam para receber dos clientes (explicado em [Pagamento online](../cobranca/pagamento-online.md)), só que **seu**. Fica em **Recebimento**, nas **Suas áreas** do seu espaço. A conta bancária precisa estar **no mesmo CPF ou CNPJ** do cadastro — conta de outra pessoa não é aceita.
+O **recebedor** são os seus dados bancários no meio de pagamento online — o mesmo tipo de cadastro que as locadoras usam para receber dos clientes (explicado em [Pagamento online](../cobranca/pagamento-online.md)), só que **seu**. Fica em **Menu › Recebimento**. A conta bancária precisa estar **no mesmo CPF ou CNPJ** do cadastro — conta de outra pessoa não é aceita.
 
 {% hint style="warning" %}
-**Sem recebimento ativo, não há divisão na fonte.** A parte mais automática do seu ganho — o split no pagamento do cliente — só funciona com o cadastro feito e aprovado. E é ele também que permite gerar o PIX para quitar o que você deve. Deixe isso pronto **antes** da primeira operação, para o dinheiro não ficar esperando por você.
+**Sem recebimento ativo, não há divisão na fonte.** A parte mais automática do seu ganho — o split no pagamento do cliente — só funciona com o cadastro feito e aprovado. E é ele também que permite gerar o PIX para pagar o que você deve. Deixe isso pronto **antes** da primeira operação, para o dinheiro não ficar esperando por você.
 {% endhint %}
 
 ## Reputação {#minha-reputacao}
 
-A cada operação concluída, a locadora pode te avaliar com **1 a 5 estrelas** e um comentário. Essas avaliações formam a sua reputação — que você acompanha na tela **Reputação**, nas **Suas áreas** do seu espaço.
+A cada operação concluída, a locadora pode te avaliar com **1 a 5 estrelas** e um comentário. Essas avaliações formam a sua reputação — que você acompanha em **Menu › Reputação**.
 
 ### Estrelas e selo {#estrelas-e-selo}
 
@@ -328,11 +310,11 @@ No fim, você recebe um recibo honesto do que aconteceu: quantas solicitações 
 
 - **"Recebi uma solicitação, mas o dia já está tomado."** Recuse com o motivo — a locadora repassa a outro parceiro e você não leva marca nenhuma. Pior seria deixar o prazo estourar (−8) ou aceitar e desistir tarde (de −15 a −25, conforme a proximidade da operação).
 - **"Aceitei e o caminhão quebrou."** Desista o quanto antes, com o motivo. Dentro da janela do acordo é um direito seu, sem penalidade; o app te mostra se o limite já passou antes de você confirmar.
-- **"Fiz a entrega, cadê o dinheiro?"** Olhe **Ganhos**: se está em "A receber", a locadora ainda vai quitar o saldo (cobre dela a cobrança de repasse); se está "Em processamento", o pagamento online do cliente ainda está caindo. E confira se o seu **recebimento** está aprovado — sem ele, o split na fonte não acontece.
+- **"Fiz a entrega, cadê o dinheiro?"** Olhe o seu **Início**: enquanto o valor está em **A receber**, a locadora ainda vai pagar a conta (cobre dela a cobrança de repasse); em **Sua conta** você vê cada pedido que a forma. E confira se o seu **recebedor** está aprovado — sem ele, o split na fonte não acontece.
 - **"Entreguei, mas o cliente não quis assinar nada."** Não pule o movimento — isso vale −25 e não paga. **Fale com a locadora antes de fechar**: a retaguarda dela registra a operação com a **dispensa justificada**, e a entrega continua valendo. A dispensa não fica com quem está na porta.
 - **"O cliente quer pagar em dinheiro na minha mão."** Depende do acordo. Se a tela oferece o **PIX**, mostre o código — é o melhor para os dois. Se ela diz que a cobrança é do vendedor, o pagamento vai pelo link dele. Veja [Cobrança na rua](cobranca-na-rua.md).
-- **"Levei uma penalidade que não foi culpa minha."** Abra **Reputação** e toque em **Contestar** na penalidade. Ela sai do índice enquanto está em análise.
-- **"Recebi o cliente em dinheiro e agora apareceu que eu devo à locadora."** É isso mesmo: o dinheiro do pedido é dela, e você o devolve em **Repasses a pagar**, com **Quitar via PIX**. O seu ganho pela entrega continua de pé, em **A receber**.
+- **"Levei uma penalidade que não foi culpa minha."** Abra **Menu › Reputação** e toque em **Contestar** na penalidade. Ela sai do índice enquanto está em análise.
+- **"Recebi o cliente em dinheiro e agora apareceu que eu devo à locadora."** É isso mesmo: o dinheiro do pedido é dela. O que você deve e o que ela te deve se abatem na mesma conta, e quem deve paga a diferença num PIX só — quando é você, pelo botão **Pagar** do seu Início.
 - **"Não estou conseguindo cadastrar o veículo / fechar o roteiro."** Peça ajuda a quem te convidou: ela pode [entrar na sua conta](acesso-assistido.md) para resolver junto, e você vê tudo o que ela faz.
 - **"Abri meu CNPJ, quero minha própria conta."** No acordo ativado, toque em **"Virar organização e receber direto"** e conclua o assistente no navegador — com a casa em ordem e o recebimento no mesmo CNPJ. A reputação que você construiu com a locadora vai com você.
 

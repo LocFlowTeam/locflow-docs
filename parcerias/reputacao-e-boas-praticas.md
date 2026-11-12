@@ -23,9 +23,9 @@ São **três sinais diferentes**, e cada um responde a uma pergunta:
 **A régua também aponta para você.** Reputação na rede não é só sobre o parceiro: quem **repassa** também é medido — e um cancelamento tardio custa pontos na reputação da **sua organização**. Veja [Índice de confiabilidade](#indice-de-confiabilidade).
 {% endhint %}
 
-## Repasses da rede: tudo num lugar só {#central-de-avaliacoes}
+## A central de avaliações: tudo num lugar só {#central-de-avaliacoes}
 
-**Onde fica:** **Rede de Parceiros › Operar › Repasses da rede.** É a lista de todos os pedidos que correram pela rede — cada linha é um pedido repassado, e a avaliação é o que você faz com ele. Ela responde, linha a linha, três perguntas sem abrir nada:
+**Onde fica:** no Menu do espaço **Rede de Parceiros**, em **Avaliações**. É a central que responde, linha a linha, três perguntas sem abrir nada:
 
 1. **Já avaliei esta operação?** Quem está pendente aparece com o botão **Avaliar**; quem já foi avaliada mostra a sua nota (★).
 2. **O outro lado já avaliou?** Na parceria entre organizações, a linha diz **o fato** — nunca a nota, enquanto o [duplo-cego](#duplo-cego) estiver valendo.
@@ -34,7 +34,7 @@ São **três sinais diferentes**, e cada um responde a uma pergunta:
 Dá para buscar por pedido, cliente ou parceiro, e filtrar por **Todos**, **A avaliar** ou **Avaliados**. Tocar numa linha abre o detalhe do repasse — é lá que a avaliação acontece (estrelas + comentário), e é lá também que ficam as ações do repasse: aceitar, cancelar o envio, retomar a operação.
 
 {% hint style="info" %}
-**E na lista de orçamentos?** Cada pedido repassado também aparece na sua lista de orçamentos, com o selo **"da rede"** e o filtro **Procedência**. No orçamento, a linha **Repasse a parceiro** leva direto ao detalhe do repasse. Veja [Repassando um pedido](repassando-um-pedido.md).
+**E os pedidos repassados em si?** A situação e o dinheiro de cada um estão em **Rede › Pedidos** — veja [O painel da Rede](painel-da-rede.md#pedidos). A operação também aparece na **sua lista de orçamentos**, com o selo **"da rede"** e o filtro **Procedência** — veja [Repassando um pedido](repassando-um-pedido.md). A central cuida do que vem depois da operação: a confiança.
 {% endhint %}
 
 ## Avaliação privada: a sua opinião, para os seus repasses {#avaliacao-privada}
@@ -200,7 +200,7 @@ A reputação não é um jogo a vencer — é o retrato de como você trabalha. 
 * **Mantenha estoque e frota cadastrados.** Estoque em dia faz você aparecer como "Disponível" no comparativo do vendedor; tipos de veículo em dia destravam o frete por motor nos acordos.
 * **Se precisar desistir, desista o quanto antes.** Dentro da janela de desistência é um direito, sem marca nenhuma. Tardia, marca o histórico (−15 a −25). Deixar para quem repassou retomar a operação, depois da janela, custa −35 — e falhar a operação sem avisar marca o histórico com −25 e não paga.
 * **Nunca resolva um problema de campo marcando o movimento como pulado.** É a saída que parece mais rápida e é a mais cara: pular reverte o status, dispara o aviso **"Parceiro não cumpriu a entrega ou retirada"** para quem repassou, pesa **−25** no seu índice — e **não paga**. Se o problema foi só não conseguir capturar a prova (assinatura, foto), o caminho certo é a **dispensa justificada** de evidência, que registra o motivo e mantém a operação cumprida. Veja [A logística é sua](parceiro-logistico-externo.md#minha-logistica).
-* **Capriche no perfil público.** Bio, cidade, galpões e catálogo público bem preenchidos são a sua vitrine no **Descobrir parceiros** — a reputação atrai, o perfil converte.
+* **Capriche no perfil público.** Bio, cidade, galpões e catálogo público bem preenchidos são a sua vitrine em **Achar parceiros parceiros** — a reputação atrai, o perfil converte.
 
 ## Próximo passo {#proximo-passo}
 

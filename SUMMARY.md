@@ -53,6 +53,7 @@
 ## Rede de Parceiros
 
 * [Rede de Parceiros: a visão](parcerias/visao-geral.md)
+* [O painel da Rede](parcerias/painel-da-rede.md)
 * [Preparando o dinheiro da parceria](configuracoes/programa-de-parceiros.md)
 * [Entrando na rede](parcerias/entrando-na-rede.md)
 * [Acordos de parceria](parcerias/acordos-de-parceria.md)

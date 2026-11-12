@@ -63,22 +63,16 @@ O que muda entre eles é **capacidade**, não responsabilidade:
 
 Parceria é um assunto diferente do dia a dia — aqui você não atende cliente, você se conecta a outras empresas. Por isso a Rede vive num **espaço de trabalho próprio**, separado da Operação: o menu da locadora fica limpo, e o que é rede fica junto do que é rede. Ao alternar, até a cor muda — a Rede tem o seu **acento visual (magenta)**, para você sempre saber onde está.
 
-No celular, a barra de baixo mostra quatro atalhos: **Início** (o hub da Rede) · **Descobrir** · **Acordos** · **Menu**. O **Menu** abre a lista completa, organizada por **intenção** — o que você quer fazer, não o tipo de dado:
+No celular, a barra de baixo mostra quatro atalhos: **Início** · **Parceiros** · **Pedidos** · **Menu**. O **Início** é o [painel da Rede](painel-da-rede.md): o que você tem a receber e a pagar, o que precisa de você e a conta com cada parceiro. O **Menu** abre a lista completa, organizada por **intenção** — o que você quer fazer, não o tipo de dado:
 
 | Grupo | O que tem dentro |
 | --- | --- |
-| **Descobrir & Conectar** | Descobrir parceiros · Vínculos · Meu perfil público · Minha reputação |
-| **Operar** | Repasses da rede · Acordos · Parceiros externos |
-| **Financeiro da rede** | Meus Ganhos · Repasses a pagar · Conta de recebimento |
-
-**Repasses da rede** é a lista de todos os pedidos que correram pela rede — é ali que você acompanha cada repasse e avalia o parceiro (veja [Reputação e boas práticas](reputacao-e-boas-praticas.md#central-de-avaliacoes)).
+| **Parceiros e pedidos** | Parceiros · Pedidos · Avaliações |
+| **Descobrir & Conectar** | Achar parceiros · Conexões · Parceiros externos · Meu perfil público · Minha reputação · Termos e pedidos que aceito |
+| **Financeiro da rede** | Conta de recebimento |
 
 {% hint style="info" %}
-**E o dinheiro?** **Repasses** (vendedor) e **Meus Ganhos** (parceiro) são dinheiro de verdade da sua operação — vivem no **Financeiro**, com um selo **"Rede"**, e aparecem no espaço da Rede como atalhos fixos (lá, **Repasses** se chama **Repasses a pagar**). Um assunto, dois caminhos até ele.
-{% endhint %}
-
-{% hint style="info" %}
-**O que é de cada plano.** Operar a parceria — propor e aceitar acordos, repassar e aceitar pedidos, avaliar — está no plano Starter. As telas **Meus Ganhos** e **Repasses a pagar** da sua organização são análises do dinheiro da rede e fazem parte do plano **Pro**: no Starter, elas aparecem no menu com um **cadeado** e o convite para mudar de plano. O parceiro externo que você convidou vê os ganhos e os repasses dele normalmente. Veja [Minha assinatura e créditos](../configuracoes/assinatura-e-creditos.md).
+**E o dinheiro?** A conta com cada parceiro, o que pagar e o que receber estão no [painel da Rede](painel-da-rede.md). No espaço Operação, o item **Contas com parceiros** do menu **Financeiro**, com o selo **"Rede"**, leva ao mesmo lugar. Um assunto, dois caminhos até ele.
 {% endhint %}
 
 ## Os dois níveis de parceria {#dois-niveis}
@@ -130,6 +124,7 @@ Como ela não é uma operação independente — é um **cadastro** de terceiro 
 
 | Página | Em uma frase |
 | --- | --- |
+| [O painel da Rede](painel-da-rede.md) | O Início da Rede: quanto receber e pagar, o que precisa de você, a ficha de cada parceiro e os pedidos com o dinheiro junto. |
 | [Entrando na rede](entrando-na-rede.md) | Como começar: convidar um parceiro externo pelo link, montar o perfil público, descobrir organizações, propor e encerrar o vínculo. |
 | [Acordos de parceria](acordos-de-parceria.md) | Os termos do trabalho conjunto — itens e preços, quando e quanto se paga, prazos de aceite e desistência, frete e cobrança na rua. |
 | [Repassando um pedido](repassando-um-pedido.md) | O passo a passo de repassar um pedido ganho: esboço grátis, comparativo de candidatos, aceite ou recusa, e o que muda na execução. |
@@ -146,4 +141,5 @@ Como ela não é uma operação independente — é um **cadastro** de terceiro 
 - Vai trabalhar com alguém de fora pela primeira vez? Comece por [Entrando na rede](entrando-na-rede.md).
 - Só precisa de caminhão para uma entrega? [Fornecedores de frete](fornecedores-de-frete.md) resolve sem parceria formal.
 - Já tem parceiro e quer repassar um pedido? Vá direto a [Repassando um pedido](repassando-um-pedido.md).
+- Quer saber quanto deve ou tem a receber de cada parceiro? Veja [O painel da Rede](painel-da-rede.md).
 - Dúvida em algum termo? Consulte o [glossário](../primeiros-passos/glossario.md).

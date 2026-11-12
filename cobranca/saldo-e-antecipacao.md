@@ -14,10 +14,10 @@ Quando um cliente paga **pelo cartão** (pelo [Pagamento online](pagamento-onlin
 ## Onde você vê o seu saldo
 
 - **Sua organização:** em **Ajustes › Integração de Pagamento**, no cartão **Recebíveis**. Ele mostra o saldo da conta que recebe hoje; se a sua organização tem [mais de uma conta de recebimento](pagamento-online.md#mais-de-uma-conta), cada conta da lista tem o próprio **Saldo desta conta** — dá para sacar e antecipar o que entrou em cada uma, mesmo depois de ela deixar de ser a que recebe.
-- **Parceiro externo:** em **Recebimento**, nas **Suas áreas** do seu espaço (você vê o **seu próprio** saldo, separado do da organização).
+- **Parceiro externo:** em **Menu › Recebimento** (você vê o **seu próprio** saldo, separado do da organização).
 
 {% hint style="warning" %}
-**Para o parceiro, o Recebimento não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo em Ganhos, mas não há como pagá-lo pelo app. O mesmo vale no sentido contrário: se você recebeu do cliente na porta e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
+**Para o parceiro, o Recebimento não é opcional.** Sem esse cadastro concluído e aprovado, o vendedor **não consegue gerar** o PIX que quita o seu repasse — o saldo continua nascendo e aparecendo no seu Início, mas não há como pagá-lo pelo app. O mesmo vale no sentido inverso: se você recebeu do cliente na rua e ficou devendo à organização, precisa do cadastro para quitar. Veja [O recebedor](../parcerias/dinheiro-da-parceria.md#recebedor-do-parceiro).
 {% endhint %}
 
 ## Os três números do seu saldo

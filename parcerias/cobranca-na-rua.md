@@ -80,11 +80,7 @@ Três coisas acontecem na hora:
 3. **O repasse dele continua de pé.** O que você deve ao parceiro pelo acordo segue o momento combinado, como em qualquer pedido. Uma conta não substitui a outra: ele **devolve o que coletou** e você **paga o repasse** dele.
 
 {% hint style="info" %}
-**A taxa da plataforma entra uma vez só por pedido.** Se ela já veio no repasse do parceiro, a devolução vem sem taxa; se a devolução nasce antes, é ela que leva a taxa, e o repasse nasce sem. Hoje são **dois PIX separados**: ele paga o que devolve, e você paga o repasse dele.
-{% endhint %}
-
-{% hint style="info" %}
-**Onde cada um vê isso:** para o parceiro, em **Repasses a pagar**, como **"A pagar à organização"**, com o botão **Quitar via PIX** ali mesmo. Para você, em **Financeiro › Repasses**, na seção **"Quem me paga"** — só para acompanhar, porque quem quita é ele.
+**Onde cada um vê isso:** para o parceiro, no Início dele e em **Sua conta**, como um valor **a pagar**, com o botão de pagar ali mesmo. Para você, no [painel da Rede](painel-da-rede.md), como um valor **a receber** daquele parceiro.
 {% endhint %}
 
 ### A conta, com números {#a-conta}
@@ -165,7 +161,7 @@ O dinheiro caiu na sua conta. Não há devolução nenhuma: você deve o repasse
 O app recusa a declaração. Não é bug: a coleta na rua é tudo-ou-nada. Peça ao parceiro para gerar o **PIX** da parcela e receber os R$ 400 por ali — o resto segue cobrável normalmente.
 
 **"O parceiro recebeu tudo em espécie e sumiu com o acerto."**
-O valor está registrado como **a receber daquele parceiro** em Financeiro › Repasses, com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele em **Repasses a pagar** e conta na relação de vocês.
+O valor está registrado como **a receber daquele parceiro** na ficha dele, no [painel da Rede](painel-da-rede.md#ficha), com o pedido que o originou. Não é uma conversa de WhatsApp: é uma dívida no sistema, que aparece para ele no Início e em Sua conta, e conta na relação de vocês.
 
 **"Encerrei o acordo com esse parceiro. E o que ele coletou?"**
 Continua devido, e continua cobrável. Encerrar fecha a porta do que vem; não apaga o que já foi pactuado. Veja [Vigência do acordo](acordos-de-parceria.md#vigencia).

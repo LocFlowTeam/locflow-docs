@@ -174,14 +174,7 @@ A taxa incide sobre o **total da operação** (itens + mão de obra + frete − 
 
 Depende do que o acordo combinou.
 
-**Se o acordo permite cobrança na rua**, o parceiro recebe do cliente na porta **em seu nome** (a fatura e a relação com o cliente continuam suas) e declara o recebimento no app dele. A partir daí passam a existir **duas contas, de sentidos opostos**, sobre o mesmo pedido — uma não substitui a outra:
-
-| Conta | Quem paga a quem |
-| --- | --- |
-| **A devolução** | **Ele paga a você** o que recebeu do cliente — o valor inteiro da cobrança que ele fechou. |
-| **O repasse do acordo** | **Você continua pagando a ele** o que foi combinado, no momento que o acordo combinou — como em qualquer pedido. Receber na porta não adia nem cancela o repasse dele. |
-
-A taxa da plataforma entra **uma vez só** por pedido. Hoje são **dois PIX separados**: ele quita a devolução pelo botão **Quitar via PIX**, e você paga o repasse dele do jeito de sempre. Ele acompanha o que deve em **Repasses a pagar**, no valor *"A pagar à organização"* (em **Meus Ganhos** aparece o aviso de que há valor a repassar); você acompanha em **Financeiro › Repasses**, na seção *"Quem me paga"*.
+**Se o acordo permite cobrança na rua**, o parceiro é o **coletor** daquele pedido: ele recebe do cliente na porta em seu nome (a fatura e a relação com o cliente continuam suas) e declara o recebimento no app dele. A partir daí a conta **vira do avesso** — em vez de você dever a ele, **ele deve a você** a sua margem mais a taxa da plataforma, e quita por PIX. Ele acompanha isso no Início dele e em **Sua conta**, como valor a pagar; você, no [painel da Rede](../parcerias/painel-da-rede.md), como valor a receber daquele parceiro.
 
 {% hint style="warning" %}
 **A coleta é tudo ou nada.** O parceiro só pode declarar o recebimento se ele **fechar a cobrança inteira** daquele pedido. Recebeu só uma parte? O caminho é o **PIX do vendedor** — que, aliás, é sempre o melhor: o dinheiro cai já repartido, sem sobrar saldo para ninguém acertar depois.
@@ -220,7 +213,7 @@ Para destravar, alguém precisa **ressincronizar** aquela parada com o pedido at
 
 ### Sou o parceiro. Preciso ter frota e galpão cadastrados? {#parceiro-precisa-de-frota}
 
-Se você é o **parceiro convidado por link**: sim, e é rápido. Você cadastra a **sua própria frota** dentro da conta de quem te convidou — tipos de veículo e veículos com placa que são **seus** e só você enxerga — e o **Meu galpão**, que é o endereço de onde as suas viagens partem (é dele que sai o cálculo do frete do repasse). Nada disso se mistura com a frota de quem te convidou.
+Se você é o **parceiro convidado por link**: sim, e é rápido. Você cadastra a **sua própria frota** dentro da conta de quem te convidou — tipos de veículo e veículos com placa que são **seus** e só você enxerga — e o **Galpão**, que é o endereço de onde as suas viagens partem (é dele que sai o cálculo do frete do repasse). Nada disso se mistura com a frota de quem te convidou.
 
 Se você é uma **organização parceira** (parceria org↔org), o que pesa é o **estoque**: o material sai do **seu** galpão, e sem galpão cadastrado o sistema não reserva nada — o pedido chega marcado como sem cobertura, e quem corrige é você.
 
