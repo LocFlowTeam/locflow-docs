@@ -201,9 +201,33 @@ A lista completa do módulo é maior que esta tabela (acordos, prazos, penalidad
 Esta lista cresce com o tempo. Se há um aviso que faria diferença para a sua operação, fale com o suporte.
 {% endhint %}
 
-## Vendendo e gerenciando os avisos recebidos
+## Vendo e gerenciando os avisos recebidos {#avisos-recebidos}
 
-Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam **agrupados por módulo**, com o número de não-lidos, **ordenados por urgência e horário** — os novos e os antigos juntos, para você ter o histórico completo. Cada aviso mostra o **nível** e a **hora** em que foi emitido; o **botão de ação** fica em destaque quando é novo e discreto depois. **Nada some** — o histórico permanece.
+Toque no **sino** (no topo) para abrir os avisos que chegaram para você. No alto, três abas: **Todas**, **Não lidas** e **Novidades** (o que mudou no LocFlow). Os avisos aparecem em três grupos — **Precisa de ação** (não lidos, críticos ou importantes), **Para saber** (não lidos, informativos) e **Lidas** —, cada um com o ícone do módulo pintado na cor do nível. Tocar num aviso abre o detalhe, com o botão de ação. **Nada some** — o histórico permanece.
+
+### Buscar e filtrar {#buscar-e-filtrar}
+
+Quando o sino acumula avisos, encontre o que interessa sem rolar a lista inteira:
+
+* **Busca** — digite o nome do cliente, o código do pedido ou o assunto (*"Buscar por cliente, pedido ou assunto"*). A busca vale para **todos** os seus avisos, não só os que estão na tela, e ignora acentos e maiúsculas.
+* **Filtros** — duas perguntas, cada uma aceitando várias respostas:
+  * **Módulo**: Orçamento, Logística, Cobrança, Parceria, Financeiro, Estoque ou Sistema.
+  * **Prioridade**: Crítica, Importante ou Informativa (o [nível de atenção](#niveis-de-atencao) do aviso).
+
+Cada filtro escolhido vira um chip logo abaixo da barra (por exemplo, *"Módulo: Logística, Cobrança"*); o **×** do chip tira aquela pergunta e **Limpar tudo** volta ao inbox inteiro.
+
+{% hint style="info" %}
+**O sino continua contando tudo.** O número no sino é o total de não lidas, com ou sem filtro na tela — e os avisos críticos continuam chegando normalmente enquanto você filtra.
+{% endhint %}
+
+### Marcar vários como lidos {#marcar-varios}
+
+* **Marcar todas como lidas** — lê o inbox inteiro de uma vez. Com busca ou filtro ativos, o mesmo link vira **Marcar as filtradas como lidas** e lê **só** o que está filtrado: filtre *Logística* e limpe só os avisos da logística.
+* **Selecionar** — liga a seleção: cada aviso ganha uma caixa, e tocar no aviso marca ou desmarca (em vez de abrir). No celular, **segurar** um aviso também liga a seleção, já com ele marcado. A barra da seleção mostra quantos estão marcados, a caixa **Selecionar todas as visíveis** e o botão **Marcar como lidas**; o **×** sai da seleção.
+
+{% hint style="warning" %}
+**Lido é da organização, não da pessoa.** Marcar um aviso como lido vale para todos que o recebem — do mesmo jeito que já acontecia ao ler um aviso por vez.
+{% endhint %}
 
 ## Situações reais
 
@@ -213,6 +237,8 @@ Toque no **sino** (no topo) para abrir a Central de avisos recebidos. Eles ficam
 - **"Esse aviso aqui está apagado e não consigo mexer."** Ele está na seção **Em breve**: é só visualização, ainda não dá para ligar/ajustar.
 - **"Estou cobrando atraso na mão, cliente por cliente."** Abra **Parcela vencida há X dias** e confira os lembretes em **Quando lembrar**. Sem mexer, você já é avisado aos 3, 10 e 30 dias de atraso, com o valor em aberto e o atalho para a fatura.
 - **"Meu time reclama que o aviso de atraso é demais."** No mesmo bloco, tire os lembretes que não usa (ou deixe só um). Lista vazia desliga o lembrete e mantém o aviso configurado, pronto para você voltar atrás.
+- **"Tenho dezenas de avisos não lidos e só me interessam os da cobrança."** No sino, abra **Filtros**, marque **Módulo: Cobrança** e use **Marcar as filtradas como lidas** depois de conferir — ou **Selecionar** para ler só alguns.
+- **"Quero achar o aviso daquele pedido."** Digite o código do pedido ou o nome do cliente na busca do sino: ela procura em todos os avisos, inclusive os que não estão carregados na tela.
 - **"Configurei o aviso, mas não sei se ele chega a alguém."** Abra o **canal** que o aviso usa (em **Gerenciar canais**) e toque em **Testar canal**: um aviso de teste sai na hora para quem o canal alcança — no sino e no celular — e a folha mostra o resultado pessoa por pessoa. Veja [Testar um canal](canais-de-notificacao.md#testar-um-canal).
 
 ## Próximo passo

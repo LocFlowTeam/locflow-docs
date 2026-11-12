@@ -93,6 +93,10 @@ Toque no **lápis** ao lado da linha. Abre a folha **Pagamento combinado**, com 
 **Quem vê e quem edita.** O lápis usa a **mesma permissão de editar a fatura**. Quem não a tem lê a linha quando há combinado, e não vê nada quando não há — uma linha "—" sem ação seria só ruído numa ficha já densa. Quem pode editar vê a linha sempre, com **"Pagamento combinado: não informado"** enquanto ninguém anotou.
 {% endhint %}
 
+{% hint style="info" %}
+**"Quando o cliente paga" é o mesmo na cobrança e no orçamento.** A folha (hoje chamada **"O que foi combinado"**) também guarda **quando** o cliente paga — na entrega ou na retirada, na devolução, ao finalizar ou faturado. Numa cobrança que nasceu de um orçamento, mudar esse momento aqui muda no orçamento junto, e a folha avisa: *"Vale também para o orçamento ORC-42."* O caminho inverso também vale: editar o momento no orçamento atualiza a cobrança. Duas exceções: **remover** o momento de um lado não apaga o do outro, e uma cobrança **cancelada** não acompanha mais o orçamento.
+{% endhint %}
+
 {% hint style="warning" %}
 **Cobrança cancelada não aceita mais combinado.** O lápis some — não há mais o que combinar numa cobrança encerrada. O que já estava anotado continua na linha, agora só para leitura.
 {% endhint %}
