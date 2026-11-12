@@ -94,7 +94,9 @@ Todo kit nasce **ativo**. Ativar e inativar é uma **ação própria**, com conf
 Antes de inativar, o LocFlow pergunta **"Inativar kit?"** e explica o efeito: o kit *"deixa de aparecer na seleção de novos orçamentos. Orçamentos e histórico já existentes não mudam — dá para ativar de novo quando quiser."*
 
 - **Ativo**: o kit aparece e pode ser jogado em um orçamento.
-- **Inativo**: o kit fica **recolhido** — na listagem ele aparece esmaecido, com o selo **INATIVO**, e sai do caminho de quem está montando um orçamento.
+- **Inativo**: o kit fica **recolhido** — na listagem ele aparece com o ícone de pausa cinza, e sai do caminho de quem está montando um orçamento.
+
+Como nos produtos, a lista de kits não tem botões: ativar, inativar e editar ficam na **ficha** do kit.
 
 {% hint style="info" %}
 Deixar inativo é melhor que excluir quando você só quer **pausar** um kit (ex.: combo de fim de ano fora de temporada). Você não perde a composição nem o histórico de preços — é só ativar de novo quando voltar a oferecer.

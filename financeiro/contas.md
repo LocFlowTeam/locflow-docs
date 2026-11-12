@@ -20,14 +20,19 @@ Você as encontra em **Gestão Financeira → engrenagem (Ajustes) → Contas**.
 | **Caixa** | Dinheiro em espécie que fica com você — a gaveta do balcão, o troco da rua. | Sim |
 | **Banco** | Uma conta bancária de verdade. É o tipo que aceita [dados bancários](#dados-bancarios) e extrato. | Sim |
 | **Carteira** | Dinheiro guardado fora do banco tradicional: carteira digital, aplicativo de pagamento. | Sim |
-| **Gateway** | A conta-espelho do **pagamento online**, com o nome **Stone**. Reflete o dinheiro que está no processador de pagamentos, antes de cair no seu banco. | Não — o LocFlow a mantém |
+| **Gateway — Stone** | A conta-espelho do **pagamento online**. Reflete o dinheiro que está no processador de pagamentos, antes de cair no seu banco. | Não — o LocFlow a mantém |
+| **Gateway — Stone (maquininha)** | A conta Stone **da sua empresa**, onde cai o que a **maquininha integrada** recebe. É uma conta de verdade: dela saem Pix e TED, e você lança nela à mão. | Não — nasce quando a maquininha é ativada |
 | **Cartão de crédito** | A conta da **fatura** de um cartão: as compras feitas nele nascem aqui, como dívida prevista. | Não — nasce quando você cadastra o cartão em [Cartões](cartoes.md) |
 
 {% hint style="info" %}
 **Por que existe uma conta de gateway.** Quando o cliente paga pelo link, o dinheiro entra **no processador**, não no seu banco: ele fica compensando e só depois é sacado. A conta **Stone** mostra esse dinheiro no lugar certo do seu financeiro em vez de fingir que ele já está no banco — o próprio cartão dela diz: *"Conta temporária: os recebíveis caem aqui e os saques vão para as contas de recebimento."* Os detalhes do ciclo estão em [Saldo e antecipação](../cobranca/saldo-e-antecipacao.md).
 {% endhint %}
 
-Para criar: **Criar conta**, escolha o nome (ex.: *Banco Azul PJ*) e o tipo — **Caixa**, **Banco** ou **Carteira**. A conta do gateway, as contas de recebimento e as de cartão não se criam aqui: o LocFlow as mantém sozinho.
+{% hint style="success" %}
+**As duas Stones não são a mesma coisa.** Na **Stone** do pagamento online, o saque para o seu banco entra sozinho — lançar à mão nela contaria o mesmo dinheiro duas vezes, por isso ela não aparece quando você registra algo por fora. Já a **Stone (maquininha)** é uma conta sua como qualquer banco: ela aparece para **devolver dinheiro ao cliente**, **marcar uma parcela como paga**, **dar troco**, **declarar um repasse pago por fora** e conferir o **fechamento de caixa**.
+{% endhint %}
+
+Para criar: **Criar conta**, escolha o nome (ex.: *Banco Azul PJ*) e o tipo — **Caixa**, **Banco** ou **Carteira**. As contas Stone, as contas de recebimento e as de cartão não se criam aqui: o LocFlow as mantém sozinho.
 
 ## O que a tela mostra
 
@@ -151,8 +156,8 @@ Cadastrou a mesma conta duas vezes? A **mesclagem** resolve: a conta que você e
 
 O LocFlow recusa a mesclagem nestes casos, para proteger o seu saldo:
 
-* a conta é **do sistema** (a Stone);
-* o **destino** é a conta do gateway;
+* a conta que seria absorvida foi **criada pelo LocFlow** (o caixa inicial, a Stone ou a Stone da maquininha);
+* o **destino** é a **Stone** do pagamento online — a **Stone (maquininha)** pode ser o destino;
 * a conta é uma **conta de recebimento** — mescle a outra **nela**, não o contrário;
 * a conta é a **fatura de um cartão** — mesclá-la viraria dívida em caixa;
 * uma das contas já tem **saldo de abertura definido** ou **extrato bancário importado** — nesses casos, juntar os históricos faria o saldo mentir.
@@ -183,6 +188,7 @@ A **Stone** e a **conta de recebimento** vigente não se inativam à mão: os re
 * **"Tenho 'Nubank' e 'Nu PJ' cadastrados, é a mesma conta."** Mescle a duplicada na que você usa — mas só se nenhuma das duas já tiver saldo de abertura ou extrato importado.
 * **"Recebo por PIX no link de pagamento e quero ver esse dinheiro separado."** Ele já aparece na conta **Stone**, enquanto está no processador. Quando você saca, ele passa para a sua **conta de recebimento** — que aparece sozinha aqui, com o selo, sem você marcar nada.
 * **"Troquei o banco que recebe o pagamento online."** Edite em **Ajustes › Integração de Pagamento**. O Financeiro arquiva a conta antiga, com o histórico, e cria a do banco novo.
+* **"Criei uma conta só para lançar o que saía da Stone da maquininha e depois transferia."** Não precisa mais: lance direto na **Stone (maquininha)**. Para limpar o histórico, mescle a conta que você criou **na** Stone (maquininha) — os lançamentos dela passam para lá.
 
 ## Próximo passo
 

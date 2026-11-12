@@ -26,7 +26,7 @@ Você pode fazer as duas coisas de uma vez (no cadastro, basta dizer que a pesso
 
 ## Cadastro em duas etapas: a pessoa, depois funções e acesso
 
-Na aba **Pessoas**, toque no **+** (**Cadastrar colaborador**). O cadastro tem **duas etapas**, e a primeira é o mesmo formulário de [Contatos](../cadastros/contatos.md) — porque um colaborador também é um contato da sua empresa.
+Na lista de **Pessoas**, toque em **Cadastrar colaborador**. O cadastro tem **duas etapas**, e a primeira é o mesmo formulário de [Contatos](../cadastros/contatos.md) — porque um colaborador também é um contato da sua empresa.
 
 ```mermaid
 flowchart LR
@@ -195,7 +195,7 @@ Os papéis prontos resolvem a maioria dos casos. Quando a sua operação pede al
 * **Personalizar um papel:** parte de um papel do sistema (ex.: *Operador / Atendente*) e ajusta as permissões, criando uma cópia só da sua organização. Também dá para **criar um papel do zero** — pelo botão **Nova permissão** ou pelo link **Criar papel personalizado**, nas telas de convite e de conceder acesso.
 * **Criar uma função nova:** funções dizem **o que a pessoa sabe fazer** (competências). Você pode criar funções próprias (**Nova função**) ou personalizar as do sistema.
 
-Tudo isso fica na aba **Acessos** do módulo Colaboradores, ao lado de **Pessoas** (no caminho do topo da tela, ela ainda aparece como *Funções & Papéis*). Ela tem dois cartões: **Funções** — o que a pessoa faz na operação — e **Permissões de acesso** — o que a pessoa pode ver e fazer dentro do app, ou seja, os **papéis**. Cada lista separa os **Personalizados** dos de **Padrão do sistema**, e os do sistema têm o botão **Personalizar**.
+Tudo isso fica em **Funções e permissões**, que você abre pelo menu **Mais** (⋯) da lista de Pessoas. Ela tem duas abas: **Funções** (operacional) e **Permissões de acesso** (os papéis). O ícone da primeira coluna diz a origem de cada item, do sistema ou personalizado. Tocar num item do sistema abre a **personalização** (uma cópia só sua); tocar num seu abre a **edição**.
 
 <a id="por-atividade"></a>
 
@@ -243,11 +243,12 @@ Papel e função são **eixos diferentes**: o papel libera **o que a pessoa vê*
 
 ## Quem já está cadastrado
 
-A aba **Pessoas** lista a equipe e os convites, e você filtra por três grupos (cada um com a contagem ao lado):
+A lista de **Pessoas** mostra a equipe e os convites. O acesso aparece por um ícone: na tela larga, na primeira coluna; no celular, no cartão da pessoa. Na tela larga, os papéis aparecem pelo nome. O contato marcado como colaborador que ainda não tem cadastro diz isso por escrito no cartão: **Cadastro incompleto**. Em **Filtros**, você recorta por grupo (cada um com a contagem ao lado):
 
 * **Com acesso** — quem já tem login ativo.
 * **Sem acesso** — colaboradores cadastrados que ainda não entram no sistema. Use **Conceder acesso** para enviar o convite.
 * **Convites pendentes** — convites enviados aguardando o aceite (com link para copiar de novo).
+* **Cadastro incompleto** — contatos marcados como **Colaborador** em Contatos que ainda não têm o cadastro de colaborador. Toque na linha para **completar o cadastro**.
 
 A busca encontra por **nome ou e-mail**. Cada cartão mostra os papéis da pessoa, eventuais **pendências** e as ações que o seu acesso permite:
 

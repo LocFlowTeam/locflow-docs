@@ -194,6 +194,8 @@ Todo produto nasce **ativo** (disponível para entrar em orçamentos). Ativar e 
 
 Antes de inativar, o LocFlow pergunta **"Inativar produto?"** e diz o efeito: o item *"deixa de aparecer na seleção de novos orçamentos. Orçamentos e histórico já existentes não mudam — dá para ativar de novo quando quiser."* Editar o produto não reativa um item inativo sem você pedir.
 
+Na listagem, o status é o **ícone da primeira coluna**: check verde para **ativo**, pausa cinza para **inativo**. A lista não tem botões: toque no item para abrir a **ficha**, onde ficam **Editar o cadastro** e **Ativar/Inativar**.
+
 ## Item já cadastrado {#item-ja-cadastrado}
 
 Se você tentar adotar do catálogo oficial um item que **já existe** no seu catálogo, o LocFlow avisa e oferece **editar o produto existente** em vez de criar uma cópia. Isso evita duplicatas que bagunçam a vitrine e os relatórios.
