@@ -47,9 +47,24 @@ flowchart LR
 O saldo **Disponível** vai para a sua conta bancária por **transferência**. Isso pode acontecer de duas formas:
 
 - **Automática:** o gateway envia sozinho, no intervalo que você configurar (diário, semanal, etc.).
-- **Manual:** quando a transferência automática está desligada, aparece o botão **Sacar agora** para você enviar o disponível na hora.
+- **Manual:** quando a transferência automática está desligada, aparece, no saldo **Disponível**, o botão **Sacar para o banco** para você enviar o disponível na hora.
 
 Só entra na transferência o que está **Disponível** — o que está **A receber** precisa compensar primeiro (ou ser **antecipado**, abaixo).
+
+### Depois de sacar: saque em andamento
+
+Ao confirmar o saque, o recibo mostra o valor, a taxa da Stone e **quando o dinheiro deve cair na sua conta**. A partir daí, o saldo mostra o saque como **Saque em andamento** até ele cair no banco:
+
+| O que aparece | O que quer dizer |
+| --- | --- |
+| **Saque de R$ X em andamento** — *"A Stone prevê que caia na sua conta amanhã (sex., 13/11)"* | A data é a **previsão publicada pela Stone** para aquela transferência. |
+| **Saque de R$ X em andamento** — *"Deve cair na sua conta até seg., 16/11"* | A Stone ainda não publicou a data; o LocFlow mostra o prazo máximo normal, **até o próximo dia útil**. A data da Stone substitui esta em poucos minutos. |
+| **R$ X caiu na sua conta** | O saque foi concluído. Fica no saldo por alguns dias, para você conferir. |
+| **Saque de R$ X não concluído** | A Stone não completou a transferência e o valor **voltou ao seu saldo disponível**. Você pode sacar de novo. |
+
+{% hint style="info" %}
+**Um saque de cada vez.** Enquanto um saque está em andamento, o botão **Sacar para o banco** dá lugar ao aviso **Saque em andamento** — não precisa tocar de novo: o pedido já foi feito. Quando ele cair na conta, o botão volta.
+{% endhint %}
 
 ## Antecipação: receber antes
 

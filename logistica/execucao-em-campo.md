@@ -231,9 +231,17 @@ E o melhor: **ninguém precisa criar nada na mão depois**. Ao pular, o LocFlow 
 **"Replanejar" não é "Desatualizado".** A nova tentativa nasce porque a parada **falhou** — o pedido em si não mudou. Quando o **pedido** muda depois de planejado (data, itens, endereço), aí sim o movimento aparece como *Desatualizado* — veja [Quando um pedido muda](quando-um-pedido-muda.md).
 {% endhint %}
 
+### Comentar uma parada
+
+Cada parada tem uma conversa com a equipe: o botão de **comentários**, no canto inferior esquerdo, abre o que a retaguarda e os colegas escreveram sobre aquele pedido e o campo para escrever. O comentário vai para o **pedido**, para todo mundo ler — e não muda nada da entrega ou da retirada já registrada.
+
+* **Em qualquer parada do roteiro.** Já está na parada 3 e lembrou de algo da parada 1? Toque na parada 1 na barra de paradas, no alto da tela (ou use a seta de voltar), abra os comentários e escreva. Vale também para uma parada que ainda vem.
+* **Só enquanto o roteiro está em execução.** Registrada a volta ao galpão, o roteiro está concluído e os comentários das paradas **fecham**: dá para ler o que foi escrito, mas não escrever mais.
+* **Sem sinal?** O comentário fica guardado no celular e é enviado quando a conexão voltar — e vale mesmo que, até lá, o roteiro tenha sido concluído, porque ele foi escrito durante a execução.
+
 ### Voltar ao galpão
 
-Cumpridas as paradas, o app conduz o **retorno ao galpão**, mostrando a **carga de retorno** (o que volta — itens não entregues ou retirados de locação). Registrada a volta, a execução está **concluída**.
+Cumpridas as paradas, o app conduz o **retorno ao galpão**, mostrando a **carga de retorno** (o que volta — itens não entregues ou retirados de locação). Registrada a volta, a execução está **concluída** — e, com ela, fecham os comentários das paradas.
 
 ## Por porte: do simples ao escalável
 
