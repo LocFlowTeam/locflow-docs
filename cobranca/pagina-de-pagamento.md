@@ -48,9 +48,13 @@ Para cada parcela em aberto, o cliente escolhe entre os **métodos que você hab
 
 | Método | O que o cliente faz |
 | --- | --- |
-| **PIX** | Gera o QR Code (ou o código copia-e-cola) e paga pelo app do banco. |
-| **Boleto** | Gera o boleto com linha digitável para pagar no banco. |
+| **PIX** | Toca em **Gerar QR Code Pix** e paga pelo app do banco (pelo QR Code ou pelo copia-e-cola). |
+| **Boleto** | Toca em **Gerar boleto**, que já mostra o valor no botão, e paga no banco pela linha digitável. |
 | **Cartão** | Digita os dados do cartão na própria página e paga na hora. |
+
+{% hint style="info" %}
+**Cartão aprovado nem sempre é "pago" no mesmo segundo.** Depois de aprovado, o cartão aparece como **"Pagamento aprovado pela operadora — Registrando o recebimento"** até a confirmação chegar. Se a operadora segurar a transação para análise, a página diz **"Cartão em análise pela operadora"** e avisa que não é preciso pagar de novo.
+{% endhint %}
 
 Você controla quais métodos aparecem — o padrão é só **PIX**. Quem decide isso é você, no link; veja [Pagamento online](pagamento-online.md#o-link-de-pagamento).
 
@@ -101,11 +105,13 @@ Por padrão, o link tem um endereço técnico (uma sequência de caracteres). Ma
 
 ## Quando algo não está pronto
 
-A página é honesta com o cliente quando não há o que pagar:
+A página é honesta com o cliente quando não há o que pagar — ou quando ainda não dá para pagar:
 
-* **Link inválido ou expirado** — se o endereço não corresponde a uma cobrança válida, a página avisa: *"Este link de pagamento é inválido ou expirou. Peça um novo link a quem enviou a cobrança."* Nesse caso, gere um link novo na fatura e reenvie.
-* **Cobrança ainda não disponível** — se o cliente abre o endereço da empresa para um pedido que **ainda não tem cobrança gerada**, a página mostra só a sua marca e avisa que não há nada a pagar por ali ainda.
-* **Tudo pago** — quando a fatura já está quitada, a página mostra a confirmação de agradecimento, sem oferecer pagar de novo.
+* **Link inválido ou expirado** — se o endereço não corresponde a uma cobrança válida, a página avisa: *"Este link de pagamento é inválido ou expirou. Peça um novo a quem enviou a cobrança."* Nesse caso, gere um link novo na fatura e reenvie.
+* **Cobrança ainda não disponível** — se o cliente abre o endereço da empresa para um pedido que **ainda não tem cobrança gerada**, a página mostra a sua marca e avisa: *"Ainda não há cobrança para este orçamento"* — e libera o pagamento sozinha assim que você gerar a cobrança.
+* **Pagamento indisponível no momento** — falta um dado no cadastro do cliente para emitir a cobrança (o CPF/CNPJ ou o e-mail, por exemplo). A página diz **o que falta** e pede que ele fale com quem enviou o link. Complete o cadastro do cliente e a página libera o pagamento em seguida.
+* **Pagamento já recebido** — o valor foi recebido por fora (em dinheiro ou na maquininha, por exemplo) e está **em conferência** na sua tesouraria. A página avisa que não é preciso pagar de novo; a baixa aparece ali assim que a conferência terminar.
+* **Tudo pago** — quando a fatura já está quitada, a página mostra **"Tudo pago — obrigado!"**, com a forma usada (*"Pago via Pix. Não há mais nada a pagar nesta cobrança."*), sem oferecer pagar de novo.
 
 {% hint style="warning" %}
 Se o cliente disser que o link "não abre" ou "deu erro", quase sempre é um link **antigo**: trocar o método ou gerar a cobrança de novo invalida o código anterior. Gere um link novo na fatura e reenvie. Veja [Pagamento online](pagamento-online.md).

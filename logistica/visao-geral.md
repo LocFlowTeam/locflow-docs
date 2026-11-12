@@ -33,8 +33,8 @@ Lendo da esquerda para a direita, cada fase é um momento concreto da operação
 | --- | --- | --- |
 | **Aguardando fatura** | A logística ainda não começou porque você exigiu que a cobrança exista antes de mover o material. | Só se você ligar a [exigência de fatura](#exigir-fatura-antes-de-iniciar-a-logistica). |
 | **A separar → Separado** | A [separação](separacao.md) no galpão: alguém junta o material do pedido e deixa pronto para carregar. | Só se a separação interna estiver ligada. *Opcional.* |
-| **Saiu para entrega → Entregue** | O material vai à rua e chega ao cliente. (Ou o cliente **retira no galpão**, sem rota.) | Sempre. |
-| **Saiu para retirada → Retirado** | A equipe vai **buscar o material de volta**. (Ou o cliente **devolve no galpão**.) | Só na **locação**. |
+| **Saiu para entrega → Entregue** | O material vai à rua e chega ao cliente. (Ou o cliente **retira na loja**, sem rota.) | Sempre. |
+| **Saiu para retirada → Retirado** | A equipe vai **buscar o material de volta**. (Ou o cliente **devolve na loja**.) | Só na **locação**. |
 | **A conferir → Conferido** | A [conferência](conferencia.md) na volta: checar o que retornou antes de o item liberar o estoque. | Só na **locação**, e só se a conferência estiver ligada. *Opcional.* |
 | **Finalizado** | A logística encerrou. Na venda, ao entregar; na locação, ao concluir a volta. | Sempre. |
 
@@ -72,36 +72,36 @@ Ambas são governadas pela **política do [motor de logística](../configuracoes
 
 Entre as pontas internas acontece a **logística externa** — o que vai à rua:
 
-* **Entrega** (*Saiu para entrega → Entregue*): o material chega ao cliente. Se o cliente prefere **retirar no galpão**, não há rota — ele busca no balcão e você só marca a saída.
-* **Retirada** (*Saiu para retirada → Retirado*, só locação): a equipe vai buscar o material de volta. Se o cliente prefere **devolver no galpão**, também não há rota — ele entrega no balcão.
+* **Entrega** (*Saiu para entrega → Entregue*): o material chega ao cliente. Se o cliente prefere **retirar na loja**, não há rota — ele busca o material na loja e você só confirma a retirada.
+* **Retirada** (*Saiu para retirada → Retirado*, só locação): a equipe vai buscar o material de volta. Se o cliente prefere **devolver na loja**, também não há rota — ele traz o material até a loja.
 
-A execução em campo dessas fases acontece no [roteiro pelo aplicativo](execucao-em-campo.md).
+A execução em campo dessas fases acontece no [roteiro, pelo aplicativo ou pelo navegador](execucao-em-campo.md); o atendimento de quem vem à loja, na [Loja](balcao.md).
 
-## Os números no menu
+## O Painel Logístico: a operação inteira numa tela
 
-No menu, ao lado de cada etapa da logística, aparece um **número pequeno** — é a quantidade de itens **esperando naquela fila**. Ele existe para você enxergar, de relance, a carga do dia sem abrir cada tela, e **atualiza em tempo real** conforme a equipe trabalha.
+Para enxergar tudo isso de uma vez — o que sai, o que volta, o que já tem roteiro e o que ainda está livre —, use o [Painel Logístico](painel-logistico.md), no menu **Logística**. Ele mostra o mesmo recorte de seis jeitos (mapa, mês, dia, lista, kanban e tabela) e marca o que é urgente.
 
-| No menu | O número conta | Cor |
-| --- | --- | --- |
-| **Balcão** | Atendimentos esperando no balcão — clientes que vão **retirar ou devolver** os itens presencialmente no galpão. | Roxo |
-| **Separação** | Pedidos aguardando **separação** no galpão (*A separar*). | Roxo |
-| **Conferência** | Pedidos aguardando **conferência** na volta (*A conferir*) — só na locação. | Roxo |
-| **Roteirização** | Movimentos (entregas/retiradas da equipe) que ainda **faltam planejar** em um roteiro. | Roxo — ou **âmbar** quando há algo para **hoje** (ou atrasado) |
+## Os números no menu <a id="os-numeros-no-menu"></a>
 
-**O que a cor diz:**
+No menu, ao lado das filas do galpão, aparece um **número pequeno, em roxo** — é a quantidade de trabalho **esperando naquela fila**. Ele existe para você enxergar, de relance, a carga do dia sem abrir cada tela, e **atualiza em tempo real** conforme a equipe trabalha.
 
-* 🟣 **Roxo** — há fila, mas **nada pressionando pela data**. Cuide quando for melhor para você.
-* 🟠 **Âmbar** — aparece na **Roteirização** quando há ao menos um movimento **a planejar com data para hoje (ou já atrasada)**. É o sinal de "planeje logo" — o mesmo que dispara o aviso [Movimentos do dia sem roteiro](../configuracoes/central-de-notificacoes.md).
+| No menu | O número conta |
+| --- | --- |
+| **Minha Loja** | Clientes aguardando atendimento na loja — quem vai **retirar ou devolver** os itens presencialmente. |
+| **Separação** | Pedidos aguardando **separação** no galpão (*A separar*). |
+| **Conferência** | Retornos aguardando **conferência** (*A conferir*) — só na locação. |
 
-{% hint style="info" %}
-**A Roteirização "cai" quando você planeja.** Esse número conta só o que **falta planejar**. Assim que você inclui um movimento em um roteiro, ele **sai dessa contagem** — já tem rota, agora aguarda a **saída** (a execução em campo). Por isso o número diminui à medida que você organiza o dia, em vez de continuar mostrando o que já foi planejado.
-{% endhint %}
+A **Roteirização** não tem número, de propósito: ele repetia o que o painel já mostra e puxava a atenção para o lugar errado. O sinal de atenção da logística mora no item **Painel Logístico**:
+
+* um **"!" vermelho**, sem número, que acende quando há **movimento urgente sem roteiro** — o mesmo ⚠ do [Painel Logístico](painel-logistico.md#cores), pelo prazo que a sua operação definiu em **Ajustes › Motores › Logística › Urgência e atraso** (o padrão é a janela começar em menos de **4 horas**);
+* com o sinal aceso, o clique abre o painel direto na **Lista** com os urgentes;
+* movimento **atrasado** (janela vencida sem roteiro) **não** acende o sinal: ele tem marca própria no painel, e um histórico esquecido deixaria o sinal aceso para sempre.
 
 **Bom saber:**
 
-* O número **só aparece quando há item esperando** — fila vazia, sem número.
+* O número **só aparece quando há item esperando** — fila vazia, sem número. Sem urgência, sem sinal.
 * Passou de 9, mostra **9+**.
-* Você só vê o número das filas em que **atua**: quem cuida só do balcão não vê a contagem de roteirização, e quem planeja rotas não vê a do balcão. Isso segue as [permissões de cada pessoa](../configuracoes/colaboradores-e-acessos.md).
+* Você só vê o número das filas em que **atua**: quem cuida só da loja não vê o sinal do Painel Logístico, e quem planeja rotas não vê o número da loja. Isso segue as [permissões de cada pessoa](../configuracoes/colaboradores-e-acessos.md).
 
 ## Locação x venda: o que muda nas fases
 
@@ -165,11 +165,11 @@ A logística **abstrai para o pequeno e revela para o grande** — você liga fa
 
 ## Situações reais
 
-* **Venda no balcão:** orçamento vendido, entrega na hora. Sem retirada, sem conferência — o ciclo termina na entrega.
+* **Venda na loja:** orçamento vendido, o cliente leva na hora. Sem retirada, sem conferência — o ciclo termina na entrega.
 * **Locação de evento:** reservado, separa na véspera, entrega no local, retira no dia seguinte e confere na volta para checar avarias antes de o item liberar o estoque.
 * **Entrega de última hora:** pulou o planejamento? Toca em **Planejar entrega** no próprio pedido — o movimento já vem selecionado e você salva em seguida. O sistema não trava o caminho mais simples.
-* **Cliente que retira no balcão:** sem rota nenhuma. O material é separado (se você ligou a separação) e o cliente busca no galpão; na locação, devolve no balcão e segue para a conferência. A fila desses atendimentos fica em [Balcão: retirada e devolução no galpão](balcao.md).
+* **Cliente que retira na loja:** sem rota nenhuma. O material é separado (se você ligou a separação) e o cliente busca na loja; na locação, devolve na loja e segue para a conferência. A fila desses atendimentos fica em [Loja: retirada e devolução pelo cliente](balcao.md).
 
 ## Próximo passo
 
-Veja [Separação no galpão](separacao.md), [Planejando o roteiro](planejando-o-roteiro.md) ou [Conferência na devolução](conferencia.md).
+Veja o [Painel Logístico](painel-logistico.md), [Separação no galpão](separacao.md), [Planejando o roteiro](planejando-o-roteiro.md) ou [Conferência na devolução](conferencia.md).

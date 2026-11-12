@@ -59,11 +59,26 @@ roteiro de entrega — por isso planejar é recomendado para todos os portes. O 
 direto do pedido continua ali, sempre, para o dia em que não deu para planejar.
 {% endhint %}
 
+## As respostas do cadastro também contam
+
+Além dos quatro sinais medidos, a [configuração inicial](configurando-sua-empresa.md) guarda duas
+respostas suas — **"Quantas pessoas trabalham na empresa?"** e **quantos veículos você usa para
+entregar**. Elas não mudam o porte calculado, mas também influenciam o que o **menu** mostra: quem
+respondeu que terceiriza o transporte, por exemplo, começa sem Frota e Roteirização no menu (veja
+[A filosofia do LocFlow](filosofia.md#interface-adapta)).
+
 ## Onde você vê o seu porte
 
-Em **Ajustes**, no card **"Porte da sua operação"**: o porte geral, cada um dos quatro sinais com o
-nível que ele sugere ("Frota: 6 veículos → Grande") e o seu plano atual como contexto. É a forma
-transparente de entender por que o LocFlow recomenda o que recomenda.
+Em **Ajustes**, logo no resumo da sua conta, a linha **"Porte da operação"** mostra o porte geral
+num selo. Ela abre e fecha com um toque e, aberta, mostra:
+
+* **Onde sua operação está** — Pequeno, Médio ou Grande, com o seu destacado;
+* **Indicadores considerados** — os quatro sinais com os seus números (colaboradores, galpões,
+  patrimônio e frota);
+* o link **Como calculamos isto**, que traz você para esta página.
+
+É a forma transparente de entender por que o LocFlow recomenda o que recomenda. A linha aparece
+para quem tem a permissão de ver o porte da organização.
 
 ## Próximo passo
 

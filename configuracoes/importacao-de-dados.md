@@ -12,7 +12,7 @@ Se você já usa outro sistema (ou planilhas), não precisa começar do zero: o 
 A importação fica em **Ajustes › Importação de Dados** — disponível em todos os planos. Você mesmo faz, sem depender da nossa equipe; e o **?** no topo da tela traz este guia resumido, sempre à mão.
 
 {% hint style="info" %}
-A importação traz **dados históricos**: os pedidos entram como registros finalizados, só para consulta e para classificar seus clientes. Eles **não mexem** no seu estoque, na agenda de entregas nem geram cobranças — importar não interfere na operação do dia.
+A importação traz **dados históricos**: os pedidos entram como registros finalizados, só para consulta e para classificar seus clientes. Eles **não entram na agenda de entregas nem geram cobranças**, e um pedido finalizado ou uma venda **não mexem no estoque**. A exceção é a locação **em andamento** — veja [Pedidos com a situação "Reservado"](#situacao-reservado).
 {% endhint %}
 
 ## O que dá para importar
@@ -119,6 +119,24 @@ Nesse caso, na conferência a linha aparece em **Entram com ressalva**, com um a
 {% endhint %}
 
 Com a regra **desligada** (o padrão), nada disso acontece: a linha entra como um cadastro novo, mesmo que o celular se repita.
+
+#### Pedidos com a situação "Reservado" {#situacao-reservado}
+
+No histórico de orçamentos, a coluna **Situação** é opcional. Sem ela, cada pedido entra como **concluído** (e conta para classificar o cliente). Mas, se a Situação de um **aluguel** vier como **Reservado**, o LocFlow entende que é uma **locação em andamento** — o material ainda está com o cliente — e o pedido entra como locação **ativa**: os itens do catálogo passam a **ocupar o estoque** (como uma reserva) até a locação ser concluída ou cancelada.
+
+A conferência avisa o que vai acontecer, linha a linha:
+
+| Situação na conferência | O que acontece |
+| --- | --- |
+| Modo **Integridade**, com itens ligados ao catálogo | *"Locação ativa: os itens vão OCUPAR o estoque (reserva) até a locação ser concluída ou cancelada."* Confira se o estoque que você cadastrou inclui o material que está com os clientes. |
+| Vários galpões cadastrados | A reserva fica no galpão **mais antigo** — a conferência diz qual. |
+| Modo **Rápido** (sem itens) | O estoque **não** é reservado, e o material dessa locação fica **invisível** para a disponibilidade. Use o modo **Integridade**. |
+| Nenhum galpão cadastrado | A reserva **não** pode ser criada. |
+| Item sem produto no catálogo | Entra como **valor avulso** e **não ocupa** estoque. |
+
+{% hint style="warning" %}
+Esses avisos **não bloqueiam** a importação — a linha aparece entre as que entram **com ressalva** e entra mesmo assim. Por isso, leia a conferência com calma antes de importar locações em andamento. Venda e pedido finalizado continuam sem tocar o estoque, e nenhum pedido importado gera cobrança ou entrega na agenda.
+{% endhint %}
 
 ### 4. Importar
 

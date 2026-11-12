@@ -1,6 +1,6 @@
 ---
 icon: truck
-description: A experiência de quem entra pelo convite — o espaço só seu, as solicitações de repasse, os ganhos, a reputação e o caminho para virar org↔org.
+description: A experiência de quem entra pelo convite — o espaço só seu, os pedidos repassados, a sua conta, a reputação e o caminho para virar org↔org.
 ---
 
 # Parceiro Logístico Externo
@@ -35,30 +35,35 @@ Tudo começa com um **link de convite** que a locadora te manda — por WhatsApp
 **O link não abre?** O convite vale por **7 dias** — provavelmente expirou. Peça outro à locadora: ela [gera um novo link na hora](entrando-na-rede.md#renovar-convite), sem refazer nada do seu cadastro.
 {% endhint %}
 
-A diferença está no destino. Ao aceitar, você **não** cai no painel da locadora — cai direto no **seu espaço**, com uma navegação enxuta feita para o seu trabalho. Ela é dividida em **dois espaços**, e você alterna entre eles pelo seletor no topo do menu — do mesmo jeito que uma locadora alterna entre Operação e Rede:
-
-**Operação** (acento roxo) — o que você faz em campo:
+A diferença está no destino. Ao aceitar, você **não** cai no painel da locadora — cai direto no **seu espaço**, com uma navegação enxuta feita para o seu trabalho. A barra (no celular, embaixo; no computador, o menu lateral) tem quatro itens:
 
 | Item | O que você faz nele |
 | --- | --- |
-| **Minha logística** | Os roteiros das **suas** operações: você planeja, ordena e executa as entregas e retiradas repassadas a você. |
-| **Minha frota** | As fichas dos **seus** veículos. O frete calculado por motor no acordo pode depender delas. |
-| **Meu galpão** | O seu **ponto de saída** — a origem do frete que você cobra. Endereço e pino no mapa. |
+| **Início** | A sua conta com a locadora, o que precisa de você — um pedido para aceitar, um pagamento para confirmar — e os próximos dias. |
+| **Pedidos** | Os pedidos que a locadora passou a você, com a linha do tempo e o valor de cada um. É onde você aceita. |
+| **Logística** | Os roteiros das **suas** operações: você planeja, ordena e executa as entregas e retiradas repassadas a você. |
+| **Menu** | O resto do seu espaço, logo abaixo. |
 
-**Rede** (acento magenta) — a sua relação com quem te contrata:
+No **Menu**:
 
 | Item | O que você faz nele |
 | --- | --- |
-| **Meus acordos** | O combinado com cada locadora — itens, preços, prazos. |
-| **Repasses recebidos** | As solicitações que chegaram: aceitar, recusar, desistir. Sem esta lista, uma notificação perdida vira um repasse invisível. |
-| **Meus ganhos** | Quanto você já recebeu, o que está a receber e o histórico de cada operação. |
-| **Minha reputação** | As suas estrelas, o selo e o índice de confiabilidade — e o botão de contestar penalidade. |
-| **Recebedor** | Os seus dados bancários — para onde o dinheiro vai. |
+| **Acordos** | O combinado com cada locadora — itens, preços, prazos. |
+| **Rede** | Os Termos da Rede e os pedidos que você aceita. |
+| **Sua conta** | A conta com a locadora em detalhe: cada valor que a forma, o que você deve e o que tem a receber. |
+| **Frota** | As fichas dos **seus** veículos. O frete calculado por motor no acordo pode depender delas. |
+| **Galpão** | O seu **ponto de saída** — a origem do frete que você cobra. Endereço e pino no mapa. |
+| **Reputação** | As suas estrelas, o selo e o índice de confiabilidade — e o botão de contestar penalidade. |
+| **Recebimento** | Os seus dados bancários — para onde o dinheiro vai. |
 
-Ao entrar, você cai no espaço **Rede** — que é onde chegam os repasses.
+Ao entrar, você cai no **Início**. Na primeira vez, um aviso no topo mostra o que mudou de lugar.
 
 {% hint style="info" %}
-**Duas coisas para deixar prontas cedo:** o **recebedor** (sem ele, o repasse com divisão automática não tem para onde ir — veja [abaixo](#recebedor)) e o seu **galpão** (a origem do frete; um pino fora do lugar no mapa deixa o frete impreciso). O galpão normalmente já vem preenchido pela locadora, no próprio convite — mas confira antes da primeira operação.
+**Duas coisas para deixar prontas cedo:** o **recebimento** (sem ele, o repasse com divisão automática não tem para onde ir — veja [abaixo](#recebedor)) e o seu **galpão** (a origem do frete; um pino fora do lugar no mapa deixa o frete impreciso). O galpão normalmente já vem preenchido pela locadora, no próprio convite — mas confira antes da primeira operação.
+{% endhint %}
+
+{% hint style="info" %}
+**Travou em alguma tela?** Quem te convidou pode entrar na sua conta para resolver junto com você — e você é avisado na hora, vê uma faixa no topo enquanto isso durar e encerra quando quiser. Veja [Acesso assistido](acesso-assistido.md).
 {% endhint %}
 
 ## O acordo: o seu combinado {#o-acordo}
@@ -69,14 +74,14 @@ O ciclo completo do acordo — termos, aprovação bilateral, frete manual ou po
 
 ## As solicitações de repasse {#solicitacoes}
 
-Quando a locadora fecha um pedido e repassa a operação para você, chega uma **solicitação** — você recebe uma notificação e a reserva aparece com o convite claro: *"Toque para revisar e decidir"*.
+Quando a locadora fecha um pedido e repassa a operação para você, chega uma **solicitação** — você recebe uma notificação, e o pedido aparece no seu **Início**, em **Precisa de você › Pedidos**, e em **Pedidos**, com o botão **Aceitar**.
 
 ### O que você vê {#o-que-voce-ve}
 
 O detalhe do repasse mostra tudo o que você precisa para decidir — e nada do que não te diz respeito:
 
 - **Você recebe (líquido)** — em destaque, o valor que cai para você: o repasse dos itens, o **frete** (quando você roda a operação com o seu motor de frete), menos a taxa de plataforma quando houver. Se a locação tem mais de uma diária, o app avisa: *"Valores já multiplicados por N diárias/locações"*.
-- **A operação** — entrega e retirada (devolução), com endereço, data e o nome do contato de cada movimento. Quando o cliente retira ou devolve no balcão, o app diz isso com todas as letras: não há movimento a rodar.
+- **A operação** — entrega e retirada (devolução), com endereço, data e o nome do contato de cada movimento. Quando o cliente retira ou devolve na loja, o app diz isso com todas as letras: *"O cliente retira na loja — sem entrega a rodar."*
 - **Os itens** — cada bem móvel e a quantidade.
 - **Itens que você não fornece** — quando o acordo não traduz parte da carga para o seu catálogo, o app diz **quantos são**, antes de você aceitar. Aquele pedaço continua sendo da locadora.
 - **Fora do acordo** — se algo da operação desvia do combinado, aparece listado, sem surpresa escondida.
@@ -89,8 +94,8 @@ O detalhe do repasse mostra tudo o que você precisa para decidir — e nada do 
 
 A decisão é sua, e as duas saídas são legítimas:
 
-- **Aceitar repasse** — a operação vira sua: os roteiros dela passam a viver em **Minha logística** e o seu ganho entra na fila de [Meus ganhos](#meus-ganhos). **A rota sai do SEU galpão**: o nome, o ponto no mapa e a conferência de saída/retorno usam o endereço cadastrado em **Meu galpão** — mantenha o pino no lugar certo antes de criar o roteiro.
-- **Recusar** — o app pede o **motivo**, obrigatório: *"Diga ao vendedor por que você não vai fazer este trabalho"*. O motivo volta para a locadora, que pode repassar a outro parceiro. Recusar **não** gera penalidade — dizer "não" a tempo é melhor do que aceitar e falhar.
+- **Aceitar** — a operação vira sua: os roteiros dela passam a viver em **Logística** e o valor dela entra na [sua conta](#sua-conta). A folha do aceite mostra quanto fica para você, as datas da entrega e da retirada e de qual galpão o pedido sai. **A rota sai do SEU galpão**: o nome, o ponto no mapa e a conferência de saída/retorno usam o endereço cadastrado em **Galpão** — mantenha o pino no lugar certo antes de criar o roteiro.
+- **Recusar** — pelo pedido inteiro (na folha do aceite, **Ver o pedido inteiro ou recusar**). O app pede o **motivo**, obrigatório: *"Diga ao vendedor por que você não vai fazer este trabalho"*. O motivo volta para a locadora, que pode repassar a outro parceiro. Recusar **não** gera penalidade — dizer "não" a tempo é melhor do que aceitar e falhar.
 
 ### O prazo de aceite {#prazo-de-aceite}
 
@@ -104,7 +109,7 @@ Se o prazo estoura sem resposta, a solicitação **expira sozinha**: você não 
 
 ### Desistir depois de aceitar {#desistir}
 
-Aceitou e o imprevisto veio? Existe a **desistência**, sempre com **motivo**. O acordo define uma **janela de desistência** (o padrão é 24 horas antes do marco da operação):
+Aceitou e o imprevisto veio? No detalhe do repasse, toque em **Não vou conseguir fazer esta operação** — é a **desistência**, sempre com **motivo**. O acordo define uma **janela de desistência** (o padrão é 24 horas antes do marco da operação):
 
 | Quando você desiste | O que acontece |
 | --- | --- |
@@ -113,21 +118,29 @@ Aceitou e o imprevisto veio? Existe a **desistência**, sempre com **motivo**. O
 
 Se o app não conseguir confirmar o prazo no momento, ele também avisa que a desistência **pode** ficar registrada como tardia — você decide com essa informação na mão.
 
+{% hint style="warning" %}
+**Depois que a execução começa, não dá mais para desistir pelo app.** A tela diz *"A execução já começou — não é mais possível desistir."* Combine com a locadora o que fazer com a carga: ela pode **retomar a operação** para a logística dela. Se ela retomar porque você não vai conseguir atender, depois de a janela fechar, isso pesa **−35** no seu índice — e você pode contestar.
+{% endhint %}
+
 {% hint style="info" %}
-Se a locadora **reverter o ganho** do orçamento (o pedido voltou à negociação), o repasse é **cancelado automaticamente** — sem qualquer penalidade para você.
+Se a locadora **reverter o ganho** do orçamento (o pedido voltou à negociação) ou **cancelar o envio** antes de você decidir, a solicitação é cancelada e some das suas notificações — sem penalidade para você.
 {% endhint %}
 
 ## A logística é sua {#minha-logistica}
 
-Do aceite em diante, quem manda na execução é você. Em **Minha logística** você trabalha como qualquer operação no LocFlow, só que enxergando apenas os **seus** pedidos:
+Do aceite em diante, quem manda na execução é você. Em **Logística** você trabalha como qualquer operação no LocFlow, só que enxergando apenas os **seus** pedidos:
 
 - **Planeja o roteiro** das entregas e retiradas — mesma ferramenta descrita em [Planejando o roteiro](../logistica/planejando-o-roteiro.md);
 - **Executa em campo**, marcando cada movimento como feito — veja [Execução em campo](../logistica/execucao-em-campo.md);
 - **Revê o que já rodou**, com as provas de execução de cada entrega.
 
-Em **Minha frota** ficam as fichas dos seus veículos. Elas importam por dois motivos: quando o **frete do acordo é por motor**, o cálculo cita especificações de veículo que precisam ser da **sua** frota; e, se um dia você [promover a parceria para org↔org](#crescendo-na-rede), fichas equivalentes na sua nova organização fazem parte do caminho.
+{% hint style="info" %}
+**Sem créditos de mapa.** Traçar o trajeto real, reordenar as paradas pelo mapa e localizar endereços consomem créditos — e a carteira de créditos é da organização que te convidou: como parceiro convidado, você não tem uma. Esses botões aparecem apagados para você; o roteiro funciona normalmente, com as paradas na ordem que você definir. Ter os seus próprios créditos é uma das coisas que mudam ao [virar organização](#crescendo-na-rede).
+{% endhint %}
 
-**Meu galpão** é item próprio do menu, ao lado da Frota — é o **seu ponto de saída**, a **origem do frete** que você cobra. Ali você confere e ajusta o endereço e o pino no mapa quando mudar de base. Trocar o local muda **só o valor do frete** das próximas propostas; quem decide aceitar continua sendo o vendedor.
+Em **Menu › Frota** ficam os **tipos de veículo** da sua frota. Eles importam por dois motivos: quando o **frete do acordo é por motor**, o cálculo cita tipos de veículo que precisam ser da **sua** frota; e, se um dia você [virar organização](#crescendo-na-rede), a sua frota já cadastrada vai junto.
+
+**Galpão** é item próprio do Menu, ao lado da Frota — é o **seu ponto de saída**, a **origem do frete** que você cobra. Ali você confere e ajusta o endereço e o pino no mapa quando mudar de base. Trocar o local muda **só o valor do frete** das próximas propostas; quem decide aceitar continua sendo o vendedor.
 
 ### Quando não dá para tirar a prova {#dispensa-de-evidencia}
 
@@ -146,32 +159,33 @@ Só que **essa saída não é sua**: quem dispensa é a **retaguarda da locadora
 {% endhint %}
 
 {% hint style="info" %}
-**Um parceiro externo tem um único galpão.** É a caixa isolada da parceria — um ponto de saída, uma origem de frete. Se você precisa operar de **vários galpões ou locais**, isso é sinal de que a sua operação cresceu: [crie a sua própria organização na LocFlow](#crescendo-na-rede) e passe a ser um **parceiro com conta própria** — aí você gere quantos galpões e locais quiser, com estoque, equipe e frota só seus. A sua reputação de parceiro externo vai junto.
+**Um parceiro externo tem um único galpão.** É a caixa isolada da parceria — um ponto de saída, uma origem de frete. Se você precisa operar de **vários galpões ou locais**, isso é sinal de que a sua operação cresceu: [crie a sua própria organização na LocFlow](#crescendo-na-rede) e passe a ser um **parceiro com conta própria** — aí você gere quantos galpões e locais quiser, com estoque, equipe e frota só seus. A reputação que você construiu com a locadora vai junto.
 {% endhint %}
 
 {% hint style="warning" %}
 **Falha de entrega pesa.** Um movimento pulado ou uma entrega que não aconteceu é a penalidade mais dura do índice de confiabilidade. Se algo sair do controle, comunique e reorganize o roteiro — não deixe o movimento morrer em silêncio.
 {% endhint %}
 
-## Meus ganhos {#meus-ganhos}
+## Sua conta {#sua-conta}
 
-A aba **Meus ganhos** responde a três perguntas de uma vez:
+O que você tem com a locadora aparece em dois lugares:
 
-| Número | O que significa |
+| Onde | O que mostra |
 | --- | --- |
-| **Você já recebeu** | O que de fato já entrou para você. |
-| **A receber** | O que a locadora ainda vai quitar — operações com entregas/retiradas concluídas aguardando o acerto. |
-| **Em processamento** | Pagamento online do cliente que ainda está caindo — o seu pedaço chega junto. |
+| **Início** | **A receber** e **A pagar**, com o botão de pagar quando é a sua vez; o **Movimento** do período — o que você recebeu, a sua parte da taxa e os pedidos —; e os **próximos dias**, com o valor previsto de cada entrega e retirada. |
+| **Menu › Sua conta** | A conta inteira: o que você tem a receber, o que deve, quem paga a diferença e cada valor que a forma, pedido a pedido. É também onde você **registra o que recebeu** do cliente. |
 
-Abaixo, o **histórico**: cada operação com o valor líquido e o status do repasse.
+{% hint style="info" %}
+**A conta é uma só.** O que você deve à locadora e o que ela te deve se abatem, e só a diferença é paga, por quem deve, num PIX só. Quando é ela quem paga, a tela diz quanto: *"O parceiro vendedor te paga R$ X pelo app dele."*
+{% endhint %}
 
 ### Como o dinheiro chega {#como-o-dinheiro-chega}
 
-O valor de cada operação nasce do **acordo** (os seus preços × quantidades × diárias/locações, mais o frete quando é você quem roda — o frete não multiplica por diária). Do acordo até a sua conta, há dois caminhos:
+O valor de cada operação nasce do **acordo** (os seus preços × quantidades × diárias/locações, mais o frete quando é você quem roda — o frete não multiplica por diária). Do acordo até a sua conta, há três caminhos:
 
 - **Divisão na fonte (split)** — quando o cliente paga online e o gatilho do acordo é "no pagamento", o seu pedaço **se separa automaticamente** na hora do pagamento e cai direto para você. Para isso funcionar, o seu [recebedor](#recebedor) precisa estar pronto.
-- **Saldo a receber** — quando o gatilho dispara sem um pagamento online repartível (o cliente pagou em dinheiro, ou o gatilho é "na entrega"/"na retirada"), o valor vira **saldo** que a locadora te deve. Ela quita gerando uma **cobrança de repasse** (PIX) — e o valor migra de "A receber" para "Você já recebeu".
-- **Pagamento por fora, com a sua confirmação** — a locadora pode ter te pago **fora do app** (um Pix direto, dinheiro na mão). Nesse caso ela **declara** o pagamento e **você confirma**: aparece um cartão em **Meus ganhos** — *"a locadora declarou ter pago R$ X a você por fora. Você recebeu?"* — com **"Recebi, confirmar"** e **"Não recebi"** (aí o app pede o motivo, que volta para ela). Só a **sua confirmação** dá o repasse por pago; enquanto você não responde, nada muda no seu saldo.
+- **Saldo a receber** — quando o gatilho dispara sem um pagamento online repartível (o cliente pagou em dinheiro, ou o gatilho é "na entrega"/"na retirada"), o valor vira **saldo** que a locadora te deve. Ela quita gerando uma **cobrança de repasse** (PIX) — e o valor sai de **A receber** e entra no **Movimento**, em **Você recebeu**.
+- **Pagamento por fora, com a sua confirmação** — a locadora pode ter te pago **fora do app** (um Pix direto, dinheiro na mão). Nesse caso ela **declara** o pagamento e **você confirma**: aparece no seu Início, em **Precisa de você › Confirmar o que recebeu**, o pedido de confirmação — *"a locadora declarou ter pago R$ X a você por fora. Você recebeu?"* — com **"Recebi, confirmar"** e **"Não recebi"** (aí o app pede o motivo, que volta para ela). Só a **sua confirmação** dá o repasse por pago; enquanto você não responde, nada muda no seu saldo.
 
 Se o cliente pagou tudo **antes** de você aceitar a operação, nada se perde: o seu saldo nasce no aceite, calculado sobre o que já foi quitado — sem dupla contagem e sem depender de novo pagamento.
 
@@ -188,7 +202,7 @@ Quando ela está ligada, você vê, daquele pedido, **quanto o cliente deve** �
 | Caminho | O que acontece |
 | --- | --- |
 | **Gerar o PIX** e mostrar ao cliente | O dinheiro cai na conta **da locadora**. Nada muda para você: o seu repasse vem pelo caminho de sempre. **É o caminho recomendado.** |
-| **Declarar que recebeu** (dinheiro, maquininha) | O dinheiro fica com você — e nasce um valor **a pagar à locadora**: a margem dela mais a taxa de plataforma. Você quita por PIX, em Meus ganhos. |
+| **Declarar que recebeu** (dinheiro, maquininha) | O dinheiro fica com você — e nasce um valor **a pagar à locadora**: a margem dela mais a taxa de plataforma. Você paga por PIX, pelo botão **Pagar** do seu Início. |
 
 {% hint style="danger" %}
 **Os dois números da tela são diferentes, e não podem se misturar.** Em destaque aparece *"O cliente deve a \[locadora]: R$ 1.000,00"* — é isso que você cobra. Em outra linha, *"Você recebe R$ 300,00 por esta operação"* — é isso que você ganha, e **nunca** é o que se cobra do cliente.
@@ -202,15 +216,15 @@ Marcou por engano? Dá para desfazer, enquanto ninguém tiver pago o acerto. A h
 
 ### O recebedor {#recebedor}
 
-O **recebedor** são os seus dados bancários no meio de pagamento online — o mesmo tipo de cadastro que as locadoras usam para receber dos clientes (explicado em [Pagamento online](../cobranca/pagamento-online.md)), só que **seu**. Fica na aba **Recebedor** do seu espaço.
+O **recebedor** são os seus dados bancários no meio de pagamento online — o mesmo tipo de cadastro que as locadoras usam para receber dos clientes (explicado em [Pagamento online](../cobranca/pagamento-online.md)), só que **seu**. Fica em **Menu › Recebimento**. A conta bancária precisa estar **no mesmo CPF ou CNPJ** do cadastro — conta de outra pessoa não é aceita.
 
 {% hint style="warning" %}
-**Sem recebedor, não há divisão na fonte.** A parte mais automática do seu ganho — o split no pagamento do cliente — só funciona com o recebedor cadastrado e aprovado. Deixe isso pronto **antes** da primeira operação, para o dinheiro não ficar esperando por você.
+**Sem recebimento ativo, não há divisão na fonte.** A parte mais automática do seu ganho — o split no pagamento do cliente — só funciona com o cadastro feito e aprovado. E é ele também que permite gerar o PIX para pagar o que você deve. Deixe isso pronto **antes** da primeira operação, para o dinheiro não ficar esperando por você.
 {% endhint %}
 
-## Minha reputação {#minha-reputacao}
+## Reputação {#minha-reputacao}
 
-A cada operação concluída, a locadora pode te avaliar com **1 a 5 estrelas** e um comentário. Essas avaliações formam a sua reputação — que você acompanha na tela **Minha reputação**, item do menu no espaço **Rede**.
+A cada operação concluída, a locadora pode te avaliar com **1 a 5 estrelas** e um comentário. Essas avaliações formam a sua reputação — que você acompanha em **Menu › Reputação**.
 
 ### Estrelas e selo {#estrelas-e-selo}
 
@@ -227,6 +241,9 @@ Separado das estrelas existe o **índice de confiabilidade**: um número de **0 
 | Prazo de aceite estourado (a solicitação expirou sem resposta) | **−8** |
 | Desistência tardia (depois da janela do acordo) | **−15 a −25** — quanto mais perto da operação, mais pesado |
 | Falha de entrega (movimento que não aconteceu) | **−25** |
+| Não conseguiu atender depois da janela (você avisou que não ia conseguir, a janela já tinha fechado, e a locadora teve de retomar a operação) | **−35** |
+
+A tabela completa, com o que cada penalidade significa, fica no **"?"** da tela de reputação.
 
 O índice se recupera com o tempo de bom comportamento — a melhor estratégia é simples: responda no prazo, desista cedo quando precisar, entregue o que aceitou.
 
@@ -236,27 +253,35 @@ Levou uma penalidade injusta — o cliente não estava no local, o prazo estouro
 
 ## Crescendo na rede: virar organização {#crescendo-na-rede}
 
-Muitos parceiros começam exatamente assim — o motorista de confiança de uma locadora — e crescem: mais veículos, mais clientes, uma operação própria. O LocFlow acompanha esse crescimento sem te fazer recomeçar do zero.
+Muitos parceiros começam exatamente assim — o motorista de confiança de uma locadora — e crescem: mais veículos, mais clientes, uma operação própria. O LocFlow acompanha esse crescimento sem te fazer recomeçar do zero: você pode **criar a sua empresa no LocFlow a partir do que já tem na parceria**, e a parceria com a locadora passa a ser de empresa para empresa.
 
-O caminho tem três passos, e **quem dá o último passo é você**:
+O caminho começa no acordo:
 
-1. **Crie a sua organização** LocFlow — a sua empresa, com a sua conta própria.
-2. **Conecte-se** à locadora com um **vínculo de parceria** ativo (o proposto-e-aceito entre organizações — veja [Entrando na rede](entrando-na-rede.md#parceria-interna)).
-3. No acordo **ativado**, toque em **"Virar parceria entre organizações"** — o card aparece para você quando o acordo está ativo e a promoção é possível.
+1. Abra o acordo **ativado** com a locadora. No detalhe aparece o cartão **"Virar organização e receber direto"**.
+2. No **navegador**, um assistente conduz a criação: você escolhe entre começar com um teste ou assinar um plano, informa os **dados da sua empresa** (o CNPJ, com o nome preenchido pela Receita) e o nome do seu **galpão principal**. No app do celular, o cartão avisa que essa etapa se conclui no navegador.
+3. Ao concluir, a organização nasce com você como dono, traz o seu galpão, a sua frota e o seu motor de frete já cadastrados, e a parceria vira **parceria entre organizações**.
 
-A promoção exige que os **catálogos sejam alinháveis** (o LocFlow mapeia item a item os bens móveis do acordo entre os dois catálogos) e, quando o frete do acordo é por motor, que a sua nova organização tenha **fichas de veículo equivalentes** na frota. Se faltar algo, o app recusa com o motivo claro — você ajusta e tenta de novo.
+{% hint style="warning" %}
+**O que precisa estar certo antes:**
 
-{% hint style="success" %}
-**A sua reputação vai junto.** As estrelas, o selo e o histórico que você construiu como parceiro externo **carregam** para a parceria org↔org — você não recomeça como "Novo". O trabalho bem-feito continua valendo.
+* **A organização é sempre pessoa jurídica.** Se você já tem recebimento cadastrado, o CNPJ da empresa precisa ser **o mesmo documento** desse cadastro — o assistente já o traz preenchido. Quem recebe hoje como pessoa física (CPF) não consegue converter com esse documento.
+* **A casa precisa estar em ordem.** Nada de repasse em aberto, solicitação esperando a sua decisão, operação aceita com repasse ainda por nascer ou roteiro seu em andamento na conta da locadora. Se houver, o app diz o que falta — aceite ou recuse o que está pendente e conclua (ou exclua) os roteiros antes.
+* **Uma locadora só.** Se você é parceiro convidado de mais de uma locadora, encerre as outras parcerias antes: depois da virada, o acesso a elas deixa de existir, e o acordo ficaria em pé do outro lado sem ninguém para decidir por ele.
+* **Depois da virada, o acesso de convidado acaba.** Você passa a entrar na **sua** organização.
 {% endhint %}
 
-Do outro lado da promoção, a parceria ganha os recursos de gente grande: mapeamento item a item entre catálogos, [estoque espelhado](estoque-na-parceria.md) (o material passa a sair do **seu** galpão) e reputação pública na vitrine de [descoberta](entrando-na-rede.md#descobrir-parceiros).
+{% hint style="success" %}
+**A reputação que você construiu com a locadora vai junto.** As avaliações e o histórico que ela registrou sobre você passam para a sua nova organização: no ranking e no comparativo dela, você não volta a ser "Novo". A **vitrine pública** da sua organização, em **Descobrir parceiros**, nasce zerada — ela se constrói com as avaliações entre organizações.
+{% endhint %}
+
+Do outro lado da virada, a parceria ganha os recursos de gente grande: os seus próprios **créditos** de mapa, a sua equipe no app, os seus ganhos entrando no seu financeiro, mapeamento item a item entre catálogos, [estoque espelhado](estoque-na-parceria.md) (o material passa a sair do **seu** galpão) e a sua vitrine na [descoberta](entrando-na-rede.md#descobrir-parceiros).
 
 ## Se você é quem convida {#se-voce-convida}
 
 Um lembrete rápido para a locadora que chegou até aqui:
 
-- **Convidar** é em **Rede › Parceiros externos** — nome, e-mail (recomendado, é a tranca do convite), canal de envio e o galpão dele. O passo a passo está em [Entrando na rede](entrando-na-rede.md#convidar-parceiro-externo).
+- **Convidar** é em **Rede › Parceiros externos** — nome, e-mail (recomendado, é a tranca do convite), como ele vai usar o LocFlow (app no celular ou navegador) e o galpão dele. O passo a passo está em [Entrando na rede](entrando-na-rede.md#convidar-parceiro-externo).
+- **Ajudar quando ele trava** — na mesma lista, o ícone de entrar na conta dele abre um [acesso assistido](acesso-assistido.md): você resolve junto, ele é avisado e tudo fica registrado no seu nome.
 - **Repassar** um pedido ganho — o esboço grátis, o comparativo e o ciclo da solicitação — está em [Repassando um pedido](repassando-um-pedido.md).
 - **Não confunda com o fornecedor de frete**: o [fornecedor](fornecedores-de-frete.md) é um terceiro **sem login**, que você cadastra e opera por dentro da sua conta. O parceiro externo entra com as próprias mãos: decide, executa e recebe — você só repassa e acompanha.
 
@@ -285,11 +310,13 @@ No fim, você recebe um recibo honesto do que aconteceu: quantas solicitações 
 
 - **"Recebi uma solicitação, mas o dia já está tomado."** Recuse com o motivo — a locadora repassa a outro parceiro e você não leva marca nenhuma. Pior seria deixar o prazo estourar (−8) ou aceitar e desistir tarde (de −15 a −25, conforme a proximidade da operação).
 - **"Aceitei e o caminhão quebrou."** Desista o quanto antes, com o motivo. Dentro da janela do acordo é um direito seu, sem penalidade; o app te mostra se o limite já passou antes de você confirmar.
-- **"Fiz a entrega, cadê o dinheiro?"** Olhe **Meus ganhos**: se está em "A receber", a locadora ainda vai quitar o saldo (cobre dela a cobrança de repasse); se está "Em processamento", o pagamento online do cliente ainda está caindo. E confira se o seu **recebedor** está aprovado — sem ele, o split na fonte não acontece.
+- **"Fiz a entrega, cadê o dinheiro?"** Olhe o seu **Início**: enquanto o valor está em **A receber**, a locadora ainda vai pagar a conta (cobre dela a cobrança de repasse); em **Sua conta** você vê cada pedido que a forma. E confira se o seu **recebedor** está aprovado — sem ele, o split na fonte não acontece.
 - **"Entreguei, mas o cliente não quis assinar nada."** Não pule o movimento — isso vale −25 e não paga. **Fale com a locadora antes de fechar**: a retaguarda dela registra a operação com a **dispensa justificada**, e a entrega continua valendo. A dispensa não fica com quem está na porta.
 - **"O cliente quer pagar em dinheiro na minha mão."** Depende do acordo. Se a tela oferece o **PIX**, mostre o código — é o melhor para os dois. Se ela diz que a cobrança é do vendedor, o pagamento vai pelo link dele. Veja [Cobrança na rua](cobranca-na-rua.md).
-- **"Levei uma penalidade que não foi culpa minha."** Abra **Minha reputação** e toque em **Contestar** na penalidade. Ela sai do índice enquanto está em análise.
-- **"Abri meu CNPJ, quero minha própria conta."** Crie a sua organização, ative o vínculo com a locadora e promova o acordo em **"Virar parceria entre organizações"** — a reputação acumulada vai com você.
+- **"Levei uma penalidade que não foi culpa minha."** Abra **Menu › Reputação** e toque em **Contestar** na penalidade. Ela sai do índice enquanto está em análise.
+- **"Recebi o cliente em dinheiro e agora apareceu que eu devo à locadora."** É isso mesmo: o dinheiro do pedido é dela. O que você deve e o que ela te deve se abatem na mesma conta, e quem deve paga a diferença num PIX só — quando é você, pelo botão **Pagar** do seu Início.
+- **"Não estou conseguindo cadastrar o veículo / fechar o roteiro."** Peça ajuda a quem te convidou: ela pode [entrar na sua conta](acesso-assistido.md) para resolver junto, e você vê tudo o que ela faz.
+- **"Abri meu CNPJ, quero minha própria conta."** No acordo ativado, toque em **"Virar organização e receber direto"** e conclua o assistente no navegador — com a casa em ordem e o recebimento no mesmo CNPJ. A reputação que você construiu com a locadora vai com você.
 
 ## Próximo passo {#proximo-passo}
 

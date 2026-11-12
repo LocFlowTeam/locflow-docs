@@ -18,12 +18,12 @@ No momento em que a parceira **aceita** a solicitação de repasse, o material d
 ```mermaid
 flowchart LR
     A[Parceira aceita o repasse] --> B[LocFlow traduz os itens<br/>pelo mapeamento do acordo]
-    B --> C[Reserva no galpão dela<br/>mais perto da entrega]
+    B --> C[Reserva no galpão<br/>de onde a operação sai]
     C --> D[Seu estoque não move]
 ```
 
 * O LocFlow **traduz** os itens: cada bem móvel do **seu** catálogo vira o item correspondente do catálogo **dela**, pelo mapeamento item-a-item definido no acordo.
-* A quantidade é **reservada no galpão dela mais próximo do endereço de entrega** — como se ela mesma tivesse fechado aquele pedido.
+* A quantidade é **reservada no galpão de onde a operação sai** — como se ela mesma tivesse fechado aquele pedido. Se ela tem mais de um galpão, é ela quem escolhe **no aceite**, na pergunta **"De qual galpão esta operação sai?"**: quando há um sugerido, ele já vem marcado; sem nenhum marcado, a escolha é condição para aceitar. É desse mesmo galpão que a rota parte.
 * O **seu estoque não move**. Você vendeu; quem separa, entrega e recolhe o material é a parceira, com os itens dela.
 
 É por isso que a parceria interna escala: você pode fechar um pedido numa cidade onde não tem um único item em prateleira — o material existe do lado de lá, e o sistema cuida de reservá-lo.
@@ -118,10 +118,10 @@ A reserva no estoque da parceira acompanha o ciclo do pedido do começo ao fim:
 | --- | --- |
 | **Autônomo / micro** | Nada a configurar: repassou, a parceira aceitou, o material é problema dela — e o sistema confirma que ela tem. |
 | **Médio** | Use a **cobertura e a disponibilidade** no comparativo para escolher a parceira certa por data, não só por preço — e mantenha o mapeamento do acordo em dia conforme o seu catálogo cresce. |
-| **Grande / rede** | O espelho por galpão mais próximo da entrega vira logística de verdade: cada pedido repassado reserva onde faz sentido operar, sem ninguém abrir planilha. |
+| **Grande / rede** | O espelho por galpão vira logística de verdade: no aceite, cada pedido repassado reserva no galpão de onde a operação vai sair, sem ninguém abrir planilha. |
 
 ## Próximo passo {#proximo-passo}
 
 * O mapeamento item-a-item que faz a tradução vive no [acordo de parceria](acordos-de-parceria.md).
-* Como o seu próprio estoque reserva e libera: [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md) e [Posição e previsão de estoque](../estoque/posicao-e-previsao.md).
+* Como o seu próprio estoque reserva e libera: [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md) e [O estoque de agora e a previsão](../estoque/posicao-e-previsao.md).
 * Ainda não conhece os dois modelos de parceria? Comece pela [visão geral](visao-geral.md).

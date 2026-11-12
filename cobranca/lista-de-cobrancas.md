@@ -8,14 +8,16 @@ description: A porta do módulo de Cobrança — encontre qualquer fatura pela b
 A tela de **Cobranças** é a porta do módulo financeiro. Ela reúne todas as **faturas** do seu negócio em um só lugar: as que ainda têm valor a receber, as já quitadas e as canceladas. É aqui que você responde, num relance, à pergunta que mais importa: *quem ainda me deve, e quanto?*
 
 {% hint style="success" %}
-**Por que esta tela te faz receber melhor:** em vez de caçar pedido por pedido para saber o que está em aberto, você vê o **saldo a receber** somado no topo e abre qualquer cobrança com um toque. Cobrança que aparece é cobrança que não fica esquecida.
+**Por que esta tela te faz receber melhor:** em vez de caçar pedido por pedido para saber o que está em aberto, você vê o **total a receber** somado ao lado das abas e abre qualquer cobrança com um toque. Cobrança que aparece é cobrança que não fica esquecida.
 {% endhint %}
 
 ## De onde vêm as cobranças
 
-Você não cria uma cobrança nesta tela. A **fatura nasce quando você gera a cobrança** pelo orçamento. Se o Motor Operacional exigir cobrança para reservar, a geração abre junto com a reserva; nos demais casos, você escolhe quando gerar. Se ainda não houver nenhuma cobrança, a lista mostra um aviso convidando você a ir para Orçamentos:
+A cobrança de um pedido nasce **no orçamento**: a **fatura nasce quando você gera a cobrança** por ele. Se o Motor Operacional exigir cobrança para reservar, a geração abre junto com a reserva; nos demais casos, você escolhe quando gerar.
 
-> **Nenhuma cobrança ainda.** Abra um orçamento e toque em **Gerar cobrança** para criar a primeira.
+A exceção é a **cobrança avulsa** — para cobrar o cliente por algo que não veio de um orçamento (uma multa, uma avaria, um serviço extra). Ela nasce aqui mesmo, no botão **Cobrança avulsa**, no topo da lista (para quem pode emitir cobranças). A folha **Nova cobrança avulsa** pede o **cliente**, o **valor**, o **motivo** e o **vencimento** — e, se quiser, como o cliente combinou pagar. Depois, ela é recebida como qualquer outra cobrança.
+
+Se ainda não houver nenhuma cobrança, a lista mostra **"Nenhuma cobrança ainda"**, com o botão **Ir para Orçamentos**.
 
 Para entender como a fatura é montada (parcelas, vencimentos, sinal), veja [Faturas e parcelas](faturas-e-parcelas.md).
 
@@ -25,18 +27,17 @@ Cada cobrança aparece como um cartão (no celular) ou como uma linha de tabela 
 
 | Informação | O que é |
 | --- | --- |
-| **Cliente** | O contato que vai pagar. |
-| **Código do orçamento** | O pedido de origem da cobrança. |
-| **Tipo** | Se é uma cobrança de **locação** (aluguel) ou de **venda**. |
-| **Total** | O valor cheio da cobrança. |
-| **Parcelas** | Em quantas parcelas o pagamento foi dividido. |
+| **Situação** | Um ícone: em dia, **vencida** (vermelho, com a data no mesmo tom), paga em parte, paga ou cancelada. No celular, é o selo do cartão. |
+| **Tipo** | Um ícone: cobrança de **locação** (aluguel), de **venda** ou **avulsa**. |
+| **Cobrança** e **Cliente** | O pedido de origem (ou o motivo, na avulsa) e o contato que vai pagar. |
 | **Vencimento** | A data da **próxima parcela que ainda pode receber** — veja abaixo. |
-| **Pagamento combinado** | Como o cliente disse que vai pagar, quando alguém anotou — veja abaixo. |
-| **Saldo devedor** | Quanto ainda falta receber (só aparece quando há saldo em aberto). |
-| **Status** | A situação real do pagamento — veja abaixo. |
+| **Link** | Um ícone: link de pagamento **ativo**, **expirado** ou **sem link**. |
+| **Total** | O valor cheio da cobrança. |
+| **Saldo** | Uma coluna só: quanto **falta receber** ou, quando o cliente pagou a mais, o **crédito a favor dele**. Cobrança quitada mostra um check. |
+| **Pagamento combinado** e **Parcelas** | Estão no botão **Colunas**: nascem ocultas, porque a maioria das cobranças não as usa. |
 
 {% hint style="info" %}
-O **saldo devedor** do cartão só aparece quando ainda há algo a receber. Se a cobrança já foi totalmente paga, ele some — o que você vê é o status **Paga**.
+Cada ícone tem nome para o leitor de tela (*"Vencida"*, *"Com link de pagamento"* e assim por diante), e a ficha da cobrança diz tudo por extenso.
 {% endhint %}
 
 ### O vencimento: a próxima parcela que ainda pode receber {#vencimento}
@@ -84,23 +85,29 @@ Cada cobrança traz um selo colorido com a **situação real do pagamento** — 
 O status é **derivado dos pagamentos**, não definido na mão. À medida que você recebe — pela [baixa manual](recebendo-pagamentos.md) ou pelo [pagamento online](pagamento-online.md) — o selo se atualiza sozinho, de Pendente para Parcialmente paga, até Paga.
 {% endhint %}
 
-## O saldo do que está em aberto
+## As abas: a fila de trabalho {#abas}
 
-No topo da lista há um cartão de destaque:
+A lista abre na aba **A receber**: as cobranças pendentes e as pagas em parte, que são as que pedem ação. As outras abas são **Pagas**, **Canceladas** e **Todas**. Cada aba é um atalho do filtro de **Status**, então aba e filtro nunca discordam.
 
-> **Saldo devedor (resultado filtrado)**
+Cada aba mostra **quantas cobranças tem**, como em **A receber (11) · Pagas (5)**. O número acompanha a busca e os filtros: com a busca "Ana", **Pagas (2)** são as cobranças pagas da Ana. E ele é sempre o total da lista que a aba abre, então você sabe se há algo em **Canceladas** sem precisar tocar nela.
 
-Esse número é a **soma do que falta receber** considerando exatamente o que está na tela naquele momento. Ele acompanha a sua busca e os seus filtros: se você filtrar só as cobranças **pendentes** de **locação**, o saldo passa a somar apenas essas. É o seu "quanto tenho a receber" sob medida.
+## O total a receber {#total-a-receber}
+
+À direita das abas (no celular, logo acima da lista), o LocFlow mostra:
+
+> **A receber R$ 5.605,85**
+
+Esse número é a **soma do que falta receber** considerando exatamente o que está na tela naquele momento. Ele acompanha a aba, a busca e os filtros: se você filtrar só as cobranças de **locação**, o total passa a somar apenas essas. É o seu "quanto tenho a receber" sob medida.
 
 {% hint style="success" %}
-Quer saber quanto ainda tem a receber de um cliente, de um tipo de pedido ou de um período? Filtre a lista e leia o saldo no topo. Ele responde na hora, sem você somar nada.
+Quer saber quanto ainda tem a receber de um cliente, de um tipo de pedido ou de um período? Filtre a lista e leia o total ao lado das abas. Ele responde na hora, sem você somar nada.
 {% endhint %}
 
 ## Encontrar uma cobrança
 
 ### Busca
 
-O campo de busca é inteligente: procure pelo **nome do cliente** ou pelo **código do orçamento**. Conforme você digita, a lista (e o saldo no topo) se ajusta ao resultado.
+O campo de busca é inteligente: procure pelo **nome do cliente** ou pelo **código do orçamento**. Conforme você digita, a lista (e o total a receber) se ajusta ao resultado.
 
 ### Filtros
 
@@ -121,7 +128,7 @@ A regra é uma só, e a própria folha a diz: **"Sem nada marcado, a lista mostr
 
 Cada opção marcada vira um **chip com "x"**, logo abaixo do botão **Filtros** (e no topo da folha, em **Filtros aplicados**). Para tirar uma opção sem mexer nas outras — deixar só *Pendente* depois de ter marcado *Pendente* e *Paga* — basta tocar no "x" do chip dela. O número no botão **Filtros** conta **quantos grupos** estão recortando a lista, não quantas opções: *Pendente* e *Paga* marcados são **uma** pergunta só (o status), e o botão mostra **1**.
 
-**Limpar** — ao lado do botão Filtros e no rodapé da folha — devolve a lista inteira de uma vez. **Concluído** só fecha a folha: os filtros valem ao vivo, e o saldo do topo acompanha cada toque.
+**Limpar** — ao lado do botão Filtros e no rodapé da folha — devolve a lista inteira de uma vez. **Concluído** só fecha a folha: os filtros valem ao vivo, e o total a receber acompanha cada toque.
 
 ```mermaid
 flowchart LR
@@ -129,13 +136,13 @@ flowchart LR
     L --> F[Filtros: tipo + status + logistica + vencimento + forma combinada + link]
     B --> R[Resultado filtrado]
     F --> R
-    R --> S[Saldo devedor somado no topo]
+    R --> S[Total a receber ao lado das abas]
     R --> D[Abrir o detalhe de uma cobranca]
 ```
 
 ## Abrir o detalhe
 
-Toque em qualquer cobrança para abrir o **detalhe**: ali você vê as parcelas, os vencimentos, o que já foi pago, e tem as ações de receber e de gerar link de pagamento. Em telas grandes, o detalhe abre ao lado da lista; no celular, sobe como um painel. O detalhe sempre aponta de volta para o **orçamento de origem**.
+Toque em qualquer cobrança para abrir o **detalhe**: ali você vê as parcelas, os vencimentos, o que já foi pago, e tem as ações de receber e de gerar link de pagamento. Em telas grandes, o detalhe abre ao lado da lista, e a lista vira uma coluna estreita com o cliente, o vencimento, o valor e a situação, com a cobrança aberta marcada. Cobrança vencida aparece com o selo vermelho **Vencida**. Assim você passa de uma cobrança para a próxima sem fechar o detalhe. No celular, o detalhe sobe como um painel. O detalhe sempre aponta de volta para o **orçamento de origem**.
 
 Para o que fazer dentro do detalhe, veja [Recebendo pagamentos](recebendo-pagamentos.md) e [Pagamento online](pagamento-online.md).
 

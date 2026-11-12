@@ -11,6 +11,10 @@ Nenhuma operação de locação cresce sozinha. Uma hora você fecha um pedido l
 
 Os papéis têm nome: quem é dono do cliente e do orçamento é o **vendedor**; quem entrega, retira e cuida do material é o **parceiro logístico**. A mesma organização pode ser um num pedido e outro no seguinte.
 
+{% hint style="warning" %}
+**A Rede de Parceiros ainda é beta** — o selo **Beta**, ao lado do nome do espaço no menu, abre esta explicação no app. Convite, acordo, repasse do pedido e a divisão do dinheiro funcionam de ponta a ponta. O que ainda pode surpreender são os casos que aparecem pouco: acordo editado no meio da operação, parceiro que recusa depois de aceitar, devolução fora do combinado. Se algo parecer errado, **fale com a gente antes de refazer pelo caminho manual** — refazer por fora costuma duplicar o pedido.
+{% endhint %}
+
 {% hint style="info" %}
 **Parceiro não é colaborador.** Quem trabalha no dia a dia da sua organização — com papel e permissões que você define — é um [colaborador](../configuracoes/colaboradores-e-acessos.md). O parceiro é gente **de fora**: outra operação, com quem você combina termos para fazer negócio junto.
 {% endhint %}
@@ -48,27 +52,27 @@ O que muda entre eles é **capacidade**, não responsabilidade:
 | **Responsabilidade** | Linha logística, inteira | Linha logística, inteira |
 | **Roteiriza** | Sim | Sim |
 | **Estoque próprio no sistema** | Não — o material sai do **seu** galpão | Sim — o material sai do **galpão dela** |
-| **Mapa, créditos de rota, verificação de presença** | Usa a estrutura da sua conta | Tem a própria |
+| **Créditos de mapa** (trajeto real, reordenar paradas pelo mapa, localizar endereços) | **Não tem** carteira de créditos — e não gasta os seus. Esses recursos ficam apagados para ele, que monta o roteiro com as paradas na ordem que definir | Usa os créditos da **própria** organização |
 | **Onde os dados dele vivem** | Dentro da **sua** conta | Na **conta dela** |
 
 {% hint style="info" %}
-**Uma diferença honesta que ainda existe:** o **balcão** (o cliente que retira e devolve no galpão, com conferência na hora) hoje só é operado pelo parceiro **externo**. O parceiro interno ainda não alcança essa tela. É uma fatia que falta, não uma decisão de produto — e não muda de quem é a responsabilidade.
+**Uma diferença honesta que ainda existe:** a **loja** (o cliente que retira e devolve no balcão, com conferência na hora) hoje só é operada pelo parceiro **externo**. O parceiro interno ainda não alcança essa tela. É uma fatia que falta, não uma decisão de produto — e não muda de quem é a responsabilidade.
 {% endhint %}
 
 ## Um espaço de trabalho só para a rede {#espaco-de-trabalho}
 
 Parceria é um assunto diferente do dia a dia — aqui você não atende cliente, você se conecta a outras empresas. Por isso a Rede vive num **espaço de trabalho próprio**, separado da Operação: o menu da locadora fica limpo, e o que é rede fica junto do que é rede. Ao alternar, até a cor muda — a Rede tem o seu **acento visual (magenta)**, para você sempre saber onde está.
 
-No celular, a barra de baixo mostra quatro atalhos: **Início** (o hub da Rede) · **Descobrir** · **Acordos** · **Menu**. O **Menu** abre a lista completa, organizada por **intenção** — o que você quer fazer, não o tipo de dado:
+No celular, a barra de baixo mostra quatro atalhos: **Início** · **Parceiros** · **Pedidos** · **Menu**. O **Início** é o [painel da Rede](painel-da-rede.md): o que você tem a receber e a pagar, o que precisa de você e a conta com cada parceiro. O **Menu** abre a lista completa, organizada por **intenção** — o que você quer fazer, não o tipo de dado:
 
 | Grupo | O que tem dentro |
 | --- | --- |
-| **Descobrir & Conectar** | Descobrir parceiros · Vínculos · Meu perfil público · Minha reputação |
-| **Operar** | Avaliações de parceria · Acordos · Parceiros externos |
-| **Financeiro da rede** | Meus Ganhos · Repasses · Conta de recebimento |
+| **Parceiros e pedidos** | Parceiros · Pedidos · Avaliações |
+| **Descobrir & Conectar** | Achar parceiros · Conexões · Parceiros externos · Meu perfil público · Minha reputação · Termos e pedidos que aceito |
+| **Financeiro da rede** | Conta de recebimento |
 
 {% hint style="info" %}
-**E o dinheiro?** **Repasses** (vendedor) e **Meus Ganhos** (parceiro) são dinheiro de verdade da sua operação — vivem no **Financeiro**, com um selo **"Rede"**, e aparecem no espaço da Rede como atalhos fixos. Um assunto, dois caminhos até ele.
+**E o dinheiro?** A conta com cada parceiro, o que pagar e o que receber estão no [painel da Rede](painel-da-rede.md). No espaço Operação, o item **Contas com parceiros** do menu **Financeiro**, com o selo **"Rede"**, leva ao mesmo lugar. Um assunto, dois caminhos até ele.
 {% endhint %}
 
 ## Os dois níveis de parceria {#dois-niveis}
@@ -88,7 +92,7 @@ A Rede tem dois níveis, pensados para dois momentos:
 | **Para quem** | Autônomo, motorista, transportadora sem sistema | Duas empresas estabelecidas |
 
 {% hint style="success" %}
-**Um nível leva ao outro.** O parceiro externo que cresce e cria a própria organização pode **promover** o acordo para org↔org — e a [reputação](reputacao-e-boas-praticas.md) acumulada **carrega junto**, sem recomeçar do zero. Veja [Entrando na rede](entrando-na-rede.md).
+**Um nível leva ao outro.** O parceiro externo que cresce pode **virar organização** a partir do próprio acordo, e a parceria passa a ser org↔org. A [reputação](reputacao-e-boas-praticas.md) que ele construiu com você **vai junto** — no seu ranking ele não volta a ser "Novo"; a vitrine pública da organização nova é que começa do zero. Veja [Parceiro Logístico Externo](parceiro-logistico-externo.md#crescendo-na-rede).
 {% endhint %}
 
 ## O que o parceiro vê (e o que ele não vê) {#o-que-o-parceiro-ve}
@@ -120,6 +124,7 @@ Como ela não é uma operação independente — é um **cadastro** de terceiro 
 
 | Página | Em uma frase |
 | --- | --- |
+| [O painel da Rede](painel-da-rede.md) | O Início da Rede: quanto receber e pagar, o que precisa de você, a ficha de cada parceiro e os pedidos com o dinheiro junto. |
 | [Entrando na rede](entrando-na-rede.md) | Como começar: convidar um parceiro externo pelo link, montar o perfil público, descobrir organizações, propor e encerrar o vínculo. |
 | [Acordos de parceria](acordos-de-parceria.md) | Os termos do trabalho conjunto — itens e preços, quando e quanto se paga, prazos de aceite e desistência, frete e cobrança na rua. |
 | [Repassando um pedido](repassando-um-pedido.md) | O passo a passo de repassar um pedido ganho: esboço grátis, comparativo de candidatos, aceite ou recusa, e o que muda na execução. |
@@ -127,7 +132,8 @@ Como ela não é uma operação independente — é um **cadastro** de terceiro 
 | [Cobrança na rua](cobranca-na-rua.md) | Quando o acordo permite ao parceiro receber o cliente na porta — o que ele vê, como o dinheiro volta e as regras que protegem os dois lados. |
 | [Estoque na parceria](estoque-na-parceria.md) | Num pedido repassado a uma organização parceira, de onde sai o material — e o que reserva e libera o estoque dela. |
 | [Reputação e boas práticas](reputacao-e-boas-praticas.md) | Como a confiança é medida na rede — avaliações, selos, índice de confiabilidade — e o que ela cobra **dos dois lados**. |
-| [Parceiro Logístico Externo](parceiro-logistico-externo.md) | O convidado que executa dentro da sua conta: o papel restrito, o galpão dele e o recebedor do repasse. |
+| [Parceiro Logístico Externo](parceiro-logistico-externo.md) | O convidado que executa dentro da sua conta: o papel restrito, o galpão dele e o recebimento do repasse. |
+| [Acesso assistido](acesso-assistido.md) | Quando o parceiro externo trava: entrar na conta dele para resolver junto, com aviso e registro. |
 | [Fornecedores de frete](fornecedores-de-frete.md) | Transportadoras sem login que você precifica e aciona na composição do frete. |
 
 ## Próximo passo {#proximo-passo}
@@ -135,4 +141,5 @@ Como ela não é uma operação independente — é um **cadastro** de terceiro 
 - Vai trabalhar com alguém de fora pela primeira vez? Comece por [Entrando na rede](entrando-na-rede.md).
 - Só precisa de caminhão para uma entrega? [Fornecedores de frete](fornecedores-de-frete.md) resolve sem parceria formal.
 - Já tem parceiro e quer repassar um pedido? Vá direto a [Repassando um pedido](repassando-um-pedido.md).
+- Quer saber quanto deve ou tem a receber de cada parceiro? Veja [O painel da Rede](painel-da-rede.md).
 - Dúvida em algum termo? Consulte o [glossário](../primeiros-passos/glossario.md).

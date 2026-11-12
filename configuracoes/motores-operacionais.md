@@ -7,7 +7,7 @@ description: Configure uma vez as regras da sua operação — frete, orçamento
 
 Um **motor** é uma regra da sua operação que o sistema segue sozinho. Em vez de decidir tudo manualmente a cada locação ou venda, você configura o padrão **uma vez** e o LocFlow aplica daí em diante — calculando o frete, sugerindo datas, reservando os itens, pedindo aprovação quando preciso.
 
-Você encontra todos eles em **Ajustes › Motores**.
+Você encontra todos eles em **Ajustes › Regras e modelos › Motores**. A busca no topo da tela leva direto a um parâmetro pelo nome — digite *folga*, *fatura* ou *prova* e o app abre o motor certo, já na seção.
 
 {% hint style="info" %}
 Pense nos motores como o "piloto automático" da sua operação. Eles não tiram seu controle: você pode sempre ajustar caso a caso dentro de cada orçamento. O motor só define o **ponto de partida** — o que acontece quando ninguém mexe em nada.
@@ -20,7 +20,7 @@ A tela de Motores separa tudo em **dois grupos**, porque eles funcionam de forma
 | Grupo | O que é | Como se edita |
 | --- | --- | --- |
 | **Cálculo de preços** | Motores que definem **quanto se cobra** — e que guardam **histórico de versões**. | Você prepara os ajustes, revisa e **publica** uma nova versão. As anteriores ficam registradas. |
-| **Regras de operação** | Configuração **única** da operação (estoque, logística, aprovações, reembolso). | Editada direto na tela; vale sempre a configuração atual, sem histórico. |
+| **Regras de operação** | Configuração **única** da operação (estoque, logística, aprovações, cobrança, contatos). | **Salva sozinha** a cada ajuste, direto na tela; vale na hora, sem histórico. |
 
 A diferença existe porque preço é algo sensível: ao mudar como você cobra, é bom ter um **registro do que valia antes** (e poder revisar com calma antes de pôr no ar). Já uma regra de operação — como "exigir fatura antes de entregar" — é um liga-desliga: vale a escolha atual e pronto.
 
@@ -82,11 +82,11 @@ Não confunda: o **valor mínimo** é versionado e fica neste motor. Já **taxa 
 
 ## Regras de operação {#regras-de-operacao}
 
-São os motores **operacionais**: configuração única, editada direto na tela. Vale sempre o que estiver salvo.
+São os motores **operacionais**: configuração única, editada direto na tela. Cada ajuste **salva sozinho** e vale na hora — não há botão de salvar nem versão para publicar.
 
 ### Motor de Estoque {#motor-de-estoque}
 
-Define **quando os itens ficam reservados** ao cliente — ou seja, por quanto tempo um item fica indisponível quando entra num orçamento. É o que impede alugar o mesmo item para dois clientes no mesmo período.
+Define **quando os itens ficam reservados** ao cliente — ou seja, por quanto tempo um item fica indisponível quando entra num orçamento. É o que impede alugar o mesmo item para dois clientes no mesmo período. A tela tem quatro seções: **Reserva do item**, **Preparo do material**, **Disponibilidade** e, no plano Pro, **Giro e manutenção**.
 
 **O bloqueio sempre acompanha a operação:** do momento em que o material sai do galpão até o momento em que volta. Isso não se configura, porque é o que de fato acontece — o material sai antes de o evento começar e volta depois de ele acabar. O que você escolhe aqui é **quanta folga** somar em volta disso.
 
@@ -102,9 +102,11 @@ Define **quando os itens ficam reservados** ao cliente — ou seja, por quanto t
 | Folga | Cobre |
 | --- | --- |
 | **Equipe, antes / depois** | Quando **você** entrega e recolhe: trânsito, rota lenta, imprevisto no caminho. Padrão: **60 minutos** de cada lado. |
-| **Cliente, antes / depois** | Quando **ele** retira e devolve no galpão: o cliente que aparece mais tarde, remarca, ou devolve no dia seguinte. Padrão: **0** — a ponta do cliente já vale o dia todo. |
+| **Cliente, antes / depois** | Quando **ele** retira e devolve na loja: o cliente que aparece mais tarde, remarca, ou devolve no dia seguinte. Padrão: **0** — a ponta do cliente já vale o dia todo. |
 
 Numa operação **mista**, cada ponta usa a folga do seu grupo: se a sua equipe entrega e o cliente devolve, a abertura do bloqueio usa a folga de equipe e o fechamento usa a de cliente.
+
+Em **Mínimo justo** as folgas não contam, mas **ficam guardadas**: se você voltar para **Com folga**, os quatro números estão lá, sem precisar reconfigurar.
 
 **Tempo de preparo** — o mínimo (em minutos) que um item fica em preparo depois de voltar, antes de contar como disponível de novo. Vale como piso: se o produto tiver um tempo de manutenção próprio cadastrado, o dele vence.
 
@@ -114,65 +116,93 @@ O ajuste manual por orçamento continua existindo — dá para **esticar** a jan
 
 Esse motor tem uma página dedicada, porque ele se cruza com a forma como você **cobra** e **usa** o item. Veja [Duração, cobrança e bloqueio de uso](../orcamentos/duracao-e-bloqueio.md).
 
-Aqui também ficam as **regras de disponibilidade da casa** — a chave "Bloquear orçamento sem estoque", o teto de overbooking e o termo de responsabilidade. Veja [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md#bloquear-ou-permitir-orcamento-sem-estoque).
+Na seção **Disponibilidade** ficam as **regras de disponibilidade da casa** — a chave "Bloquear orçamento sem estoque", o teto de overbooking e o termo de responsabilidade. Veja [Galpões e disponibilidade](../estoque/galpoes-e-disponibilidade.md#bloquear-ou-permitir-orcamento-sem-estoque).
+
+**Seleção de origens.** <a id="selecao-de-origens"></a> Também na seção **Disponibilidade**, decide **quem monta a lista de galpões** de onde o material de um pedido pode sair:
+
+| Opção | O que acontece |
+| --- | --- |
+| **Manual** *(padrão)* | O sistema **sugere** a saída — quem tem o material do pedido e, entre iguais, o galpão mais perto do cliente — e ela aparece no pedido, com os galpões de apoio, para você **trocar** se quiser. O raio de atendimento do galpão aparece só como **aviso**: nunca descarta a sua escolha. |
+| **Automática** | O sistema **escolhe** a saída e completa a rota com os galpões cujo **raio de atendimento alcança o endereço do cliente**; a escolha da origem passa a ficar em **Operação avançada**, no pedido. O galpão de saída continua em primeiro lugar, mesmo fora do raio. Não consome créditos. |
+
+{% hint style="warning" %}
+**Ligar a Automática reduz a disponibilidade que você enxerga — de propósito.** Passa a contar só o estoque que tem como chegar ao cliente: pedidos que hoje fecham somando material de um galpão distante demais **deixam de fechar**. Por isso o app pede confirmação (*"Selecionar origens automaticamente?"*). Voltar para a Manual é direto.
+{% endhint %}
+
+**Giro e manutenção** *(plano Pro)*. <a id="giro-e-manutencao"></a> Aparece para quem tem o plano Pro e a permissão de disponibilidade avançada. Trata dos itens em **manutenção leve** — aptos a ir direto de um evento para outro, com um aviso:
+
+* **Item apto a emendar eventos** — **Só até voltar ao galpão** *(mais conservador)*: o item pode emendar um evento no outro só enquanto ainda não voltou; ou **Todo o período previsto** *(aproveita mais o item)*: vale pela previsão inteira da manutenção, mesmo com o item já no galpão.
+* **Exigir confirmação do operador** — transforma o aviso num **checklist** (por exemplo, *"limpas?"*) que precisa ser confirmado antes de liberar o item.
 
 ### Motor de Logística {#motor-de-logistica}
 
-Define as **regras de entrega, retirada e provas**. Tem quatro blocos:
+Define as **regras de entrega, retirada e provas**. A tela tem **seis seções**, nesta ordem: **Forma de operação**, **Início da logística**, **No galpão**, **Provas de movimento**, **Agendamento e roteiro** e **Urgência e atraso**.
 
-**Faturamento antes da logística.** O liga-desliga **"Exigir fatura emitida para iniciar a logística"**:
+**Forma de operação.** <a id="forma-de-operacao"></a> O parâmetro **Formato padrão** diz como a sua locadora costuma operar — e deixa o app já no formato dela:
 
-> "Controla se a logística (separar, preparar e enviar os itens) só pode começar depois que uma fatura for gerada para o orçamento. A fatura apenas registra uma cobrança em aberto para o cliente — ela não significa que o cliente já pagou. Para decidir, pergunte-se: você começa a preparar e entregar os itens mesmo sem ter gerado uma fatura de cobrança?"
+* **Mista** *(padrão)* — os dois convivem e você decide pedido a pedido. O menu mostra a Roteirização, a Frota e a [Minha Loja](../logistica/balcao.md); ao criar um orçamento, a pergunta **"Quem leva o material?"** fica livre (a equipe entrega ou o cliente retira na loja).
+* **Só loja** — o cliente sempre retira e devolve na loja. O orçamento já nasce assim, e **Roteirização** e **Frota** somem do menu. Comum em quem trabalha de portas abertas.
+* **Só rota** — a equipe sempre entrega e recolhe. A **Minha Loja** some do menu.
+
+> *"O que não se usa fica oculto, não proibido."* A ocultação é só do menu: a permissão continua a mesma, o que você já tem cadastrado (veículos, roteiros, atendimentos na loja) continua aparecendo, e o que sumiu volta na hora em que você troca a forma. E nada bloqueia a exceção — quando um pedido fugir do padrão, abra **"Operação avançada"** na seção de movimentos do orçamento e ajuste à mão; o pedido mostra *"Exceção neste orçamento"*.
+
+**Início da logística.** O liga-desliga **"Exigir fatura antes"** — se a logística só pode começar depois que a fatura for gerada:
+
+> "Controla se a logística (separar, preparar e enviar) só pode começar depois que uma fatura for gerada. A fatura apenas registra uma cobrança em aberto — não significa que o cliente já pagou. Para decidir: você prepara e entrega mesmo sem ter gerado a fatura?"
 >
-> • Sim, entrego antes de cobrar → deixe desligado.
-> • Não, só libero os itens depois de gerar a fatura → deixe ligado.
+> • Sim, entrego antes de cobrar → desligado.
+> • Não, só libero depois de faturar → ligado.
 
-**Logística interna (galpão).** Define se existem etapas **dentro do galpão**. Vale para orçamentos **futuros**; os já em andamento não mudam.
+**No galpão.** <a id="no-galpao"></a> O que acontece **dentro do galpão**, antes e depois da rua. As duas etapas valem para orçamentos **futuros**; os já em andamento não mudam.
 
 * **Separação interna** (*A separar → Separado*) — ative se o material é separado/conferido no galpão antes de sair. Desligado, a logística começa direto na entrega/retirada.
 * **Conferência na devolução** (*A conferir → Conferido*) — só para aluguel. Ative se, ao voltar, o material passa por conferência antes de finalizar.
 
 > Locadores pequenos, com pouca variedade, costumam deixar as duas **desligadas**: separar e conferir é controle que cabe na cabeça, e ligar só criaria cliques. Conforme cresce, ligue a **Separação** primeiro (organiza o que preparar) e depois a **Conferência** (controle da volta, com provas). Veja [Separação no galpão](../logistica/separacao.md) e [Conferência na devolução](../logistica/conferencia.md).
 
-**Requisitos de evidência.** O que a equipe precisa registrar **antes de concluir** cada entrega e retirada — separadamente. Cada **grupo** de prova que você monta pode ser marcado como **Obrigatório** ou **Opcional**:
+* **Carga diferente do planejado** <a id="carga-diferente-do-planejado"></a> — o que fazer quando a equipe carrega uma quantidade diferente da planejada. A quantidade que ela **declara ao carregar** é a que sai do estoque — então a regra decide o quanto a rua pode improvisar:
+
+| Opção | O que acontece |
+| --- | --- |
+| **Livre** | A equipe carrega o que precisar e o sistema registra em silêncio. |
+| **Com motivo** *(padrão)* | A equipe carrega o que precisar, mas **explica a diferença** — e o motivo fica na história da operação. |
+| **Bloquear** | Só sai a quantidade planejada. Para carregar outra, alguém **edita o roteiro** antes da saída. |
+
+**Provas de movimento.** O que a equipe precisa registrar **antes de concluir** cada movimento, em duas abas: **Pela equipe** (na entrega e na retirada feitas pela sua equipe) e **Na loja** (na retirada e na devolução feitas pelo cliente, na loja). Cada **grupo** de prova que você monta pode ser marcado como **Obrigatório** ou **Opcional**:
 
 * **Obrigatório** trava o desfecho até a prova ser registrada — o app não deixa concluir sem ela.
 * **Opcional** vira um passo que a equipe pode **pular sem justificar**: quem está em campo vê o convite para anexar e, se quiser, registra; se não quiser, conclui do mesmo jeito. Se a política de um movimento tiver **só itens opcionais**, a equipe conclui **sem nenhuma trava**.
 
 **Nada marcado = conclui com 1 toque**, sem prova nenhuma. No atalho rápido (chips), todo item marcado já entra como **obrigatório** — para tornar um grupo opcional (ou combinar mais de uma prova com E/OU), ligue **"Regras avançadas (combinações E/OU)"**. Se a sua empresa já tinha evidências configuradas antes desse recurso existir, elas **continuam obrigatórias**: nada muda sozinho, é preciso ir lá e marcar como opcional o que você quiser afrouxar.
 
-As provas vão da mais simples (foto e vídeo) à mais forte (código confirmado no WhatsApp do cliente, identificação de quem recebeu, localização confirmada). Comece com foto e vídeo; conforme os itens ficam mais caros, some provas mais fortes. Aqui você também define, em conjunto, a **prova exigida no balcão** — separadamente para a **retirada pelo cliente** e a **devolução pelo cliente** no galpão; é a mesma lógica, aplicada ao atendimento presencial em vez da rota. Veja [Balcão: retirada e devolução no galpão](../logistica/balcao.md).
+As provas vão da mais simples (foto e vídeo) à mais forte (código confirmado no WhatsApp do cliente, identificação de quem recebeu, localização confirmada). Comece com foto e vídeo; conforme os itens ficam mais caros, some provas mais fortes. Na aba **Na loja** vale a mesma lógica, aplicada ao atendimento presencial em vez da rota. Veja [Loja: retirada e devolução](../logistica/balcao.md).
 
 {% hint style="warning" %}
-**O que você marca como OBRIGATÓRIO vale em todos os caminhos** — na rota, no balcão e no lançamento retroativo em lote. Não existe atalho que ignore uma exigência obrigatória. A única saída é a **dispensa de evidência**: fechar o registro escrevendo um **motivo obrigatório**, que fica carimbado junto. Ela depende de uma permissão à parte, que a retaguarda e o balcão têm e **o motorista e o parceiro externo não** — veja [Colaboradores e acessos](colaboradores-e-acessos.md#dispensar-evidencia). Um item **opcional** não precisa dessa dispensa: pular um opcional é livre para qualquer um, sem escrever motivo nenhum.
+**O que você marca como OBRIGATÓRIO vale em todos os caminhos** — na rota, na loja e no lançamento retroativo em lote. Não existe atalho que ignore uma exigência obrigatória. A única saída é a **dispensa de evidência**: fechar o registro escrevendo um **motivo obrigatório**, que fica carimbado junto. Ela depende de uma permissão à parte, que a retaguarda e o Operador de Loja têm e **o motorista e o parceiro externo não** — veja [Colaboradores e acessos](colaboradores-e-acessos.md#dispensar-evidencia). Um item **opcional** não precisa dessa dispensa: pular um opcional é livre para qualquer um, sem escrever motivo nenhum.
 {% endhint %}
 
-**Agendamento padrão.** Uma sugestão de datas ao criar um orçamento: ao informar a data do evento, a entrega e a retirada são preenchidas automaticamente (e podem ser ajustadas). Você diz quantos dias **antes** do evento é a entrega e quantos dias **depois** é a retirada. Deixe em branco para não sugerir.
+**Agendamento e roteiro.**
+
+* **Entrega antes do evento** e **Retirada depois do evento** — uma sugestão de datas ao criar um orçamento: ao informar a data do evento, a entrega e a retirada são preenchidas automaticamente (e podem ser ajustadas). Você diz quantos dias **antes** do evento é a entrega e quantos dias **depois** é a retirada. Em **0**, a data não é sugerida.
+* **Tempo médio por parada** <a id="tempo-medio-por-parada"></a> — quanto tempo, em média, a equipe gasta em cada parada (descarregar, conferir e colher as provas na entrega, ou recolher na retirada). O planejamento soma esse tempo ao deslocamento para **estimar a duração do roteiro inteiro** — em vez de contar só o tempo de estrada. Em **0**, vale o padrão de **20 minutos**. Comece com uma estimativa honesta (15 a 30 minutos é comum) e ajuste quando os roteiros reais fecharem diferente do previsto.
 
 **Urgência e atraso.** <a id="urgencia-e-atraso"></a> Os dois prazos que o painel logístico usa para gritar por você. Um movimento **sem roteiro** ganha o **⚠ de urgente** quando a janela dele começa em menos de **N horas** — é o "planeje já". Quando a janela já abriu há mais de **M horas** e segue sem roteiro, ele deixa de ser urgente e vira **atrasado**, com marca própria: ali não há mais o que planejar dentro do combinado, o que se faz é conferir o que aconteceu (foi executado e ninguém registrou? o pedido morreu?).
 
 * **Urgente quando a janela começa em** — padrão **4h**, o que o mercado pratica para pedido de urgência: locadoras com entrega no mesmo dia e terminais logísticos costumam pedir essa antecedência para ainda encaixar um pedido no dia. Quem despacha do pátio em uma hora pode baixar para 1h ou 2h; quem viaja para outra cidade pode subir para 24h ou 48h.
 * **Atrasado depois que a janela abriu há** — padrão **24h**: um dia de trabalho para honrar o compromisso saindo agora. Em **0h**, o movimento vira atrasado assim que a janela abre sem roteiro.
 
-> Os dois valem para o ⚠ do painel e do calendário logístico, para a legenda deles e para o **sinal vermelho do menu** (que conta os urgentes). Só o aviso diário de "movimentos do dia sem roteiro", que chega de manhã, continua sendo um resumo do **dia**: ele lista o que tem janela para hoje sem roteiro, urgente ou não.
-
-**Forma de operação.** Diz como a sua locadora costuma operar — e deixa o app já no formato dela:
-
-* **Mista** *(padrão)* — você decide pedido a pedido. O menu mostra Roteirização e [Balcão](../logistica/balcao.md); ao criar um orçamento, os botões "Cliente retira / devolve no galpão" ficam livres. É o comportamento de sempre.
-* **Só balcão** — o cliente sempre retira e devolve no galpão. O orçamento já nasce assim e a **Roteirização** some do menu. Comum em quem trabalha de portas abertas.
-* **Só rota** — a equipe sempre entrega e retira. O **Balcão** some do menu.
-
-> A ocultação é só para simplificar: a permissão continua a mesma, e o que sumiu volta na hora em que você troca a forma. E nada bloqueia a exceção — quando um pedido fugir do padrão, abra **"Operação avançada"** na seção de movimentos do orçamento e ajuste à mão.
+> Os dois valem para o ⚠ do [Painel Logístico](../logistica/painel-logistico.md), para a legenda dele e para o **sinal vermelho do menu** (que conta os urgentes). Só o aviso diário de "movimentos do dia sem roteiro", que chega de manhã, continua sendo um resumo do **dia**: ele lista o que tem janela para hoje sem roteiro, urgente ou não.
 
 ### Operação do Orçamento {#operacao-do-orcamento}
 
 Parâmetros padrão usados ao montar orçamentos — políticas internas, sem histórico:
 
 * **Taxa de serviço** — um valor de referência que agiliza a criação. "Orçamentos com taxa diferente da configurada aqui ainda podem ser criados normalmente."
-* **Validade do orçamento** — por quantos dias, a partir da criação, o orçamento permanece reservado. "Preços e políticas mudam com frequência; a validade evita orçamentos com regras antigas." É um padrão — o operador pode mudar em cada orçamento.
-* **Pré-reserva** — no aluguel, a [pré-reserva](../painel/funil-de-vendas.md) é uma etapa **opcional** entre "Em negociação" e "Reservado" (segurar antes de confirmar). Aqui você decide se ela entra no seu funil: **Conforme o porte** (segue a sugestão — locador pequeno costuma não usar, médio/grande usa), **Ligada** ou **Desligada** (fixo, independente do porte). Desligada, o funil vai direto de negociação para reservado e a etapa some das telas; orçamentos que já estão pré-reservados continuam valendo.
+* **Validade do orçamento** — por quantos dias, a partir da criação, o orçamento permanece válido. "Preços e políticas mudam com frequência; a validade evita orçamentos com regras antigas." É um padrão — o operador pode mudar em cada orçamento.
+* **Pré-reserva** — no aluguel, a [pré-reserva](../painel/funil-de-vendas.md) é uma etapa **opcional** entre "Em negociação" e "Reservado" (segurar os itens antes de confirmar). O parâmetro pergunta **"Orçamento aberto reserva itens?"**: **Conforme o porte** (segue a sugestão — locador pequeno costuma não usar, médio/grande usa), **Sempre** (a etapa fica disponível, independente do porte) ou **Nunca** (só reserva ao fechar). Em **Nunca**, o funil vai direto de negociação para reservado e a etapa some das telas; orçamentos que já estão pré-reservados continuam valendo. Qualquer pré-reserva respeita a **validade** do orçamento.
+* **Teto de desconto** — o desconto que o vendedor concede **sozinho**; acima dele, o orçamento nasce congelado aguardando aprovação. Detalhes em [Motor de Orçamento](motor-de-orcamento.md#teto-de-desconto).
 * **Intervalo mínimo logístico** — toda entrega e retirada ocorre dentro de um intervalo de horários (não dá para garantir chegada no minuto exato). Este campo define a folga mínima entre o início e o fim de cada movimento. Se algum movimento ficar abaixo dela, o sistema alerta o operador, que precisa consentir com o risco para prosseguir.
-* **Seções opcionais do formulário** — se acréscimos e descontos, observações e validade aparecem ao montar um orçamento: "Conforme o porte" (numa operação pequena elas ficam escondidas, com o atalho "Mostrar seções opcionais" no fim do formulário), "Mostrar sempre" ou "Ocultar". Detalhes em [Seções opcionais do formulário](motor-de-orcamento.md#secoes-opcionais).
+* **Seções opcionais do formulário** — se acréscimos e descontos, observações e validade aparecem ao montar um orçamento: "Conforme o porte" (numa operação pequena elas ficam escondidas, com o atalho "Mostrar seções opcionais" no fim do formulário), "Mostrar" ou "Ocultar". Detalhes em [Seções opcionais do formulário](motor-de-orcamento.md#secoes-opcionais).
 
 ### Operação do Frete {#operacao-do-frete}
 
@@ -222,6 +252,10 @@ A estratégia é só um **padrão de partida**: em cada orçamento você pode tr
 
 ### Operação da Cobrança {#operacao-da-cobranca}
 
+Três decisões sobre como a cobrança conversa com o resto da operação, em três blocos: **Valor a favor do cliente**, **Gatilho da reserva** e **Avaria na devolução**.
+
+#### Valor a favor do cliente {#valor-a-favor}
+
 Define o destino **padrão** de um valor a favor do cliente — quando uma edição reduz o total abaixo do que já foi pago, ou quando entra um pagamento a mais:
 
 | Política | O que faz |
@@ -230,6 +264,32 @@ Define o destino **padrão** de um valor a favor do cliente — quando uma ediç
 | **Reembolso em dinheiro** | O valor é devolvido ao cliente em dinheiro (estorno ou transferência). |
 
 O sistema **aplica esse padrão automaticamente e avisa a equipe**, que pode trocar a forma em cada caso.
+
+#### Gatilho da reserva {#gatilho-da-reserva}
+
+Responde **"O que destrava a reserva"** — o que precisa acontecer na cobrança para um orçamento poder ser **reservado**:
+
+| Opção | O que faz |
+| --- | --- |
+| **Reserva livre** | Reservar **não depende** da cobrança — a equipe gera a cobrança quando quiser. |
+| **Exigir cobrança gerada** | Só reserva **depois de gerar a cobrança** do orçamento. O pagamento pode vir depois. |
+| **Exigir sinal pago** | A pré-reserva vira **sala de espera**: o pagamento do sinal **reserva sozinho**. Orçamentos sem valor não são travados. |
+
+{% hint style="info" %}
+**"Por que não consigo reservar este orçamento?"** — muitas vezes a resposta está aqui: com **Exigir cobrança gerada**, falta gerar a cobrança; com **Exigir sinal pago**, falta o cliente pagar o sinal. Se o sinal foi pago mas a reserva automática não saiu (por exemplo, por falta de estoque), a [Central de Notificações](central-de-notificacoes.md) avisa com **Reserva automática não concluída**.
+{% endhint %}
+
+#### Avaria na devolução {#avaria-na-devolucao}
+
+Decide como cobrar do cliente o **dano constatado na conferência** da devolução:
+
+| Opção | O que faz |
+| --- | --- |
+| **Não cobrar** | A conferência só dá **baixa** do material avariado. |
+| **Cobrança avulsa** | Na triagem da conferência, o operador pode **cobrar o valor de reposição** — confirmando cada cobrança. |
+| **Abater da caução** | Deduzir do depósito retido. **Em breve** — aparece, mas ainda não pode ser escolhida. |
+
+Veja como a avaria aparece na triagem em [Conferência na devolução](../logistica/conferencia.md).
 
 ### Operação de Contatos {#operacao-de-contatos}
 
@@ -284,8 +344,13 @@ Alguns recursos de motor podem estar disponíveis apenas em um **plano superior*
 ## Situações reais {#situacoes-reais}
 
 * **"Meus orçamentos saem com frete errado."** Confira o **Motor de Frete**: lembre que os valores valem **por viagem** (cada movimento, ida e volta), não pelo orçamento inteiro. Use o **Simulador** para testar antes de publicar.
-* **"A equipe começou a preparar um pedido que ainda não foi cobrado."** Em **Motor de Logística**, ligue **"Exigir fatura emitida para iniciar a logística"**.
+* **"A equipe começou a preparar um pedido que ainda não foi cobrado."** Em **Motor de Logística › Início da logística**, ligue **"Exigir fatura antes"**.
 * **"O mesmo item foi reservado para dois clientes."** Revise o **Motor de Estoque**: provavelmente está no **mínimo justo**, sem folga nenhuma entre uma locação e a próxima. Passe para **Com folga** e informe quanto tempo a sua operação costuma precisar depois que o material volta.
+* **"A equipe carregou 8 cadeiras onde o roteiro previa 10, e ninguém soube por quê."** Em **Motor de Logística › No galpão**, deixe **Carga diferente do planejado** em **Com motivo**: a diferença passa a vir explicada. Quer que a rua não improvise? Escolha **Bloquear**.
+* **"O roteiro sempre termina mais tarde do que o previsto."** Ajuste o **Tempo médio por parada** em **Agendamento e roteiro** — a estimativa da duração passa a contar o tempo que a equipe gasta em cada parada.
+* **"Só quero reservar quando o cliente pagar o sinal."** Em **Operação da Cobrança › Gatilho da reserva**, escolha **Exigir sinal pago**: o orçamento fica pré-reservado esperando, e o pagamento do sinal reserva sozinho.
+* **"O cliente devolveu uma mesa quebrada."** Com **Avaria na devolução** em **Cobrança avulsa**, o conferente cobra o valor de reposição ali mesmo, na triagem da conferência.
+* **"O pedido fechou com material de um galpão a 200 km."** Em **Motor de Estoque › Disponibilidade**, avalie a **Seleção de origens Automática**: só entram galpões cujo raio alcança o cliente — sabendo que a disponibilidade que você enxerga diminui.
 * **"Quero que fretes altos passem por mim antes de fechar."** Em **Operação do Frete**, escolha **Aprovar acima de um valor** e defina o limite.
 * **"Um cliente pagou a mais e não sei o que fazer com o troco."** O **Operação da Cobrança** já decide o padrão (crédito ou dinheiro) e avisa a equipe.
 * **"Descobri o mesmo cliente cadastrado duas vezes, com o histórico partido."** Em **Operação de Contatos**, ligue **Telefone identifica o contato**: da próxima vez, quem digitar aquele celular é avisado na hora. As duplicatas que já existem continuam lá — a regra não mexe no passado.

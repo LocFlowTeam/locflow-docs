@@ -27,12 +27,13 @@ Elas ficam em **Ajustes › Regras de Desconto**, e a própria tela resume o com
 
 ## Montando uma regra {#montando-uma-regra}
 
-O cadastro tem **três blocos**, na ordem em que a decisão acontece:
+O cadastro tem **quatro blocos**, na ordem em que a decisão acontece:
 
 ```mermaid
 flowchart LR
-    A[Quando o desconto vale<br/>a condição] --> B[Quanto abate<br/>valor + base]
-    B --> C[O que o cliente lê<br/>a frase]
+    A[Quando o desconto vale<br/>a condição] --> B[Sobre o que ele abate<br/>a base]
+    B --> C[Quanto abate<br/>o valor]
+    C --> D[O que o cliente lê<br/>a frase]
 ```
 
 ### ① Quando o desconto vale: a condição {#condicao}
@@ -51,38 +52,49 @@ Na condição **sem condição**, você escreve a **mensagem que explica o desco
 **"Sem condição" nunca aparece como cumprida.** O sistema não tem como saber se o cliente vai mesmo pagar à vista. Por isso, no orçamento, essas regras vêm com o selo âmbar **"Depende de você"**: o LocFlow oferece, quem afirma que a condição vale é o vendedor.
 {% endhint %}
 
-### ② Quanto abate: o valor e a base {#valor-e-base}
+### ② Sobre o que ele abate: a base {#valor-e-base}
 
-O valor é **percentual (%)** ou **valor fixo (R$)**. E logo abaixo vem a decisão que mais mexe no seu bolso: **sobre qual valor ele incide**.
+**A base vem antes do número**: primeiro você diz **sobre o que** o desconto incide, e só depois quanto. Assim o valor já nasce com nome — "desconto por unidade" ou "desconto no total do item" — e ninguém digita "5" sem saber sobre o que ele vale.
 
 | Base | O que entra na conta |
 | --- | --- |
 | **Sobre o total** | Itens, acréscimos e frete — tudo o que o cliente paga |
-| **Sobre os itens** | Só os bens móveis; frete e serviços ficam de fora |
-| **Sobre o item** | Só o produto ou kit que **ativou a condição** de quantidade |
+| **Sobre os itens** | Só os bens móveis; acréscimos e frete ficam de fora |
+| **Sobre o total do item** | **Uma vez**, sobre o total do produto ou kit que **ativou a condição** de quantidade |
+| **Em cada unidade** | **Uma vez por unidade** desse item: 10 cadeiras, 10 descontos |
 
-A tela mostra isso **desenhado**: uma barra com as três partes do orçamento (itens, mão de obra, frete) em que o pedaço atingido pelo desconto fica **aceso**. Escolha "sobre os itens" e você vê o frete apagar.
+A tela mostra isso **desenhado**: uma barra com as partes do orçamento (itens, acréscimos e frete) em que o pedaço atingido pelo desconto fica **aceso**. Escolha "sobre os itens" e você vê o frete apagar; escolha uma base de item e só o item que ativou a regra fica aceso.
 
 {% hint style="warning" %}
-**A base "sobre o item" só existe com a condição por quantidade.** É a condição que diz *qual* item ativou a regra; sem ele não há sobre o que incidir. Nas outras condições o card fica indisponível com a explicação: *"Só com a condição por quantidade — nas outras não existe um item que ativou a regra."*
+**As duas bases de item só existem com a condição por quantidade.** É a condição que diz *qual* item ativou a regra; sem ele não há sobre o que incidir. Nas outras condições os cards ficam indisponíveis com a explicação: *"Só com a condição por quantidade — nas outras não existe um item que ativou a regra."*
+{% endhint %}
+
+### ③ Quanto abate: o valor {#valor}
+
+O valor é **percentual (%)** ou **valor fixo (R$)**. O nome do campo acompanha a base escolhida — **Desconto por unidade**, **Desconto no total do item** ou **Valor do desconto** — e um exemplo logo abaixo mostra a conta.
+
+{% hint style="info" %}
+**"Em cada unidade" é sempre em reais.** Um percentual por unidade abateria exatamente o mesmo que o percentual sobre o total do item — por isso, ao escolher **Em cada unidade**, o valor passa para **R$**; e, se você trocar para **%**, a base volta para **Sobre o total do item**.
 {% endhint %}
 
 {% hint style="info" %}
-**Por que fixar a base importa.** Num pedido de R$ 2.000 em itens + R$ 300 de montagem + R$ 200 de frete, "10% de desconto" pode custar **R$ 250** (sobre o total), **R$ 200** (sobre os itens) ou **R$ 80** (sobre as 10 cadeiras que ativaram a regra). É a mesma frase e três resultados diferentes — por isso o LocFlow obriga você a escolher.
+**Por que fixar a base importa.** Num pedido de R$ 2.000 em itens + R$ 300 de montagem + R$ 200 de frete, "10% de desconto" pode custar **R$ 250** (sobre o total), **R$ 200** (sobre os itens) ou **R$ 80** (sobre o total das 10 cadeiras que ativaram a regra). E "R$ 5 em cada unidade" nessas mesmas 10 cadeiras dá **R$ 50**. É a mesma intenção e resultados diferentes — por isso o LocFlow obriga você a escolher.
 {% endhint %}
 
-### ③ O que o cliente lê {#descricao}
+### ④ O que o cliente lê {#descricao}
 
 O LocFlow **monta a frase sozinho**, juntando a condição, o valor e a base:
 
-> *A partir de 10 unidades de Cadeira Tiffany: 10% de desconto sobre o item*
+> *A partir de 10 unidades de Cadeira Tiffany: 10% de desconto sobre o total do item*
 
-> *Para orçamentos a partir de R$ 2.000,00: R$ 150,00 de desconto sobre o total*
+> *A partir de 10 unidades de Cadeira Tiffany: R$ 5,00 de desconto por unidade*
+
+> *Para orçamentos a partir de R$ 2.000,00: R$ 150,00 de desconto sobre o valor total*
 
 Um bloco **"O cliente vai ler"** mostra a frase em tempo real enquanto você preenche. Se preferir outro texto, ligue **"Escrever meu próprio texto"** e escreva o seu — a frase automática continua visível abaixo, esmaecida, como referência do que está sendo substituído.
 
 {% hint style="info" %}
-**A frase viaja com o orçamento.** Quando o vendedor aplica a regra, o texto é **copiado para dentro daquele orçamento**. Editar a regra depois muda as próximas propostas, **não** o que o cliente já recebeu.
+**A frase viaja com o orçamento.** Quando o vendedor aplica a regra, o texto é **copiado para dentro daquele orçamento**. Editar a regra depois muda as próximas propostas, **não** o que o cliente já recebeu. Regras antigas, salvas quando a base se chamava "sobre o item", continuam mostrando a frase antiga até serem salvas de novo — o valor do desconto é o mesmo.
 {% endhint %}
 
 ## O catálogo: ativar, desativar, excluir {#catalogo}
@@ -132,6 +144,7 @@ Regra tabelada define **o que** pode ser oferecido. Quanto ao **quanto** um vend
 
 - **Política de volume que ninguém aplicava.** Você combina "10% a partir de 10 cadeiras", mas metade da equipe esquece. Vira regra: agora ela aparece sozinha no orçamento, com o valor calculado, e ninguém mais esquece.
 - **O desconto que comia o frete.** A regra de 10% estava "sobre o total" e vinha abatendo também o transporte de pedidos distantes. Você troca a base para "sobre os itens" — o abatimento continua, a margem do frete volta.
+- **"R$ 5 de desconto por cadeira a partir de 10."** Condição **por quantidade** (10 cadeiras), base **Em cada unidade** e valor **R$ 5,00**: com 12 cadeiras no pedido, o desconto é de R$ 60.
 - **Promoção de temporada.** Fim de ano acabou: você **desativa** a regra em vez de excluí-la. Em novembro, uma chave a traz de volta.
 - **Cliente antigo, desconto de sempre.** Uma regra **sem condição** com o texto *"Cliente parceiro — condição especial"*: o sistema nunca a marca como cumprida, mas ela fica a um toque de distância, com a frase certa para o documento.
 

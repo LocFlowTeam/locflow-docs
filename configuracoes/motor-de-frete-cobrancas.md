@@ -52,7 +52,7 @@ O **gatilho** é a situação que liga a cobrança. O LocFlow organiza as opçõ
 Escolher um gatilho **substitui** o anterior — cada cobrança tem **um** gatilho. Alguns pedem detalhe ali mesmo: município pede a lista de cidades; **especificação veicular** pede quais veículos.
 
 {% hint style="info" %}
-A **especificação veicular** liga a cobrança ao **tipo de veículo** da viagem — você escolhe entre as especificações que já cadastrou na Frota (baú, utilitário, guincho, refrigerado…). É útil quando o custo do frete muda conforme o veículo, não conforme o destino ou a distância. Se a lista aparecer vazia, cadastre-as primeiro: *"Cadastre especificações na Frota para usar esse gatilho."*
+A **especificação veicular** liga a cobrança ao **tipo de veículo** da viagem — você escolhe entre os **tipos de veículo** que já cadastrou na Frota (baú, utilitário, guincho, refrigerado…) — no motor de frete eles ainda aparecem com o nome de especificações. É útil quando o custo do frete muda conforme o veículo, não conforme o destino ou a distância. Se a lista aparecer vazia, cadastre-as primeiro: *"Cadastre especificações na Frota para usar esse gatilho."*
 {% endhint %}
 
 ### A cobrança é por viagem, não por orçamento {#por-rota-nao-por-viagem}

@@ -5,7 +5,7 @@ description: Como entrar na Rede de Parceiros — convidar um parceiro externo p
 
 # Entrando na rede
 
-**Onde fica:** no espaço **Rede de Parceiros** — o alternador no menu lateral (ou na aba Menu) que troca da sua Operação para a Rede, com as abas **Início · Descobrir · Acordos · Menu**. É um espaço próprio, com o seu acento visual, porque parceria é um assunto diferente do dia a dia da locação: aqui você não atende cliente, você se conecta a outras empresas.
+**Onde fica:** no espaço **Rede de Parceiros** — o alternador no menu lateral (ou na aba Menu) que troca da sua Operação para a Rede, com as abas **Início · Parceiros · Pedidos · Menu**. É um espaço próprio, com o seu acento visual, porque parceria é um assunto diferente do dia a dia da locação: aqui você não atende cliente, você se conecta a outras empresas.
 
 Esta página é sobre o **primeiro passo**: como as conexões nascem. O que acontece depois — os acordos, o repasse de pedidos, o dinheiro — tem as suas próprias páginas; comece pela [visão geral das parcerias](visao-geral.md) se ainda não leu.
 
@@ -21,7 +21,7 @@ O LocFlow tem dois tipos de conexão, para dois momentos diferentes do seu negó
 | **Para quê** | Repassar a execução dos seus pedidos a alguém de confiança | Acordos formais, com catálogos mapeados item a item e estoque espelhado |
 
 {% hint style="info" %}
-**Não precisa escolher para sempre.** Muitos parceiros começam externos — o motorista que faz as suas entregas — e, quando crescem e criam a própria organização, o acordo pode ser **promovido** para org↔org sem perder a reputação acumulada. Comece pelo que resolve hoje.
+**Não precisa escolher para sempre.** Muitos parceiros começam externos — o motorista que faz as suas entregas — e, quando crescem, podem [virar organização](parceiro-logistico-externo.md#crescendo-na-rede) a partir do próprio acordo: a parceria passa a ser org↔org e a reputação que ele construiu com você vai junto. Comece pelo que resolve hoje.
 {% endhint %}
 
 ## Convidar um parceiro externo {#convidar-parceiro-externo}
@@ -32,26 +32,34 @@ O caminho: **Rede › Parceiros externos**, botão de **convidar**. A tela **Con
 
 1. **Nome** do parceiro (ex.: *Márcia Fretes*).
 2. **E-mail (recomendado)** — e este campo faz mais do que parece: leia o aviso abaixo antes de pular.
-3. **Por onde você vai enviar** o convite — o canal que ele vai usar para abrir o link.
+3. **Como [nome] vai usar a LocFlow?** — **Aplicativo no celular** (o recomendado para motoristas e equipe de campo) ou **Navegador no computador**. A escolha define como o link se comporta ao ser aberto: quem abre pelo navegador um convite feito para o app vê *"Use a LocFlow no celular"*, com as opções **Continuar no navegador** e **Já tenho o app — abrir agora**.
 4. **O galpão dele** — o ponto de saída do parceiro, a origem do frete que ele cobra. Você já preenche aqui, no convite; não é um cadastro para depois.
+
+{% hint style="info" %}
+**A pessoa usa o LocFlow com uma empresa própria?** Então o caminho não é este convite: proponha um vínculo em **Descobrir parceiros** — veja [Parceria interna](#parceria-interna).
+{% endhint %}
 
 Toque em **Convidar** → o LocFlow gera um **link de convite**.
 
 {% hint style="danger" %}
-**O e-mail não é para "avisar por e-mail" — é a tranca do convite.** Informando o endereço, **só quem entrar com esse e-mail consegue aceitar** o convite. Sem ele, o próprio app te alerta:
+**O e-mail é, antes de tudo, a tranca do convite.** Informando o endereço, **só quem entrar com esse e-mail consegue aceitar** o convite. Sem ele, o próprio app te alerta: *"Sem e-mail, o link é a chave: quem abrir entra como seu parceiro."* E o **"?"** ao lado explica o tamanho disso:
 
-> *Sem e-mail, o link vira a chave de acesso: quem o receber (ou interceptar) entra na sua conta como parceiro, vê os preços acordados e cadastra a própria conta bancária para receber os repasses.*
+> *Quem receber (ou interceptar) esse link entra na sua conta como parceiro: vê os preços acordados de cada item e cadastra a própria conta bancária para receber os repasses.*
 
 Se você for enviar mesmo assim, envie **por canal privado, direto à pessoa** — nunca em grupo.
 {% endhint %}
 
-Envie o link por onde quiser (o app tem o botão **Compartilhar link** — WhatsApp resolve). Pelo link, o parceiro **cria o próprio acesso** e cadastra os dados bancários para receber os repasses. Ao entrar, ele cai num **espaço só dele**: enxerga as reservas que você repassa, os movimentos que executa e os ganhos — e **nada** do resto da sua operação. O papel é fixo; ele não vira usuário comum da sua conta.
+Envie o link por onde quiser (o app tem o botão **Compartilhar link**, que já leva junto a validade do convite — WhatsApp resolve). Pelo link, o parceiro **cria o próprio acesso** e cadastra os dados bancários para receber os repasses. Ao entrar, ele cai num **espaço só dele**: enxerga as reservas que você repassa, os movimentos que executa e os ganhos — e **nada** do resto da sua operação. O papel é fixo; ele não vira usuário comum da sua conta.
 
 {% hint style="success" %}
 **Por que isso é seguro:** o parceiro externo não vê os seus clientes, os seus outros orçamentos nem a sua carteira — só existe para ele o que você repassa. O que ele **vê** é o combinado: os itens do acordo, o **preço ao cliente deles** e quanto ele ganha em cada um. Sem esse preço, "você recebe 60%" não significaria nada — e é por isso que ele aparece dos dois lados. O recorte completo está em [Rede de Parceiros: a visão](visao-geral.md).
 {% endhint %}
 
-Depois do convite aceito, falta **um** cadastro para o parceiro ficar operacional: o **recebedor** de pagamento — que só ele mesmo pode preencher, porque são os dados bancários dele. O **galpão** já ficou pronto no convite (e ele pode ajustar o pino depois, em **Meu galpão**). O passo a passo completo, incluindo o que ele enxerga por dentro, está em [Parceiro Logístico Externo](parceiro-logistico-externo.md).
+Depois do convite aceito, falta **um** cadastro para o parceiro ficar operacional: o **recebedor** de pagamento — que só ele mesmo pode preencher, porque são os dados bancários dele. O **galpão** já ficou pronto no convite (e ele pode ajustar o pino depois, em **Menu › Galpão**). O passo a passo completo, incluindo o que ele enxerga por dentro, está em [Parceiro Logístico Externo](parceiro-logistico-externo.md).
+
+{% hint style="info" %}
+**Ele travou numa tela?** Com o parceiro já ativo, quem tem a permissão pode entrar na conta dele para resolver junto — ele é avisado na hora e tudo fica registrado no nome de quem entrou. Veja [Acesso assistido](acesso-assistido.md).
+{% endhint %}
 
 ### O link tem prazo — e expirar não é o fim {#renovar-convite}
 
@@ -71,25 +79,26 @@ Quando **as duas partes são organizações LocFlow**, a conexão é um **víncu
 
 ```mermaid
 flowchart LR
-    A[Perfil público<br/>quem você é] --> B[Descobrir parceiros<br/>quem existe]
-    B --> C[Propor parceria] --> D[Vínculos<br/>a outra org decide]
+    A[Perfil público<br/>quem você é] --> B[Achar parceiros<br/>quem existe]
+    B --> C[Propor parceria] --> D[Conexões<br/>a outra org decide]
     D --> E[Vínculo ATIVO<br/>acordos liberados]
 ```
 
 ### 1. Monte o seu perfil público {#perfil-publico}
 
-Em **Rede › Perfil público** você decide **como a sua organização aparece** para quem procura parceiros. E a regra de ouro: **nada aparece sem você ativar** — a chave **"Aparecer no diretório"** vem desligada, e o seu perfil só entra na vitrine quando você a liga.
+Em **Rede › Meu perfil público** você decide **como a sua organização aparece** para quem procura parceiros. E a regra de ouro: **nada aparece sem você ativar** — a chave **"Aparecer na descoberta"** vem desligada, e o seu perfil só entra na vitrine de **Achar parceiros** quando você a liga. A própria tela mostra uma prévia de como as outras locadoras vão te ver.
 
 O que dá para configurar:
 
 | Campo | Para quê |
 | --- | --- |
-| **Papéis oferecidos** | O que você oferece à rede: **vendedor** (tem clientes e repassa pedidos), **logístico** (executa operações para outros) — ou os dois. É obrigatório escolher ao menos um para aparecer no diretório. |
-| **Apresentação** | Um texto curto sobre a sua operação (ex.: *"Transportadora com frota própria, atuação na Grande SP"*). |
-| **Cidade-sede** (opcional) | De onde você opera — ajuda quem busca parceiro por região. |
-| **Galpões** | Os seus galpões aparecem na vitrine com a **distância** até quem olha — a informação mais prática para decidir se a logística fecha. |
-| **Exibir catálogo com preços** (opcional) | Deixa o seu catálogo de bens móveis visível na vitrine, para o parceiro em potencial ver com o que você trabalha. |
-| **Sugerir a minha precificação a parceiros** | Permite que uma organização **com vínculo ativo** use os seus números como ponto de partida ao montar um acordo. Vem **ligada**; você desliga quando quiser (veja [O que o vínculo concede](#o-que-o-vinculo-concede)). |
+| **Como você atua** | O que você oferece à rede: **Vendedor** (*"Ofereço orçamentos para repassar"*), **Logístico** (*"Executo entregas de parceiros"*) — ou os dois. É obrigatório escolher ao menos um para aparecer na descoberta. |
+| **Bio pública** | Um texto curto sobre a sua operação (ex.: *"Transportadora com frota própria, atuação na Grande SP."*). |
+| **Cidade-sede (opcional)** | De onde você opera — ajuda quem busca parceiro por região. |
+| **Catálogo público** | Mostra os seus itens e preços na vitrine, para o parceiro em potencial ver com o que você trabalha. |
+| **Compartilhar minha precificação** | Ao montar um acordo com você, uma organização **com vínculo ativo** parte do seu frete e dos seus preços de tabela. Vem **ligada**, e é sempre uma sugestão: o acordo só vale quando você aceita (veja [O que o vínculo concede](#o-que-o-vinculo-concede)). |
+
+Os seus **galpões** aparecem na vitrine sozinhos, cada um com a **distância** até quem olha — a informação mais prática para decidir se a logística fecha.
 
 {% hint style="info" %}
 **Perfil público não é anúncio ao cliente final.** Quem vê é **outra organização** procurando parceiro — por isso faz sentido mostrar galpões e catálogo: são os dados que um parceiro avalia antes de propor.
@@ -101,7 +110,7 @@ O que dá para configurar:
 
 ### 2. Descubra parceiros {#descobrir-parceiros}
 
-**Rede › Descobrir parceiros** é o diretório: as organizações que ativaram o perfil público, com **busca por nome** e filtros por papel (**Vendedores** / **Logísticos**). Procurando quem execute as suas entregas? Filtre por logísticos. Tem estrutura sobrando e quer receber pedidos? Olhe os vendedores da sua região.
+**Rede › Achar parceiros** é o diretório: as organizações que ativaram o perfil público, com **busca por nome** e filtros por papel (**Vendedores** / **Logísticos**). Procurando quem execute as suas entregas? Filtre por logísticos. Tem estrutura sobrando e quer receber pedidos? Olhe os vendedores da sua região.
 
 Tocar numa organização abre a **vitrine** dela:
 
@@ -126,19 +135,19 @@ Três coisas para entender bem essa frase:
 
 * **É sugestão, não autorização de venda.** Ela vira uma **proposta** de acordo, que você ainda precisa aprovar. Nada passa a valer sozinho.
 * **O que ela puxou fica com ela.** Se a proposta for montada e o acordo não fechar, os números que entraram naquele rascunho **permanecem lá**. Não é possível "despuxar".
-* **Nasce ligado, e você desliga quando quiser.** A chave fica no seu **Perfil de parceria** (**Rede › Meu perfil público**). Desligar **não** rompe o vínculo: *"você pode desligar essa sugestão a qualquer momento — o vínculo continua valendo"*.
+* **Nasce ligado, e você desliga quando quiser.** A chave **Compartilhar minha precificação** fica em **Rede › Meu perfil público**. Desligar **não** rompe o vínculo: o parceiro passa a montar o acordo à mão e propor os valores para você aceitar — a sua tabela não é copiada para o sistema dele.
 
 {% hint style="info" %}
-O mesmo aviso aparece nos **dois caminhos** em que você decide: na lista de **Vínculos** e no botão de aceitar da **vitrine** do parceiro. **Recusar** não passa por essa declaração — quem recusa não concede nada.
+O mesmo aviso aparece nos **dois caminhos** em que você decide: na lista de **Conexões** e no botão de aceitar da **vitrine** do parceiro. **Recusar** não passa por essa declaração — quem recusa não concede nada.
 {% endhint %}
 
 {% hint style="warning" %}
 **Aceitar um convite aprova só o que a tela mostrou.** Quando você aceita um convite (de colaborador ou de parceiro) que traz acordos junto, ficam aprovados **exatamente os acordos que apareceram na tela** — não tudo o que estiver pendente no seu nome. Se aparecer um acordo que você não reconhece, é hora de perguntar antes de tocar em aceitar.
 {% endhint %}
 
-### 4. Acompanhe em Vínculos {#vinculos}
+### 4. Acompanhe em Conexões {#vinculos}
 
-**Rede › Vínculos** lista todas as suas conexões org↔org, cada uma com o seu status:
+**Rede › Conexões** lista todas as suas conexões org↔org, cada uma com o seu status:
 
 | Status | O que significa | O que dá para fazer |
 | --- | --- | --- |
@@ -156,7 +165,7 @@ O que **acaba**, na hora:
 
 * **Os acordos entre as duas organizações são cancelados** — nos **dois sentidos**. Se vocês tinham um acordo em que você vende e ela executa, e outro em que ela vende e você executa, os dois caem.
 * **Repasse novo é barrado.** Se alguém tentar repassar um pedido por aquele acordo, o app responde: *"A parceria com esta organização foi encerrada — não é possível repassar operações novas por este acordo. As operações que ela já aceitou seguem valendo."*
-* **O acesso entre as contas é cortado**: ela deixa de alcançar a roteirização, a fila do balcão, os dados do cliente e a situação da cobrança dos pedidos que eram seus.
+* **O acesso entre as contas é cortado**: ela deixa de alcançar a roteirização, a fila da loja, os dados do cliente e a situação da cobrança dos pedidos que eram seus.
 * **As solicitações que ainda aguardavam resposta são canceladas**, e o responsável de cada orçamento é avisado de que a operação voltou para ele.
 
 O que **sobrevive**:
@@ -181,7 +190,7 @@ Três hábitos que separam as parcerias que engrenam das que morrem na proposta:
 | Se você é… | O caminho mais provável |
 | --- | --- |
 | **Autônomo / MEI / micro** | Convide o seu freteiro de confiança como **parceiro externo** — link no WhatsApp, cinco minutos, e ele já recebe os seus repasses. Perfil público pode esperar. |
-| **Médio** | Ative o **perfil público** e explore o Descobrir: uma parceria interna com uma organização vizinha vira capacidade extra na alta temporada — sem contratar frota. |
+| **Médio** | Ative o **perfil público** e explore **Achar parceiros**: uma parceria interna com uma organização vizinha vira capacidade extra na alta temporada — sem contratar frota. |
 | **Grande / muitas filiais** | Opere os dois lados: ofereça-se como **logístico** para vendedores da região (receita com a estrutura ociosa) e mantenha vínculos ativos com vários parceiros para nunca recusar pedido por falta de braço. |
 
 ## Próximo passo {#proximo-passo}

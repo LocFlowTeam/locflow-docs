@@ -37,7 +37,7 @@ Estes padrões já estão validados nas páginas existentes e são **inviolávei
 - **Tom "você"**, direto, sem jargão técnico de engenharia (nada de `CAT.PRODUTO.CRIAR`, `409`, `JWT`, `categoriaMatchInfo`, `Broadcast`). O efeito visível, não o mecanismo.
 - **Terminologia: "bens móveis" / "itens", NUNCA "equipamentos"** — mesmo quando a copy do app usa "equipamento" (ex.: ajuda do valor de reposição/NF-e) ou "material". O LocFlow atende **locação E venda**: todo exemplo dá os dois lados (aluguel = duas pontas / pré-reserva+reserva; venda = uma ponta / vendido).
 - **Frontmatter** com `icon` + `description` em toda página.
-- **Callouts** `{% hint style="info|success|warning" %}` para conceitos não óbvios; **warning** para regras que custam dinheiro se ignoradas (ex.: frete por rota), **success** para "por que isso te faz faturar mais".
+- **Callouts** (blocos `hint` do GitBook, nos estilos `info`, `success` e `warning`) para conceitos não óbvios; **warning** para regras que custam dinheiro se ignoradas (ex.: frete por rota), **success** para "por que isso te faz faturar mais".
 - **Tabelas** para estados/legendas e **mermaid** para fluxos e máquinas de estado.
 - **Seções recorrentes**: "Situações reais", a tabela "Pequeno / médio / grande" (por porte), e "Próximo passo" com links relativos ao fim de cada página.
 - **Recursos "em breve"** entram como bloco curto com callout (padrão de `galpoes-e-disponibilidade.md`), sem fixar preços/nomes de planos (catálogo de planos é mock de UI).

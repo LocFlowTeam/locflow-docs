@@ -103,6 +103,10 @@ flowchart TD
 **Não migre pedidos em andamento.** Um pedido que já foi entregue e ainda vai voltar tem estado
 espalhado: reserva, saída de estoque, cobrança parcial, retorno pendente. Trazer isso pela metade
 cria um fantasma que ninguém consegue fechar. Deixe-o terminar onde nasceu.
+
+E atenção: se a planilha trouxer um aluguel com a Situação **Reservado**, ele **não** entra como
+histórico neutro — entra como locação ativa e **passa a ocupar o seu estoque** até ser concluído ou
+cancelado. Veja [Pedidos com a situação "Reservado"](importacao-de-dados.md#situacao-reservado).
 {% endhint %}
 
 ## Que dia e que hora virar

@@ -24,13 +24,13 @@ No alto fica um **mapa animado** da operação: o **Galpão** de um lado, o **Cl
 * A trilha de **IDA** (roxa) é o caminho do material **até o cliente**.
 * A trilha de **VOLTA** (âmbar) aparece **só na locação** — é o retorno dos itens ao galpão.
 * Um **ícone deslizante** marca onde o material está agora. Ele **pulsa** quando há um veículo de fato na rua (entrega ou coleta).
-* Quando o cliente **retira ou devolve no balcão** (sem transporte da equipe), a trilha vira **tracejada** — um aviso visual de "sem viagem, o cliente vem ao galpão".
+* Quando o cliente **retira ou devolve na loja** (sem transporte da equipe), a trilha vira **tracejada** — um aviso visual de "sem viagem, o cliente vem à loja".
 * O pino do **Cliente** acende quando o material já chegou (ou está) com ele.
 
-Cada trilha traz uma etiqueta do modo: *Entrega ao cliente* ou *Retirada no balcão* na ida; *Coleta pela equipe* ou *Devolução no balcão* na volta.
+Cada trilha traz uma etiqueta do modo: *Entrega ao cliente* ou *Retirada na loja* na ida; *Coleta pela equipe* ou *Devolução na loja* na volta.
 
 {% hint style="info" %}
-O botão **Como funciona**, no canto do mapa, abre uma explicação da operação inteira — escrita conforme o seu caso (venda ou aluguel, com ou sem separação, retira no balcão ou recebe em casa). Use sempre que a configuração daquele pedido não estiver óbvia.
+O botão **Como funciona**, no canto do mapa, abre uma explicação da operação inteira — escrita conforme o seu caso (venda ou aluguel, com ou sem separação, retira na loja ou recebe em casa). Use sempre que a configuração daquele pedido não estiver óbvia.
 {% endhint %}
 
 ## A jornada por fases
@@ -41,8 +41,8 @@ Abaixo do mapa, o pedido aparece como uma **linha do tempo** dividida em fases. 
 | --- | --- | --- |
 | **Finanças** (etapa zero) | A fatura é gerada antes de a logística começar | Sempre |
 | **Logística interna** | [Separação](separacao.md) dos itens no galpão | Só se a separação estiver ligada |
-| **Logística externa** | A entrega ao cliente (ou a retirada no balcão) | Sempre |
-| **Logística externa reversa** | A coleta dos itens com o cliente (ou devolução no balcão) | Só na locação |
+| **Logística externa** | A entrega ao cliente (ou a retirada na loja) | Sempre |
+| **Logística externa reversa** | A coleta dos itens com o cliente (ou a devolução na loja) | Só na locação |
 | **Logística interna reversa** | A [conferência](conferencia.md) do que voltou | Só na locação, se ligada |
 | **Conclusão** | O ciclo logístico encerrado | Sempre |
 
@@ -82,7 +82,7 @@ Na prática, isso produz frases vivas:
 | Itens sendo preparados no galpão | **Separando no galpão** |
 | Veículo na rua levando os itens | **A caminho do cliente** |
 | Itens já entregues, em locação | **Em locação — aguardando devolução** (ou coleta) |
-| Separado, cliente vai buscar | **Aguardando o cliente no balcão** |
+| Separado, cliente vai buscar | **Aguardando o cliente na loja** |
 | Equipe indo recolher na locação | **A caminho para coletar** |
 | Itens coletados, voltando | **Retornando ao galpão** |
 | Conferindo o retorno no galpão | **Conferindo o retorno** |
@@ -99,11 +99,12 @@ Toda etapa **acontecendo agora** ganha também um **selo de responsabilidade** �
 | --- | --- | --- |
 | **Com a equipe** | A equipe está trabalhando no galpão (separando, conferindo, planejando o despacho) | Roxo |
 | **Em trânsito** | Há um veículo da operação na rua (entrega ou coleta) | Roxo |
-| **Aguardando o cliente** | O material está pronto e a equipe só espera o cliente vir ao balcão | Âmbar |
+| **Com o parceiro** | A etapa está com o parceiro da [Rede de Parceiros](../parcerias/visao-geral.md) a quem o pedido foi repassado — é ele quem leva e busca. A separação e a conferência no seu galpão continuam com a sua equipe | Magenta |
+| **Aguardando o cliente** | O material está pronto e a equipe só espera o cliente vir à loja | Âmbar |
 | **Com o cliente** | Numa locação, os itens estão em posse do cliente durante o período | Âmbar |
 | **Aguardando** | Antes da logística começar (aguardando a fatura) ou em estado de espera | Âmbar |
 
-A leitura de cor é direta: **roxo = a bola é sua** (alguém da operação precisa ou está agindo); **âmbar = a bola é do cliente** (você está esperando o cliente retirar, usar ou devolver). Esse eixo deixa explícito quando **não há nada a fazer da sua parte** — você não está atrasado, está aguardando.
+A leitura de cor é direta: **roxo = a bola é sua** (alguém da operação precisa ou está agindo); **âmbar = a bola é do cliente** (você está esperando o cliente retirar, usar ou devolver); **magenta = a bola é do parceiro**. Esse eixo deixa explícito quando **não há nada a fazer da sua parte** — você não está atrasado, está aguardando.
 
 {% hint style="info" %}
 Esse selo é só de **acompanhamento** — ele descreve a situação, não muda nada no pedido. Ele aparece apenas nas etapas em andamento; etapas já concluídas ou futuras não o exibem.
@@ -113,22 +114,28 @@ Esse selo é só de **acompanhamento** — ele descreve a situação, não muda 
 
 Na etapa **acontecendo agora**, quando há um próximo passo acionável, a tela mostra um **botão de avanço**. O rótulo muda conforme o que falta fazer:
 
-* **Separar no galpão** — leva à [fila de separação](separacao.md).
-* **Planejar entrega** / **Planejar retirada** — abre o [roteiro](planejando-o-roteiro.md) daquele despacho.
+* **Separar no galpão** — leva à [fila de separação](separacao.md), já com o pedido em destaque.
+* **Planejar entrega** / **Planejar retirada** — abre o [planejamento do roteiro](planejando-o-roteiro.md) com aquele movimento já selecionado.
+* **Ver roteiro** (com o código do roteiro, por exemplo *Ver roteiro ROT-12*) — quando o movimento já está num roteiro planejado: abre o roteiro, focando a parada deste pedido.
+* **Replanejar entrega** / **Replanejar retirada** — quando a parada foi [pulada na rua](execucao-em-campo.md#quando-a-parada-nao-da-certo) e o movimento voltou para a fila: abre o planejamento para a nova tentativa.
 * **Conferir retorno** — leva à [fila de conferência](conferencia.md).
-* **Confirmar no balcão** — leva à [fila do Balcão](balcao.md), já com aquele atendimento aberto (quando não há viagem).
+* **Confirmar na loja** — leva à fila da [Loja](balcao.md), já com aquele atendimento aberto (quando não há viagem).
 
 Todos esses botões **levam você até a tela certa** para agir — a jornada é uma **visão de acompanhamento**; cada ação acontece na tela onde ela mora, e o botão só encurta o caminho.
+
+{% hint style="info" %}
+**A conferência abre sozinha, venha o pedido de onde vier.** Quando o pedido entra em *A conferir* — pelo roteiro, pelo [Painel Logístico](painel-logistico.md), pela troca de etapa no próprio pedido ou pela devolução na loja —, a conferência de retorno é aberta. Se ela não puder abrir, a etapa avança e o aviso sai em âmbar, dizendo o motivo. Veja [Quando a conferência não abre](conferencia.md#quando-a-conferencia-nao-abre).
+{% endhint %}
 
 {% hint style="warning" %}
 **Quem não tem permissão para aquela etapa vê "Somente leitura nesta etapa"** no lugar do botão — a jornada continua visível para todos, mas só avança quem tem a competência. Veja [Papéis, funções e competências](../conceitos/papeis-funcoes-competencias.md).
 {% endhint %}
 
-### A confirmação no balcão
+### A confirmação na loja
 
-Quando o cliente **retira ou devolve no galpão** (sem transporte da equipe), a etapa externa vira um **balcão**: a tela mostra "Sem transporte · cliente retira (ou devolve) no balcão". O botão **Confirmar no balcão** leva o operador à **fila do Balcão**, já com aquele atendimento aberto — é lá que a confirmação acontece.
+Quando o cliente **retira ou devolve na loja** (sem transporte da equipe), a etapa externa vira um **atendimento na loja**: a tela mostra "Sem transporte · cliente retira (ou devolve) na loja". O botão **Confirmar na loja** leva o operador à fila da **Loja**, já com aquele atendimento aberto — é lá que a confirmação acontece.
 
-Na fila, a folha de confirmação já vem preenchida com o que falta sair (ou voltar): dá para confirmar **tudo** ou ajustar as quantidades para uma **retirada parcial**, e a **comprovação** (por exemplo, uma foto) é capturada na mesma folha quando o seu [motor de logística](../configuracoes/motores-operacionais.md) exigir. O sistema registra **quando o cliente chegou** e o **tempo de atendimento**, que ficam visíveis na etapa depois de concluída — junto com as provas de cada parcela. Veja [Balcão: retirada e devolução no galpão](balcao.md).
+Na fila, a folha de confirmação já vem preenchida com o que falta sair (ou voltar): dá para confirmar **tudo** ou ajustar as quantidades para uma **retirada parcial**, e a **comprovação** (por exemplo, uma foto) é capturada na mesma folha quando o seu [motor de logística](../configuracoes/motores-operacionais.md) exigir. O sistema registra **quando o cliente chegou** e o **tempo de atendimento** (*"Cliente chegou às 14:05 · 12 min de atendimento"*), que ficam visíveis na etapa depois de concluída — junto com as provas de cada parcela. Veja [Loja: retirada e devolução pelo cliente](balcao.md).
 
 ## Finanças e conclusão: as pontas da jornada
 
@@ -149,11 +156,11 @@ A mesma tela serve quem está começando e quem opera em escala — ela revela s
 | --- | --- |
 | **Começando** | Poucas fases: Finanças → entrega → conclusão. Sem separação, sem conferência, sem volta numa venda. Acompanhamento enxuto. |
 | **Crescendo** | Separação ligada e, na locação, conferência: a jornada ganha as fases internas, e o selo de responsabilidade ajuda a equipe a saber de quem é a vez. |
-| **Estruturado** | Operação completa de ida e volta, com balcão, comprovação exigida e papéis dedicados — cada etapa só avança por quem tem permissão. |
+| **Estruturado** | Operação completa de ida e volta, com loja, comprovação exigida e papéis dedicados — cada etapa só avança por quem tem permissão. |
 
 ## Situações reais
 
-* **Venda no balcão:** Finanças → separação (se ligada) → o cliente retira no balcão → conclusão. O selo passa de **Com a equipe** para **Aguardando o cliente**, e a confirmação no balcão fecha o ciclo.
+* **Venda na loja:** Finanças → separação (se ligada) → o cliente retira na loja → conclusão. O selo passa de **Com a equipe** para **Aguardando o cliente**, e a confirmação na loja fecha o ciclo.
 * **Locação de evento:** entrega na véspera (**Em trânsito**), depois **Com o cliente — aguardando a coleta** durante o evento, **Retornando ao galpão** na coleta e **Conferindo o retorno** no fim. Você vê em qual ponto exato está, sem ligar para ninguém.
 * **Cliente sumiu para retirar:** o selo fica **Aguardando o cliente** em âmbar — fica claro que a bola é dele, não um atraso da sua operação.
 * **Mudou o pedido depois de fechado:** se a entrega for ajustada, a jornada reflete o novo caminho — entenda em [Quando um pedido muda depois de fechado](quando-um-pedido-muda.md).

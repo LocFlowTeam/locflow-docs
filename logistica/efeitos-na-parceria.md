@@ -1,6 +1,6 @@
 ---
 icon: people-arrows
-description: Você mexeu num pedido que já tinha sido repassado — e agora? Delta por delta: quem é avisado, quem ajusta a rota, o que acontece com o repasse e o que você não pode mais fazer.
+description: "Você mexeu num pedido que já tinha sido repassado — e agora? Delta por delta: quem é avisado, quem ajusta a rota, o que acontece com o repasse e o que você não pode mais fazer."
 ---
 
 # O pedido já estava com um parceiro

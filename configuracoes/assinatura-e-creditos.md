@@ -51,10 +51,14 @@ O selo ao lado do plano mostra em que pé está a sua assinatura:
 
 ### Período de teste (trial) {#periodo-de-teste}
 
-Durante o teste você usa o LocFlow à vontade, **sem nenhuma cobrança**. A tela mostra quantos **dias de teste grátis** faltam e a data em que ele termina. Quando o teste acaba, a tela passa a exibir a data da **próxima cobrança**.
+Durante o teste você usa o LocFlow à vontade, **sem nenhuma cobrança**. Em **Meu contrato**, a tela mostra quantos dias faltam e até quando o teste vai — por exemplo, *"Faltam 12 dias de teste grátis · até 20/10/2026"* — e a data da **Próxima cobrança**. Depois que o teste vira plano pago, essa linha passa a dizer **Próxima renovação**.
 
 {% hint style="info" %}
-No período de teste, em **Meu contrato** aparece *"Sem cobrança no período de teste. Depois, vale a mensalidade do plano contratado."* — ou seja, você só começa a pagar quando o teste vira plano pago.
+Em **Meus limites**, o teste aparece como **"Sem cobrança agora"**: *"Você está em teste grátis: não há nada a pagar por enquanto. A LocFlow cobre os custos até o teste terminar — use o plano com calma. Quando o teste acabar, passam a valer os valores do contrato."*
+{% endhint %}
+
+{% hint style="warning" %}
+**No teste, os créditos são de cortesia.** A carteira começa com uma quantidade de **créditos de cortesia** que **não se renova** — e, durante o teste, não dá para comprar mais. Assinar um plano libera a franquia mensal completa e a compra de créditos. Veja [Sua carteira e o saldo](#carteira-e-saldo).
 {% endhint %}
 
 ### Faturas, limites e troca de plano {#faturas-e-limites}
@@ -86,14 +90,15 @@ A entrada é discreta e só consulta o prazo quando você toca nela. Se o prazo 
 
 ## Créditos {#creditos}
 
-Alguns recursos que usam **serviços externos** consomem **créditos** — por exemplo, mapas e a assistente Flo. Os créditos cobrem o custo desses serviços. Seu plano já vem com uma **franquia mensal**; se precisar de mais, você compra (na web).
+Alguns recursos que usam **serviços externos** consomem **créditos** — por exemplo, mapas, a assistente Flo e a emissão de notas fiscais. Os créditos cobrem o custo desses serviços. Seu plano já vem com uma **franquia mensal**; se precisar de mais, você compra (na web).
 
 ```mermaid
 flowchart LR
-    F[Franquia do mes<br/>inclusa no plano] --> S[Saldo da carteira]
-    C[Creditos comprados] --> S
+    F[Franquia do mês<br/>inclusa no plano] --> S[Saldo da carteira]
+    C[Créditos comprados] --> S
     S --> M[Recursos de mapa]
     S --> I[Assistente Flo]
+    S --> N[Notas fiscais<br/>em produção]
 ```
 
 ### O que consome crédito {#o-que-consome}
@@ -109,7 +114,10 @@ antes ou mostra o custo logo depois.
 | Mostrar o pino no cadastro / no onboarding | **Não** (é gratuito) |
 | Enviar uma mensagem ou responder às perguntas da **Flo** | Sim — o custo varia e aparece na conversa |
 | Gerar a resposta falada da Flo em **Ouvir** | Pode consumir — o app avisa antes |
+| **Conversar por voz** com a Flo (no navegador) | Sim — cobrada **por minuto**, com o tempo e o custo à vista na tela |
 | Abrir a tela sugerida, revisar ou salvar sem enviar nova mensagem à Flo | **Não gera um novo turno da Flo** |
+| Emitir uma **nota fiscal em produção** pela [Integração Fiscal](integracao-fiscal.md#creditos) | Sim — por nota emitida |
+| Emitir uma nota de **teste** (homologação) | **Não** |
 
 {% hint style="info" %}
 Recursos que consomem crédito ficam **sinalizados na própria tela**, para você não ser pego de surpresa. Na Flo, cada resposta mostra o custo abaixo da mensagem, e **Ouvir** avisa quando precisa gerar um áudio. Cálculos e resultados são **reaproveitados** quando possível, evitando cobrar de novo pela mesma coisa.
@@ -119,12 +127,27 @@ Recursos que consomem crédito ficam **sinalizados na própria tela**, para voc�
 
 A aba **Créditos** mostra a sua carteira com o **saldo total disponível**, separado em:
 
-* **Franquia do mês** — quanto ainda resta da franquia inclusa no plano (ex.: *"80 de 200"*).
+* **Franquia do mês** — quanto ainda resta da franquia inclusa no plano (ex.: *"80 de 200"*). Durante o teste grátis, esta linha se chama **Créditos do teste grátis** e mostra os créditos de cortesia.
 * **Comprados** — créditos que você comprou e que não expiram com o mês.
 
 O consumo gasta primeiro o que faz sentido para o seu saldo; a franquia **renova no próximo ciclo**. Saldos grandes aparecem de forma compacta (ex.: *"12,3 K"*), para você ler sem uma parede de números.
 
 O saldo atualiza **em tempo real**: assim que um recurso consome, o **Extrato** registra.
+
+{% hint style="info" %}
+**No teste grátis**, no lugar da compra aparece o aviso: *"Durante o teste grátis, sua organização conta com N créditos de cortesia — quando acabarem, eles não se renovam. Assine um plano para liberar a franquia mensal completa e a compra de créditos."*
+{% endhint %}
+
+### Uso da Flo {#uso-da-flo}
+
+Logo abaixo do saldo, o cartão **Uso da Flo** responde à pergunta seguinte: *quanto a Flo gastou?*
+
+* **Hoje** — quantos créditos a Flo usou de **meia-noite a meia-noite** (no fuso da organização) contra o **limite diário** — por exemplo, *"40 de 100 hoje"*. Perto do fim, a barra avisa; quando acaba, a Flo para até a meia-noite: *"O limite de hoje acabou. A Flo volta à meia-noite."* Entram na conta as mensagens, as respostas faladas e as conversas por voz.
+* **No mês** — quanto a Flo usou no mês e quanto resta na sua carteira.
+* **Ajustar limite** *(para quem administra)* — **Do plano**, **Personalizado** ou **Sem limite**.
+* **Ver por pessoa** — o uso de cada pessoa; quem pode, libera ali quem ficou sem conversas por voz.
+
+O limite diário existe para proteger o saldo de um dia fora da curva — ele não impede o uso normal. O cartão só aparece para quem tem acesso ao uso. Mais sobre a Flo em [Conheça a Flo](../flo/conheca-a-flo.md).
 
 ### Comprar créditos {#comprar-creditos}
 
@@ -142,7 +165,7 @@ A compra depende de **permissão** (gerenciar o contrato). No app, em vez dos bo
 No **Extrato** você confere cada movimentação, com data e descrição:
 
 * **Entradas** (verde, com `+`) — compras e a renovação da franquia do mês.
-* **Saídas** (com `−`) — cada consumo de mapa ou da Flo. As conversas e respostas faladas aparecem como **Assistente Flo**.
+* **Saídas** (com `−`) — cada consumo de mapa, da Flo ou de nota fiscal. As mensagens e respostas faladas aparecem como **Assistente Flo**; a chamada de voz, como **Conversa por voz com a Flo**; e cada nota emitida em produção, como **Emissão de nota fiscal**.
 
 Achou um gasto estranho? O Extrato mostra exatamente **o que consumiu, quando e quanto**.
 
@@ -153,6 +176,8 @@ Achou um gasto estranho? O Extrato mostra exatamente **o que consumiu, quando e 
 ## Situações reais {#situacoes-reais}
 
 * **Vou testar antes de pagar.** Durante o teste, use à vontade — sem cobrança. Ao final, escolha o plano (no navegador, pela página **Plano & faturas**).
+* **Os créditos do teste acabaram.** Os créditos de cortesia não se renovam e, no teste, não dá para comprar mais: assine um plano para liberar a franquia mensal e a compra.
+* **A Flo parou de responder no meio da tarde.** Provavelmente o **limite diário** da Flo acabou. Veja o cartão **Uso da Flo** na aba Créditos: quem administra pode ajustar o limite; senão, a Flo volta à meia-noite.
 * **Me arrependi logo depois de assinar.** Dentro de 7 dias, abra *"Reembolso por arrependimento"* em **Meu contrato**: a tela mostra o prazo e o valor do estorno integral.
 * **Acabou a franquia no fim do mês.** Fez muitas otimizações de rota ou usou bastante a Flo e a franquia acabou? Compre créditos (na web) e siga operando; a franquia renova no próximo ciclo.
 * **Estou no celular e quero trocar de plano.** No app é só acompanhar. Abra o **painel web** no navegador para trocar de plano ou comprar créditos.
