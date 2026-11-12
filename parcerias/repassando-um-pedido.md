@@ -191,6 +191,18 @@ A mensagem que aparece é direta: *"Este movimento pertence a um orçamento repa
 Precisa mesmo que a operação seja dividida de outro jeito? **Fale com o parceiro** — ele tem o comando. Ou desfaça o repasse, se ainda estiver a tempo.
 {% endhint %}
 
+### A ficha do repasse {#ficha-do-repasse}
+
+Depois do aceite, a ficha do pedido se lê de cima para baixo:
+
+1. **Agora:** uma frase do que é verdade hoje e, quando há, uma ação só. Por exemplo: "ZL te paga R$ 110,90 até 07/11", "Você paga R$ 169,90 por este pedido" ou "Acertado em 03/11".
+2. **O dinheiro do pedido:** o total que o cliente paga e uma barra com as três partes: quanto fica com você (a sua margem), quanto fica com o parceiro e quanto é **taxa da LocFlow**. Cada parte diz quanto recebe e quanto **paga de taxa**, e a soma aparece embaixo para você conferir de cabeça.
+3. **Como aconteceu:** a linha do tempo do pedido, do aceite ao acerto. Cada passo diz quem fez, quando e o dinheiro que ele moveu: a entrega, o cliente que pagou ao parceiro na porta, a dívida que nasceu, a contestação, a penalidade e o acerto. O que ainda vem aparece tracejado, com a data marcada e o prazo do parceiro.
+4. **O pedido:** a entrega, a retirada, os itens e o frete, numa seção que abre e fecha.
+5. **Mais deste pedido:** o pedido em Orçamentos, o acordo, **a conta com o parceiro** (onde você paga o acerto, contesta um valor ou registra que o cliente pagou direto a você), a avaliação e as saídas.
+
+O parceiro logístico vê, na ficha dele, só a parte dele: quanto o serviço valeu, a taxa dele e quanto recebeu. Quando ele recebeu do cliente, a ficha mostra também quanto ficou com ele e a diferença: ele paga a você quando o cliente deixou com ele mais do que o dele, e você paga a ele quando deixou menos.
+
 ### O que você passa a ver {#acompanhamento}
 
 Você não fica no escuro. No detalhe da reserva, o LocFlow mostra o **fato operacional** da rota do parceiro:
