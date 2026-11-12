@@ -160,7 +160,9 @@ base — e todo dado ruim que você traz vai atrapalhar por anos.
 * **Base morta.** Cliente que não compra há 5 anos, com telefone que não existe mais, só polui a
   busca da sua equipe. Ele continua no sistema antigo se você precisar consultar um dia.
 * **Duplicados óbvios.** Se o mesmo cliente aparece três vezes na planilha com grafias diferentes,
-  junte antes de importar. É muito mais fácil resolver no Excel do que depois, no LocFlow.
+  junte antes de importar. É muito mais fácil resolver no Excel, de uma vez, do que depois no
+  LocFlow — onde dá para [mesclar os que escaparem](../cadastros/contatos.md#mesclar-contatos),
+  mas um par de cada vez.
 * **Colunas que só faziam sentido no sistema antigo** — códigos internos, flags de controle,
   campos que ninguém preenchia.
 

@@ -121,9 +121,60 @@ E, logo abaixo, um atalho que muda conforme de onde você veio:
 
 - **Só o celular conta.** Telefone fixo e e-mail ficam de fora, e **contato sem celular nunca é barrado** — quem tem só e-mail entra normalmente.
 - **Cadastro antigo não vira falso alarme.** A comparação é feita sobre o número **como o sistema o guarda** (com o código do país), e não sobre o que foi digitado — máscara, espaço e traço não confundem a conferência.
-- **Nada é apagado nem mesclado.** Ligar a regra não junta cadastros nem limpa a base, e ela **não vale para trás**: as duplicatas que já existem continuam onde estão, para você resolver na sua hora. Desligar também é seguro, a qualquer momento.
+- **Nada é apagado nem mesclado.** Ligar a regra não junta cadastros nem limpa a base, e ela **não vale para trás**: as duplicatas que já existem continuam onde estão, para você resolver na sua hora — [mesclando os dois cadastros](#mesclar-contatos). Desligar também é seguro, a qualquer momento.
 
 A mesma regra vale na **importação por planilha** — só que lá, em vez de avisar, ela **vincula** a linha ao cadastro que já existe. Veja [Importando dados de outro sistema](../configuracoes/importacao-de-dados.md#telefone-identifica).
+
+## Mesclar dois cadastros da mesma pessoa {#mesclar-contatos}
+
+Quando a mesma pessoa já está cadastrada duas vezes — um cadastro com o endereço, o outro com o e-mail; um com os orçamentos antigos, o outro com a cobrança de ontem — você junta os dois num só. O histórico inteiro passa para o cadastro que fica, e nenhum dado se perde.
+
+### Como mesclar
+
+1. Abra a ficha de um dos dois e toque em **Mais › Mesclar com outro contato…**
+2. **Escolha o outro cadastro.** O LocFlow já mostra os **parecidos** e diz por quê: **Mesmo celular**, **Mesmo e-mail** ou **Nome parecido**. Se o outro não estiver ali, busque por nome, celular ou documento. Contatos na lixeira não aparecem.
+3. **Compare.** A tela **Mesclar 2 cadastros** mostra só o que importa: *"Só os campos diferentes pedem escolha."*
+4. **Confirme.** Antes de mesclar, o LocFlow mostra o que fica, o que vem do outro e o que muda de lugar. Toque em **Mesclar** e pronto: *"Cadastros mesclados."*
+
+### O que o LocFlow decide sozinho (e você pode trocar)
+
+| O quê | Sugestão | Por quê |
+| --- | --- | --- |
+| **Qual cadastro fica** | O que tem **mais histórico** (orçamentos e cobranças). Trocar é um toque. | Menos coisa muda de lugar, e o link que a equipe já usa continua valendo. |
+| **Campo que só um tem** | Entra sozinho e diz de onde veio. | Cobre o caso mais comum — um tem endereço, o outro e-mail — sem pergunta nenhuma. |
+| **Campo igual nos dois** | Some numa linha: *"Iguais nos dois: tipo de pessoa e celular."* | Não há o que escolher. |
+| **Campo diferente nos dois** | O **nome mais completo**; endereço, celular e e-mail **do que fica**. Você escolhe o outro com um toque. | É o único caso que pede decisão. |
+| **Papéis e observações internas** | **Somam**: Cliente + Fornecedor; as duas observações, uma embaixo da outra. | Escolher um lado perderia informação sem motivo. |
+
+O **CPF/CNPJ** de quem tem passa para o cadastro que fica, e o **tipo de pessoa** segue o documento. Se um campo não cabe no tipo final (o nome fantasia num cadastro de pessoa física, por exemplo), ele fica de fora — e a tela diz quais.
+
+### O que muda de lugar
+
+Tudo o que era do cadastro que sai passa para o que fica, de uma vez só:
+
+- **Orçamentos**, inclusive os ganhos — o estágio no funil é recalculado com os pedidos dos dois.
+- **Cobranças**, com parcelas, recebimentos e devoluções.
+- **Lançamentos do financeiro** e **contas fixas** em que ele é o cliente.
+- O **vínculo com a equipe**, a **ficha de fornecedor** e a **carteira de vale-locação** — quando só um dos dois tem.
+- Na próxima **importação por planilha**, as linhas que eram do cadastro que saiu caem no que ficou.
+
+A **Atividade** do cadastro que fica registra quem mesclou, quando e o que veio — por exemplo, *"1 orçamento, 2 cobranças e 3 lançamentos vieram de João Silva"*.
+
+{% hint style="warning" %}
+**Mesclar não se desfaz.** O cadastro que sai vai para a **lixeira**, marcado como mesclado no que ficou: dá para consultá-lo lá, mas ele **não volta separado**. Por isso a confirmação mostra tudo o que vai mudar antes de você tocar em **Mesclar**.
+{% endhint %}
+
+### Quando não dá para mesclar
+
+O LocFlow avisa **antes** de você comparar campo a campo, e oferece abrir o outro cadastro:
+
+| Situação | Por quê |
+| --- | --- |
+| **CPF/CNPJ diferentes** | O documento é a identidade da pessoa: dois CPFs diferentes nunca são a mesma pessoa. |
+| **Os dois são da equipe** | Cada um está ligado a uma pessoa da equipe, com acesso próprio. Desfaça um dos vínculos em Colaboradores e tente de novo. |
+| **Os dois têm ficha de fornecedor** | Juntar duas fichas de fornecedor chega numa próxima versão; até lá, desvincule uma delas. |
+| **Os dois têm carteira de vale-locação** | Juntar duas carteiras mexe em dinheiro do cliente e chega numa próxima versão. |
+| **Devolução de vale-locação estornada no gateway** | Esse histórico não pode mudar de cadastro. Fale com o suporte para mesclar estes dois. |
 
 ## Completar dados na hora certa {#completar-dados-sob-demanda}
 
@@ -151,6 +202,7 @@ O acesso aos contatos é controlado por **permissões** do colaborador (definida
 | **Criar contato** | Cadastrar novos contatos (botão **+**). |
 | **Editar contato** | Alterar dados de um contato existente (o lápis). |
 | **Excluir contato** | Enviar um contato para a lixeira. |
+| **Editar** + **Excluir contato** | [Mesclar dois cadastros](#mesclar-contatos) — mesclar edita um e manda o outro para a lixeira, por isso pede as duas. |
 
 {% hint style="info" %}
 Sem a permissão de **criar**, o botão **+** não fica disponível. Sem a de **visualizar**, tocar num contato avisa que falta acesso. Assim cada pessoa da equipe enxerga e mexe só no que faz parte do trabalho dela.
@@ -166,6 +218,8 @@ Excluir um contato é uma ação **reversível**: em vez de apagar de vez, o Loc
 {% hint style="warning" %}
 Mande para a lixeira em vez de apagar de vez sempre que houver dúvida. Cliente excluído por engano pode estar ligado a um histórico que você ainda vai querer consultar.
 {% endhint %}
+
+O cadastro que saiu de uma [mesclagem](#mesclar-contatos) também fica na lixeira, marcado como **mesclado** no que ficou. Ele serve só para consulta: **não pode ser restaurado**, porque o histórico dele já mora no outro cadastro.
 
 ## Reaproveitar no orçamento {#reaproveitar-no-orcamento}
 
@@ -188,6 +242,7 @@ Se o contato ainda **não tem endereço** quando você escolhe "Endereço do con
 - **Faltou o CPF na hora da cobrança:** você vai gerar um link de pagamento e o método pede CPF e e-mail do cliente. Em vez de abrir o cadastro inteiro, a janela **"Completar dados do contato"** pede só esses dois campos; você preenche, toca em **"Salvar e gerar PIX"** e a cobrança segue na sequência.
 - **Empresa com nota fiscal:** uma construtora vai alugar andaimes e precisa de nota. Você cadastra como **Pessoa Jurídica**, com CNPJ, Razão Social, Nome fantasia e IE — pronto para a operação fiscal quando ela exigir.
 - **O cliente ligou e a atendente cadastrou de novo:** com **Telefone identifica o contato** ligado, ela digita o celular, o aviso aparece na hora — *"Já existe um contato com este telefone: Maria Souza"* — e ela toca em **Usar este contato**. O orçamento sai no cadastro certo, com o histórico inteiro.
+- **O mesmo cliente, cadastrado duas vezes há meses:** "João Silva" tem 12 orçamentos, 1 cobrança e o endereço; "João Silva Pereira" tem 1 orçamento, 2 cobranças, o e-mail e a data de nascimento. Na ficha do João Silva, **Mais › Mesclar com outro contato…** já sugere o outro (**Mesmo celular**, **Nome parecido**). A comparação marca o João Silva para ficar, traz o e-mail e o nascimento sozinhos e pergunta só o nome — você escolhe o mais completo. Depois de mesclar, um cadastro só tem os 13 orçamentos e as 3 cobranças.
 
 {% hint style="success" %}
 **Filosofia por porte:** quem está começando cadastra só nome e telefone e segue em frente. Quem cresceu vai preenchendo documento, endereço e dados fiscais — e o sistema pede cada um **só quando a operação precisa**. O cadastro **abstrai para o pequeno e revela para o grande**: você nunca é obrigado a preencher o que não usa.
