@@ -100,6 +100,8 @@ Marcar o chip **Frete** é o que **torna o fornecedor elegível ao motor de fret
 
 Os outros serviços (como **Mão de obra** ou **Montagem**) existem para você organizar o que o fornecedor faz, mas **não disparam** o mecanismo de frete. Só o **Frete** faz isso. Por isso o app dá um destaque sutil ao chip de Frete — é o que muda o jogo.
 
+Os serviços que a sua empresa criou em [Campos Personalizados](../configuracoes/campos-personalizados.md) também aparecem como chips, e nenhum deles libera o frete.
+
 ## A frota-espelho do fornecedor {#frota-espelho}
 
 Aqui está o passo que muita gente pergunta: *"Se o fornecedor não tem login, como ele cota um preço?"*

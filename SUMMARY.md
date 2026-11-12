@@ -150,6 +150,7 @@
 * [Regras de desconto](configuracoes/regras-de-desconto.md)
 * [Nomes de arquivo](configuracoes/nomes-de-arquivo.md)
 * [Automações](configuracoes/automacoes.md)
+* [Campos Personalizados](configuracoes/campos-personalizados.md)
 * [Central de Notificações](configuracoes/central-de-notificacoes.md)
   * [Canais de notificação](configuracoes/canais-de-notificacao.md)
 * [Perfil da Empresa](configuracoes/perfil-da-empresa.md)

@@ -54,6 +54,8 @@ Também dá para criar um fornecedor **de dentro de uma despesa**: no lançament
 
 São seis, os mesmos do plano de contas: **Frete**, **Mão de obra**, **Montagem**, **Desmontagem**, **Layout** e **Outro**. Marque quantos couberem — uma transportadora presta frete; um prestador que monta e desmonta estrutura marca os dois.
 
+Falta um serviço? Crie em [Campos Personalizados](../configuracoes/campos-personalizados.md). Ele aparece no cadastro junto com os seis, e a categoria sugerida e o relatório seguem a opção padrão que ele funciona como.
+
 ### Por que isso importa
 
 ```mermaid

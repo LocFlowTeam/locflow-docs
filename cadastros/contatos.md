@@ -74,7 +74,7 @@ O formulário mostra sempre a **Identificação** e o **Contato** (*"Pelo menos 
 
 ### Endereço {#endereco}
 
-O endereço entra pelo bloco **Endereço** (*"Comece pelo CEP"*). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local** (Residencial ou Condomínio); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo. Não sabe o CEP? O formulário de endereço é o mesmo do orçamento, com as outras portas — buscar no mapa ou colar o link do Google Maps que o cliente mandou. Veja [Endereços e endereços salvos](../orcamentos/enderecos.md).
+O endereço entra pelo bloco **Endereço** (*"Comece pelo CEP"*). Você informa o **CEP** e o sistema **completa logradouro, bairro e cidade automaticamente** — depois é só ajustar número e complemento. Dá ainda para classificar o **tipo do local**, com a mesma lista do orçamento, que você pode [personalizar](../configuracoes/campos-personalizados.md); em condomínio, o complemento (bloco, torre ou apartamento) passa a ser pedido para que a entrega chegue certo. Não sabe o CEP? O formulário de endereço é o mesmo do orçamento, com as outras portas — buscar no mapa ou colar o link do Google Maps que o cliente mandou. Veja [Endereços e endereços salvos](../orcamentos/enderecos.md).
 
 Esse endereço não é decorativo: ele é reaproveitado no orçamento como **endereço de entrega** (veja [mais abaixo](#reaproveitar-no-orcamento)).
 
